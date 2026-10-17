@@ -4,7 +4,7 @@
 
 框架沿用 Wang 的两层匿名 HIBE + IBS 通用构造；HIBE 与 IBS 独立实现、独立选参，再装配为兼容组合。不实施 Boyen–Li 的 Ext/ReExt 增强隐私。共同目标包括普通隐私、加强认证、自我伪造防护和完整密文字节篡改拒绝，安全结论须逐项说明前提。
 
-**实现边界：**`BaselineIBME`、`ByteAuthenticatedIBME` 接受两个后端对象；Hybrid 通过显式解码器连接底层 HIBE。[assembly](src/ibme/assembly/__init__.py) 已实现统一注册/配置/预检/装配，CLI 支持独立选择。原 CHKP 完整基委派的 `chkp` 研究后端已登记，范围见 [CHKP契约](docs/specs/chkp-hibe.md)；独立 MP12 紧凑委派变体 `mp12-chkp-reference` 的[可安装公共入口](src/ibme/hibe/mp12_chkp/__init__.py)与登记同时保留，范围见[first_suite 契约](docs/specs/first-suite-research.md)。两者都需要 Sage；MP12变体新根/新接收者还须显式本机 native engine。无依赖时明确拒绝，不回退。LATTE-3已交付[独立研究后端](src/ibme/hibe/latte/__init__.py)及[专属契约](docs/specs/latte-hibe.md)，默认registry的`latte`占位尚未替换；其它未交付后端仍不可用，研究接口不代表继承定理或正式安全准入。使用方式见 [FRAMEWORK_USAGE](docs/FRAMEWORK_USAGE.md)，实际执行证据见当前状态。
+**实现边界：**`BaselineIBME`、`ByteAuthenticatedIBME` 接受两个后端对象；Hybrid 通过显式解码器连接底层 HIBE。[assembly](src/ibme/assembly/__init__.py) 已实现统一注册/配置/预检/装配，CLI 支持独立选择。原 CHKP 完整基委派的 `chkp` 研究后端已登记，范围见 [CHKP契约](docs/specs/chkp-hibe.md)；独立 MP12 紧凑委派变体 `mp12-chkp-reference` 的[可安装公共入口](src/ibme/hibe/mp12_chkp/__init__.py)与登记同时保留，范围见[first_suite 契约](docs/specs/first-suite-research.md)。两者都需要 Sage；MP12变体新根/新接收者还须显式本机 native engine。无依赖时明确拒绝，不回退。LATTE-3的[研究后端](src/ibme/hibe/latte/__init__.py)已在默认registry以`latte`登记，具体条件见[专属契约](docs/specs/latte-hibe.md)；其它后端的当前登记、依赖和执行状态分别查注册表与当前进度。研究接口不代表继承定理或正式安全准入。使用方式见 [FRAMEWORK_USAGE](docs/FRAMEWORK_USAGE.md)，实际执行证据见当前状态。
 
 ## 1. 身份与编码
 

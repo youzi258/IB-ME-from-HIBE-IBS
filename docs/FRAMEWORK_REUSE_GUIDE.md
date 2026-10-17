@@ -2,7 +2,7 @@
 
 本文面向独立实现其他 HIBE、IBS 的队员，回答：**CHKP + Luo 这套代码，哪些可以直接用，哪些只能参考，哪些必须按新论文重新实现？**
 
-核对基线：2026-10-12 的集成提交 `19560c4`。这里介绍已经存在的代码边界，并说明后续接入方法；当前完成程度仍以 [PROJECT_STATUS](PROJECT_STATUS.md) 为准，接口与验收要求以 [IMPLEMENTATION_SPEC](../IMPLEMENTATION_SPEC.md) 为准。本文是阅读和交接指南，不另设一套规范。
+初版核对基线：2026-10-12 的集成提交 `19560c4`；本次源码复核：2026-10-18 的上游 `4472775`。公共六/五方法及本文的 Baseline、Hybrid、BYTEAUTH 调用顺序继续适用，新增示例说明后续模块怎样复用。当前完成程度仍以 [PROJECT_STATUS](PROJECT_STATUS.md) 为准，接口与验收要求以 [IMPLEMENTATION_SPEC](../IMPLEMENTATION_SPEC.md) 为准。本文是阅读和交接指南，不另设一套规范。
 
 ## 1. 先读这一页
 
@@ -15,6 +15,8 @@
 1. **第一阶段：独立实现算法目录中的各个原语。** 每个算法按自己的论文实现、测试、记录条件，可以先使用原生接口或 C/C++/Sage 程序。交付可执行的研究参数和单体测试；不要求这一阶段全部接入统一 CLI。
 2. **第二阶段：挑选、适配和组成完整方案。** 对可用实现补适配器，注册 HIBE/IBS，检查组合容量、状态和安全前提，再做正式参数选择与组合验收。
 3. **跨阶段保留来源记录。** 第一阶段就记录算法版本、公式、参数含义、随机数及失败语义，第二阶段才能准确适配。示例参数可以先跑；不能到最后才确认实现的究竟是哪一个算法。
+
+这两个阶段按**每个原语的就绪程度**衔接：一个模块完成即可接入适配和相应配对，其他人继续独立实现，不必等目录里全部算法同时完成。最终选择三个报告重点，也不限制就绪池中的实现和可行组合数量。
 
 这里的“算法目录”指[现行算法总表](ALGORITHM_CATALOG.md)中的项目条目。候选、论文变体、研究原型、已注册后端分别记录；本文不把它们都改写成已实现算法，也不重新指定最终三套组合。
 
@@ -57,6 +59,7 @@ flowchart TD
 | 字节完整性包装 | [byteauth.py](../src/ibme/protocol/byteauth.py) | OTS、内部承诺、完整密文字节绑定 |
 | 组合配置与运行时 | [assembly/__init__.py](../src/ibme/assembly/__init__.py) | `SuiteConfig`、`make_suite`、`validate_suite`、`build_runtime` |
 | 原语登记 | [assembly/registry.py](../src/ibme/assembly/registry.py) | `BackendSpec`、`BackendRegistry` 及各算法登记项 |
+| 算法路线与 CI 计划 | [assembly/catalog.py](../src/ibme/assembly/catalog.py)、[ci/suites.json](../ci/suites.json) | 文献路线、后端标识及分层测试任务，不代替可执行后端 |
 | CLI 与状态事务 | [cli.py](../src/ibme/cli.py)、[cli_state.py](../src/ibme/cli_state.py) | 对象恢复、加锁、保存、命令入口 |
 
 同一个文件也可能有两种责任。例如注册表的框架是通用的，而其中 `_chkp_configuration`、`_luo_check` 等函数是算法专属检查。不能按“文件放在公共目录里”判断所有内容都能原样套用。
@@ -212,6 +215,14 @@ CHKP 当前实现内部包括 MP12 根陷门与完整基、第一层 RandBasis�
 
 复用建议：参考对象封装、显式参数、缓存恢复和测试组织；真正的陷门生成、采样分布、委派与解密方程按新论文实现。
 
+### 后续结构化路线怎样沿用框架
+
+后来交付的 [mp12_structured](../src/ibme/hibe/mp12_structured/) 也通过同一六方法、对象和 `BackendSpec` 接入，不复制 Baseline 或 Luo。它与原 `chkp`、`mp12-chkp-reference` 的算法/版本分别记录；路线目录把它们关联到同一文献方向，不表示它们自动继承相同定理。
+
+其中 `finite192_backend_spec()` 是调用方显式登记的 v2 配方，默认注册表继续选择 v1。v2 有独立参数类、参数编码与 descriptor 版本：不能把旧 suite 的标签改为 v2，或把 v1 的恢复/组合结果抄成 v2 的通过证据。[实际运行交付](research/team-a-delivery/2026-10-16-finite192-runtime/README.md)记录了该版本自己的整树、Luo 组合和安装恢复。
+
+[出版版参数目标](research/team-a-delivery/2026-10-17-chkp-published-target/README.md)又是另一种证据：当前实现的 `3m` 全 LWE 叶与出版版深度 2 的 `2m` 前导/终端布局有差异。参数投影、Estimator 返回或子工具支持大 q，不能据此把出版版路线标成已实现，也不能静默删块来套用其定理。接入框架可以复用；算法版本和秘密分布对应仍需单独核验。
+
 ## 7. Luo 这一套里，哪些是专属工作
 
 | 部分 | 代码入口 | 可复用的经验与限制 |
@@ -250,7 +261,23 @@ reference 与 compact 是同一 Luo 模格算法的两种签名编码，不是�
 
 工厂和解码器在代码中显式登记，不让配置 JSON 指定任意动态导入或可执行文件。`available` 表示工程实现状态，不表示通过密码学安全评审。
 
+`default_preset(transport)` 应返回本后端声明过的预设名。不提供该 hook 时，只有单一预设才可无歧义地默认选择；多个预设需要显式指定。发现某算法族存在一个可用引擎，还不够证明选中的那个参数档可运行：配置检查必须核对所选档，缺档时拒绝，不能换成已安装的另一档。
+
 `make_suite` 选择原语与配置，`validate_suite` 做静态兼容检查，`build_runtime` 创建运行时。缺少后端或依赖应明确拒绝，不回退到教学 ABB10 或 mock。
+
+### 目录出现、独立登记与默认可选分别看
+
+| 看见什么 | 实际说明什么 | 接手时还要查什么 |
+|---|---|---|
+| 文献路线在 `ROUTES` 中 | 该方向纳入目录与测试计划 | 有没有真实原语实现、对应哪个后端/版本 |
+| 发现信息显示 adapter/runtime 状态 | 登记信息和本机依赖探测结果 | 不表示生成过密钥或跑过组合 |
+| 模块导出独立 `backend_spec()` | 调用方可以使用自己的 `BackendRegistry` 显式接入 | 默认注册表是否采用它；哪个版本和预设 |
+| `default_registry()` 已纳入 | 公共装配可以选择该后端 | 所选档依赖、容量和配置预检是否通过 |
+| 指定 suite 有真实收据 | 该版本/参数/包装做过对应执行 | 状态、负例、安装与安全条件各自的范围 |
+
+`default_backend_catalog()` 和 `algorithm_catalog()` 提供发现/路线元数据，不能把返回的字典当作 `BackendSpec`，也不能绕过其参数与配置检查。CI 中某个算法名称下有测试，可能只覆盖来源、数学探针或元数据；须读取该任务的 scope 和收据，不能自动算完整原语或配对验收。
+
+新后端也可以把 descriptor 放在自己的模块里，例如 [SRGG registration.py](../src/ibme/ibs/srgg/registration.py)，共享注册表只负责显式纳入。新增 structured/paper 实现与默认 `research` 路线分别记录；同一五方法接口不让新路线自动继承旧默认路线的 HIBE 配对结果。
 
 两边参数独立，但组合预算有关联：IBS 签名有多大、编码增加多少字节、IBS 实际要签多长的消息、HIBE 能否装下，必须算在一起。当前默认示例中的 3924 B 应用上限、86 B 编码身份、C64B compact 16383 B 签名均有特定配置，不能成为所有算法的固定常量。
 
@@ -290,6 +317,12 @@ reference 与 compact 是同一 Luo 模格算法的两种签名编码，不是�
 第一阶段可以保留它的原生实现和原生测试，记录来源版本、构建命令与参数。第二阶段用薄适配器或受控调用入口包装；补齐二进制编码、内存所有权、随机源输入、错误码、超时/资源中止和对象生命周期的映射。
 
 “作者程序能运行”“算法单体正确”“能通过公共契约”“完整 IB-ME 组合通过”“正式参数/安全条件成立”分别验收。命令行包装本身不能把普通 IBE 变成两层 HIBE，也不能把普通签名直接变成 IBS。
+
+已有的 [LATTE 接入](../src/ibme/hibe/latte/registration.py)就是可以参考的实物：native 运算、原语对象与适配器留在自己的模块，通过登记的六方法接入现有 Hybrid/BYTEAUTH/CLI。独立 descriptor 的 ID 为 `latte3-research`，默认注册表显式映射为公共选择名 `latte`；这项映射可在注册代码核对，不能假定模块名、路线名和后端选择名永远相同。
+
+另一个实物是[认证转换 IBS](../src/ibme/ibs/certified/backend.py)：同一份 `CertifiedIBS` 管身份发钥、证书链、对象和验证，[ordinary.py](../src/ibme/ibs/certified/ordinary.py)选择普通签名引擎，ML-DSA 与 Falcon 各自负责自己的参数、字节格式和 native 桥接。它们登记为 `cert-ml-dsa`、`cert-falcon`，共用转换层和 IB-ME 层；不会把普通签名 KAT 当作整个 IBS 或组合验收。[现有公共组合交付](research/team-c-delivery/2026-10-15-c-framework/README.md)展示了实际配对、CLI 与安装恢复，转换模型/强 UF/匿名性和正式准入仍按[专属契约](specs/certified-ibs.md)分别核验。
+
+这两个例子给其他队员的做法是：尽量复用已有的协议与转换模块，专属算术、原生依赖、选参和编码各自实现；更换引擎或参数档时按所选档核依赖和 ABI。复用作者代码时保留固定源码/许可/构建说明，安装后还要核实际加载的 provider，不能只检查源码文件存在。
 
 ### 情形 D：HIBE 和 IBS 两边都换
 
@@ -333,6 +366,16 @@ reference 与 compact 是同一 Luo 模格算法的两种签名编码，不是�
 公共测试与驱动可从 [test_assembly.py](../tests/test_assembly.py)、[test_cli_selection.py](../tests/test_cli_selection.py)、[test_combination_matrix.py](../tests/test_combination_matrix.py)、[run_combination_matrix.py](../experiments/run_combination_matrix.py) 进入。新算法仍需自己的单体测试；加入登记项并不自动获得已有矩阵中每个场景的实际执行证据。
 
 `cli check` 和 `cli matrix` 是静态预检，不是运行完整算法。CHKP 的昂贵真实生命周期另有专属驱动；不应为了写适配文档重复生成陷门与全部叶子。
+
+当前组合驱动不传选择时先枚举预设并给出计划，**不能把无参调用当成实际验收**。复用驱动时显式选择现有 `--case`，或用 `--suite-file` 指定配置；完整命令仍查[使用指南](FRAMEWORK_USAGE.md)。例如先看已有 C 组配置是否适配本机，可以在仓库根执行（未安装项目包时，PowerShell 先设置 `$env:PYTHONPATH = 'src'`）：
+
+```text
+python -m experiments.run_combination_matrix --plan --suite-file ci/c-combinations.json
+```
+
+这条只做预检；缺少 native 引擎的配置应报告阻塞。要实际运行其中一组，去掉 `--plan`，使用该文件真实名称的 `--suite-name` 显式选择，并按原语交付准备依赖和资源。不要为复制示例而自动运行整个昂贵参数网格。
+
+CI 的声明在 [ci/suites.json](../ci/suites.json)，执行/汇总在 [ci/run.py](../ci/run.py)。新原语需声明自己的 scope、测试路径、依赖环境、允许跳过的原因与源码来源；原语任务、公共框架任务及显式组合任务分别记录。无断言、全部跳过、旧收据或 metadata-only 任务都不能填作这次完整算法执行通过。
 
 ## 12. 一份可以直接照填的交接表
 
