@@ -1,0 +1,540 @@
+[
+  {
+    "case": "receipt-sageloli-sis",
+    "selection": {
+      "hibe": "latte",
+      "ibs": "sageloli-sis",
+      "transport": "hybrid",
+      "protocol": "byteauth-v1"
+    },
+    "status": "pass",
+    "checks": [
+      {
+        "name": "fixed_identity_repeated_extract",
+        "status": "pass"
+      },
+      {
+        "name": "honest_roundtrip",
+        "status": "pass"
+      },
+      {
+        "name": "ciphertext_roundtrip",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_sender",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_receiver",
+        "status": "pass"
+      },
+      {
+        "name": "both_wrong",
+        "status": "pass"
+      },
+      {
+        "name": "public_restore",
+        "status": "pass"
+      },
+      {
+        "name": "master_restore",
+        "status": "pass"
+      },
+      {
+        "name": "sender_restore",
+        "status": "pass"
+      },
+      {
+        "name": "receiver_restore",
+        "status": "pass"
+      },
+      {
+        "name": "restored_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "fixed_identity_after_restore",
+        "status": "pass"
+      },
+      {
+        "name": "truncated_loader",
+        "status": "pass"
+      },
+      {
+        "name": "truncated_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "appended_loader",
+        "status": "pass"
+      },
+      {
+        "name": "appended_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "duplicate_loader",
+        "status": "pass"
+      },
+      {
+        "name": "duplicate_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_version_loader",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_version_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_context",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_inner_bytes",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_signature",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_ots_key",
+        "status": "pass"
+      },
+      {
+        "name": "ibs_honest",
+        "status": "pass"
+      },
+      {
+        "name": "ibs_wrong_message",
+        "status": "pass"
+      },
+      {
+        "name": "ibs_wrong_identity",
+        "status": "pass"
+      },
+      {
+        "name": "changed_signature_verify_rejected",
+        "status": "pass"
+      },
+      {
+        "name": "random_signature_wire_rejected",
+        "status": "pass"
+      },
+      {
+        "name": "reused_signature_rejects_altered_payload",
+        "status": "pass"
+      },
+      {
+        "name": "forged_outer_ots_valid",
+        "status": "pass"
+      },
+      {
+        "name": "inner_authentication_rejects",
+        "status": "pass"
+      },
+      {
+        "name": "inner_rejection_reached_ibs",
+        "status": "pass"
+      },
+      {
+        "name": "empty_roundtrip",
+        "status": "pass"
+      }
+    ],
+    "executed_checks": 34,
+    "execution": "executed",
+    "preflight_only": false,
+    "classification": "research",
+    "security_claim": "none",
+    "backend_admitted": false,
+    "parameters_are_formal": false,
+    "security_proof_count": 0,
+    "repetition_count": 1,
+    "unavailable_backends": [],
+    "suite": {
+      "allow_mock": false,
+      "backend_admitted": false,
+      "hibe": "latte",
+      "hibe_params": {
+        "identity_bytes": 86,
+        "max_children": 2,
+        "max_receivers": 2,
+        "message_mode": "seed32",
+        "native_timeout_seconds": 60
+      },
+      "hibe_version": "latte3-cosac-fix-v1",
+      "hybrid_limits": {
+        "backend_id": "latte3-cosac-fix-v1",
+        "identity_max_bytes": 64,
+        "max_capsule_bytes": 4194304,
+        "max_payload_bytes": 65536
+      },
+      "ibs": "sageloli-sis",
+      "ibs_params": {
+        "identity_max_bytes": 256,
+        "identity_width_squared": 268435456,
+        "k": 4,
+        "m": 16,
+        "max_sign_attempts": 64,
+        "max_users": 32,
+        "message_max_bytes": 4096,
+        "n": 2,
+        "q": 81,
+        "r_squared": 16,
+        "salt_bytes": 32,
+        "signature_width_squared": 72057594037927936
+      },
+      "ibs_version": "sageloli-sis-adaptive-research-v1",
+      "parameters_are_formal": false,
+      "protocol": "byteauth-v1",
+      "security_claim": "none",
+      "signature_format": "reference",
+      "state_policy": "single-writer-commit-before-publish-v1",
+      "transport": "hybrid",
+      "version": "IBME/SUITE/1"
+    },
+    "suite_digest": "26f8a82536890e8432748bf89b8195a9080de95c65c5298edf54df7b95d96103",
+    "preflight": {
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 3924,
+        "signature_max_bytes": 339,
+        "ibs_input_bytes": 4096,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 447,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 37587
+      },
+      "metadata": {
+        "security_claim": "none",
+        "backend_admitted": false,
+        "parameters_are_formal": false,
+        "combination_tested": false,
+        "preflight_only": true,
+        "runtime_available": true,
+        "runtime_dependencies": {
+          "hibe": {
+            "runtime_available": true,
+            "runtime_reason": ""
+          },
+          "ibs": {
+            "runtime_available": true,
+            "runtime_reason": ""
+          }
+        },
+        "persistent_identity_cache": true,
+        "primitive_persistent_identity_cache": {
+          "hibe": true,
+          "ibs": true
+        },
+        "test_only": false,
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "suite_digest": "26f8a82536890e8432748bf89b8195a9080de95c65c5298edf54df7b95d96103",
+        "hibe": "latte",
+        "ibs": "sageloli-sis",
+        "protocol": "byteauth-v1",
+        "transport": "hybrid",
+        "signature_format": "reference",
+        "hibe_key_binding_capability": true,
+        "raw_object_parameter_binding": {
+          "hibe": "full-parameter-snapshot",
+          "ibs": "full-parameter-snapshot"
+        },
+        "resource_policy": "legacy-assembly-resource-v1"
+      }
+    },
+    "acceptance_errors": [],
+    "planning_status": "planned",
+    "randomness": "fixed public test streams",
+    "setup_source": "new primitive Setup",
+    "sizes": {
+      "public_key": 13375,
+      "sender_key": 1695,
+      "receiver_key": 160076,
+      "signature": 339,
+      "ciphertext": 136209
+    },
+    "message_bytes": 10,
+    "sender_identity_bytes": 5,
+    "receiver_identity_bytes": 3,
+    "elapsed_seconds": 5.069844
+  },
+  {
+    "case": "receipt-sageloli-rsis",
+    "selection": {
+      "hibe": "latte",
+      "ibs": "sageloli-rsis",
+      "transport": "hybrid",
+      "protocol": "byteauth-v1"
+    },
+    "status": "pass",
+    "checks": [
+      {
+        "name": "fixed_identity_repeated_extract",
+        "status": "pass"
+      },
+      {
+        "name": "honest_roundtrip",
+        "status": "pass"
+      },
+      {
+        "name": "ciphertext_roundtrip",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_sender",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_receiver",
+        "status": "pass"
+      },
+      {
+        "name": "both_wrong",
+        "status": "pass"
+      },
+      {
+        "name": "public_restore",
+        "status": "pass"
+      },
+      {
+        "name": "master_restore",
+        "status": "pass"
+      },
+      {
+        "name": "sender_restore",
+        "status": "pass"
+      },
+      {
+        "name": "receiver_restore",
+        "status": "pass"
+      },
+      {
+        "name": "restored_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "fixed_identity_after_restore",
+        "status": "pass"
+      },
+      {
+        "name": "truncated_loader",
+        "status": "pass"
+      },
+      {
+        "name": "truncated_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "appended_loader",
+        "status": "pass"
+      },
+      {
+        "name": "appended_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "duplicate_loader",
+        "status": "pass"
+      },
+      {
+        "name": "duplicate_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_version_loader",
+        "status": "pass"
+      },
+      {
+        "name": "wrong_version_decrypt",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_context",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_inner_bytes",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_signature",
+        "status": "pass"
+      },
+      {
+        "name": "byteauth_ots_key",
+        "status": "pass"
+      },
+      {
+        "name": "ibs_honest",
+        "status": "pass"
+      },
+      {
+        "name": "ibs_wrong_message",
+        "status": "pass"
+      },
+      {
+        "name": "ibs_wrong_identity",
+        "status": "pass"
+      },
+      {
+        "name": "changed_signature_verify_rejected",
+        "status": "pass"
+      },
+      {
+        "name": "random_signature_wire_rejected",
+        "status": "pass"
+      },
+      {
+        "name": "reused_signature_rejects_altered_payload",
+        "status": "pass"
+      },
+      {
+        "name": "forged_outer_ots_valid",
+        "status": "pass"
+      },
+      {
+        "name": "inner_authentication_rejects",
+        "status": "pass"
+      },
+      {
+        "name": "inner_rejection_reached_ibs",
+        "status": "pass"
+      },
+      {
+        "name": "empty_roundtrip",
+        "status": "pass"
+      }
+    ],
+    "executed_checks": 34,
+    "execution": "executed",
+    "preflight_only": false,
+    "classification": "research",
+    "security_claim": "none",
+    "backend_admitted": false,
+    "parameters_are_formal": false,
+    "security_proof_count": 0,
+    "repetition_count": 1,
+    "unavailable_backends": [],
+    "suite": {
+      "allow_mock": false,
+      "backend_admitted": false,
+      "hibe": "latte",
+      "hibe_params": {
+        "identity_bytes": 86,
+        "max_children": 2,
+        "max_receivers": 2,
+        "message_mode": "seed32",
+        "native_timeout_seconds": 60
+      },
+      "hibe_version": "latte3-cosac-fix-v1",
+      "hybrid_limits": {
+        "backend_id": "latte3-cosac-fix-v1",
+        "identity_max_bytes": 64,
+        "max_capsule_bytes": 4194304,
+        "max_payload_bytes": 65536
+      },
+      "ibs": "sageloli-rsis",
+      "ibs_params": {
+        "d": 4,
+        "identity_max_bytes": 256,
+        "identity_width_squared": 68719476736,
+        "k": 9,
+        "l": 22,
+        "max_sign_attempts": 64,
+        "max_users": 32,
+        "message_max_bytes": 4096,
+        "q": 19683,
+        "r_squared": 16,
+        "salt_bytes": 32,
+        "signature_width_squared": 73786976294838206464
+      },
+      "ibs_version": "sageloli-rsis-adaptive-research-v1",
+      "parameters_are_formal": false,
+      "protocol": "byteauth-v1",
+      "security_claim": "none",
+      "signature_format": "reference",
+      "state_policy": "single-writer-commit-before-publish-v1",
+      "transport": "hybrid",
+      "version": "IBME/SUITE/1"
+    },
+    "suite_digest": "7eb76b1c406cfa3f40295954b0188a1337f5a41eed36f6338804e6a58876d50b",
+    "preflight": {
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 3924,
+        "signature_max_bytes": 1139,
+        "ibs_input_bytes": 4096,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 1247,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 37587
+      },
+      "metadata": {
+        "security_claim": "none",
+        "backend_admitted": false,
+        "parameters_are_formal": false,
+        "combination_tested": false,
+        "preflight_only": true,
+        "runtime_available": true,
+        "runtime_dependencies": {
+          "hibe": {
+            "runtime_available": true,
+            "runtime_reason": ""
+          },
+          "ibs": {
+            "runtime_available": true,
+            "runtime_reason": ""
+          }
+        },
+        "persistent_identity_cache": true,
+        "primitive_persistent_identity_cache": {
+          "hibe": true,
+          "ibs": true
+        },
+        "test_only": false,
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "suite_digest": "7eb76b1c406cfa3f40295954b0188a1337f5a41eed36f6338804e6a58876d50b",
+        "hibe": "latte",
+        "ibs": "sageloli-rsis",
+        "protocol": "byteauth-v1",
+        "transport": "hybrid",
+        "signature_format": "reference",
+        "hibe_key_binding_capability": true,
+        "raw_object_parameter_binding": {
+          "hibe": "full-parameter-snapshot",
+          "ibs": "full-parameter-snapshot"
+        },
+        "resource_policy": "legacy-assembly-resource-v1"
+      }
+    },
+    "acceptance_errors": [],
+    "planning_status": "planned",
+    "randomness": "fixed public test streams",
+    "setup_source": "new primitive Setup",
+    "sizes": {
+      "public_key": 15937,
+      "sender_key": 28585,
+      "receiver_key": 160212,
+      "signature": 1139,
+      "ciphertext": 136976
+    },
+    "message_bytes": 10,
+    "sender_identity_bytes": 5,
+    "receiver_identity_bytes": 3,
+    "elapsed_seconds": 18.663718
+  }
+]

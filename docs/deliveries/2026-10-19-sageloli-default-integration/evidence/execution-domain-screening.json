@@ -1,0 +1,330 @@
+{
+  "security_claim": "none",
+  "backend_admitted": false,
+  "parameters_are_formal": false,
+  "paper_points": [
+    {
+      "label": "HAL v1 Table 4 point 1",
+      "k": 65,
+      "d": 2048,
+      "l": 132,
+      "violated_gates": [
+        "d cap 4..16 violated (d=2048)",
+        "k cap 1..16 violated (k=65)",
+        "l range k+1..128 violated (l=132, needs 66..128)",
+        "coefficient dimension cap 128 violated (d*(l+k)=403456)"
+      ],
+      "expanded_forms": {
+        "public_matrix": {
+          "shape": [
+            2048,
+            270336
+          ],
+          "entries": 553648128,
+          "int64_wire_bytes": 4429185024,
+          "int64_wire_bytes_over_16MiB_budget": true,
+          "wire_count_over_codec_dimension_cap": true,
+          "memory_lower_bound_bytes": 19931332608
+        },
+        "root_trapdoor": {
+          "shape": [
+            137216,
+            133120
+          ],
+          "entries": 18266193920,
+          "int64_wire_bytes": 146129551360,
+          "int64_wire_bytes_over_16MiB_budget": true,
+          "wire_count_over_codec_dimension_cap": true,
+          "memory_lower_bound_bytes": 657582981120
+        },
+        "identity_trapdoor": {
+          "shape": [
+            270336,
+            133120
+          ],
+          "entries": 35987128320,
+          "int64_wire_bytes": 287897026560,
+          "int64_wire_bytes_over_16MiB_budget": true,
+          "wire_count_over_codec_dimension_cap": true,
+          "memory_lower_bound_bytes": 1295536619520
+        },
+        "signature": {
+          "shape": [
+            403456
+          ],
+          "entries": 403456,
+          "int64_wire_bytes": 3227648,
+          "int64_wire_bytes_over_16MiB_budget": false,
+          "wire_count_over_codec_dimension_cap": false,
+          "memory_lower_bound_bytes": 14524416
+        }
+      }
+    },
+    {
+      "label": "HAL v1 Table 4 point 2",
+      "k": 153,
+      "d": 2048,
+      "l": 308,
+      "violated_gates": [
+        "d cap 4..16 violated (d=2048)",
+        "k cap 1..16 violated (k=153)",
+        "l range k+1..128 violated (l=308, needs 154..128)",
+        "coefficient dimension cap 128 violated (d*(l+k)=944128)"
+      ],
+      "expanded_forms": {
+        "public_matrix": {
+          "shape": [
+            2048,
+            630784
+          ],
+          "entries": 1291845632,
+          "int64_wire_bytes": 10334765056,
+          "int64_wire_bytes_over_16MiB_budget": true,
+          "wire_count_over_codec_dimension_cap": true,
+          "memory_lower_bound_bytes": 46506442752
+        },
+        "root_trapdoor": {
+          "shape": [
+            317440,
+            313344
+          ],
+          "entries": 99467919360,
+          "int64_wire_bytes": 795743354880,
+          "int64_wire_bytes_over_16MiB_budget": true,
+          "wire_count_over_codec_dimension_cap": true,
+          "memory_lower_bound_bytes": 3580845096960
+        },
+        "identity_trapdoor": {
+          "shape": [
+            630784,
+            313344
+          ],
+          "entries": 197652381696,
+          "int64_wire_bytes": 1581219053568,
+          "int64_wire_bytes_over_16MiB_budget": true,
+          "wire_count_over_codec_dimension_cap": true,
+          "memory_lower_bound_bytes": 7115485741056
+        },
+        "signature": {
+          "shape": [
+            944128
+          ],
+          "entries": 944128,
+          "int64_wire_bytes": 7553024,
+          "int64_wire_bytes_over_16MiB_budget": false,
+          "wire_count_over_codec_dimension_cap": false,
+          "memory_lower_bound_bytes": 33988608
+        }
+      }
+    }
+  ],
+  "rsis_executable_ceiling": {
+    "full_128_dimension_profiles": [
+      {
+        "d": 4,
+        "k": 1,
+        "l": 31,
+        "coefficient_dimension": 128,
+        "q_bits": 1.585
+      },
+      {
+        "d": 4,
+        "k": 2,
+        "l": 30,
+        "coefficient_dimension": 128,
+        "q_bits": 3.17
+      },
+      {
+        "d": 4,
+        "k": 3,
+        "l": 29,
+        "coefficient_dimension": 128,
+        "q_bits": 4.755
+      },
+      {
+        "d": 4,
+        "k": 4,
+        "l": 28,
+        "coefficient_dimension": 128,
+        "q_bits": 6.34
+      },
+      {
+        "d": 4,
+        "k": 5,
+        "l": 27,
+        "coefficient_dimension": 128,
+        "q_bits": 7.925
+      },
+      {
+        "d": 4,
+        "k": 6,
+        "l": 26,
+        "coefficient_dimension": 128,
+        "q_bits": 9.51
+      },
+      {
+        "d": 4,
+        "k": 7,
+        "l": 25,
+        "coefficient_dimension": 128,
+        "q_bits": 11.094999999999999
+      },
+      {
+        "d": 4,
+        "k": 8,
+        "l": 24,
+        "coefficient_dimension": 128,
+        "q_bits": 12.68
+      },
+      {
+        "d": 4,
+        "k": 9,
+        "l": 23,
+        "coefficient_dimension": 128,
+        "q_bits": 14.265
+      },
+      {
+        "d": 4,
+        "k": 10,
+        "l": 22,
+        "coefficient_dimension": 128,
+        "q_bits": 15.85
+      },
+      {
+        "d": 4,
+        "k": 11,
+        "l": 21,
+        "coefficient_dimension": 128,
+        "q_bits": 17.435
+      },
+      {
+        "d": 4,
+        "k": 12,
+        "l": 20,
+        "coefficient_dimension": 128,
+        "q_bits": 19.02
+      },
+      {
+        "d": 4,
+        "k": 13,
+        "l": 19,
+        "coefficient_dimension": 128,
+        "q_bits": 20.605
+      },
+      {
+        "d": 4,
+        "k": 14,
+        "l": 18,
+        "coefficient_dimension": 128,
+        "q_bits": 22.189999999999998
+      },
+      {
+        "d": 4,
+        "k": 15,
+        "l": 17,
+        "coefficient_dimension": 128,
+        "q_bits": 23.775
+      },
+      {
+        "d": 8,
+        "k": 1,
+        "l": 15,
+        "coefficient_dimension": 128,
+        "q_bits": 1.585
+      },
+      {
+        "d": 8,
+        "k": 2,
+        "l": 14,
+        "coefficient_dimension": 128,
+        "q_bits": 3.17
+      },
+      {
+        "d": 8,
+        "k": 3,
+        "l": 13,
+        "coefficient_dimension": 128,
+        "q_bits": 4.755
+      },
+      {
+        "d": 8,
+        "k": 4,
+        "l": 12,
+        "coefficient_dimension": 128,
+        "q_bits": 6.34
+      },
+      {
+        "d": 8,
+        "k": 5,
+        "l": 11,
+        "coefficient_dimension": 128,
+        "q_bits": 7.925
+      },
+      {
+        "d": 8,
+        "k": 6,
+        "l": 10,
+        "coefficient_dimension": 128,
+        "q_bits": 9.51
+      },
+      {
+        "d": 8,
+        "k": 7,
+        "l": 9,
+        "coefficient_dimension": 128,
+        "q_bits": 11.094999999999999
+      },
+      {
+        "d": 16,
+        "k": 1,
+        "l": 7,
+        "coefficient_dimension": 128,
+        "q_bits": 1.585
+      },
+      {
+        "d": 16,
+        "k": 2,
+        "l": 6,
+        "coefficient_dimension": 128,
+        "q_bits": 3.17
+      },
+      {
+        "d": 16,
+        "k": 3,
+        "l": 5,
+        "coefficient_dimension": 128,
+        "q_bits": 4.755
+      }
+    ],
+    "largest_k": {
+      "d": 4,
+      "k": 15,
+      "l": 17,
+      "coefficient_dimension": 128,
+      "q_bits": 23.775
+    },
+    "largest_d": {
+      "d": 16,
+      "k": 1,
+      "l": 7,
+      "coefficient_dimension": 128,
+      "q_bits": 1.585
+    }
+  },
+  "sis_executable_ceiling": {
+    "note": "paper publishes no concrete SIS point; ceilings are gate maxima only",
+    "max_k": {
+      "n": 1,
+      "k": 16,
+      "m": 112,
+      "coefficient_dimension": 128
+    },
+    "max_n": {
+      "n": 8,
+      "k": 1,
+      "m": 120,
+      "coefficient_dimension": 128
+    }
+  },
+  "conclusion": "The paper RSIS points are rejected by the local parameter gates (d/k caps and the 128-coefficient-dimension cap) and, independent of those gates, the current expanded negacyclic representation would allocate multi-gigabyte to terabyte public-key/trapdoor objects far beyond the 16 MiB wire budget.  Running them requires an unexpanded ring-native execution domain plus gate changes, not a configuration edit."
+}

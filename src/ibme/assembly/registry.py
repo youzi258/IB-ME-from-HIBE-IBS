@@ -284,6 +284,16 @@ def _srgg_spec():
     return backend_spec()
 
 
+def _sageloli_spec(identifier, import_adapter):
+    try:
+        # Same observable candidate boundary as SRGG: a wheel that omits the
+        # research package reports a missing backend, never a substitute.
+        import experiments.research.candidates.sageloli as _sageloli_candidate  # noqa: F401
+        return import_adapter()
+    except ModuleNotFoundError as exc:
+        return _missing_candidate(identifier, exc)
+
+
 def _portable_specs():
     from ibme.hibe.abb10 import ABB10HIBE, ABB10PublicKey, ABB10MasterSecret, ABB10Level1SecretKey, ABB10Level2SecretKey, ABB10_DEBUG_PARAMS
     from ibme.hibe.mock import MockHIBE, MockHIBEPublicKey, MockHIBEMasterSecret, MockHIBELevel1SecretKey, MockHIBELevel2SecretKey
@@ -360,13 +370,26 @@ def _portable_specs():
     ]
     for identifier in ("lai-ideal-hibe", "gkr2025", "zhang2020", "abb-standard-selective", "chkp-standard"):
         specs.append(BackendSpec(identifier,"hibe","unavailable-v1",available=False,reason="public backend not delivered; no mock fallback"))
-    for identifier in ("yu2026","sageloli-sis","sageloli-rsis","foo-li","xie-ntru-ibs"):
+    for identifier in ("yu2026","foo-li","xie-ntru-ibs"):
         specs.append(BackendSpec(identifier,"ibs","unavailable-v1",available=False,reason="public backend not delivered; no mock fallback"))
     # The registration-proposal.json files are evidence, not executable config.
     # These explicit imports reuse delivered five-method backends/public wire.
     # "reference" is the existing suite spelling for their canonical-json-v1
     # encoding, not a second algorithm or a different signature representation.
     specs.extend((_wang_pw_spec(), _srgg_spec()))
+    # The delivered Sageloli SIS/RSIS research backends enter the shared
+    # selector through their HIBE-independent adapters; teaching parameters
+    # and archived public forgeries stay visible in each spec's reason.
+    def _sis_adapter():
+        from ibme.ibs.sageloli.registration import sis_backend_spec
+        return sis_backend_spec()
+
+    def _rsis_adapter():
+        from ibme.ibs.sageloli.registration import rsis_backend_spec
+        return rsis_backend_spec()
+
+    specs.extend((_sageloli_spec("sageloli-sis", _sis_adapter),
+                  _sageloli_spec("sageloli-rsis", _rsis_adapter)))
     from ibme.hibe.latte.registration import backend_spec as latte_spec
     from ibme.ibs.certified.registration import backend_spec as certified_spec, falcon_backend_spec
     # The existing route selector 'latte' names the delivered LATTE-3 engine;
