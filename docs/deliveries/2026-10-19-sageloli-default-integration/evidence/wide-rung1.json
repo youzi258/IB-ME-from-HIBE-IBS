@@ -1,0 +1,36 @@
+{
+  "profile": "sageloli-rsis-wide-research-v1",
+  "scope": "execution-domain scaling probe",
+  "rungs": [
+    {
+      "profile": "sageloli-rsis-wide-research-v1",
+      "k": 8,
+      "d": 8,
+      "l": 32,
+      "requested_sid_squared": 1099511627776,
+      "requested_ssign_squared": 1180591620717411303424,
+      "coefficient_dimension": 256,
+      "gadget_width": 64,
+      "security_claim": "none",
+      "backend_admitted": false,
+      "parameters_are_formal": false,
+      "admitted_sid_squared": 1099511627776,
+      "admitted_ssign_squared": 1180591620717411303424,
+      "width_doubled": false,
+      "root_relation": true,
+      "delegated_relation": true,
+      "sign_equation": true,
+      "split_norm_passed": true,
+      "timings_seconds": {
+        "root_generation_and_plan": 20.541,
+        "delegation_k_ring_draws": 2.616,
+        "user_plan": 102.943,
+        "signature_math": 1.104,
+        "total": 127.205
+      },
+      "rss_peak_mib_so_far": 680.8,
+      "continuous_stage_tv_certified": false,
+      "complete_ibs_backend": false
+    }
+  ]
+}

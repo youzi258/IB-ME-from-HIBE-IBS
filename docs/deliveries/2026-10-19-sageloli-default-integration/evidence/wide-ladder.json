@@ -1,0 +1,98 @@
+{
+ "profile": "sageloli-rsis-wide-research-v1",
+ "scope": "real scaling rungs plus fail-closed blocked attempts; no paper points run",
+ "security_claim": "none",
+ "backend_admitted": false,
+ "parameters_are_formal": false,
+ "passed_rungs": [
+  {
+   "profile": "sageloli-rsis-wide-research-v1",
+   "k": 9,
+   "d": 4,
+   "l": 22,
+   "requested_sid_squared": 68719476736,
+   "requested_ssign_squared": 73786976294838206464,
+   "coefficient_dimension": 88,
+   "gadget_width": 36,
+   "security_claim": "none",
+   "backend_admitted": false,
+   "parameters_are_formal": false,
+   "admitted_sid_squared": 68719476736,
+   "admitted_ssign_squared": 73786976294838206464,
+   "width_doubled": false,
+   "root_relation": true,
+   "delegated_relation": true,
+   "sign_equation": true,
+   "split_norm_passed": true,
+   "timings_seconds": {
+    "root_generation_and_plan": 0.683,
+    "delegation_k_ring_draws": 0.189,
+    "user_plan": 4.28,
+    "signature_math": 0.088,
+    "total": 5.24
+   },
+   "rss_peak_mib_so_far": 251.6,
+   "continuous_stage_tv_certified": false,
+   "complete_ibs_backend": false
+  },
+  {
+   "profile": "sageloli-rsis-wide-research-v1",
+   "k": 8,
+   "d": 8,
+   "l": 32,
+   "requested_sid_squared": 1099511627776,
+   "requested_ssign_squared": 1180591620717411303424,
+   "coefficient_dimension": 256,
+   "gadget_width": 64,
+   "security_claim": "none",
+   "backend_admitted": false,
+   "parameters_are_formal": false,
+   "admitted_sid_squared": 1099511627776,
+   "admitted_ssign_squared": 1180591620717411303424,
+   "width_doubled": false,
+   "root_relation": true,
+   "delegated_relation": true,
+   "sign_equation": true,
+   "split_norm_passed": true,
+   "timings_seconds": {
+    "root_generation_and_plan": 20.541,
+    "delegation_k_ring_draws": 2.616,
+    "user_plan": 102.943,
+    "signature_math": 1.104,
+    "total": 127.205
+   },
+   "rss_peak_mib_so_far": 680.8,
+   "continuous_stage_tv_certified": false,
+   "complete_ibs_backend": false
+  }
+ ],
+ "blocked_attempts": [
+  {
+   "k": 16,
+   "d": 16,
+   "l": 32,
+   "stage": "root certificate prepare (512 dimensions)",
+   "error": "private rational resource limit exceeded (8192-bit budget)"
+  },
+  {
+   "k": 16,
+   "d": 16,
+   "l": 20,
+   "stage": "user plan (576 dimensions)",
+   "error": "private rational resource limit exceeded (8192-bit budget)"
+  },
+  {
+   "k": 16,
+   "d": 16,
+   "l": 24,
+   "stage": "user plan (640 dimensions)",
+   "error": "private rational resource limit exceeded (8192-bit budget)"
+  }
+ ],
+ "measured_certified_ceiling": {
+  "root_plan_dimensions": 384,
+  "user_plan_dimensions": 320,
+  "note": "root 384 ((16,16,24) root stage) passed; user 320 ((8,8,32)) passed; all >=512-dimension attempts failed closed"
+ },
+ "conclusion": "within the shared exact-arithmetic machinery and its default certified budgets, no configuration approaches the paper points (root 270336 / user 403456 dimensions); execution-domain rework is required"
+}

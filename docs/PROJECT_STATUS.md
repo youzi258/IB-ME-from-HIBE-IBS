@@ -1,6 +1,6 @@
 # 当前进度与并行任务
 
-更新：2026-10-19（新增主组合完整流程热点与运行位置消融；Sageloli SIS/RSIS完成默认接入、LATTE配对与论文参数执行域核对，默认接入IBS增至8个；ABB10／CHKP接手标准、IBS接入盘点与C64B完整实测保留；PR43／48已合入e102f5f，PR46展示卡已合入05eec49，PR47报告材料随本批接收。PR45已关闭且未合并）。本文是**唯一的当前进度和任务排序入口**。根规范负责长期契约；带日期的研究报告、交付记录与旧任务书只证明各自版本的事实，不继续发布全项目“下一轮”指令。
+更新：2026-10-19（新增主组合完整流程热点与运行位置消融；Sageloli SIS/RSIS完成默认接入、LATTE配对、论文Table6参数卡与宽域阶梯实测（认证上限root 384/user 320维度，论文点外推10^3—10^5年），默认接入IBS增至8个；ABB10／CHKP接手标准、IBS接入盘点与C64B完整实测保留；PR43／48已合入e102f5f，PR46展示卡已合入05eec49，PR47报告材料随本批接收。PR45已关闭且未合并）。本文是**唯一的当前进度和任务排序入口**。根规范负责长期契约；带日期的研究报告、交付记录与旧任务书只证明各自版本的事实，不继续发布全项目“下一轮”指令。
 
 **最新分工（2026-10-18 用户明确）**：ABB10与CHKP交由队长安排的其它AI，按[执行标准与接手任务](workplans/2026-10-18-ABB10与CHKP执行标准.md)分别认领。保留原128比较模型目标，参数、真实完整运行、部署与安全声明分开；理论继续引用，不新增基础证明。各自首批时间盒及共享文件边界见标准，本线程停止A扩维不自动暂停已明确承接者的工作。统筹同步核对IBS是否真正登记/CLI/配对及默认参数问题，不因登记存在就判定安全可用。三条暂缓路线继续暂缓。
 
@@ -32,7 +32,7 @@ ABB后续已完成[完整基表示与消费者准入核验](research/team-a-deli
 
 **候选实现盘点（2026-10-18）**：按19条候选目录及完整独立原语研究后端口径，HIBE为3/8（CHKP、ABB-ROM、LATTE），IBS为10/11（Luo矩阵/模格、SRGG、Yu、Sageloli SIS/RSIS、Foo–Li、Wang–PW、BNN-ML-DSA、BNN-Falcon）。合计13/19；MP12实现变体不另增论文路线。未完成的6条为Lai、Zhang、Xie和继续暂缓的GKR/ABB标准模型/CHKP标准模型；Xie已有修订研究核但尚非完整共同IBSBackend。研究后端完成、默认登记/CLI、真实HIBE配对、目标参数与公平评测分别统计，不能将13条写为13套已完成IB-ME组合。
 
-**IBS接入／参数最新盘点**：[逐项清单与改善顺序](deliveries/2026-10-18-ibs-inventory/README.md)固定`fc1f342`核对10个完整研究IBS，默认接入6个。2026-10-19[Sageloli默认接入与LATTE配对](deliveries/2026-10-19-sageloli-default-integration/README.md)把默认接入增至8个：Sageloli SIS/RSIS进入公共选择器/CLI，两条LATTE＋Hybrid＋BYTEAUTH配对各34项检查通过，论文RSIS大参数执行域静态核对给出双重壁垒（参数门＋展开表示≥1206 GiB），仅Foo–Li、Yu两项接入仍待。至少六条路线的现有小参数已有公开伪造，不能作为安全代表；本批只引用既有记录，未新增攻击。Foo–Li临时registry容量预检通过，Yu因1—4 B容量正确拒绝。SRGG除默认degree8外，主分支已有structured及论文n512三组独立实跑，不能称只有小参数；其参数解释、实际采样和新组合仍须分别处理，不新开基础证明任务。
+**IBS接入／参数最新盘点**：[逐项清单与改善顺序](deliveries/2026-10-18-ibs-inventory/README.md)固定`fc1f342`核对10个完整研究IBS，默认接入6个。2026-10-19[Sageloli默认接入与LATTE配对](deliveries/2026-10-19-sageloli-default-integration/README.md)把默认接入增至8个：Sageloli SIS/RSIS进入公共选择器/CLI，两条LATTE＋Hybrid＋BYTEAUTH配对各34项检查通过，论文RSIS大参数静态核对给出双重壁垒（参数门＋展开表示≥1206 GiB），同批补论文Table6完整参数卡（含宽度，log底=2）与宽域阶梯实测：共享精确机械认证上限root 384/user 320维度，≥512维全部fail-closed，论文点按实测指数外推需10^3—10^5年，环原生改造方案已列入交付文档后续工程；仅Foo–Li、Yu两项接入仍待。至少六条路线的现有小参数已有公开伪造，不能作为安全代表；本批只引用既有记录，未新增攻击。Foo–Li临时registry容量预检通过，Yu因1—4 B容量正确拒绝。SRGG除默认degree8外，主分支已有structured及论文n512三组独立实跑，不能称只有小参数；其参数解释、实际采样和新组合仍须分别处理，不新开基础证明任务。
 
 **A0/A3当前工程交付**：已有[3m大q分块原型](research/team-a-delivery/2026-10-18-3m-feasibility/README.md)，PR40合入`4c6955f`；[288组高基数筛选](research/team-a-delivery/2026-10-18-radix-screen/README.md)随PR41合入`d861fe9`，保留66组候选，目标n4096/b4096/q93父R约9 GiB、当前探针payload约19.197 GiB；b1024/q89模型余量候选同样保留。新增[有界高基数实跑](research/team-a-delivery/2026-10-18-bounded-radix/README.md)，代码`7032c3b`/CLI修正`949bf91`：显式版本化的任意基数公开kernel/真实GPV、完整扰动、独立父R、256叶及codec接通；系统随机n2/b1024和n2/n4/n8/b4096均用q93成功，四组新进程恢复0熵，原二进制n2/q40状态亦恢复。n8父约4.15秒、256叶约44.78秒、RSS观察约225 MiB；参数不同于旧q80二进制，不报系统加速倍数。最终A专项261 pass/0skip、目录25 pass；初次CLI参数转接失败发生于私有工作前，已修并留证。PR48另提供待审的独立高基数种子KEM和n2真实功能测试；仍无高基数完整HIBEBackend、Hybrid/CLI组合、n4096私钥或目标时间/RSS，不据硬件或运行门否定算法。
 
