@@ -1,0 +1,209 @@
+{
+  "pages": 27,
+  "all_A4": true,
+  "fonts": {
+    "/IHAIZV+FandolSong-Regular-Identity-H": true,
+    "/BZIVMZ+LMRoman12-Regular-Identity-H": true,
+    "/DZGKAF+MSAM10": true,
+    "/IXFAWU+LMRoman17-Regular-Identity-H": true,
+    "/TQTHRL+FandolHei-Regular-Identity-H": true,
+    "/YEUUOC+FandolSong-Bold-Identity-H": true,
+    "/AKHCZK+LMRoman12-Bold-Identity-H": true,
+    "/GJMHKB+CMMI12": true,
+    "/NITCSQ+CMSY8": true,
+    "/UBBQTN+CMR12": true,
+    "/LPOGEQ+CMSY10": true,
+    "/VDVGTR+LMRoman10-Regular-Identity-H": true,
+    "/CAFSZL+LMRoman10-Bold-Identity-H": true,
+    "/GQYLQL+CMMI10": true,
+    "/DDIEWW+LMSans10-Regular-Identity-H": true,
+    "/WXMALW+CMMI8": true,
+    "/XKCNTN+CMSY6": true,
+    "/AIBCOH+CMR10": true,
+    "/FKPJSN+LMSans12-Regular-Identity-H": true,
+    "/PVTTLK+LMRoman8-Regular-Identity-H": true,
+    "/ALHFJP+CMR8": true,
+    "/FBXEDP+MSBM10": true,
+    "/ZXNXFB+CMEX10": true,
+    "/JAGKKY+LMRomanDemi10-Regular-Identity-H": true,
+    "/NOMARO+LMSans8-Regular-Identity-H": true,
+    "/BKINPV+CMR6": true,
+    "/KPXLOM+LMRoman6-Regular-Identity-H": true,
+    "/KNCMHP+CMMI6": true,
+    "/UTACNV+LMMono12-Regular-Identity-H": true,
+    "/FZDNHS+LMRoman10-Italic-Identity-H": true
+  },
+  "all_fonts_embedded": true,
+  "blank_pages": [],
+  "visual_review": "all pages reviewed; final repagination reviewed; no overflow, overlap, missing glyphs or blank pages observed",
+  "page_details": [
+    {
+      "page": 1,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 65
+    },
+    {
+      "page": 2,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 270
+    },
+    {
+      "page": 3,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 444
+    },
+    {
+      "page": 4,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 2622
+    },
+    {
+      "page": 5,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 1628
+    },
+    {
+      "page": 6,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 1460
+    },
+    {
+      "page": 7,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 344
+    },
+    {
+      "page": 8,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 360
+    },
+    {
+      "page": 9,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 445
+    },
+    {
+      "page": 10,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 430
+    },
+    {
+      "page": 11,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 514
+    },
+    {
+      "page": 12,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 693
+    },
+    {
+      "page": 13,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 483
+    },
+    {
+      "page": 14,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 427
+    },
+    {
+      "page": 15,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 527
+    },
+    {
+      "page": 16,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 766
+    },
+    {
+      "page": 17,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 786
+    },
+    {
+      "page": 18,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 500
+    },
+    {
+      "page": 19,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 472
+    },
+    {
+      "page": 20,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 549
+    },
+    {
+      "page": 21,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 748
+    },
+    {
+      "page": 22,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 681
+    },
+    {
+      "page": 23,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 142
+    },
+    {
+      "page": 24,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 331
+    },
+    {
+      "page": 25,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 145
+    },
+    {
+      "page": 26,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 118
+    },
+    {
+      "page": 27,
+      "width": 595.280029296875,
+      "height": 841.8900146484375,
+      "chars": 1558
+    }
+  ],
+  "pdf_sha256": "cefbf7b46e4441ddb86c0511040ba15ff03f4f2b4d938f526121eae1cb500894",
+  "source_pdf_binding": "build-manifest SHA256 matched",
+  "content_checks_passed": 97,
+  "old_report_checks_passed": 160,
+  "submission_ready": "expected single WIP failure (1/98)",
+  "compiler": "Tectonic 0.17.0; nonfatal Fontconfig default-configuration diagnostic"
+}

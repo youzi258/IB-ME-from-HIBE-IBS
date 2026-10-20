@@ -143,7 +143,7 @@
 
 本作品实现相互独立的HIBE与IBS组件，并以统一装配层形成三组完整实例。系统使用32字节种子的混合封装承载应用消息，以一次性字节认证覆盖完整内层密文，并支持规范序列化、固定发钥状态和跨进程恢复。围绕真实瓶颈，作品进一步完成环结构表示与低秩采样、SRGG四类对象无损编码、Lai接收会话复用以及同参数部署消融。
 
-实测表明，SRGG论文参数下主状态可缩至原JSON表示的约五分之一，单根Lai会话实验在一次真实委派后将后续单条解密中位数降至28.57秒，但需509.55秒准备和约34.73 MiB叶钥状态；以Windows源码运行为基线，WSL同参数部署的完整加密与解密中位时间比分别为18.87和4.59。作品据此给出优化收益、准备代价与适用边界，而不把不同安全目标或不同环境的数值作简单排名。\\
+实测表明，SRGG论文参数下主状态可缩至原JSON表示的约五分之一，单根Lai会话实验在一次真实委派后将后续单条解密中位数降至28.57秒，但需509.55秒准备和约34.73 MiB叶钥状态；统一WSL环境中的部署位置消融，以Windows盘源码为基线，Linux盘同一安装包的完整加密与解密中位时间比分别为18.87和4.59。作品据此给出优化收益、准备代价与适用边界，而不把不同安全目标或不同环境的数值作简单排名。\\
 \hline
 \textbf{关键词（五个）：}身份基匹配加密；格密码；分层身份基加密；身份基签名；系统优化\\
 \hline
@@ -161,7 +161,7 @@
 
 本作品围绕上述缺口完成抗量子IB-ME通用框架及三组真实实例。框架将HIBE、IBS和公共协议分层，固定身份路径为“接收者—发送者”，在装配前检查能力与容量。协议层以32字节种子进入HIBE，使用混合加密承载可变长应用消息，并以一次性签名认证完整内层密文字节。规范编码、域分隔、严格解析和可恢复发钥状态共同保证不同组件可以在不读取彼此私有矩阵或陷门的条件下组合。
 
-作品的实现优化集中在四个真实瓶颈。Sageloli环IBS以多项式和低秩频域计算避免展开巨型旋转矩阵，使论文PARAM-I与PARAM-II均完成真实生命周期；SRGG对公钥、主状态、用户密钥和签名设计无损紧凑编码，三档参数下分别获得约2.55至5.46倍的对象级缩减；单根Lai接收会话实验复用已经验证的叶钥，把后续解密中位数由526.27秒量级降至28.57秒，同时如实保留509.55秒准备与约34.73 MiB状态成本；同参数部署消融对照Windows源码及两地安装包；以Windows源码为基线，WSL安装包完整加密和解密的时间比分别约18.87和4.59。
+作品的实现优化集中在四个真实瓶颈。Sageloli环IBS以多项式和低秩频域计算避免展开巨型旋转矩阵，使论文PARAM-I与PARAM-II均完成真实生命周期；SRGG对公钥、主状态、用户密钥和签名设计无损紧凑编码，三档参数下分别获得约2.55至5.46倍的对象级缩减；单根Lai接收会话实验复用已经验证的叶钥，把后续解密中位数由526.27秒量级降至28.57秒，同时如实保留509.55秒准备与约34.73 MiB状态成本；统一WSL环境中的部署位置消融对照Windows盘源码及两地安装包；以Windows盘源码为基线，Linux盘同一安装包完整加密和解密的时间比分别约18.87和4.59。
 
 实验分别报告独立根、同根重复、运行环境、消息与身份长度、对象尺寸及计时边界。三组代表承担不同说明任务：A用于现场交互与完整工程基线，B展示原生模块格IBS及无损编码，C展示另一类HIBE、环IBS和长会话摊销。本文不把不同环境或不同安全目标下的绝对时间解释为等条件优劣，而是从完整协议成本、优化作用位置和实际使用方式说明系统价值。
 
@@ -176,7 +176,7 @@ Identity-Based Matchmaking Encryption (IB-ME) releases a plaintext only when bot
 
 This work implements a common post-quantum IB-ME framework with replaceable HIBE and IBS components and three complete instantiations. The protocol fixes the hierarchy path as receiver then sender, checks component capabilities before assembly, encapsulates a 32-byte seed for hybrid encryption, and authenticates the complete inner ciphertext with a one-time byte-authentication layer. Canonical encoding, domain separation, strict parsing, and recoverable authority state allow components to be replaced without exposing their private matrices or trapdoors to the protocol layer.
 
-The implementation addresses four measured bottlenecks. A structured polynomial representation and low-rank frequency-domain sampling make the target Sageloli ring-IBS parameters executable. Lossless SRGG encodings reduce public, authority, user-key, and signature objects by factors of approximately 2.55 to 5.46 across three parameter sets. A single-root receiver-session experiment amortizes a real Lai delegation: subsequent decryption has a median of 28.57 seconds after a 509.55-second preparation step and retains about 34.73 MiB of leaf-key state. A controlled deployment study compares Windows source execution with identical installation packages on Windows and WSL. Relative to the Windows source baseline, the WSL deployment has observed complete-operation time ratios of 18.87 for encryption and 4.59 for decryption.
+The implementation addresses four measured bottlenecks. A structured polynomial representation and low-rank frequency-domain sampling make the target Sageloli ring-IBS parameters executable. Lossless SRGG encodings reduce public, authority, user-key, and signature objects by factors of approximately 2.55 to 5.46 across three parameter sets. A single-root receiver-session experiment amortizes a real Lai delegation: subsequent decryption has a median of 28.57 seconds after a 509.55-second preparation step and retains about 34.73 MiB of leaf-key state. Within the same WSL Sage/Python environment, a deployment study contrasts source and wheel files on a Windows mount with the same wheel on the Linux file system. Relative to the mounted-source baseline, the Linux-file-system deployment has complete-operation time ratios of 18.87 for encryption and 4.59 for decryption.
 
 The evaluation records environments, identity and message lengths, independent roots, repeated operations, object sizes, and timing boundaries separately. The three representative systems serve distinct purposes: interactive demonstration, a native module-lattice IBS with compact encoding, and a second HIBE with a native ring IBS and session amortization. Results from different environments or security targets are therefore not treated as a single performance ranking.
 
@@ -432,7 +432,7 @@ C & Lai C2／Sageloli-I & 32 B & 8 MiB & 3,227,824 B & 3,924 B \\
 \section{规范状态、恢复与职责边界}
 公开参数、主状态、双方密钥和密文均有独立版本域、对象类别和唯一字段顺序。主状态为同一身份保存固定发钥结果；发钥开始但未能确定完成时留下不可自动重试的状态，防止崩溃后以同一身份重新抽取另一把密钥。应用层在持有本地锁期间先提交主状态，再原子发布用户密钥；恢复后重新核对配置、公钥摘要、身份和原语方程。
 
-这些措施提供可重复使用和故障后保守恢复，但本地明文状态不等同于防回滚硬件或分布式唯一发钥服务。密码学来源与本作品工作也保持分开：两层HIBE与IBS的组合定理由文献~[1]给出，LATTE、Lai、SRGG、Sageloli和BNN转换分别引用其原文；本作品完成的是统一装配、单射编码、Hybrid与完整字节认证、状态事务、真实后端接线和跨层验收。
+上述事务顺序支持故障后保守恢复。本地明文状态仍需防回滚保护；跨节点唯一发钥需要独立协调服务。
 
 \chapter{已实现原语与三组实例化}
 
@@ -502,7 +502,7 @@ Lai等的理想格陷门方案~[3]同样使用两层身份，但其陷门组织�
 \]
 一级发钥把$\mathbf a_{\mathrm{id}_1}$追加到公开矩阵，二级委派再追加$\mathbf a_{\mathrm{ID}}$；因而密钥随层数线性增长，而不是复制一个固定大小标签。
 
-加密时组合公开短矩阵
+每次加密新采样短矩阵$R_0,R_1,R_2$，再组合
 \[
   R_{\mathrm{ID}}=R_0+\mathrm{id}_1R_1+\mathrm{id}_2R_2,
   \qquad \mathbf e_1=-\mathbf e_0^{\mathsf T}R_{\mathrm{ID}},
@@ -514,7 +514,7 @@ Lai等的理想格陷门方案~[3]同样使用两层身份，但其陷门组织�
   \mathbf v=(\mathbf a_{\mathrm{ID}}+h'\mathbf g)\mathbf s
            +p\mathbf e_1+\mathbf m.
 \]
-叶钥解密先检查$h_2+h'$是单位，再由$\mathbf y=\mathbf u^{\mathsf T}R_2+\mathbf v$进行Babai反演，并检查误差模$p$的结构后输出消息。这里$p=2$，本作品只把32字节Hybrid种子编码到消息位置。
+叶钥解密先检查$h_2+h'$是单位，再由叶陷门$T_2$计算$\mathbf y=\mathbf u^{\mathsf T}T_2+\mathbf v$并进行Babai反演，并检查误差模$p$的结构后输出消息。其中$h_2$为叶钥的单位标签，$T_2$与加密时新采样的$R_2$不同。这里$p=2$，本作品只把32字节Hybrid种子编码到消息位置。
 
 \subsection{C2参数和实现补全}
 代表C固定使用C2快照
@@ -606,7 +606,7 @@ C & Lai C2 & Sageloli PARAM-I & 3924 B & 3227824 B & 目标规模环实现与会
 \end{tabularx}
 \end{table}
 
-应用上限已经扣除协议域、长度帧、一次性承诺和IBS签名；它不是HIBE短消息上限。A、B、C的HIBE内层都只加密32字节种子，Hybrid总载荷分别为64 KiB、128 KiB和8 MiB。由此可见，C虽然配置了最大的Hybrid包络，但巨型环签名占用了绝大部分空间，留给应用消息的有效容量反而最小。
+应用上限已经扣除协议域、长度帧、一次性承诺和IBS签名；它不是HIBE短消息上限。A、B、C的HIBE内层都只加密32字节种子，Hybrid总载荷分别为64 KiB、128 KiB和8 MiB。C的约3.08 MiB签名需要较大的Hybrid包络；3924字节应用上限则由IBS的4096字节签名输入预算扣除协议编码开销得到，并非8 MiB载荷空间已经耗尽。
 
 \chapter{面向目标规模与重复使用的关键优化}
 
@@ -641,7 +641,7 @@ Sageloli论文参数中$d=2048$、$\ell=132$；如果把一个环元素展开成
 \[
   A=[\bar A\mid g-\bar A R],\qquad A T_{\mathrm{id}}=H_1(\mathrm{id})-g
 \]
-，但对象中不出现这些多项式的稠密旋转展开。这里的环关系与陷门采样分别对应原方案和格陷门工具~[5,8]。
+，但对象中不出现这些多项式的稠密旋转展开。实现采用原方案~[5]及其格陷门采样工具~[8]。
 
 \subsection{频域低秩平方根}
 令
@@ -762,9 +762,9 @@ PARAM-III compact & 49238 & 69074 & 60880 & 26264 \\
 三根同参数完整流程消融中，A的解密根内收益比中位数为1.086，逐根范围0.992--1.339；B的加密收益比中位数为1.030，范围1.009--1.921。结果确认原生证书验签次数由每条2次降为1次、SRGG每根出现1次计划miss和4次hit，但有限样本有回退和明显波动，不能宣称稳定翻倍。这一负面对照说明：减少一个局部调用不等于端到端时间按相同比例下降，最终报告只把它们作为有界准备复用，而不作为核心性能结论。
 
 \section{同参数部署消融}
-代表A每次建立原生适配器都要读取、哈希并核对冻结源码。剖析显示5次完整加密触发515次\texttt{read\_bytes}，Windows盘中的仓库源码累计约1.073秒；同一安装包置于WSL Linux文件系统后，这部分约为0.011秒。优化没有跳过源码摘要、ABI或二进制检查，而是按wheel摘要建立只读运行副本，并在每次复用前核对546个内容文件。
+代表A每次建立原生适配器都要读取、哈希并核对冻结源码。剖析显示5次完整加密触发515次\texttt{read\_bytes}，在宿主挂载目录累计约1.073秒；同一安装包置于Linux本地文件系统后，这部分约为0.011秒。优化没有跳过源码摘要、ABI或二进制检查，而是按wheel摘要建立只读运行副本，并在每次复用前核对546个内容文件。
 
-部署实验固定算法、参数、三份状态、原生引擎和同一个wheel，对照Windows仓库源码、Windows安装包和WSL安装包三种运行方式。两地安装包内容相同，三路按轮转和镜像顺序测量，每路共30次完整加密和30次完整解密，结果见表~\ref{tab:placement-ablation}。
+三路实验均由同一WSL Sage/Python运行，固定算法、参数、三份状态和原生引擎；对照Windows盘上的源码、Windows盘上的安装包和WSL Linux文件系统中的同一安装包。这里的Windows/WSL标签指文件放置位置，不是两套操作系统解释器。每路按轮转与镜像顺序执行，共30次完整加密和30次完整解密，结果见表~\ref{tab:placement-ablation}。
 
 \begin{table}[htbp]
 \centering
@@ -775,14 +775,14 @@ PARAM-III compact & 49238 & 69074 & 60880 & 26264 \\
 \toprule
 \rowcolor{black!8} 运行方式 & 加密中位数/ms & 解密中位数/ms & 每项观察数 \\
 \midrule
-Windows仓库源码 & 206.087 & 258.640 & 30 \\
-同一wheel，Windows安装目录 & 195.310 & 250.577 & 30 \\
+Windows盘源码，WSL挂载 & 206.087 & 258.640 & 30 \\
+同一wheel，Windows盘WSL挂载 & 195.310 & 250.577 & 30 \\
 同一wheel，WSL Linux文件系统 & 10.921 & 56.360 & 30 \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-相对Windows源码，WSL安装包完整加密与解密的中位时间比分别为18.87和4.59；只比较两地同一wheel时则为17.88和4.45。完整密文仍为142036--142153字节，每次加密继续使用新系统随机数，原语调用数、校验次数和wire均未改变。因此这里得到的是本机部署形态的端到端差异，不是LATTE或ML-DSA数学运算本身获得相同倍数的加速；具体加载与文件访问贡献仍需结合阶段测量解释。
+相对Windows源码，WSL安装包的加密与解密时间比分别为18.87和4.59；同一wheel的两种位置对照则为17.88和4.45。完整密文仍为142036--142153字节，每次加密继续使用新系统随机数，原语调用数、校验次数和wire均未改变。剖析批次用于定位热点，三根正式计时用于衡量端到端收益。该结果反映本机部署位置的影响；不能把全部差异归因于单一文件操作，也不能当作密码算法运算加速或Windows与Linux解释器的速度比较。
 
 \section{优化结论：收益必须和状态一起报告}
 四类工作分别解决“存不下稠密矩阵”“对象表示冗长”“固定身份对重复委派”和“固定源码反复慢读”问题。它们共同遵守三条边界：不降低论文参数，不省略验签或密文检查，不缓存随机输出。相应代价也保留在结果中：低秩采样需要数值误差与正定门，compact需要额外编解码，接收会话保存秘密叶钥，部署优化需要固定安装包和清单。这样的分层报告使评委能够判断某项收益是否适用于自己的使用场景，而不是只看到脱离条件的单个倍数。
@@ -934,7 +934,7 @@ A还在另一环境中使用3个独立CSPRNG根，每根生成2个接收身份�
 A证书正结果复用 & 解密；3根同根开关配对 & 原生验签调用每条由2次减为1次；收益比中位数1.086，范围0.992--1.339 & 有界公开语句LRU；每条消息验签仍执行，一根轻微回退 \\
 B采样计划复用 & 加密；3根同根开关配对 & 每根1次miss、4次hit，准备0.178--0.182 s；收益比中位数1.030，范围1.009--1.921 & 默认保留2条秘密相关计划；签名每次仍用新随机，小样本波动明显 \\
 C接收会话 & 解密；1根、2次无状态、1次准备、3次会话操作 & 无状态中位数526.272 s；准备509.548 s；后续解密中位数28.568 s & 进程内保留36414052 B叶钥；含准备的首条538.115 s，高于无状态中位数 \\
-A运行位置 & 三种部署，每路加解密各30次 & 相对Windows源码，WSL安装包加密／解密时间比为18.87／4.59 & 改变文件访问与运行位置，不改变格算法或wire \\
+A运行位置 & 统一WSL运行时下三种文件位置，每路加解密各30次 & Windows盘源码为基线，Linux本地文件系统中同一wheel的加密／解密时间比为18.87／4.59 & 只改变文件放置与访问路径，不改变运行时、格算法或wire \\
 \bottomrule
 \end{tabularx}
 \end{table}

@@ -20,7 +20,7 @@
 - 为展示、总结和最终发布批次保留可继续扩写的结构；
 - 建立面向新稿的独立构建和检查入口，旧稿检查器不用于强迫保留已经删除的内容。
 
-这三批没有修改原语、协议代码、参数、安全元数据或历史实验，也没有运行新的密码学实验。三组仍为A（LATTE＋BNN/ML-DSA-44）、B（LATTE＋SRGG PARAM-I compact）和C（Lai C2＋Sageloli RSIS v3 PARAM-I）；已完成配置沿用当前安全说明。第4、5章引用的准备复用、同机主表、安装验收和随机批次均来自已固定的公开数据，不把其改写成当前版本新实跑。
+这三批没有修改原语、协议代码、参数、安全元数据或历史实验，也没有运行新的密码学实验。三组仍为A（LATTE＋BNN/ML-DSA-44）、B（LATTE＋SRGG PARAM-I compact）和C（Lai C2＋Sageloli RSIS v3 PARAM-I）；已完成配置沿用当前安全说明。第4章采用已合并优化工作的固定归档数据，第5章使用同机主表、安装验收和随机批次的固定公开数据；实测、单根摊销和公式外推分别解释，不改写成当前版本新实跑。
 
 ## 构建与检查
 
@@ -44,6 +44,6 @@ git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
 
 ## 本轮接收修订
 
-[PR79审查](../../deliveries/2026-10-20-pr79-review/README.md)修正了KiB单位、部署基线、身份匹配公式、会话状态及Web展示范围，补入相关工作引用和同机实验条件；时间表取自原始主表并按三位有效数字排版。在前两批基础上，第三批已将实验章扩展为6页的数据分层、主结果、功能矩阵、消融和边界分析；当前PDF为33页A4，展示章与最终收口仍待继续重写。
+[PR79审查](../../deliveries/2026-10-20-pr79-review/README.md)修正了KiB单位、身份匹配公式、会话状态及Web展示范围；[PR80审查](../../deliveries/2026-10-20-pr80-review/README.md)进一步区分Lai新采样掩码与叶陷门、C的IBS消息容量和Hybrid空间，以及统一WSL运行时中的部署位置消融。在这些修订上，第三批将实验章扩展为6页的数据分层、主结果、功能矩阵、消融和边界分析；当前PDF为32页A4，展示章与最终收口仍待续写。
 
-`build_pdf.py`生成[构建摘要](build-manifest.json)，`check_report.py --require-pdf`核对源稿与PDF精确摘要，不再根据Git检出时间判定过期。第三批检查器还从原始主表重新核对九个A/B时间行、十个长度／wire行、随机批次计数和A/B/C消融数值。当前120项内容检查与130项PDF绑定检查通过；`--submission-ready`仍因后续三批未完成而预期失败，这不是可上传的最终报告。
+`build_pdf.py`生成[构建摘要](build-manifest.json)，`check_report.py --require-pdf`按源稿与PDF内容摘要判断对应关系，不依赖检出时间。第三批检查器还从原始主表重新核对九个A/B时间行、十个长度／wire行、随机批次计数和A/B/C消融数值。当前124项内容检查、134项PDF绑定检查和32页逐页检查通过；`--submission-ready`仍因后续三批未完成而预期失败，这不是可上传的最终报告。

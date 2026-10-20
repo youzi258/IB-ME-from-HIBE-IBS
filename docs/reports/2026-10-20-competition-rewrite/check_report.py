@@ -119,7 +119,7 @@ def main() -> int:
         r"[A,h]z=H_2(P,\rho,s,\eta,M')\pmod q",
         r"L=\sqrt a I-",
         "36414052字节",
-        "Windows仓库源码",
+        "宿主挂载目录",
         "A、B各3个独立系统CSPRNG根",
         "同根重复",
         "60/60",
@@ -248,6 +248,10 @@ def main() -> int:
                   f"A、B完整密文分别约{kib[0]} KiB和{kib[1]} KiB" in text)
     checks.expect("deployment baseline names explicit", "相对Windows源码，WSL安装包" in text)
     checks.expect("prepared state is process-local", "进程内保留的叶钥状态" in text)
+    checks.expect("Lai masks are fresh encryption randomness", "每次加密新采样短矩阵" in text)
+    checks.expect("C application capacity comes from IBS input", "3924字节应用上限则由IBS的4096字节" in text)
+    checks.expect("deployment uses a common WSL runtime", "三路实验均由同一WSL Sage/Python运行" in text)
+    checks.expect("same-wheel deployment ratio kept distinct", "同一wheel的两种位置对照则为17.88和4.45" in text)
 
     for token in ("github.com/youzi258", "youzi258", "/home/", "C:\\Users\\"):
         checks.expect(f"anonymous source excludes {token}", token not in text)
