@@ -20,6 +20,11 @@ OLD_PDF = OLD_SOURCE.with_suffix(".pdf")
 REVIEW_FACTS = ROOT / "docs/reports/2026-10-20-revision-review/evidence-facts.json"
 SELECTION = ROOT / "docs/deliveries/2026-10-19-report-three-selection/selection.json"
 TEMPLATE_FACTS = ROOT / "docs/competition/2026/template-facts.json"
+MASTER_TABLE = ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json"
+RANDOM_BATCH = ROOT / "docs/research/2026-10-19-primary-random-batch/receipt.json"
+OPTIMIZATION_SUMMARY = ROOT / "docs/research/2026-10-20-multi-backend-optimization/verified-summary.json"
+MESSAGE_WIRE_FIGURE = ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png"
+OPTIMIZATION_FIGURE = ROOT / "docs/research/2026-10-20-multi-backend-optimization/optimization.png"
 
 
 class Checks:
@@ -48,6 +53,9 @@ def main() -> int:
     selection = json.loads(SELECTION.read_text(encoding="utf-8"))
     template = json.loads(TEMPLATE_FACTS.read_text(encoding="utf-8"))
     review = json.loads(REVIEW_FACTS.read_text(encoding="utf-8"))
+    master = json.loads(MASTER_TABLE.read_text(encoding="utf-8"))
+    random_batch = json.loads(RANDOM_BATCH.read_text(encoding="utf-8"))
+    optimization = json.loads(OPTIMIZATION_SUMMARY.read_text(encoding="utf-8"))
 
     checks.expect("official template schema", template.get("schema") == "IBME-OFFICIAL-COMPETITION-TEMPLATE/1")
     checks.expect("selection schema", selection.get("schema") == "IBME-REPORT-THREE-SELECTION/1")
@@ -87,9 +95,9 @@ def main() -> int:
     checks.expect("Chinese keywords", "关键词：" in text)
     checks.expect("English keywords", "Keywords:" in text)
     checks.expect("table of contents", r"\tableofcontents" in text)
-    checks.expect("technical subsection hierarchy", text.count(r"\subsection{") >= 18)
-    checks.expect("protocol and optimization figures", text.count(r"\begin{figure}") >= 2)
-    checks.expect("technical comparison tables", text.count(r"\begin{table}") >= 10)
+    checks.expect("technical subsection hierarchy", text.count(r"\subsection{") >= 19)
+    checks.expect("protocol, experiment and optimization figures", text.count(r"\begin{figure}") >= 4)
+    checks.expect("technical comparison tables", text.count(r"\begin{table}") >= 15)
 
     required_fragments = (
         "LATTE-3＋BNN/ML-DSA-44",
@@ -112,6 +120,13 @@ def main() -> int:
         r"L=\sqrt a I-",
         "36414052字节",
         "Windows仓库源码",
+        "A、B各3个独立系统CSPRNG根",
+        "同根重复",
+        "60/60",
+        "有效外层／无效内层",
+        "3924 B最大应用消息尚未完成诚实往返",
+        "不用来估计总体失败概率",
+        "项目随机源零新增输出",
     )
     for fragment in required_fragments:
         checks.expect(f"required report fact: {fragment}", fragment in text)
@@ -134,16 +149,95 @@ def main() -> int:
     checks.expect("PR numbers absent", re.search(r"\bPR\s*#?\d+\b", text) is None)
     checks.expect("evidence IDs absent", re.search(r"\bE\d{2}\b", text) is None)
 
-    master = json.loads((ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json").read_bytes())
     def significant(value):
         places = max(0, 2 - math.floor(math.log10(abs(value))))
         return f"{value:.{places}f}"
     for title, key in (("系统建立", "setup"), ("发送者发钥", "sender-key"),
-                       ("接收者发钥", "receiver-key"), ("热加密", "warm-encrypt"),
-                       ("热解密", "warm-decrypt"), ("恢复后解密", "restored-decrypt")):
+                       ("接收者发钥", "receiver-key"), ("首次加密", "cold-encrypt"),
+                       ("首次解密（含叶钥生成）", "first-decrypt-with-leaf-generation"),
+                       ("热加密", "warm-encrypt"), ("热解密", "warm-decrypt"),
+                       ("新进程对象恢复", "restore-objects"),
+                       ("恢复后解密", "restored-decrypt")):
         values = [master["rows"][label]["benchmark"]["timing_seconds"][key]["median"] for label in ("A", "B")]
         checks.expect("measured A/B row: " + title,
                       f"{title} & {significant(values[0])} & {significant(values[1])}" in text)
+
+    object_titles = {
+        "public.bin": "协议公钥/B",
+        "master.bin": "协议主状态/B",
+        "sender.bin": "发送者钥/B",
+        "receiver.bin": "接收者状态/B",
+    }
+    for key, title in object_titles.items():
+        rendered = []
+        for label in ("A", "B"):
+            size = master["rows"][label]["benchmark"]["object_bytes"][key]
+            rendered.append(
+                str(size["minimum"])
+                if size["minimum"] == size["maximum"]
+                else f'{size["minimum"]}--{size["maximum"]}'
+            )
+        checks.expect(
+            "measured A/B object row: " + title,
+            f"{title} & {rendered[0]} & {rendered[1]}" in text,
+        )
+
+    for label in ("A", "B", "C"):
+        installed = master["rows"][label]["installed_cli"]
+        for observation in installed["observations"]:
+            message_bytes = observation["message_bytes"]
+            ciphertext_bytes = observation["ciphertext_bytes"]
+            timings = installed["timings_seconds"]
+            expected = (
+                f"{label} & {message_bytes} & {ciphertext_bytes} & "
+                f'{timings[f"encrypt-{message_bytes}"]:.6f} & '
+                f'{timings[f"decrypt-{message_bytes}"]:.6f}'
+            )
+            checks.expect(
+                f"installed message/wire row: {label}/{message_bytes}",
+                expected in text,
+            )
+
+    checks.expect("random batch schema", random_batch.get("schema") == "IBME-A09-RANDOM-BATCH/1")
+    checks.expect("random batch completed", random_batch.get("status") == "passed")
+    checks.expect(
+        "random batch roots and cases",
+        random_batch["execution"]["roots_completed"] == 3
+        and random_batch["execution"]["cases_recorded"] == 12,
+    )
+    checks.expect(
+        "random batch 60/60 rendered",
+        f'{random_batch["total_checks_passed"]}/{random_batch["total_checks_planned"]}' in text,
+    )
+    checks.expect(
+        "random batch five outcomes",
+        set(random_batch["totals"].values()) == {12},
+    )
+
+    checks.expect("optimization summary consistent", optimization.get("status") == "consistent")
+    opt = optimization["summary"]
+    for label, operation in (("A", "decrypt"), ("B", "encrypt")):
+        row = opt[label][operation]
+        checks.expect(
+            f"optimization paired ratio rendered: {label}",
+            f'{row["median_root_speedup"]:.3f}' in text
+            and f'{row["root_speedup_min"]:.3f}--{row["root_speedup_max"]:.3f}' in text,
+        )
+    checks.expect(
+        "C session values rendered",
+        f'{opt["C"]["original_decrypt_seconds"]:.3f} s' in text
+        and f'{opt["C"]["preparation_seconds"]:.3f} s' in text
+        and f'{opt["C"]["prepared_decrypt_seconds"]:.3f} s' in text
+        and str(opt["C"]["leaf_key_bytes"]) in text,
+    )
+
+    figure_paths = {
+        MESSAGE_WIRE_FIGURE: "../../deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png",
+        OPTIMIZATION_FIGURE: "../../research/2026-10-20-multi-backend-optimization/optimization.png",
+    }
+    for path, relative in figure_paths.items():
+        checks.expect(f"experiment figure exists: {path.name}", path.is_file(), str(path))
+        checks.expect(f"experiment figure included: {path.name}", relative in text)
     kib = []
     for label in ("A", "B"):
         size = master["rows"][label]["benchmark"]["ciphertext_bytes"]
@@ -209,7 +303,7 @@ def main() -> int:
                 checks.expect(f"anonymous PDF excludes {token!r}", token not in payload)
 
     if args.submission_ready:
-        checks.expect("all six rewrite batches complete", False, "only batches 1 and 2 are complete")
+        checks.expect("all six rewrite batches complete", False, "only batches 1, 2 and 3 are complete")
 
     if checks.failures:
         print(f"Competition report rewrite validation failed: {len(checks.failures)}/{checks.count} checks")

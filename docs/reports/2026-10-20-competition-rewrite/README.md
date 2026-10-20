@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-状态为 **WIP：前两批正文重写完成，尚非提交候选版**。
+状态为 **WIP：前三批正文重写完成，尚非提交候选版**。
 
 目前完成：
 
@@ -14,35 +14,36 @@
 - 完整展开第2章的Wang五算法、两层身份路径、Hybrid、BYTEAUTH、解密检查顺序、容量预检和状态恢复；
 - 按统一的“论文关系—身份/消息映射—固定参数—实现差异”结构重写第3章，覆盖LATTE、Lai、BNN/ML-DSA、SRGG和Sageloli五个原语；
 - 重写第4章的Sageloli结构化低秩采样、SRGG四类对象无损编码、Lai接收会话、有界准备复用及同参数部署消融，并明确收益与状态代价；
+- 重建第5章完整实验叙事：分开独立根、同根重复和单次安装观测，给出A/B九阶段同机主表、对象与完整wire尺寸、三代表功能矩阵、A的60/60随机批次以及优化消融；
+- 插入消息长度／完整wire与准备复用两张实测图，同时保留C的3924 B未实跑、单根会话和跨环境数值不混排的边界；
 - 从新稿移除未完成路线、内部状态字段、逐轮验收语言及旧候选附录；
-- 为实验和展示章节保留可继续扩写的技术骨架，并迁入必要的已核实结论；
+- 为展示、总结和最终发布批次保留可继续扩写的结构；
 - 建立面向新稿的独立构建和检查入口，旧稿检查器不用于强迫保留已经删除的内容。
 
-这两批没有修改原语、协议代码、参数、安全元数据或历史实验，也没有运行新的密码学实验。三组仍为A（LATTE＋BNN/ML-DSA-44）、B（LATTE＋SRGG PARAM-I compact）和C（Lai C2＋Sageloli RSIS v3 PARAM-I）；已完成配置沿用当前安全说明。第4章引用准备复用分支的固定归档数据，是否进入最终提交版仍以该分支合并后的版本复核为准。
+这三批没有修改原语、协议代码、参数、安全元数据或历史实验，也没有运行新的密码学实验。三组仍为A（LATTE＋BNN/ML-DSA-44）、B（LATTE＋SRGG PARAM-I compact）和C（Lai C2＋Sageloli RSIS v3 PARAM-I）；已完成配置沿用当前安全说明。第4、5章引用的准备复用、同机主表、安装验收和随机批次均来自已固定的公开数据，不把其改写成当前版本新实跑。
 
 ## 构建与检查
 
-在仓库根目录使用Python 3运行；通过`--engine`指定本机Tectonic或XeLaTeX。`git ibme-run`只是原开发机别名，移交不依赖它：
+在本checkout中优先使用`.git/config`已解析的本机Nix工具；通过`--engine`指定Tectonic或XeLaTeX。移交到其它机器时也可将命令前的`git ibme-run`去掉，直接使用其本地Python和TeX环境：
 
 ```text
-python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
-python3 docs/reports/2026-10-20-competition-rewrite/build_pdf.py
-python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf
+git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
+git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/build_pdf.py --engine "$(git config --local --get ibme.tectonic)"
+git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf
 ```
 
-`--submission-ready`在当前阶段必须失败并指出只完成前两批；不能因为PDF能编译就把它标为最终稿。
+`--submission-ready`在当前阶段必须失败并指出只完成前三批；不能因为PDF能编译就把它标为最终稿。
 
-## 后续四批
+## 后续三批
 
-1. 重建完整实验章和图表；PR75已经合并，按其固定归档数据与模型边界整合。
-2. 视预算补C的3924 B诚实往返与有限独立根；若不补则保持明确限制。
-3. 使用真实A/B页面及C的实际执行入口整理演示，并完成同版本安装与恢复展示。
-4. 统一引文、来源、匿名和排版，逐页检查后才生成提交候选PDF。
+1. 视预算补C的3924 B诚实往返与有限独立根；若不补则保持当前明确限制，不阻塞已完成章节。
+2. 使用真实A/B页面及C的实际执行入口重写展示章，并补齐同版本安装、恢复和展示图片。
+3. 收紧总结，统一引文、来源、匿名和排版，完成发布复现并逐页检查后才生成提交候选PDF。
 
 报告正文不得出现Git提交、内部字段或开发往返；这些信息只保留在本说明、审核记录和支撑材料中。
 
 ## 本轮接收修订
 
-[PR79审查](../../deliveries/2026-10-20-pr79-review/README.md)修正了KiB单位、部署基线、身份匹配公式、会话状态及Web展示范围，补入相关工作引用和同机实验条件；时间表取自原始主表并按三位有效数字排版。在该首批审查基础上，第二批已经展开完整协议、五个原语和四层优化，当前PDF为29页A4；实验和展示章节仍待继续重写。
+[PR79审查](../../deliveries/2026-10-20-pr79-review/README.md)修正了KiB单位、部署基线、身份匹配公式、会话状态及Web展示范围，补入相关工作引用和同机实验条件；时间表取自原始主表并按三位有效数字排版。在前两批基础上，第三批已将实验章扩展为6页的数据分层、主结果、功能矩阵、消融和边界分析；当前PDF为33页A4，展示章与最终收口仍待继续重写。
 
-`build_pdf.py`生成[构建摘要](build-manifest.json)，`check_report.py --require-pdf`核对源稿与PDF精确摘要，不再根据Git检出时间判定过期。当前80项通过；将PDF文件时间设为早于源稿后仍通过，解决原检查器在新检出环境的1/67误报。`--submission-ready`仍只因后续五批未完成而失败（1/81），这不是可上传的最终报告。
+`build_pdf.py`生成[构建摘要](build-manifest.json)，`check_report.py --require-pdf`核对源稿与PDF精确摘要，不再根据Git检出时间判定过期。第三批检查器还从原始主表重新核对九个A/B时间行、十个长度／wire行、随机批次计数和A/B/C消融数值。当前120项内容检查与130项PDF绑定检查通过；`--submission-ready`仍因后续三批未完成而预期失败，这不是可上传的最终报告。

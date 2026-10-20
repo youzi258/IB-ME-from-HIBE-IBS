@@ -789,35 +789,175 @@ Windows仓库源码 & 206.087 & 258.640 & 30 \\
 
 \chapter{实验设计、对照结果与分析}
 
-\section{实验问题与计量边界}
-实验围绕三个问题组织：三组完整实例能否覆盖诚实匹配、三类身份错配、篡改和恢复；每组主要时间与尺寸花在哪一层；各项优化改善哪部分并引入何种准备或状态代价。独立根、同根重复、首次操作和热操作分别统计，完整系统与原语单体不混合计数。
+\section{实验问题与证据分层}
+实验围绕四个可由数据直接回答的问题组织：三组完整实例能否正确处理合法匹配、三类身份错配、传输字节篡改和跨进程恢复；固定HIBE后更换IBS会把时间和存储成本移到哪一层；应用消息变长时完整wire如何增长；准备复用究竟改善哪个操作，又需保留什么状态。
 
-\section{同机A/B完整流程初步对照}
+为避免用进程数冒充独立样本，表~\ref{tab:evidence-levels}把四类数据单独记账。“独立根”指重新运行系统建立并从操作系统CSPRNG生成全部秘密状态；“同根重复”只描述固定密钥下的运行成本，不增加独立样本数。每个批次的机器、运行时和源码固定在该批数据内；本文只在同批内做绝对时间对照。
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{实验数据的独立性与用途}
+\label{tab:evidence-levels}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\rowcolor{black!8} 数据批次 & 运行环境 & 独立单位与重复 & 本文用途 \\
+\midrule
+A/B同机完整流程 & i9-14900HX，WSL2，Sage10.7／Python3.12.13，OMP4／OpenBLAS1 & A、B各3个独立系统CSPRNG根；每根3对热加解密，恢复后解密另起进程3次 & 固定LATTE和输入后观察IBS替换带来的成本分布 \\
+安装包全流程 & 与上行主环境一致，每条命令使用新解释器 & A、B、C各1个新根；每个消息长度1次 & 核对应用容量、完整wire、拒绝分支和恢复，不估计吞吐量 \\
+A随机身份批次 & Xeon Silver 4216，Nix Sage10.9／Python3.14.7 & 3个独立根，12组身份／消息配对，每组5项判断 & 检查多身份、多消息下的正常恢复和受控负例 \\
+准备复用消融 & i9-14900HX，WSL2，Sage10.7／Python3.12.13 & A/B各3根的同根开关配对；C为1根、2次无状态、1次准备、3次会话解密 & 分离端到端收益、准备时间和状态代价 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{A/B同机完整流程对照}
 \begin{table}[htbp]
 \centering
 \small
 \caption{同机A/B完整系统中位时间（秒，三位有效数字）}
 \label{tab:same-machine-ab-initial}
-\begin{tabular}{@{}lrr@{}}
+\begin{tabular}{@{}lrrc@{}}
 \toprule
-\rowcolor{black!8} 操作 & A & B \\
+\rowcolor{black!8} 操作 & A & B & 观察数（A/B） \\
 \midrule
-系统建立 & 1.12 & 1.60 \\
-发送者发钥 & 0.0954 & 32.1 \\
-接收者发钥 & 0.427 & 0.457 \\
-热加密 & 0.0785 & 9.17 \\
-热解密 & 0.152 & 0.161 \\
-恢复后解密 & 0.154 & 0.134 \\
+系统建立 & 1.12 & 1.60 & 3/3 \\
+发送者发钥 & 0.0954 & 32.1 & 3/3 \\
+接收者发钥 & 0.427 & 0.457 & 3/3 \\
+首次加密 & 0.0963 & 9.14 & 3/3 \\
+首次解密（含叶钥生成） & 0.284 & 0.239 & 3/3 \\
+热加密 & 0.0785 & 9.17 & 9/9 \\
+热解密 & 0.152 & 0.161 & 9/9 \\
+新进程对象恢复 & 0.845 & 0.890 & 3/3 \\
+恢复后解密 & 0.154 & 0.134 & 9/9 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-表~\ref{tab:same-machine-ab-initial}采用i9-14900HX、WSL2、Sage10.7／Python3.12.13、OMP4／OpenBLAS1，身份64 B、应用消息32 B。A、B各3个独立根，每根3对热加解密；恢复后解密另起进程执行。B的主要额外成本位于SRGG发送者发钥和签名路径，解密中位数与A接近；这比单独给出总耗时更能说明替换IBS后的影响。A、B完整密文分别约139 KiB和146 KiB，紧凑签名只是完整封装的一部分，因此不能把单体对象缩减倍数直接套到整包。
+表~\ref{tab:same-machine-ab-initial}的身份长度为64 B、应用消息为32 B；计时包含公共协议、对象验证、wire编解码和原生调用。A、B共用LATTE参数和协议层，因此表中的成本位置比一个总耗时更有解释力：两组系统建立、接收者发钥和解密接近，B的额外成本主要位于SRGG发送者发钥和每次签名；其中位时间分别约为A的336倍和117倍。这是该固定实现与输入下的成本分布，不是安全目标相同的算法排名。
 
-\section{C的目标规模与会话结果}
-C已完成目标规模的合法匹配、三类身份错配和恢复流程。无状态路径的主要成本来自Lai叶钥委派；显式会话把这一步移到准备阶段，并保留经验证叶钥。现有结果来自一个独立根，适合说明机制和资源边界，不用于估计总体失败概率，也不与A、B做绝对时间排名。
+首次解密还包含LATTE叶钥生成，因而两组均高于热解密。新进程恢复本身需约0.85--0.89秒，但对象恢复完成后的解密与热解密处于同一量级。B的9次热加密中存在明显长尾，所以表中使用中位数；这9次仍只属于3个独立根。
 
-C目前只有有限消息长度的实测；最大应用消息和独立根重复仍待补充。会话内重复反映固定身份对的使用成本，不能代替独立根观测。
+\subsection{对象尺寸与运行内存}
+\begin{table}[htbp]
+\centering
+\small
+\caption{A/B完整对象字节数与进程树RSS}
+\label{tab:ab-object-sizes}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\rowcolor{black!8} 对象或指标 & A & B \\
+\midrule
+协议公钥/B & 14363--14388 & 47265--47362 \\
+协议主状态/B & 177466--177750 & 268096--268450 \\
+发送者钥/B & 8050 & 84242--84476 \\
+接收者状态/B & 127950--128186 & 128058--128243 \\
+完整密文/B & 142066--142123 & 149204--149273 \\
+10 ms采样的进程树RSS最大值/MiB & 460.1 & 484.6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A、B完整密文分别约139 KiB和146 KiB。B的紧凑签名已比reference表示显著缩小，但完整包还包含LATTE密文、Hybrid数据和BYTEAUTH；因此不能把签名对象的缩减倍数直接套到整包。RSS是包含运行库、原生子进程和协议对象的进程树采样下界，不等于某个密钥或缓存单独占用的内存。
+
+\section{消息长度、完整wire与应用容量}
+隔离安装包的命令行实验从持久状态恢复对象，完成一次加密和一次解密。表~\ref{tab:message-wire-times}中的“主过程”包含状态加载、验证和完整协议操作，不含Python／Sage导入；每个长度只有1次同根观测，故不给吞吐量或误差条。
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{安装包全流程的消息、wire和主过程时间}
+\label{tab:message-wire-times}
+\begin{tabular}{@{}crrrr@{}}
+\toprule
+\rowcolor{black!8} 代表 & 应用消息/B & 完整密文/B & 加密/s & 解密/s \\
+\midrule
+A & 0 & 142065 & 0.683042 & 1.557047 \\
+A & 32 & 142093 & 0.566109 & 1.358288 \\
+A & 1024 & 143096 & 0.436009 & 1.517947 \\
+A & 59191 & 201268 & 0.538318 & 1.723461 \\
+B & 0 & 149209 & 19.282968 & 1.376191 \\
+B & 32 & 149272 & 10.348994 & 1.270655 \\
+B & 1024 & 150270 & 9.859425 & 1.312317 \\
+B & 65364 & 214615 & 9.654759 & 1.388494 \\
+C & 0 & 4555404 & 139.442768 & 626.750446 \\
+C & 1024 & 4556428 & 123.754582 & 496.194357 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{../../deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png}
+\caption{实测应用消息长度与完整wire字节数（折线只连接实测点，不表示中间长度已测）}
+\label{fig:message-wire}
+\end{figure}
+
+A和B在空消息时已分别产生约139 KiB和146 KiB完整密文，随应用消息增长后，wire增量基本由消息本身主导；A的59191 B与B的65364 B上限均已完成诚实往返。C的空消息密文约4.35 MiB，主要是目标规模Sageloli签名与协议固定开销；0 B到1024 B的wire差正好为1024 B。C的8 MiB是Hybrid内部载荷预算，不是应用消息上限；根据签名输入容量计算得到的3924 B最大应用消息尚未完成诚实往返，图中不作外推。
+
+\section{合法匹配、受控负例与恢复}
+功能验收不只检查“能解密”，还要证明拒绝发生在预期层次。身份负例使用本来有效的密文，只更换发送或接收身份；wire负例覆盖截断、追加、字段重复和末字节修改；“有效外层／无效内层”则先用对另一消息有效的IBS签名组装新密文，再使用匹配的新OTS和真实HIBE封装，以确认解密确实到达IBS验证并返回拒绝。
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{三组完整实例的功能与负例矩阵}
+\label{tab:functional-matrix}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\rowcolor{black!8} 情形 & A & B & C & 边界 \\
+\midrule
+多长度诚实往返 & 0/32/1024/59191 B & 0/32/1024/65364 B & 0/1024 B & 均恢复原消息；C不含3924 B上限 \\
+仅发送者错、仅接收者错、双方均错 & 三类均拒绝；另有随机批次 & 三类均拒绝 & 32 B目标组合批次三类均拒绝 & 错配返回统一失败结果，不输出明文 \\
+容量加1与身份长度加1 & 均拒绝 & 均拒绝 & 均拒绝 & 预检失败时不生成密文，原状态不变 \\
+截断／追加／重复／字节修改 & 均拒绝 & 均拒绝 & 均拒绝 & 规范解析或完整字节认证失败 \\
+有效外层／无效内层 & 到达IBS并拒绝 & 到达IBS并拒绝 & 到达IBS并拒绝 & 不把外层失败冒充为IBS负例 \\
+新进程恢复后解密 & 成功，项目随机源零新增输出 & 成功，项目随机源零新增输出 & 成功，重新执行Lai委派并取新随机 & 三组原持久状态均保持不变 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A还在另一环境中使用3个独立CSPRNG根，每根生成2个接收身份和2个发送身份，完成共12组配对。每组分别检查诚实恢复、错发送者、错接收者、双方均错以及保持规范结构的单比特篡改，结果为60/60，超时、重试和丢弃样本均为0。该批的消息长度为0/1/32/1024 B；公开种子只生成测试身份和消息，密钥、签名和封装随机性仍来自操作系统CSPRNG。这一结果说明所列分支在有限随机输入下均按预期工作，不用来估计总体失败概率。
+
+\section{优化消融：收益、波动与状态代价}
+表~\ref{tab:optimization-ablation-summary}只比较每个批次内相同根、相同参数和相同输入的开关两臂。A、B每根分别对两种模式执行3轮完整加解密，表中的收益比是先计算各根的“关闭时间／开启时间”，再取三根中位数；这比直接相除汇总时间更能保留配对关系。
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{三代表与部署路径的优化消融摘要}
+\label{tab:optimization-ablation-summary}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.33\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\rowcolor{black!8} 对象 & 目标路径与样本 & 实测结果 & 额外代价与限制 \\
+\midrule
+A证书正结果复用 & 解密；3根同根开关配对 & 原生验签调用每条由2次减为1次；收益比中位数1.086，范围0.992--1.339 & 有界公开语句LRU；每条消息验签仍执行，一根轻微回退 \\
+B采样计划复用 & 加密；3根同根开关配对 & 每根1次miss、4次hit，准备0.178--0.182 s；收益比中位数1.030，范围1.009--1.921 & 默认保留2条秘密相关计划；签名每次仍用新随机，小样本波动明显 \\
+C接收会话 & 解密；1根、2次无状态、1次准备、3次会话操作 & 无状态中位数526.272 s；准备509.548 s；后续解密中位数28.568 s & 进程内保留36414052 B叶钥；含准备的首条538.115 s，高于无状态中位数 \\
+A运行位置 & 三种部署，每路加解密各30次 & 相对Windows源码，WSL安装包加密／解密时间比为18.87／4.59 & 改变文件访问与运行位置，不改变格算法或wire \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.98\textwidth]{../../research/2026-10-20-multi-backend-optimization/optimization.png}
+\caption{准备复用的完整流程收益比与C的会话摊销。左图保留Luo和Falcon辅助对照以展示回退和波动；右图由实测准备时间和会话解密中位数按公式计算，$N=4$--$10$为外推而非实际轮数}
+\label{fig:optimization-ablation}
+\end{figure}
+
+A的改动精确减少了一次原生证书验签，但端到端收益较小且有单根回退；B的三根均命中计划，但中位收益仍只有1.030。因此两项结果支持“局部重复计算已被移除”，不支持“稳定成倍加速”。C的委派远大于后续检查，固定身份对下的多消息会话有明确摊销价值；但首条反而更慢、状态约34.73 MiB，且现有数据只有1个独立根。运行位置实验则是部署消融，不与上述密码路径的绝对时间混算。
+
+\section{可支持的结论与尚未覆盖的范围}
+综合上述结果，本文的数据支持四点结论：
+\begin{enumerate}
+  \item 三组代表均已在目标配置下完成真实建立、发钥、加密、匹配解密、受控拒绝与恢复，不是只调用单个原语或缩小参数；
+  \item A/B同机对照能定位替换IBS后的主要成本，但两组参数和安全说明不同，不从该表得出等安全的性能优劣；
+  \item 完整wire由固定的格密文、签名、Hybrid和BYTEAUTH共同构成，单体对象缩小或应用消息变短都不会以相同比例缩小整包；
+  \item 优化只有连同其命中条件、准备时间、保留状态和负面点一起报告，才能转化为实际部署选择。
+\end{enumerate}
+
+现有数据不支持三组的统一性能排名，也不支持并发压测、长期故障率或总体失败概率结论。C仍缺3924 B最大应用消息的诚实往返和多独立根重复；会话内多次解密不能替代这两项。功能与负例测试用于验证实现分支，安全性仍依据前文给出的底层方案、参数和模型说明。
 
 \chapter{系统实现与应用展示}
 
