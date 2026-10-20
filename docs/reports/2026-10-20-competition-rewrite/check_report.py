@@ -24,6 +24,7 @@ MASTER_TABLE = ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/m
 RANDOM_BATCH = ROOT / "docs/research/2026-10-19-primary-random-batch/receipt.json"
 COMBINATION_INVENTORY = ROOT / "docs/research/2026-10-20-combination-data-inventory/inventory.json"
 OPTIMIZATION_SUMMARY = ROOT / "docs/research/2026-10-20-multi-backend-optimization/verified-summary.json"
+NIXOS_REPRODUCTION = ROOT / "docs/deliveries/2026-10-20-nixos-independent-reproduction"
 MESSAGE_WIRE_FIGURE = ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png"
 OPTIMIZATION_FIGURE = ROOT / "docs/research/2026-10-20-multi-backend-optimization/optimization.png"
 WEB_DEMO = ROOT / "docs/deliveries/2026-10-20-web-redesign"
@@ -66,6 +67,12 @@ def main() -> int:
     random_batch = json.loads(RANDOM_BATCH.read_text(encoding="utf-8"))
     combinations = json.loads(COMBINATION_INVENTORY.read_text(encoding="utf-8"))
     optimization = json.loads(OPTIMIZATION_SUMMARY.read_text(encoding="utf-8"))
+    nixos_runs = {
+        label: json.loads((NIXOS_REPRODUCTION / f"{label}.json").read_text(encoding="utf-8"))
+        for label in ("A", "B", "C")
+    }
+    nixos_environment = json.loads((NIXOS_REPRODUCTION / "environment.json").read_text(encoding="utf-8"))
+    nixos_build = json.loads((NIXOS_REPRODUCTION / "build.json").read_text(encoding="utf-8"))
     web_runs = {
         "A": json.loads(WEB_A.read_text(encoding="utf-8")),
         "B": json.loads(WEB_B.read_text(encoding="utf-8")),
@@ -154,6 +161,9 @@ def main() -> int:
         "2种HIBE与5类IBS共10个配对",
         "每一格都包含诚实往返及身份错配拒绝",
         r"2\(\times\)5性能排名",
+        "时间盒调整已披露",
+        "不能写成“首次无重试通过”",
+        "三组功能链均不依赖原开发目录",
     )
     for fragment in required_fragments:
         checks.expect(f"required report fact: {fragment}", fragment in text)
@@ -306,6 +316,102 @@ def main() -> int:
         and str(opt["C"]["leaf_key_bytes"]) in text,
     )
 
+    checks.expect(
+        "NixOS reproduction environment",
+        nixos_environment.get("schema") == "IBME-NIXOS-INDEPENDENT-ENVIRONMENT/1"
+        and nixos_environment.get("operating_system") == "NixOS"
+        and nixos_environment.get("python") == "3.14.7"
+        and nixos_environment.get("sage") == "10.9"
+        and nixos_environment.get("wsl_runtime_used") is False,
+    )
+    checks.expect(
+        "NixOS isolated wheel",
+        nixos_build.get("schema") == "IBME-NIXOS-INDEPENDENT-BUILD/1"
+        and nixos_build.get("execution_source_commit") == "814e85bb50fb3bf596cd69ba6f51ee5d53ba5f9b"
+        and nixos_build.get("source_tree_excluded_from_runtime_imports") is True
+        and nixos_build.get("wheel", {}).get("installed_file_count_verified") == 604
+        and nixos_build.get("wheel", {}).get("sha256")
+        == "e5fab799b548a79f18a19bb33dfeadc7bf0b3019766b4342ba257fe5f3c82cbe"
+        and nixos_build.get("wheel", {}).get("global_environment_modified") is False,
+    )
+    selected_digests = {
+        row["id"].split("-", 1)[0]: row["suite_digest"]
+        for row in selection["representatives"]
+    }
+    expected_nixos = {
+        "A": ((0, 32, 1024, 59191), 201243),
+        "B": ((0, 32, 1024, 65364), 214539),
+    }
+    for label, (messages, maximum_wire) in expected_nixos.items():
+        run = nixos_runs[label]
+        checks.expect(
+            f"NixOS {label} exact Suite and clean result",
+            run.get("schema") == "REPORT-EXACT-SUITE-CLI/1"
+            and run.get("status") == "passed"
+            and run.get("no_outer_retry") is True
+            and run.get("suite_digest") == selected_digests[label],
+        )
+        checks.expect(
+            f"NixOS {label} command and message coverage",
+            len(run.get("commands", [])) == 25
+            and tuple(row.get("message_bytes") for row in run.get("observations", [])) == messages
+            and max(row.get("ciphertext_bytes", 0) for row in run.get("observations", [])) == maximum_wire
+            and all(row.get("recovered") is True for row in run.get("observations", [])),
+        )
+        rendered_messages = "/".join(str(value) for value in messages)
+        checks.expect(
+            f"NixOS {label} report row",
+            f"{label} & {rendered_messages} & {maximum_wire} & 25 & 一次执行通过" in text,
+        )
+    c_nixos = nixos_runs["C"]
+    checks.expect(
+        "NixOS C exact Suite and disclosed retry result",
+        c_nixos.get("schema") == "IBME-NIXOS-INDEPENDENT-C/1"
+        and c_nixos.get("status") == "passed-with-disclosed-resource-timeout-retry"
+        and c_nixos.get("functional_result") == "passed"
+        and c_nixos.get("clean_single_attempt_acceptance") is False
+        and c_nixos.get("no_outer_retry") is False
+        and c_nixos.get("suite_digest") == selected_digests["C"],
+    )
+    checks.expect(
+        "NixOS C timeout history retained",
+        len(c_nixos.get("failure_history", [])) == 2
+        and c_nixos["failure_history"][0].get("aggregate_timeout_seconds") == 1800
+        and c_nixos["failure_history"][1].get("timeout_seconds") == 900
+        and c_nixos.get("successful_stage_timeout_seconds") == 3600
+        and c_nixos.get("original_failed_states_preserved") is True,
+    )
+    c_stages = c_nixos.get("successful_stages", [])
+    checks.expect(
+        "NixOS C separated stages",
+        len(c_nixos.get("initial_completed_commands", [])) == 10
+        and len(c_stages) == 3
+        and all(row.get("code") == 0 for row in c_stages)
+        and c_stages[0].get("calls", {}).get("hibe:derive") == 1
+        and c_stages[1].get("calls", {}).get("hibe:derive") == 1
+        and c_stages[2].get("calls", {}).get("hibe:derive") == 1
+        and c_stages[2].get("entropy_bytes", 0) > 0,
+    )
+    checks.expect(
+        "NixOS C single-stage timings disclosed",
+        f'{c_stages[0]["seconds"]:.2f}、{c_stages[1]["seconds"]:.2f}和'
+        f'{c_stages[2]["seconds"]:.2f}秒' in text
+        and "三个工作进程有部分并行且每项只有1次" in text
+        and "秒数只说明900秒时间盒不足，不进入性能排名" in text,
+    )
+    checks.expect(
+        "NixOS C report row",
+        c_nixos.get("message_bytes") == 0
+        and c_nixos.get("ciphertext_bytes") == 4555404
+        and "C & 0 & 4555404 & 13 & 功能通过；时间盒调整已披露" in text,
+    )
+    checks.expect(
+        "NixOS C wire variation disclosed",
+        "本批空消息wire为4555404 B" in text
+        and "另一随机批次的4555436 B相差32 B" in text
+        and "不据此假定C的完整密文恒定长度" in text,
+    )
+
     expected_demo_sizes = {"A": 142095, "B": 149255}
     expected_modes = {
         "normal",
@@ -425,7 +531,7 @@ def main() -> int:
                 checks.expect(f"anonymous PDF excludes {token!r}", token not in payload)
 
     if args.submission_ready:
-        checks.expect("all rewrite and release batches complete", False, "independent reproduction and release closure remain")
+        checks.expect("all rewrite and release batches complete", False, "citation, page-by-page layout and release closure remain")
 
     if checks.failures:
         print(f"Competition report rewrite validation failed: {len(checks.failures)}/{checks.count} checks")
