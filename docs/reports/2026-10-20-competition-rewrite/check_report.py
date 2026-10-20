@@ -25,6 +25,14 @@ RANDOM_BATCH = ROOT / "docs/research/2026-10-19-primary-random-batch/receipt.jso
 OPTIMIZATION_SUMMARY = ROOT / "docs/research/2026-10-20-multi-backend-optimization/verified-summary.json"
 MESSAGE_WIRE_FIGURE = ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png"
 OPTIMIZATION_FIGURE = ROOT / "docs/research/2026-10-20-multi-backend-optimization/optimization.png"
+WEB_DEMO = ROOT / "docs/deliveries/2026-10-20-web-redesign"
+WEB_REVIEW = ROOT / "docs/deliveries/2026-10-20-pr78-review/evidence"
+WEB_A = WEB_DEMO / "A.json"
+WEB_B = WEB_DEMO / "B.json"
+WEB_C_PREFLIGHT = WEB_DEMO / "C-preflight.json"
+WEB_A_SUCCESS_FIGURE = WEB_DEMO / "desktop.png"
+WEB_A_RECORDS_FIGURE = WEB_DEMO / "records.png"
+WEB_B_RECORDS_FIGURE = WEB_REVIEW / "web-B-records.png"
 
 
 class Checks:
@@ -56,6 +64,11 @@ def main() -> int:
     master = json.loads(MASTER_TABLE.read_text(encoding="utf-8"))
     random_batch = json.loads(RANDOM_BATCH.read_text(encoding="utf-8"))
     optimization = json.loads(OPTIMIZATION_SUMMARY.read_text(encoding="utf-8"))
+    web_runs = {
+        "A": json.loads(WEB_A.read_text(encoding="utf-8")),
+        "B": json.loads(WEB_B.read_text(encoding="utf-8")),
+    }
+    web_c = json.loads(WEB_C_PREFLIGHT.read_text(encoding="utf-8"))
 
     checks.expect("official template schema", template.get("schema") == "IBME-OFFICIAL-COMPETITION-TEMPLATE/1")
     checks.expect("selection schema", selection.get("schema") == "IBME-REPORT-THREE-SELECTION/1")
@@ -96,8 +109,9 @@ def main() -> int:
     checks.expect("English keywords", "Keywords:" in text)
     checks.expect("table of contents", r"\tableofcontents" in text)
     checks.expect("technical subsection hierarchy", text.count(r"\subsection{") >= 19)
-    checks.expect("protocol, experiment and optimization figures", text.count(r"\begin{figure}") >= 4)
-    checks.expect("technical comparison tables", text.count(r"\begin{table}") >= 15)
+    figure_count = text.count(r"\begin{figure}") + text.count(r"\captionof{figure}")
+    checks.expect("protocol, experiment, optimization and demo figures", figure_count >= 7)
+    checks.expect("technical comparison tables", text.count(r"\begin{table}") >= 16)
 
     required_fragments = (
         "LATTE-3＋BNN/ML-DSA-44",
@@ -127,6 +141,12 @@ def main() -> int:
         "3924 B最大应用消息尚未完成诚实往返",
         "不用来估计总体失败概率",
         "项目随机源零新增输出",
+        "七步",
+        "A、B各使用一个新随机根完成一次加密和六次解密",
+        "142095字节和149255字节",
+        "同一服务进程",
+        "服务重启会清空会话",
+        "页面预检实际核对Lai C2",
     )
     for fragment in required_fragments:
         checks.expect(f"required report fact: {fragment}", fragment in text)
@@ -231,9 +251,51 @@ def main() -> int:
         and str(opt["C"]["leaf_key_bytes"]) in text,
     )
 
+    expected_demo_sizes = {"A": 142095, "B": 149255}
+    expected_modes = {
+        "normal",
+        "wrong_sender",
+        "wrong_receiver",
+        "both_wrong",
+        "tamper",
+        "truncate",
+    }
+    for label, run in web_runs.items():
+        checks.expect(f"Web {label} run schema", run.get("schema") == "IBME-DEMO-MEASUREMENTS/1")
+        checks.expect(f"Web {label} run completed", run.get("ok") is True)
+        checks.expect(f"Web {label} message length", run.get("sizes", {}).get("message") == 36)
+        checks.expect(
+            f"Web {label} ciphertext length",
+            run.get("sizes", {}).get("ciphertext") == expected_demo_sizes[label],
+        )
+        decryptions = [row for row in run.get("observations", []) if row.get("operation") == "decrypt"]
+        checks.expect(f"Web {label} six decryptions", len(decryptions) == 6)
+        checks.expect(
+            f"Web {label} expected modes",
+            {row.get("mode") for row in decryptions} == expected_modes,
+        )
+        checks.expect(
+            f"Web {label} outcomes matched",
+            all(row.get("expectation_met") is True for row in decryptions),
+        )
+    c_result = web_c.get("job", {}).get("result", {})
+    checks.expect("Web C preflight completed", web_c.get("ok") is True and c_result.get("ok") is True)
+    checks.expect(
+        "Web C application capacity",
+        c_result.get("capacity", {}).get("max_application_bytes") == 3924,
+    )
+    checks.expect(
+        "Web C remains preflight-only",
+        c_result.get("metadata", {}).get("preflight_only") is True
+        and c_result.get("metadata", {}).get("combination_tested") is False,
+    )
+
     figure_paths = {
         MESSAGE_WIRE_FIGURE: "../../deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png",
         OPTIMIZATION_FIGURE: "../../research/2026-10-20-multi-backend-optimization/optimization.png",
+        WEB_A_SUCCESS_FIGURE: "../../deliveries/2026-10-20-web-redesign/desktop.png",
+        WEB_A_RECORDS_FIGURE: "../../deliveries/2026-10-20-web-redesign/records.png",
+        WEB_B_RECORDS_FIGURE: "../../deliveries/2026-10-20-pr78-review/evidence/web-B-records.png",
     }
     for path, relative in figure_paths.items():
         checks.expect(f"experiment figure exists: {path.name}", path.is_file(), str(path))
@@ -270,6 +332,7 @@ def main() -> int:
         "table",
         "tabular",
         "figure",
+        "center",
         "tikzpicture",
         "enumerate",
     ):
@@ -307,7 +370,7 @@ def main() -> int:
                 checks.expect(f"anonymous PDF excludes {token!r}", token not in payload)
 
     if args.submission_ready:
-        checks.expect("all six rewrite batches complete", False, "only batches 1, 2 and 3 are complete")
+        checks.expect("all six rewrite batches complete", False, "only batches 1, 2, 3 and 4 are complete")
 
     if checks.failures:
         print(f"Competition report rewrite validation failed: {len(checks.failures)}/{checks.count} checks")
