@@ -1,0 +1,12 @@
+{
+  "schema": "IBME-WEB-EXACT-JSON-REVIEW/1",
+  "fixture": "TEST-ONLY public C metadata; no key generation, encryption or measured run",
+  "browser": "Codex IAB",
+  "export_matches_http_bytes": true,
+  "export_matches_frozen_suite": true,
+  "suite_digest_matches": true,
+  "parameter_display_matches_frozen_suite": true,
+  "signature_width_squared_exact": "270116709797628319132317",
+  "download_sha256": "123fc856440b496f547c645d5ba68623b35c08859e4aee6fc671629c17a6d7c8",
+  "suite_digest": "8692c5917fcd731fb6b2109f1a5307014c66edbd4a1f17d4190b14873cf4a200"
+}

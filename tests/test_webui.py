@@ -157,6 +157,26 @@ def test_export_without_session_is_rejected(monkeypatch):
         server.api_export()
 
 
+def test_large_public_parameters_have_exact_display_json(session, monkeypatch):
+    # Metadata-only fixture: no C key generation or cryptographic run is implied.
+    config = server._make_config({"preset": "ring"})
+    expected = config.to_dict()
+    exact_width = 270116709797628319132317
+    assert expected["ibs_params"]["signature_width_squared"] == exact_width
+    session.config = config
+    monkeypatch.setattr(server, "validate_suite", lambda _: SimpleNamespace(
+        ok=True, errors=[], capacity={}, metadata={}))
+    check = server.api_check({"preset": "ring"})
+    state = server.api_state()["state"]
+    for raw in (check["suite_config_json"], state["parameters_json"]):
+        assert str(exact_width) in raw
+        assert json.loads(raw) == expected
+    # The export remains ordinary numeric JSON with the original Suite digest.
+    exported = json.loads(json.dumps(server.api_export(), allow_nan=False))
+    assert exported["suite"] == expected
+    assert exported["suite_digest"] == config.digest
+
+
 @pytest.mark.parametrize("preset_id,filename", [
     ("primary", "A-latte-mldsa44.json"),
     ("srgg", "B-latte-srgg-I-compact.json"),

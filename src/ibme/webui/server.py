@@ -251,6 +251,7 @@ def _state_summary(session: Session) -> dict[str, Any]:
         "active": True,
         "suite": _suite_summary(session.config),
         "parameters": session.config.to_dict(),
+        "parameters_json": json.dumps(session.config.to_dict(), ensure_ascii=False, allow_nan=False, indent=2),
         "capacity": dict(session.runtime.capacity),
         "identities": {
             "sender": _display(session.sender_id),
@@ -357,6 +358,7 @@ def api_check(payload: dict[str, Any]) -> dict[str, Any]:
         "metadata": report.metadata,
         "suite": _suite_summary(config),
         "suite_config": config.to_dict(),
+        "suite_config_json": json.dumps(config.to_dict(), ensure_ascii=False, allow_nan=False, indent=2),
         "security": SECURITY,
     }
 

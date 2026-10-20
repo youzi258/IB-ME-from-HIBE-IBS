@@ -3,8 +3,8 @@
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const state = {
-    presets: [], selected: "primary", session: null, config: null, capacity: {},
-    ready: false, busy: true, uncertain: false, receipt: null, decrypt: null,
+    presets: [], selected: "primary", session: null, config: null, configJSON: null, capacity: {},
+    ready: false, busy: true, uncertain: false, receipt: null, receiptJSON: null, decrypt: null,
   };
   const modeNames = {
     normal: "双方身份正确", wrong_sender: "发送者不匹配", wrong_receiver: "接收者不匹配",
@@ -37,7 +37,7 @@
     $("#connection span").textContent = online ? "本地服务" : "连接中断";
   }
 
-  async function api(path, body) {
+  async function api(path, body, returnText = false) {
     let response;
     try {
       response = await fetch(path, {
@@ -50,8 +50,8 @@
       connection(false);
       throw new ConnectionError("连接中断。操作可能仍在执行，请重新连接查看。");
     }
-    let data;
-    try { data = await response.json(); }
+    let data, raw;
+    try { raw = await response.text(); data = JSON.parse(raw); }
     catch (_) { throw new ConnectionError("服务响应不完整，请重新连接。"); }
     connection(true);
     if (!response.ok) {
@@ -59,7 +59,7 @@
       error.status = response.status;
       throw error;
     }
-    return data;
+    return returnText ? raw : data;
   }
 
   function showError(error) {
@@ -135,6 +135,7 @@
         state.selected = preset.id;
         state.ready = false;
         state.config = null;
+        state.configJSON = null;
         state.capacity = {};
         renderSelection();
         await check();
@@ -161,7 +162,8 @@
       row.append(text("dt", name), text("dd", value));
       return row;
     }));
-    $("#rawParameters").textContent = state.config ? JSON.stringify(state.config, null, 2) : "尚未读取配置。";
+    // Keep the server's decimal integers intact; JS Number rounds large parameters.
+    $("#rawParameters").textContent = state.configJSON || "尚未读取配置。";
     $("#metricCipher").textContent = bytes(s?.sizes.ciphertext);
     $("#metricEncrypt").textContent = seconds(s?.timings.encrypt);
     $("#metricDecrypt").textContent = seconds(state.decrypt?.seconds);
@@ -179,6 +181,7 @@
     if (session) {
       state.ready = true;
       state.config = session.parameters;
+      state.configJSON = session.parameters_json;
       state.capacity = session.capacity;
       const match = state.presets.find((p) => p.hibe === session.suite.hibe && p.ibs === session.suite.ibs && p.signature_format === session.suite.signature_format);
       if (match) state.selected = match.id;
@@ -191,8 +194,10 @@
     } else {
       state.decrypt = null;
       state.receipt = null;
+      state.receiptJSON = null;
       state.ready = false;
       state.config = null;
+      state.configJSON = null;
       state.capacity = {};
       emptyResult("开始演示，加密一条消息。");
       renderRecords();
@@ -238,6 +243,7 @@
     if (operation === "check") {
       state.ready = result.ok;
       state.config = result.suite_config;
+      state.configJSON = result.suite_config_json;
       state.capacity = result.capacity || {};
       $("#checkStatus").textContent = result.ok ? "配置就绪" : "运行环境未就绪";
       $("#checkStatus").className = `check-status${result.ok ? "" : " error"}`;
@@ -247,6 +253,7 @@
       state.session = null;
       state.decrypt = null;
       state.receipt = null;
+      state.receiptJSON = null;
       state.ready = false;
       $("#testMode").value = "normal";
       emptyResult("开始演示，加密一条消息。");
@@ -261,6 +268,7 @@
         renderParameters();
       }
       state.receipt = null;
+      state.receiptJSON = null;
     }
   }
 
@@ -331,9 +339,11 @@
     if (!state.session || state.busy || state.uncertain) return;
     state.busy = true;
     state.receipt = null;
+    state.receiptJSON = null;
     refreshControls();
     try {
-      state.receipt = await api("/api/export");
+      state.receiptJSON = await api("/api/export", undefined, true);
+      state.receipt = JSON.parse(state.receiptJSON);
       renderRecords();
     } catch (error) { showError(error); }
     finally { state.busy = false; refreshControls(); }
@@ -401,8 +411,8 @@
   }));
   $("#exportBtn").addEventListener("click", async () => {
     await loadReceipt();
-    if (!state.receipt || state.uncertain) return;
-    const url = URL.createObjectURL(new Blob([JSON.stringify(state.receipt, null, 2)], { type: "application/json" }));
+    if (!state.receiptJSON || state.busy || state.uncertain) return;
+    const url = URL.createObjectURL(new Blob([state.receiptJSON], { type: "application/json" }));
     const link = document.createElement("a");
     link.href = url;
     link.download = "ibme-demo-measurements.json";
