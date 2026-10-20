@@ -1,0 +1,16 @@
+{
+  "checks": 72,
+  "clean_single_attempt_representatives": [
+    "A",
+    "B"
+  ],
+  "cryptographic_commands_rerun": false,
+  "functional_with_disclosed_resource_retry": [
+    "C"
+  ],
+  "private_state_read": false,
+  "representatives": 3,
+  "schema": "IBME-NIXOS-INDEPENDENT-VERIFICATION/1",
+  "self_test_mutations_rejected": 6,
+  "status": "passed"
+}

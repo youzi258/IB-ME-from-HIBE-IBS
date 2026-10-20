@@ -1,0 +1,47 @@
+{
+  "schema": "IBME-NIXOS-INDEPENDENT-BUILD/1",
+  "upstream_main_commit": "018daf33a233a936719a7df9f50d1a776a1fee27",
+  "execution_source_commit": "814e85bb50fb3bf596cd69ba6f51ee5d53ba5f9b",
+  "source_exported_from_commit": true,
+  "source_tree_excluded_from_runtime_imports": true,
+  "wheel": {
+    "filename": "ibme-0.1.0-py3-none-any.whl",
+    "sha256": "e5fab799b548a79f18a19bb33dfeadc7bf0b3019766b4342ba257fe5f3c82cbe",
+    "installed_file_count_verified": 604,
+    "global_environment_modified": false
+  },
+  "native_engines": {
+    "latte3": {
+      "source_id": "4a17a037c266ba982a027ff7fedffe0d391c9fe7fb2c5f8a0326b4ab67393414",
+      "binary_sha256": "62690a85d8d1fcf3918aaf6ad3c4135efb2002b49591eb4b99942012883f562f",
+      "dependency_mode": "host-toolchain"
+    },
+    "ml_dsa_44": {
+      "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+      "binary_sha256": "c29059c981ef3c5cb2af91917991e362e501d095df54a699909f43d90e703a5c",
+      "dependency_mode": "host-toolchain"
+    },
+    "sageloli_ring_v3": {
+      "source_id": "a41fd3e087125317d2bf2c1731e99c5639b27bce1c0b9d8456cd0682bee0ee39",
+      "binary_sha256": "f34594b736d8ed818ee7fd74beec10adbd2c1b2bb53a7b25b0ffbf6de19e2e21",
+      "dependency_mode": "host-toolchain"
+    }
+  },
+  "historical_native_source_ids_unchanged": true,
+  "initial_latte_compile_attempt": {
+    "status": "failed",
+    "failure_class": "native ISA flags stripped by the Nix compiler wrapper",
+    "private_compiler_log_preserved": true,
+    "cryptographic_attempt_started": false
+  },
+  "successful_latte_compile_adjustment": "remove NIX_ENFORCE_NO_NATIVE only for the explicit -march=native build",
+  "initial_separated_stage_invocation": {
+    "status": "failed-before-cryptography",
+    "failure_class": "plain Python invocation lacked the Sage Singular runtime",
+    "private_command_record_created": false,
+    "state_changed": false,
+    "operator_observation_not_machine_recorded": true,
+    "correction": "run the stage with Sage -python"
+  },
+  "scope": "build and installation provenance; not a security proof"
+}
