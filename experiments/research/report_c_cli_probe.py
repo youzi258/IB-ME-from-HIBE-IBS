@@ -1,9 +1,13 @@
-"""Bounded installed acceptance for the frozen Lai C2/Sageloli report Suite.
+"""Per-command bounded acceptance for the frozen Lai C2/Sageloli report Suite.
 
 Lai has no leaf cache: restored decryption must perform a real, randomized
 Derive. Private state and diagnostics stay local. The authenticated-inner
 negative reuses a legitimate signature on a changed message through public
 protocol/primitive methods; no private matrix or trapdoor is inspected.
+
+The expensive commands each receive their own timeout.  In particular, time
+spent in setup and issuance must not reduce the allowance for a later real
+Derive/decrypt operation.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor
@@ -178,24 +182,22 @@ def require_plaintext(path):
     require(path.is_file() and path.read_bytes() == MESSAGE, 'empty plaintext output missing or incorrect')
 
 
-def generate(directory, suite_file, source_commit, timeout=900):
+def generate(directory, suite_file, source_commit, timeout=3600):
     from ibme.core.security import security_fields
+    require(type(timeout) is int and 1 <= timeout <= 3600,
+            'per-command timeout must be 1..3600 seconds')
     setup, expected = setup_arguments(directory/'state', suite_file)
-    require(type(timeout) is int and 1 <= timeout <= 900, 'worker timeout must be 1..900 seconds')
     directory.mkdir(parents=True, mode=0o700, exist_ok=False)
     state = directory/'state'
     rows = []
     started = time.perf_counter()
-    deadline = started + 1800
     stage = 'setup'
     try:
         def run(label, args, code=0, mode='cli'):
             nonlocal stage
             stage = label
             print(label, flush=True)
-            remaining = deadline-time.perf_counter()
-            require(remaining > 0, 'overall acceptance time budget exhausted')
-            row = command(directory, label, args, expected=code, mode=mode, timeout=min(timeout, remaining))
+            row = command(directory, label, args, expected=code, mode=mode, timeout=timeout)
             rows.append(row)
             return row
         run('setup', setup)
@@ -228,7 +230,7 @@ def generate(directory, suite_file, source_commit, timeout=900):
         with ThreadPoolExecutor(max_workers=2) as pool:
             negative_job = pool.submit(command, directory, 'authenticated-inner-negative',
                                       [negative_state], mode='negative',
-                                      timeout=min(timeout, max(1, deadline-time.perf_counter())))
+                                      timeout=timeout)
             honest = run('decrypt-empty', ['decrypt', '--state', state, '--sender', ALICE, '--receiver', BOB,
                 '--in', directory/'cipher.bin', '--out', directory/'recovered.bin'])
             stage = 'authenticated-inner-negative'
@@ -250,13 +252,13 @@ def generate(directory, suite_file, source_commit, timeout=900):
             for name, item in row.pop('providers').items():
                 require(name not in providers or providers[name] == item, 'provider changed across processes')
                 providers[name] = item
-        receipt = dict(schema='REPORT-C-INSTALLED/1', status='passed', source_commit=source_commit,
+        receipt = dict(schema='REPORT-C-INSTALLED/2', status='passed', source_commit=source_commit,
             parameters=expected.to_dict(), requested_suite_digest=DIGEST, installed_suite_digest=meta['suite_digest'],
             state_version=meta['version'], commands=rows, inner_negative=negative, providers=providers,
             identity_bytes=64, message_bytes=0, changed_message_bytes=1, repetitions=1, independent_roots=1,
             restore_recomputes_leaf=True, leaf_cache=False, original_state_unchanged=True,
             max_parallel_workers=2, worker_timeout_seconds=timeout, ciphertext_bytes=len(wire),
-            overall_timeout_seconds=1800,
+            timeout_scope='per-command', aggregate_timeout_seconds=None,
             total_seconds=time.perf_counter()-started,
             randomness='default OS CSPRNG; fixed public inputs; no seed injection or outer retry',
             **security_fields(expected.to_dict()))
@@ -274,7 +276,7 @@ def main():
     parser.add_argument('--suite-file', type=Path, required=True)
     parser.add_argument('--private-directory', type=Path, required=True)
     parser.add_argument('--source-commit', required=True)
-    parser.add_argument('--timeout-seconds', type=int, default=900)
+    parser.add_argument('--timeout-seconds', type=int, default=3600)
     args = parser.parse_args()
     print(json.dumps(generate(args.private_directory.resolve(), args.suite_file,
                               args.source_commit, args.timeout_seconds)))
