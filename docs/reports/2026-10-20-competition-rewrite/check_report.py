@@ -147,6 +147,8 @@ def main() -> int:
         "同一服务进程",
         "服务重启会清空会话",
         "页面预检实际核对Lai C2",
+        "270116709797628319132317",
+        "下载文件也使用HTTP原始响应",
     )
     for fragment in required_fragments:
         checks.expect(f"required report fact: {fragment}", fragment in text)
