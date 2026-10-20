@@ -24,12 +24,12 @@
 
 ## 构建与检查
 
-在本checkout中优先使用`.git/config`已解析的本机Nix工具；通过`--engine`指定Tectonic或XeLaTeX。移交到其它机器时也可将命令前的`git ibme-run`去掉，直接使用其本地Python和TeX环境：
+在仓库根目录使用Python 3运行。构建脚本会查找本机的Tectonic、latexmk或XeLaTeX；未加入PATH时，通过`--engine`指定可执行文件的完整路径。开发者自设的`git ibme-run`别名和`.git/config`工具路径不属于移交依赖：
 
 ```text
-git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
-git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/build_pdf.py --engine "$(git config --local --get ibme.tectonic)"
-git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf
+python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
+python3 docs/reports/2026-10-20-competition-rewrite/build_pdf.py
+python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf
 ```
 
 `--submission-ready`在当前阶段必须失败并指出只完成前三批；不能因为PDF能编译就把它标为最终稿。
