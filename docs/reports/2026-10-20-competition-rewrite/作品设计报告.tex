@@ -141,7 +141,7 @@
 \setlength{\parindent}{2em}
 身份基匹配加密把接收者身份和发送者身份同时纳入消息恢复条件，适合只允许指定双方建立保密通信的场景。现有通用构造给出了两层匿名分层身份基加密与身份基签名的组合方法，但实际系统仍需解决原语可替换、短载荷承载、完整密文字节认证、目标规模运行和重复使用成本等问题。
 
-本作品实现相互独立的HIBE与IBS组件，并以统一装配层形成三组完整实例。系统使用32字节种子的混合封装承载应用消息，以一次性字节认证覆盖完整内层密文，并支持规范序列化、固定发钥状态和跨进程恢复。围绕真实瓶颈，作品进一步完成环结构表示与低秩采样、SRGG四类对象无损编码、Lai接收会话复用以及同参数部署消融。
+本作品实现相互独立的HIBE与IBS组件，并以统一装配层形成三组完整代表实例。两种HIBE与五类IBS的10个配对均已完成诚实往返和身份错配拒绝，证明公共协议不依赖某一组专用原语。系统使用32字节种子的混合封装承载应用消息，以一次性字节认证覆盖完整内层密文，并支持规范序列化、固定发钥状态和跨进程恢复。围绕真实瓶颈，作品进一步完成环结构表示与低秩采样、SRGG四类对象无损编码、Lai接收会话复用以及同参数部署消融。
 
 实测表明，SRGG论文参数下主状态可缩至原JSON表示的约五分之一，单根Lai会话实验在一次真实委派后将后续单条解密中位数降至28.57秒，但需509.55秒准备和约34.73 MiB叶钥状态；统一WSL环境中的部署位置消融，以Windows盘源码为基线，Linux盘同一安装包的完整加密与解密中位时间比分别为18.87和4.59。作品据此给出优化收益、准备代价与适用边界，而不把不同安全目标或不同环境的数值作简单排名。\\
 \hline
@@ -159,7 +159,7 @@
 \addcontentsline{toc}{chapter}{摘要}
 身份基匹配加密（Identity-Based Matchmaking Encryption，IB-ME）要求发送者指定接收身份，同时要求接收者指定期望的发送身份；只有两侧身份均匹配时才能恢复消息。它把保密投递与发送来源约束统一到一个协议中。已有格上通用构造说明了如何组合两层匿名HIBE与IBS，但论文级原语不能直接等同于可部署系统：不同原语的参数、对象形状和输入容量各不相同，短消息HIBE无法直接承载签名和应用数据，序列化后的完整密文字节仍需认证，目标规模采样与重复委派还会带来显著时间和空间开销。
 
-本作品围绕上述缺口完成抗量子IB-ME通用框架及三组真实实例。框架将HIBE、IBS和公共协议分层，固定身份路径为“接收者—发送者”，在装配前检查能力与容量。协议层以32字节种子进入HIBE，使用混合加密承载可变长应用消息，并以一次性签名认证完整内层密文字节。规范编码、域分隔、严格解析和可恢复发钥状态共同保证不同组件可以在不读取彼此私有矩阵或陷门的条件下组合。
+本作品围绕上述缺口完成抗量子IB-ME通用框架及三组真实代表实例。框架将HIBE、IBS和公共协议分层，固定身份路径为“接收者—发送者”，在装配前检查能力与容量。两种HIBE与五类IBS的10个配对均已完成诚实往返和身份错配拒绝；其中三组承担互动展示、原生模格签名和目标规模环实现三条报告主线。协议层以32字节种子进入HIBE，使用混合加密承载可变长应用消息，并以一次性签名认证完整内层密文字节。规范编码、域分隔、严格解析和可恢复发钥状态共同保证不同组件可以在不读取彼此私有矩阵或陷门的条件下组合。
 
 作品的实现优化集中在四个真实瓶颈。Sageloli环IBS以多项式和低秩频域计算避免展开巨型旋转矩阵，使论文PARAM-I与PARAM-II均完成真实生命周期；SRGG对公钥、主状态、用户密钥和签名设计无损紧凑编码，三档参数下分别获得约2.55至5.46倍的对象级缩减；单根Lai接收会话实验复用已经验证的叶钥，把后续解密中位数由526.27秒量级降至28.57秒，同时如实保留509.55秒准备与约34.73 MiB状态成本；统一WSL环境中的部署位置消融对照Windows盘源码及两地安装包；以Windows盘源码为基线，Linux盘同一安装包完整加密和解密的时间比分别约18.87和4.59。
 
@@ -174,7 +174,7 @@
 \linespread{1.15}\selectfont
 Identity-Based Matchmaking Encryption (IB-ME) releases a plaintext only when both identity constraints hold: the sender targets the intended receiver, and the receiver asks for the actual sender. A generic lattice construction can combine a two-level anonymous HIBE with an IBS, but a deployable implementation must still reconcile independent parameter sets, message capacities, object representations, full-ciphertext authentication, persistent state, and the cost of target-scale sampling and delegation.
 
-This work implements a common post-quantum IB-ME framework with replaceable HIBE and IBS components and three complete instantiations. The protocol fixes the hierarchy path as receiver then sender, checks component capabilities before assembly, encapsulates a 32-byte seed for hybrid encryption, and authenticates the complete inner ciphertext with a one-time byte-authentication layer. Canonical encoding, domain separation, strict parsing, and recoverable authority state allow components to be replaced without exposing their private matrices or trapdoors to the protocol layer.
+This work implements a common post-quantum IB-ME framework with replaceable HIBE and IBS components. All ten pairings of two HIBEs and five IBS families complete an honest round trip and identity-mismatch rejection; three representative systems form the main evaluation. The protocol fixes the hierarchy path as receiver then sender, checks component capabilities before assembly, encapsulates a 32-byte seed for hybrid encryption, and authenticates the complete inner ciphertext with a one-time byte-authentication layer. Canonical encoding, domain separation, strict parsing, and recoverable authority state allow components to be replaced without exposing their private matrices or trapdoors to the protocol layer.
 
 The implementation addresses four measured bottlenecks. A structured polynomial representation and low-rank frequency-domain sampling make the target Sageloli ring-IBS parameters executable. Lossless SRGG encodings reduce public, authority, user-key, and signature objects by factors of approximately 2.55 to 5.46 across three parameter sets. A single-root receiver-session experiment amortizes a real Lai delegation: subsequent decryption has a median of 28.57 seconds after a 509.55-second preparation step and retains about 34.73 MiB of leaf-key state. Within the same WSL Sage/Python environment, a deployment study contrasts source and wheel files on a Windows mount with the same wheel on the Linux file system. Relative to the mounted-source baseline, the Linux-file-system deployment has complete-operation time ratios of 18.87 for encryption and 4.59 for decryption.
 
@@ -608,6 +608,26 @@ C & Lai C2 & Sageloli PARAM-I & 3924 B & 3227824 B & 目标规模环实现与会
 
 应用上限已经扣除协议域、长度帧、一次性承诺和IBS签名；它不是HIBE短消息上限。A、B、C的HIBE内层都只加密32字节种子，Hybrid总载荷分别为64 KiB、128 KiB和8 MiB。C的约3.08 MiB签名需要较大的Hybrid包络；3924字节应用上限则由IBS的4096字节签名输入预算扣除协议编码开销得到，并非8 MiB载荷空间已经耗尽。
 
+\section{从三组代表到十种真实组合}
+可替换性不能只由接口数量说明。除三组代表使用的BNN/ML-DSA、SRGG和Sageloli外，系统还接入了BNN/Falcon-512（通用转换~[6]与Falcon~[13]）与Luo模格IBS~[12]。表~\ref{tab:two-by-five-coverage}的2种HIBE与5类IBS共10个配对都已执行完整组合，而不是仅通过类型检查。
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{两种HIBE与五类IBS的实际组合覆盖}
+\label{tab:two-by-five-coverage}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.12\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\rowcolor{black!8} HIBE & BNN/ML-DSA-44 & BNN/Falcon-512 & Luo模格 & SRGG PARAM-I compact & Sageloli PARAM-I \\
+\midrule
+LATTE-3 & 3根重复基准（A） & 3根重复基准 & 3根重复基准 & 3根重复基准（B） & 单根完整CLI与组合检查 \\
+Lai C2 & 单次完整组合 & 单次完整组合 & 单根完整CLI & 单次完整组合 & 单次完整组合（C） \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+每一格都包含诚实往返及身份错配拒绝；因样本与环境不同，本表只证明协议层可跨原语组合，不构成2\(\times\)5性能排名。A、B、C作为三条报告主线，不表示其他组合无法运行。
+
 \chapter{面向目标规模与重复使用的关键优化}
 
 \section{从“算法可调用”到“目标规模可运行”}
@@ -810,6 +830,50 @@ A随机身份批次 & Xeon Silver 4216，Nix Sage10.9／Python3.14.7 & 3个独�
 \bottomrule
 \end{tabularx}
 \end{table}
+
+\section{十种组合的功能覆盖与可比子集}
+第3章的10个配对均有真实组合运行，但只有实验环境、输入、计时边界和重复方法一致的子集才适合并列数值。表~\ref{tab:latte-three-ibs}在同一LATTE配置下比较三类IBS：身份各64 B，应用消息32 B，每组3个独立CSPRNG根、每根3对热操作，另有9次恢复后解密。
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{固定LATTE时三类IBS的同机重复子集}
+\label{tab:latte-three-ibs}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\rowcolor{black!8} IBS & 热加密中位数/s & 热解密中位数/s & 完整密文/B \\
+\midrule
+BNN/ML-DSA-44 & 0.211125 & 0.280116 & 142051--142146 \\
+BNN/Falcon-512 & 0.200346 & 0.249274 & 138150--138207 \\
+Luo模格 compact & 0.364461 & 0.229220 & 151876--151955 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+该批在Ultra 9 275HX、Sage 10.9／Python 3.13.14、OMP4／BLAS1下运行。数值表明，替换IBS会同时改变签名路径和完整wire，加密与解密的排序也不必相同。三种配置保留各自的参数目标，因而这是固定实现条件下的工程成本对照，不作等安全强度排名。
+
+表~\ref{tab:lai-four-ibs}固定Lai C2根，为四种IBS分别建立一个根，每组执行一次32 B加密与四种身份情形；每次解密都在新进程重做未缓存的Lai委派。
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{固定Lai C2时四类IBS的单次组合观测}
+\label{tab:lai-four-ibs}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\rowcolor{black!8} IBS & 加密/s & 诚实解密/s & 其中Derive/s & 完整密文/B \\
+\midrule
+BNN/ML-DSA-44 & 88.546838 & 425.408533 & 393.707021 & 1333849 \\
+BNN/Falcon-512 & 91.093463 & 425.763500 & 394.108228 & 1329934 \\
+SRGG PARAM-I compact & 90.131142 & 425.468977 & 393.675319 & 1341012 \\
+Sageloli PARAM-I & 98.972055 & 424.980337 & 393.037574 & 4555436 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+该批在Ultra 9 275HX、Sage 10.9／Python 3.13.14、OMP1／BLAS1下运行，最多并发6个解密进程。四行的Derive都约393--394秒，说明诚实解密主要受HIBE委派支配；不能用总时间不到1秒的差异判定某种IBS更快。Sageloli行更清楚地显示了约3.08 MiB签名带来的wire成本。这些数值每格只有1次，不给误差条或吞吐量结论。
+
+Lai C2与Luo模格的第五格也完成了完整CLI：14 B消息的加密和诚实解密分别为106秒和672.05秒，完整密文为1357049 B，同时覆盖三类身份错配及五类外层篡改。由于它的输入、进程与计时条件不同，本文只用它补齐功能覆盖，不将其硬填为表~\ref{tab:lai-four-ibs}的第五个同条件样本。
 
 \section{A/B同机完整流程对照}
 \begin{table}[htbp]
@@ -1031,7 +1095,7 @@ C组已经出现在固定方案入口中，页面预检实际核对Lai C2、Sage
 新增HIBE或IBS只需实现对应原语契约、声明能力与容量，并通过独立生命周期测试；公共协议不需要认识其内部矩阵。只有实际通过装配检查和完整流程的组合才进入展示。这样的边界既方便继续接入新算法，也防止把接口占位或小参数演示误认为完整成果。
 
 \chapter{总结}
-本作品把两层匿名HIBE与IBS的通用构造实现为可替换、可恢复、可测量的抗量子身份基匹配加密系统。统一装配解决了多原语参数与容量不一致，混合封装和完整字节认证补齐了从短消息原语到应用载荷的协议链，三组真实实例验证了两种HIBE、三种IBS在同一身份语义下的完整生命周期。
+本作品把两层匿名HIBE与IBS的通用构造实现为可替换、可恢复、可测量的抗量子身份基匹配加密系统。统一装配解决了多原语参数与容量不一致，混合封装和完整字节认证补齐了从短消息原语到应用载荷的协议链。两种HIBE与五类IBS的10个配对均已完成诚实往返和身份错配拒绝；三组代表进一步在同一身份语义下承担互动基线、原生模格实现和目标规模环实现三条评测主线。
 
 围绕实际成本，作品进一步完成环结构执行、四类对象无损编码、接收会话摊销和同参数部署消融。结果表明，优化必须与其作用层和额外代价一起解释：对象压缩不等于整包同比缩小，后续解密加速依赖一次准备和进程内保留的叶钥状态，部署收益也不等于算法复杂度下降。这些结论为不同使用场景选择交互基线、原生模块格IBS或目标规模环实例提供了可核查依据。
 
@@ -1063,6 +1127,10 @@ C组已经出现在固定方案入口中，页面预检实际核对Lai C2、Sage
 \noindent[10] NIST. Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC. Special Publication 800-38D, 2007.\par
 
 \noindent[11] Leslie Lamport. Constructing Digital Signatures from a One Way Function. SRI International, CSL-98, 1979.\par
+
+\noindent[12] Pingbin Luo, Xinjian Chen, Willy Susilo, Qiong Huang. Identity-Based Signature from Lattices without Trapdoors. \emph{ICICS 2024}.\par
+
+\noindent[13] Pierre-Alain Fouque et al. Falcon: Fast-Fourier Lattice-based Compact Signatures over NTRU. Specification v1.2, 2020.\par
 \endgroup
 
 \end{document}

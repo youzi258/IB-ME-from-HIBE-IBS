@@ -22,6 +22,7 @@ SELECTION = ROOT / "docs/deliveries/2026-10-19-report-three-selection/selection.
 TEMPLATE_FACTS = ROOT / "docs/competition/2026/template-facts.json"
 MASTER_TABLE = ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json"
 RANDOM_BATCH = ROOT / "docs/research/2026-10-19-primary-random-batch/receipt.json"
+COMBINATION_INVENTORY = ROOT / "docs/research/2026-10-20-combination-data-inventory/inventory.json"
 OPTIMIZATION_SUMMARY = ROOT / "docs/research/2026-10-20-multi-backend-optimization/verified-summary.json"
 MESSAGE_WIRE_FIGURE = ROOT / "docs/deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png"
 OPTIMIZATION_FIGURE = ROOT / "docs/research/2026-10-20-multi-backend-optimization/optimization.png"
@@ -63,6 +64,7 @@ def main() -> int:
     review = json.loads(REVIEW_FACTS.read_text(encoding="utf-8"))
     master = json.loads(MASTER_TABLE.read_text(encoding="utf-8"))
     random_batch = json.loads(RANDOM_BATCH.read_text(encoding="utf-8"))
+    combinations = json.loads(COMBINATION_INVENTORY.read_text(encoding="utf-8"))
     optimization = json.loads(OPTIMIZATION_SUMMARY.read_text(encoding="utf-8"))
     web_runs = {
         "A": json.loads(WEB_A.read_text(encoding="utf-8")),
@@ -149,6 +151,9 @@ def main() -> int:
         "页面预检实际核对Lai C2",
         "270116709797628319132317",
         "下载文件也使用HTTP原始响应",
+        "2种HIBE与5类IBS共10个配对",
+        "每一格都包含诚实往返及身份错配拒绝",
+        r"2\(\times\)5性能排名",
     )
     for fragment in required_fragments:
         checks.expect(f"required report fact: {fragment}", fragment in text)
@@ -234,6 +239,54 @@ def main() -> int:
     checks.expect(
         "random batch five outcomes",
         set(random_batch["totals"].values()) == {12},
+    )
+
+    checks.expect(
+        "combination inventory schema",
+        combinations.get("schema") == "IBME-COMBINATION-DATA-INVENTORY/1",
+    )
+    checks.expect(
+        "combination inventory is coverage rather than balanced performance",
+        combinations.get("available_pair_count") == 10
+        and combinations.get("balanced_two_by_five_performance_matrix_available") is False,
+    )
+    expected_pairs = {
+        (hibe, ibs)
+        for hibe in ("LATTE-3/COSAC-FIX", "Lai C2")
+        for ibs in ("cert-ml-dsa", "cert-falcon", "luo-module", "srgg2025-paper", "sageloli-rsis")
+    }
+    actual_pairs = {(row["hibe"], row["ibs"]) for row in combinations["combinations"]}
+    checks.expect("complete two by five pair coverage", actual_pairs == expected_pairs, repr(actual_pairs))
+    indexed = {(row["hibe"], row["ibs"]): row for row in combinations["combinations"]}
+    rendered_names = {
+        "cert-ml-dsa": "BNN/ML-DSA-44",
+        "cert-falcon": "BNN/Falcon-512",
+        "luo-module": "Luo模格 compact",
+        "srgg2025-paper": "SRGG PARAM-I compact",
+        "sageloli-rsis": "Sageloli PARAM-I",
+    }
+    for ibs in ("cert-ml-dsa", "cert-falcon", "luo-module"):
+        row = indexed[("LATTE-3/COSAC-FIX", ibs)]
+        size = row["ciphertext_bytes"]
+        expected = (
+            f'{rendered_names[ibs]} & {row["warm_encrypt_median_seconds"]:.6f} & '
+            f'{row["warm_decrypt_median_seconds"]:.6f} & {size["minimum"]}--{size["maximum"]}'
+        )
+        checks.expect(f"LATTE comparable combination rendered: {ibs}", expected in text)
+    for ibs in ("cert-ml-dsa", "cert-falcon", "srgg2025-paper", "sageloli-rsis"):
+        row = indexed[("Lai C2", ibs)]
+        expected = (
+            f'{rendered_names[ibs]} & {row["encrypt_seconds"]:.6f} & '
+            f'{row["honest_decrypt_seconds"]:.6f} & {row["honest_derive_seconds"]:.6f} & '
+            f'{row["ciphertext_bytes"]}'
+        )
+        checks.expect(f"Lai comparable combination rendered: {ibs}", expected in text)
+    luo_lai = indexed[("Lai C2", "luo-module")]
+    checks.expect(
+        "Lai Luo heterogeneous observation disclosed",
+        f'{luo_lai["message_bytes"]} B消息的加密和诚实解密分别为'
+        f'{luo_lai["encrypt_seconds"]}秒和{luo_lai["honest_decrypt_seconds"]}秒' in text
+        and f'完整密文为{luo_lai["ciphertext_bytes"]} B' in text,
     )
 
     checks.expect("optimization summary consistent", optimization.get("status") == "consistent")
@@ -324,7 +377,7 @@ def main() -> int:
         int(number)
         for number in re.findall(r"^\\noindent\[(\d+)\]", text, flags=re.MULTILINE)
     ]
-    checks.expect("eleven ordered references", reference_numbers == list(range(1, 12)), repr(reference_numbers))
+    checks.expect("thirteen ordered references", reference_numbers == list(range(1, 14)), repr(reference_numbers))
     checks.expect("balanced TeX groups", text.count(r"\begingroup") == text.count(r"\endgroup"))
     for environment in (
         "document",
@@ -372,7 +425,7 @@ def main() -> int:
                 checks.expect(f"anonymous PDF excludes {token!r}", token not in payload)
 
     if args.submission_ready:
-        checks.expect("all six rewrite batches complete", False, "only batches 1, 2, 3 and 4 are complete")
+        checks.expect("all rewrite and release batches complete", False, "independent reproduction and release closure remain")
 
     if checks.failures:
         print(f"Competition report rewrite validation failed: {len(checks.failures)}/{checks.count} checks")
