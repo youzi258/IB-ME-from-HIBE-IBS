@@ -1,0 +1,1146 @@
+{
+  "schema": "IBME-COMBINATION-DATA-INVENTORY/1",
+  "audit_date": "2026-10-20",
+  "audited_upstream_main": "1112ea721a7218acca2e11de01536e9e4318e0a9",
+  "scope": "two completed HIBE implementations x five selected IBS families; not all catalog algorithms or all parameter profiles",
+  "combinations": [
+    {
+      "hibe": "LATTE-3/COSAC-FIX",
+      "ibs": "cert-ml-dsa",
+      "parameter_label": {
+        "allow_mock": false,
+        "hibe": "latte",
+        "hibe_params": "seed32",
+        "ibs": "cert-ml-dsa",
+        "ibs_params": "ml-dsa-44",
+        "protocol": "byteauth-v1",
+        "signature_format": "reference",
+        "transport": "hybrid"
+      },
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 65536
+        },
+        "ibs": "cert-ml-dsa",
+        "ibs_params": {
+          "backend_admitted": false,
+          "base_algorithm": "ml-dsa-44",
+          "identity_bytes": 64,
+          "max_identities": 16,
+          "message_max_bytes": 65536,
+          "parameters_are_formal": false,
+          "security_claim": "none",
+          "timeout_seconds": 30
+        },
+        "ibs_version": "IBME/CERTIBS/1",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "source_file": "docs/research/2026-10-18-full-system-baseline/evidence/latte-mldsa44.json",
+      "source_commit": "6b5305a",
+      "kind": "repeated-full-system-benchmark",
+      "independent_roots": 3,
+      "warm_pairs": 9,
+      "restored_decryptions": 9,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "warm_encrypt_median_seconds": 0.21112540699999727,
+      "warm_decrypt_median_seconds": 0.28011566400004995,
+      "ciphertext_bytes": {
+        "count": 12,
+        "maximum": 142146,
+        "minimum": 142051
+      },
+      "timing_boundary": "complete protocol API; warm decrypt reuses existing leaf state",
+      "comparison_group": "latte-275hx-three-ibs",
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      }
+    },
+    {
+      "hibe": "LATTE-3/COSAC-FIX",
+      "ibs": "cert-falcon",
+      "parameter_label": {
+        "allow_mock": false,
+        "hibe": "latte",
+        "hibe_params": "seed32",
+        "ibs": "cert-falcon",
+        "ibs_params": "falcon-padded-512",
+        "protocol": "byteauth-v1",
+        "signature_format": "reference",
+        "transport": "hybrid"
+      },
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 65536
+        },
+        "ibs": "cert-falcon",
+        "ibs_params": {
+          "backend_admitted": false,
+          "base_algorithm": "falcon-padded-512",
+          "identity_bytes": 64,
+          "max_identities": 16,
+          "message_max_bytes": 65536,
+          "parameters_are_formal": false,
+          "security_claim": "none",
+          "timeout_seconds": 30
+        },
+        "ibs_version": "IBME/CERTIBS/1",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "source_file": "docs/research/2026-10-18-full-system-falcon/evidence/latte-falcon512.json",
+      "source_commit": "a709e82c01bd30db590452cef6f0401d8e8c3635",
+      "kind": "repeated-full-system-benchmark",
+      "independent_roots": 3,
+      "warm_pairs": 9,
+      "restored_decryptions": 9,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "warm_encrypt_median_seconds": 0.20034643700000032,
+      "warm_decrypt_median_seconds": 0.2492738019999976,
+      "ciphertext_bytes": {
+        "count": 12,
+        "maximum": 138207,
+        "minimum": 138150
+      },
+      "timing_boundary": "complete protocol API; warm decrypt reuses existing leaf state",
+      "comparison_group": "latte-275hx-three-ibs",
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      }
+    },
+    {
+      "hibe": "LATTE-3/COSAC-FIX",
+      "ibs": "luo-module",
+      "parameter_label": {
+        "allow_mock": false,
+        "hibe": "latte",
+        "hibe_params": "seed32",
+        "ibs": "luo-module",
+        "ibs_params": "research",
+        "protocol": "byteauth-v1",
+        "signature_format": "compact",
+        "transport": "hybrid"
+      },
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 65536
+        },
+        "ibs": "luo-module",
+        "ibs_params": {
+          "degree": 256,
+          "dropped_bits": 28,
+          "eta": 1,
+          "gamma1": 125440,
+          "gamma2": 31470387200,
+          "gamma3": 15270991360,
+          "identity_max_bytes": 64,
+          "k": 11,
+          "kappa": 64,
+          "l": 10,
+          "max_cached_identities": 64,
+          "max_extract_attempts": 1024,
+          "max_sign_attempts": 1024,
+          "max_uniform_attempts": 128,
+          "message_max_bytes": 4096,
+          "q": 274877844481,
+          "root": 153250464611
+        },
+        "ibs_version": "luo-module-ref1",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "compact",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "source_file": "docs/research/2026-10-18-full-system-luo/evidence/latte-luo-compact.json",
+      "source_commit": "949bf91562489ca43e82626405a6f6c67c07a6f4",
+      "kind": "repeated-full-system-benchmark",
+      "independent_roots": 3,
+      "warm_pairs": 9,
+      "restored_decryptions": 9,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "warm_encrypt_median_seconds": 0.3644610709999938,
+      "warm_decrypt_median_seconds": 0.22922045799998614,
+      "ciphertext_bytes": {
+        "count": 12,
+        "maximum": 151955,
+        "minimum": 151876
+      },
+      "timing_boundary": "complete protocol API; warm decrypt reuses existing leaf state",
+      "comparison_group": "latte-275hx-three-ibs",
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      }
+    },
+    {
+      "label": "B",
+      "hibe": "LATTE-3/COSAC-FIX",
+      "ibs": "srgg2025-paper",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 131072
+        },
+        "ibs": "srgg2025-paper",
+        "ibs_params": {
+          "interpretation": "table-standard-deviation",
+          "profile_name": "PARAM-I"
+        },
+        "ibs_version": "SRGG-PAPER-TABLE4-factor1-v1",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "compact",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "source_file": "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-B.json",
+      "source_commit": "eeb3108fc634a2d3d56b329c62f528414965e05d",
+      "independent_roots": 3,
+      "warm_pairs": 9,
+      "restored_decryptions": 9,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "warm_encrypt_median_seconds": 9.172153894000019,
+      "warm_decrypt_median_seconds": 0.16066960599999902,
+      "ciphertext_bytes": {
+        "minimum": 149204,
+        "maximum": 149273,
+        "count": 12
+      },
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) i9-14900HX",
+        "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      },
+      "timing_boundary": "complete protocol API; warm decrypt reuses existing leaf state",
+      "comparison_group": "latte-14900hx-A-B",
+      "kind": "repeated-full-system-benchmark"
+    },
+    {
+      "hibe": "LATTE-3/COSAC-FIX",
+      "ibs": "sageloli-rsis",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 8388608
+        },
+        "ibs": "sageloli-rsis",
+        "ibs_params": {
+          "d": 2048,
+          "identity_max_bytes": 256,
+          "identity_width_squared": 2720281532542,
+          "k": 65,
+          "l": 132,
+          "mass_bits": 320,
+          "max_sign_attempts": 64,
+          "max_users": 2,
+          "message_max_bytes": 4096,
+          "r_squared": 49,
+          "salt_bytes": 32,
+          "signature_width_squared": 270116709797628319132317,
+          "tail_bits": 256
+        },
+        "ibs_version": "Sageloli-RSIS-structured-v3",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "source_file": "docs/research/2026-10-19-sageloli-ring-integration/evidence/integration.json",
+      "source_commit": "28e5bee",
+      "kind": "single-root-cli-and-functional-checks",
+      "independent_roots": 1,
+      "cli_commands": 15,
+      "same_root_acceptance_checks": 34,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "encrypt_seconds": 21.901127737999957,
+      "honest_decrypt_seconds": 3.6864761120000367,
+      "ciphertext_bytes": 3363679,
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      },
+      "timing_boundary": "fresh CLI subprocess operation includes state load/validation; not a warm API benchmark",
+      "comparison_group": null
+    },
+    {
+      "hibe": "Lai C2",
+      "ibs": "cert-falcon",
+      "parameter_label": "falcon512",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "lai-ideal-hibe",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "k": 39,
+          "l": 2,
+          "max_message_bytes": 32,
+          "message_mode": "seed32",
+          "n": 2048,
+          "p": 2,
+          "q": 274877976577,
+          "sigma": 2.0,
+          "sigma_r": 1.0
+        },
+        "hibe_version": "lai-a-256-v1",
+        "hybrid_limits": {
+          "backend_id": "lai-a-256-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 8388608
+        },
+        "ibs": "cert-falcon",
+        "ibs_params": {
+          "backend_admitted": false,
+          "base_algorithm": "falcon-padded-512",
+          "identity_bytes": 64,
+          "max_identities": 16,
+          "message_max_bytes": 65536,
+          "parameters_are_formal": false,
+          "security_claim": "none",
+          "timeout_seconds": 30
+        },
+        "ibs_version": "IBME/CERTIBS/1",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "suite_digest": "229db8f9ed17a9bc203be057d7a65f1cce956bb9fcd39b7e9d7d3e5e2ba7ccc7",
+      "source_file": "docs/research/2026-10-19-lai-c2-combinations/evidence/trials.json",
+      "source_pointer": "/suites/falcon512",
+      "source_commit": "48f72292177a695a437154a91d315f76cb4e8d21",
+      "kind": "single-shared-hibe-root-functional-composition",
+      "shared_hibe_root": true,
+      "batch_hibe_root_count": 1,
+      "ibs_roots_for_this_suite": 1,
+      "encryption_count": 1,
+      "identity_cases": 4,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "encrypt_seconds": 91.09346301300002,
+      "honest_decrypt_seconds": 425.7635001289999,
+      "honest_derive_seconds": 394.1082279159999,
+      "ciphertext_bytes": 1329934,
+      "sender_key_bytes": 4195,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      },
+      "concurrent_decrypt_limit": 6,
+      "timing_boundary": "complete protocol API; fresh process and real uncached Derive per identity case",
+      "comparison_group": "lai-c2-shared-root-four-ibs"
+    },
+    {
+      "hibe": "Lai C2",
+      "ibs": "cert-ml-dsa",
+      "parameter_label": "mldsa44",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "lai-ideal-hibe",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "k": 39,
+          "l": 2,
+          "max_message_bytes": 32,
+          "message_mode": "seed32",
+          "n": 2048,
+          "p": 2,
+          "q": 274877976577,
+          "sigma": 2.0,
+          "sigma_r": 1.0
+        },
+        "hibe_version": "lai-a-256-v1",
+        "hybrid_limits": {
+          "backend_id": "lai-a-256-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 8388608
+        },
+        "ibs": "cert-ml-dsa",
+        "ibs_params": {
+          "backend_admitted": false,
+          "base_algorithm": "ml-dsa-44",
+          "identity_bytes": 64,
+          "max_identities": 16,
+          "message_max_bytes": 65536,
+          "parameters_are_formal": false,
+          "security_claim": "none",
+          "timeout_seconds": 30
+        },
+        "ibs_version": "IBME/CERTIBS/1",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "suite_digest": "b2c612b52026d6431d5a56c780b21613db88f954809fdc3b0578439b6c86cafc",
+      "source_file": "docs/research/2026-10-19-lai-c2-combinations/evidence/trials.json",
+      "source_pointer": "/suites/mldsa44",
+      "source_commit": "48f72292177a695a437154a91d315f76cb4e8d21",
+      "kind": "single-shared-hibe-root-functional-composition",
+      "shared_hibe_root": true,
+      "batch_hibe_root_count": 1,
+      "ibs_roots_for_this_suite": 1,
+      "encryption_count": 1,
+      "identity_cases": 4,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "encrypt_seconds": 88.546837709,
+      "honest_decrypt_seconds": 425.408532909,
+      "honest_derive_seconds": 393.70702122499995,
+      "ciphertext_bytes": 1333849,
+      "sender_key_bytes": 8050,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      },
+      "concurrent_decrypt_limit": 6,
+      "timing_boundary": "complete protocol API; fresh process and real uncached Derive per identity case",
+      "comparison_group": "lai-c2-shared-root-four-ibs"
+    },
+    {
+      "hibe": "Lai C2",
+      "ibs": "sageloli-rsis",
+      "parameter_label": "sageloli-I",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "lai-ideal-hibe",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "k": 39,
+          "l": 2,
+          "max_message_bytes": 32,
+          "message_mode": "seed32",
+          "n": 2048,
+          "p": 2,
+          "q": 274877976577,
+          "sigma": 2.0,
+          "sigma_r": 1.0
+        },
+        "hibe_version": "lai-a-256-v1",
+        "hybrid_limits": {
+          "backend_id": "lai-a-256-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 8388608
+        },
+        "ibs": "sageloli-rsis",
+        "ibs_params": {
+          "d": 2048,
+          "identity_max_bytes": 256,
+          "identity_width_squared": 2720281532542,
+          "k": 65,
+          "l": 132,
+          "mass_bits": 320,
+          "max_sign_attempts": 64,
+          "max_users": 2,
+          "message_max_bytes": 4096,
+          "r_squared": 49,
+          "salt_bytes": 32,
+          "signature_width_squared": 270116709797628319132317,
+          "tail_bits": 256
+        },
+        "ibs_version": "Sageloli-RSIS-structured-v3",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "suite_digest": "9a3c66cfd5073721bf135466197522352010ecbc6a10a6794c710e9b10423c82",
+      "source_file": "docs/research/2026-10-19-lai-c2-combinations/evidence/trials.json",
+      "source_pointer": "/suites/sageloli-I",
+      "source_commit": "48f72292177a695a437154a91d315f76cb4e8d21",
+      "kind": "single-shared-hibe-root-functional-composition",
+      "shared_hibe_root": true,
+      "batch_hibe_root_count": 1,
+      "ibs_roots_for_this_suite": 1,
+      "encryption_count": 1,
+      "identity_cases": 4,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "encrypt_seconds": 98.97205544600001,
+      "honest_decrypt_seconds": 424.9803374599999,
+      "honest_derive_seconds": 393.0375743420001,
+      "ciphertext_bytes": 4555436,
+      "sender_key_bytes": 144089680,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      },
+      "concurrent_decrypt_limit": 6,
+      "timing_boundary": "complete protocol API; fresh process and real uncached Derive per identity case",
+      "comparison_group": "lai-c2-shared-root-four-ibs"
+    },
+    {
+      "hibe": "Lai C2",
+      "ibs": "srgg2025-paper",
+      "parameter_label": "srgg-I",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": false,
+        "hibe": "lai-ideal-hibe",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "k": 39,
+          "l": 2,
+          "max_message_bytes": 32,
+          "message_mode": "seed32",
+          "n": 2048,
+          "p": 2,
+          "q": 274877976577,
+          "sigma": 2.0,
+          "sigma_r": 1.0
+        },
+        "hibe_version": "lai-a-256-v1",
+        "hybrid_limits": {
+          "backend_id": "lai-a-256-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 8388608
+        },
+        "ibs": "srgg2025-paper",
+        "ibs_params": {
+          "interpretation": "table-standard-deviation",
+          "profile_name": "PARAM-I"
+        },
+        "ibs_version": "SRGG-PAPER-TABLE4-factor1-v1",
+        "parameters_are_formal": false,
+        "protocol": "byteauth-v1",
+        "security_claim": "none",
+        "signature_format": "compact",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "suite_digest": "e93732262181ad12282464a4ecff1a33f924dd27e6b76a453e8ba4b170458396",
+      "source_file": "docs/research/2026-10-19-lai-c2-combinations/evidence/trials.json",
+      "source_pointer": "/suites/srgg-I",
+      "source_commit": "48f72292177a695a437154a91d315f76cb4e8d21",
+      "kind": "single-shared-hibe-root-functional-composition",
+      "shared_hibe_root": true,
+      "batch_hibe_root_count": 1,
+      "ibs_roots_for_this_suite": 1,
+      "encryption_count": 1,
+      "identity_cases": 4,
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "encrypt_seconds": 90.13114206099999,
+      "honest_decrypt_seconds": 425.46897692900006,
+      "honest_derive_seconds": 393.67531875,
+      "ciphertext_bytes": 1341012,
+      "sender_key_bytes": 84306,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+        "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+        "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+        "python": "3.13.14",
+        "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+      },
+      "concurrent_decrypt_limit": 6,
+      "timing_boundary": "complete protocol API; fresh process and real uncached Derive per identity case",
+      "comparison_group": "lai-c2-shared-root-four-ibs"
+    },
+    {
+      "hibe": "Lai C2",
+      "ibs": "luo-module",
+      "parameter_label": "research/reference",
+      "source_file": "docs/research/team-c-delivery/2026-10-19-lai-publication/evidence/target-c2-receipt.json",
+      "suite_digest": "eda3502de91eff42f10969dac9c3e92fd31468b5e1bc8b5fc17c498468b81c28",
+      "hibe_params": {
+        "identity_bytes": 86,
+        "k": 39,
+        "l": 2,
+        "max_message_bytes": 32,
+        "message_mode": "seed32",
+        "n": 2048,
+        "p": 2,
+        "q": 274877976577,
+        "sigma": 2.0,
+        "sigma_r": 1.0
+      },
+      "source_reference": "publication source-bindings.json; target_state_setup.sh explicit C2 + Luo research selection",
+      "kind": "single-root-cli-functional-receipt",
+      "independent_roots": 1,
+      "encryption_count": 1,
+      "message_bytes": 14,
+      "identity_capacity_bytes": 64,
+      "encrypt_seconds": 106,
+      "honest_decrypt_seconds": 672.05,
+      "ciphertext_bytes": 1357049,
+      "environment": {
+        "platform": "linux",
+        "python": "3.13.15"
+      },
+      "declared_publication_environment": {
+        "os": "WSL2/Linux",
+        "sage": "10.9",
+        "python": "3.13.15",
+        "OMP_NUM_THREADS": 1,
+        "OPENBLAS_NUM_THREADS": 1
+      },
+      "cpu_recorded": false,
+      "timing_boundary": "CLI process timing; setup timing integer seconds; 14 B message",
+      "comparison_group": null
+    }
+  ],
+  "available_pair_count": 10,
+  "balanced_two_by_five_performance_matrix_available": false,
+  "comparison_groups": [
+    {
+      "id": "latte-275hx-three-ibs",
+      "source_file": "docs/research/2026-10-18-full-system-luo/evidence/comparison.json",
+      "repeated_benchmark": true,
+      "members": 3
+    },
+    {
+      "id": "latte-14900hx-A-B",
+      "repeated_benchmark": true,
+      "members": [
+        {
+          "label": "A",
+          "hibe": "LATTE-3/COSAC-FIX",
+          "ibs": "cert-ml-dsa",
+          "suite": {
+            "allow_mock": false,
+            "backend_admitted": false,
+            "hibe": "latte",
+            "hibe_params": {
+              "identity_bytes": 86,
+              "max_children": 2,
+              "max_receivers": 2,
+              "message_mode": "seed32",
+              "native_timeout_seconds": 60
+            },
+            "hibe_version": "latte3-cosac-fix-v1",
+            "hybrid_limits": {
+              "backend_id": "latte3-cosac-fix-v1",
+              "identity_max_bytes": 64,
+              "max_capsule_bytes": 4194304,
+              "max_payload_bytes": 65536
+            },
+            "ibs": "cert-ml-dsa",
+            "ibs_params": {
+              "backend_admitted": false,
+              "base_algorithm": "ml-dsa-44",
+              "identity_bytes": 64,
+              "max_identities": 16,
+              "message_max_bytes": 65536,
+              "parameters_are_formal": false,
+              "security_claim": "none",
+              "timeout_seconds": 30
+            },
+            "ibs_version": "IBME/CERTIBS/1",
+            "parameters_are_formal": false,
+            "protocol": "byteauth-v1",
+            "security_claim": "none",
+            "signature_format": "reference",
+            "state_policy": "single-writer-commit-before-publish-v1",
+            "transport": "hybrid",
+            "version": "IBME/SUITE/1"
+          },
+          "source_file": "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-A.json",
+          "source_commit": "eeb3108fc634a2d3d56b329c62f528414965e05d",
+          "independent_roots": 3,
+          "warm_pairs": 9,
+          "restored_decryptions": 9,
+          "identity_bytes": 64,
+          "message_bytes": 32,
+          "warm_encrypt_median_seconds": 0.07847284700000046,
+          "warm_decrypt_median_seconds": 0.15195069799997896,
+          "ciphertext_bytes": {
+            "minimum": 142066,
+            "maximum": 142123,
+            "count": 12
+          },
+          "environment": {
+            "OMP_NUM_THREADS": "4",
+            "OPENBLAS_NUM_THREADS": "1",
+            "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+            "cpu": "Intel(R) Core(TM) i9-14900HX",
+            "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+            "python": "3.12.13",
+            "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+          },
+          "timing_boundary": "complete protocol API; warm decrypt reuses existing leaf state",
+          "comparison_group": "latte-14900hx-A-B"
+        },
+        {
+          "label": "B",
+          "hibe": "LATTE-3/COSAC-FIX",
+          "ibs": "srgg2025-paper",
+          "suite": {
+            "allow_mock": false,
+            "backend_admitted": false,
+            "hibe": "latte",
+            "hibe_params": {
+              "identity_bytes": 86,
+              "max_children": 2,
+              "max_receivers": 2,
+              "message_mode": "seed32",
+              "native_timeout_seconds": 60
+            },
+            "hibe_version": "latte3-cosac-fix-v1",
+            "hybrid_limits": {
+              "backend_id": "latte3-cosac-fix-v1",
+              "identity_max_bytes": 64,
+              "max_capsule_bytes": 4194304,
+              "max_payload_bytes": 131072
+            },
+            "ibs": "srgg2025-paper",
+            "ibs_params": {
+              "interpretation": "table-standard-deviation",
+              "profile_name": "PARAM-I"
+            },
+            "ibs_version": "SRGG-PAPER-TABLE4-factor1-v1",
+            "parameters_are_formal": false,
+            "protocol": "byteauth-v1",
+            "security_claim": "none",
+            "signature_format": "compact",
+            "state_policy": "single-writer-commit-before-publish-v1",
+            "transport": "hybrid",
+            "version": "IBME/SUITE/1"
+          },
+          "source_file": "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-B.json",
+          "source_commit": "eeb3108fc634a2d3d56b329c62f528414965e05d",
+          "independent_roots": 3,
+          "warm_pairs": 9,
+          "restored_decryptions": 9,
+          "identity_bytes": 64,
+          "message_bytes": 32,
+          "warm_encrypt_median_seconds": 9.172153894000019,
+          "warm_decrypt_median_seconds": 0.16066960599999902,
+          "ciphertext_bytes": {
+            "minimum": 149204,
+            "maximum": 149273,
+            "count": 12
+          },
+          "environment": {
+            "OMP_NUM_THREADS": "4",
+            "OPENBLAS_NUM_THREADS": "1",
+            "cold_definition": "fresh Python process; OS page cache and previously built native engines retained",
+            "cpu": "Intel(R) Core(TM) i9-14900HX",
+            "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+            "python": "3.12.13",
+            "rss_method": "10ms /proc process-tree samples (lower bound); Linux kernel lifetime ru_maxrss per interpreter/completed child"
+          },
+          "timing_boundary": "complete protocol API; warm decrypt reuses existing leaf state",
+          "comparison_group": "latte-14900hx-A-B"
+        }
+      ]
+    },
+    {
+      "id": "lai-c2-shared-root-four-ibs",
+      "repeated_benchmark": false,
+      "members": 4,
+      "note": "one shared HIBE root, each suite one IBS root and one encryption; up to six decrypt workers; single observations"
+    }
+  ],
+  "earlier_functional_profiles": {
+    "source_file": "docs/research/team-c-delivery/2026-10-15-c-framework/evidence/profile-combinations.json",
+    "executed_configurations": 10,
+    "checks": 338,
+    "randomness": "fixed public test streams",
+    "rows": [
+      {
+        "case": "latte3-hybrid-cert-ml-dsa-ml-dsa-44-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "cert-ml-dsa",
+          "ibs_params": "ml-dsa-44",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 6.447201,
+        "sizes": {
+          "public_key": 14368,
+          "sender_key": 7932,
+          "receiver_key": 159955,
+          "signature": 6237,
+          "ciphertext": 142101
+        }
+      },
+      {
+        "case": "latte3-hybrid-cert-ml-dsa-ml-dsa-65-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "cert-ml-dsa",
+          "ibs_params": "ml-dsa-65",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 5.925904,
+        "sizes": {
+          "public_key": 15012,
+          "sender_key": 11573,
+          "receiver_key": 159908,
+          "signature": 8655,
+          "ciphertext": 144489
+        }
+      },
+      {
+        "case": "latte3-hybrid-cert-ml-dsa-ml-dsa-87-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "cert-ml-dsa",
+          "ibs_params": "ml-dsa-87",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 6.40884,
+        "sizes": {
+          "public_key": 15673,
+          "sender_key": 15035,
+          "receiver_key": 160047,
+          "signature": 11931,
+          "ciphertext": 147775
+        }
+      },
+      {
+        "case": "latte3-hybrid-cert-falcon-falcon-padded-512-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "cert-falcon",
+          "ibs_params": "falcon-padded-512",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 5.904659,
+        "sizes": {
+          "public_key": 14005,
+          "sender_key": 4077,
+          "receiver_key": 160084,
+          "signature": 2322,
+          "ciphertext": 138168
+        }
+      },
+      {
+        "case": "latte3-hybrid-cert-falcon-falcon-padded-1024-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "cert-falcon",
+          "ibs_params": "falcon-padded-1024",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 5.21906,
+        "sizes": {
+          "public_key": 14861,
+          "sender_key": 7508,
+          "receiver_key": 160036,
+          "signature": 4447,
+          "ciphertext": 140269
+        }
+      },
+      {
+        "case": "latte3-hybrid-luo-module-research-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "luo-module",
+          "ibs_params": "research",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 6.380608,
+        "sizes": {
+          "public_key": 260810,
+          "sender_key": 313695,
+          "receiver_key": 159906,
+          "signature": 29455,
+          "ciphertext": 165293
+        }
+      },
+      {
+        "case": "latte3-hybrid-luo-module-research-compact-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "luo-module",
+          "ibs_params": "research",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "compact",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 6.982801,
+        "sizes": {
+          "public_key": 260807,
+          "sender_key": 313695,
+          "receiver_key": 159934,
+          "signature": 16063,
+          "ciphertext": 151873
+        }
+      },
+      {
+        "case": "latte3-hybrid-luo-matrix-research-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "luo-matrix",
+          "ibs_params": "research",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 3.633812,
+        "sizes": {
+          "public_key": 13618,
+          "sender_key": 3460,
+          "receiver_key": 160174,
+          "signature": 947,
+          "ciphertext": 136813
+        }
+      },
+      {
+        "case": "latte3-hybrid-wang-pw-research-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "wang-pw",
+          "ibs_params": "research",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 3.416302,
+        "sizes": {
+          "public_key": 13220,
+          "sender_key": 1162,
+          "receiver_key": 159961,
+          "signature": 341,
+          "ciphertext": 136168
+        }
+      },
+      {
+        "case": "latte3-hybrid-srgg2025-research-reference-byteauth-v1",
+        "selection": {
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "ibs": "srgg2025",
+          "ibs_params": "research",
+          "transport": "hybrid",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "allow_mock": false
+        },
+        "status": "pass",
+        "message_bytes": 10,
+        "elapsed_seconds": 3.893047,
+        "sizes": {
+          "public_key": 13600,
+          "sender_key": 1830,
+          "receiver_key": 159897,
+          "signature": 478,
+          "ciphertext": 136327
+        }
+      }
+    ]
+  },
+  "optimization_pr": {
+    "url": "https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/75",
+    "status_at_audit": "OPEN",
+    "status_at_delivery_sync": "MERGED",
+    "included_in_main_grid_statistics": false,
+    "scope": "same-combination optimization off/on; not a cross-HIBE factorial benchmark"
+  },
+  "source_files_sha256": {
+    "docs/research/2026-10-18-full-system-luo/evidence/comparison.json": "00673cda58d83eb066201dda24c837628382f5e519fd934a7daafdec521721c8",
+    "docs/research/2026-10-18-full-system-baseline/evidence/latte-mldsa44.json": "dc8e5cef04534df6cd643a6c4aa908cb7b74e5e27c27e6730becadbe038ef8ab",
+    "docs/research/2026-10-18-full-system-falcon/evidence/latte-falcon512.json": "1937d36253490a6c4cf4447a57f2399dbaaf09805a403444d0d0bfa453c4b511",
+    "docs/research/2026-10-18-full-system-luo/evidence/latte-luo-compact.json": "311ff021ec88f4084a789027803d4b548725b9fa0e9c243129e9cd8a5b2b9395",
+    "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-A.json": "d9437604567df3213822243b1091adf8e67bda9ce883fe19867fcb4c4d76b58a",
+    "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-B.json": "523f8bbde0ffa44f725616b0413d74a7c8c854d3cb27b9f6c620ef40ad6ef759",
+    "docs/research/2026-10-19-sageloli-ring-integration/evidence/integration.json": "72196d45e5d1dad2587391196411e3e10f30ee5d0ff5304e600cfbcdc0058262",
+    "docs/research/2026-10-19-lai-c2-combinations/evidence/trials.json": "6c9749bb79235e14bbf5d1c2e2ba3b469709c2b5b095c9a4261a4f8c323b5897",
+    "docs/research/team-c-delivery/2026-10-19-lai-publication/evidence/target-c2-receipt.json": "a4e922fad10508623fc0e067836e93806e87bbb2eb6f45644823c010dcdc3326",
+    "docs/research/team-c-delivery/2026-10-19-lai-publication/validation.json": "3bb154a63e7aab7c2db9bd13b2439cdae6f8c9c42d4ca8b37fb5371a5d6eafc2",
+    "docs/research/team-c-delivery/2026-10-15-c-framework/evidence/profile-combinations.json": "9eb70bd53b663e483bcf23ad9cadb02faf9dcc08cdb368b5f75b4799bd82a922"
+  },
+  "cryptographic_experiments_rerun": false,
+  "original_receipts_modified": false,
+  "private_state_read": false,
+  "delivery_upstream_main": "d770bc2dd92186a19e2da4660bdf201aec6370b8"
+}

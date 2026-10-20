@@ -1,0 +1,54 @@
+{
+  "schema": "IBME-WEB-CAPTURE-CHECKS/1",
+  "status": "passed",
+  "date": "2026-10-20",
+  "code_commit": "f9a016aebc03d12ff5df34328c8bb99870b3105e",
+  "wheel_sha256": "80cab56fe012dda1f881ee5f730a4dad5dbaac4df8f9eca2f2d82a53647de74d",
+  "suite_digest": "bb8006f036dfcbe3ea2d765e2cdf44a595568f4465e3b786d0b802fb4e0baf91",
+  "exact_frozen_A": true,
+  "independent_roots": 1,
+  "encryptions": 1,
+  "decryptions": 3,
+  "normal_matches": true,
+  "rejections": [
+    "wrong_receiver",
+    "tamper"
+  ],
+  "all_expectations_met": true,
+  "artifact_files": {
+    "wrong-receiver.png": {
+      "sha256": "7aee11c2f756235d97196cde3727e8911935d912f6e9387ba3ed71a79099f0b7",
+      "bytes": 63585,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    "tampered-ciphertext.png": {
+      "sha256": "90ce6825dd8bccf49a31bd6d8639d344bd976348e3283e1866a4e8530223f046",
+      "bytes": 63618,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    "records.png": {
+      "sha256": "eeada5da7d92c81ab2ad428d234189008c451ccf023bcfa69aabc0c9dffb802c",
+      "bytes": 32876,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    "measurements.json": {
+      "sha256": "097b69188086e25afc91ea00645bba310939cc9c5fbc0f73728219d0650f5632",
+      "bytes": 3781
+    }
+  },
+  "images_visually_reviewed": true,
+  "images_edited": false,
+  "export_downloaded_through_ui": true,
+  "original_8765_session_reset": false,
+  "private_state_published": false,
+  "performance_benchmark": false
+}

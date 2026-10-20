@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "evidence": "docs/research/2026-10-19-lai-c2-combinations",
+      "source_mode": "fixed Git blobs; no current-source substitution",
+      "source_snapshot_commit": "48f72292177a695a437154a91d315f76cb4e8d21",
+      "result": {
+        "status": "passed",
+        "artifact_and_scope_checks": 582,
+        "suites": 4,
+        "identity_trials": 16,
+        "functional_observations": 104,
+        "private_state_read": false,
+        "experiments_rerun": false,
+        "security_certified": false
+      }
+    },
+    {
+      "evidence": "docs/research/2026-10-19-sageloli-ring-integration",
+      "source_mode": "fixed Git blobs; no current-source substitution",
+      "source_snapshot_commit": "b9a06b1f74ddbd3908a634be7cfa2a75582a7cc5",
+      "result": {
+        "status": "passed",
+        "checks": 696,
+        "private_state_read": false,
+        "experiments_rerun": false,
+        "cryptographic_security_certified": false,
+        "parameters_are_formal": false
+      }
+    },
+    {
+      "evidence": "docs/research/2026-10-18-full-system-luo/evidence/comparison.json",
+      "source_mode": "existing provider checker against fixed Git commits; generated JSON compared in memory",
+      "result": {
+        "status": "passed",
+        "profiles": 3,
+        "provider_occurrences": 2340,
+        "same_benchmark_runner_verified": true,
+        "private_state_files_opened": 0
+      }
+    },
+    {
+      "evidence": "docs/research/team-c-delivery/2026-10-19-lai-publication/evidence/target-c2-receipt.json",
+      "source_mode": "existing target-receipt validator plus published SHA-256; no fresh source rerun claimed",
+      "result": {
+        "status": "passed",
+        "honest": true,
+        "wrong_identity_cases": 3,
+        "outer_tamper_cases": 5,
+        "message_bytes": 14
+      }
+    },
+    {
+      "evidence": "docs/deliveries/2026-10-19-report-experiment-supplement",
+      "source_mode": "original fixed-commit verifier",
+      "result": {
+        "status": "passed",
+        "checks": 5219,
+        "source_commit": "eeb3108fc634a2d3d56b329c62f528414965e05d",
+        "repeated_benchmark_suites": 2,
+        "independent_benchmark_roots": 6,
+        "installed_cli_roots": 3,
+        "installed_cli_commands": 64,
+        "installed_process_checks": 67,
+        "full_protocol_inner_negative_probes": 3,
+        "new_lai_derivations": 4,
+        "private_state_read": false,
+        "experiments_rerun": false,
+        "security_claim": "none",
+        "backend_admitted": false,
+        "parameters_are_formal": false
+      }
+    }
+  ],
+  "experiments_rerun": false,
+  "private_state_read": false,
+  "historical_artifacts_modified": false
+}

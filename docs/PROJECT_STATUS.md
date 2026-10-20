@@ -28,8 +28,8 @@
 
 | 范围 | 已接收的结果 | 尚未由此完成的工作 |
 |---|---|---|
-| 公共框架／CLI／Web | 独立选参、能力和容量预检、规范wire、固定状态及真实组合工具；[Web改版](deliveries/2026-10-20-web-redesign/README.md)加入A/B/C固定入口、精简工作区、实际阶段与刷新重连，A/B六情形浏览器实跑 | C本轮只核对固定配置与环境，未新增长流程实验；Web服务重启清空会话，持久恢复使用CLI |
-| LATTE／Lai、SRGG论文档、Sageloli环v3 | LATTE的多IBS配对、Sageloli PARAM-I公共接入、Lai C2四个IBS组合均有实跑 | 各参数档的重复性能、安装和负例按实际覆盖分别验收；不把v2展开外推套到环v3 |
+| 公共框架／CLI／Web | 独立选参、能力和容量预检、规范wire、固定状态及真实组合工具；[Web改版](deliveries/2026-10-20-web-redesign/README.md)加入A/B/C固定入口、精简工作区、实际阶段与刷新重连，A/B六情形浏览器实跑；[错配与篡改补图及同会话导出](deliveries/2026-10-20-web-rejection-screenshots/README.md)已补齐 | C本轮只核对固定配置与环境，未新增长流程实验；Web服务重启清空会话，持久恢复使用CLI |
+| LATTE／Lai、SRGG论文档、Sageloli环v3 | [已有组合数据索引](research/2026-10-20-combination-data-inventory/README.md)核对两个HIBE×五类IBS共10个主要配对，整理三批跨组合数据与原始来源；包含早期Lai C2＋Luo收据 | 各参数档的重复性能、安装和负例按实际覆盖分别验收；尚无统一条件的完整2×5重复性能矩阵 |
 | ABB-ROM／CHKP／MP12各变体 | 已有小参数完整研究流程、对象和恢复；[3m原型](research/team-a-delivery/2026-10-18-3m-feasibility/README.md)与资源筛查保留 | 目标参数完整运行仍由队长安排的其它AI推进；本机资源受限不等于算法普遍不可行，暂不在本线程扩维 |
 | Wang＋PW | 既有小参数五方法后端与服务；[PR67数值原型修订](deliveries/2026-10-19-pr66-67-review/followup/README.md)已合入 | n512数值采样记录尚非这组参数下的完整IBS；身份／消息绑定、PW、固定公开范数验签、恢复与完整组合仍待 |
 | Luo模格／BNN-Falcon | 既有完整组合、重复基准、CLI／Web及恢复材料，作为辅助对照保留 | 不替换已冻结的三代表，不把参数或格式变化计为新算法 |

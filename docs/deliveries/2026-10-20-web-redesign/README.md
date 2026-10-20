@@ -16,6 +16,8 @@ A/B/C 直接选择随包发布的完整冻结 Suite；Falcon-512 和 Luo 位于�
 
 [手机页面](mobile.png) · [运行记录](records.png) · [启动与 API](../../../src/ibme/webui/README.md)
 
+补充材料：[接收者错配与密文篡改的真实截图、同会话导出记录](../2026-10-20-web-rejection-screenshots/README.md)。
+
 ## 实际验证
 
 Windows Python 3.14 下执行：

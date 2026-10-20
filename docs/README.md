@@ -41,6 +41,7 @@
 |---|---|
 | 三代表如何选、参数与容量是多少 | [三代表选择、Suite与来源指纹](deliveries/2026-10-19-report-three-selection/README.md) |
 | 三代表的同机基准、必要消息长度和精确安装 | [报告第二项主表、原始公开收据、CSV与图](deliveries/2026-10-19-report-experiment-supplement/README.md)；接收状态见当前进度 |
+| HIBE×IBS 哪些组合实际跑过、哪些数据能比较 | [十个主要组合、分批性能表与原始数据索引](research/2026-10-20-combination-data-inventory/README.md) |
 | A：LATTE＋ML-DSA完整基准 | [原重复基准](research/2026-10-18-full-system-baseline/README.md)、[同参数部署消融](research/2026-10-19-full-system-placement/README.md) |
 | B：LATTE＋SRGG论文档 | [参数、完整功能矩阵及重复测量](research/2026-10-19-srgg-paper-latte/README.md) |
 | C：Lai C2＋Sageloli环v3 | [Lai四组合完整收据](research/2026-10-19-lai-c2-combinations/README.md)、[Sageloli公共接入与LATTE安装恢复](research/2026-10-19-sageloli-ring-integration/README.md)；后者不能替代C的安装验收 |
