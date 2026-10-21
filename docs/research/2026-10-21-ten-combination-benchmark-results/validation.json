@@ -1,0 +1,21 @@
+{
+  "schema": "TEN-COMBINATION-DRIVER-VALIDATION/1",
+  "preflights": 10,
+  "pending_jobs": 30,
+  "cryptographic_runs": 0,
+  "tests": [
+    {
+      "command": "python -m pytest -q tests/test_ten_combination_benchmark.py",
+      "receipt": "runner-final-controls.xml",
+      "passed": 34,
+      "failed": 0
+    },
+    {
+      "command": "python -m pytest -q tests/test_ten_combination_benchmark.py tests/test_assembly.py tests/test_combination_matrix.py tests/test_hybrid_hibe.py tests/test_prepared_receiver.py tests/test_cli_selection.py",
+      "receipt": "benchmark-and-framework.xml",
+      "passed": 169,
+      "failed": 0
+    }
+  ],
+  "execution_notes": "Source commit, archive and actual environment are frozen before real measurements. Calibration and formal batch are still pending."
+}
