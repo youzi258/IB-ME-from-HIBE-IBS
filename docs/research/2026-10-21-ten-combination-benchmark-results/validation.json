@@ -1,21 +1,40 @@
 {
-  "schema": "TEN-COMBINATION-DRIVER-VALIDATION/1",
+  "completed_cases": 10,
+  "counts": {
+    "honest_decrypt_passed": 30,
+    "honest_encrypt_passed": 20,
+    "outer_rejections_passed": 20,
+    "restores_passed": 10
+  },
+  "derived_json_csv_markdown_reproduced": true,
+  "windows_wsl_derived_bytes_equal": true,
+  "local_readme_links_checked": 16,
+  "final_plots_visually_checked": ["basic-comparison/operation-times.png", "basic-comparison/object-sizes.png"],
+  "execution_digest": "0bbf4ccb276098d9e4bfaf00cdcffe04cd2bd38fd2414167dedc7ecba8da4f55",
+  "execution_notes": "Ten single-root cases complete. Three same-method completed roots reused and seven supplemented; original public receipts and calibration flags preserved. Extra multi-repeat Lai/Luo root retained separately and excluded from this basic table.",
+  "failures": [],
+  "first_repetitions": 1,
   "preflights": 10,
-  "pending_jobs": 30,
-  "cryptographic_runs": 0,
+  "public_copy_recomputed_equal": true,
+  "restore_repetitions": 1,
+  "roots_per_case": 1,
+  "schema": "TEN-COMBINATION-DRIVER-VALIDATION/2",
+  "source_commit": "a202c6d3c87798911675b11a46b44903405370df",
+  "status": "passed",
   "tests": [
     {
-      "failed": 0,
       "command": "python -m pytest -q tests/test_ten_combination_basic_comparison.py tests/test_ten_combination_benchmark.py",
+      "failed": 0,
       "passed": 42,
-      "receipt": "reduced-controls.xml"
+      "receipt": "final-controls.xml"
     },
     {
       "command": "python -m pytest -q tests/test_ten_combination_benchmark.py tests/test_assembly.py tests/test_combination_matrix.py tests/test_hybrid_hibe.py tests/test_prepared_receiver.py tests/test_cli_selection.py",
-      "receipt": "benchmark-and-framework.xml",
+      "failed": 0,
       "passed": 169,
-      "failed": 0
+      "receipt": "framework-regression.xml",
+      "timing": "earlier fixed-source validation"
     }
   ],
-  "execution_notes": "User reduced the basic comparison to one root per pair and one first, repeated and recovered operation. Three completed single-root measurements are reused; the remaining seven are running from the same a202c6d frozen archive. The stopped 30-root batch and its completed Lai/Luo root are retained separately."
+  "warm_repetitions": 1
 }

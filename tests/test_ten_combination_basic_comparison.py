@@ -28,6 +28,7 @@ def fixture_sources():
                 continue
             cases[case['name']] = dict(planned_roots=1, passed_roots=1, suite=case['suite'], suite_digest=case['suite_digest'],
                 operations={operation: per_root_summary([dict(root=1, values=[1.0])]) for operation in OPERATIONS},
+                sampled_tree_rss_root_maxima={operation: per_root_summary([dict(root=1, values=[1024])]) for operation in OPERATIONS},
                 sizes={key: dict(median=100) for key in ('public.bin', 'master.bin', 'sender.bin', 'receiver.bin', 'ciphertext.bin')})
         binding = dict(roots=1, warm_repetitions=1, restore_repetitions=1, cases=selected,
                        execution_digest=execution, plan_digest=digest(plan), calibration=True, batch_id=name)

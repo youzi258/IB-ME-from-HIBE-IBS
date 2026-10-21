@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "lai-c2-srgg-I-compact",
+  "generation": {
+    "finished_at": "2026-10-21T09:48:41.115770+00:00",
+    "sha256": "c5dba4a479331a7bcb1c615bc9e06f9ecd6f833ee076518824fb1e64ab3ef62d",
+    "status": "passed"
+  },
+  "job_id": "r01-lai-c2-srgg-I-compact",
+  "restore": {
+    "finished_at": "2026-10-21T09:56:08.549849+00:00",
+    "sha256": "9c9ba35218c4253ed7ab32b5dea211bb3266b5753fe4ed2828800c87fac72f37",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}

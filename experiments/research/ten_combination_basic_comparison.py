@@ -94,31 +94,50 @@ def write_comparison(output, result):
         row = dict(case=name, hibe=case["suite"]["hibe"], ibs=case["suite"]["ibs"],
                    passed_roots=case["passed_roots"], source_batch=case["source_batch"])
         row.update({operation + "_seconds": case["operations"][operation]["median"] for operation in OPERATIONS})
+        row.update({operation + "_sampled_rss_bytes": case["sampled_tree_rss_root_maxima"][operation]["median"]
+                    for operation in OPERATIONS})
         row.update({key.removesuffix(".bin") + "_bytes": value["median"] for key, value in case["sizes"].items()})
         rows.append(row)
     with (output / "basic-comparison.csv").open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
-    lines = ["# 十组同机基本性能比较", "", f"已完成 {result['completed_cases']}/10 组。每组1个独立根，64 B身份、32 B消息。",
-             "", "| 组合 | 建立/s | 发发送钥/s | 发接收钥/s | 首次加密/s | 首次解密/s | 重复加密/s | 重复解密/s | 恢复后解密/s |",
-             "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
-    display = [operation for operation in OPERATIONS if operation != "restore-objects"]
     def format_number(value):
         return "—" if value is None else f"{value:.3g}"
-    for name, case in result["cases"].items():
-        values = [format_number(case["operations"][operation]["median"]) for operation in display]
-        lines.append("| " + " | ".join([name] + values) + " |")
-    lines += ["", "| 组合 | 公钥/KiB | 主密钥/KiB | 发送钥/KiB | 接收钥/KiB | 完整密文/KiB |",
+    lines = ["# 十组同机基本性能比较", "", f"已完成 {result['completed_cases']}/10 组。每组1个独立根，64 B身份、32 B消息。"]
+    for title, operations, labels in (
+        ("首次运行", ("setup", "sender-key", "receiver-key", "cold-encrypt", "first-decrypt"),
+         ("建立/s", "发送者发钥/s", "接收者发钥/s", "首次加密/s", "首次解密/s")),
+        ("重复运行与恢复", ("warm-encrypt", "warm-decrypt", "restore-objects", "restored-decrypt"),
+         ("重复加密/s", "重复解密/s", "恢复并校验对象/s", "恢复后解密/s"))):
+        lines += ["", "## " + title, "", "| 组合 | " + " | ".join(labels) + " |",
+                  "|---|" + "---:|" * len(operations)]
+        for name, case in result["cases"].items():
+            values = [format_number(case["operations"][operation]["median"]) for operation in operations]
+            lines.append("| " + " | ".join([name] + values) + " |")
+    lines += ["", "## 规范对象尺寸", "", "| 组合 | 公钥 | 主密钥 | 发送钥 | 接收钥 | 完整密文 |",
               "|---|---:|---:|---:|---:|---:|"]
+    def format_size(value):
+        if value is None:
+            return "—"
+        unit, factor = ("MiB", 2**20) if value >= 2**20 else ("KiB", 1024)
+        return f"{value / factor:.3g} {unit}"
     for name, case in result["cases"].items():
-        values = [format_number(case["sizes"][key]["median"] / 1024) if case["sizes"][key]["median"] is not None else "—"
+        values = [format_size(case["sizes"][key]["median"])
                   for key in ("public.bin", "master.bin", "sender.bin", "receiver.bin", "ciphertext.bin")]
+        lines.append("| " + " | ".join([name] + values) + " |")
+    memory_operations = ("setup", "cold-encrypt", "first-decrypt", "restored-decrypt")
+    lines += ["", "## 进程树采样峰值内存", "", "单位为MiB；每10ms采样一次，共享页可能重复计数。",
+              "", "| 组合 | 建立 | 首次加密 | 首次解密 | 恢复后解密 |", "|---|---:|---:|---:|---:|"]
+    for name, case in result["cases"].items():
+        values = [f"{value / 2**20:.0f}" if value is not None else "—"
+                  for operation in memory_operations
+                  for value in (case["sampled_tree_rss_root_maxima"][operation]["median"],)]
         lines.append("| " + " | ".join([name] + values) + " |")
     lines += ["", "三组复用已完成的同口径单根记录，七组另批补测；原始收据和原有标签保留。",
               "Lai每次完整解密包含真实委派；LATTE恢复使用既有持久缓存。算法、参数、测量源码及运行环境相同。",
               "额外完成的多次Lai＋Luo试验单独保存，不混入这张单次比较表。", ""]
-    (output / "basic-comparison.md").write_text("\n".join(lines), encoding="utf-8")
+    (output / "basic-comparison.md").write_bytes("\n".join(lines).encode("utf-8"))
 
 
 def main():

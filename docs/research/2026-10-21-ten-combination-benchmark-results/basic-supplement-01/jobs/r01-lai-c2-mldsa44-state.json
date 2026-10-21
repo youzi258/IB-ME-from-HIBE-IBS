@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "lai-c2-mldsa44",
+  "generation": {
+    "finished_at": "2026-10-21T10:17:25.994077+00:00",
+    "sha256": "67a61ddde6bd0b40f15b4fd77c728d34ab15603b739b888d5692a0ede6d6f772",
+    "status": "passed"
+  },
+  "job_id": "r01-lai-c2-mldsa44",
+  "restore": {
+    "finished_at": "2026-10-21T10:25:09.556638+00:00",
+    "sha256": "4b885b042bab0192a03d210a7b69eb582a98481d31fea477cee1feb27636dad0",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}

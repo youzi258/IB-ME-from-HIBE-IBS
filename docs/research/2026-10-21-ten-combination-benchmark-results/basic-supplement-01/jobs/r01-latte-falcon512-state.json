@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "latte-falcon512",
+  "generation": {
+    "finished_at": "2026-10-21T09:28:58.535167+00:00",
+    "sha256": "1cdfc245bff7a9a781a1db4d70b852f56831840d83a392c909c6211914e6d6f7",
+    "status": "passed"
+  },
+  "job_id": "r01-latte-falcon512",
+  "restore": {
+    "finished_at": "2026-10-21T09:29:00.166593+00:00",
+    "sha256": "102cccb72f8c69507a17391f304fd57d79fe29b27770cc90c9241a75fea35c1b",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}
