@@ -4,6 +4,6 @@
   "all_inputs_self_contained": true,
   "input_digests_identical": true,
   "all_70_pages_text_identical": true,
-  "pdf_sha256": "a85325ea9b0de2bac14a86c9e40caef67f3f0bc9059ca6e8d0d7736f7d76570f",
-  "clean_build_pdf_sha256": "b65fd1926629ad2e2dc91f3d7889ab653285f93a7ebd04ff9cc4b46726075812"
+  "pdf_sha256": "6adce02c9e652a86b75e8503ff7043d47e2b7c0a646cababdb5c7a800452821d",
+  "clean_build_pdf_sha256": "56747ba4370b8616337e0213858bd549176e3d0ac13c60d5adbcfc1a8cbf0408"
 }

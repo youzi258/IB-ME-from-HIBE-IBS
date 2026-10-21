@@ -4,7 +4,7 @@ LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (ctexrep.cls (ctexbackend.cfg
 File: ctexbackend.cfg 2021/12/12 v2.5.8 Backend configuration file (CTEX)
 ) (expl3.sty
-Package: expl3 2022-02-24 L3 programming layer (loader) 
+Package: expl3 2022-02-24 L3 programming layer (loader)
 
 (l3backend-xetex.def
 File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
@@ -177,22 +177,22 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             'FandolSong-Regular' with options
 (fontspec)             [Script={CJK},Extension={.otf},BoldFont={FandolSong-Bold
 },ItalicFont={FandolKai-Regular}].
-(fontspec)              
+(fontspec)
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
-(fontspec)              
+(fontspec)
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"[FandolSong-Regular.otf]/OT:script=hani;language=dfl
 t;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[FandolSong-Bold.otf]/OT:script=hani;language=dflt;"
 
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:script=hani;language=dflt
 ;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
 
 )) (ctex.cfg
 File: ctex.cfg 2021/12/12 v2.5.8 Configuration file (CTEX)
@@ -847,7 +847,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes:
 * h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
 * v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
@@ -913,17 +913,17 @@ Package fontspec Info: Font family 'FandolHei-Regular(0)' created for font
 (fontspec)             'FandolHei-Regular' with options
 (fontspec)             [Script={CJK},Extension={.otf},BoldFont={FandolHei-Bold}
 ].
-(fontspec)              
+(fontspec)
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
-(fontspec)              
+(fontspec)
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"[FandolHei-Regular.otf]/OT:script=hani;language=dflt
 ;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[FandolHei-Bold.otf]/OT:script=hani;language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
 
  [1
 
@@ -945,18 +945,18 @@ Package fontspec Info: Font family 'FandolSong-Regular(1)' created for font
 (fontspec)             'FandolSong-Regular' with options
 (fontspec)             [Script={CJK},Extension={.otf},BoldFont={FandolSong-Bold
 }].
-(fontspec)              
+(fontspec)
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
-(fontspec)              
+(fontspec)
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"[FandolSong-Regular.otf]/OT:script=hani;language=dfl
 t;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[FandolSong-Bold.otf]/OT:script=hani;language=dflt;"
 
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
 
 [1
 

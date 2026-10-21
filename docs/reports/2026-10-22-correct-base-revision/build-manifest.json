@@ -3,7 +3,7 @@
   "source": "作品设计报告.tex",
   "source_sha256": "8a6901c9b5bde34c05b39eab204d9b39b889836b2ba3174a3d6ddb0dc83dd7a5",
   "pdf": "作品设计报告.pdf",
-  "pdf_sha256": "a85325ea9b0de2bac14a86c9e40caef67f3f0bc9059ca6e8d0d7736f7d76570f",
+  "pdf_sha256": "6adce02c9e652a86b75e8503ff7043d47e2b7c0a646cababdb5c7a800452821d",
   "engine": "tectonic",
   "inputs": {
     "chapters/01-introduction.tex": "cd1288dc350315e49b779559fc1fa1596ede6af24737b6bc558f7331c166f906",
@@ -15,7 +15,7 @@
     "chapters/07-experiments.tex": "ea9c4248f7cc0775a30d2a655e8d2ff472595eaefc84ad1fb3dfb898a34b1f42",
     "chapters/08-applications.tex": "b5abd0060819bbee393a0807a8bee732a889c31226ef6d708a162ede1e579bb1",
     "chapters/09-conclusion.tex": "8d62d186695fd79c32c9a86871aa0c38a5a1198538244df9d9ac5ecdc89f3693",
-    "figure-layout.tex": "173eed395d18a585c583bde25713f450e5fea24d7ca311751efe0e301a58148b",
+    "figure-layout.tex": "da167e2fccd2a2a17b8fa91703d0cc091fefe35a0e1d70593a9591fc13444f50",
     "figures/cacr-logo.jpg": "908993f5ce1186b588114ea4a2f30e88691dbf1e7aef9b43a1b7080ff1324b4e",
     "figures/fig-01-01-roles.pdf": "36b1bfbea0d3ac8bc3c9a8cf89dd8854fc1d7ffd636ae4ca080afd6f4944b210",
     "figures/fig-01-02-research-timeline.pdf": "efd5ce32ded92721a85667d8d21587bdfd8bf8bbf4a3f74e5cc17712730c70c6",

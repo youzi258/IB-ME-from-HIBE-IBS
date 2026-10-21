@@ -126,7 +126,10 @@ def main() -> None:
         )
         log = Path(build) / SOURCE.with_suffix(".log").name
         if log.is_file():
-            shutil.copyfile(log, HERE / "build.log")
+            contents = log.read_text(encoding="utf-8", errors="replace")
+            (HERE / "build.log").write_text(
+                "\n".join(line.rstrip() for line in contents.splitlines()) + "\n",
+                encoding="utf-8", newline="\n")
         aux = Path(build) / SOURCE.with_suffix(".aux").name
         if aux.is_file():
             labels = re.findall(r"\\newlabel\{([^}]+)\}\{\{([^}]+)\}\{([^}]+)\}",

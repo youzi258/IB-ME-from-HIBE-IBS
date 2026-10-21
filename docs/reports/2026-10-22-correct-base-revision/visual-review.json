@@ -1,5 +1,5 @@
 {
-  "pdf_sha256": "a85325ea9b0de2bac14a86c9e40caef67f3f0bc9059ca6e8d0d7736f7d76570f",
+  "pdf_sha256": "6adce02c9e652a86b75e8503ff7043d47e2b7c0a646cababdb5c7a800452821d",
   "pages_reviewed": [
     1,
     2,
@@ -121,5 +121,6 @@
     "Kept report structure as nine separate paragraphs on one page",
     "Left-aligned native security table references to remove stretched spacing",
     "Applied consistent display-math spacing in foundational and optimization chapters"
-  ]
+  ],
+  "line_ending_normalization_pixel_check": "All 70 page rasters identical to visually reviewed version."
 }
