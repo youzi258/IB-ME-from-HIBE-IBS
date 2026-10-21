@@ -1,0 +1,26 @@
+{
+  "schema": "IBME-OFFLINE-SUPPORTING-DELIVERY/1",
+  "zip_filename": "CACR2026T4PMR7-2026密码竞赛复赛相关支撑材料.zip",
+  "bytes": 1170155894,
+  "sha256": "1a564faa972aeb483f4f08e70450bc4118c09dce6c999eab859f1975cd05360a",
+  "payload_files": 1218,
+  "zip_crc_verified": true,
+  "independent_extraction_verified": true,
+  "payload_sha256_verified": true,
+  "recipe_file_sha256_verified": true,
+  "source_data_wheel_byte_exact_to_input": true,
+  "navigation_and_verifier_changes": [
+    "00_材料说明/阅读指引.md",
+    "README.txt",
+    "SHA256SUMS.txt",
+    "文件清单.json",
+    "核对文件.py"
+  ],
+  "base_supporting_zip_sha256": "9f170cc186c70de9b153c08f7725ab7418fb1334f10912c372418e9f63495ac2",
+  "application_source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
+  "container_recipe_commit": "29975e0882138ae5b6ac78b45dc325086a42f41b",
+  "image_archive_bytes": 1161386399,
+  "image_archive_sha256": "d3565a25a7f62282f28c55b7cb2bea567fd16089183c757558d8eeb66c3156ca",
+  "upload_limit_bytes": 4000000000,
+  "under_upload_limit": true
+}

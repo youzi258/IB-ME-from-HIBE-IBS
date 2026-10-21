@@ -1,0 +1,140 @@
+[
+  {
+    "engine": "latte",
+    "metadata": {
+      "abi": "IBME-LATTE3-COEFF-1",
+      "source_id": "4a17a037c266ba982a027ff7fedffe0d391c9fe7fb2c5f8a0326b4ab67393414",
+      "n": 1024,
+      "q": 68718428161
+    },
+    "path": "/opt/ibme/native/latte/bin/ibme-latte3",
+    "sha256": "e793606c72f53afbb5d3a243e3e3989087b72acbe4334640f7e939682e3451a3",
+    "flags": [
+      "-O2",
+      "-march=x86-64-v3",
+      "-mtune=generic",
+      "-maes",
+      "-fwrapv"
+    ]
+  },
+  {
+    "engine": "mldsa",
+    "path": "/opt/ibme/native/mldsa/bin/ibme-mldsa87",
+    "sha256": "8d612ed7434368f517faccada84ef64133e7136c39c4dfec9a92b3f2883d278b",
+    "metadata": {
+      "abi": 1,
+      "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+      "mode": 5,
+      "pk": 2592,
+      "sk": 4896,
+      "sig": 4627,
+      "nonce_attempt_limit": 9362
+    }
+  },
+  {
+    "engine": "mldsa",
+    "path": "/opt/ibme/native/mldsa/bin/ibme-mldsa44",
+    "sha256": "9418decb5f353d57016157522b292be1a542fa37633ac96a3c64546eaf160239",
+    "metadata": {
+      "abi": 1,
+      "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+      "mode": 2,
+      "pk": 1312,
+      "sk": 2560,
+      "sig": 2420,
+      "nonce_attempt_limit": 16384
+    }
+  },
+  {
+    "engine": "mldsa",
+    "path": "/opt/ibme/native/mldsa/bin/ibme-mldsa65",
+    "sha256": "f635b67db083768bc30531d36d6e23d455c38e7c02a716d901aae32d90cdf178",
+    "metadata": {
+      "abi": 1,
+      "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+      "mode": 3,
+      "pk": 1952,
+      "sk": 4032,
+      "sig": 3309,
+      "nonce_attempt_limit": 13107
+    }
+  },
+  {
+    "engine": "falcon",
+    "path": "/opt/ibme/native/falcon/bin/ibme-falcon512",
+    "sha256": "80f3e4b7dae58ccb30ed7d65f8a5d5c2890a6225bf6284dc46e9a261f8815329",
+    "metadata": {
+      "abi": 1,
+      "source_id": "dd9bb426aa30a33d7c503799d9134edbaf0b4f0b7ce2edf618981958a87f7e5b",
+      "logn": 9,
+      "pk": 897,
+      "sk": 1281,
+      "sig": 666,
+      "fpemu": true,
+      "vector_driver": false,
+      "xof_limit": 16777216,
+      "refill_limit": 65536
+    }
+  },
+  {
+    "engine": "falcon",
+    "path": "/opt/ibme/native/falcon/bin/ibme-falcon1024",
+    "sha256": "0352babbfd3e42b947f14c9ecd8700f893c5ff35391ea840f6218abe751bdfc9",
+    "metadata": {
+      "abi": 1,
+      "source_id": "dd9bb426aa30a33d7c503799d9134edbaf0b4f0b7ce2edf618981958a87f7e5b",
+      "logn": 10,
+      "pk": 1793,
+      "sk": 2305,
+      "sig": 1280,
+      "fpemu": true,
+      "vector_driver": false,
+      "xof_limit": 16777216,
+      "refill_limit": 65536
+    }
+  },
+  {
+    "engine": "falcon",
+    "path": "/opt/ibme/native/falcon/bin/ibme-falcon-kat512",
+    "sha256": "8fa962cd4cf2e1a81987264e193e8501766b5cdf1881f35702c483515de2ef30",
+    "metadata": {
+      "abi": 1,
+      "source_id": "dd9bb426aa30a33d7c503799d9134edbaf0b4f0b7ce2edf618981958a87f7e5b",
+      "logn": 9,
+      "pk": 897,
+      "sk": 1281,
+      "sig": 666,
+      "fpemu": true,
+      "vector_driver": true,
+      "xof_limit": 16777216,
+      "refill_limit": 65536
+    }
+  },
+  {
+    "engine": "falcon",
+    "path": "/opt/ibme/native/falcon/bin/ibme-falcon-kat1024",
+    "sha256": "61f02f627bc44186cd095368ac49df8625bfff5c9f725b2165e42d0d671b1500",
+    "metadata": {
+      "abi": 1,
+      "source_id": "dd9bb426aa30a33d7c503799d9134edbaf0b4f0b7ce2edf618981958a87f7e5b",
+      "logn": 10,
+      "pk": 1793,
+      "sk": 2305,
+      "sig": 1280,
+      "fpemu": true,
+      "vector_driver": true,
+      "xof_limit": 16777216,
+      "refill_limit": 65536
+    }
+  },
+  {
+    "engine": "sageloli",
+    "path": "/opt/ibme/native/sageloli/ring.so",
+    "sha256": "aa5b64fd15450dc8f52890b9e3594cca6b865fc7090d76f215007ca27c7a42bd",
+    "metadata": {
+      "source_id": "a41fd3e087125317d2bf2c1731e99c5639b27bce1c0b9d8456cd0682bee0ee39",
+      "binary_sha256": "aa5b64fd15450dc8f52890b9e3594cca6b865fc7090d76f215007ca27c7a42bd",
+      "exact_arithmetic": "two-prime range-checked NTT + FLINT integer polynomial products"
+    }
+  }
+]
