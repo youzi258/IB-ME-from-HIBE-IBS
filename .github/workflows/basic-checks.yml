@@ -5,6 +5,10 @@ on:
   pull_request:
   workflow_dispatch:
     inputs:
+      wang_pw:
+        description: Run optional Wang-PW native regression
+        type: boolean
+        default: false
       strict_security:
         description: Enforce security targets (legacy education instance fails)
         type: boolean
@@ -31,7 +35,7 @@ jobs:
           python-version: '3.14'
       - name: Discover all 19 routes and delivered test suites
         id: plan
-        run: python ci/run.py plan
+        run: python ci/run.py plan ${{ github.event_name == 'workflow_dispatch' && inputs.wang_pw && '--include-manual' || '' }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: catalog-plan
