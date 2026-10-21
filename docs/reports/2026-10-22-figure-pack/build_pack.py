@@ -2,6 +2,7 @@
 from __future__ import annotations
 import importlib.util
 import json
+import re
 from pathlib import Path
 
 from PIL import Image,ImageDraw,ImageFont
@@ -88,7 +89,7 @@ def make_gallery(pack):
         caption=(f"原图 {asset['old_figure']}" if asset['old_figure'] else '新增')+'  '+asset['title']
         writer.append(HERE/asset['files']['pdf'],outline_item=caption)
     writer.add_metadata({'/Title':'IB-ME 报告独立图表预览册','/Author':'IB-ME team'})
-    with (HERE/'图表预览册.pdf').open('wb') as f:writer.write(f)
+    with (HERE/'图表预览册-精简版.pdf').open('wb') as f:writer.write(f)
     cover.unlink()
     # Contact sheets retain individual caption identifiers for fast review.
     font=ImageFont.truetype(str(cjk_font_path()),21)
@@ -108,8 +109,9 @@ def make_gallery(pack):
 def make_readme(assets):
     lines=['# 报告独立图表包','',
         '本包对应 `c362549` 的66页正确底稿整合版。22幅原有插图分别重绘或重新裁切排版，另补充9项图表；报告正文、原有图片和PDF均未改动。','',
-        '打开 [图表预览册](图表预览册.pdf) 查看全部图表。每项提供 SVG、PDF、300 dpi PNG，文件内不固定报告图号，后续排版时按正文顺序编号。','',
+        '打开 [精简版预览册](图表预览册-精简版.pdf) 查看全部图表。每项提供 SVG、PDF、300 dpi PNG，文件内不固定报告图号，后续排版时按正文顺序编号。','',
         '## 取用','',
+        '- 单图只保留标签、数值、单位和必要图例；标题、方法、样本量与解释见 [独立图注](captions.md)。',
         '- Word 可插入 SVG；LaTeX 可插入单图 PDF；PNG 用于快速预览或兼容导入。',
         '- 图 6.4、6.5 为真实截图的重新裁切与排版，截图区域保留原有像素。',
         '- 新增安全结论表另提供 [Markdown](security-results.md)、[CSV](security-results.csv) 和结构化 JSON，便于继续编辑文字。',
@@ -134,19 +136,44 @@ def make_readme(assets):
     (HERE/'README.md').write_text('\n'.join(lines),encoding='utf-8',newline='\n')
 
 
+def make_captions(assets):
+    captions=[]
+    lines=['# 图注与方法说明','',
+           '与单图分开提供，后续排版时按需放在图下。图内保留名称、变量、数值、单位和必要图例。','']
+    for a in assets:
+        label=('图 '+a['old_figure']) if a['old_figure'] else a['id'][:6]
+        item={'id':a['id'],'label':label,'title':a['title'],'notes':a['caption_notes'],'source_keys':a['source_keys']}
+        captions.append(item)
+        lines += [f"## {label}　{a['title']}",'']
+        if item['notes']:
+            lines += [' '.join(item['notes']),'']
+        lines += [f"文件：`{a['id']}`。建议位置：{a['section']}。",'']
+    write_json(HERE/'captions.json',captions)
+    (HERE/'captions.md').write_text('\n'.join(lines),encoding='utf-8',newline='\n')
+    baseline=json.loads((HERE/'text-density-baseline.json').read_text(encoding='utf-8'))
+    counts=[]
+    for a in assets:
+        count=len(re.sub(r'\s+','',PdfReader(HERE/a['files']['pdf']).pages[0].extract_text() or ''))
+        counts.append({'id':a['id'],'before':baseline['assets'][a['id']]['characters'],'after':count})
+    old=sum(r['before'] for r in counts);new=sum(r['after'] for r in counts)
+    write_json(HERE/'text-density-report.json',{'baseline_commit':baseline['commit'],'before':old,'after':new,
+                                            'reduction':1-new/old,'assets':counts})
+
+
 def main():
     configure();before=protected_files()
     d=load_data();pack=Pack()
     charts.build(pack,d);diagrams.build(pack,d);screenshots.build(pack,ROOT);references.build(pack,ROOT)
-    ordered=make_gallery(pack);make_readme(ordered)
+    ordered=make_gallery(pack);make_readme(ordered);make_captions(ordered)
     after=protected_files();assert before==after,'report files changed during figure build'
     assert len(ordered)==31 and sum(bool(a['old_figure']) for a in ordered)==22
     write_json(HERE/'catalog.json',{'schema':'IBME-FIGURE-PACK/1','assets':ordered})
     write_json(HERE/'layout-report.json',pack.layout_findings)
     paths=sorted((HERE/'assets').glob('*'))+[
-        HERE/name for name in ['图表预览册.pdf','plot-data.json','source-manifest.json',
+        HERE/name for name in ['图表预览册-精简版.pdf','plot-data.json','source-manifest.json',
                               'paper-result-evidence.json','catalog.json','layout-report.json',
-                              'security-results.json','security-results.csv','security-results.md','README.md']]
+                              'security-results.json','security-results.csv','security-results.md','README.md',
+                              'captions.json','captions.md','text-density-baseline.json','text-density-report.json']]
     write_json(HERE/'build-manifest.json',{
         'baseline_report_commit':BASELINE,'report_unchanged':True,
         'protected_report_files':before,'asset_count':len(ordered),
@@ -154,7 +181,7 @@ def main():
         'new_cryptographic_experiments':0,
         'generator_sha256':{p.name:digest(p) for p in sorted(HERE.glob('*.py'))},
     })
-    print(json.dumps({'assets':len(ordered),'old_figures':22,'new_items':9,'report_unchanged':True,'gallery_pages':len(PdfReader(HERE/'图表预览册.pdf').pages)},ensure_ascii=False))
+    print(json.dumps({'assets':len(ordered),'old_figures':22,'new_items':9,'report_unchanged':True,'gallery_pages':len(PdfReader(HERE/'图表预览册-精简版.pdf').pages)},ensure_ascii=False))
 
 
 if __name__=='__main__':main()

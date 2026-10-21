@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="367.2pt" viewBox="0 0 720 367.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="686.88pt" height="247.68pt" viewBox="0 0 686.88 247.68" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-22T03:53:43.460459</dc:date>
+    <dc:date>2026-10-22T04:12:16.048570</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,193 +21,182 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 367.2
-L 720 367.2
-L 720 0
+   <path d="M 0 247.68
+L 686.88 247.68
+L 686.88 0
 L 0 0
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 28.8 93.6
-L 216 93.6
-Q 219.6 93.6 219.6 97.2
-L 219.6 162
-Q 219.6 165.6 216 165.6
-L 28.8 165.6
-Q 25.2 165.6 25.2 162
-L 25.2 97.2
-Q 25.2 93.6 28.8 93.6
+    <path d="M 12.24 8.64
+L 199.44 8.64
+Q 203.04 8.64 203.04 12.24
+L 203.04 77.04
+Q 203.04 80.64 199.44 80.64
+L 12.24 80.64
+Q 8.64 80.64 8.64 77.04
+L 8.64 12.24
+Q 8.64 8.64 12.24 8.64
 z
-" clip-path="url(#p70b227cb05)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+" clip-path="url(#pacb53e6913)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 266.4 93.6
-L 453.6 93.6
-Q 457.2 93.6 457.2 97.2
-L 457.2 162
-Q 457.2 165.6 453.6 165.6
-L 266.4 165.6
-Q 262.8 165.6 262.8 162
-L 262.8 97.2
-Q 262.8 93.6 266.4 93.6
+    <path d="M 249.84 8.64
+L 437.04 8.64
+Q 440.64 8.64 440.64 12.24
+L 440.64 77.04
+Q 440.64 80.64 437.04 80.64
+L 249.84 80.64
+Q 246.24 80.64 246.24 77.04
+L 246.24 12.24
+Q 246.24 8.64 249.84 8.64
 z
-" clip-path="url(#p70b227cb05)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+" clip-path="url(#pacb53e6913)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 504 93.6
-L 691.2 93.6
-Q 694.8 93.6 694.8 97.2
-L 694.8 162
-Q 694.8 165.6 691.2 165.6
-L 504 165.6
-Q 500.4 165.6 500.4 162
-L 500.4 97.2
-Q 500.4 93.6 504 93.6
+    <path d="M 487.44 8.64
+L 674.64 8.64
+Q 678.24 8.64 678.24 12.24
+L 678.24 77.04
+Q 678.24 80.64 674.64 80.64
+L 487.44 80.64
+Q 483.84 80.64 483.84 77.04
+L 483.84 12.24
+Q 483.84 8.64 487.44 8.64
 z
-" clip-path="url(#p70b227cb05)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+" clip-path="url(#pacb53e6913)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
-    <path d="M 219.6 129.6
-Q 241.2 129.6 261.122949 129.6
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
-    <path d="M 256.322949 127.2
-L 261.122949 129.6
-L 256.322949 132
+    <path d="M 203.04 44.64
+Q 224.64 44.64 244.562949 44.64
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 239.762949 42.24
+L 244.562949 44.64
+L 239.762949 47.04
 z
-" clip-path="url(#p70b227cb05)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+" clip-path="url(#pacb53e6913)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
-    <path d="M 457.2 129.6
-Q 478.8 129.6 498.722949 129.6
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
-    <path d="M 493.922949 127.2
-L 498.722949 129.6
-L 493.922949 132
+    <path d="M 440.64 44.64
+Q 462.24 44.64 482.162949 44.64
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 477.362949 42.24
+L 482.162949 44.64
+L 477.362949 47.04
 z
-" clip-path="url(#p70b227cb05)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+" clip-path="url(#pacb53e6913)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 504 252
-L 691.2 252
-Q 694.8 252 694.8 255.6
-L 694.8 320.4
-Q 694.8 324 691.2 324
-L 504 324
-Q 500.4 324 500.4 320.4
-L 500.4 255.6
-Q 500.4 252 504 252
+    <path d="M 487.44 167.04
+L 674.64 167.04
+Q 678.24 167.04 678.24 170.64
+L 678.24 235.44
+Q 678.24 239.04 674.64 239.04
+L 487.44 239.04
+Q 483.84 239.04 483.84 235.44
+L 483.84 170.64
+Q 483.84 167.04 487.44 167.04
 z
-" clip-path="url(#p70b227cb05)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+" clip-path="url(#pacb53e6913)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
-    <path d="M 266.4 252
-L 453.6 252
-Q 457.2 252 457.2 255.6
-L 457.2 320.4
-Q 457.2 324 453.6 324
-L 266.4 324
-Q 262.8 324 262.8 320.4
-L 262.8 255.6
-Q 262.8 252 266.4 252
+    <path d="M 249.84 167.04
+L 437.04 167.04
+Q 440.64 167.04 440.64 170.64
+L 440.64 235.44
+Q 440.64 239.04 437.04 239.04
+L 249.84 239.04
+Q 246.24 239.04 246.24 235.44
+L 246.24 170.64
+Q 246.24 167.04 249.84 167.04
 z
-" clip-path="url(#p70b227cb05)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+" clip-path="url(#pacb53e6913)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
-    <path d="M 597.6 165.6
-Q 597.6 208.8 597.6 250.322949
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
-    <path d="M 600 245.522949
-L 597.6 250.322949
-L 595.2 245.522949
+    <path d="M 581.04 80.64
+Q 581.04 123.84 581.04 165.362949
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 583.44 160.562949
+L 581.04 165.362949
+L 578.64 160.562949
 z
-" clip-path="url(#p70b227cb05)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+" clip-path="url(#pacb53e6913)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
-    <path d="M 360 165.6
-Q 360 208.8 360 250.322949
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
-    <path d="M 362.4 245.522949
-L 360 250.322949
-L 357.6 245.522949
+    <path d="M 343.44 80.64
+Q 343.44 123.84 343.44 165.362949
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 345.84 160.562949
+L 343.44 165.362949
+L 341.04 160.562949
 z
-" clip-path="url(#p70b227cb05)" style="fill: #8595a4; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+" clip-path="url(#pacb53e6913)" style="fill: #8595a4; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
    </g>
    <g id="line2d_1">
-    <path d="M 35.28 103.68
-L 35.28 155.52
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
+    <path d="M 18.72 18.72
+L 18.72 70.56
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
-    <path d="M 272.88 103.68
-L 272.88 155.52
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
+    <path d="M 256.32 18.72
+L 256.32 70.56
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
-    <path d="M 510.48 103.68
-L 510.48 155.52
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+    <path d="M 493.92 18.72
+L 493.92 70.56
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
-    <path d="M 510.48 262.08
-L 510.48 313.92
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+    <path d="M 493.92 177.12
+L 493.92 228.96
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
    </g>
    <g id="line2d_5">
-    <path d="M 272.88 262.08
-L 272.88 313.92
-" clip-path="url(#p70b227cb05)" style="fill: none; stroke: #8595a4; stroke-width: 2.4; stroke-linecap: square"/>
+    <path d="M 256.32 177.12
+L 256.32 228.96
+" clip-path="url(#pacb53e6913)" style="fill: none; stroke: #8595a4; stroke-width: 2.4; stroke-linecap: square"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 20px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="25.2" y="29.293437" transform="rotate(-0 25.2 29.293437)">发钥事务与持久状态</text>
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="28.8" y="35.556797" transform="rotate(-0 28.8 35.556797)">准备</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="25.2" y="53.886563" transform="rotate(-0 25.2 53.886563)">机构状态保存成功后再发布角色密钥；同一身份取回已发布对象</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="28.8" y="63.528047" transform="rotate(-0 28.8 63.528047)">锁定 · 登记</text>
    </g>
    <g id="text_3">
-    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="45.36" y="120.516797" transform="rotate(-0 45.36 120.516797)">准备</text>
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="266.4" y="35.470078" transform="rotate(-0 266.4 35.470078)">生成</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(45.36 140.725625)">取得本地锁</text>
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(45.36 156.263672)">记录待处理身份</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="266.4" y="63.597109" transform="rotate(-0 266.4 63.597109)">角色密钥</text>
    </g>
    <g id="text_5">
-    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="282.96" y="120.430078" transform="rotate(-0 282.96 120.430078)">生成</text>
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="504" y="35.520469" transform="rotate(-0 504 35.520469)">保存</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(282.96 140.604766)">调用 HIBE / IBS</text>
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(282.96 156.313437)">形成角色密钥</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="504" y="63.566641" transform="rotate(-0 504 63.566641)">机构状态 · 发钥记录</text>
    </g>
    <g id="text_7">
-    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="520.56" y="120.451172" transform="rotate(-0 520.56 120.451172)">保存机构状态</text>
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="504" y="193.868906" transform="rotate(-0 504 193.868906)">发布</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(520.56 140.806875)">完整保存更新后的</text>
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(520.56 156.282969)">机构状态与发钥记录</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="504" y="221.984922" transform="rotate(-0 504 221.984922)">返回密钥</text>
    </g>
    <g id="text_9">
-    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="520.56" y="278.828906" transform="rotate(-0 520.56 278.828906)">发布</text>
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #8595a4" x="266.4" y="193.942734" transform="rotate(-0 266.4 193.942734)">待处理</text>
    </g>
    <g id="text_10">
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(520.56 299.194687)">返回用户密钥</text>
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(520.56 314.675859)">后续请求复用已发布对象</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="266.4" y="221.946328" transform="rotate(-0 266.4 221.946328)">保留中断记录</text>
    </g>
    <g id="text_11">
-    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #8595a4" x="282.96" y="278.873437" transform="rotate(-0 282.96 278.873437)">中断后的待处理状态</text>
-   </g>
-   <g id="text_12">
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(282.96 299.188594)">恢复时识别记录</text>
-    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(282.96 314.695156)">停止继续发钥</text>
-   </g>
-   <g id="text_13">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="367.2" y="213.68625" transform="rotate(-0 367.2 213.68625)">生成中断</text>
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="361.44" y="128.719688" transform="rotate(-0 361.44 128.719688)">中断</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p70b227cb05">
-   <rect x="0" y="0" width="720" height="367.2"/>
+  <clipPath id="pacb53e6913">
+   <rect x="-16.56" y="-84.96" width="720" height="367.2"/>
   </clipPath>
  </defs>
 </svg>

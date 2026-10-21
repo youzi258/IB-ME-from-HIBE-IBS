@@ -14,8 +14,7 @@ IBS=['ML-DSA','Falcon','Luo','SRGG','Sageloli']
 def timing_overview(pack,d):
     rows=d['combinations']
     fig,ax=pack.canvas(620)
-    text(ax,30,31,'十种组合的完整收发时间',size=20,weight='bold')
-    text(ax,30,65,'单位：秒；条带共用对数刻度，右侧列出对应实测值',size=12,color=MUTED)
+    figure_note(ax,'条带共用对数刻度，右侧为实测秒数。每组1套系统、32 B消息；A/B/C为代表组合。')
     metrics=[('首次加密','cold-encrypt_seconds',BLUE),('重复加密','warm-encrypt_seconds',TEAL),
              ('首次解密','first-decrypt_seconds',BLUE),('重复解密','warm-decrypt_seconds',TEAL),
              ('恢复后解密','restored-decrypt_seconds',SLATE)]
@@ -38,8 +37,7 @@ def timing_overview(pack,d):
             line(ax,[(x,y),(x+70*fraction,y)],color=color,lw=3.4)
             ax.plot(x+70*fraction,y,'o',ms=4.5,color=color)
             text(ax,x+133,y,number(value),size=12,ha='right',color=INK)
-    text(ax,30,578,'所有条带范围：0.005–600 s（对数）',size=11,color=MUTED)
-    text(ax,970,598,'每组 1 套系统；32 B 消息；A / B / C 为代表组合',size=10.5,ha='right',color=MUTED)
+    text(ax,30,565,'0.005–600 s（对数）',size=11,color=MUTED)
     pack.save(fig,'fig-07-01-times','十种组合的完整收发时间','7.1','7.2',('ten_combinations','ten_design'),
               note='五列分离操作阶段；各行保留原始值；条带采用一致的对数映射。')
 
@@ -57,17 +55,17 @@ def resource_overview(pack,d):
         axes[0].scatter(sizes,ys+offset,s=60,color=color,zorder=3,label=group)
         axes[1].barh(ys+offset,rss,height=.23,color=color,zorder=3)
         for i,(s,m) in enumerate(zip(sizes,rss)):
-            axes[0].annotate(number(s),(s,i+offset),xytext=(7,0),textcoords='offset points',va='center',fontsize=10,color=color)
-            axes[1].annotate(number(m),(m,i+offset),xytext=(6,0),textcoords='offset points',va='center',fontsize=10,color=color)
+            axes[0].annotate(number(s),(s,i+offset),xytext=(7,0),textcoords='offset points',va='center',fontsize=11,color=color)
+            axes[1].annotate(number(m),(m,i+offset),xytext=(6,0),textcoords='offset points',va='center',fontsize=11,color=color)
     for axis in axes:
         axis.set_ylim(4.6,-.6);axis.set_yticks(ys,IBS if axis==axes[0] else ['']*5);polish(axis)
     polish(axes[0],log=True);axes[0].set_xlim(.105,7.5)
     axes[0].set_xticks([.125,.25,.5,1,2,4],['0.125','0.25','0.5','1','2','4'])
-    axes[0].set_xlabel('完整密文 / MiB',labelpad=12)
-    axes[1].set_xlim(0,2.35);axes[1].set_xlabel('最大采样 RSS / GiB',labelpad=12)
+    axes[0].set_xlabel('密文 / MiB（对数）',labelpad=12)
+    axes[1].set_xlim(0,2.35);axes[1].set_xlabel('峰值 RSS / GiB',labelpad=12)
     fig.legend(handles=[Line2D([],[],marker='o',ls='',color=BLUE,label='LATTE'),Line2D([],[],marker='o',ls='',color=TEAL,label='Lai')],
                loc='upper right',bbox_to_anchor=(.965,.873),ncol=2,fontsize=12)
-    fig.text(.035,.035,'RSS 为各阶段进程树采样最大值；同机、每组 1 套系统。',fontsize=10.5,color=MUTED)
+    figure_note(fig,'RSS为各阶段进程树采样最大值；同机，每组1套系统。')
     pack.save(fig,'fig-07-02-resources','十种组合的密文长度与运行内存','7.2','7.2',('ten_combinations',))
 
 
@@ -84,7 +82,7 @@ def representative(pack,d):
         polish(ax,log=True);ax.set_xlim(min(vals)/1.5,max(vals)*2.5);ax.set_ylim(2.5,-.5)
         ax.set_yticks([0,1,2],list('ABC'));ax.set_title(title,loc='left',fontsize=13,pad=10)
         ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda v,_:f'{v:g}'))
-    fig.text(.035,.035,'各面板采用原始量的对数刻度；时间和密文来自十组同机数据。',fontsize=10.5,color=MUTED)
+    figure_note(fig,'各面板采用对数刻度；时间和密文来自十组同机数据。')
     pack.save(fig,'fig-04-01-representatives','三组代表的性能与容量','4.1','4.5',('ten_combinations','master'))
 
 
@@ -102,7 +100,7 @@ def ab_samples(pack,d):
             ax.vlines(med,gi-.34,gi+.34,color=INK,lw=1.5)
             ax.text(.02,gi+.45,f'中位数 {number(med)} s',transform=ax.get_yaxis_transform(),fontsize=11,color=MUTED)
         polish(ax,log=True);ax.set_xlim(.05,65 if j==0 else 1.2)
-        ax.set_ylim(1.75,-.55);ax.set_yticks([0,1],['A','B']);ax.set_xlabel('完整协议耗时 / s（对数刻度）',labelpad=10)
+        ax.set_ylim(1.75,-.55);ax.set_yticks([0,1],['A','B']);ax.set_xlabel('耗时 / s（对数）',labelpad=10)
         ax.set_title(title,loc='left',fontsize=14,pad=14);ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda v,_:f'{v:g}'))
     fig.legend(handles=[Line2D([],[],marker=m,ls='',color=MUTED,label=f'独立根 {i+1}') for i,m in enumerate(['o','s','^'])],
                loc='lower center',bbox_to_anchor=(.53,.04),ncol=3,fontsize=11)
@@ -162,7 +160,7 @@ def session(pack,d):
     b.set_xticks([1,20,40,60,80,100]);b.set_xlim(0,106);b.set_ylim(0,1000)
     b.set_xlabel('同一身份对的消息条数',labelpad=10);b.set_ylabel('累计耗时 / min');polish(b,axis='y')
     b.legend(loc='upper left',fontsize=10)
-    fig.text(.035,.035,'原路径 2 次、准备 1 次、会话内解密 3 次；模型使用阶段中位时间。',fontsize=10.5,color=MUTED)
+    figure_note(fig,'原路径2次、准备1次、会话内解密3次；累计模型使用阶段中位时间。')
     pack.save(fig,'fig-07-06-session','Lai 接收会话的时间成本','7.6','7.4',('optimization',))
 
 
@@ -179,7 +177,7 @@ def phase_composition(pack,d):
         ax.set_xlim(0,max(left)*1.19);ax.set_ylim(9.65,-.65);ax.set_xlabel(title,labelpad=10);polish(ax)
         ax.axhline(4.5,color=LINE,lw=1.1);ax.set_yticks(yy,[f'{"LATTE" if i<5 else "Lai"} + {IBS[i%5]}' for i in range(10)] if ax==axes[0] else ['']*10)
         ax.legend(loc='upper right',fontsize=10)
-    fig.text(.035,.035,'每组 1 套系统；准备总量为三项实测耗时之和，在线总量为首次加密与首次解密之和。',fontsize=10,color=MUTED)
+    figure_note(fig,'每组1套系统。准备总量为建立及两类发钥耗时之和，在线总量为首次加密与首次解密之和。')
     pack.save(fig,'new-05-phase-composition','首次完整流程的阶段构成',section='7.2.2',source_keys=('ten_combinations',),kind='新增')
 
 
@@ -196,8 +194,8 @@ def codec_timing(pack,d):
         ax.set_xlim(0,maxv*1.27);ax.set_ylim(3.6,-.6);ax.set_yticks(range(4),names if j==0 else ['']*4)
         ax.set_xlabel(title,labelpad=10);polish(ax)
     fig.legend(handles=[Line2D([],[],lw=7,color=SLATE,label='JSON'),Line2D([],[],lw=7,color=TEAL,label='紧凑格式')],loc='upper right',bbox_to_anchor=(.96,.87),ncol=2,fontsize=11)
-    fig.text(.035,.07,'机构状态：100.2 KiB → 19.8 KiB；编码 0.974 → 23.1 ms；解码 37.3 → 61.3 ms。',fontsize=11,color=INK)
-    fig.text(.035,.025,'时间包含各编码接口实际执行的对象检查；先取每套运行中位数，再取三套中位数。',fontsize=10,color=MUTED)
+    figure_note(fig,'机构状态100.2 KiB→19.8 KiB；编码0.974→23.1 ms，解码37.3→61.3 ms。')
+    figure_note(fig,'计时包含编码接口的对象检查；先取每套运行中位数，再取三套中位数。')
     pack.save(fig,'new-07-codec-timing','SRGG 编码长度与处理时间',section='7.4.2',source_keys=('codec_benchmark','codec'),kind='新增')
 
 

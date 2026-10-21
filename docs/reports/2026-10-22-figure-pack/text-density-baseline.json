@@ -1,0 +1,129 @@
+{
+  "commit": "9682975068ad4bf7fa4dbb1929ff903c153f26b9",
+  "assets": {
+    "fig-01-01-roles": {
+      "characters": 87,
+      "pdf_sha256": "5cad3e16064c33ea5c96d0d7aecc154131c1c02b938064e82c4d5f86100bd102"
+    },
+    "fig-01-02-research-timeline": {
+      "characters": 258,
+      "pdf_sha256": "ad68fd6286e79e63f680f1945977307702a4a56c5d9fd0130cb75f2b26dbd698"
+    },
+    "fig-01-03-roadmap": {
+      "characters": 89,
+      "pdf_sha256": "2618cae6712e7cd24dc716d7b77c80561734b294ea4d2576348451f64cadbc4f"
+    },
+    "fig-02-01-preimage": {
+      "characters": 119,
+      "pdf_sha256": "9b46669350d7c142b243a6d7f195e8de5f8f7f3939fa49b1b75a0bbeb8894726"
+    },
+    "fig-03-01-architecture": {
+      "characters": 133,
+      "pdf_sha256": "d6c34e96eec5beff532c9bdcb0bef2a12d09de21f20b174930623582bdb1628f"
+    },
+    "fig-03-02-encryption": {
+      "characters": 125,
+      "pdf_sha256": "1f41c70f5d504a8210ed44292045b89e9d99248fbbdeda7acc219db5697d86b4"
+    },
+    "fig-04-01-representatives": {
+      "characters": 212,
+      "pdf_sha256": "d89f8d1027e0295830e3c6e7ff0287ffbfa768c2337db166c00e955fb9e83349"
+    },
+    "fig-05-01-sampler": {
+      "characters": 219,
+      "pdf_sha256": "34c24c02518b980a21626e119afdf402aa1dbd0c09e1e7a222339373b9365ee1"
+    },
+    "fig-05-02-session-flow": {
+      "characters": 102,
+      "pdf_sha256": "16ec1e252700aff536a101f6e20a4250ae66922b7a044265164b502955fbd51f"
+    },
+    "fig-06-01-software": {
+      "characters": 114,
+      "pdf_sha256": "bc84db0b88a9643f2d140dbecb6b3d5e04d3ba79cfab78e607d79b9edcfd46e0"
+    },
+    "fig-06-02-backend-integration": {
+      "characters": 110,
+      "pdf_sha256": "20289aebe28b5100870265b4702d1d3fc36b452f1b1b8fb9ad211b48cc666a57"
+    },
+    "fig-06-03-restoration": {
+      "characters": 85,
+      "pdf_sha256": "41f443e8f40cbec45687843b2f92be37f3ecdd36e81f1043321950df8fad9713"
+    },
+    "fig-06-04-web": {
+      "characters": 27,
+      "pdf_sha256": "295c1876eae60e6006592f553bcf3276182ff4292924e9df8748e5d613dc1e04"
+    },
+    "fig-06-05-web-results": {
+      "characters": 64,
+      "pdf_sha256": "2304c42432bb1b140d6f8d578673e4b245d990f0b7fdcfa4d8c4ee4405289f12"
+    },
+    "fig-06-06-deployment": {
+      "characters": 88,
+      "pdf_sha256": "ca1909b678c3f7468ae852dd805203a7e07571dfd53af15c0d9201a5f9dbe0dd"
+    },
+    "fig-07-01-times": {
+      "characters": 384,
+      "pdf_sha256": "ca6bf5b47071eebcf01be6b012562a7e22685ce9774c6098f788e0f7ca4c14fc"
+    },
+    "fig-07-02-resources": {
+      "characters": 248,
+      "pdf_sha256": "7bf6f27f8b629599e42b8d18b05616db51bcbb0a7e97220a98ece1472b7d6e05"
+    },
+    "fig-07-03-ab-samples": {
+      "characters": 132,
+      "pdf_sha256": "876c0d1548c9c3fece736d83e4126fb921456f857d30be1861d64fb0b648159a"
+    },
+    "fig-07-04-ciphertext-parts": {
+      "characters": 126,
+      "pdf_sha256": "053e3394908f1d54d88c5a12bd83d38897e3d5bd3e0c4722f3713feebef51b1c"
+    },
+    "fig-07-05-codec-sizes": {
+      "characters": 267,
+      "pdf_sha256": "365dc4d861b51b4675dcfac5c128c792df3fa217a599b38e249d8c9e23b86fb1"
+    },
+    "fig-07-06-session": {
+      "characters": 187,
+      "pdf_sha256": "be1532e09e6de3d4cee767fb6b252aacf005b8c6889334f2bd894a9d559b0896"
+    },
+    "fig-08-01-application": {
+      "characters": 82,
+      "pdf_sha256": "386285ec6b07c33ca011436cf66c60bf714b5f137b87bcdf3741badcd1624d1a"
+    },
+    "new-01-message-sequence": {
+      "characters": 161,
+      "pdf_sha256": "cf6bf2aea15bbb27fc37cfb4f01165ace34738df91e3046f7b0ee93864ef25f7"
+    },
+    "new-02-ciphertext-layout": {
+      "characters": 215,
+      "pdf_sha256": "ecb7d21bca815e5cd99288245c2674bc59d63840cac2996c27741ebb6d090944"
+    },
+    "new-03-paper-results": {
+      "characters": 885,
+      "pdf_sha256": "af996e8876151a45178388b33a291483e010f1d68a64a60bbf77b3f2089ad43e"
+    },
+    "new-04-srgg-byte-layout": {
+      "characters": 213,
+      "pdf_sha256": "555984ddc5e884d524c1d21b9113bb8bd8dbea9d6724a95a06a2b8d6824a9665"
+    },
+    "new-05-phase-composition": {
+      "characters": 312,
+      "pdf_sha256": "16a747a2a6ee9070106a2c3906ed857ad2aabcff4a841a5c1d10f8e452f4fb79"
+    },
+    "new-06-issuance-state": {
+      "characters": 137,
+      "pdf_sha256": "a252b0e320e08e26b3af00672c03aa0b42e16319d397c72898f312998fd12584"
+    },
+    "new-07-codec-timing": {
+      "characters": 249,
+      "pdf_sha256": "41fa4082bf1608c96c531dd215f287a812973dcba82fc4e30ecc0ab75e4e5307"
+    },
+    "new-08-suite-settings": {
+      "characters": 170,
+      "pdf_sha256": "88e8166bc775703e1154d032a9f956b983649594b1dd95d133633a5040399521"
+    },
+    "new-09-operation-flow": {
+      "characters": 123,
+      "pdf_sha256": "9e7121d22fe6837990ef8cb6f7417c53da0bd8d5a01ae2773e99e830fdf328c3"
+    }
+  }
+}

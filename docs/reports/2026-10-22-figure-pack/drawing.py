@@ -10,6 +10,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
+from matplotlib.transforms import Bbox
 
 HERE = Path(__file__).resolve().parent
 INK = '#202C39'
@@ -56,6 +57,15 @@ def configure():
 def text(ax, x, y, s, size=14, color=INK, ha='left', va='center', weight='normal', **kw):
     return ax.text(x, y, s, fontsize=size, color=color, ha=ha, va=va,
                    weight=weight, linespacing=kw.pop('linespacing', 1.12), **kw)
+
+
+def figure_note(target, content):
+    """Keep methodological prose in the separate captions, outside the artwork."""
+    fig = target if hasattr(target, 'canvas') else target.figure
+    if not hasattr(fig, '_ibme_notes'):
+        fig._ibme_notes = []
+    if content and content not in fig._ibme_notes:
+        fig._ibme_notes.append(content)
 
 
 def line(ax, points, color=LINE, lw=1.2, style='-', **kw):
@@ -158,25 +168,38 @@ class Pack:
                     if tb.x0<rb.x0+4 or tb.x1>rb.x1-4 or tb.y0<rb.y0+3 or tb.y1>rb.y1-3:
                         findings.append({'type':'text exceeds box padding','text':t.get_text()})
         self.layout_findings[slug]=findings
+        # Crop vacant title/footer bands after moving prose into external captions.
+        extents=[]
+        for axis in fig.axes:
+            if axis.axison:
+                extents.append(axis.get_tightbbox(renderer))
+            else:
+                for artist in [*axis.texts,*axis.lines,*axis.patches,*axis.images]:
+                    if artist.get_visible():
+                        bb=artist.get_window_extent(renderer)
+                        if all(map(lambda v: abs(v)<1e8,bb.extents)):
+                            extents.append(bb)
+        extents += [a.get_window_extent(renderer) for a in [*fig.texts,*fig.legends] if a.get_visible()]
+        crop=Bbox.union(extents).padded(12).transformed(fig.dpi_scale_trans.inverted())
         for extension in ('svg','pdf','png'):
             metadata={'Title':title,'Creator':'IB-ME report figure pack'} if extension=='pdf' else None
             path=directory/f'{slug}.{extension}'
-            fig.savefig(path,dpi=300,metadata=metadata)
+            fig.savefig(path,dpi=300,metadata=metadata,bbox_inches=crop)
             if extension=='svg':
                 # Matplotlib paths contain trailing spaces; keep Git exports byte-stable.
                 content='\n'.join(s.rstrip() for s in path.read_text(encoding='utf-8').splitlines())+'\n'
                 path.write_text(content,encoding='utf-8',newline='\n')
         self.assets.append({'id':slug,'title':title,'old_figure':old,'section':section,
                             'kind':kind,'note':note,'source_keys':list(source_keys),
-                            'size_inches':list(fig.get_size_inches()),
+                            'caption_notes':getattr(fig,'_ibme_notes',[]),
+                            'size_inches':[crop.width,crop.height],
                             'files':{ext:f'assets/{slug}.{ext}' for ext in ('svg','pdf','png')}})
         plt.close(fig)
 
 
 def chart_frame(title,subtitle='',height=5.5):
     fig=plt.figure(figsize=(10,height))
-    fig.text(.035,.95,title,fontsize=18,weight='bold',color=INK,va='top')
-    if subtitle:fig.text(.035,.895,subtitle,fontsize=11.2,color=MUTED,va='top')
+    figure_note(fig,subtitle)
     return fig
 
 

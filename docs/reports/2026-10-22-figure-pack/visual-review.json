@@ -1,171 +1,171 @@
 {
   "baseline_commit": "c3625490576d7e611f0d296d9a4cd244a64ea90f",
   "review_date": "2026-10-22",
-  "method": "对导出的31份PDF使用PDFium渲染；逐项查看4张联络页，并放大核对图7.1、7.2、身份关系、收发时序、密文层次及论文结果表。",
+  "revision": "concise-labels",
+  "method": "使用PDFium渲染导出的31份PDF，检查4张联络页；放大核对图7.1、7.2、SRGG编码示例、完整时序和论文结果表。",
   "focus": [
-    "文字和箭头不互相遮挡",
-    "坐标、单位与直接数值清晰",
-    "框内留白、字号与对齐统一",
-    "真实截图内容保持原样",
-    "PDF中文字与数学符号完整"
+    "图内保留短标签、变量、数值、单位和必要图例",
+    "解释移至独立图注",
+    "删字后重新裁切留白",
+    "字体、数学符号和图例完整",
+    "真实截图内容保持原样"
   ],
   "assets": [
     {
       "id": "fig-01-01-roles",
-      "pdf_sha256": "5cad3e16064c33ea5c96d0d7aecc154131c1c02b938064e82c4d5f86100bd102",
+      "pdf_sha256": "36b1bfbea0d3ac8bc3c9a8cf89dd8854fc1d7ffd636ae4ca080afd6f4944b210",
       "reviewed": true
     },
     {
       "id": "fig-01-02-research-timeline",
-      "pdf_sha256": "ad68fd6286e79e63f680f1945977307702a4a56c5d9fd0130cb75f2b26dbd698",
+      "pdf_sha256": "efd5ce32ded92721a85667d8d21587bdfd8bf8bbf4a3f74e5cc17712730c70c6",
       "reviewed": true
     },
     {
       "id": "fig-01-03-roadmap",
-      "pdf_sha256": "2618cae6712e7cd24dc716d7b77c80561734b294ea4d2576348451f64cadbc4f",
+      "pdf_sha256": "fe0053428d08e268aef4b99d9903dd4c241fbe471c5c0525e8db5d9a7daf8cc0",
       "reviewed": true
     },
     {
       "id": "fig-02-01-preimage",
-      "pdf_sha256": "9b46669350d7c142b243a6d7f195e8de5f8f7f3939fa49b1b75a0bbeb8894726",
+      "pdf_sha256": "c344a5031675be8fae2a585b67eeb7d91444d9a153d3840f097ff389720d987b",
       "reviewed": true
     },
     {
       "id": "fig-03-01-architecture",
-      "pdf_sha256": "d6c34e96eec5beff532c9bdcb0bef2a12d09de21f20b174930623582bdb1628f",
+      "pdf_sha256": "a19d621c9a8abf4b4a7dd755f58dbd5924e5db2cd562e34d4d9814e639136af2",
       "reviewed": true
     },
     {
       "id": "fig-03-02-encryption",
-      "pdf_sha256": "1f41c70f5d504a8210ed44292045b89e9d99248fbbdeda7acc219db5697d86b4",
+      "pdf_sha256": "51afd02a5db2546dbbc5b33b0ecc1a1a682110c2cdb629b9e7a766fee368f46a",
       "reviewed": true
     },
     {
       "id": "fig-04-01-representatives",
-      "pdf_sha256": "d89f8d1027e0295830e3c6e7ff0287ffbfa768c2337db166c00e955fb9e83349",
+      "pdf_sha256": "b121f58e2de9a39082e23d3c609f2d0f1a20eafb9db2e53bfc3a2f1943764630",
       "reviewed": true
     },
     {
       "id": "fig-05-01-sampler",
-      "pdf_sha256": "34c24c02518b980a21626e119afdf402aa1dbd0c09e1e7a222339373b9365ee1",
+      "pdf_sha256": "cc10a888814cb234d181434ed165e1fe4511772ef0e41d0f633a3a8fa2eaae50",
       "reviewed": true
     },
     {
       "id": "fig-05-02-session-flow",
-      "pdf_sha256": "16ec1e252700aff536a101f6e20a4250ae66922b7a044265164b502955fbd51f",
+      "pdf_sha256": "1d68b83df59a91d51b2bf7d460e71d600a63858818e837baf0f8bb44c2b3d6e8",
       "reviewed": true
     },
     {
       "id": "fig-06-01-software",
-      "pdf_sha256": "bc84db0b88a9643f2d140dbecb6b3d5e04d3ba79cfab78e607d79b9edcfd46e0",
+      "pdf_sha256": "3b15090c44f84b8833cce274a3e75a48a5e3a490a262a631ed538898881e6839",
       "reviewed": true
     },
     {
       "id": "fig-06-02-backend-integration",
-      "pdf_sha256": "20289aebe28b5100870265b4702d1d3fc36b452f1b1b8fb9ad211b48cc666a57",
+      "pdf_sha256": "c914a9646b5b5f28021c39283c2cff867ff407e68a50a8e754803423759ecc1f",
       "reviewed": true
     },
     {
       "id": "fig-06-03-restoration",
-      "pdf_sha256": "41f443e8f40cbec45687843b2f92be37f3ecdd36e81f1043321950df8fad9713",
+      "pdf_sha256": "bb5ff4435bce06732f6017b1738b86240da3d517187512264a266d55874d6583",
       "reviewed": true
     },
     {
       "id": "fig-06-04-web",
-      "pdf_sha256": "295c1876eae60e6006592f553bcf3276182ff4292924e9df8748e5d613dc1e04",
+      "pdf_sha256": "0620b571cbabf5ab80019400fc7b32cae7063f7590b26a06817a888227a53a6a",
       "reviewed": true
     },
     {
       "id": "fig-06-05-web-results",
-      "pdf_sha256": "2304c42432bb1b140d6f8d578673e4b245d990f0b7fdcfa4d8c4ee4405289f12",
+      "pdf_sha256": "b09b3a83b75b0777dba14fe21920de8d77fff5573477b0b4163a5c1e16a92200",
       "reviewed": true
     },
     {
       "id": "fig-06-06-deployment",
-      "pdf_sha256": "ca1909b678c3f7468ae852dd805203a7e07571dfd53af15c0d9201a5f9dbe0dd",
+      "pdf_sha256": "bc40d1d7f988547e27366095014e22ae43f3bdfa60ed6d8d33df29d4eb9f5161",
       "reviewed": true
     },
     {
       "id": "fig-07-01-times",
-      "pdf_sha256": "ca6bf5b47071eebcf01be6b012562a7e22685ce9774c6098f788e0f7ca4c14fc",
+      "pdf_sha256": "f19016c20add91c44c6585a4eba65a1efb94eaac541a156f321cef9ca0ef008c",
       "reviewed": true
     },
     {
       "id": "fig-07-02-resources",
-      "pdf_sha256": "7bf6f27f8b629599e42b8d18b05616db51bcbb0a7e97220a98ece1472b7d6e05",
+      "pdf_sha256": "623fa45ae78f3e8bbe4599c23c6bdbb597dde24e6a38a31adeb438b0d689b083",
       "reviewed": true
     },
     {
       "id": "fig-07-03-ab-samples",
-      "pdf_sha256": "876c0d1548c9c3fece736d83e4126fb921456f857d30be1861d64fb0b648159a",
+      "pdf_sha256": "386fba162044b32dcf1d7d46e26d221c80b82078867a2734e6599f030e98e95a",
       "reviewed": true
     },
     {
       "id": "fig-07-04-ciphertext-parts",
-      "pdf_sha256": "053e3394908f1d54d88c5a12bd83d38897e3d5bd3e0c4722f3713feebef51b1c",
+      "pdf_sha256": "819060251c33a0558396e5f1742a703273b72130f2ef49b7752e00d8e00b5d56",
       "reviewed": true
     },
     {
       "id": "fig-07-05-codec-sizes",
-      "pdf_sha256": "365dc4d861b51b4675dcfac5c128c792df3fa217a599b38e249d8c9e23b86fb1",
+      "pdf_sha256": "99556f0e3f0d0e4cbbdfb2f9fd57c73708b28ce36e0d74efec25ced00bf85420",
       "reviewed": true
     },
     {
       "id": "fig-07-06-session",
-      "pdf_sha256": "be1532e09e6de3d4cee767fb6b252aacf005b8c6889334f2bd894a9d559b0896",
+      "pdf_sha256": "17ea6cba13fc90e875b3c6f6bb2157db0a4712a7be2f9c772321e4e1ba34cc4e",
       "reviewed": true
     },
     {
       "id": "fig-08-01-application",
-      "pdf_sha256": "386285ec6b07c33ca011436cf66c60bf714b5f137b87bcdf3741badcd1624d1a",
+      "pdf_sha256": "2e03a32d7be3be78b9037e1385a51f015f2a608e1f498aef4a248afdfb6317a9",
       "reviewed": true
     },
     {
       "id": "new-01-message-sequence",
-      "pdf_sha256": "cf6bf2aea15bbb27fc37cfb4f01165ace34738df91e3046f7b0ee93864ef25f7",
+      "pdf_sha256": "68c2cfb043e19db4c357ab9fc84364c63a6134dd0f567206793a3e4a7ae66aa9",
       "reviewed": true
     },
     {
       "id": "new-02-ciphertext-layout",
-      "pdf_sha256": "ecb7d21bca815e5cd99288245c2674bc59d63840cac2996c27741ebb6d090944",
+      "pdf_sha256": "eb73c9618541b4758c30dda9f86d112d7e2dfecd5dcef91440f9d4fea5a3a3bb",
       "reviewed": true
     },
     {
       "id": "new-03-paper-results",
-      "pdf_sha256": "af996e8876151a45178388b33a291483e010f1d68a64a60bbf77b3f2089ad43e",
+      "pdf_sha256": "d57d6e9ebd85cc793ccb40c9eb321ef6472e01c83f3b44c8fc514e2800e8d3e6",
       "reviewed": true
     },
     {
       "id": "new-04-srgg-byte-layout",
-      "pdf_sha256": "555984ddc5e884d524c1d21b9113bb8bd8dbea9d6724a95a06a2b8d6824a9665",
+      "pdf_sha256": "eb77b8d483762fec23aad8e05c6f2b5dd42849692157b4388854ac77bcb7d1fb",
       "reviewed": true
     },
     {
       "id": "new-05-phase-composition",
-      "pdf_sha256": "16a747a2a6ee9070106a2c3906ed857ad2aabcff4a841a5c1d10f8e452f4fb79",
+      "pdf_sha256": "b7f4320754781884afeccca1ee3ab93d688fb61b9e22307d3a4e2dd281f44802",
       "reviewed": true
     },
     {
       "id": "new-06-issuance-state",
-      "pdf_sha256": "a252b0e320e08e26b3af00672c03aa0b42e16319d397c72898f312998fd12584",
+      "pdf_sha256": "31094ebcb03b632e17ea793c7b70b69e3417061adca45fd7ad2377fdd47d25f7",
       "reviewed": true
     },
     {
       "id": "new-07-codec-timing",
-      "pdf_sha256": "41fa4082bf1608c96c531dd215f287a812973dcba82fc4e30ecc0ab75e4e5307",
+      "pdf_sha256": "991b30b6bad075124b6744d5b9e84d10b909720a884a748f885084ce9eefb617",
       "reviewed": true
     },
     {
       "id": "new-08-suite-settings",
-      "pdf_sha256": "88e8166bc775703e1154d032a9f956b983649594b1dd95d133633a5040399521",
+      "pdf_sha256": "5d283e84244e630446fe53c7370cb26f5502f1bc8a6b5b6b7d11f51e1830c480",
       "reviewed": true
     },
     {
       "id": "new-09-operation-flow",
-      "pdf_sha256": "9e7121d22fe6837990ef8cb6f7417c53da0bd8d5a01ae2773e99e830fdf328c3",
+      "pdf_sha256": "a05cfbeb102bad46a4be0f64ab7bf1e51142055dde21c9807203b194ff9004b0",
       "reviewed": true
     }
   ],
-  "open_findings": [],
-  "final_export_check": "最终导出的31份PDF与已审阅渲染图逐像素一致。"
+  "open_findings": []
 }

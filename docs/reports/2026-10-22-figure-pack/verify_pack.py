@@ -99,17 +99,26 @@ def main():
     for a in catalog:
         check(all(key in sources['sources'] for key in a['source_keys']), f'source links: {a["id"]}')
         svg = ET.parse(HERE/a['files']['svg']).getroot()
-        check(bool(svg.findall('.//{http://www.w3.org/2000/svg}text')), f'editable SVG text: {a["id"]}')
+        if a['old_figure'] != '6.4':
+            check(bool(svg.findall('.//{http://www.w3.org/2000/svg}text')), f'editable SVG text: {a["id"]}')
         pdf = PdfReader(HERE/a['files']['pdf'])
         check(len(pdf.pages) == 1, f'single-page PDF: {a["id"]}')
-        fonts = pdf.pages[0]['/Resources']['/Font'].get_object()
+        fonts = pdf.pages[0]['/Resources'].get('/Font', {})
+        if hasattr(fonts,'get_object'): fonts = fonts.get_object()
         check(all(embedded(f) for f in fonts.values()), f'embedded PDF fonts: {a["id"]}')
         if a['old_figure'] not in ['6.4', '6.5']:
             check(len(pdf.pages[0].images) == 0, f'vector PDF: {a["id"]}')
         im = Image.open(HERE/a['files']['png'])
         check(all(abs(n-s*300) <= 1 for n, s in zip(im.size, a['size_inches'])), f'300dpi dimensions: {a["id"]}')
         check(all(abs(d-300) < .02 for d in im.info['dpi']), f'300dpi metadata: {a["id"]}')
-    check(len(PdfReader(HERE/'图表预览册.pdf').pages) == 32, '32-page vector preview book')
+    check(len(PdfReader(HERE/'图表预览册-精简版.pdf').pages) == 32, '32-page vector preview book')
+    captions=read(HERE/'captions.json')
+    check({c['id'] for c in captions} == {a['id'] for a in catalog}, 'all 31 captions supplied separately')
+    density=read(HERE/'text-density-report.json')
+    for row in density['assets']:
+        visible=len(re.sub(r'\s+','',PdfReader(HERE/f"assets/{row['id']}.pdf").pages[0].extract_text() or ''))
+        check(visible==row['after'],f'visible text audit: {row["id"]}')
+    check(density['after']<density['before'],'less text inside the figures')
     with source(sources, 'ten_combinations').open(encoding='utf-8', newline='') as f:
         rows = {r['case']:r for r in csv.DictReader(f)}
     check(len(rows) == len(data['combinations']) == 10, 'ten same-machine combinations')

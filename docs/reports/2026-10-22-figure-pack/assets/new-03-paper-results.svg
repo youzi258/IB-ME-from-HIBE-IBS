@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="691.2pt" viewBox="0 0 720 691.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="694.08pt" height="477.792969pt" viewBox="0 0 694.08 477.792969" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-22T03:53:46.787790</dc:date>
+    <dc:date>2026-10-22T04:12:18.873347</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,218 +21,183 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 691.2
-L 720 691.2
-L 720 0
+   <path d="M 0 477.792969
+L 694.08 477.792969
+L 694.08 0
 L 0 0
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="line2d_1">
-    <path d="M 21.6 100.8
-L 698.4 100.8
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #245a81; stroke-width: 1.5; stroke-linecap: square"/>
+    <path d="M 8.64 35.712969
+L 685.44 35.712969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #245a81; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
-    <path d="M 21.6 172.8
-L 698.4 172.8
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 96.192969
+L 685.44 96.192969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
-    <path d="M 21.6 241.92
-L 698.4 241.92
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 149.472969
+L 685.44 149.472969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
-    <path d="M 21.6 311.04
-L 698.4 311.04
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 202.752969
+L 685.44 202.752969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_5">
-    <path d="M 21.6 380.16
-L 698.4 380.16
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 256.032969
+L 685.44 256.032969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_6">
-    <path d="M 21.6 449.28
-L 698.4 449.28
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 309.312969
+L 685.44 309.312969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_7">
-    <path d="M 21.6 518.4
-L 698.4 518.4
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 362.592969
+L 685.44 362.592969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_8">
-    <path d="M 21.6 587.52
-L 698.4 587.52
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 415.872969
+L 685.44 415.872969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_9">
-    <path d="M 21.6 656.64
-L 698.4 656.64
-" clip-path="url(#p8c8487ec6c)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 8.64 469.152969
+L 685.44 469.152969
+" clip-path="url(#pc507d15b96)" style="fill: none; stroke: #d7dfe5; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 20px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="30.0525" transform="rotate(-0 21.6 30.0525)">各方案的原论文正确性与安全结果</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="8.64" y="21.8875" transform="rotate(-0 8.64 21.8875)">方案</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="21.6" y="56.064375" transform="rotate(-0 21.6 56.064375)">原论文构造的结果与条件；页码按本仓库归档 PDF 文件页序</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="163.44" y="21.8875" transform="rotate(-0 163.44 21.8875)">正确性</text>
    </g>
    <g id="text_3">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="21.6" y="89.504922" transform="rotate(-0 21.6 89.504922)">方案</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="332.64" y="21.908281" transform="rotate(-0 332.64 21.908281)">安全结果</text>
    </g>
    <g id="text_4">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="151.2" y="89.504922" transform="rotate(-0 151.2 89.504922)">原文正确性依据</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="563.04" y="21.894063" transform="rotate(-0 563.04 21.894063)">原文定位</text>
    </g>
    <g id="text_5">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="324" y="89.524219" transform="rotate(-0 324 89.524219)">原文安全结果与条件</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="65.665938" transform="rotate(-0 8.64 65.665938)">LATTE</text>
    </g>
    <g id="text_6">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="586.8" y="89.511016" transform="rotate(-0 586.8 89.511016)">原文定位</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="65.313516" transform="rotate(-0 163.44 65.313516)">编码 · 重加密</text>
    </g>
    <g id="text_7">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="132.912969" transform="rotate(-0 21.6 132.912969)">LATTE</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 65.665938)">ID-IND-CCA</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 80.445313)">ROM · NTRU / RLWE</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 130.862813)">Encrypt / Decrypt 的</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 145.932188)">编码、重加密一致性</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="563.04" y="65.043359" transform="rotate(-0 563.04 65.043359)">§III / IV-A、D</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 131.577188)">ID-IND-CCA；经典 ROM</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 145.973438)">NTRU / RLWE 与论文的 FO、</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 160.257187)">有限精度采样条件</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="119.117578" transform="rotate(-0 8.64 119.117578)">Lai</text>
    </g>
    <g id="text_10">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 131.280938)">§III；§IV-A、D</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 145.615312)">PDF 6–9、12</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="118.586406" transform="rotate(-0 163.44 118.586406)">原像采样 · 解密</text>
    </g>
    <g id="text_11">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="202.204609" transform="rotate(-0 21.6 202.204609)">Lai</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 118.945938)">INDr-ID-CCA</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 134.458594)">PLWE</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 199.789688)">ringInvert / ringSampleDO</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 214.831875)">正确性；原文 (H)IBE 解密</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="563.04" y="118.574219" transform="rotate(-0 563.04 118.574219)">定理 6、8、10</text>
    </g>
    <g id="text_13">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 200.680313)">原论文构造为 INDr-ID-CCA</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 215.069063)">PLWE 假设与原文陷门、误差条件；</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 229.359375)">INDr 包含消息隐私与接收者匿名性</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="172.222891" transform="rotate(-0 8.64 172.222891)">BNN + ML-DSA</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 200.574375)">Theorem 6、8、10</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 215.3475)">§5.1–5.2</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 229.054688)">PDF 11、13–15</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="171.924297" transform="rotate(-0 163.44 171.924297)">证书 · 消息验签</text>
    </g>
    <g id="text_15">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="271.149922" transform="rotate(-0 21.6 271.149922)">BNN + ML-DSA</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 171.822734)">IBS 不可伪造性</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 187.359766)">底层普通签名安全</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 269.835)">机构证书与消息签名</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 284.142188)">分别通过底层验签</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="563.04" y="171.854219" transform="rotate(-0 563.04 171.854219)">Galindo 定理 1</text>
    </g>
    <g id="text_17">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 269.840625)">认证转换得到 IBS 不可伪造性</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 284.147813)">条件：两套底层普通签名安全；</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 298.461563)">此行底层采用 ML-DSA-44</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="225.699922" transform="rotate(-0 8.64 225.699922)">BNN + Falcon</text>
    </g>
    <g id="text_18">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 269.934375)">Galindo 等 §3</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 283.92)">Theorem 1，PDF 5</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 298.816875)">FIPS 204</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="225.204297" transform="rotate(-0 163.44 225.204297)">证书 · 消息验签</text>
    </g>
    <g id="text_19">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="340.466953" transform="rotate(-0 21.6 340.466953)">BNN + Falcon</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 225.102734)">IBS 不可伪造性</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 240.639766)">底层普通签名安全</text>
    </g>
    <g id="text_20">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 338.955)">机构证书与消息签名</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 353.262187)">分别通过底层验签</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="563.04" y="225.134219" transform="rotate(-0 563.04 225.134219)">Galindo 定理 1</text>
    </g>
    <g id="text_21">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 338.960625)">同一认证转换定理</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 353.267812)">条件：两套底层普通签名安全；</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 367.581562)">此行底层采用 Falcon-512</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="278.700625" transform="rotate(-0 8.64 278.700625)">Luo</text>
    </g>
    <g id="text_22">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 339.054375)">Galindo 等 §3</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 353.04)">Theorem 1，PDF 5</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 368.11875)">Falcon v1.2</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="278.357344" transform="rotate(-0 163.44 278.357344)">承诺恢复 · 范数</text>
    </g>
    <g id="text_23">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="409.307656" transform="rotate(-0 21.6 409.307656)">Luo</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 278.382734)">IBS 不可伪造性</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 294.298594)">ROM · SIS</text>
    </g>
    <g id="text_24">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 408.075)">恢复签名承诺的等式</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 422.3475)">与拒绝采样后的范数条件</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="563.04" y="278.414219" transform="rotate(-0 563.04 278.414219)">定理 1</text>
    </g>
    <g id="text_25">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 408.057187)">原文 SIS 归约；经典 ROM</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 422.412187)">条件：原定理的挑战空间、</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 436.684687)">拒绝采样及范数参数</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="332.062891" transform="rotate(-0 8.64 332.062891)">SRGG</text>
    </g>
    <g id="text_26">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 408.388125)">§3.1–3.2</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 422.919375)">Theorem 1</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 437.059687)">PDF 7–8</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="331.637344" transform="rotate(-0 163.44 331.637344)">验证方程 · 范数</text>
    </g>
    <g id="text_27">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="478.509922" transform="rotate(-0 21.6 478.509922)">SRGG</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 332.065938)">sEUF-ID-CMA</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 347.193672)">QROM · 底层 SIG</text>
    </g>
    <g id="text_28">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 477.195)">原文签名验证方程</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 491.490937)">及响应向量范数检查</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(563.04 331.682031)">算法 7–8</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(563.04 347.206875)">定理 2</text>
    </g>
    <g id="text_29">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 476.77875)">sEUF-ID-CMA；QROM</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 491.502187)">Theorem 2 条件：底层 SIG</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 505.810313)">满足 sEUF-CMA</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="383.977891" transform="rotate(-0 8.64 383.977891)">Sageloli-RSIS</text>
    </g>
    <g id="text_30">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 476.269687)">Algorithm 7–8</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 492.039375)">Theorem 2</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 506.179688)">PDF 7–8</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="384.923437" transform="rotate(-0 163.44 384.923437)">模方程 · 分块范数</text>
    </g>
    <g id="text_31">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="546.264922" transform="rotate(-0 21.6 546.264922)">Sageloli-RSIS</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 385.031094)">非自适应安全</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 400.125313)">ROM / QROM · RSIS</text>
    </g>
    <g id="text_32">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 545.693438)">Proposition 10 的完备性</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 560.5875)">模方程与分块范数条件</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(563.04 384.905156)">命题 10–11</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(563.04 400.486875)">定理 1、3</text>
    </g>
    <g id="text_33">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 545.89875)">RSIS；ROM / QROM</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 560.645625)">非自适应 Theorem 3，结合</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 574.063125)">Theorem 1、Proposition 11</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="8.64" y="436.978594" transform="rotate(-0 8.64 436.978594)">Wang + PW</text>
    </g>
    <g id="text_34">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 546.080625)">Table 4；§5、§7</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 560.335313)">PDF 16、24</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="163.44" y="437.429531" transform="rotate(-0 163.44 437.429531)">Wang 引理 5.1</text>
    </g>
    <g id="text_35">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="21.6" y="615.105625" transform="rotate(-0 21.6 615.105625)">Wang + PW</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 438.625938)">UF-naCMA → UF-CMA</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(332.64 454.138594)">ROM · SIS</text>
    </g>
    <g id="text_36">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 614.35125)">Wang Lemma 5.1</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(151.2 629.806875)">PW 转换保持完备性</text>
-   </g>
-   <g id="text_37">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 614.327812)">Wang：SIS 下 UF-naCMA</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 629.742187)">PW Theorem 2：随机预言机与</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #202c39" transform="translate(324 644.044687)">盐长条件下转为 UF-CMA</text>
-   </g>
-   <g id="text_38">
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 614.35125)">Wang PDF 16–17</text>
-    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(586.8 629.440312)">PW §3.2，PDF 12</text>
-   </g>
-   <g id="text_39">
-    <text style="font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="21.6" y="682.822031" transform="rotate(-0 21.6 682.822031)">ROM：随机预言机模型；QROM：允许量子查询的随机预言机模型。</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(563.04 437.486406)">Wang 定理 5.1</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(563.04 453.766875)">PW 定理 2</text>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p8c8487ec6c">
-   <rect x="0" y="0" width="720" height="691.2"/>
+  <clipPath id="pc507d15b96">
+   <rect x="-12.96" y="-10.367031" width="720" height="504"/>
   </clipPath>
  </defs>
 </svg>

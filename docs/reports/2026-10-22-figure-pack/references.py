@@ -89,17 +89,26 @@ def build(pack,root):
         md.append('| '+' | '.join(row[k].replace('\n','<br>') for k in ['scheme','correctness','security','locator'])+' |')
     md+=['','论文文件及逐项核对锚点见 `paper-result-evidence.json`。BNN 两行还分别引用 `papers/2024_ml_dsa_fips204.pdf` 与 `papers/2020_falcon_spec_fouque.pdf` 的算法规范。','']
     (HERE/'security-results.md').write_text('\n'.join(md),encoding='utf-8',newline='\n')
-    fig,ax=pack.canvas(960)
-    text(ax,30,32,'各方案的原论文正确性与安全结果',size=20,weight='bold')
-    text(ax,30,72,'原论文构造的结果与条件；页码按本仓库归档 PDF 文件页序',size=12,color=MUTED)
-    x=[30,210,450,815,970]
-    for xx,label in zip(x,headers):text(ax,xx,118,label,size=13,color=BLUE,weight='bold')
-    line(ax,[(30,140),(970,140)],color=BLUE,lw=1.5)
-    for i,row in enumerate(ROWS):
-        y=148+i*96
-        for j,key in enumerate(['scheme','correctness','security','locator']):
-            text(ax,x[j],y+19,row[key],size=12 if j else 13,color=INK if j<3 else MUTED,
+    compact=[
+        ('编码 · 重加密','ID-IND-CCA\nROM · NTRU / RLWE','§III / IV-A、D'),
+        ('原像采样 · 解密','INDr-ID-CCA\nPLWE','定理 6、8、10'),
+        ('证书 · 消息验签','IBS 不可伪造性\n底层普通签名安全','Galindo 定理 1'),
+        ('证书 · 消息验签','IBS 不可伪造性\n底层普通签名安全','Galindo 定理 1'),
+        ('承诺恢复 · 范数','IBS 不可伪造性\nROM · SIS','定理 1'),
+        ('验证方程 · 范数','sEUF-ID-CMA\nQROM · 底层 SIG','算法 7–8\n定理 2'),
+        ('模方程 · 分块范数','非自适应安全\nROM / QROM · RSIS','命题 10–11\n定理 1、3'),
+        ('Wang 引理 5.1','UF-naCMA → UF-CMA\nROM · SIS','Wang 定理 5.1\nPW 定理 2'),
+    ]
+    fig,ax=pack.canvas(700)
+    x=[30,245,480,800]
+    for xx,label in zip(x,['方案','正确性','安全结果','原文定位']):
+        text(ax,xx,38,label,size=14,color=BLUE,weight='bold')
+    line(ax,[(30,64),(970,64)],color=BLUE,lw=1.5)
+    for i,(row,short) in enumerate(zip(ROWS,compact)):
+        y=80+i*74
+        for j,value in enumerate([row['scheme'],*short]):
+            text(ax,x[j],y+8,value,size=13,color=INK if j<3 else MUTED,
                  weight='bold' if j==0 else 'normal',va='top')
-        line(ax,[(30,y+92),(970,y+92)],color=LINE,lw=.8)
-    text(ax,30,943,'ROM：随机预言机模型；QROM：允许量子查询的随机预言机模型。',size=11,color=MUTED)
+        line(ax,[(30,y+68),(970,y+68)],color=LINE,lw=.8)
+    figure_note(ax,'表内使用原论文的安全模型与结论名称；完整定理条件、PDF页序和正确性依据列于security-results.md、CSV和JSON。ROM指随机预言机模型，QROM允许量子查询。')
     pack.save(fig,'new-03-paper-results','各方案的原论文正确性与安全结果',section='4.3',source_keys=('papers',),kind='新增表')

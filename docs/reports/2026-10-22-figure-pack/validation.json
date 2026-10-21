@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checks": 530,
+  "checks": 566,
   "visual_review_complete": true,
   "details": [
     {
@@ -404,7 +404,7 @@
       "passed": true
     },
     {
-      "check": "artifact digest: 图表预览册.pdf",
+      "check": "artifact digest: 图表预览册-精简版.pdf",
       "passed": true
     },
     {
@@ -441,6 +441,22 @@
     },
     {
       "check": "artifact digest: README.md",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: captions.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: captions.md",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: text-density-baseline.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: text-density-report.json",
       "passed": true
     },
     {
@@ -1140,10 +1156,6 @@
       "passed": true
     },
     {
-      "check": "editable SVG text: fig-06-04-web",
-      "passed": true
-    },
-    {
       "check": "single-page PDF: fig-06-04-web",
       "passed": true
     },
@@ -1661,6 +1673,138 @@
     },
     {
       "check": "32-page vector preview book",
+      "passed": true
+    },
+    {
+      "check": "all 31 captions supplied separately",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "visible text audit: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "less text inside the figures",
       "passed": true
     },
     {
