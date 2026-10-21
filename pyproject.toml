@@ -27,6 +27,7 @@ namespaces = true
 "ibme.webui" = ["static/*"]
 "ibme.hibe.latte" = ["native/*.c", "native/upstream/*", "native/compat/libXKCP.a.headers/*.h"]
 "ibme.ibs.certified" = ["native/*.c", "native/upstream/*", "native/upstream/ref/*.c", "native/upstream/ref/*.h", "falcon_native/*.c", "falcon_native/upstream/*"]
+"ibme.ibs.wang_pw_target" = ["native/*.cpp", "native/README.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

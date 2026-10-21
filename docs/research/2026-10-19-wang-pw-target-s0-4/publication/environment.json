@@ -1,0 +1,29 @@
+{
+  "schema": "IBME/WANG-PW-PUBLICATION-ENVIRONMENT/1",
+  "collected_at_utc": "2026-10-20T16:08:09.104793+00:00",
+  "scope": "Local WSL regression only; no server experiment was started",
+  "python": "3.13.15 | packaged by conda-forge | (main, Sep  2 2026, 22:01:58) [GCC 15.3.0]",
+  "sagemath": "10.9",
+  "python_executable": "/home/zhang/miniconda3/envs/sage/bin/python",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "cpu": "Intel(R) Core(TM) Ultra 7 255HX",
+  "logical_cpus": 20,
+  "memory": "MemTotal:       16044712 kB",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1",
+    "gmpy2": "2.3.1",
+    "mpmath": "1.4.1"
+  },
+  "native_library": {
+    "path": "/home/zhang/.cache/ibme-native-tools/wang-pw-target-s0-4/libibme_wang_pw_gaussian.so",
+    "sha256": "70692653547d96f1883c4ad3d1059425f0154bffcad9f21dbc624623e0c04f69"
+  },
+  "native_source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+  "native_library_build_binding_reconstructed": false,
+  "test_thread_limits": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  }
+}

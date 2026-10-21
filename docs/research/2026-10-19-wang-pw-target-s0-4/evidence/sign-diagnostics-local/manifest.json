@@ -1,0 +1,69 @@
+{
+  "files": {
+    ".gitattributes": {
+      "bytes": 74,
+      "sha256": "574dca45282c721e228acd15bf9aaeef98616404a08f68a929e460f25f1b6cd1"
+    },
+    "backend-af11011.py": {
+      "bytes": 8273,
+      "sha256": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548"
+    },
+    "baseline-parity.json": {
+      "bytes": 3535,
+      "sha256": "3ece0ccf91c6e753c5ff71c1505f0958ed58fa29e7b9190f777d15d7619fcfcd"
+    },
+    "baseline-parity.log": {
+      "bytes": 2946,
+      "sha256": "b28010d9f05ff3be048ff2e6fabd9b1b2a2e89588862b1bc3bee17c46f4feb6a"
+    },
+    "baseline-parity.py": {
+      "bytes": 5768,
+      "sha256": "b1df8f22add499916c062539099fbabaa232ef81e2c27f1cad166b18ab01dc49"
+    },
+    "baseline-provenance.json": {
+      "bytes": 227,
+      "sha256": "2c04cf9e59f67b4b4c5f03d9719589a63c97a8e5ea877b902aa3f6cbde3b2404"
+    },
+    "diagnostics.log": {
+      "bytes": 101,
+      "sha256": "ccb9ef252a2ccb4da150d2c25fdaec8fdab7d9ca9c555251e45b8687565a0be2"
+    },
+    "diagnostics.xml": {
+      "bytes": 7304,
+      "sha256": "b383f3d57f8e7ceecf5222767086bd981aa6fab89f0db6ed38b8ed1334836d57"
+    },
+    "fixture-setup-rejected.json": {
+      "bytes": 1037,
+      "sha256": "6114a32672a57a302aa6e5454c7861023dc5a0a446da10e76e430e7ee5406536"
+    },
+    "fixture-setup-rejected.log": {
+      "bytes": 717,
+      "sha256": "0850a4facea08d308503b8d202d6077185ba9f579a37fbb188800b74d7def119"
+    },
+    "fixture-setup-rejected.py": {
+      "bytes": 5403,
+      "sha256": "e26d2f631db8355a28f36cb3172ef209db08281a5efe37e3766141151404c640"
+    },
+    "implementation-provenance.json": {
+      "bytes": 1640,
+      "sha256": "9975f23e92a137c03a892cd85aba2872cd3a495a6b49b60f95643a2b572915d4"
+    },
+    "independent-review.json": {
+      "bytes": 6211,
+      "sha256": "7b46e546122dbf24660d13c06793d53c1b38664169cb0f8d15d04b42cfc636ae"
+    },
+    "regression.log": {
+      "bytes": 261,
+      "sha256": "8a23447dddd28994d177bc18144795ad44fda9595919dd43d0330f35237dd1d8"
+    },
+    "regression.xml": {
+      "bytes": 26031,
+      "sha256": "61df6eafda46d3f04b4511568753bfa4fa68cda028563c20acbb03d47a08cb0b"
+    },
+    "review.json": {
+      "bytes": 18546,
+      "sha256": "4c32f6100f0dd9173a49a0aaed60597f69e166db2d514bae0601c331220e7230"
+    }
+  },
+  "schema": "IBME/WANG-PW-PUBLIC-EVIDENCE-MANIFEST/1"
+}

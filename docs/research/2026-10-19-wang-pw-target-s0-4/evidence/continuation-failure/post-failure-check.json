@@ -1,0 +1,45 @@
+{
+  "backend_admitted": false,
+  "checked_utc": "2026-10-20T04:30:35.980829+00:00",
+  "controller_claim_exists": false,
+  "controller_deployed": false,
+  "new_combination_state_present": false,
+  "new_generic_cli_state_present": false,
+  "new_issuer_state_present": false,
+  "new_second_signature_present": false,
+  "new_signature_present": false,
+  "nist_security_category": null,
+  "original_objects": {
+    "master_secret.bin": {
+      "bytes": 603980295,
+      "private_permissions": true
+    },
+    "public_key.bin": {
+      "bytes": 67109371,
+      "private_permissions": true
+    },
+    "signing_key.bin": {
+      "bytes": 2214593131,
+      "private_permissions": true
+    }
+  },
+  "original_processes": {
+    "9425": {
+      "active_non_zombie": false,
+      "status": "absent"
+    },
+    "9426": {
+      "active_non_zombie": false,
+      "status": "absent"
+    }
+  },
+  "parameters_are_formal": false,
+  "private_material_downloaded": false,
+  "schema": "IBME/WANG-PW-CONTINUATION-POST-FAILURE/1",
+  "security_claim": "none",
+  "source_bytes_match": true,
+  "source_commit": "24f820723c65617fd202c636a1d3ad366d456359",
+  "source_manifest_file_count": 3356,
+  "source_manifest_sha256": "012aeb1cbffa0394f28dca074b82207dc4a68d3e4e886c818e7a727772626e2b",
+  "source_regular_file_count": 3356
+}

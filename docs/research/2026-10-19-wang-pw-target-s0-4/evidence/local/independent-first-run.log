@@ -1,0 +1,43 @@
+Recovered original pytest stdout, tool chunk 5408c5; not a rerun.
+Only private tmp path/runtime object/root array/parameter repr diagnostics are redacted.
+First run had no --junitxml option: no original JUnit was generated or recovered.
+This was production-random Setup for DEBUG n=2, q=4294967291, w=64, root GS gate=32; not the target n=512 profile.
+The gate and parameters have not been relaxed. A subsequent functional issuer fixture uses the existing explicit test-only target-lifecycle seed; the independent child retains production CSPRNG.
+
+.F....                                                                   [100%]
+=================================== FAILURES ===================================
+_________ test_fresh_signer_uses_only_user_key_and_message[4294967291] _________
+
+tmp_path = PosixPath('<pytest-private-tmp>')
+q = 4294967291
+
+    @pytest.mark.skipif(os.name != "posix", reason="native research sampler requires Linux/WSL")
+    @pytest.mark.parametrize("q", [257, 4294967291])
+    def test_fresh_signer_uses_only_user_key_and_message(tmp_path, q):
+        private = tmp_path / "signer-only"
+        private.mkdir(mode=0o700)
+        backend = Backend()
+>       pk, master = backend.setup(small_params(n=2, q=q))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_wang_pw_target_independent.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/ibme/ibs/wang_pw_target/backend.py:98: in setup
+    public, basis, star, norms, width = self._prepare(a_bar, r, p, p.root_gs_limit)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+[REDACTED runtime object, root base/trapdoor arrays and parameter repr]
+limit = 32
+
+    def _prepare(self, base, trapdoor, p, limit):
+        public, basis = full_basis(base, trapdoor, p.q)
+        star, norms, width = gram_schmidt(basis)
+        if width > limit:
+>           raise SamplingError("numerical Gram-Schmidt exceeds the fixed public gate")
+E           ibme.ibs.wang_pw_target.native.SamplingError: numerical Gram-Schmidt exceeds the fixed public gate
+
+src/ibme/ibs/wang_pw_target/backend.py:85: SamplingError
+=========================== short test summary info ============================
+FAILED tests/test_wang_pw_target_independent.py::test_fresh_signer_uses_only_user_key_and_message[4294967291]
+1 failed, 5 passed in 13.89s

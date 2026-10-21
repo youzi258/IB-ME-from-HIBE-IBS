@@ -1,0 +1,96 @@
+{
+  "schema": "IBME/WANG-PW-PUBLICATION-REVIEW/1",
+  "scope": "Complete Wang implementation files and public execution history; publish only, no new server run",
+  "upstream_baseline": "b0397d2bba320ac25d06e6e4c6ad638787dafdcb",
+  "development_head": "ffe01574f8e8161a9b2ca38052f58e2262c9e4a9",
+  "development_commits_preserved": 44,
+  "preexisting_uncommitted_files": "source-snapshot.json",
+  "late_source_update": "late-source-update.json",
+  "security": {
+    "project_assumption_approx_quantum_bits": 115,
+    "quantum_bits_status": "project-working-assumption-only",
+    "current_configuration_attack_cost_bits": null,
+    "nist_security_category": null,
+    "historical_security_fields_rewritten": false,
+    "additional_basic_security_proof_performed": false
+  },
+  "parameters": {
+    "n": 512,
+    "q": 4294967291,
+    "root_width_rho_s0": 4,
+    "sign_width_rho": 8388608,
+    "sign_sigma_approx": 3346570.4049137016,
+    "standalone_identity_bytes": 64,
+    "standalone_message_bytes": 32,
+    "signature_wire_bytes": 393320,
+    "sampling": "production-csprng"
+  },
+  "initial_regression": {
+    "command": "PYTHONPATH=src:. PYTHONDONTWRITEBYTECODE=1 IBME_WANG_PW_TARGET_NATIVE=/home/zhang/.cache/ibme-native-tools/wang-pw-target-s0-4/libibme_wang_pw_gaussian.so OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -m pytest -q -p no:cacheprovider tests/test_wang_pw_target_*.py tests/test_cli_role_import.py tests/test_cli_selection.py tests/test_ci_catalog.py tests/test_project_admission.py --junitxml=build/outputs/publication/regression.xml > build/outputs/publication/regression.log 2>&1",
+    "junit_totals": {
+      "tests": 720,
+      "errors": 0,
+      "failures": 1,
+      "skipped": 0
+    },
+    "seconds": 669.978,
+    "failed_cases": [
+      [
+        "tests.test_project_admission",
+        "test_selected_cli_state_metadata_copies_suite_admission"
+      ]
+    ],
+    "failure_reason": "The local WSL did not yet have the ML-DSA native engine required by one upstream metadata test"
+  },
+  "regression": {
+    "command": "PYTHONPATH=src:. PYTHONDONTWRITEBYTECODE=1 IBME_WANG_PW_TARGET_NATIVE=/home/zhang/.cache/ibme-native-tools/wang-pw-target-s0-4/libibme_wang_pw_gaussian.so IBME_CERTIFIED_SIGNATURE_BIN_DIR=/mnt/c/Users/A/.codex/worktrees/wang-pw-delivery-2026-10-20/IB-ME-from-HIBE-IBS/build/outputs/publication/mldsa-native/bin OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -m pytest -q -p no:cacheprovider tests/test_project_admission.py tests/test_cli_selection.py tests/test_ci_catalog.py --junitxml=build/outputs/publication/followup.xml > build/outputs/publication/followup.log 2>&1",
+    "environment": "environment.json",
+    "junit_totals": {
+      "tests": 85,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "passed": 85,
+    "seconds": 56.622,
+    "unique_passed_across_both_runs": 720,
+    "scope": "Targeted follow-up after building unchanged repository ML-DSA sources in ignored task output; no algorithm code change after the initial full regression"
+  },
+  "mldsa_test_dependency": {
+    "command": "~/miniconda3/envs/sage/bin/python -m ibme.ibs.certified.native.build --prefix <task-output>/mldsa-native",
+    "build_record": "mldsa-build.json",
+    "downloads_or_dependency_installs": false,
+    "binaries_published": false
+  },
+  "target_public_receipts": [
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-final-1.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-final-2.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-public-verifier.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-service-adopt.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-service-recover.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-combination.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-generic-cli.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-1.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-2.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-public-verifier.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-adopt.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-recover.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-combination.json",
+    "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-generic-cli.json"
+  ],
+  "target_receipts_bind_current_source_snapshot": false,
+  "target_receipt_binding_limit": "Both final and v3/final2 saved receipts lack commit/source/native digest binding; the source README labels v3 as ROUNDING_SIGMA=1.5",
+  "lifecycle_scope": "Earlier Setup/Extract reused with later signing revisions; not a fresh six-stage run under one source version",
+  "service_scope": "Imported canonical keys, fixed restoration and no fresh issuance history",
+  "known_issues": [
+    "Rayleigh quotient plus residual is not a universal upper bound on the largest eigenvalue; the current spectral gate is not certified",
+    "MP12 width/unit correspondence and the combined finite-sampling/numerical/abort budget are not certified by this publication",
+    "The recorded SIS envelope beta=5260239171 is at least q=4294967291 and was rejected by the estimator; no current security-bit estimate follows"
+  ],
+  "publication_checks": {
+    "private_key_header_scan_new_history_blobs": 340,
+    "new_history_private_or_runtime_binary_paths_found": [],
+    "new_history_private_key_headers_found": [],
+    "no_server_run_started_for_publication": true
+  }
+}

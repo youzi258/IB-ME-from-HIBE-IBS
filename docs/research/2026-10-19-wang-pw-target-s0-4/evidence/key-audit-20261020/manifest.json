@@ -1,0 +1,14 @@
+{
+  "schema": "IBME/WANG-PW-KEY-AUDIT-ARCHIVE/1",
+  "status": "resource-rejected",
+  "failure_reason": "coordinate-width-resource-rejected",
+  "receipt_sha256": "ea3ca6051f305b25ac6a33136865bb9ea7a89c2d381a3c11241e8c55eeff5727",
+  "duration_seconds": 1666.372822161,
+  "rss_peak_observed_bytes": 60481572864,
+  "source_checkout": "key-audit-66592e2",
+  "key_kind": "n512 original signing key (root-001, 20261020T015348Z-a9a15825)",
+  "params": "n=512 q=4294967291 s0=4",
+  "server": "root@47.93.158.225",
+  "executed_by": "deepseek-dsh",
+  "note": "read-only recovered-key resource audit; no signing, no entropy, no native load"
+}

@@ -1,0 +1,65 @@
+{
+  "backend_admitted": false,
+  "candidates": 9,
+  "certified_uniform_beta": false,
+  "conclusion": "No tested planning row simultaneously establishes formal conditions and satisfies the current dense backend and resource limits.",
+  "cost_scope": "one norm2 MATZOV estimator attack; not all attacks or security bits",
+  "implementation_commit": "fb919a3",
+  "junit_redaction": {
+    "public": {
+      "bytes": 4609,
+      "sha256": "1b2c346a8c4ecea23106501d9aaa18000d3d784e0f235a2203737a78db707d40"
+    },
+    "raw": {
+      "bytes": 4605,
+      "sha256": "e928c76327a70f55ff934ccf5b8813beae7f9ee16e5c921189bc9e007ce6159e"
+    },
+    "replacement": "one hostname replaced by local-wsl"
+  },
+  "keys_generated": 0,
+  "new_backend_profile": false,
+  "new_parameters_selected": false,
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "planning_command": "PYTHONPATH=src:. ~/miniconda3/envs/sage/bin/python -B -m experiments.research.wang_pw_target.plan_parameters --output <new output>/planning.json --timeout-seconds 60 --candidate 512:32 --candidate 512:54 --candidate 512:64 --candidate 1024:64 --candidate 2048:64 --candidate 4096:64 --candidate 4096:80 --candidate 512:192 --candidate 1024:96",
+  "resource_scope": "bare coefficient/array payloads, not measured RSS or existing wide-q codec",
+  "roots_generated": 0,
+  "schema": "IBME/WANG-PW-CONDITIONAL-PLANNING-REVIEW/1",
+  "security_claim": "none",
+  "server_contacted": false,
+  "signatures_generated": 0,
+  "sources": {
+    "experiments/research/wang_pw_target/plan_parameters.py": {
+      "git_blob": {
+        "bytes": 15831,
+        "sha256": "71f8806710625f92ea274b84a503a772a3589f9c0b5bb69c53dd8bc8b7fe9c65"
+      },
+      "git_commit": "fb919a3",
+      "working_bytes": {
+        "bytes": 15831,
+        "sha256": "71f8806710625f92ea274b84a503a772a3589f9c0b5bb69c53dd8bc8b7fe9c65"
+      }
+    },
+    "tests/test_wang_pw_target_parameter_planning.py": {
+      "git_blob": {
+        "bytes": 7057,
+        "sha256": "a19bed09f7755477f99c7c756b786acbc36953e4c0784d4dc95ef8e39671103d"
+      },
+      "git_commit": "fb919a3",
+      "working_bytes": {
+        "bytes": 7057,
+        "sha256": "a19bed09f7755477f99c7c756b786acbc36953e4c0784d4dc95ef8e39671103d"
+      }
+    }
+  },
+  "spectral_bound": "uncertified magnitude assumption; no finite constant or tail probability certified",
+  "status": "WIP-planning-only",
+  "test_command": "PYTHONPATH=src:. ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider --junitxml=<new output>/tests.xml tests/test_wang_pw_target_parameter_planning.py tests/test_wang_pw_target_screen.py",
+  "tests": {
+    "count": 28,
+    "errors": 0,
+    "failed": 0,
+    "junit_seconds": 6.648,
+    "skipped": 0
+  }
+}

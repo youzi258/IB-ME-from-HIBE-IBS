@@ -1,0 +1,55 @@
+........................................................................ [ 10%]
+........................................................................ [ 20%]
+........................................................................ [ 30%]
+........................................................................ [ 40%]
+........................................................................ [ 50%]
+........................................................................ [ 60%]
+........................................................................ [ 70%]
+........................................................................ [ 80%]
+........................................................................ [ 90%]
+..................................................................F..... [100%]
+=================================== FAILURES ===================================
+___________ test_selected_cli_state_metadata_copies_suite_admission ____________
+
+    def test_selected_cli_state_metadata_copies_suite_admission():
+        from ibme import cli
+    
+        config=make_suite(hibe="latte",hibe_params="seed32",ibs="cert-ml-dsa",
+                          ibs_params="ml-dsa-44",transport="hybrid")
+        report=validate_suite(config)
+>       metadata=cli._selected_metadata(config,report,"0"*64)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_project_admission.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+suite = SuiteConfig(_json_data='{"allow_mock":false,"backend_admitted":true,"hibe":"latte","hibe_params":{"identity_bytes":86,...t":"reference","state_policy":"single-writer-commit-before-publish-v1","transport":"hybrid","version":"IBME/SUITE/1"}')
+report = CompatibilityReport(ok=False, errors=('ML-DSA native engine missing; build in WSL, no fallback',), capacity={}, metada...no fallback'}}, 'persistent_identity_cache': True, 'primitive_persistent_identity_cache': {'hibe': True, 'ibs': True}})
+public_sha256 = '0000000000000000000000000000000000000000000000000000000000000000'
+state_origin = None, imported_role = None, imported_identity_sha256 = None
+
+    def _selected_metadata(suite, report, public_sha256: str, *, state_origin=None,
+                           imported_role=None, imported_identity_sha256=None) -> dict:
+        suite_data = suite.to_dict()
+        meta = {
+            "version": _SELECTED_STATE_VERSION,
+            "backend": "selected-suite",
+            "suite": suite.to_dict(),
+            "suite_digest": suite.digest,
+            "capacity": report.capacity,
+>           "identity_bytes": report.capacity["identity_bytes"],
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            "max_application_bytes": report.capacity["max_application_bytes"],
+            "public_sha256": public_sha256,
+            "default_ciphertext_protocol": suite.protocol,
+            "master_persisted_before_key_publication": True,
+            "security_claim": suite_data["security_claim"],
+            "backend_admitted": suite_data["backend_admitted"],
+            "parameters_are_formal": suite_data["parameters_are_formal"],
+        }
+E       KeyError: 'identity_bytes'
+
+src/ibme/cli.py:297: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_project_admission.py::test_selected_cli_state_metadata_copies_suite_admission
+1 failed, 719 passed in 670.00s (0:11:09)

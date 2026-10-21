@@ -1,0 +1,41 @@
+{
+  "schema": "IBME/WANG-PW-TASK-ENVIRONMENT/1",
+  "status": "ready",
+  "checked_at": "2026-10-19T15:34:09.570791+00:00",
+  "source_commit": "9135ec8",
+  "python": "3.12.15",
+  "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+  "cpu": "x86_64",
+  "logical_cpus": 16,
+  "ram_total_bytes": 132785688576,
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1",
+    "psutil": "7.2.2",
+    "gmpy2": "2.3.2",
+    "cryptography": "50.0.2",
+    "sage": "10.9"
+  },
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "wang_native": {
+    "abi_version": 1,
+    "compiler": "g++",
+    "library_sha256": "03334a57210aaabde668adeddd7b75ae8babdef472d9af5d5520c96fc77badf1",
+    "schema": "IBME-WANG-PW-NATIVE-BUILD-v1",
+    "source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+  },
+  "latte_native": {
+    "source_id": "4a17a037c266ba982a027ff7fedffe0d391c9fe7fb2c5f8a0326b4ab67393414",
+    "binary_sha256": "1e2960a72f3c3924368e062b6656ed67dd87ff5b50ed35e67a73f164e6de3d28"
+  },
+  "dependency_locks_sha256": {
+    "requirements.lock.txt": "8b05e3b0a660d600a62b4121b32163a21f2e544dace94265839ba4b1b28ebf32",
+    "sage-explicit.lock.txt": "8d20bd31f87ba43013e32853d89a1a41d09c3c7350b3ef1ff2fdae6ae9cf3864"
+  },
+  "cryptographic_experiments_run": false,
+  "security_claim": "none",
+  "backend_admitted": false,
+  "parameters_are_formal": false,
+  "nist_security_category": null
+}

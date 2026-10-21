@@ -1,0 +1,57 @@
+{
+  "additional_target_runs_started": false,
+  "at_failure_sample": false,
+  "collected_utc": "2026-10-20T03:47:58.250156+00:00",
+  "current_memory": {
+    "active": 1073094656,
+    "available": 130563268608,
+    "buffers": 153579520,
+    "cached": 5357461504,
+    "free": 126226939904,
+    "inactive": 4360462336,
+    "percent": 1.7,
+    "shared": 2703360,
+    "slab": 336228352,
+    "total": 132785688576,
+    "used": 2222419968
+  },
+  "f2py_dimension_overflow_established": false,
+  "geqrf_int_dtype": "int32",
+  "geqrf_module": "flapack",
+  "limits": {
+    "RLIMIT_AS": [
+      -1,
+      -1
+    ],
+    "RLIMIT_DATA": [
+      -1,
+      -1
+    ],
+    "RLIMIT_RSS": [
+      -1,
+      -1
+    ]
+  },
+  "meminfo": {
+    "CommitLimit": "64836760 kB",
+    "Committed_AS": "3003488 kB",
+    "MemAvailable": "127503192 kB",
+    "MemFree": "123268496 kB",
+    "SwapTotal": "0 kB"
+  },
+  "original_pids_alive": {
+    "5527": false,
+    "5528": false,
+    "5529": false
+  },
+  "overcommit": {
+    "overcommit_memory": "0",
+    "overcommit_ratio": "50"
+  },
+  "physical_memory_exhaustion_established": false,
+  "private_files_read": false,
+  "schema": "IBME/WANG-PW-POST-FAILURE-DIAGNOSTICS/1",
+  "scipy_lapack_has_ilp64": false,
+  "signed32_max": 2147483647,
+  "user_matrix_elements": 2415919104
+}

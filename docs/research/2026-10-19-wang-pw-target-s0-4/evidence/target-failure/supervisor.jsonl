@@ -1,0 +1,4 @@
+{"event": "supervisor-start", "max_rss_bytes": 118111600640, "max_seconds": 21600.0, "utc": "2026-10-20T01:53:47.781+00:00"}
+{"child_pid": 5529, "event": "child-started", "utc": "2026-10-20T01:53:47.785+00:00"}
+{"event": "stop-reason", "reason": "child-exited", "utc": "2026-10-20T03:35:49.178+00:00"}
+{"child_returncode": 1, "cleanup": {"cleanup_failure_type": null, "kill_sent": false, "leader_reaped": true, "live_processes_after_cleanup": 0, "term_sent": false, "zombie_processes_observed": 1}, "event": "supervisor-end", "status": "child-exited", "supervisor_exit_code": 1, "utc": "2026-10-20T03:35:49.183+00:00"}

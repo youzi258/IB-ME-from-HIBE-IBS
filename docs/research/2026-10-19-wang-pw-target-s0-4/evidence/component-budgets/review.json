@@ -1,0 +1,118 @@
+{
+  "backend_admitted": false,
+  "command": "PYTHONPATH=src:. PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider --junitxml=<new output>/regression.xml tests/test_wang_pw_target_component_budgets.py tests/test_wang_pw_target_audit.py tests/test_wang_pw_target_parameter_planning.py",
+  "component_outputs": {
+    "default-components.json": "one setup, one extraction, one signature attempt; scalar example only",
+    "three-sign-attempts-components.json": "one setup, one extraction, three signature attempts; full-operation upper count, not measured coordinates or a new execution"
+  },
+  "cryptographic_sampling_performed": false,
+  "errors": 0,
+  "failures": 0,
+  "formal_parameter_admission": false,
+  "implementation_commit": "65d832d57f164cd17e4c05f6bc1c280f9da3a9b9",
+  "independent_review": "read-only arithmetic and source review; not additional target execution",
+  "junit_duration_seconds": 12.482,
+  "junit_public_transformation": {
+    "public": {
+      "bytes": 11993,
+      "sha256": "a75066ab0a41d24ac316b2225e1cdb3ac195e776fcbce7a6aba3533f437f1ae3"
+    },
+    "raw": {
+      "bytes": 11989,
+      "sha256": "df958134e59375ff7be4ae1dd56c0eb9d5b8da398adb5998b0e589c9b5f87408"
+    },
+    "replacement": "one local hostname replaced by local-wsl",
+    "testcases_unchanged": true
+  },
+  "native_abort_probability_bound": null,
+  "native_loading_performed": false,
+  "native_source_modified": false,
+  "native_total_tv_bound": null,
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "parameters_modified": false,
+  "real_service_query_budget_certified": false,
+  "schema": "IBME/WANG-PW-CONDITIONAL-COMPONENT-BUDGET-REVIEW/1",
+  "security_claim": "none",
+  "server_attempts": 0,
+  "skipped": 0,
+  "source_stability_assessment": "Source bytes match implementation commit at archival; no separate pre-run hash snapshot was collected.",
+  "source_unchanged_during_run": null,
+  "sources": {
+    "docs/research/2026-10-19-wang-pw-target-s0-4/conditional-component-budgets.md": {
+      "git_blob": {
+        "bytes": 6440,
+        "sha256": "a85c493ecfc1deff8bfc0dcc1b05988b620ac8a905222a10797ff241242bb11f"
+      },
+      "git_commit": "65d832d57f164cd17e4c05f6bc1c280f9da3a9b9",
+      "working_bytes": {
+        "bytes": 6440,
+        "sha256": "a85c493ecfc1deff8bfc0dcc1b05988b620ac8a905222a10797ff241242bb11f"
+      }
+    },
+    "experiments/research/wang_pw_target/component_budgets.py": {
+      "git_blob": {
+        "bytes": 8500,
+        "sha256": "9995924fdf2112c9d43d56f9217680d341202721046b236f191561f1ab4ecde6"
+      },
+      "git_commit": "65d832d57f164cd17e4c05f6bc1c280f9da3a9b9",
+      "working_bytes": {
+        "bytes": 8500,
+        "sha256": "9995924fdf2112c9d43d56f9217680d341202721046b236f191561f1ab4ecde6"
+      }
+    },
+    "src/ibme/ibs/wang_pw_target/backend.py": {
+      "git_blob": {
+        "bytes": 11260,
+        "sha256": "a6cf5642e01fbb22c6c26975544ed018d9b29981a4dd9a37b5c71b1050389d26"
+      },
+      "git_commit": "65d832d57f164cd17e4c05f6bc1c280f9da3a9b9",
+      "working_bytes": {
+        "bytes": 11260,
+        "sha256": "a6cf5642e01fbb22c6c26975544ed018d9b29981a4dd9a37b5c71b1050389d26"
+      }
+    },
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": {
+      "git_blob": {
+        "bytes": 18614,
+        "sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+      },
+      "git_commit": "65d832d57f164cd17e4c05f6bc1c280f9da3a9b9",
+      "working_bytes": {
+        "bytes": 18614,
+        "sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+      }
+    },
+    "src/ibme/ibs/wang_pw_target/params.py": {
+      "git_blob": {
+        "bytes": 10937,
+        "sha256": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59"
+      },
+      "git_commit": "65d832d57f164cd17e4c05f6bc1c280f9da3a9b9",
+      "working_bytes": {
+        "bytes": 10937,
+        "sha256": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59"
+      }
+    },
+    "tests/test_wang_pw_target_component_budgets.py": {
+      "git_blob": {
+        "bytes": 8404,
+        "sha256": "24492dab9e173028a7bf0c92da08fd11fbdfbc47c194c10ff774964c00ee1faf"
+      },
+      "git_commit": "65d832d57f164cd17e4c05f6bc1c280f9da3a9b9",
+      "working_bytes": {
+        "bytes": 8404,
+        "sha256": "24492dab9e173028a7bf0c92da08fd11fbdfbc47c194c10ff774964c00ee1faf"
+      }
+    }
+  },
+  "sources_matched_implementation_commit_at_archival": true,
+  "status": "passed-local-conditional-only",
+  "target_run_completed": false,
+  "tests": 77,
+  "tests_by_file": {
+    "tests.test_wang_pw_target_audit": 27,
+    "tests.test_wang_pw_target_component_budgets": 27,
+    "tests.test_wang_pw_target_parameter_planning": 23
+  }
+}

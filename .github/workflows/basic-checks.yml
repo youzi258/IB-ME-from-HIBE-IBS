@@ -93,6 +93,24 @@ jobs:
       - name: Build pinned Falcon engines and author selftest
         if: ${{ matrix.id == 'cert-falcon' }}
         run: sage -python -m ibme.ibs.certified.falcon_native.build --selftest
+      - name: Install Wang-PW native build dependencies
+        if: ${{ matrix.id == 'wang-pw' }}
+        run: |
+          apt-get update -qq
+          apt-get install -y --no-install-recommends git g++ libmpfr-dev libgmp-dev libssl-dev
+      - name: Build Wang-PW target native sampler
+        if: ${{ matrix.id == 'wang-pw' }}
+        run: |
+          sage -python - <<'PY'
+          import os
+          from pathlib import Path
+
+          from ibme.ibs.wang_pw_target.native import build_native
+
+          path = build_native().resolve()
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as stream:
+              stream.write(f"IBME_WANG_PW_TARGET_NATIVE={path}\n")
+          PY
       - name: Run actual Sage suite
         run: sage -python ci/run.py run "${{ matrix.id }}"
       - name: Publish actual counts and scope

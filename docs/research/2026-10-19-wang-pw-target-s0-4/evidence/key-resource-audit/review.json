@@ -1,0 +1,62 @@
+{
+  "acceptance_gate_modified": false,
+  "audit_native_loading_performed": false,
+  "audit_sampling_performed": false,
+  "backend_admitted": false,
+  "command": "PYTHONPATH=src:. PYTHONDONTWRITEBYTECODE=1 IBME_WANG_PW_TARGET_NATIVE=<existing source-bound .so> OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider --junitxml=<new output>/regression.xml tests/test_wang_pw_target_key_resource_audit.py tests/test_wang_pw_target_qr.py tests/test_wang_pw_target_native_reasons.py tests/test_wang_pw_target_independent_diagnostics.py tests/test_wang_pw_target_independent.py",
+  "distribution_certified": false,
+  "dynamic_centers_checked": false,
+  "errors": 0,
+  "failures": 0,
+  "implementation_commit": "f15f0ed",
+  "junit_duration_seconds": 17.332,
+  "junit_public_transformation": {
+    "public": {
+      "bytes": 23796,
+      "sha256": "b3cd2dc1cffd6402628ab188ab763d9202e9b70554507738d667b6c7763e5577"
+    },
+    "raw": {
+      "bytes": 23792,
+      "sha256": "d1caed5e89ebb4d5a2b9a7b5ea6174be27a79df2accd1f7f6a31c7484264e82a"
+    },
+    "replacement": "one local hostname replaced by local-wsl",
+    "testcases_unchanged": true
+  },
+  "limitation": "Cryptographic entropy APIs are disabled only after interpreter/module imports in the fresh-process test. The local debug fixture is generated separately using the existing native library; no target key is used.",
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "parameters_modified": false,
+  "purpose": "Read an existing canonical user key and check deterministic preparation and coordinate-width resource gates; no issuer inputs or signatures.",
+  "schema": "IBME/WANG-PW-RECOVERED-KEY-RESOURCE-AUDIT-PREPARATION/1",
+  "security_claim": "none",
+  "server_attempts": 0,
+  "skipped": 0,
+  "sources": {
+    "experiments/research/wang_pw_target/audit_recovered_key.py": {
+      "git_blob": {
+        "bytes": 5554,
+        "sha256": "88b7276faa3bbf567dd594be482f1bbde8c33e5bc496c8437fae1ebd3171c96f"
+      },
+      "git_commit": "f15f0ed",
+      "working_bytes": {
+        "bytes": 5554,
+        "sha256": "88b7276faa3bbf567dd594be482f1bbde8c33e5bc496c8437fae1ebd3171c96f"
+      }
+    },
+    "tests/test_wang_pw_target_key_resource_audit.py": {
+      "git_blob": {
+        "bytes": 11562,
+        "sha256": "6dbe5d25e22c0891b92dd37d7a0b8ff45a789bf38da5bcbfc64794b3baa08cd7"
+      },
+      "git_commit": "f15f0ed",
+      "working_bytes": {
+        "bytes": 11562,
+        "sha256": "6dbe5d25e22c0891b92dd37d7a0b8ff45a789bf38da5bcbfc64794b3baa08cd7"
+      }
+    }
+  },
+  "status": "passed-local-only",
+  "target_n512_key_audited": false,
+  "target_n512_signing_tested": false,
+  "tests": 123
+}

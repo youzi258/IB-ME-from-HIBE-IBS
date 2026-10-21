@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<local-diagnostic-output>/baseline-parity.py", line 50, in <module>
+    old_pk, old_master = old_issuer.setup(params)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<local-diagnostic-output>/backend-af11011.py", line 98, in setup
+    public, basis, star, norms, width = self._prepare(a_bar, r, p, p.root_gs_limit)
+                                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local-diagnostic-output>/backend-af11011.py", line 85, in _prepare
+    raise SamplingError("numerical Gram-Schmidt exceeds the fixed public gate")
+ibme.ibs.wang_pw_target.native.SamplingError: numerical Gram-Schmidt exceeds the fixed public gate

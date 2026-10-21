@@ -1,0 +1,22 @@
+{
+  "archive_file_bytes_verified_on_server": 3297,
+  "backend_admitted": false,
+  "checked_at": "2026-10-20T01:57:34.642582+00:00",
+  "debug_q257_complete_roots": 3,
+  "debug_q32_independent_restored_signing": true,
+  "environment_code_files_equal_git": 18,
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "schema": "IBME/WANG-PW-LAUNCH-EVIDENCE-REVIEW/1",
+  "screen_expected_rejection": true,
+  "security_claim": "none",
+  "server_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 231
+  },
+  "source_commit": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+  "status": "passed",
+  "target_is_initial_running_snapshot_only": true
+}

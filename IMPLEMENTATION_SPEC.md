@@ -10,6 +10,8 @@
 
 身份为非空字节串；CLI 的 UTF-8 文本必须先转换为字节。消息可以为空。身份顺序固定为 `(parent_id, child_id) = (receiver_id, sender_id)`。身份比较使用规范化原始字节的常数时间比较；不得把显示文本当作另一套身份。
 
+CLI 默认保留可打印 UTF-8 文本输入；显式 `--identity-encoding hex` 使用规范小写十六进制解码为原始身份字节，拒绝空值、空白、奇数位、非规范字符和解码后超限。这个选项只改变命令行表示，不改变身份哈希、协议对象或密文格式。
+
 ```text
 encode_bytes(x) = uint32_be(len(x)) || x
 encode_identity(id) = DOMAIN_ID || encode_bytes(id)
@@ -47,6 +49,10 @@ encode_message(id, message) = DOMAIN_MSG || encode_bytes(id) || encode_bytes(mes
 新原语可以在自己的 registration 模块公开零参数 provider，返回一个 `BackendSpec` 或一组描述符；调用方通过 `default_registry(extra_providers=(provider,))` 显式装入。一个 provider 的登记必须原子完成，任何重复、不完整或角色错误都使整批拒绝。`extra_specs` 仅是同一校验路径的直接形式。两者都由 Python 调用方持有，不能写进 Suite JSON、状态文件或命令行作为导入路径，也不进行环境入口点自动扫描。stock CLI 的签名格式字符串由所选 IBS 的 `signature_formats` 校验，而不是由 CLI 维护算法名白名单。
 
 `capacity` 按最大身份、IBS 输入和实际签名编码、协议组帧、BYTEAUTH 开销、HIBE 载荷、Hybrid 种子/身份/胶囊预算计算。`check` / `matrix` 只做静态预检，输出 `preflight_only` / `not_executed`；不能记为已运行组合。配置严格绑定完整选参；裸原语对象只能核对其 wire 实际编码的字段和公开绑定能力。旧 ABB10/SIS 和 mock 的字段缺失由 `raw_object_parameter_binding` 明确报告，CLI v2 通过额外对象封装绑定完整 suite；不能从裸旧对象追溯未编码的生成宽度或限额。没有公钥绑定能力的 direct 后端必须如实标记，Hybrid 不允许缺失。新后端应提供完整公开参数快照；加载成功仍不证明生成分布。
+
+`import-role` 显式接收完整 `SuiteConfig`、规范组合公钥及唯一发送或接收角色对象，并经公开 runtime 绑定检查。它只在新的空状态目录内发布原有 v2 对象封装，不导入 master、不执行 Setup/Extract/Sign；元数据记录 `state_origin=imported-canonical-role-v1`、角色、完整身份摘要及 `master_persisted_before_key_publication=false`。该来源表示管理导入，不认证对象生成分布，也不表示 CLI 完成过原始发钥。旧 setup 状态的格式和来源语义保持原样。
+
+角色导入在既有发行锁内使用 `msk.bin.pending` 门覆盖发布过程；公钥、角色对象先于元数据发布，全部成功后才移除门。失败保留现场，后续命令保守拒绝，不自动续做或重新发钥。导入目录只允许同角色、同身份的已有密钥恢复；缺失、损坏、新身份或错误角色均拒绝。若目录被另放 `msk.bin` 文件、目录或链接，所有角色命令均拒绝，不能转为发钥服务。接收者叶缓存继续采用既有持久事务；这些保证限于已测试的同 OS 本地协作进程，不扩张为恶意存储认证、反回滚或硬断电保证。
 
 ## 3. 原语公共接口
 
@@ -95,6 +101,8 @@ load_signature(self, pk, data: bytes) -> signature
 本地 `first_suite` 的版本契约见 [first_suite 专属契约](docs/specs/first-suite-research.md)。共享有限采样实现集中到 `src/ibme/lattice/chkp/`，旧研究导入入口保持兼容；计算型 MP12 DelTrap 变体与 CHKP RandBasis 后端分别登记和统计。旧n=1原型、两种n=2研究后端均不能当成正式安全实例，历史实验不自动继承到新后端。主/接收状态磁盘事务见 [传输与状态契约](docs/specs/transport-and-state.md)。
 
 每个模块给出论文算法—实现映射、正确性条件、真实随机分布、失败事件、格式和恢复语义。需要离散高斯的算法必须说明宽度约定并做统计诊断；使用均匀掩码的算法按原论文实现。SIS 方程、gadget、陷门委派或 NTT 仅约束使用它们的后端，不能作为所有 HIBE/IBS 的通用接口要求。
+
+Wang–PW 目标规模版本的独立 selector `wang-pw-target`、s0=4 宽度、用户/主陷门隔离、规范对象和固定服务要求见 [目标规模 IBS 契约](docs/specs/wang-pw-target-ibs.md)。它与旧 q17 `wang-pw` 共存；公共接入、小规模实跑、n512 生命周期和正式参数分别验收，不另计为新 IBS 算法。
 
 ## 4. 基线 IB-ME 算法
 

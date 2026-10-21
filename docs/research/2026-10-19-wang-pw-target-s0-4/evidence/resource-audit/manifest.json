@@ -1,0 +1,29 @@
+{
+  "files": {
+    "audit.xml": {
+      "bytes": 4173,
+      "sha256": "f8dc8fc2e85de72660b5ce0d2a10a832c2005d3fbcd615e2dd81ecc565fda29c"
+    },
+    "ci-catalog.xml": {
+      "bytes": 3329,
+      "sha256": "992c10e9154168cf081e085312345b61d272683aca0d8c9fdb33baf431193c03"
+    },
+    "ci-selection.json": {
+      "bytes": 1520,
+      "sha256": "e99a66b7a0c62e90b9f6ac7f9752dceef4dfbe4130dc303085c309f70ed1e3fc"
+    },
+    "review.json": {
+      "bytes": 2132,
+      "sha256": "d122611d003c180833b2a124668aefd18412b550a51963806b49cd6834ef70cf"
+    },
+    "wheel-preflight.json": {
+      "bytes": 1081,
+      "sha256": "5a93e36b53f55556f292830bf8114cc98e8db7187b396aeb673fa7a77f63464b"
+    },
+    "wheel-probe.py": {
+      "bytes": 3228,
+      "sha256": "8134efa7c61dc236554526c3f95c3c887fd1454c69665c6228f6eab19f69dbf6"
+    }
+  },
+  "schema": "IBME/WANG-PW-PUBLIC-EVIDENCE-MANIFEST/1"
+}

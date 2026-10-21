@@ -1,0 +1,536 @@
+{
+  "backend_admitted": false,
+  "completed_repetitions": 3,
+  "duration_seconds": 0.4120034279999345,
+  "environment": {
+    "blas_thread_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4"
+    },
+    "git_head": null,
+    "logical_cpus": 16,
+    "machine": "x86_64",
+    "native": {
+      "explicit_library": true,
+      "filename": "libibme_wang_pw_gaussian.so",
+      "library_sha256": "03334a57210aaabde668adeddd7b75ae8babdef472d9af5d5520c96fc77badf1",
+      "source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    },
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "packages": {
+      "cryptography": "50.0.2",
+      "gmpy2": "2.3.2",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2",
+      "pytest": "9.1.1",
+      "sage": "10.9",
+      "sagemath-standard": null,
+      "scipy": "1.18.1"
+    },
+    "physical_cpus": 8,
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "python": "3.12.15",
+    "ram_total_bytes": 132785688576
+  },
+  "expected_wire_bytes": {
+    "master_secret": 1448,
+    "public_key": 788,
+    "signature": 536,
+    "signing_key": 3492
+  },
+  "finished_utc": "2026-10-19T15:35:24.120+00:00",
+  "identity_bytes": 64,
+  "independent_production_roots": true,
+  "limitations": [
+    "root discrete-Gaussian and GPV routines are new finite implementations",
+    "floating QR/Gram-Schmidt and center arithmetic are not certified distributions",
+    "no new security reduction is undertaken by this experiment",
+    "n512 SIS-estimator beta failure remains a parameter limitation",
+    "functional/negative tests do not establish security or NIST strength"
+  ],
+  "message_bytes": 32,
+  "nist_security_category": null,
+  "parameters": {
+    "gaussian_tail_sigma": 20.0,
+    "identity_max_bytes": 256,
+    "internal_id_bits": 256,
+    "internal_msg_bits": 256,
+    "mass_bits": 192,
+    "max_extract_attempts": 1,
+    "max_gaussian_attempts": 4096,
+    "max_setup_attempts": 1,
+    "max_sign_attempts": 1,
+    "message_max_bytes": 4096,
+    "n": 2,
+    "name": "wang-pw-debug-n2-q257-s0-4",
+    "precision_bits": 256,
+    "q": 257,
+    "root_gs_limit": 20,
+    "root_width": 4.0,
+    "salt_bytes": 32,
+    "schema": "IBME/WANG-PW-TARGET-PARAMS/1",
+    "smoothing_error_bits": 128,
+    "smoothing_multiplier": 8,
+    "threads": 4,
+    "user_gs_limit": 1152
+  },
+  "parameters_are_formal": false,
+  "private_state_requested": false,
+  "profile": "debug-q257",
+  "requested_lifecycle_complete": true,
+  "requested_repetitions": 3,
+  "roots": [
+    {
+      "duration_seconds": 0.2807489230003739,
+      "index": 1,
+      "phases": [
+        {
+          "duration_seconds": 0.22814694599992436,
+          "name": "setup",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 15.459624833740307
+            },
+            "public_context": "2f1d39d15bb32d4890de3df3607039aa7a6910e8e642bc417354e88788f6b102",
+            "wire_bytes": {
+              "master_secret": 1448,
+              "public_key": 788
+            }
+          },
+          "rss_current_bytes": 69083136,
+          "rss_peak_observed_bytes": 69083136,
+          "rss_phase_peak_observed_bytes": 69083136,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 62140416,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.003957561999868631,
+          "name": "extract",
+          "observations": {
+            "key_contains_only_user_trapdoor": true,
+            "metrics": {
+              "root_numerical_gs": 15.459624833740307
+            },
+            "wire_bytes": 3492
+          },
+          "rss_current_bytes": 69169152,
+          "rss_peak_observed_bytes": 69169152,
+          "rss_phase_peak_observed_bytes": 69169152,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69083136,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004313195000122505,
+          "name": "sign",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 15.459624833740307,
+              "signature_norm_sq": 496526861,
+              "user_numerical_gs": 919.9923912728844
+            },
+            "wire_bytes": 536
+          },
+          "rss_current_bytes": 69181440,
+          "rss_peak_observed_bytes": 69181440,
+          "rss_phase_peak_observed_bytes": 69181440,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69169152,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.003322479999951611,
+          "name": "verify",
+          "observations": {
+            "appended_rejected": true,
+            "changed_context_rejected": true,
+            "honest": true,
+            "truncated_rejected": true,
+            "wrong_identity_rejected": true,
+            "wrong_message_rejected": true
+          },
+          "rss_current_bytes": 69185536,
+          "rss_peak_observed_bytes": 69185536,
+          "rss_phase_peak_observed_bytes": 69185536,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69185536,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.011583710000195424,
+          "name": "restore",
+          "observations": {
+            "canonical_wires_unchanged": true,
+            "context_matches": true,
+            "prepared_dense_cache_cleared": true,
+            "restored_signature_verifies": true
+          },
+          "rss_current_bytes": 69185536,
+          "rss_peak_observed_bytes": 69185536,
+          "rss_phase_peak_observed_bytes": 69185536,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69185536,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004217845999846759,
+          "name": "sign-restored",
+          "observations": {
+            "honest": true,
+            "identity_salt_preserved": true,
+            "message_salt_fresh": true,
+            "metrics": {
+              "root_numerical_gs": 15.459624833740307,
+              "signature_norm_sq": 688731683,
+              "user_numerical_gs": 919.9923912728844
+            }
+          },
+          "rss_current_bytes": 69185536,
+          "rss_peak_observed_bytes": 69185536,
+          "rss_phase_peak_observed_bytes": 69185536,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69185536,
+          "status": "passed"
+        }
+      ],
+      "restore_mode": "memory",
+      "status": "passed"
+    },
+    {
+      "duration_seconds": 0.05534289700017325,
+      "index": 2,
+      "phases": [
+        {
+          "duration_seconds": 0.00413040200010073,
+          "name": "setup",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 13.550019747328387
+            },
+            "public_context": "636ba1f84ad309b67782b71acbc3f2aad5d478281f458d2dbb24601c4e619fad",
+            "wire_bytes": {
+              "master_secret": 1448,
+              "public_key": 788
+            }
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69185536,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.003971785999965505,
+          "name": "extract",
+          "observations": {
+            "key_contains_only_user_trapdoor": true,
+            "metrics": {
+              "root_numerical_gs": 13.550019747328387
+            },
+            "wire_bytes": 3492
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004087166999852343,
+          "name": "sign",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 13.550019747328387,
+              "signature_norm_sq": 658447527,
+              "user_numerical_gs": 904.7292412650318
+            },
+            "wire_bytes": 536
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.0034123340001315228,
+          "name": "verify",
+          "observations": {
+            "appended_rejected": true,
+            "changed_context_rejected": true,
+            "honest": true,
+            "truncated_rejected": true,
+            "wrong_identity_rejected": true,
+            "wrong_message_rejected": true
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.01010337800016714,
+          "name": "restore",
+          "observations": {
+            "canonical_wires_unchanged": true,
+            "context_matches": true,
+            "prepared_dense_cache_cleared": true,
+            "restored_signature_verifies": true
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004332358999818098,
+          "name": "sign-restored",
+          "observations": {
+            "honest": true,
+            "identity_salt_preserved": true,
+            "message_salt_fresh": true,
+            "metrics": {
+              "root_numerical_gs": 13.550019747328387,
+              "signature_norm_sq": 667695312,
+              "user_numerical_gs": 904.7292412650318
+            }
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        }
+      ],
+      "restore_mode": "memory",
+      "status": "passed"
+    },
+    {
+      "duration_seconds": 0.05642920000036611,
+      "index": 3,
+      "phases": [
+        {
+          "duration_seconds": 0.004301939000015409,
+          "name": "setup",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 14.933855662557999
+            },
+            "public_context": "fadb2c9322f2614e26236e38f95546a59846bb6f187dd9a2c27ac4cfbb391bcd",
+            "wire_bytes": {
+              "master_secret": 1448,
+              "public_key": 788
+            }
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004051477999837516,
+          "name": "extract",
+          "observations": {
+            "key_contains_only_user_trapdoor": true,
+            "metrics": {
+              "root_numerical_gs": 14.933855662557999
+            },
+            "wire_bytes": 3492
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004215420000036829,
+          "name": "sign",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 14.933855662557999,
+              "signature_norm_sq": 678451212,
+              "user_numerical_gs": 873.9647638350681
+            },
+            "wire_bytes": 536
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.0034659470002225135,
+          "name": "verify",
+          "observations": {
+            "appended_rejected": true,
+            "changed_context_rejected": true,
+            "honest": true,
+            "truncated_rejected": true,
+            "wrong_identity_rejected": true,
+            "wrong_message_rejected": true
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.010147473999950307,
+          "name": "restore",
+          "observations": {
+            "canonical_wires_unchanged": true,
+            "context_matches": true,
+            "prepared_dense_cache_cleared": true,
+            "restored_signature_verifies": true
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.00445726999987528,
+          "name": "sign-restored",
+          "observations": {
+            "honest": true,
+            "identity_salt_preserved": true,
+            "message_salt_fresh": true,
+            "metrics": {
+              "root_numerical_gs": 14.933855662557999,
+              "signature_norm_sq": 509150140,
+              "user_numerical_gs": 873.9647638350681
+            }
+          },
+          "rss_current_bytes": 69197824,
+          "rss_peak_observed_bytes": 69197824,
+          "rss_phase_peak_observed_bytes": 69197824,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_start_bytes": 69197824,
+          "status": "passed"
+        }
+      ],
+      "restore_mode": "memory",
+      "status": "passed"
+    }
+  ],
+  "rss_current_bytes": 69345280,
+  "rss_peak_observed_bytes": 69345280,
+  "rss_phase_peak_observed_bytes": 69345280,
+  "rss_sampling_errors": 0,
+  "rss_sampling_interval_seconds": 0.1,
+  "run_id": "20261019T153523Z-3afdc13b",
+  "sampling_mode": "production-csprng",
+  "schema": "IBME/WANG-PW-TARGET-LIFECYCLE/1",
+  "security_claim": "none",
+  "source_files_unchanged_during_run": true,
+  "source_sha256": {
+    "experiments/research/wang_pw_target/README.md": "3fe644adb4850c1e510d91758f7e02e5fe7c038e31475655e2467993801c6141",
+    "experiments/research/wang_pw_target/run_lifecycle.py": "8fb5ec4d10509fe1b41cf6cbccddd3af495e286f42517b3e606e261c88e36b0c",
+    "src/ibme/ibs/wang_pw_target/__init__.py": "6cd0138157344c281b051a260c11daf0e9300b822539085bf737e3e4a8cb1056",
+    "src/ibme/ibs/wang_pw_target/backend.py": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548",
+    "src/ibme/ibs/wang_pw_target/hashing.py": "fce854050c71d17440d02404ca0a315ffddc3b8daa5326a1dbe4289b1a4335cf",
+    "src/ibme/ibs/wang_pw_target/math.py": "3679740e5dc4d365fb9e45cbc87a0838429c98c7935ad4936f294de396f70936",
+    "src/ibme/ibs/wang_pw_target/native.py": "496464eadeb112f8bcb8000b70e618bad5398564eead0ed2a7a56beefe1bd900",
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+    "src/ibme/ibs/wang_pw_target/objects.py": "96d9f96217c451064cd20677361f227fc16a8770f41e8d99d1683e5a363f9798",
+    "src/ibme/ibs/wang_pw_target/parameter_audit.py": "dfe5257857f8d4fd66af9516cf9189786a6d0eec359ef32754f82292d223298d",
+    "src/ibme/ibs/wang_pw_target/params.py": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59",
+    "src/ibme/ibs/wang_pw_target/service.py": "2f9786adffccac4f37777b59756dbe9281f4aa051836b06a36a7662e7aff8331"
+  },
+  "started_utc": "2026-10-19T15:35:23.708+00:00",
+  "status": "passed",
+  "summary": {
+    "all_observed_public_roots_distinct": true,
+    "distinct_public_roots_observed": 3,
+    "phases": {
+      "extract": {
+        "duration_max_seconds": 0.004051477999837516,
+        "duration_mean_seconds": 0.0039936086665572175,
+        "duration_min_seconds": 0.003957561999868631,
+        "duration_stdev_seconds": 5.061842891100734e-05,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69197824
+      },
+      "restore": {
+        "duration_max_seconds": 0.011583710000195424,
+        "duration_mean_seconds": 0.010611520666770957,
+        "duration_min_seconds": 0.01010337800016714,
+        "duration_stdev_seconds": 0.0008422292973516483,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69197824
+      },
+      "setup": {
+        "duration_max_seconds": 0.22814694599992436,
+        "duration_mean_seconds": 0.07885976233334684,
+        "duration_min_seconds": 0.00413040200010073,
+        "duration_stdev_seconds": 0.12928652196404475,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69197824
+      },
+      "sign": {
+        "duration_max_seconds": 0.004313195000122505,
+        "duration_mean_seconds": 0.004205260666670559,
+        "duration_min_seconds": 0.004087166999852343,
+        "duration_stdev_seconds": 0.00011335595823496596,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69197824
+      },
+      "sign-restored": {
+        "duration_max_seconds": 0.00445726999987528,
+        "duration_mean_seconds": 0.004335824999846712,
+        "duration_min_seconds": 0.004217845999846759,
+        "duration_stdev_seconds": 0.00011974962552994915,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69197824
+      },
+      "verify": {
+        "duration_max_seconds": 0.0034659470002225135,
+        "duration_mean_seconds": 0.003400253666768549,
+        "duration_min_seconds": 0.003322479999951611,
+        "duration_stdev_seconds": 7.249238499527539e-05,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69197824
+      }
+    },
+    "roots_passed": 3,
+    "roots_started": 3
+  }
+}

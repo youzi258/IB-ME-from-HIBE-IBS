@@ -1,0 +1,76 @@
+{
+  "schema": "IBME/WANG-PW-TASK-ENVIRONMENT/2",
+  "status": "ready",
+  "checked_at": "2026-10-20T01:51:21.064579+00:00",
+  "source_commit": {
+    "value": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+    "operator_supplied": true,
+    "verified": false
+  },
+  "source_tree_git_head": null,
+  "source_archive": {
+    "sha256": "9dea399022f7eaa3edec631d2601a11af5a5f629f54e42bda71c66e68f5fe44c",
+    "size_bytes": 35706450,
+    "unpacked_equivalence_checked": false
+  },
+  "code_sources_sha256": {
+    "experiments/research/wang_pw_target/finalize_environment.py": "b9229065d5bfc1db457413321aa59cb4203cf5b75eff050a9b10b8d7804b2bcd",
+    "experiments/research/wang_pw_target/prepare_environment.sh": "7f1f7cd24dd8f975924bafc2606756183878b27986e4c7460409f2557b817ccb",
+    "experiments/research/wang_pw_target/run_guarded.py": "a1134ed41ed2a52b9d3273bb51c842e3a91352f09a3fa88b87f47ab72b95ddab",
+    "experiments/research/wang_pw_target/run_lifecycle.py": "fc9e2e6ee0e4e0490725ce4d12bf3d17c79ed4e11b7d275eccc10c87b2c1076c",
+    "experiments/research/wang_pw_target/screen_parameters.py": "d1bd01e3546ffe33db5a35fbfe6dc8bd5ab071611d21196e0eae818bc3ede197",
+    "experiments/research/wang_pw_target/sign_independent.py": "80ac0de70e8e79446bb9ceb16c4c5e5c861f58144afec9bc9493e4206f39b491",
+    "src/ibme/cli.py": "8dc0ec7eb3c3e1dc4bcdd13baff62b2267661c5322c00e15c284505b431d0081",
+    "src/ibme/hibe/latte/native/build.py": "c061fe3d01c206c2fe3020a7884681e7ad16799540e6936ac6754265bb01efde",
+    "src/ibme/ibs/wang_pw_target/__init__.py": "6cd0138157344c281b051a260c11daf0e9300b822539085bf737e3e4a8cb1056",
+    "src/ibme/ibs/wang_pw_target/backend.py": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548",
+    "src/ibme/ibs/wang_pw_target/hashing.py": "fce854050c71d17440d02404ca0a315ffddc3b8daa5326a1dbe4289b1a4335cf",
+    "src/ibme/ibs/wang_pw_target/math.py": "3679740e5dc4d365fb9e45cbc87a0838429c98c7935ad4936f294de396f70936",
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+    "src/ibme/ibs/wang_pw_target/native.py": "496464eadeb112f8bcb8000b70e618bad5398564eead0ed2a7a56beefe1bd900",
+    "src/ibme/ibs/wang_pw_target/objects.py": "96d9f96217c451064cd20677361f227fc16a8770f41e8d99d1683e5a363f9798",
+    "src/ibme/ibs/wang_pw_target/parameter_audit.py": "66c4830b6a21e1d782ceaa1b446a6384e2388ff834fc475ec03345bf01c6710b",
+    "src/ibme/ibs/wang_pw_target/params.py": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59",
+    "src/ibme/ibs/wang_pw_target/service.py": "2f9786adffccac4f37777b59756dbe9281f4aa051836b06a36a7662e7aff8331"
+  },
+  "python": "3.12.15",
+  "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+  "cpu": "x86_64",
+  "logical_cpus": 16,
+  "ram_total_bytes": 132785688576,
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1",
+    "psutil": "7.2.2",
+    "gmpy2": "2.3.2",
+    "cryptography": "50.0.2",
+    "sage": "10.9"
+  },
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "wang_native": {
+    "abi_version": 1,
+    "compiler": "g++",
+    "library_sha256": "03334a57210aaabde668adeddd7b75ae8babdef472d9af5d5520c96fc77badf1",
+    "schema": "IBME-WANG-PW-NATIVE-BUILD-v1",
+    "source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+  },
+  "latte_native": {
+    "source_id": "4a17a037c266ba982a027ff7fedffe0d391c9fe7fb2c5f8a0326b4ab67393414",
+    "binary_sha256": "1e2960a72f3c3924368e062b6656ed67dd87ff5b50ed35e67a73f164e6de3d28"
+  },
+  "lattice_estimator": {
+    "commit": "53da5982597709ba0fdf94ea37a84d822310fd84",
+    "import_passed": true,
+    "cost_estimate_run": false
+  },
+  "dependency_locks_sha256": {
+    "requirements.lock.txt": "83a8e20693513772dfa92cc694c4ae0832061397a8d636ae7c6ff360ce698e0d",
+    "sage-explicit.lock.txt": "ab48537d01fada452536adf8a35a20abab88cfa4296afe30e4f6d3e142373a0b"
+  },
+  "cryptographic_experiments_run": false,
+  "security_claim": "none",
+  "backend_admitted": false,
+  "parameters_are_formal": false,
+  "nist_security_category": null
+}

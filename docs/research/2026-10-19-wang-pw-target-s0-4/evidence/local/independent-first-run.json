@@ -1,0 +1,32 @@
+{
+  "schema": "IBME/WANG-PW-INDEPENDENT-FIRST-RUN/1",
+  "evidence_kind": "original-tool-stdout-redacted",
+  "tool_chunk_id": "5408c5",
+  "pytest_result": {
+    "duration_seconds": 13.89,
+    "passed": 5,
+    "failed": 1
+  },
+  "original_junit_generated": false,
+  "original_junit_available": false,
+  "production_random_debug_failure": true,
+  "failed_profile": {
+    "n": 2,
+    "root_gs_limit": 32,
+    "w": 64,
+    "q": 4294967291,
+    "target_n512": false
+  },
+  "failure_type": "SamplingError",
+  "failure_message": "numerical Gram-Schmidt exceeds the fixed public gate",
+  "redactions": [
+    "private pytest tmp path",
+    "runtime object memory address",
+    "root base and trapdoor array diagnostics",
+    "parameter object repr"
+  ],
+  "backend_admitted": false,
+  "parameters_are_formal": false,
+  "security_claim": "none",
+  "nist_security_category": null
+}

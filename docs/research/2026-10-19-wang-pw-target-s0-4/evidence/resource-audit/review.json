@@ -1,0 +1,50 @@
+{
+  "backend_admitted": false,
+  "implementation_commit": "111cc36e6c5442faaf08a8f11d43e1610b9c3ebb",
+  "local_junit": {
+    "audit.xml": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 26
+    },
+    "ci-catalog.xml": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 25
+    }
+  },
+  "memory_assessment": "parameter helper never promotes caller RSS into final acceptance",
+  "new_target_root_started": false,
+  "nist_security_category": null,
+  "original_server_source": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+  "original_server_source_modified": false,
+  "output_compatibility_change": "target_n512_run_measured and target_memory_acceptance now null, not bool",
+  "parameter_or_sampler_changed": false,
+  "parameters_are_formal": false,
+  "schema": "IBME/WANG-PW-RESOURCE-AND-WHEEL-REVIEW/1",
+  "security_claim": "none",
+  "source_sha256": {
+    "ci/suites.json": "0979927af82dc0fc09fc33829d7e6cbc98c78ed942d1f27866912f3170326794",
+    "docs/research/team-b-delivery/2026-10-20-wang-pw-target/parameter-map.md": "7f87099c4086a3c3969af7886d256c627566c21eb7b5d47e59c3cd9aac6929e0",
+    "src/ibme/ibs/wang_pw_target/parameter_audit.py": "3013bb124cf32e62613f77ccf4c11a62daf97cea39c9b462b3f421f845b609fe",
+    "tests/test_wang_pw_target_audit.py": "0e9f47f077cd212525914d32de1d8d48c75540b10897ad2b4925dc4754de153f"
+  },
+  "staged_reuse_source": "dd751fabbff9c90eaa71d5acff69de85b8197e34",
+  "status": "local-checks-passed/target-pending",
+  "target_lifecycle_complete": false,
+  "test_counts_are_not_added": true,
+  "wheel": {
+    "actual_pip_install_performed": false,
+    "build": "pip wheel --no-index --no-deps --no-build-isolation .",
+    "bytes": 2069809,
+    "filename": "ibme-0.1.0-py3-none-any.whl",
+    "imported_module_count": 149,
+    "new_dependency_installed": false,
+    "probe_runtime": "WSL Sage 10.9; isolated mode; cwd outside repository",
+    "python_build_runtime": "bundled Windows Python; setuptools 84.0.0, wheel 0.48.0",
+    "role_restoration_performed": false,
+    "sha256": "c3c4f9828450014a91dcf5277b3237dd01d44d200cf5d5f8aa6b0f5ff95d44cd"
+  }
+}

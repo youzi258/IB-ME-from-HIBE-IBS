@@ -1,0 +1,3 @@
+# Public receipts retain exact archived bytes.
+*.xml -text -eol
+*.log -text -eol

@@ -1,0 +1,1383 @@
+{
+  "schema": "IBME/WANG-PW-PUBLICATION-MANIFEST/1",
+  "scope": "Current PR delta files relative to main 018daf3, excluding this manifest itself; refreshed after PR84 integration review",
+  "baseline_commit": "018daf33a233a936719a7df9f50d1a776a1fee27",
+  "hash_basis": "Git blob bytes; not a retrospective execution-source binding",
+  "files": [
+    {
+      "path": ".github/workflows/basic-checks.yml",
+      "bytes": 5788,
+      "sha256": "170c219214a5f6b772b88c29314ac21f632d8f09a6551e38195c1474d639952a"
+    },
+    {
+      "path": "IMPLEMENTATION_SPEC.md",
+      "bytes": 19167,
+      "sha256": "4163f372ab2f8726d9cd4c2df62b1337eefa4095d1eeb06d70b09b3427069b9a"
+    },
+    {
+      "path": "ci/suites.json",
+      "bytes": 13301,
+      "sha256": "746d9879ae5d87bb348f351c19b7aaad295ed05023d31425848e8f7852dc9254"
+    },
+    {
+      "path": "docs/ALGORITHM_CATALOG.md",
+      "bytes": 25500,
+      "sha256": "4dca59616755347722345343274de0abd946b223356413432cafee01da5915b8"
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "bytes": 14322,
+      "sha256": "53a5740574d72cdf99c4cb94ca57162d93085a8b0f2cb6f4425aef313b8743dd"
+    },
+    {
+      "path": "docs/deliveries/2026-10-21-pr84-review/README.md",
+      "bytes": 5614,
+      "sha256": "8786031640720737e32049bae5c870ef13f25b358360485cc6d7884151ad1b10"
+    },
+    {
+      "path": "docs/deliveries/2026-10-21-pr84-review/current-profile-regression.xml",
+      "bytes": 17740,
+      "sha256": "d55f599f179f2b21030e8e7f8c79d0d03c014cb929dd07b67039bd53f3300915"
+    },
+    {
+      "path": "docs/deliveries/2026-10-21-pr84-review/validation.json",
+      "bytes": 12921,
+      "sha256": "aef9e67032ca538da2aca16422d4f490991df37dc734291239123cae3c366069"
+    },
+    {
+      "path": "docs/deliveries/2026-10-21-pr84-review/wang-pw-route.json",
+      "bytes": 32645,
+      "sha256": "4776abd797320ae05ef5e4ad4d55cba944456babcec2239c37c747260634d2ba"
+    },
+    {
+      "path": "docs/deliveries/2026-10-21-pr84-review/wang-pw-route.xml",
+      "bytes": 203006,
+      "sha256": "f6373152c1d925a26944d9d592b6f87823093140aa94b435733b9e77f57add88"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/PUBLICATION_zh-CN.md",
+      "bytes": 6420,
+      "sha256": "7545df5c67f8114bb3ed84a826744a1eed41cdd9c722bdc86d0373926657449a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/README_zh-CN.md",
+      "bytes": 62178,
+      "sha256": "66a399331ed81acd0847ef5732b7e3df740e732dd36b249cd12527d04c145a7f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/conditional-component-budgets.md",
+      "bytes": 6440,
+      "sha256": "a85c493ecfc1deff8bfc0dcc1b05988b620ac8a905222a10797ff241242bb11f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/cli-import-final.xml",
+      "bytes": 15916,
+      "sha256": "7bc83ab380f4c7f26e3a377760ad24db3d1cc8dfecbf86858d43867ebbf657f7"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/existing-wang-cli.log",
+      "bytes": 99,
+      "sha256": "e77f00cf3bf6a6bf60f1b62f149eeadc422afeadda75a819ace1f308cec1199b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/existing-wang-cli.xml",
+      "bytes": 642,
+      "sha256": "b7fad69ded2753ab1359cb21a56e6eae652690b9728c37ed8846d5288bedb18b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/generic-cli-final.xml",
+      "bytes": 976,
+      "sha256": "9119e75ee42b8ca282e93de71ad49e324c249b15c98f40d2679900301671d337"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/generic-cli-role-only-recheck.xml",
+      "bytes": 397,
+      "sha256": "1d72b4f0920c3fbbff5467bc2c78e531505cd19b56089632a45e8d96e3147b41"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/legacy-cli-final.xml",
+      "bytes": 15182,
+      "sha256": "9244c200db7c6d7e462bc4ea9861df094117f28f270c8a50a62a8326b3d71f5e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/manifest.json",
+      "bytes": 1498,
+      "sha256": "4a0948ced97e0a3e7b538340f6c5ddc79ed753fe21aefa75b47acd95c491cde4"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/reuse-source-transfer.json",
+      "bytes": 529,
+      "sha256": "65924d175e0bed56946a6816f4d1e0648c956685e156e540fadf87522a8302ed"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/review.json",
+      "bytes": 4177,
+      "sha256": "1fa88f3e63a7be19d441fef11550049e9a865c453a77c4ad1cbf565c7e09c10e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/cli-reuse-preparation/running-snapshot.json",
+      "bytes": 6107,
+      "sha256": "ed844dde9058dd46e61e58c2e876bad728797dcda77fd7bfa78624f63c2db178"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/component-budgets/.gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/component-budgets/default-components.json",
+      "bytes": 9215,
+      "sha256": "a46f036556c5c7e120568be8213a349db4b99285e0fe9f2c4b6d4e8f6e721a4a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/component-budgets/manifest.json",
+      "bytes": 900,
+      "sha256": "06c393334d88497b6afef6538b5598a98bb0dda748a468e404094bbe6c2a0265"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/component-budgets/regression.log",
+      "bytes": 180,
+      "sha256": "d1de5628ba79910d9f2c10540712943f1740571729103e8474dd49e2edace697"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/component-budgets/regression.xml",
+      "bytes": 11993,
+      "sha256": "a75066ab0a41d24ac316b2225e1cdb3ac195e776fcbce7a6aba3533f437f1ae3"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/component-budgets/review.json",
+      "bytes": 4805,
+      "sha256": "392a084581e9bdb04f152f9a534fa1e14a707130110ed4395c3d1dd84b56a3cb"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/component-budgets/three-sign-attempts-components.json",
+      "bytes": 9216,
+      "sha256": "7a024de49422b8afe82ee1df3f0958124620a491866679940259d2fa404ce512"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/.gitattributes",
+      "bytes": 273,
+      "sha256": "74cccae0c921c5cc4ecedff4a3fddc4bf8052d6fc3c4a7e340500ba4b7b3bec9"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/child.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/child.stdout.log",
+      "bytes": 634,
+      "sha256": "60551231cbeeef8a1a81d258502b6ca5de8c233f4f7e607699dc8549b9d7f08e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/controller-tests.log",
+      "bytes": 182,
+      "sha256": "8f67360a85cea2ac0cda4deef013876033fdcaacbe3d3d0bef069c48a5ba4881"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/controller-tests.xml",
+      "bytes": 12586,
+      "sha256": "0477d629003451bc6fd928787f0c764ffe0380a2ed294b3fa86dfd5a9bdc3f1e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/launch.json",
+      "bytes": 603,
+      "sha256": "06feab92d6d12b94d1ec5713b80f03d4f544387dc05c9b0860e29917e211f771"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/manifest.json",
+      "bytes": 1866,
+      "sha256": "9253c78485a375ffb6bf6d2c6299f82ec25d1c2e3db687494ec5ad8003620352"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/post-failure-check.json",
+      "bytes": 1300,
+      "sha256": "c448cad65356b64a810a681f640ab69de59567419cf8aa4bc76052540d17d382"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/review.json",
+      "bytes": 5100,
+      "sha256": "736f6fc28b5423db3e1a60874be9c4ddba65d667d42c331e762628aba3161e69"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/source-transfer.json",
+      "bytes": 1049,
+      "sha256": "916a13c7e2a63f6f3a2d180fde27d7139ab3e364e92789289b5897a295ca84d9"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/supervisor-launch.log",
+      "bytes": 619,
+      "sha256": "9e6a257e46ec9d94339680fe6872d25e78581002700e0f014db61bee45b184cd"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/supervisor.json",
+      "bytes": 1558,
+      "sha256": "5afef65e02f37c096b30cb6e7889e441cc29c7319757b44d25eff01765dd309f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/supervisor.jsonl",
+      "bytes": 619,
+      "sha256": "9e6a257e46ec9d94339680fe6872d25e78581002700e0f014db61bee45b184cd"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/verify-reused-public.py",
+      "bytes": 4511,
+      "sha256": "51ea6bac64004b0e0ed1e604087cb052481dedee7dc38161e349ec67cfc24012"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/.gitattributes",
+      "bytes": 76,
+      "sha256": "30ce399e5741934c3e80f65d0aeaf542699a1c5698fe2fb7a27a4a63f76a7294"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/child.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/child.stdout.log",
+      "bytes": 763,
+      "sha256": "db134efa871483a9f4d2433173d9f390ca7b757df36e8d795c6ad354a7aa867a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/manifest.json",
+      "bytes": 1637,
+      "sha256": "26498a112a76a46db29abdf0abb4c7c39182a06caf09016bdd67bb9a5da3f925"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/native-code1-probe.json",
+      "bytes": 2293,
+      "sha256": "158fb0ad8ae00bec6d01042458398d55ea8fa4aab20a6b5bd7271605ab405a95"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/native-code1-probe.log",
+      "bytes": 1985,
+      "sha256": "4740d7e91b9405ea45c815faf81b5e401e48b4d72f466a2f84c286ab6be0d82b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/native-code1-probe.py",
+      "bytes": 4794,
+      "sha256": "99b603e7acb8ccf8c1d7d73c1cc892d50c109fe5090a4eb7eb890a05450f0057"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/post-failure-check.json",
+      "bytes": 2902,
+      "sha256": "b33ded013829aad7d9117634ca35815e9c524cb0bc7c8bbe8cdab70e677516c9"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/review.json",
+      "bytes": 2039,
+      "sha256": "d1890a558e03b5e6ee99467794908cb68ec59d6b168c1695afef0f856c2bffe8"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/source-review.json",
+      "bytes": 3012,
+      "sha256": "2982cf5387017f1a9d2a5e1e3cb470d031e42316199bdc8b1d0f2d9789644605"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/supervisor.json",
+      "bytes": 1559,
+      "sha256": "1e865e81cf327e7602e8cec86d3ee14356b8576e3cbdc21bb05904082f41becb"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-failure/verify_delivery.py",
+      "bytes": 5892,
+      "sha256": "dd49217112f39e81d5532c6b39edebdc75cbf19108361d51afe6d541f52d9ed5"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/.gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/launch.json",
+      "bytes": 1692,
+      "sha256": "546baecb119bd848bf61be4719d46aa6cf97d0ddd18b894ca0ee536dce44c516"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/launch_diagnostic.py",
+      "bytes": 6297,
+      "sha256": "a6b16be07f7778f26d01fd0291bf89135c02da2791c480481ff4de42c2640014"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/make_source_manifest.py",
+      "bytes": 1173,
+      "sha256": "daf9c9efe1b0a9aa0376d9a79ea8c0d0b9b532ca6fdc29f852be29522aa34cb6"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/manifest.json",
+      "bytes": 1740,
+      "sha256": "5046e032795262f49e220cb09c5f621501acee85ffa504cc1bd64890cd2f0de6"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/monitor-130642.json",
+      "bytes": 1990,
+      "sha256": "86694b8dddd7401c90056f498e7e2b63f132c224cd04e499f6fcdd399caad7d5"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/monitor-130846.json",
+      "bytes": 1978,
+      "sha256": "ce469e75d35774f9203fa2573f276610a4ec7bb6dc0410391def74a276379c28"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/monitor-131030.json",
+      "bytes": 1980,
+      "sha256": "30cd994cf4cfc8bbb8b60f5943fe0cc6513580d2925fe9202ac90e245ac82739"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/monitor_diagnostic.py",
+      "bytes": 4097,
+      "sha256": "79053adb73d04a4bd65d18126206b69f28f1e4ab3b16dab40db162338aa77c87"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/prepare_remote.py",
+      "bytes": 4648,
+      "sha256": "53e020f339745a007049becae017a6d6c6041abc1aade7011d51fb8b9ec62e0d"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/review.json",
+      "bytes": 2305,
+      "sha256": "a5a9d8cb497df11c10b237a034c87ef16b62d84b39c534b181a5cdb8c9739318"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/source-manifest.json",
+      "bytes": 634997,
+      "sha256": "a4b7045f9a6f7b7ee9b9d50ab28129d2c4951f11a4b83ffb19b4947549728c00"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/diagnostic-launch/source-transfer.json",
+      "bytes": 1149,
+      "sha256": "4ac74bd4e839241bddb5f8f798deeddf00813a7242e5aaf45a5934b6c22e5b3b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/environment/environment-ready.json",
+      "bytes": 1447,
+      "sha256": "b70951be010416b2fc34c456fa252ec5e7d7c609240e42d3d96b0dcb8057cec1"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/environment/requirements.lock.txt",
+      "bytes": 214,
+      "sha256": "8b05e3b0a660d600a62b4121b32163a21f2e544dace94265839ba4b1b28ebf32"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/environment/sage-explicit.lock.txt",
+      "bytes": 32577,
+      "sha256": "8d20bd31f87ba43013e32853d89a1a41d09c3c7350b3ef1ff2fdae6ae9cf3864"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-audit-20261020/manifest.json",
+      "bytes": 631,
+      "sha256": "18e21d574c28e219e305a054c99b68f344164cb1cc3e82ab3a5ee5441753cf48"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-audit-20261020/receipt.json",
+      "bytes": 1132,
+      "sha256": "ea3ca6051f305b25ac6a33136865bb9ea7a89c2d381a3c11241e8c55eeff5727"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-resource-audit/.gitattributes",
+      "bytes": 81,
+      "sha256": "dc2945d3282cd222a13250607344e03c45222bb69da489a0a7f30d54554887c3"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-resource-audit/manifest.json",
+      "bytes": 601,
+      "sha256": "4aaf1dd2d4736f3b57ea353827181459ee9fedddeea21078ff825fbb61646e44"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-resource-audit/regression.log",
+      "bytes": 181,
+      "sha256": "38e1147246ee71839aa513b2745c365189fcc71c05fd5ac6e91cf5f460d4f9c5"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-resource-audit/regression.xml",
+      "bytes": 23796,
+      "sha256": "b3cd2dc1cffd6402628ab188ab763d9202e9b70554507738d667b6c7763e5577"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-resource-audit/review.json",
+      "bytes": 2724,
+      "sha256": "65203a8d3c13d03a02814a3377b29d69235c82e4e21e9ea1e7d12e25ebd7831e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/local/independent-first-run.json",
+      "bytes": 870,
+      "sha256": "b6f9b0917096c0fcc32ebfce6d0665bd5e5e6e76d6ef0cb35f11cab5ef089fda"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/local/independent-first-run.log",
+      "bytes": 2468,
+      "sha256": "3f90ebbe1fe52a86766d157b61fc6e3dbefd7caeef2b73e5afb65383653aee6a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/local/parameter-screen.json",
+      "bytes": 9856,
+      "sha256": "4ba8f3b20597c072e07edd17de9f34849929a656810cbd7564f57167caa5b69e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/native-reasons/.gitattributes",
+      "bytes": 76,
+      "sha256": "30ce399e5741934c3e80f65d0aeaf542699a1c5698fe2fb7a27a4a63f76a7294"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/native-reasons/manifest.json",
+      "bytes": 622,
+      "sha256": "58a7200f7999db0a03468eadffa343bcbe87a54c7314bd0aadbf206fcd86777a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/native-reasons/regression.log",
+      "bytes": 341,
+      "sha256": "91d621be8aa3aabc1a0c6cd0c7a0d8b6854d90cc8bffb2155a54ca1ca9465d30"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/native-reasons/regression.xml",
+      "bytes": 46385,
+      "sha256": "92f52aca3167708d6589366a72dbc9945f7a1030ef8940d3bba71116f7a1d086"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/native-reasons/review.json",
+      "bytes": 2745,
+      "sha256": "013525ff0fc7051d832ad941a7449320ea478d9bf45cf19bccb0851fd146abc9"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/parameter-planning/.gitattributes",
+      "bytes": 76,
+      "sha256": "30ce399e5741934c3e80f65d0aeaf542699a1c5698fe2fb7a27a4a63f76a7294"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/parameter-planning/manifest.json",
+      "bytes": 749,
+      "sha256": "d5ab3cdbaa4cae931a3b26a409de443bffe665a526d5075bd2ed3c23bda7c035"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/parameter-planning/planning.json",
+      "bytes": 96825,
+      "sha256": "56f4f2d816436ee29486532426aeca17227e641041b021603f97eaeacc6a3500"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/parameter-planning/review.json",
+      "bytes": 2805,
+      "sha256": "8d9a53cd47ca5832c1ea39e70e19793096f6256a36c7972fa74974846f0b0779"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/parameter-planning/tests.log",
+      "bytes": 99,
+      "sha256": "fa39793bdd865eabca9af356afbcae7b81926be2f7ea9256c71c46318169e244"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/parameter-planning/tests.xml",
+      "bytes": 4609,
+      "sha256": "1b2c346a8c4ecea23106501d9aaa18000d3d784e0f235a2203737a78db707d40"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/combination.json",
+      "bytes": 11782,
+      "sha256": "1de2458b17ff96c8f604c0b010101d15830798858ef3282880f8c711b7ec65ce"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-combination.json",
+      "bytes": 11789,
+      "sha256": "4cca07f41fc03a1523027246a004006dfd461efcbb2778f4c0a347e5052d73a1"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-generic-cli.json",
+      "bytes": 17725,
+      "sha256": "e9bd295a02df8aade42c5aa31c9a9f4eb3939c4bcdb7380ac44f05b67a508a56"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-public-verifier.json",
+      "bytes": 1675,
+      "sha256": "ab47ae997117b8d6261d86e2ee3a5f612db3485b1f8fd40ea38f348bfb2c1c11"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-service-adopt.json",
+      "bytes": 1633,
+      "sha256": "4d05859f109a38955d0d4cf9c1864432f7de67fdfef51e7dcf938943951ad998"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-service-recover.json",
+      "bytes": 1635,
+      "sha256": "c577b493f6b2f23b3a958b827eb4dfe2299bc72eaf2c9c72ee60ab5733cde66c"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-combination.json",
+      "bytes": 11781,
+      "sha256": "c15ce43a1af39c4b06b8af058c53e0753513aaeee6ab37334a29a601e94109be"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-generic-cli.json",
+      "bytes": 17725,
+      "sha256": "33e37de289d715edbedbe7feee9d9f1929cbc86d614b746aaccc3762285dcb1f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-public-verifier.json",
+      "bytes": 1675,
+      "sha256": "ab47ae997117b8d6261d86e2ee3a5f612db3485b1f8fd40ea38f348bfb2c1c11"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-adopt.json",
+      "bytes": 1634,
+      "sha256": "91c4a54003209793a6a2c170049e9545aa7f232dc71f249fb92975589a7395e6"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-recover.json",
+      "bytes": 1635,
+      "sha256": "19bfc8af2bcaae9bffdb1483e248cf3095d7415e848535d9e7c38690aad5be3d"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/generic-cli.json",
+      "bytes": 17723,
+      "sha256": "9d9805a6ba8c7114fbaaad7c8b7cea7a1a7fb16f33ddb51bc8c2bd34c62a0427"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/public-verifier.json",
+      "bytes": 1675,
+      "sha256": "7412c5bce220fa2ad64625ee3ad47ea711fb6b0fbc0a68ea86c4544aa3043d1b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/service-adopt.json",
+      "bytes": 1633,
+      "sha256": "f1a7579aba16d3bee7a64764d65b3fafb0a1c17ec0e1eb885bf3c1f7c80d342c"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/service-recover.json",
+      "bytes": 1636,
+      "sha256": "072ddde322988532dc97ecd9b7a969dfccdf9165f2c076bdb78ac70a34607011"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-1.json",
+      "bytes": 1107,
+      "sha256": "39b6e924870077938e8f652bce36466180dd37f8453f34ba675b7ceded16483a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-2.json",
+      "bytes": 1107,
+      "sha256": "8c109887a93c0463fd172acce4b065355f8343bc3ca6ccbacbfe48f3882992a6"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-final-1.json",
+      "bytes": 1107,
+      "sha256": "adebaa8ef7ae2633d280772064f1a9948a69cc49851085f56b63dfd0f4cdb02e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-final-2.json",
+      "bytes": 1107,
+      "sha256": "d27e4d912912f04c7c147b6f996f927ffcc5670c534fa18d883a344f425d3dd2"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-1.json",
+      "bytes": 1107,
+      "sha256": "bccd941315127146362f416cc4263e3a3eea48f8fd020b9422b9a658de7dbd65"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-2.json",
+      "bytes": 1107,
+      "sha256": "5e22d3c9f3d26a93ebad94840307af5c3b41e13477ba9b5fb9a18bf74b421900"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/debug-q257-three.console.jsonl",
+      "bytes": 12457,
+      "sha256": "6da6d833e8a972c57cb555dd3a67ee8d2e73cb3df51cc9b4ff9e1b5c7fcf68da"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/debug-q257-three.json",
+      "bytes": 19242,
+      "sha256": "fd84cddcfafb000ed8504fcaa260dbaa35eb59d2256d09a9be0c27abf48476a2"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/debug-q257-three.phases.jsonl",
+      "bytes": 12457,
+      "sha256": "6da6d833e8a972c57cb555dd3a67ee8d2e73cb3df51cc9b4ff9e1b5c7fcf68da"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/debug-q32-disk.console.jsonl",
+      "bytes": 4391,
+      "sha256": "c0c6b7204a755a232506c16d46aca7b18cf007c3e23f5e484f7995b9dc62842f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/debug-q32-disk.json",
+      "bytes": 10786,
+      "sha256": "73acdf013ee20a9b8ef18edfcb3874439fcca0f91d24d7733dfb61608f2cfa76"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/debug-q32-disk.phases.jsonl",
+      "bytes": 4391,
+      "sha256": "c0c6b7204a755a232506c16d46aca7b18cf007c3e23f5e484f7995b9dc62842f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/server-tests.log",
+      "bytes": 261,
+      "sha256": "9f7d82f6dbb823b7ede18b290747510fc1df004973c17c109ae9691df451d2e7"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/public/server-tests.xml",
+      "bytes": 25044,
+      "sha256": "528f4b428e2727615fc5ac349d262259108efd07159c9c60b61bc28d25ac19b3"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/resource-audit/audit.xml",
+      "bytes": 4173,
+      "sha256": "f8dc8fc2e85de72660b5ce0d2a10a832c2005d3fbcd615e2dd81ecc565fda29c"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/resource-audit/ci-catalog.xml",
+      "bytes": 3329,
+      "sha256": "992c10e9154168cf081e085312345b61d272683aca0d8c9fdb33baf431193c03"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/resource-audit/ci-selection.json",
+      "bytes": 1520,
+      "sha256": "e99a66b7a0c62e90b9f6ac7f9752dceef4dfbe4130dc303085c309f70ed1e3fc"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/resource-audit/manifest.json",
+      "bytes": 886,
+      "sha256": "bbbd782a18457183f4a59957107b5fc81c063368955455932469bb0b1911c4d0"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/resource-audit/review.json",
+      "bytes": 2132,
+      "sha256": "d122611d003c180833b2a124668aefd18412b550a51963806b49cd6834ef70cf"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/resource-audit/wheel-preflight.json",
+      "bytes": 1081,
+      "sha256": "5a93e36b53f55556f292830bf8114cc98e8db7187b396aeb673fa7a77f63464b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/resource-audit/wheel-probe.py",
+      "bytes": 3228,
+      "sha256": "8134efa7c61dc236554526c3f95c3c887fd1454c69665c6228f6eab19f69dbf6"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/reuse-preparation/manifest.json",
+      "bytes": 1032,
+      "sha256": "062a63620e2f15407749cd7c3edbb1c82c099e0a3120faa2facda1f40b523b8b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/reuse-preparation/reuse-and-random-tests.xml",
+      "bytes": 9597,
+      "sha256": "949807094342588a229b2fa8ebb68b8880c9d9aebbfe92e7af59f7d26d6d342f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/reuse-preparation/reuse-child-failures.xml",
+      "bytes": 541,
+      "sha256": "1c7a7a6344781188257737663c6932fc1157d802e6704776768c3699e6c62c93"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/reuse-preparation/reused-combination-local.log",
+      "bytes": 829,
+      "sha256": "1c1803ed2f220e7c0515e4588e2c23ae4b53d79c3dc5e44d43188d59ddcf48eb"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/reuse-preparation/review.json",
+      "bytes": 2726,
+      "sha256": "704f4d452306bb368c69c0ff34f20d7a050e3cb3e77ddb879b4503e87a654a62"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/reuse-preparation/supervisor-running.json",
+      "bytes": 1237,
+      "sha256": "1165fb4951fffd857b5bdf89fc61d4590cf0ca51af3e3b3d328355e53da026ee"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/reuse-preparation/target-running.json",
+      "bytes": 5348,
+      "sha256": "2f8d67f5a823051bfd5055efb06477ea4960ee3382480393e5caa3306b4eedea"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/checkpoint.json",
+      "bytes": 236,
+      "sha256": "476a0876d1dfff71c660441e131b2f04a2b00055521066afb0c5a31f2c12d93f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-q257-three.console.jsonl",
+      "bytes": 14067,
+      "sha256": "7c5ce3b2991c17b8bc11df3159560407d4a0e6947d8f65edc5811a05a1cd0775"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-q257-three.json",
+      "bytes": 21289,
+      "sha256": "bf1c661ef4ba88de0937441bcbb0add624460df8a9151a10a303434be5534af6"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-q257-three.phases.jsonl",
+      "bytes": 14067,
+      "sha256": "7c5ce3b2991c17b8bc11df3159560407d4a0e6947d8f65edc5811a05a1cd0775"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-q32-independent.json",
+      "bytes": 12969,
+      "sha256": "acf4f6a07b56c387d721630c4cfa5ac049128d6dad94ca0f5ef28f35842325ec"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-q32-independent.phases.jsonl",
+      "bytes": 5842,
+      "sha256": "1991598f1717481b401d2c5aa8ee4294458d32558957a20922f826381d158cc5"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-q32-supervisor.console.jsonl",
+      "bytes": 615,
+      "sha256": "892c4f2d8c516c2f0c07e8f1564772893d0bcf324f09a2bf6bfa1ac057e35a09"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-q32.time.public.txt",
+      "bytes": 697,
+      "sha256": "ba8395b9708a1257ebd5a83bdd887c970960660f788e938fbcf889c7379032b1"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-supervisor/child.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-supervisor/child.stdout.log",
+      "bytes": 5842,
+      "sha256": "1991598f1717481b401d2c5aa8ee4294458d32558957a20922f826381d158cc5"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-supervisor/receipt.json",
+      "bytes": 1548,
+      "sha256": "aa030eac00152d47896ea5aef4696cb7ec3eed3edc3b1a181d1378cd08a995c8"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/debug-supervisor/supervisor.jsonl",
+      "bytes": 615,
+      "sha256": "892c4f2d8c516c2f0c07e8f1564772893d0bcf324f09a2bf6bfa1ac057e35a09"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/environment-ready.json",
+      "bytes": 4082,
+      "sha256": "24ec72aca48da323a7e974087f99cb2e0cc45152f09d63e2e7dea7868c3eba9d"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/manifest.json",
+      "bytes": 2397,
+      "sha256": "ce33c2a15be240b03c9d7120b83f5c67e8db2de3d0e5ec6e38db8d3a4f386a46"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/parameter-screen.json",
+      "bytes": 9092,
+      "sha256": "5b173747c1ed59280370dfec1b1552eeb83990f94bb70d33b44bd8c6ee836a5e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/requirements.lock.txt",
+      "bytes": 317,
+      "sha256": "83a8e20693513772dfa92cc694c4ae0832061397a8d636ae7c6ff360ce698e0d"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/review.json",
+      "bytes": 677,
+      "sha256": "c1fe780df2c36cccd85b6c8f5b5da8957afb30aeeb42c1961f97d36b9701b003"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/sage-explicit.lock.txt",
+      "bytes": 32578,
+      "sha256": "ab48537d01fada452536adf8a35a20abab88cfa4296afe30e4f6d3e142373a0b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/server-tests.log",
+      "bytes": 351,
+      "sha256": "d3d657eb1a259749a30e1df803dcaa5b5be42a41dc9a02ddc36ac1250d4b7517"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/server-tests.xml",
+      "bytes": 32341,
+      "sha256": "f3a965a48a4a13e57968465f3382537d36a9a898f7339d8220cbda9502afec64"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/source-transfer.json",
+      "bytes": 296,
+      "sha256": "a8596a35be08bd20a072ecd0620a10c7c088cac3de2207e4f1820fe30d69d99e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/target-initial-running.json",
+      "bytes": 4493,
+      "sha256": "3f7edb39d355bb56ee1f6f5233612c50a0d3b77ee5a725e24d91fe1826c9b4f1"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/target-launch-preflight.json",
+      "bytes": 1178,
+      "sha256": "f93f2d2f04015353b1107ab10d2a4e60ae803d9d0de493a3ee5886cbf21a5b45"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/target-supervisor-initial.json",
+      "bytes": 1236,
+      "sha256": "835fa725323f77e7c593916164156c7e5786df0d068b7c034d917750e2652097"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/.gitattributes",
+      "bytes": 74,
+      "sha256": "574dca45282c721e228acd15bf9aaeef98616404a08f68a929e460f25f1b6cd1"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/backend-af11011.py",
+      "bytes": 8273,
+      "sha256": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/baseline-parity.json",
+      "bytes": 3535,
+      "sha256": "3ece0ccf91c6e753c5ff71c1505f0958ed58fa29e7b9190f777d15d7619fcfcd"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/baseline-parity.log",
+      "bytes": 2946,
+      "sha256": "b28010d9f05ff3be048ff2e6fabd9b1b2a2e89588862b1bc3bee17c46f4feb6a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/baseline-parity.py",
+      "bytes": 5768,
+      "sha256": "b1df8f22add499916c062539099fbabaa232ef81e2c27f1cad166b18ab01dc49"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/baseline-provenance.json",
+      "bytes": 227,
+      "sha256": "2c04cf9e59f67b4b4c5f03d9719589a63c97a8e5ea877b902aa3f6cbde3b2404"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/diagnostics.log",
+      "bytes": 101,
+      "sha256": "ccb9ef252a2ccb4da150d2c25fdaec8fdab7d9ca9c555251e45b8687565a0be2"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/diagnostics.xml",
+      "bytes": 7304,
+      "sha256": "b383f3d57f8e7ceecf5222767086bd981aa6fab89f0db6ed38b8ed1334836d57"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/fixture-setup-rejected.json",
+      "bytes": 1037,
+      "sha256": "6114a32672a57a302aa6e5454c7861023dc5a0a446da10e76e430e7ee5406536"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/fixture-setup-rejected.log",
+      "bytes": 717,
+      "sha256": "0850a4facea08d308503b8d202d6077185ba9f579a37fbb188800b74d7def119"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/fixture-setup-rejected.py",
+      "bytes": 5403,
+      "sha256": "e26d2f631db8355a28f36cb3172ef209db08281a5efe37e3766141151404c640"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/implementation-provenance.json",
+      "bytes": 1640,
+      "sha256": "9975f23e92a137c03a892cd85aba2872cd3a495a6b49b60f95643a2b572915d4"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/independent-review.json",
+      "bytes": 6211,
+      "sha256": "7b46e546122dbf24660d13c06793d53c1b38664169cb0f8d15d04b42cfc636ae"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/manifest.json",
+      "bytes": 2320,
+      "sha256": "4a34a3818be203d5e0878d506f58f277c4b810b59875501e4ea5df12e52ea69c"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/regression.log",
+      "bytes": 261,
+      "sha256": "8a23447dddd28994d177bc18144795ad44fda9595919dd43d0330f35237dd1d8"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/regression.xml",
+      "bytes": 26031,
+      "sha256": "61df6eafda46d3f04b4511568753bfa4fa68cda028563c20acbb03d47a08cb0b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/sign-diagnostics-local/review.json",
+      "bytes": 18546,
+      "sha256": "4c32f6100f0dd9173a49a0aaed60597f69e166db2d514bae0601c331220e7230"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/support-cap/.gitattributes",
+      "bytes": 81,
+      "sha256": "dc2945d3282cd222a13250607344e03c45222bb69da489a0a7f30d54554887c3"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/support-cap/manifest.json",
+      "bytes": 600,
+      "sha256": "27e2e44b593252de44b857adf4011ff52b8d2fee2d54d40f8ed70c46622ead2a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/support-cap/regression.log",
+      "bytes": 100,
+      "sha256": "f375374857d3bff1efe17e61c7a3deb8502852b9767a96591d102bf17dc5c3db"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/support-cap/regression.xml",
+      "bytes": 8048,
+      "sha256": "076a125e8ad7fed2c1b0905bae00c20835bd360f9f7c035760da387e15e4e629"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/support-cap/review.json",
+      "bytes": 2229,
+      "sha256": "f285e3803d5b5fbb951a8407ffb53aa2e551ca65981b78ed1e6faf881052070d"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/child.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/child.stdout.log",
+      "bytes": 2541,
+      "sha256": "e85fe8855473352dc0a961abcd3457bb0dc7fcdbde60e28d10e644339e6650d8"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/manifest.json",
+      "bytes": 1752,
+      "sha256": "2c27362f8a1e115547c41192eefebb0028ad2dae35cee1460eb5624ec8b03eec"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/post-failure-diagnostics.json",
+      "bytes": 1289,
+      "sha256": "add794127eb9f982337ca6e52d8514a6220f1a898d7b24e37b98bae22e55d934"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/qr-regression.xml",
+      "bytes": 4160,
+      "sha256": "93e5d1e47b09dd35cd5d9f9f3ac738135a3b729070275a57d9a4ea7d5f975304"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/review.json",
+      "bytes": 2574,
+      "sha256": "bac774f276885f177abaebf8d1bbc730f16c8411482d6b21b84f8f2c19ff09e0"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/scipy-source-review.json",
+      "bytes": 8354,
+      "sha256": "e7ffa77c4790f654e266e755490cda7e749b3fd27e2f8ef575243df2f516f872"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/source-verification.json",
+      "bytes": 1865,
+      "sha256": "83b63e0e05f092bed3b32b979bfb359c453bbb9a41333a08b1fc55d309d41653"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/supervisor.json",
+      "bytes": 1554,
+      "sha256": "8d6e03fcc1c573318a5ededd384c9a1a2a02fdbd093a78376e6cb126c03c8815"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/supervisor.jsonl",
+      "bytes": 619,
+      "sha256": "60d671d377bb42f412bfcc5bda4e672e1c8b0c6c16591e0c5e1d8e245a3604a8"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target-n512.json",
+      "bytes": 7990,
+      "sha256": "7a8d1ea4176fb7c55eb422e254f2392b14d54b3739251aaa8cc2c80de7487966"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target-n512.phases.jsonl",
+      "bytes": 2541,
+      "sha256": "e85fe8855473352dc0a961abcd3457bb0dc7fcdbde60e28d10e644339e6650d8"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target.time.public.txt",
+      "bytes": 759,
+      "sha256": "3587a29462b7eb1e359a321b8f01553bb03f0ffecf7a91f908adf9733fe41b8c"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/parameter-completion-audit.md",
+      "bytes": 23919,
+      "sha256": "f9e3e324cd75f890089b94590eb7d1aa9996f13884fe3fa9e0c53d4aab5dd062"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/parameter-route-planning.md",
+      "bytes": 7580,
+      "sha256": "3f2cf66dfad748649f464271c9cdf9785aeb76e301062e32ce490ff24d8536b2"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/.gitattributes",
+      "bytes": 54,
+      "sha256": "3feb9950528bc7893cc748e43ef9cda08989fa2823043b4efc2cfbad18e1b818"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/environment.json",
+      "bytes": 1144,
+      "sha256": "4c38abc1ef5a6b36f48a502d88445332546dae1f61db4932d5bcc9b65cfd2ca8"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/initial-regression.log",
+      "bytes": 3452,
+      "sha256": "0668161fcee87712a903617a06a299f4dcbd2e8b603e898073480d77520317af"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/initial-regression.xml",
+      "bytes": 112267,
+      "sha256": "f0fbe0c30802738ebd3460fffd52571bdf1621b1ceabe8640ad1c21067323f6a"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/late-source-update.json",
+      "bytes": 3441,
+      "sha256": "7655ee3ae1793e65bbed7c82a259222907253ee0ee192a2dd27a9dd884033ab1"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/mldsa-build.json",
+      "bytes": 2028,
+      "sha256": "47ff1453cb400e244941f96aaf1cedadead2abe79a8524b80b00d063f2dc7335"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/regression.log",
+      "bytes": 180,
+      "sha256": "b4fe6eb1eed1fc2e080992da271e682574794acedf9df6b61973f36f92fc45fc"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/regression.xml",
+      "bytes": 11319,
+      "sha256": "06e53dc352be5d6a21b062b9fa2bf9394fa622aa94de058ae0327fee69d86f18"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/review.json",
+      "bytes": 6018,
+      "sha256": "65978b2e8bd4729f60109cb06d490fedbcab8b8a6b88cbf68fdd4dbdbede35e3"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/source-snapshot.json",
+      "bytes": 1006,
+      "sha256": "d4aa389fe671b0368eba78fd2b1d4008b09be8533b444cfb4a47ddd20542dc47"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/verify_delivery.py",
+      "bytes": 4006,
+      "sha256": "b495768bf8bc35fc0512729d57fbd064b4ec1f3ed986f3f2976a2d1226a1972e"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/recovered-key-resource-audit.md",
+      "bytes": 4507,
+      "sha256": "50a6d7a58e31766b936dd7ecb49247746be1e973d5a8d40a8d4ea5fce78c5ace"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/solution-perturbation-route.md",
+      "bytes": 12714,
+      "sha256": "828996599619d10be44e004d6b67e524b86420a3f9a87060d8681d7f206dd16a"
+    },
+    {
+      "path": "docs/research/team-b-delivery/2026-10-20-wang-pw-target/parameter-map.md",
+      "bytes": 13691,
+      "sha256": "a33933495f3f9ab63b6fa4fac32941c262cc569a45b63943dfeedba81958179a"
+    },
+    {
+      "path": "docs/specs/wang-pw-target-ibs.md",
+      "bytes": 8725,
+      "sha256": "4a6cb1ed9529f8d8ec4d7b68be0c0b0ccd76c7d8dbdf167c78f77fcd7a84ee46"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/README.md",
+      "bytes": 16442,
+      "sha256": "8b0d27648a50ca62c06e3d1637b2e318e71f33776cd644a501d390e28b2238a5"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/audit_recovered_key.py",
+      "bytes": 5554,
+      "sha256": "88b7276faa3bbf567dd594be482f1bbde8c33e5bc496c8437fae1ebd3171c96f"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/component_budgets.py",
+      "bytes": 8500,
+      "sha256": "9995924fdf2112c9d43d56f9217680d341202721046b236f191561f1ab4ecde6"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/finalize_environment.py",
+      "bytes": 8425,
+      "sha256": "b9229065d5bfc1db457413321aa59cb4203cf5b75eff050a9b10b8d7804b2bcd"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/plan_parameters.py",
+      "bytes": 15831,
+      "sha256": "71f8806710625f92ea274b84a503a772a3589f9c0b5bb69c53dd8bc8b7fe9c65"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/prepare_environment.sh",
+      "bytes": 4815,
+      "sha256": "7f1f7cd24dd8f975924bafc2606756183878b27986e4c7460409f2557b817ccb"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/run_guarded.py",
+      "bytes": 18252,
+      "sha256": "a1134ed41ed2a52b9d3273bb51c842e3a91352f09a3fa88b87f47ab72b95ddab"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/run_lifecycle.py",
+      "bytes": 32639,
+      "sha256": "c50359e3d7541cbd87f2790f0a906b12ef11bce3d454ddf897592ead3724d340"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/run_reused_cli.py",
+      "bytes": 21257,
+      "sha256": "baa127c4e2e04b9940ff3cc1831f28834fd318ed2027a93a2ac8b7df42719676"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/run_reused_combination.py",
+      "bytes": 19132,
+      "sha256": "3f6ab3681eee1416208377fa0e84dbddab4f41e03eeb77945609a064fa027015"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/run_reused_continuation.py",
+      "bytes": 40349,
+      "sha256": "cb4e6ffc86e3715a9a9c4fe96b85b4d25001fa80cf6527880590bcd90e4e547b"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/run_reused_service.py",
+      "bytes": 6713,
+      "sha256": "791783b499e86a023504f94f73b646061e81061723c4d77ff62a1155c8696f24"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/screen_parameters.py",
+      "bytes": 12418,
+      "sha256": "d1bd01e3546ffe33db5a35fbfe6dc8bd5ab071611d21196e0eae818bc3ede197"
+    },
+    {
+      "path": "experiments/research/wang_pw_target/sign_independent.py",
+      "bytes": 5655,
+      "sha256": "6473a462dbec390ff34b1b721884d36e25076e22bb404a9532d6695a66fdbbd9"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1195,
+      "sha256": "539e4c7cec414d712d328d481e8c686e86ef585b6c121daace6c07d3c68af660"
+    },
+    {
+      "path": "src/ibme/assembly/catalog.py",
+      "bytes": 3524,
+      "sha256": "3c4a5efddacd6c75490576ae1c3c7eafdc82115c1c8b594d42e3383afe29b1c4"
+    },
+    {
+      "path": "src/ibme/assembly/registry.py",
+      "bytes": 32774,
+      "sha256": "8962f66bcfd2aaf1d66233cd1380338e3b808cfabec5ff19e6bcc26b00c40389"
+    },
+    {
+      "path": "src/ibme/cli.py",
+      "bytes": 53389,
+      "sha256": "53ad7f3d4cd87d6fe596bc83f334b17d2517abaa7c5f151642bd9404e156f7cd"
+    },
+    {
+      "path": "src/ibme/cli_import.py",
+      "bytes": 8547,
+      "sha256": "754d5ab693b80243646bdf26df316884d5e3b95cdd842f39d05f89fe910e0b68"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/__init__.py",
+      "bytes": 787,
+      "sha256": "6cd0138157344c281b051a260c11daf0e9300b822539085bf737e3e4a8cb1056"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/backend.py",
+      "bytes": 11587,
+      "sha256": "b211d917cd14319fa50290fc5d3f8dbbebc88d8d8702c921adc818403cc83f6a"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/hashing.py",
+      "bytes": 2748,
+      "sha256": "fce854050c71d17440d02404ca0a315ffddc3b8daa5326a1dbe4289b1a4335cf"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/math.py",
+      "bytes": 6673,
+      "sha256": "26121cd7483cdfcd269e1bff4e78a1d803b65283d4c26493305d117087acbd7d"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/native.py",
+      "bytes": 16154,
+      "sha256": "ac72004d48fc00a97ffdb4dd7d22ca00bbfaeb17115df0e83304b3faeb9a1620"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/native/README.md",
+      "bytes": 3324,
+      "sha256": "dfd30842a79ea67d27bccd4c6ed8eb1e3cfcaff14c8edb21f061527fb1d94174"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/native/gaussian.cpp",
+      "bytes": 18614,
+      "sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/objects.py",
+      "bytes": 13852,
+      "sha256": "96d9f96217c451064cd20677361f227fc16a8770f41e8d99d1683e5a363f9798"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/parameter_audit.py",
+      "bytes": 15020,
+      "sha256": "c85430f96acfb7949f8e056a97a5ccfae914edbef72ab3f743d65c209d65b207"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/params.py",
+      "bytes": 10937,
+      "sha256": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/perturbation.py",
+      "bytes": 11698,
+      "sha256": "2dd66da0c7cfb0475014c5fe5547c1f626c9a0b577ea4ac24a981572135797d2"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/service.py",
+      "bytes": 21740,
+      "sha256": "93dd67215ff071f62dc9c74e3f78178e41486bd9b324ef09c3c67b036ee0f17c"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 854,
+      "sha256": "b978e20a95ce7d27c9506dee7f69dfb316c871765872a113ecb4e302d90614a7"
+    },
+    {
+      "path": "tests/test_ci_catalog.py",
+      "bytes": 7365,
+      "sha256": "0b6f69870f101449cb566c6e7d755d7f8bd456d2a9f70306a260fcd81fb9fca5"
+    },
+    {
+      "path": "tests/test_cli_role_import.py",
+      "bytes": 27623,
+      "sha256": "2b65e5ee75879723e7835c01d5e5357a252fd0ccb3788aa6c1018d74176ebb6d"
+    },
+    {
+      "path": "tests/test_project_admission.py",
+      "bytes": 5500,
+      "sha256": "521e546c871758095624a918b937fb865610f48317613544ed4bcb9d77bdfc82"
+    },
+    {
+      "path": "tests/test_wang_pw_target_adoption.py",
+      "bytes": 13934,
+      "sha256": "8bdfb654f46be793a23d9275c042d215d9ef41acd6114b40631f7aa4ad764fee"
+    },
+    {
+      "path": "tests/test_wang_pw_target_audit.py",
+      "bytes": 13031,
+      "sha256": "5799a1e7d2794682ce2aaa377175b34a01cc70245b872350268dde6acc130147"
+    },
+    {
+      "path": "tests/test_wang_pw_target_backend.py",
+      "bytes": 5835,
+      "sha256": "6ecf20c29568828cc68bf11c8c828ea8c10cbff720f0ff22cdba145c0fffd542"
+    },
+    {
+      "path": "tests/test_wang_pw_target_cli.py",
+      "bytes": 2438,
+      "sha256": "b16af42c648b58838a83b635267200397cf5baa42400fef302491b98eb37471d"
+    },
+    {
+      "path": "tests/test_wang_pw_target_combination.py",
+      "bytes": 4887,
+      "sha256": "3b8dc003ed21da8545bf1690bce647dd18e4ac6995364f3798bc5237503b9221"
+    },
+    {
+      "path": "tests/test_wang_pw_target_combination_process.py",
+      "bytes": 7784,
+      "sha256": "2589b0e01bfd6f4cd1cd334e559ec7477100fc168ad621b3ba94f66055500b7c"
+    },
+    {
+      "path": "tests/test_wang_pw_target_component_budgets.py",
+      "bytes": 8404,
+      "sha256": "24492dab9e173028a7bf0c92da08fd11fbdfbc47c194c10ff774964c00ee1faf"
+    },
+    {
+      "path": "tests/test_wang_pw_target_continuation.py",
+      "bytes": 37109,
+      "sha256": "d188f9e5e7683618e05939321bd03e90bcd0d1532795e38cbe0738973af525a5"
+    },
+    {
+      "path": "tests/test_wang_pw_target_diagnostics.py",
+      "bytes": 15985,
+      "sha256": "52afa24f2ad8fe3f603c309a38262a5a8fa187b037d1fdc630e07a2ecb2222d2"
+    },
+    {
+      "path": "tests/test_wang_pw_target_environment.py",
+      "bytes": 13987,
+      "sha256": "93ca9a553773e85882d25674b9d133e189d9e2a7a208d4417d850748eacd6645"
+    },
+    {
+      "path": "tests/test_wang_pw_target_independent.py",
+      "bytes": 11090,
+      "sha256": "a84664b941d04f4b8e4f541e2815033e59307c88cf4704bf1f8bf59b90b6ab09"
+    },
+    {
+      "path": "tests/test_wang_pw_target_independent_diagnostics.py",
+      "bytes": 7941,
+      "sha256": "193f65f89dfc3ae35195eac041ba6e28fe9b04f55e4c71907501d497075b688d"
+    },
+    {
+      "path": "tests/test_wang_pw_target_key_resource_audit.py",
+      "bytes": 11562,
+      "sha256": "6dbe5d25e22c0891b92dd37d7a0b8ff45a789bf38da5bcbfc64794b3baa08cd7"
+    },
+    {
+      "path": "tests/test_wang_pw_target_native.py",
+      "bytes": 7408,
+      "sha256": "6f1bc4c0edd22d20c79c6ecb8642e8078c462de21e96cf941151c0117fe35579"
+    },
+    {
+      "path": "tests/test_wang_pw_target_native_reasons.py",
+      "bytes": 7020,
+      "sha256": "40a7e8b8e5cc6e544ef18b62770a2df7ed4fad0e7fea5c4a82ebbfe50683ebb4"
+    },
+    {
+      "path": "tests/test_wang_pw_target_objects.py",
+      "bytes": 6824,
+      "sha256": "2e454d308ae0d0a5d06bf7f5b9dbcd82dde4084b0517b9c718bcbeb465a7a12c"
+    },
+    {
+      "path": "tests/test_wang_pw_target_parameter_planning.py",
+      "bytes": 7057,
+      "sha256": "a19bed09f7755477f99c7c756b786acbc36953e4c0784d4dc95ef8e39671103d"
+    },
+    {
+      "path": "tests/test_wang_pw_target_params.py",
+      "bytes": 4572,
+      "sha256": "8a360c8388bb5604e3a44bbd925bee3ed3f478af17925ad666f849fabf684f2a"
+    },
+    {
+      "path": "tests/test_wang_pw_target_perturbation.py",
+      "bytes": 10058,
+      "sha256": "1f898a765fb30499c196dd920cf3a201b86785927d2643c3bc59a5e1ae80a25e"
+    },
+    {
+      "path": "tests/test_wang_pw_target_qr.py",
+      "bytes": 2393,
+      "sha256": "64bd7120110bf4cf4daacb58d3cc958a5ad4c11c844f9e47e082791a131b51e1"
+    },
+    {
+      "path": "tests/test_wang_pw_target_random_failures.py",
+      "bytes": 6660,
+      "sha256": "4e97422649c003f87a9c8ddbf8a7c417f0fc87761646858fdb71da92b86f3aff"
+    },
+    {
+      "path": "tests/test_wang_pw_target_registration.py",
+      "bytes": 13430,
+      "sha256": "0ff60c734df012d3a83464a79191dfbb184f2e4c2f575a01ae610b943c7ecebf"
+    },
+    {
+      "path": "tests/test_wang_pw_target_reused_cli.py",
+      "bytes": 10350,
+      "sha256": "035e3154ac39e7c9ccf35820325632db9454693b1d4545f18a86d61235713456"
+    },
+    {
+      "path": "tests/test_wang_pw_target_reused_combination.py",
+      "bytes": 9473,
+      "sha256": "9297d7a18a02d397dea202407bf1f6c6ec01ccf492be0c4f63148dd320667d64"
+    },
+    {
+      "path": "tests/test_wang_pw_target_reused_service.py",
+      "bytes": 5721,
+      "sha256": "1508efeed5d0d5200598b7d21b6c2fb873cf1698072e664abd7e26280f2f64f1"
+    },
+    {
+      "path": "tests/test_wang_pw_target_runner.py",
+      "bytes": 10883,
+      "sha256": "9f7b8d7cd8fd9ab66449b808b823244d4cec437a4946a8d58cd8258697809187"
+    },
+    {
+      "path": "tests/test_wang_pw_target_screen.py",
+      "bytes": 4626,
+      "sha256": "6da084cfb921b82036c4022434fecb140eb60308099e2cbe66c6ddd43437c210"
+    },
+    {
+      "path": "tests/test_wang_pw_target_service.py",
+      "bytes": 23635,
+      "sha256": "219f137a56244d81fb3a15c529e124047f6f11e1b07fe7966b082156d1a1f664"
+    }
+  ]
+}

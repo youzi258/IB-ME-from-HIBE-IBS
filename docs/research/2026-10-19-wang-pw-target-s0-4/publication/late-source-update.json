@@ -1,0 +1,76 @@
+{
+  "schema": "IBME/WANG-PW-LATE-SOURCE-UPDATE/1",
+  "original_snapshot_base": "2d5d2bf8bc09d9c775c533392feab4591c3a2eaf",
+  "source_head": "ffe01574f8e8161a9b2ca38052f58e2262c9e4a9",
+  "additional_source_commits": [
+    "3d911c81850670f994d81e0305c57a238a68e43d",
+    "ffe01574f8e8161a9b2ca38052f58e2262c9e4a9"
+  ],
+  "source_files": [
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/README_zh-CN.md",
+      "source_git_sha256": "694a5e7a63967db98af12b0aaee2c4f193d4614d9c9c613902cd02c21d58e43b"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-combination.json",
+      "source_git_sha256": "c15ce43a1af39c4b06b8af058c53e0753513aaeee6ab37334a29a601e94109be"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-generic-cli.json",
+      "source_git_sha256": "33e37de289d715edbedbe7feee9d9f1929cbc86d614b746aaccc3762285dcb1f"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-public-verifier.json",
+      "source_git_sha256": "ab47ae997117b8d6261d86e2ee3a5f612db3485b1f8fd40ea38f348bfb2c1c11"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-adopt.json",
+      "source_git_sha256": "91c4a54003209793a6a2c170049e9545aa7f232dc71f249fb92975589a7395e6"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-recover.json",
+      "source_git_sha256": "19bfc8af2bcaae9bffdb1483e248cf3095d7415e848535d9e7c38690aad5be3d"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-1.json",
+      "source_git_sha256": "bccd941315127146362f416cc4263e3a3eea48f8fd020b9422b9a658de7dbd65"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-2.json",
+      "source_git_sha256": "5e22d3c9f3d26a93ebad94840307af5c3b41e13477ba9b5fb9a18bf74b421900"
+    },
+    {
+      "path": "docs/research/2026-10-19-wang-pw-target-s0-4/solution-perturbation-route.md",
+      "source_git_sha256": "9eeb5d75c4455a73e58d786ac2f007e2d7a538bd151800661414a4d676e2895c"
+    },
+    {
+      "path": "src/ibme/ibs/wang_pw_target/perturbation.py",
+      "source_git_sha256": "c6ba4c2b497e857a0b1602f220f0fb069d383b9de908cab2ef2e56ef6f37c50d"
+    },
+    {
+      "path": "tests/test_wang_pw_target_perturbation.py",
+      "source_git_sha256": "1444d08923f2a6e2c43be04bc702263f69584487cc30931ea5f8946cc3687838"
+    }
+  ],
+  "tested_source_comparison": [
+    {
+      "path": "src/ibme/ibs/wang_pw_target/perturbation.py",
+      "ast_equal": true,
+      "tested_git_sha256": "2dd66da0c7cfb0475014c5fe5547c1f626c9a0b577ea4ac24a981572135797d2",
+      "normalization": "retain the tested LF file and one final newline"
+    },
+    {
+      "path": "tests/test_wang_pw_target_perturbation.py",
+      "ast_equal": true,
+      "tested_git_sha256": "1f898a765fb30499c196dd920cf3a201b86785927d2643c3bc59a5e1ae80a25e",
+      "normalization": "retain the tested LF file and one final newline"
+    }
+  ],
+  "public_success_receipts_now_included": 14,
+  "saved_receipts_bind_commit_source_and_native": false,
+  "source_history_review": {
+    "git_blobs_scanned": 340,
+    "private_key_headers_found": [],
+    "private_or_runtime_binary_paths_found": []
+  }
+}

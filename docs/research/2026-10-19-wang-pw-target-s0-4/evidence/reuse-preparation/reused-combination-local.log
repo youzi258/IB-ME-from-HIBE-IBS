@@ -1,0 +1,11 @@
+Command (existing local WSL Sage environment and prebuilt native library):
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:. IBME_WANG_PW_TARGET_NATIVE="$HOME/.cache/ibme-native-tools/wang-pw-target-s0-4/libibme_wang_pw_gaussian.so" ~/miniconda3/envs/sage/bin/python -B -m pytest -q tests/test_wang_pw_target_reused_combination.py
+
+Actual pytest stdout, exit code 0:
+....                                                                     [100%]
+4 passed in 64.83s (0:01:04)
+
+This completed invocation did not request JUnit output. It was not repeated solely for a JUnit artifact.
+The first two tests exercise real LATTE author parameters plus unsafe debug Wang n=2/q=257/s0=4.
+The latter two tests inject child failure receipts and killed-process output locally.
+No server connection or target-size run was performed by this subtask.

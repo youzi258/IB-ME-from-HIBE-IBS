@@ -1,0 +1,16 @@
+cffi==2.1.1
+cryptography==50.0.2
+gmpy2==2.3.2
+# Editable install with no version control (ibme==0.1.0)
+-e /root/workspace/wang-pw-s0-4-20261019/repo
+iniconfig==2.3.1
+numpy==2.5.4
+packaging==26.3
+pluggy==1.7.0
+psutil==7.2.2
+pycparser==3.11
+Pygments==2.21.0
+pytest==9.1.1
+scipy==1.18.1
+setuptools==84.0.0
+wheel==0.48.0

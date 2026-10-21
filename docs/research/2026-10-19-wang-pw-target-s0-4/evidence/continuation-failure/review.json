@@ -1,0 +1,115 @@
+{
+  "automation_status": "PAUSED",
+  "backend_admitted": false,
+  "beta_ge_q_estimator_rejection_preserved": true,
+  "child_duration_seconds": 1768.9374840540004,
+  "child_returncode": 1,
+  "controller": {
+    "deployed": false,
+    "executed": false,
+    "implementation_commit": "401b73548524ab6134f3f510a89c726513c1c31b",
+    "public_test_log_processing": {
+      "note": "Original mixed-encoding WSL launcher warnings retained in ignored outputs; public log begins at pytest progress.",
+      "omitted_launcher_prefix_bytes": 199,
+      "original_raw_log_sha256": "6ab4484d798f3823a8f291f8e41b749cb5a1f5190be787ab14860c5ab5e32eea",
+      "pytest_result_bytes_preserved": true
+    },
+    "source_binding": {
+      "experiments/research/wang_pw_target/run_reused_continuation.py": {
+        "bytes": 40349,
+        "sha256": "cb4e6ffc86e3715a9a9c4fe96b85b4d25001fa80cf6527880590bcd90e4e547b"
+      },
+      "tests/test_wang_pw_target_continuation.py": {
+        "bytes": 37109,
+        "sha256": "d188f9e5e7683618e05939321bd03e90bcd0d1532795e38cbe0738973af525a5"
+      }
+    },
+    "test_command": "wsl.exe bash -lc 'PYTHONPATH=src:. ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider --junitxml=build/outputs/wang-pw-continuation-controller-2026-10-20/junit.xml tests/test_wang_pw_target_continuation.py' 2>&1 | Tee-Object -FilePath build/outputs/wang-pw-continuation-controller-2026-10-20/pytest.log",
+    "test_environment": "Local prescribed WSL Sage; public fixtures only, no target root or sampler execution",
+    "test_working_directory": "C:/Users/A/.codex/worktrees/wang-pw-complete-s0-4/IB-ME-from-HIBE-IBS",
+    "tests": {
+      "errors": 0,
+      "failures": 0,
+      "junit_seconds": 4.51,
+      "passed": 84,
+      "skipped": 0
+    },
+    "verification_script_sha256": "51ea6bac64004b0e0ed1e604087cb052481dedee7dc38161e349ec67cfc24012"
+  },
+  "cross_version_continuation": true,
+  "failure_location_established": false,
+  "failure_type": "SamplingError",
+  "finished_utc": "2026-10-20T04:29:04.767+00:00",
+  "gaussian": "C++ MPFR256 finite discrete Gaussian, 192-bit weights, 20-sigma window, 4096 proposals; floating QR/centers remain research approximations",
+  "identity_bytes": 64,
+  "live_processes_after_cleanup": 0,
+  "message_bytes": 32,
+  "new_signature_output_present": false,
+  "new_wang_identity_keys": 0,
+  "new_wang_roots": 0,
+  "nist_security_category": null,
+  "original_requested_lifecycle_complete": false,
+  "original_source_commit": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+  "parameters": {
+    "gaussian_tail_sigma": 20.0,
+    "identity_max_bytes": 256,
+    "internal_id_bits": 256,
+    "internal_msg_bits": 256,
+    "mass_bits": 192,
+    "max_extract_attempts": 1,
+    "max_gaussian_attempts": 4096,
+    "max_setup_attempts": 1,
+    "max_sign_attempts": 1,
+    "message_max_bytes": 4096,
+    "n": 512,
+    "name": "wang-pw-target-s0-4",
+    "precision_bits": 256,
+    "q": 4294967291,
+    "root_gs_limit": 512,
+    "root_width": 4.0,
+    "salt_bytes": 32,
+    "schema": "IBME/WANG-PW-TARGET-PARAMS/1",
+    "smoothing_error_bits": 128,
+    "smoothing_multiplier": 8,
+    "threads": 16,
+    "user_gs_limit": 1048576
+  },
+  "parameters_are_formal": false,
+  "private_material_collected": false,
+  "public_verifier_executed": false,
+  "qr_completion_established": false,
+  "readonly_diagnosis": {
+    "exact_failure_reason_known": false,
+    "native_allocation_failure_excluded": false,
+    "native_failure_code_known": false,
+    "native_std_exception_including_bad_alloc_maps_to_code": 6,
+    "possible_sampling_error_sources": [
+      "numerical-user-gs-gate",
+      "delegated-public-matrix-mismatch",
+      "random-source-type-or-length",
+      "native-library-validation-or-gpv-error",
+      "signature-equation-or-norm-gate"
+    ],
+    "source_binding": {
+      "experiments/research/wang_pw_target/sign_independent.py": "80ac0de70e8e79446bb9ceb16c4c5e5c861f58144afec9bc9493e4206f39b491",
+      "src/ibme/ibs/wang_pw_target/backend.py": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548",
+      "src/ibme/ibs/wang_pw_target/native.py": "496464eadeb112f8bcb8000b70e618bad5398564eead0ed2a7a56beefe1bd900",
+      "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    },
+    "suggested_future_change": "Fixed public stage/reason/native return codes only; no raw exception strings, tracebacks, salts, coefficients, secret statistics or parameter changes. No diagnostic rerun was performed."
+  },
+  "requested_lifecycle_complete": false,
+  "rss_or_time_limit_exceeded": false,
+  "sampled_tree_rss_peak_bytes": 60600950784,
+  "sampling_mode": "production-csprng",
+  "schema": "IBME/WANG-PW-CONTINUATION-FAILURE-REVIEW/1",
+  "security_claim": "none",
+  "signature_attempts": 1,
+  "source_commit": "24f820723c65617fd202c636a1d3ad366d456359",
+  "stage": "independent-1",
+  "started_utc": "2026-10-20T03:59:35.432+00:00",
+  "status": "failed",
+  "subsequent_stages_executed": [],
+  "supervisor_duration_seconds": 1769.3346507900005,
+  "supervisor_exit_code": 1
+}

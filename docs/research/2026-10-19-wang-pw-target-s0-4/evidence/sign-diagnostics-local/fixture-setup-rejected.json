@@ -1,0 +1,20 @@
+{
+  "algorithm_or_parameter_gate_changed": false,
+  "claim": "The audit was not a first-fixture pass. The rejected debug fixture is preserved; only the known existing lifecycle fixture passed the old/new parity comparison.",
+  "current_implementation_reached": false,
+  "exception_message": "numerical Gram-Schmidt exceeds the fixed public gate",
+  "exception_type": "SamplingError",
+  "fixture_source": "new local deterministic debug fixture; not a target experiment",
+  "implementation": "af11011 baseline Backend.setup",
+  "issuer_seed_ascii": "diagnostic-parity-issuer",
+  "method_after_rejection": "use the existing test_wang_pw_target_backend.py lifecycle seed target-lifecycle, identity alice, and standalone-signer restored signer; debug threads=2 as in that fixture",
+  "n": 2,
+  "native_rebuilt": false,
+  "q": 257,
+  "s0": 4.0,
+  "schema": "IBME-WANG-PW-DIAGNOSTIC-FIXTURE-REJECTION-v1",
+  "server_contacted": false,
+  "stage": "setup numerical GS gate",
+  "target_root_generated": false,
+  "threads": 1
+}

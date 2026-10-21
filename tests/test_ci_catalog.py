@@ -21,8 +21,9 @@ def test_all_nineteen_routes_match_catalog_and_ci():
     assert all(r["execution"] == "not_executed" for r in result["routes"])
     admitted={r["id"] for r in result["routes"] if r["backend_admitted"]}
     assert admitted == {"latte","lai-ideal-hibe","luo-module",
-                        "srgg2025","sageloli-rsis","cert-ml-dsa","cert-falcon"}
-    assert result["admitted_counts"] == {"hibe":2,"ibs":5}
+                        "srgg2025","sageloli-rsis","cert-ml-dsa","cert-falcon",
+                        "wang-pw"}
+    assert result["admitted_counts"] == {"hibe":2,"ibs":6}
     assert all(r["security_claim"] == ("secure" if r["backend_admitted"] else "none")
                for r in result["routes"])
     assert not any(r["id"] in ("mock", "sis") for r in result["routes"])

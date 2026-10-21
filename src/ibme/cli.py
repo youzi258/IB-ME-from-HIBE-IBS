@@ -7,6 +7,7 @@
     matrix [--json]                 # static checks, no algorithm execution
     setup --hibe abb10 --ibs sis --state <dir>
     setup --params education --state <dir> [--mock]
+    import-role --suite-file <json> --public-key-file <pk> (--sender-key-file <ek> | --receiver-key-file <dk>) --state <new-dir>
     issue-sender-key <NAME> --state <dir> [--mock]
     issue-receiver-key <NAME> --state <dir> [--mock]
     encrypt --sender <NAME> --receiver <NAME> --state <dir> --in <file> [--out <file>] [--mock]
@@ -21,6 +22,8 @@
   ``<state>/state.json`` 读取（见下）；
 * 含控制字符或其它不可打印字符（换行、制表符、NUL、孤立代理对等）
   的身份被拒绝；空格、中文、重音字母、emoji 等可打印 Unicode 均允许。
+* 显式 ``--identity-encoding hex`` 接受非空、小写、无空白的规范 hex；
+  解码后的原始身份字节仍按相同容量检查，不重新解释为 UTF-8。
 
 文件名与 state 策略（M3 整改）：
 
@@ -108,6 +111,7 @@ _STATE_VERSION = 1
 _SELECTED_STATE_VERSION = 2
 _STATE_OBJECT_MAGIC = b"IBME:CLI-STATE:v2\x00"
 _STATE_OBJECT_KINDS = {"mpk": b"P", "msk": b"M", "sender": b"S", "receiver": b"R"}
+_IMPORTED_ROLE_ORIGIN = "imported-canonical-role-v1"
 
 #: 身份摘要取 SHA-256 hex 的前 16 个字符（64 bit，用于派生文件名）。
 _DIGEST_HEX_CHARS = 16
@@ -119,18 +123,26 @@ _DIGEST_HEX_CHARS = 16
 
 
 def _identity_digest(identity: bytes) -> str:
-    """身份 UTF-8 字节的 SHA-256 前 16 hex（文件名派生 + 输出对号用）。"""
+    """原始身份字节的 SHA-256 前 16 hex（文件名派生 + 输出对号用）。"""
     return hashlib.sha256(identity).hexdigest()[:_DIGEST_HEX_CHARS]
 
 
-def _parse_identity(text: str, *, max_bytes: int, role: str) -> bytes:
-    """UTF-8 身份字符串 -> 规范字节串（SPEC §1：进密码层前必须是 bytes）。
+def _parse_identity(text: str, *, max_bytes: int, role: str, encoding: str = "utf8") -> bytes:
+    """命令行身份 -> 原始字节串（SPEC §1：进密码层前必须是 bytes）。
 
     检查：非空；不含控制/不可打印字符（``str.isprintable``，拒绝换行、
     制表符、NUL、孤立代理对等；空格与可打印 Unicode 均合法）；UTF-8
     字节长度不超过 ``max_bytes``（来自 state 元数据记录的 HIBE
-    ``Params.identity_bytes``，SPEC §2 的最大字节长度语义）。
+    ``Params.identity_bytes``，SPEC §2 的最大字节长度语义）。显式 hex
+    输入须为无空白的小写规范编码，长度门应用于解码后的字节。
     """
+    if encoding not in ("utf8", "hex"):
+        raise ValueError("unknown identity encoding")
+    if encoding == "hex":
+        if (type(text) is not str or not text or len(text) % 2
+                or len(text) > 2 * max_bytes or any(c not in "0123456789abcdef" for c in text)):
+            raise ValueError(f"{role} must be nonempty canonical lowercase hex within identity capacity")
+        return bytes.fromhex(text)
     if not isinstance(text, str):
         raise ValueError(
             f"{role} must be a UTF-8 string, got {type(text).__name__}"
@@ -241,6 +253,12 @@ def _load_state_meta(state: Path) -> dict:
     except json.JSONDecodeError as exc:
         raise ValueError(f"corrupt state metadata {path}: {exc}") from exc
     if isinstance(meta, dict) and type(meta.get("version")) is int and meta["version"] == _SELECTED_STATE_VERSION:
+        if meta.get("state_origin") == _IMPORTED_ROLE_ORIGIN:
+            # A role import has no master. Its existing pending path guards
+            # publication of all files, including metadata's final window.
+            check_master_ready(state / _MSK_FILE)
+            if os.path.lexists(state / _MSK_FILE):
+                raise ValueError("imported role state must not contain a master file")
         return _validate_selected_meta(meta)
     if not isinstance(meta, dict) or type(meta.get("version")) is not int or meta.get("version") != _STATE_VERSION:
         found = meta.get("version") if isinstance(meta, dict) else None
@@ -267,9 +285,10 @@ def _load_state_meta(state: Path) -> dict:
     return meta
 
 
-def _selected_metadata(suite, report, public_sha256: str) -> dict:
+def _selected_metadata(suite, report, public_sha256: str, *, state_origin=None,
+                       imported_role=None, imported_identity_sha256=None) -> dict:
     suite_data = suite.to_dict()
-    return {
+    meta = {
         "version": _SELECTED_STATE_VERSION,
         "backend": "selected-suite",
         "suite": suite.to_dict(),
@@ -284,6 +303,18 @@ def _selected_metadata(suite, report, public_sha256: str) -> dict:
         "backend_admitted": suite_data["backend_admitted"],
         "parameters_are_formal": suite_data["parameters_are_formal"],
     }
+    if state_origin is not None:
+        if state_origin != _IMPORTED_ROLE_ORIGIN or imported_role not in ("sender", "receiver"):
+            raise ValueError("unknown role-import provenance")
+        if (type(imported_identity_sha256) is not str or len(imported_identity_sha256) != 64
+                or any(c not in "0123456789abcdef" for c in imported_identity_sha256)):
+            raise ValueError("invalid imported identity digest")
+        meta.update(state_origin=state_origin, imported_role=imported_role,
+                    imported_identity_sha256=imported_identity_sha256,
+                    master_persisted_before_key_publication=False)
+    elif imported_role is not None or imported_identity_sha256 is not None:
+        raise ValueError("role-import fields require explicit provenance")
+    return meta
 
 
 def _validate_selected_meta(meta: dict) -> dict:
@@ -297,7 +328,11 @@ def _validate_selected_meta(meta: dict) -> dict:
     if (type(public_digest) is not str or len(public_digest) != 64
             or any(c not in "0123456789abcdef" for c in public_digest)):
         raise ValueError("invalid public_sha256 in selected state")
-    expected = _selected_metadata(suite, report, public_digest)
+    provenance = {}
+    if "state_origin" in meta:
+        provenance = dict(state_origin=meta["state_origin"], imported_role=meta.get("imported_role"),
+                          imported_identity_sha256=meta.get("imported_identity_sha256"))
+    expected = _selected_metadata(suite, report, public_digest, **provenance)
     # JSON equality is type-sensitive here (Python dict equality accepts True=1).
     if json.dumps(meta, sort_keys=True) != json.dumps(expected, sort_keys=True):
         raise ValueError("selected state metadata differs from its frozen suite; no fallback")
@@ -663,6 +698,11 @@ def cmd_setup(args) -> int:
         return _setup_unlocked(args, proto, hibe_params, ibs_params, signature_format)
 
 
+def cmd_import_role(args) -> int:
+    from ibme.cli_import import import_role
+    return import_role(args, cli=sys.modules[__name__])
+
+
 def _setup_unlocked(args, proto, hibe_params, ibs_params, signature_format) -> int:
     if args.params == _RESEARCH_PRESET and any((args.state / name).exists() for name in (_META_FILE, _MPK_FILE, _MSK_FILE)):
         raise ValueError("research setup requires a new state directory; existing keys will not be overwritten")
@@ -703,13 +743,32 @@ def cmd_issue_sender_key(args) -> int:
 def _issue_sender_key_unlocked(args) -> int:
     meta = _load_state_meta(args.state)
     identity = _parse_identity(
-        args.name, max_bytes=meta["identity_bytes"], role="sender identity"
+        args.name, max_bytes=meta["identity_bytes"], role="sender identity",
+        encoding=getattr(args, "identity_encoding", "utf8")
     )
     digest = _identity_digest(identity)
+    if meta.get("state_origin") == _IMPORTED_ROLE_ORIGIN:
+        from ibme.cli_import import restore_imported_role
+        return restore_imported_role(args.state, meta, identity, "sender", mock=args.mock,
+                                     cli=sys.modules[__name__])
     check_master_ready(args.state / _MSK_FILE)
     msk, proto, classes = _load_msk(args.state, args.mock)
     out = _sender_key_path(args.state, identity)
     selected = meta["version"] == _SELECTED_STATE_VERSION
+    # The target raw KeyExt intentionally remains stateless. At this CLI
+    # service boundary an existing committed key is the fixed issuance record.
+    # Its absence after uncertain completion is handled by the master pending
+    # transaction; a damaged existing file never triggers fresh sampling.
+    if selected and meta["suite"]["ibs"] == "wang-pw-target" and out.exists():
+        existing = SenderKey.from_bytes(_read_state_object(out, meta, "sender"), classes["sk"])
+        if existing.identity != identity:
+            raise ValueError("existing target sender file has the wrong identity")
+        _, _, runtime = _runtime_for_state(meta, args.mock)
+        public = PublicKey.from_bytes(_read_state_object(args.state / _MPK_FILE, meta, "mpk"),
+                                      classes["hpk"], classes["ipk"])
+        runtime.validate_sender(public, existing)
+        print(f"reused committed sender key: identity={args.name!r} digest={digest}")
+        return 0
     if selected or meta.get("params_preset") == _RESEARCH_PRESET:
         master_path = args.state / _MSK_FILE
         snapshot = (lambda: _state_object(msk.to_bytes(), meta, "msk")) if selected else msk.to_bytes
@@ -722,8 +781,8 @@ def _issue_sender_key_unlocked(args) -> int:
         encoded = ek.to_bytes()
         _atomic_write_state(out, encoded)
     print(
-        f"issued sender key: identity={args.name!r} utf8={len(identity)}B "
-        f"digest={digest} (sha256[:{_DIGEST_HEX_CHARS}] of UTF-8 bytes)"
+        f"issued sender key: identity={args.name!r} bytes={len(identity)}B "
+        f"digest={digest} (sha256[:{_DIGEST_HEX_CHARS}] of identity bytes)"
     )
     print(f"  wrote {out} ({len(encoded)} bytes)")
     return 0
@@ -737,9 +796,14 @@ def cmd_issue_receiver_key(args) -> int:
 def _issue_receiver_key_unlocked(args) -> int:
     meta = _load_state_meta(args.state)
     identity = _parse_identity(
-        args.name, max_bytes=meta["identity_bytes"], role="receiver identity"
+        args.name, max_bytes=meta["identity_bytes"], role="receiver identity",
+        encoding=getattr(args, "identity_encoding", "utf8")
     )
     digest = _identity_digest(identity)
+    if meta.get("state_origin") == _IMPORTED_ROLE_ORIGIN:
+        from ibme.cli_import import restore_imported_role
+        return restore_imported_role(args.state, meta, identity, "receiver", mock=args.mock,
+                                     cli=sys.modules[__name__])
     out = _receiver_key_path(args.state, identity)
     selected = meta["version"] == _SELECTED_STATE_VERSION
     research = meta.get("params_preset") == _RESEARCH_PRESET
@@ -781,8 +845,8 @@ def _issue_receiver_key_unlocked(args) -> int:
         action = "issued"
     encoded = _state_object(dk.to_bytes(), meta, "receiver") if selected else dk.to_bytes()
     print(
-        f"{action} receiver key: identity={args.name!r} utf8={len(identity)}B "
-        f"digest={digest} (sha256[:{_DIGEST_HEX_CHARS}] of UTF-8 bytes)"
+        f"{action} receiver key: identity={args.name!r} bytes={len(identity)}B "
+        f"digest={digest} (sha256[:{_DIGEST_HEX_CHARS}] of identity bytes)"
     )
     print(f"  wrote {out} ({len(encoded)} bytes)")
     return 0
@@ -793,11 +857,16 @@ def cmd_encrypt(args) -> int:
     out = args.out or Path(str(args.in_path) + ".ibme-ct")
     _check_data_output(args.state, out)
     sender = _parse_identity(
-        args.sender, max_bytes=meta["identity_bytes"], role="sender identity"
+        args.sender, max_bytes=meta["identity_bytes"], role="sender identity",
+        encoding=getattr(args, "identity_encoding", "utf8")
     )
     receiver = _parse_identity(
-        args.receiver, max_bytes=meta["identity_bytes"], role="receiver identity"
+        args.receiver, max_bytes=meta["identity_bytes"], role="receiver identity",
+        encoding=getattr(args, "identity_encoding", "utf8")
     )
+    if meta.get("state_origin") == _IMPORTED_ROLE_ORIGIN:
+        from ibme.cli_import import require_imported_role
+        require_imported_role(meta, "sender", sender)
     proto, classes, _ = _runtime_for_state(meta, args.mock, legacy_baseline=args.legacy_baseline)
     pk = PublicKey.from_bytes(
         _read_state_object(args.state / _MPK_FILE, meta, "mpk"), classes["hpk"], classes["ipk"]
@@ -829,11 +898,16 @@ def _decrypt_unlocked(args) -> int:
     meta = _load_state_meta(args.state)
     _check_data_output(args.state, args.out)
     receiver = _parse_identity(
-        args.receiver, max_bytes=meta["identity_bytes"], role="receiver identity"
+        args.receiver, max_bytes=meta["identity_bytes"], role="receiver identity",
+        encoding=getattr(args, "identity_encoding", "utf8")
     )
     sender = _parse_identity(
-        args.sender, max_bytes=meta["identity_bytes"], role="sender identity"
+        args.sender, max_bytes=meta["identity_bytes"], role="sender identity",
+        encoding=getattr(args, "identity_encoding", "utf8")
     )
+    if meta.get("state_origin") == _IMPORTED_ROLE_ORIGIN:
+        from ibme.cli_import import require_imported_role
+        require_imported_role(meta, "receiver", receiver)
     proto, classes, runtime = _runtime_for_state(meta, args.mock, legacy_baseline=args.legacy_baseline)
     pk = PublicKey.from_bytes(
         _read_state_object(args.state / _MPK_FILE, meta, "mpk"), classes["hpk"], classes["ipk"]
@@ -913,6 +987,11 @@ def _add_selection(sub) -> None:
                      help="固定签名解码格式；可用值由所选 IBS 的 registry 描述符声明，不自动降级")
 
 
+def _add_identity_encoding(sub) -> None:
+    sub.add_argument("--identity-encoding", choices=("utf8", "hex"), default="utf8",
+                     help="默认可打印 UTF-8；hex 为小写、无空白的规范原始身份字节编码")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="ibme",
@@ -952,14 +1031,25 @@ def build_parser() -> argparse.ArgumentParser:
     _add_common(p)
     p.set_defaults(func=cmd_setup)
 
+    p = sub.add_parser("import-role", help="导入规范组合公钥与唯一角色密钥；无 master，不运行 Setup/Extract")
+    p.add_argument("--suite-file", type=Path, required=True, help="完整规范 SuiteConfig JSON")
+    p.add_argument("--public-key-file", type=Path, required=True, help="规范组合 PublicKey 文件")
+    role = p.add_mutually_exclusive_group(required=True)
+    role.add_argument("--sender-key-file", type=Path, help="规范组合 SenderKey 文件")
+    role.add_argument("--receiver-key-file", type=Path, help="规范组合 ReceiverKey 文件")
+    p.add_argument("--state", type=Path, required=True, help="全新或已有空状态目录；禁止覆盖")
+    p.set_defaults(func=cmd_import_role)
+
     p = sub.add_parser("issue-sender-key", help="为发送者身份签发 ek")
     p.add_argument("name", help=_IDENTITY_HELP)
     _add_common(p)
+    _add_identity_encoding(p)
     p.set_defaults(func=cmd_issue_sender_key)
 
     p = sub.add_parser("issue-receiver-key", help="为接收者身份签发 dk")
     p.add_argument("name", help=_IDENTITY_HELP)
     _add_common(p)
+    _add_identity_encoding(p)
     p.set_defaults(func=cmd_issue_receiver_key)
 
     p = sub.add_parser("encrypt", help="加密消息（--sender 的 ek + --receiver 身份）")
@@ -969,6 +1059,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--in", dest="in_path", type=Path, required=True, help="明文文件")
     p.add_argument("--out", dest="out", type=Path, default=None, help="密文输出文件")
     _add_common(p)
+    _add_identity_encoding(p)
     p.set_defaults(func=cmd_encrypt)
 
     p = sub.add_parser("decrypt", help="解密密文（--receiver 的 dk + --sender 身份）")
@@ -978,6 +1069,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--in", dest="in_path", type=Path, required=True, help="密文文件")
     p.add_argument("--out", dest="out", type=Path, default=None, help="明文输出文件（缺省写 stdout）")
     _add_common(p)
+    _add_identity_encoding(p)
     p.set_defaults(func=cmd_decrypt)
 
     return parser

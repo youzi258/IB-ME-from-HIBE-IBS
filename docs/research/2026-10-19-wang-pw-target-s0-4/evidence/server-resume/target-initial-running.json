@@ -1,0 +1,112 @@
+{
+  "_started_monotonic": 2429.39043104,
+  "active_phase": "setup",
+  "active_root": 1,
+  "backend_admitted": false,
+  "completed_repetitions": 0,
+  "environment": {
+    "blas_thread_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": "16",
+      "OPENBLAS_NUM_THREADS": "16"
+    },
+    "git_head": null,
+    "logical_cpus": 16,
+    "machine": "x86_64",
+    "native": {
+      "explicit_library": true,
+      "filename": "libibme_wang_pw_gaussian.so",
+      "library_sha256": "03334a57210aaabde668adeddd7b75ae8babdef472d9af5d5520c96fc77badf1",
+      "source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    },
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "packages": {
+      "cryptography": "50.0.2",
+      "gmpy2": "2.3.2",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2",
+      "pytest": "9.1.1",
+      "sage": "10.9",
+      "sagemath-standard": null,
+      "scipy": "1.18.1"
+    },
+    "physical_cpus": 8,
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "python": "3.12.15",
+    "ram_total_bytes": 132785688576
+  },
+  "expected_wire_bytes": {
+    "master_secret": 603980295,
+    "public_key": 67109371,
+    "signature": 393320,
+    "signing_key": 2214593131
+  },
+  "identity_bytes": 64,
+  "independent_production_roots": true,
+  "limitations": [
+    "root discrete-Gaussian and GPV routines are new finite implementations",
+    "floating QR/Gram-Schmidt and center arithmetic are not certified distributions",
+    "no new security reduction is undertaken by this experiment",
+    "n512 SIS-estimator beta failure remains a parameter limitation",
+    "functional/negative tests do not establish security or NIST strength"
+  ],
+  "message_bytes": 32,
+  "nist_security_category": null,
+  "parameters": {
+    "gaussian_tail_sigma": 20.0,
+    "identity_max_bytes": 256,
+    "internal_id_bits": 256,
+    "internal_msg_bits": 256,
+    "mass_bits": 192,
+    "max_extract_attempts": 1,
+    "max_gaussian_attempts": 4096,
+    "max_setup_attempts": 1,
+    "max_sign_attempts": 1,
+    "message_max_bytes": 4096,
+    "n": 512,
+    "name": "wang-pw-target-s0-4",
+    "precision_bits": 256,
+    "q": 4294967291,
+    "root_gs_limit": 512,
+    "root_width": 4.0,
+    "salt_bytes": 32,
+    "schema": "IBME/WANG-PW-TARGET-PARAMS/1",
+    "smoothing_error_bits": 128,
+    "smoothing_multiplier": 8,
+    "threads": 16,
+    "user_gs_limit": 1048576
+  },
+  "parameters_are_formal": false,
+  "private_state_requested": true,
+  "profile": "target",
+  "requested_repetitions": 1,
+  "roots": [
+    {
+      "index": 1,
+      "phases": [],
+      "restore_mode": "private-disk",
+      "status": "running"
+    }
+  ],
+  "run_id": "20261020T015348Z-a9a15825",
+  "sampling_mode": "production-csprng",
+  "schema": "IBME/WANG-PW-TARGET-LIFECYCLE/1",
+  "security_claim": "none",
+  "source_sha256": {
+    "experiments/research/wang_pw_target/README.md": "462d4c079f3f9fb3851b486e8b465cf464c1dc2aeb26ebac4b1f4be25c87620e",
+    "experiments/research/wang_pw_target/run_lifecycle.py": "fc9e2e6ee0e4e0490725ce4d12bf3d17c79ed4e11b7d275eccc10c87b2c1076c",
+    "experiments/research/wang_pw_target/sign_independent.py": "80ac0de70e8e79446bb9ceb16c4c5e5c861f58144afec9bc9493e4206f39b491",
+    "src/ibme/ibs/wang_pw_target/__init__.py": "6cd0138157344c281b051a260c11daf0e9300b822539085bf737e3e4a8cb1056",
+    "src/ibme/ibs/wang_pw_target/backend.py": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548",
+    "src/ibme/ibs/wang_pw_target/hashing.py": "fce854050c71d17440d02404ca0a315ffddc3b8daa5326a1dbe4289b1a4335cf",
+    "src/ibme/ibs/wang_pw_target/math.py": "3679740e5dc4d365fb9e45cbc87a0838429c98c7935ad4936f294de396f70936",
+    "src/ibme/ibs/wang_pw_target/native.py": "496464eadeb112f8bcb8000b70e618bad5398564eead0ed2a7a56beefe1bd900",
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+    "src/ibme/ibs/wang_pw_target/objects.py": "96d9f96217c451064cd20677361f227fc16a8770f41e8d99d1683e5a363f9798",
+    "src/ibme/ibs/wang_pw_target/parameter_audit.py": "66c4830b6a21e1d782ceaa1b446a6384e2388ff834fc475ec03345bf01c6710b",
+    "src/ibme/ibs/wang_pw_target/params.py": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59",
+    "src/ibme/ibs/wang_pw_target/service.py": "2f9786adffccac4f37777b59756dbe9281f4aa051836b06a36a7662e7aff8331"
+  },
+  "started_utc": "2026-10-20T01:53:48.019+00:00",
+  "status": "running"
+}

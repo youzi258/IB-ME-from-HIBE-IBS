@@ -1,0 +1,19 @@
+{
+  "backend_admitted": false,
+  "new_wang_identity_keys": 0,
+  "new_wang_roots": 0,
+  "nist_security_category": null,
+  "original_private_objects_unchanged": true,
+  "original_run_status": "failed",
+  "parameters_are_formal": false,
+  "rss_limit_gib": 110,
+  "schema": "IBME/WANG-PW-CONTINUATION-LAUNCH/1",
+  "seconds_limit": 21600,
+  "security_claim": "none",
+  "signature_attempts_authorized_for_this_stage": 1,
+  "source_commit": "24f820723c65617fd202c636a1d3ad366d456359",
+  "stage": "independent-1",
+  "started_utc": "2026-10-20T03:59:35.393924+00:00",
+  "supervisor_pid": 9425,
+  "threads": 16
+}

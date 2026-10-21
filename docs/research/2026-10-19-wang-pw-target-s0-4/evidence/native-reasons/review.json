@@ -1,0 +1,59 @@
+{
+  "acceptance_gate_modified": false,
+  "backend_admitted": false,
+  "caution": "The 278 regressions include existing small-parameter cryptographic tests; the new resource-reason tests use only public 1D inputs and fake returns. This is not n512 acceptance.",
+  "change": "code1 and exact constant native bytes select one of two public reasons; unknown text remains generic",
+  "command": "PYTHONPATH=src:. PYTHONDONTWRITEBYTECODE=1 IBME_WANG_PW_TARGET_NATIVE=<existing source-bound .so> OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider --junitxml=<new output>/regression.xml tests/test_wang_pw_target_native_reasons.py tests/test_wang_pw_target_diagnostics.py tests/test_wang_pw_target_independent_diagnostics.py tests/test_wang_pw_target_independent.py tests/test_wang_pw_target_backend.py tests/test_wang_pw_target_native.py tests/test_wang_pw_target_random_failures.py tests/test_wang_pw_target_qr.py tests/test_wang_pw_target_runner.py tests/test_wang_pw_target_continuation.py",
+  "errors": 0,
+  "failures": 0,
+  "implementation_commit": "420edbd",
+  "junit_duration_seconds": 33.416,
+  "junit_public_transformation": {
+    "public": {
+      "bytes": 46385,
+      "sha256": "92f52aca3167708d6589366a72dbc9945f7a1030ef8940d3bba71116f7a1d086"
+    },
+    "raw": {
+      "bytes": 46381,
+      "sha256": "848f5da739e7f29c72dfd7baecd808724d4d559cb2c983d0d1c90dca7e13621d"
+    },
+    "replacement": "one local hostname replaced by local-wsl",
+    "testcases_unchanged": true
+  },
+  "native_source_modified": false,
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "parameters_modified": false,
+  "random_strategy_modified": false,
+  "schema": "IBME/WANG-PW-NATIVE-REASONS-LOCAL-REGRESSION/1",
+  "security_claim": "none",
+  "server_attempts": 0,
+  "skipped": 0,
+  "sources": {
+    "src/ibme/ibs/wang_pw_target/native.py": {
+      "git_blob": {
+        "bytes": 15828,
+        "sha256": "f0c35b20fbf5090a447a92b2ead62a9535b9f50afbc565b2dd276c0654da5b28"
+      },
+      "git_commit": "420edbd",
+      "working_bytes": {
+        "bytes": 15828,
+        "sha256": "f0c35b20fbf5090a447a92b2ead62a9535b9f50afbc565b2dd276c0654da5b28"
+      }
+    },
+    "tests/test_wang_pw_target_native_reasons.py": {
+      "git_blob": {
+        "bytes": 7020,
+        "sha256": "40a7e8b8e5cc6e544ef18b62770a2df7ed4fad0e7fea5c4a82ebbfe50683ebb4"
+      },
+      "git_commit": "420edbd",
+      "working_bytes": {
+        "bytes": 7020,
+        "sha256": "40a7e8b8e5cc6e544ef18b62770a2df7ed4fad0e7fea5c4a82ebbfe50683ebb4"
+      }
+    }
+  },
+  "status": "passed-local-only",
+  "target_n512_signing_tested": false,
+  "tests": 278
+}

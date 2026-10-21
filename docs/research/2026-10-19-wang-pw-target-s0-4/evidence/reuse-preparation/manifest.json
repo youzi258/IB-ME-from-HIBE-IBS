@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "bytes": 9597,
+      "path": "reuse-and-random-tests.xml",
+      "sha256": "949807094342588a229b2fa8ebb68b8880c9d9aebbfe92e7af59f7d26d6d342f"
+    },
+    {
+      "bytes": 541,
+      "path": "reuse-child-failures.xml",
+      "sha256": "1c7a7a6344781188257737663c6932fc1157d802e6704776768c3699e6c62c93"
+    },
+    {
+      "bytes": 829,
+      "path": "reused-combination-local.log",
+      "sha256": "1c1803ed2f220e7c0515e4588e2c23ae4b53d79c3dc5e44d43188d59ddcf48eb"
+    },
+    {
+      "bytes": 2726,
+      "path": "review.json",
+      "sha256": "704f4d452306bb368c69c0ff34f20d7a050e3cb3e77ddb879b4503e87a654a62"
+    },
+    {
+      "bytes": 1237,
+      "path": "supervisor-running.json",
+      "sha256": "1165fb4951fffd857b5bdf89fc61d4590cf0ca51af3e3b3d328355e53da026ee"
+    },
+    {
+      "bytes": 5348,
+      "path": "target-running.json",
+      "sha256": "2f8d67f5a823051bfd5055efb06477ea4960ee3382480393e5caa3306b4eedea"
+    }
+  ],
+  "schema": "IBME/WANG-PW-EVIDENCE-MANIFEST/1",
+  "self_excluded": true
+}

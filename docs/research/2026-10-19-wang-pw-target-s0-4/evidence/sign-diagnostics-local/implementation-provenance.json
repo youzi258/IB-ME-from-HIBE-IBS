@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "git_bytes": 11260,
+      "git_sha256": "a6cf5642e01fbb22c6c26975544ed018d9b29981a4dd9a37b5c71b1050389d26",
+      "path": "src/ibme/ibs/wang_pw_target/backend.py",
+      "working_bytes": 11260,
+      "working_sha256": "a6cf5642e01fbb22c6c26975544ed018d9b29981a4dd9a37b5c71b1050389d26"
+    },
+    {
+      "git_bytes": 15402,
+      "git_sha256": "76662b9c9a0bf1343d620ac36c9cd87e6e6de0b9c7aaec3b8e97ba25d8db2d16",
+      "path": "src/ibme/ibs/wang_pw_target/native.py",
+      "working_bytes": 15402,
+      "working_sha256": "76662b9c9a0bf1343d620ac36c9cd87e6e6de0b9c7aaec3b8e97ba25d8db2d16"
+    },
+    {
+      "git_bytes": 6673,
+      "git_sha256": "26121cd7483cdfcd269e1bff4e78a1d803b65283d4c26493305d117087acbd7d",
+      "path": "src/ibme/ibs/wang_pw_target/math.py",
+      "working_bytes": 6673,
+      "working_sha256": "26121cd7483cdfcd269e1bff4e78a1d803b65283d4c26493305d117087acbd7d"
+    },
+    {
+      "git_bytes": 10937,
+      "git_sha256": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59",
+      "path": "src/ibme/ibs/wang_pw_target/params.py",
+      "working_bytes": 10937,
+      "working_sha256": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59"
+    },
+    {
+      "git_bytes": 18614,
+      "git_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+      "path": "src/ibme/ibs/wang_pw_target/native/gaussian.cpp",
+      "working_bytes": 18614,
+      "working_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    }
+  ],
+  "revision": "ed10d6f126fb5deb89692164d749b95d5512b0a6"
+}

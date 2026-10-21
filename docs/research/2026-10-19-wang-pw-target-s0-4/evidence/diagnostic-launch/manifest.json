@@ -1,0 +1,53 @@
+{
+  "files": {
+    ".gitattributes": {
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    "launch.json": {
+      "bytes": 1692,
+      "sha256": "546baecb119bd848bf61be4719d46aa6cf97d0ddd18b894ca0ee536dce44c516"
+    },
+    "launch_diagnostic.py": {
+      "bytes": 6297,
+      "sha256": "a6b16be07f7778f26d01fd0291bf89135c02da2791c480481ff4de42c2640014"
+    },
+    "make_source_manifest.py": {
+      "bytes": 1173,
+      "sha256": "daf9c9efe1b0a9aa0376d9a79ea8c0d0b9b532ca6fdc29f852be29522aa34cb6"
+    },
+    "monitor-130642.json": {
+      "bytes": 1990,
+      "sha256": "86694b8dddd7401c90056f498e7e2b63f132c224cd04e499f6fcdd399caad7d5"
+    },
+    "monitor-130846.json": {
+      "bytes": 1978,
+      "sha256": "ce469e75d35774f9203fa2573f276610a4ec7bb6dc0410391def74a276379c28"
+    },
+    "monitor-131030.json": {
+      "bytes": 1980,
+      "sha256": "30cd994cf4cfc8bbb8b60f5943fe0cc6513580d2925fe9202ac90e245ac82739"
+    },
+    "monitor_diagnostic.py": {
+      "bytes": 4097,
+      "sha256": "79053adb73d04a4bd65d18126206b69f28f1e4ab3b16dab40db162338aa77c87"
+    },
+    "prepare_remote.py": {
+      "bytes": 4648,
+      "sha256": "53e020f339745a007049becae017a6d6c6041abc1aade7011d51fb8b9ec62e0d"
+    },
+    "review.json": {
+      "bytes": 2305,
+      "sha256": "a5a9d8cb497df11c10b237a034c87ef16b62d84b39c534b181a5cdb8c9739318"
+    },
+    "source-manifest.json": {
+      "bytes": 634997,
+      "sha256": "a4b7045f9a6f7b7ee9b9d50ab28129d2c4951f11a4b83ffb19b4947549728c00"
+    },
+    "source-transfer.json": {
+      "bytes": 1149,
+      "sha256": "4ac74bd4e839241bddb5f8f798deeddf00813a7242e5aaf45a5934b6c22e5b3b"
+    }
+  },
+  "schema": "IBME/WANG-PW-PUBLIC-EVIDENCE-MANIFEST/1"
+}

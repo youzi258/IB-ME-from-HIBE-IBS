@@ -1,0 +1,7 @@
+*.json -text -eol
+*.jsonl -text -eol
+*.xml -text -eol
+*.log -text -eol
+verify-reused-public.py -text -eol
+# Preserve the recorded Windows CRLF while retaining the other whitespace checks.
+controller-tests.log whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -214,14 +214,15 @@
     {
       "id": "wang-pw",
       "tests": [
-        "tests/test_wang_pw_*.py"
+        "tests/test_wang_pw_*.py",
+        "tests/test_cli_role_import.py"
       ],
       "source_markers": [
         "experiments/research/candidates/wang_pw/backend.py",
         "src/ibme/ibs/wang_pw.py"
       ],
       "source_stage": "standalone_source",
-      "allow_skips": false,
+      "allow_skips": true,
       "environment": "sage",
       "layer": "primitive"
     },

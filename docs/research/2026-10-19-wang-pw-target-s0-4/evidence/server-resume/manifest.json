@@ -1,0 +1,28 @@
+{
+  "files_sha256": {
+    "checkpoint.json": "476a0876d1dfff71c660441e131b2f04a2b00055521066afb0c5a31f2c12d93f",
+    "debug-q257-three.console.jsonl": "7c5ce3b2991c17b8bc11df3159560407d4a0e6947d8f65edc5811a05a1cd0775",
+    "debug-q257-three.json": "bf1c661ef4ba88de0937441bcbb0add624460df8a9151a10a303434be5534af6",
+    "debug-q257-three.phases.jsonl": "7c5ce3b2991c17b8bc11df3159560407d4a0e6947d8f65edc5811a05a1cd0775",
+    "debug-q32-independent.json": "acf4f6a07b56c387d721630c4cfa5ac049128d6dad94ca0f5ef28f35842325ec",
+    "debug-q32-independent.phases.jsonl": "1991598f1717481b401d2c5aa8ee4294458d32558957a20922f826381d158cc5",
+    "debug-q32-supervisor.console.jsonl": "892c4f2d8c516c2f0c07e8f1564772893d0bcf324f09a2bf6bfa1ac057e35a09",
+    "debug-q32.time.public.txt": "ba8395b9708a1257ebd5a83bdd887c970960660f788e938fbcf889c7379032b1",
+    "debug-supervisor/child.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "debug-supervisor/child.stdout.log": "1991598f1717481b401d2c5aa8ee4294458d32558957a20922f826381d158cc5",
+    "debug-supervisor/receipt.json": "aa030eac00152d47896ea5aef4696cb7ec3eed3edc3b1a181d1378cd08a995c8",
+    "debug-supervisor/supervisor.jsonl": "892c4f2d8c516c2f0c07e8f1564772893d0bcf324f09a2bf6bfa1ac057e35a09",
+    "environment-ready.json": "24ec72aca48da323a7e974087f99cb2e0cc45152f09d63e2e7dea7868c3eba9d",
+    "parameter-screen.json": "5b173747c1ed59280370dfec1b1552eeb83990f94bb70d33b44bd8c6ee836a5e",
+    "requirements.lock.txt": "83a8e20693513772dfa92cc694c4ae0832061397a8d636ae7c6ff360ce698e0d",
+    "review.json": "c1fe780df2c36cccd85b6c8f5b5da8957afb30aeeb42c1961f97d36b9701b003",
+    "sage-explicit.lock.txt": "ab48537d01fada452536adf8a35a20abab88cfa4296afe30e4f6d3e142373a0b",
+    "server-tests.log": "d3d657eb1a259749a30e1df803dcaa5b5be42a41dc9a02ddc36ac1250d4b7517",
+    "server-tests.xml": "f3a965a48a4a13e57968465f3382537d36a9a898f7339d8220cbda9502afec64",
+    "source-transfer.json": "a8596a35be08bd20a072ecd0620a10c7c088cac3de2207e4f1820fe30d69d99e",
+    "target-initial-running.json": "3f7edb39d355bb56ee1f6f5233612c50a0d3b77ee5a725e24d91fe1826c9b4f1",
+    "target-launch-preflight.json": "f93f2d2f04015353b1107ab10d2a4e60ae803d9d0de493a3ee5886cbf21a5b45",
+    "target-supervisor-initial.json": "835fa725323f77e7c593916164156c7e5786df0d068b7c034d917750e2652097"
+  },
+  "schema": "IBME/WANG-PW-LAUNCH-MANIFEST/1"
+}

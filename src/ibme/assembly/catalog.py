@@ -30,7 +30,7 @@ ROUTES = (
     AlgorithmRoute("sageloli-sis", "ibs", ("sageloli-sis",)),
     AlgorithmRoute("sageloli-rsis", "ibs", ("sageloli-rsis",)),
     AlgorithmRoute("foo-li", "ibs", ("foo-li",)),
-    AlgorithmRoute("wang-pw", "ibs", ("wang-pw",)),
+    AlgorithmRoute("wang-pw", "ibs", ("wang-pw", "wang-pw-target")),
     AlgorithmRoute("cert-ml-dsa", "ibs", ("cert-ml-dsa",)),
     AlgorithmRoute("cert-falcon", "ibs", ("cert-falcon",)),
     AlgorithmRoute("xie-ntru-ibs", "ibs", ("xie-ntru-ibs",)),

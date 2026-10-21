@@ -1,0 +1,54 @@
+{
+  "status": "built",
+  "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+  "source_patch_count": 0,
+  "linker_wrapper": "bounded 16-bit ExpandMask nonce, no seed retry",
+  "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "binaries": [
+    {
+      "parameter_set": "ML-DSA-44",
+      "executable": "/mnt/c/Users/A/.codex/worktrees/wang-pw-delivery-2026-10-20/IB-ME-from-HIBE-IBS/build/outputs/publication/mldsa-native/bin/ibme-mldsa44",
+      "binary_sha256": "bb222a5f6252dc85a20b517b878c03ddb7d00db70483c99d73a91e9ee2c488a8",
+      "metadata": {
+        "abi": 1,
+        "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+        "mode": 2,
+        "pk": 1312,
+        "sk": 2560,
+        "sig": 2420,
+        "nonce_attempt_limit": 16384
+      }
+    },
+    {
+      "parameter_set": "ML-DSA-65",
+      "executable": "/mnt/c/Users/A/.codex/worktrees/wang-pw-delivery-2026-10-20/IB-ME-from-HIBE-IBS/build/outputs/publication/mldsa-native/bin/ibme-mldsa65",
+      "binary_sha256": "0dff2265dd0efefb9afb12b078e0a099dd7ecaf8576c083360001767c4311407",
+      "metadata": {
+        "abi": 1,
+        "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+        "mode": 3,
+        "pk": 1952,
+        "sk": 4032,
+        "sig": 3309,
+        "nonce_attempt_limit": 13107
+      }
+    },
+    {
+      "parameter_set": "ML-DSA-87",
+      "executable": "/mnt/c/Users/A/.codex/worktrees/wang-pw-delivery-2026-10-20/IB-ME-from-HIBE-IBS/build/outputs/publication/mldsa-native/bin/ibme-mldsa87",
+      "binary_sha256": "c75ffeb44f3198c4dd1f809042dce7b0647adefeed81ed199d1e51c07d99cd58",
+      "metadata": {
+        "abi": 1,
+        "source_id": "ae5dc5f80d49157633cf8aeb5895e1dc91a298311adc5181d99a17e8cfb14337",
+        "mode": 5,
+        "pk": 2592,
+        "sk": 4896,
+        "sig": 4627,
+        "nonce_attempt_limit": 9362
+      }
+    }
+  ],
+  "security_claim": "none",
+  "backend_admitted": false,
+  "parameters_are_formal": false
+}

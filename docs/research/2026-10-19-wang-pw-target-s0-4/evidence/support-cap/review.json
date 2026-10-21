@@ -1,0 +1,60 @@
+{
+  "abort_probability_bound": null,
+  "backend_admitted": false,
+  "command": "PYTHONPATH=src:. PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider --junitxml=<new output>/support-cap-regression.xml tests/test_wang_pw_target_audit.py tests/test_wang_pw_target_parameter_planning.py",
+  "cryptographic_sampling_performed": false,
+  "errors": 0,
+  "failures": 0,
+  "implementation_commit": "4ea2250",
+  "junit_duration_seconds": 10.11,
+  "junit_public_transformation": {
+    "public": {
+      "bytes": 8048,
+      "sha256": "076a125e8ad7fed2c1b0905bae00c20835bd360f9f7c035760da387e15e4e629"
+    },
+    "raw": {
+      "bytes": 8044,
+      "sha256": "f7c19d8378124451536c67ff094c03e25aa5edf12baa45029ee85fa90e521470"
+    },
+    "replacement": "one local hostname replaced by local-wsl",
+    "testcases_unchanged": true
+  },
+  "native_loading_performed": false,
+  "native_max_window_support": 2199023255555,
+  "native_source_modified": false,
+  "nist_security_category": null,
+  "note": "Proposal radius is ceil(tail*sigma)+1 and includes both endpoints. Only the audit diagnostic changes; frozen receipts are not rewritten.",
+  "parameters_are_formal": false,
+  "parameters_modified": false,
+  "schema": "IBME/WANG-PW-PROPOSAL-SUPPORT-AUDIT-FIX/1",
+  "security_claim": "none",
+  "server_attempts": 0,
+  "skipped": 0,
+  "sources": {
+    "src/ibme/ibs/wang_pw_target/parameter_audit.py": {
+      "git_blob": {
+        "bytes": 15020,
+        "sha256": "c85430f96acfb7949f8e056a97a5ccfae914edbef72ab3f743d65c209d65b207"
+      },
+      "git_commit": "4ea2250",
+      "working_bytes": {
+        "bytes": 15020,
+        "sha256": "c85430f96acfb7949f8e056a97a5ccfae914edbef72ab3f743d65c209d65b207"
+      }
+    },
+    "tests/test_wang_pw_target_audit.py": {
+      "git_blob": {
+        "bytes": 13031,
+        "sha256": "5799a1e7d2794682ce2aaa377175b34a01cc70245b872350268dde6acc130147"
+      },
+      "git_commit": "4ea2250",
+      "working_bytes": {
+        "bytes": 13031,
+        "sha256": "5799a1e7d2794682ce2aaa377175b34a01cc70245b872350268dde6acc130147"
+      }
+    }
+  },
+  "status": "passed-local-only",
+  "tests": 50,
+  "total_tv_bound": null
+}

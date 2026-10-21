@@ -1,0 +1,57 @@
+{
+  "files": {
+    ".gitattributes": {
+      "bytes": 273,
+      "sha256": "74cccae0c921c5cc4ecedff4a3fddc4bf8052d6fc3c4a7e340500ba4b7b3bec9"
+    },
+    "child.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "child.stdout.log": {
+      "bytes": 634,
+      "sha256": "60551231cbeeef8a1a81d258502b6ca5de8c233f4f7e607699dc8549b9d7f08e"
+    },
+    "controller-tests.log": {
+      "bytes": 182,
+      "sha256": "8f67360a85cea2ac0cda4deef013876033fdcaacbe3d3d0bef069c48a5ba4881"
+    },
+    "controller-tests.xml": {
+      "bytes": 12586,
+      "sha256": "0477d629003451bc6fd928787f0c764ffe0380a2ed294b3fa86dfd5a9bdc3f1e"
+    },
+    "launch.json": {
+      "bytes": 603,
+      "sha256": "06feab92d6d12b94d1ec5713b80f03d4f544387dc05c9b0860e29917e211f771"
+    },
+    "post-failure-check.json": {
+      "bytes": 1300,
+      "sha256": "c448cad65356b64a810a681f640ab69de59567419cf8aa4bc76052540d17d382"
+    },
+    "review.json": {
+      "bytes": 5100,
+      "sha256": "736f6fc28b5423db3e1a60874be9c4ddba65d667d42c331e762628aba3161e69"
+    },
+    "source-transfer.json": {
+      "bytes": 1049,
+      "sha256": "916a13c7e2a63f6f3a2d180fde27d7139ab3e364e92789289b5897a295ca84d9"
+    },
+    "supervisor-launch.log": {
+      "bytes": 619,
+      "sha256": "9e6a257e46ec9d94339680fe6872d25e78581002700e0f014db61bee45b184cd"
+    },
+    "supervisor.json": {
+      "bytes": 1558,
+      "sha256": "5afef65e02f37c096b30cb6e7889e441cc29c7319757b44d25eff01765dd309f"
+    },
+    "supervisor.jsonl": {
+      "bytes": 619,
+      "sha256": "9e6a257e46ec9d94339680fe6872d25e78581002700e0f014db61bee45b184cd"
+    },
+    "verify-reused-public.py": {
+      "bytes": 4511,
+      "sha256": "51ea6bac64004b0e0ed1e604087cb052481dedee7dc38161e349ec67cfc24012"
+    }
+  },
+  "schema": "IBME/WANG-PW-PUBLIC-EVIDENCE-MANIFEST/1"
+}

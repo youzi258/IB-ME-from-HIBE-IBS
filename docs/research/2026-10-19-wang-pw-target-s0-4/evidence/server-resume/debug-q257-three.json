@@ -1,0 +1,559 @@
+{
+  "backend_admitted": false,
+  "completed_repetitions": 3,
+  "duration_seconds": 0.479320060000191,
+  "environment": {
+    "blas_thread_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4"
+    },
+    "git_head": null,
+    "logical_cpus": 16,
+    "machine": "x86_64",
+    "native": {
+      "explicit_library": true,
+      "filename": "libibme_wang_pw_gaussian.so",
+      "library_sha256": "03334a57210aaabde668adeddd7b75ae8babdef472d9af5d5520c96fc77badf1",
+      "source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    },
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "packages": {
+      "cryptography": "50.0.2",
+      "gmpy2": "2.3.2",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2",
+      "pytest": "9.1.1",
+      "sage": "10.9",
+      "sagemath-standard": null,
+      "scipy": "1.18.1"
+    },
+    "physical_cpus": 8,
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "python": "3.12.15",
+    "ram_total_bytes": 132785688576
+  },
+  "expected_wire_bytes": {
+    "master_secret": 1448,
+    "public_key": 788,
+    "signature": 536,
+    "signing_key": 3492
+  },
+  "finished_utc": "2026-10-20T01:53:46.184+00:00",
+  "identity_bytes": 64,
+  "independent_production_roots": true,
+  "limitations": [
+    "root discrete-Gaussian and GPV routines are new finite implementations",
+    "floating QR/Gram-Schmidt and center arithmetic are not certified distributions",
+    "no new security reduction is undertaken by this experiment",
+    "n512 SIS-estimator beta failure remains a parameter limitation",
+    "functional/negative tests do not establish security or NIST strength"
+  ],
+  "message_bytes": 32,
+  "nist_security_category": null,
+  "parameters": {
+    "gaussian_tail_sigma": 20.0,
+    "identity_max_bytes": 256,
+    "internal_id_bits": 256,
+    "internal_msg_bits": 256,
+    "mass_bits": 192,
+    "max_extract_attempts": 1,
+    "max_gaussian_attempts": 4096,
+    "max_setup_attempts": 1,
+    "max_sign_attempts": 1,
+    "message_max_bytes": 4096,
+    "n": 2,
+    "name": "wang-pw-debug-n2-q257-s0-4",
+    "precision_bits": 256,
+    "q": 257,
+    "root_gs_limit": 20,
+    "root_width": 4.0,
+    "salt_bytes": 32,
+    "schema": "IBME/WANG-PW-TARGET-PARAMS/1",
+    "smoothing_error_bits": 128,
+    "smoothing_multiplier": 8,
+    "threads": 4,
+    "user_gs_limit": 1152
+  },
+  "parameters_are_formal": false,
+  "private_state_requested": false,
+  "profile": "debug-q257",
+  "requested_lifecycle_complete": true,
+  "requested_repetitions": 3,
+  "roots": [
+    {
+      "duration_seconds": 0.30718976499974815,
+      "index": 1,
+      "phases": [
+        {
+          "duration_seconds": 0.22862862400006634,
+          "name": "setup",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 15.501772655648228
+            },
+            "public_context": "7e62f70d14f6a8fe7c851b5424f03a50f5abd470688b395e30c84a3f53043fd7",
+            "wire_bytes": {
+              "master_secret": 1448,
+              "public_key": 788
+            }
+          },
+          "rss_current_bytes": 69255168,
+          "rss_peak_observed_bytes": 69255168,
+          "rss_phase_peak_observed_bytes": 69255168,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 62160896,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004086008000285801,
+          "name": "extract",
+          "observations": {
+            "key_contains_only_user_trapdoor": true,
+            "metrics": {
+              "root_numerical_gs": 15.501772655648228
+            },
+            "wire_bytes": 3492
+          },
+          "rss_current_bytes": 69337088,
+          "rss_peak_observed_bytes": 69337088,
+          "rss_phase_peak_observed_bytes": 69337088,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69255168,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004363198000191915,
+          "name": "sign",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 15.501772655648228,
+              "signature_norm_sq": 519172298,
+              "user_numerical_gs": 1011.9244042911506
+            },
+            "wire_bytes": 536
+          },
+          "rss_current_bytes": 69353472,
+          "rss_peak_observed_bytes": 69353472,
+          "rss_phase_peak_observed_bytes": 69353472,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69337088,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.003626084000188712,
+          "name": "verify",
+          "observations": {
+            "appended_rejected": true,
+            "changed_context_rejected": true,
+            "honest": true,
+            "truncated_rejected": true,
+            "wrong_identity_rejected": true,
+            "wrong_message_rejected": true
+          },
+          "rss_current_bytes": 69353472,
+          "rss_peak_observed_bytes": 69353472,
+          "rss_phase_peak_observed_bytes": 69353472,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69353472,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.012468989999888436,
+          "name": "restore",
+          "observations": {
+            "canonical_wires_unchanged": true,
+            "context_matches": true,
+            "prepared_dense_cache_cleared": true,
+            "restored_signature_verifies": true
+          },
+          "rss_current_bytes": 69353472,
+          "rss_peak_observed_bytes": 69353472,
+          "rss_phase_peak_observed_bytes": 69353472,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69353472,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.0043505789999471745,
+          "name": "sign-restored",
+          "observations": {
+            "honest": true,
+            "identity_salt_preserved": true,
+            "independent_process": false,
+            "message_salt_fresh": true,
+            "metrics": {
+              "root_numerical_gs": 15.501772655648228,
+              "signature_norm_sq": 646302642,
+              "user_numerical_gs": 1011.9244042911506
+            }
+          },
+          "rss_current_bytes": 69353472,
+          "rss_peak_observed_bytes": 69353472,
+          "rss_phase_peak_observed_bytes": 69353472,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69353472,
+          "status": "passed"
+        }
+      ],
+      "restore_mode": "memory",
+      "status": "passed"
+    },
+    {
+      "duration_seconds": 0.07848927900022318,
+      "index": 2,
+      "phases": [
+        {
+          "duration_seconds": 0.00414116699994338,
+          "name": "setup",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 17.05585728869967
+            },
+            "public_context": "c171e1888ef20930d4bcd49d7782268723af58da829204e18808331b92448d2a",
+            "wire_bytes": {
+              "master_secret": 1448,
+              "public_key": 788
+            }
+          },
+          "rss_current_bytes": 69386240,
+          "rss_peak_observed_bytes": 69386240,
+          "rss_phase_peak_observed_bytes": 69386240,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69373952,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.0039625659997000184,
+          "name": "extract",
+          "observations": {
+            "key_contains_only_user_trapdoor": true,
+            "metrics": {
+              "root_numerical_gs": 17.05585728869967
+            },
+            "wire_bytes": 3492
+          },
+          "rss_current_bytes": 69386240,
+          "rss_peak_observed_bytes": 69386240,
+          "rss_phase_peak_observed_bytes": 69386240,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69386240,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004588174999753392,
+          "name": "sign",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 17.05585728869967,
+              "signature_norm_sq": 689124881,
+              "user_numerical_gs": 939.9606847032444
+            },
+            "wire_bytes": 536
+          },
+          "rss_current_bytes": 69386240,
+          "rss_peak_observed_bytes": 69386240,
+          "rss_phase_peak_observed_bytes": 69386240,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69386240,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.003540328999861231,
+          "name": "verify",
+          "observations": {
+            "appended_rejected": true,
+            "changed_context_rejected": true,
+            "honest": true,
+            "truncated_rejected": true,
+            "wrong_identity_rejected": true,
+            "wrong_message_rejected": true
+          },
+          "rss_current_bytes": 69386240,
+          "rss_peak_observed_bytes": 69386240,
+          "rss_phase_peak_observed_bytes": 69386240,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69386240,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.010290228000030766,
+          "name": "restore",
+          "observations": {
+            "canonical_wires_unchanged": true,
+            "context_matches": true,
+            "prepared_dense_cache_cleared": true,
+            "restored_signature_verifies": true
+          },
+          "rss_current_bytes": 69386240,
+          "rss_peak_observed_bytes": 69386240,
+          "rss_phase_peak_observed_bytes": 69386240,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69386240,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004449865999959002,
+          "name": "sign-restored",
+          "observations": {
+            "honest": true,
+            "identity_salt_preserved": true,
+            "independent_process": false,
+            "message_salt_fresh": true,
+            "metrics": {
+              "root_numerical_gs": 17.05585728869967,
+              "signature_norm_sq": 890317465,
+              "user_numerical_gs": 939.9606847032444
+            }
+          },
+          "rss_current_bytes": 69386240,
+          "rss_peak_observed_bytes": 69386240,
+          "rss_phase_peak_observed_bytes": 69386240,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69386240,
+          "status": "passed"
+        }
+      ],
+      "restore_mode": "memory",
+      "status": "passed"
+    },
+    {
+      "duration_seconds": 0.07822756199993819,
+      "index": 3,
+      "phases": [
+        {
+          "duration_seconds": 0.0043683439998858375,
+          "name": "setup",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 19.1049731745428
+            },
+            "public_context": "8870d9729673acdfe429058d48e2a08a34f8a04edc7fe956a52ec9615de148c0",
+            "wire_bytes": {
+              "master_secret": 1448,
+              "public_key": 788
+            }
+          },
+          "rss_current_bytes": 69386240,
+          "rss_peak_observed_bytes": 69386240,
+          "rss_phase_peak_observed_bytes": 69386240,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69386240,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004227834999710467,
+          "name": "extract",
+          "observations": {
+            "key_contains_only_user_trapdoor": true,
+            "metrics": {
+              "root_numerical_gs": 19.1049731745428
+            },
+            "wire_bytes": 3492
+          },
+          "rss_current_bytes": 69398528,
+          "rss_peak_observed_bytes": 69398528,
+          "rss_phase_peak_observed_bytes": 69398528,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69386240,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004387226000289957,
+          "name": "sign",
+          "observations": {
+            "metrics": {
+              "root_numerical_gs": 19.1049731745428,
+              "signature_norm_sq": 397643487,
+              "user_numerical_gs": 864.649045698168
+            },
+            "wire_bytes": 536
+          },
+          "rss_current_bytes": 69398528,
+          "rss_peak_observed_bytes": 69398528,
+          "rss_phase_peak_observed_bytes": 69398528,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69398528,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.003584704999866517,
+          "name": "verify",
+          "observations": {
+            "appended_rejected": true,
+            "changed_context_rejected": true,
+            "honest": true,
+            "truncated_rejected": true,
+            "wrong_identity_rejected": true,
+            "wrong_message_rejected": true
+          },
+          "rss_current_bytes": 69398528,
+          "rss_peak_observed_bytes": 69398528,
+          "rss_phase_peak_observed_bytes": 69398528,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69398528,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.010020295999765949,
+          "name": "restore",
+          "observations": {
+            "canonical_wires_unchanged": true,
+            "context_matches": true,
+            "prepared_dense_cache_cleared": true,
+            "restored_signature_verifies": true
+          },
+          "rss_current_bytes": 69398528,
+          "rss_peak_observed_bytes": 69398528,
+          "rss_phase_peak_observed_bytes": 69398528,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69398528,
+          "status": "passed"
+        },
+        {
+          "duration_seconds": 0.004512275000251975,
+          "name": "sign-restored",
+          "observations": {
+            "honest": true,
+            "identity_salt_preserved": true,
+            "independent_process": false,
+            "message_salt_fresh": true,
+            "metrics": {
+              "root_numerical_gs": 19.1049731745428,
+              "signature_norm_sq": 727821194,
+              "user_numerical_gs": 864.649045698168
+            }
+          },
+          "rss_current_bytes": 69398528,
+          "rss_peak_observed_bytes": 69398528,
+          "rss_phase_peak_observed_bytes": 69398528,
+          "rss_sampling_errors": 0,
+          "rss_sampling_interval_seconds": 0.1,
+          "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+          "rss_start_bytes": 69398528,
+          "status": "passed"
+        }
+      ],
+      "restore_mode": "memory",
+      "status": "passed"
+    }
+  ],
+  "rss_current_bytes": 69529600,
+  "rss_peak_observed_bytes": 69529600,
+  "rss_phase_peak_observed_bytes": 69529600,
+  "rss_sampling_errors": 0,
+  "rss_sampling_interval_seconds": 0.1,
+  "rss_scope": "sampled process-tree RSS sum; shared pages can be counted repeatedly",
+  "run_id": "20261020T015345Z-941219f5",
+  "sampling_mode": "production-csprng",
+  "schema": "IBME/WANG-PW-TARGET-LIFECYCLE/1",
+  "security_claim": "none",
+  "source_files_unchanged_during_run": true,
+  "source_sha256": {
+    "experiments/research/wang_pw_target/README.md": "462d4c079f3f9fb3851b486e8b465cf464c1dc2aeb26ebac4b1f4be25c87620e",
+    "experiments/research/wang_pw_target/run_lifecycle.py": "fc9e2e6ee0e4e0490725ce4d12bf3d17c79ed4e11b7d275eccc10c87b2c1076c",
+    "experiments/research/wang_pw_target/sign_independent.py": "80ac0de70e8e79446bb9ceb16c4c5e5c861f58144afec9bc9493e4206f39b491",
+    "src/ibme/ibs/wang_pw_target/__init__.py": "6cd0138157344c281b051a260c11daf0e9300b822539085bf737e3e4a8cb1056",
+    "src/ibme/ibs/wang_pw_target/backend.py": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548",
+    "src/ibme/ibs/wang_pw_target/hashing.py": "fce854050c71d17440d02404ca0a315ffddc3b8daa5326a1dbe4289b1a4335cf",
+    "src/ibme/ibs/wang_pw_target/math.py": "3679740e5dc4d365fb9e45cbc87a0838429c98c7935ad4936f294de396f70936",
+    "src/ibme/ibs/wang_pw_target/native.py": "496464eadeb112f8bcb8000b70e618bad5398564eead0ed2a7a56beefe1bd900",
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+    "src/ibme/ibs/wang_pw_target/objects.py": "96d9f96217c451064cd20677361f227fc16a8770f41e8d99d1683e5a363f9798",
+    "src/ibme/ibs/wang_pw_target/parameter_audit.py": "66c4830b6a21e1d782ceaa1b446a6384e2388ff834fc475ec03345bf01c6710b",
+    "src/ibme/ibs/wang_pw_target/params.py": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59",
+    "src/ibme/ibs/wang_pw_target/service.py": "2f9786adffccac4f37777b59756dbe9281f4aa051836b06a36a7662e7aff8331"
+  },
+  "started_utc": "2026-10-20T01:53:45.705+00:00",
+  "status": "passed",
+  "summary": {
+    "all_observed_public_roots_distinct": true,
+    "distinct_public_roots_observed": 3,
+    "phases": {
+      "extract": {
+        "duration_max_seconds": 0.004227834999710467,
+        "duration_mean_seconds": 0.004092136333232095,
+        "duration_min_seconds": 0.0039625659997000184,
+        "duration_stdev_seconds": 0.0001327406416293115,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69398528
+      },
+      "restore": {
+        "duration_max_seconds": 0.012468989999888436,
+        "duration_mean_seconds": 0.010926504666561717,
+        "duration_min_seconds": 0.010020295999765949,
+        "duration_stdev_seconds": 0.001342632330102985,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69398528
+      },
+      "setup": {
+        "duration_max_seconds": 0.22862862400006634,
+        "duration_mean_seconds": 0.07904604499996519,
+        "duration_min_seconds": 0.00414116699994338,
+        "duration_stdev_seconds": 0.12954236317741177,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69386240
+      },
+      "sign": {
+        "duration_max_seconds": 0.004588174999753392,
+        "duration_mean_seconds": 0.004446199666745088,
+        "duration_min_seconds": 0.004363198000191915,
+        "duration_stdev_seconds": 0.00012353980161993133,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69398528
+      },
+      "sign-restored": {
+        "duration_max_seconds": 0.004512275000251975,
+        "duration_mean_seconds": 0.004437573333386051,
+        "duration_min_seconds": 0.0043505789999471745,
+        "duration_stdev_seconds": 8.154588504178394e-05,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69398528
+      },
+      "verify": {
+        "duration_max_seconds": 0.003626084000188712,
+        "duration_mean_seconds": 0.0035837059999721532,
+        "duration_min_seconds": 0.003540328999861231,
+        "duration_stdev_seconds": 4.2886227636425066e-05,
+        "passed_count": 3,
+        "rss_peak_max_observed_bytes": 69398528
+      }
+    },
+    "roots_passed": 3,
+    "roots_started": 3
+  }
+}

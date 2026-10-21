@@ -14,6 +14,7 @@ ADMITTED_BACKENDS = {
         "sageloli-rsis": {"PARAM-I", "PARAM-II"},
         "cert-ml-dsa": {"ml-dsa-44", "ml-dsa-65", "ml-dsa-87"},
         "cert-falcon": {"falcon-padded-512", "falcon-padded-1024"},
+        "wang-pw-target": {"s0-4"},
     },
 }
 
@@ -46,6 +47,7 @@ def test_primary_and_completed_showcase_profiles_are_admitted():
         ("luo-module","c64b","compact"),
         ("srgg2025-paper","PARAM-I","compact"),
         ("sageloli-rsis","PARAM-I","reference"),
+        ("wang-pw-target","s0-4","reference"),
     ):
         config=make_suite(hibe="latte",hibe_params="seed32",ibs=ibs,ibs_params=preset,
                           transport="hybrid",signature_format=fmt)
@@ -82,6 +84,8 @@ def test_debug_mock_and_known_negative_controls_remain_unadmitted():
         dict(hibe="latte",hibe_params="seed32",ibs="sageloli-rsis",
              ibs_params="debug-small",transport="hybrid"),
         dict(hibe="latte",hibe_params="seed32",ibs="wang-pw",transport="hybrid"),
+        dict(hibe="latte",hibe_params="seed32",ibs="wang-pw-target",
+             ibs_params="debug-small",transport="hybrid"),
     ):
         assert _security(make_suite(**options))==("none",False,False)
 

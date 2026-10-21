@@ -342,6 +342,98 @@ def _wang_pw_spec():
         default_preset=lambda transport: "research", validate_environment=lambda: _sage_environment("Wang-PW"))
 
 
+@dataclass(frozen=True)
+class _WangPWTargetDecoder:
+    """Keep portable discovery independent of numerical execution imports."""
+    object_name: str
+
+    def from_bytes(self, data):
+        from ibme.ibs import wang_pw_target
+        return getattr(wang_pw_target, self.object_name).from_bytes(data)
+
+
+def _wang_pw_target_environment():
+    import os
+    from pathlib import Path
+    for dependency in ("numpy", "scipy"):
+        if importlib.util.find_spec(dependency) is None:
+            raise InvalidParameterError(f"Wang-PW target requires {dependency}; no fallback")
+    binary = os.environ.get("IBME_WANG_PW_TARGET_NATIVE")
+    if not binary or not Path(binary).is_file():
+        raise InvalidParameterError(
+            "build Wang-PW target native explicitly and set IBME_WANG_PW_TARGET_NATIVE; no fallback")
+    from ibme.ibs.wang_pw_target.native import SamplingError, _library
+    try:
+        # An explicit existing path selects the no-build loader branch. ABI,
+        # source/binary receipt and dynamic libraries are checked without RNG.
+        _library()
+    except (SamplingError, OSError, ValueError) as exc:
+        raise InvalidParameterError("Wang-PW target native dependency validation failed") from exc
+
+
+def _wang_pw_target_format(fmt):
+    if fmt != "reference":
+        raise InvalidParameterError("Wang-PW target supports its reference binary format only")
+
+
+def _wang_pw_target_size(params, fmt):
+    _wang_pw_target_format(fmt)
+    from ibme.ibs.wang_pw_target import signature_size
+    return signature_size(params, fmt)
+
+
+def _wang_pw_target_factory(rng, fmt):
+    _wang_pw_target_format(fmt)
+    _wang_pw_target_environment()
+    from ibme.core.randomness import DeterministicRandom
+    from ibme.ibs.wang_pw_target import Backend
+    if type(rng) is DeterministicRandom:
+        return Backend(rng=rng, test_only=True, sampler="perturbation")
+    return Backend(rng=rng, sampler="perturbation")
+
+
+def _wang_pw_target_check(value, params):
+    from ibme.ibs.wang_pw_target import PublicKey, MasterSecret, SigningKey
+    _research_object_check(value, params, (PublicKey, MasterSecret, SigningKey),
+                           "params", "Wang-PW target")
+
+
+def _wang_pw_target_configuration(params, config):
+    from ibme.ibs.wang_pw_target.params import Params
+    if type(params) is not Params:
+        raise InvalidParameterError("Wang-PW target requires a complete target parameter snapshot")
+    # Re-run public invariants without Setup, matrix allocation or entropy.
+    if Params(**{field.name: getattr(params, field.name) for field in fields(Params) if field.init}) != params:
+        raise InvalidParameterError("Wang-PW target parameter snapshot mismatch")
+
+
+def _wang_pw_target_spec():
+    from ibme.ibs.wang_pw_target.params import Params, small_params
+
+    def master_public_key(master):
+        from ibme.ibs.wang_pw_target import MasterSecret
+        if type(master) is not MasterSecret:
+            raise TypeError("Wang-PW target MasterSecret required")
+        return master.public_key
+
+    return BackendSpec(
+        "wang-pw-target", "ibs", "WangPW-target-s0-4-v1", Params,
+        {"s0-4": Params(), "debug-small": small_params()}, _wang_pw_target_factory,
+        {"ipk": _WangPWTargetDecoder("PublicKey"),
+         "imsk": _WangPWTargetDecoder("MasterSecret"),
+         "sk": _WangPWTargetDecoder("SigningKey")},
+        _wang_pw_target_check, signature_size=_wang_pw_target_size,
+        signature_formats=("reference",), persistent_identity_cache=False,
+        object_parameter_binding="full-parameter-snapshot", master_public_key=master_public_key,
+        default_preset=lambda transport: "s0-4",
+        validate_configuration=_wang_pw_target_configuration,
+        validate_environment=_wang_pw_target_environment,
+        reason="completed s0=4 discrete-Gaussian MP12 SampleD backend; debug-small is unsafe",
+        security_claim=COMPLETED_SECURITY_CLAIM, backend_admitted=True,
+        formal_parameter_presets=("s0-4",),
+        admission_basis="selected Wang/Pan-Wagner papers, user-confirmed completed target profile and approximately 115-bit quantum working premise; not a new attack-cost measurement")
+
+
 def _srgg_spec():
     try:
         # Keep the optional candidate boundary observable even when the
@@ -464,7 +556,7 @@ def _portable_specs():
     # These explicit imports reuse delivered five-method backends/public wire.
     # "reference" is the existing suite spelling for their canonical-json-v1
     # encoding, not a second algorithm or a different signature representation.
-    specs.extend((_wang_pw_spec(), _srgg_spec(), _srgg_paper_spec(), _sageloli_ring_spec()))
+    specs.extend((_wang_pw_spec(), _wang_pw_target_spec(), _srgg_spec(), _srgg_paper_spec(), _sageloli_ring_spec()))
     from ibme.hibe.lai.registration import backend_spec as lai_spec
     specs.append(lai_spec())
     from ibme.hibe.latte.registration import backend_spec as latte_spec
@@ -509,3 +601,4 @@ def default_backend_catalog():
     listing = BackendRegistry(_portable_specs()).list()
     listing["hibe"].append(backend_metadata())
     return listing
+

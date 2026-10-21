@@ -1,0 +1,35 @@
+{
+  "archive_sha256": "9dea399022f7eaa3edec631d2601a11af5a5f629f54e42bda71c66e68f5fe44c",
+  "backend_admitted": false,
+  "bound_code_files": 18,
+  "checked_at": "2026-10-20T01:53:47.711420+00:00",
+  "debug_q257_complete_roots": 3,
+  "debug_q32_independent_restored_signing": true,
+  "debug_resource_supervisor_passed": true,
+  "dependency_lock_hashes_unchanged": true,
+  "environment_ready_sha256": "24ec72aca48da323a7e974087f99cb2e0cc45152f09d63e2e7dea7868c3eba9d",
+  "environment_schema": "IBME/WANG-PW-TASK-ENVIRONMENT/2",
+  "estimator_clean": true,
+  "estimator_commit": "53da5982597709ba0fdf94ea37a84d822310fd84",
+  "native_hashes_unchanged": true,
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "schema": "IBME/WANG-PW-TARGET-LAUNCH-PREFLIGHT/1",
+  "security_claim": "none",
+  "server_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 231
+  },
+  "source_commit": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+  "source_hashes_unchanged": true,
+  "status": "passed",
+  "target_limits": {
+    "max_rss_gib": 110,
+    "max_seconds": 21600,
+    "repetitions": 1,
+    "threads": 16
+  },
+  "target_started_by_this_check": false
+}

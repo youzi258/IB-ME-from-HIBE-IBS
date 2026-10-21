@@ -1,0 +1,20 @@
+{
+  "all_source_hashes_match": true,
+  "allowed_environment": {
+    "IBME_ESTIMATOR_DIR": "/root/workspace/wang-pw-s0-4-20261019/environment/lattice-estimator",
+    "IBME_LATTE3_EXECUTABLE": "/root/workspace/wang-pw-s0-4-20261019/environment/native/latte/bin/ibme-latte3",
+    "IBME_WANG_PW_TARGET_NATIVE": "/root/workspace/wang-pw-s0-4-20261019/environment/native/wang/libibme_wang_pw_gaussian.so"
+  },
+  "archive_sha256": "0173092994c66841b004af946e496be446aca35c4225b2963e64fe8b604df828",
+  "fixed_source_directory": "/root/workspace/wang-pw-s0-4-20261019/checkouts/reuse-qr-24f8207",
+  "native_library_matches": true,
+  "native_source_matches": true,
+  "new_wang_root_or_key": false,
+  "original_source_modified": false,
+  "private_directory_created": true,
+  "private_material_collected": false,
+  "public_directory": "/root/workspace/wang-pw-s0-4-20261019/public/continuation-20261020-24f8207",
+  "regular_file_count": 3356,
+  "schema": "IBME/WANG-PW-CONTINUATION-DEPLOYMENT/1",
+  "source_commit": "24f820723c65617fd202c636a1d3ad366d456359"
+}

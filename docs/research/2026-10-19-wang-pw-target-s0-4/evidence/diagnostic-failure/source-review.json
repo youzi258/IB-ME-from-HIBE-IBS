@@ -1,0 +1,81 @@
+{
+  "backend_admitted": false,
+  "exact_server_failure_branch_identified": false,
+  "frozen_run_commit": "ed10d6f126fb5deb89692164d749b95d5512b0a6",
+  "frozen_source_bindings": {
+    "experiments/research/wang_pw_target/run_guarded.py": {
+      "bytes": 18252,
+      "sha256": "a1134ed41ed2a52b9d3273bb51c842e3a91352f09a3fa88b87f47ab72b95ddab"
+    },
+    "experiments/research/wang_pw_target/run_lifecycle.py": {
+      "bytes": 32466,
+      "sha256": "f8a577a955101a22d0b9e0591329574a84b9f763177a8a31f4e9979fbd258b13"
+    },
+    "experiments/research/wang_pw_target/sign_independent.py": {
+      "bytes": 5549,
+      "sha256": "b607a3621d2bc457dd57ce7bae87f29a5cd27171b5e27dc7d73733b8f0007b0c"
+    },
+    "src/ibme/ibs/wang_pw_target/backend.py": {
+      "bytes": 11260,
+      "sha256": "a6cf5642e01fbb22c6c26975544ed018d9b29981a4dd9a37b5c71b1050389d26"
+    },
+    "src/ibme/ibs/wang_pw_target/math.py": {
+      "bytes": 6673,
+      "sha256": "26121cd7483cdfcd269e1bff4e78a1d803b65283d4c26493305d117087acbd7d"
+    },
+    "src/ibme/ibs/wang_pw_target/native.py": {
+      "bytes": 15402,
+      "sha256": "76662b9c9a0bf1343d620ac36c9cd87e6e6de0b9c7aaec3b8e97ba25d8db2d16"
+    },
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": {
+      "bytes": 18614,
+      "sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    }
+  },
+  "gate_and_probe_limit": "Maximum GS acceptance does not imply minimum GS resource acceptance. The public two-dimensional probe is not a Wang key or a reproduction of the server's private numerical data.",
+  "global_sigma": 3346570.4049137016,
+  "maximum_absolute_coordinate_center": 1125899906842624,
+  "minimum_gs_length_for_width_gate": 6.087376104758189e-05,
+  "minimum_gs_squared_for_width_gate": 3.7056147840780986e-09,
+  "native_maximum_coordinate_sigma": 54975581388.8,
+  "native_source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+  "nist_security_category": null,
+  "parameter_or_native_changes_to_failed_run": false,
+  "parameters_are_formal": false,
+  "references": {
+    "src/ibme/ibs/wang_pw_target/native.py": [
+      179,
+      182,
+      188,
+      209,
+      276,
+      307
+    ],
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": [
+      33,
+      34,
+      40,
+      213,
+      214,
+      234,
+      292,
+      303,
+      305,
+      321,
+      323
+    ]
+  },
+  "remaining_data_dependent_candidates": [
+    "coordinate sigma resource range",
+    "dynamic coordinate center resource range"
+  ],
+  "ruled_out_from_validated_inputs": [
+    "GPV dimension 49152 and column count 1 exceed neither 131072 bound",
+    "uint64_t square dimension does not overflow",
+    "17-argument ctypes ABI agrees with C++ declaration",
+    "policy 20/192/256/4096 and 16 threads satisfy gates",
+    "Python validates positive finite norms and finite star data"
+  ],
+  "schema": "IBME/WANG-PW-NATIVE-CODE1-REVIEW/1",
+  "security_claim": "none"
+}

@@ -1,0 +1,122 @@
+{
+  "algorithm_or_native_changed": false,
+  "backend_admitted": false,
+  "debug_wang_parameters": {
+    "n": 2,
+    "q": 257,
+    "root_width": 4.0
+  },
+  "deployment": {
+    "all_extracted_files_match_archive": true,
+    "archive_bytes": 82616320,
+    "archive_sha256": "90a44ace9acc65daee79041e6112b055de0fc0547ebc0e54902109ae0c3ff210",
+    "existing_main_checkout_modified": false,
+    "native_source_matches_running_source": true,
+    "new_wang_root_started": false,
+    "original_source_files_checked": 13,
+    "original_source_unchanged": true,
+    "regular_files_verified": 3338,
+    "schema": "IBME/WANG-PW-REUSE-SOURCE-TRANSFER/1",
+    "source_commit": "dd751fabbff9c90eaa71d5acff69de85b8197e34",
+    "target_reuse_tasks_started": false
+  },
+  "earlier_failures": [
+    {
+      "failed": 2,
+      "passed": 95,
+      "reason": "misplaced master did not block cached role restoration; fixed before final 103 tests",
+      "scope": "first-import-specialized-run",
+      "tests": 97
+    },
+    {
+      "failed": 1,
+      "passed": 4,
+      "reason": "registry parameter envelope was passed to primitive Params; fixed using public runtime parameter decoder",
+      "scope": "runner target-profile report",
+      "tests": 5
+    },
+    {
+      "pytest_failed": 0,
+      "pytest_tests": 3,
+      "reason": "post-pytest shell exit variable was empty; raw JUnit and pytest log show three passes",
+      "scope": "existing-Wang test shell wrapper",
+      "shell_exit": 1
+    }
+  ],
+  "generic_ibme_cli_target_tested": false,
+  "generic_ibme_cli_tested_on_debug_profile": true,
+  "implementation_commit": "dd751fabbff9c90eaa71d5acff69de85b8197e34",
+  "input_wrapper_processes_per_run": 1,
+  "latte_author_parameters": {
+    "n": 1024,
+    "q": 68718428161
+  },
+  "local_junit": {
+    "cli-import-final.xml": {
+      "duration_seconds": 89.868,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 103
+    },
+    "existing-wang-cli.xml": {
+      "duration_seconds": 53.433,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 3
+    },
+    "generic-cli-final.xml": {
+      "duration_seconds": 89.457,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 5
+    },
+    "generic-cli-role-only-recheck.xml": {
+      "duration_seconds": 91.125,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 1
+    },
+    "legacy-cli-final.xml": {
+      "duration_seconds": 28.409,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 110
+    }
+  },
+  "new_target_root_started": false,
+  "new_wang_signatures_per_run": 1,
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "public_cli_processes_per_run": 16,
+  "schema": "IBME/WANG-PW-GENERIC-CLI-PREPARATION/1",
+  "security_claim": "none",
+  "source_sha256": {
+    "IMPLEMENTATION_SPEC.md": "dab224ec7849fe0a064b24271bb2927932fb2f624ea3bf45aa17876836f0df5a",
+    "docs/specs/wang-pw-target-ibs.md": "dec71457d6f31428769c6e9a2ad987beb6bd2f02dd56ccd9e33cbe95cb1452dd",
+    "experiments/research/wang_pw_target/README.md": "e55e3b668eeb75d9b9e38228cfe774d60d3c9a1154fdfbad59b6acdd030f92f0",
+    "experiments/research/wang_pw_target/run_reused_cli.py": "baa127c4e2e04b9940ff3cc1831f28834fd318ed2027a93a2ac8b7df42719676",
+    "src/ibme/cli.py": "d09293e022c1a5a70fffcb5bb0a68e738ecbd46e390981d43daa4519572fbb2e",
+    "src/ibme/cli_import.py": "754d5ab693b80243646bdf26df316884d5e3b95cdd842f39d05f89fe910e0b68",
+    "tests/test_cli_role_import.py": "2b65e5ee75879723e7835c01d5e5357a252fd0ccb3788aa6c1018d74176ebb6d",
+    "tests/test_wang_pw_target_reused_cli.py": "035e3154ac39e7c9ccf35820325632db9454693b1d4545f18a86d61235713456"
+  },
+  "status": "local-tests-passed/target-still-running",
+  "target_reuse_tasks_started": false,
+  "target_snapshot": {
+    "checked_utc": "2026-10-20T02:48:12.556365+00:00",
+    "driver_pid_exists": true,
+    "elapsed_seconds": 3263.8716048020005,
+    "final_result": false,
+    "frozen_git_blob_hashes_match": true,
+    "phase": "extract",
+    "sampled_tree_rss_peak_bytes": 36794908672,
+    "source_files_checked": 13,
+    "status": "running"
+  },
+  "test_counts_are_not_added": true
+}

@@ -1,0 +1,21 @@
+{
+  "files": {
+    ".gitattributes": {
+      "bytes": 81,
+      "sha256": "dc2945d3282cd222a13250607344e03c45222bb69da489a0a7f30d54554887c3"
+    },
+    "regression.log": {
+      "bytes": 181,
+      "sha256": "38e1147246ee71839aa513b2745c365189fcc71c05fd5ac6e91cf5f460d4f9c5"
+    },
+    "regression.xml": {
+      "bytes": 23796,
+      "sha256": "b3cd2dc1cffd6402628ab188ab763d9202e9b70554507738d667b6c7763e5577"
+    },
+    "review.json": {
+      "bytes": 2724,
+      "sha256": "65203a8d3c13d03a02814a3377b29d69235c82e4e21e9ea1e7d12e25ebd7831e"
+    }
+  },
+  "schema": "IBME/PUBLIC-PAYLOAD-MANIFEST/1"
+}

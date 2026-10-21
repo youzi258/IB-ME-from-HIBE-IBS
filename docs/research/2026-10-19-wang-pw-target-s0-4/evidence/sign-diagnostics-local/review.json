@@ -1,0 +1,391 @@
+{
+  "backend_admitted": false,
+  "baseline_commit": "af11011e437b094162928c54c13ff7c7cb24bc27",
+  "baseline_comparison": {
+    "cold_and_warm_cache": true,
+    "cross_verify": true,
+    "fixture_source": "tests/test_wang_pw_target_backend.py existing target-lifecycle/alice/standalone-signer fixture",
+    "initial_fixture_rejection_preserved": true,
+    "native_rebuilt": false,
+    "numerical_inputs_equal": true,
+    "parameters": {
+      "n": 2,
+      "q": 257,
+      "s0": 4.0,
+      "threads": 2
+    },
+    "record": "baseline-parity.json",
+    "rng_read_bytes_and_sizes_equal": true,
+    "script": "baseline-parity.py",
+    "script_is_original_recorded_copy": true,
+    "script_requires_original_ignored_output_location": true,
+    "setup_extract_bytes_equal": true,
+    "signature_bytes_equal": true,
+    "signatures": 2,
+    "source": "backend-af11011.py"
+  },
+  "commands": {
+    "baseline_parity": "wsl.exe bash -lc 'PYTHONPATH=src:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -B build/outputs/wang-pw-target-diagnostics-2026-10-20/baseline-parity.py' 2>&1 | Tee-Object -FilePath build/outputs/wang-pw-target-diagnostics-2026-10-20/baseline-parity.log",
+    "diagnostics": "wsl.exe bash -lc 'PYTHONPATH=src:. ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider --junitxml=build/outputs/wang-pw-target-diagnostics-2026-10-20/diagnostics.xml tests/test_wang_pw_target_diagnostics.py' 2>&1 | Tee-Object -FilePath build/outputs/wang-pw-target-diagnostics-2026-10-20/diagnostics.log",
+    "regression": "wsl.exe -e bash -lc 'cd /mnt/c/Users/A/.codex/worktrees/wang-pw-complete-s0-4/IB-ME-from-HIBE-IBS && mkdir -p build/outputs/wang-pw-sign-diagnostics-2026-10-20 && env PYTHONPATH=src:. PYTHONDONTWRITEBYTECODE=1 IBME_WANG_PW_TARGET_NATIVE=/home/zhang/.cache/ibme-native-tools/wang-pw-target-s0-4/libibme_wang_pw_gaussian.so OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ~/miniconda3/envs/sage/bin/python -m pytest -q -p no:cacheprovider --junitxml=build/outputs/wang-pw-sign-diagnostics-2026-10-20/regression.xml tests/test_wang_pw_target_independent_diagnostics.py tests/test_wang_pw_target_independent.py tests/test_wang_pw_target_backend.py tests/test_wang_pw_target_native.py tests/test_wang_pw_target_random_failures.py tests/test_wang_pw_target_qr.py tests/test_wang_pw_target_runner.py tests/test_wang_pw_target_continuation.py > build/outputs/wang-pw-sign-diagnostics-2026-10-20/regression.log 2>&1'"
+  },
+  "diagnostic_semantics": {
+    "metadata_does_not_change_exception_or_reroll_policy": true,
+    "native_code_6_does_not_identify_bad_alloc": true,
+    "raw_exception_text_not_public_diagnostic": true,
+    "stage_means_last_entered_boundary_not_completed_operation": true
+  },
+  "environment": {
+    "cpu_model": "Intel(R) Core(TM) Ultra 7 255HX",
+    "kind": "local WSL Sage only; not the server",
+    "numpy": "2.5.3",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "prescribed_python": "~/miniconda3/envs/sage/bin/python",
+    "pytest": "9.1.1",
+    "python": "3.13.15 conda-forge GCC15.3.0",
+    "scipy": "1.18.1",
+    "wsl_visible_memory_bytes": 16429780992
+  },
+  "first_fixture_rejection": {
+    "exception_type": "SamplingError",
+    "log": "fixture-setup-rejected.log",
+    "n": 2,
+    "no_new_implementation_or_signature_reached": true,
+    "not_a_first_fixture_pass": true,
+    "q": 257,
+    "record": "fixture-setup-rejected.json",
+    "s0": 4.0,
+    "script": "fixture-setup-rejected.py",
+    "stage": "baseline Setup numerical GS gate",
+    "threads": 1
+  },
+  "formal_security_proof_established": false,
+  "git_whitespace_policy": {
+    "algorithm_or_test_failure": false,
+    "attributes": [
+      "* -text",
+      "* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol"
+    ],
+    "cr_at_eol_allowed": true,
+    "frozen_evidence_line_endings_converted": false,
+    "reason": "Frozen byte-exact evidence contains original CRLF line endings. Git must preserve those bytes and recognize CR before LF as a line-ending component, while retaining ordinary whitespace checks.",
+    "retained_checks": [
+      "blank-at-eol",
+      "blank-at-eof",
+      "space-before-tab"
+    ],
+    "scope": "This evidence directory only."
+  },
+  "implementation_commit": "ed10d6f126fb5deb89692164d749b95d5512b0a6",
+  "log_processing": {
+    "baseline-parity.log": {
+      "body_before_optional_path_redaction": {
+        "bytes": 2946,
+        "sha256": "b28010d9f05ff3be048ff2e6fabd9b1b2a2e89588862b1bc3bee17c46f4feb6a"
+      },
+      "omitted_launcher_prefix_bytes": 199,
+      "omitted_launcher_prefix_sha256": "07489cebd4a40e734398ac9f6c4dd0a14b579286c086c79573e671f4e056e891",
+      "path_redactions": [],
+      "public": {
+        "bytes": 2946,
+        "sha256": "b28010d9f05ff3be048ff2e6fabd9b1b2a2e89588862b1bc3bee17c46f4feb6a"
+      },
+      "pytest_body_bytes_preserved": false,
+      "raw": {
+        "bytes": 3145,
+        "sha256": "6b1e3715cd51d6df134222bffe69a185b692b8aa0789dc5aabc356ad8e3fbea7"
+      },
+      "source": "build/outputs/wang-pw-target-diagnostics-2026-10-20/baseline-parity.log"
+    },
+    "diagnostics.log": {
+      "body_before_optional_path_redaction": {
+        "bytes": 101,
+        "sha256": "ccb9ef252a2ccb4da150d2c25fdaec8fdab7d9ca9c555251e45b8687565a0be2"
+      },
+      "omitted_launcher_prefix_bytes": 199,
+      "omitted_launcher_prefix_sha256": "07489cebd4a40e734398ac9f6c4dd0a14b579286c086c79573e671f4e056e891",
+      "path_redactions": [],
+      "public": {
+        "bytes": 101,
+        "sha256": "ccb9ef252a2ccb4da150d2c25fdaec8fdab7d9ca9c555251e45b8687565a0be2"
+      },
+      "pytest_body_bytes_preserved": true,
+      "raw": {
+        "bytes": 300,
+        "sha256": "cbc4717bda35e48f22f6cf48574b547203ec31e64fb16d75db1f32dcb46dc7d9"
+      },
+      "source": "build/outputs/wang-pw-target-diagnostics-2026-10-20/diagnostics.log"
+    },
+    "fixture-setup-rejected.log": {
+      "body_before_optional_path_redaction": {
+        "bytes": 1017,
+        "sha256": "934b5f78d649d19ffb325af006dad18d678ad8773d3c7d1b5be69565f2b4afe5"
+      },
+      "omitted_launcher_prefix_bytes": 199,
+      "omitted_launcher_prefix_sha256": "07489cebd4a40e734398ac9f6c4dd0a14b579286c086c79573e671f4e056e891",
+      "path_redactions": [
+        {
+          "kind": "fixed local source directory prefix",
+          "occurrences": 3,
+          "replacement": "<local-diagnostic-output>/",
+          "source_prefix_sha256": "ae652b6eadbd9262770082f3fb8b796357925cecd0e51fc6f0a10a14967b384f"
+        }
+      ],
+      "public": {
+        "bytes": 717,
+        "sha256": "0850a4facea08d308503b8d202d6077185ba9f579a37fbb188800b74d7def119"
+      },
+      "pytest_body_bytes_preserved": false,
+      "raw": {
+        "bytes": 1216,
+        "sha256": "7d35c0f97ddd459c5cf6e99e836fa959ce8260d7cd5a0696d0595f02e2bae416"
+      },
+      "source": "build/outputs/wang-pw-target-diagnostics-2026-10-20/fixture-setup-rejected.log"
+    },
+    "regression.log": {
+      "body_before_optional_path_redaction": {
+        "bytes": 261,
+        "sha256": "8a23447dddd28994d177bc18144795ad44fda9595919dd43d0330f35237dd1d8"
+      },
+      "omitted_launcher_prefix_bytes": 0,
+      "omitted_launcher_prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path_redactions": [],
+      "public": {
+        "bytes": 261,
+        "sha256": "8a23447dddd28994d177bc18144795ad44fda9595919dd43d0330f35237dd1d8"
+      },
+      "pytest_body_bytes_preserved": true,
+      "raw": {
+        "bytes": 261,
+        "sha256": "8a23447dddd28994d177bc18144795ad44fda9595919dd43d0330f35237dd1d8"
+      },
+      "source": "build/outputs/wang-pw-sign-diagnostics-2026-10-20/regression.log"
+    }
+  },
+  "nist_security_category": null,
+  "parameter_security_established": false,
+  "parameters_are_formal": false,
+  "prior_evidence_binding": {
+    "all_working_bytes_equal_git": true,
+    "baseline_commit": "af11011e437b094162928c54c13ff7c7cb24bc27",
+    "files": {
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/.gitattributes": {
+        "bytes": 273,
+        "sha256": "74cccae0c921c5cc4ecedff4a3fddc4bf8052d6fc3c4a7e340500ba4b7b3bec9"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/child.stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/child.stdout.log": {
+        "bytes": 634,
+        "sha256": "60551231cbeeef8a1a81d258502b6ca5de8c233f4f7e607699dc8549b9d7f08e"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/controller-tests.log": {
+        "bytes": 182,
+        "sha256": "8f67360a85cea2ac0cda4deef013876033fdcaacbe3d3d0bef069c48a5ba4881"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/controller-tests.xml": {
+        "bytes": 12586,
+        "sha256": "0477d629003451bc6fd928787f0c764ffe0380a2ed294b3fa86dfd5a9bdc3f1e"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/launch.json": {
+        "bytes": 603,
+        "sha256": "06feab92d6d12b94d1ec5713b80f03d4f544387dc05c9b0860e29917e211f771"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/manifest.json": {
+        "bytes": 1866,
+        "sha256": "9253c78485a375ffb6bf6d2c6299f82ec25d1c2e3db687494ec5ad8003620352"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/post-failure-check.json": {
+        "bytes": 1300,
+        "sha256": "c448cad65356b64a810a681f640ab69de59567419cf8aa4bc76052540d17d382"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/review.json": {
+        "bytes": 5100,
+        "sha256": "736f6fc28b5423db3e1a60874be9c4ddba65d667d42c331e762628aba3161e69"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/source-transfer.json": {
+        "bytes": 1049,
+        "sha256": "916a13c7e2a63f6f3a2d180fde27d7139ab3e364e92789289b5897a295ca84d9"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/supervisor-launch.log": {
+        "bytes": 619,
+        "sha256": "9e6a257e46ec9d94339680fe6872d25e78581002700e0f014db61bee45b184cd"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/supervisor.json": {
+        "bytes": 1558,
+        "sha256": "5afef65e02f37c096b30cb6e7889e441cc29c7319757b44d25eff01765dd309f"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/supervisor.jsonl": {
+        "bytes": 619,
+        "sha256": "9e6a257e46ec9d94339680fe6872d25e78581002700e0f014db61bee45b184cd"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure/verify-reused-public.py": {
+        "bytes": 4511,
+        "sha256": "51ea6bac64004b0e0ed1e604087cb052481dedee7dc38161e349ec67cfc24012"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/child.stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/child.stdout.log": {
+        "bytes": 2541,
+        "sha256": "e85fe8855473352dc0a961abcd3457bb0dc7fcdbde60e28d10e644339e6650d8"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/manifest.json": {
+        "bytes": 1752,
+        "sha256": "2c27362f8a1e115547c41192eefebb0028ad2dae35cee1460eb5624ec8b03eec"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/post-failure-diagnostics.json": {
+        "bytes": 1289,
+        "sha256": "add794127eb9f982337ca6e52d8514a6220f1a898d7b24e37b98bae22e55d934"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/qr-regression.xml": {
+        "bytes": 4160,
+        "sha256": "93e5d1e47b09dd35cd5d9f9f3ac738135a3b729070275a57d9a4ea7d5f975304"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/review.json": {
+        "bytes": 2574,
+        "sha256": "bac774f276885f177abaebf8d1bbc730f16c8411482d6b21b84f8f2c19ff09e0"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/scipy-source-review.json": {
+        "bytes": 8354,
+        "sha256": "e7ffa77c4790f654e266e755490cda7e749b3fd27e2f8ef575243df2f516f872"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/source-verification.json": {
+        "bytes": 1865,
+        "sha256": "83b63e0e05f092bed3b32b979bfb359c453bbb9a41333a08b1fc55d309d41653"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/supervisor.json": {
+        "bytes": 1554,
+        "sha256": "8d6e03fcc1c573318a5ededd384c9a1a2a02fdbd093a78376e6cb126c03c8815"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/supervisor.jsonl": {
+        "bytes": 619,
+        "sha256": "60d671d377bb42f412bfcc5bda4e672e1c8b0c6c16591e0c5e1d8e245a3604a8"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target-n512.json": {
+        "bytes": 7990,
+        "sha256": "7a8d1ea4176fb7c55eb422e254f2392b14d54b3739251aaa8cc2c80de7487966"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target-n512.phases.jsonl": {
+        "bytes": 2541,
+        "sha256": "e85fe8855473352dc0a961abcd3457bb0dc7fcdbde60e28d10e644339e6650d8"
+      },
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target.time.public.txt": {
+        "bytes": 759,
+        "sha256": "3587a29462b7eb1e359a321b8f01553bb03f0ffecf7a91f908adf9733fe41b8c"
+      }
+    },
+    "scope_directories": [
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure",
+      "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/continuation-failure"
+    ],
+    "verified_files": 27
+  },
+  "prior_target_failure_root_cause_resolved_by_this_package": false,
+  "private_key_or_signature_material_included": false,
+  "regression_log_capture": "Redirection occurred inside the WSL shell; WSL launcher output was outside this file. No untrimmed alternative regression log exists.",
+  "rom": true,
+  "schema": "IBME/WANG-PW-SIGN-DIAGNOSTICS-LOCAL-REVIEW/1",
+  "security_claim": "none",
+  "server_contacted_by_this_local_batch": false,
+  "source_binding": {
+    "experiments/research/wang_pw_target/README.md": {
+      "bytes": 16271,
+      "sha256": "8bab48233891ee8804b64e546e27f100efc21a75dc59bf8fea80cf17c3566201"
+    },
+    "experiments/research/wang_pw_target/run_lifecycle.py": {
+      "bytes": 32466,
+      "sha256": "f8a577a955101a22d0b9e0591329574a84b9f763177a8a31f4e9979fbd258b13"
+    },
+    "experiments/research/wang_pw_target/sign_independent.py": {
+      "bytes": 5549,
+      "sha256": "b607a3621d2bc457dd57ce7bae87f29a5cd27171b5e27dc7d73733b8f0007b0c"
+    },
+    "src/ibme/ibs/wang_pw_target/backend.py": {
+      "bytes": 11260,
+      "sha256": "a6cf5642e01fbb22c6c26975544ed018d9b29981a4dd9a37b5c71b1050389d26"
+    },
+    "src/ibme/ibs/wang_pw_target/native.py": {
+      "bytes": 15402,
+      "sha256": "76662b9c9a0bf1343d620ac36c9cd87e6e6de0b9c7aaec3b8e97ba25d8db2d16"
+    },
+    "tests/test_wang_pw_target_diagnostics.py": {
+      "bytes": 15985,
+      "sha256": "52afa24f2ad8fe3f603c309a38262a5a8fa187b037d1fdc630e07a2ecb2222d2"
+    },
+    "tests/test_wang_pw_target_independent_diagnostics.py": {
+      "bytes": 7930,
+      "sha256": "c217ebffa34e48dd0e34fa10ba056a44424dc9933ab0a5fbb94c016c9384c936"
+    }
+  },
+  "status": "local-diagnostics-verified",
+  "target_root_generated_by_this_local_batch": false,
+  "target_signature_success_established_by_this_package": false,
+  "teaching_or_debug_parameters": true,
+  "testcases_disjoint": true,
+  "tests": {
+    "diagnostics": {
+      "classes": {
+        "tests.test_wang_pw_target_diagnostics": 46
+      },
+      "errors": 0,
+      "failures": 0,
+      "junit_bytes": {
+        "bytes": 7304,
+        "sha256": "b383f3d57f8e7ceecf5222767086bd981aa6fab89f0db6ed38b8ed1334836d57"
+      },
+      "junit_seconds": 2.581,
+      "passed": 46,
+      "skipped": 0,
+      "source_junit": "build/outputs/wang-pw-target-diagnostics-2026-10-20/diagnostics.xml"
+    },
+    "regression": {
+      "classes": {
+        "tests.test_wang_pw_target_backend": 12,
+        "tests.test_wang_pw_target_continuation": 84,
+        "tests.test_wang_pw_target_independent": 8,
+        "tests.test_wang_pw_target_independent_diagnostics": 33,
+        "tests.test_wang_pw_target_native": 9,
+        "tests.test_wang_pw_target_qr": 8,
+        "tests.test_wang_pw_target_random_failures": 9,
+        "tests.test_wang_pw_target_runner": 10
+      },
+      "errors": 0,
+      "failures": 0,
+      "junit_bytes": {
+        "bytes": 26031,
+        "sha256": "61df6eafda46d3f04b4511568753bfa4fa68cda028563c20acbb03d47a08cb0b"
+      },
+      "junit_seconds": 39.147,
+      "passed": 173,
+      "skipped": 0,
+      "source_junit": "build/outputs/wang-pw-sign-diagnostics-2026-10-20/regression.xml"
+    }
+  },
+  "total_passed": 219,
+  "unchanged_algorithm_parameter_encoding_files": {
+    "src/ibme/ibs/wang_pw_target/hashing.py": {
+      "bytes": 2748,
+      "sha256": "fce854050c71d17440d02404ca0a315ffddc3b8daa5326a1dbe4289b1a4335cf"
+    },
+    "src/ibme/ibs/wang_pw_target/math.py": {
+      "bytes": 6673,
+      "sha256": "26121cd7483cdfcd269e1bff4e78a1d803b65283d4c26493305d117087acbd7d"
+    },
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": {
+      "bytes": 18614,
+      "sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+    },
+    "src/ibme/ibs/wang_pw_target/objects.py": {
+      "bytes": 13852,
+      "sha256": "96d9f96217c451064cd20677361f227fc16a8770f41e8d99d1683e5a363f9798"
+    },
+    "src/ibme/ibs/wang_pw_target/params.py": {
+      "bytes": 10937,
+      "sha256": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59"
+    }
+  }
+}

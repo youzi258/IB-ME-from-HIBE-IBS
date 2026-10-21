@@ -1,0 +1,8 @@
+{
+  "schema": "IBME/WANG-PW-SOURCE-TRANSFER/1",
+  "status": "passed",
+  "operator_revision": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+  "archive_sha256": "9dea399022f7eaa3edec631d2601a11af5a5f629f54e42bda71c66e68f5fe44c",
+  "matched_files": 3297,
+  "all_archive_files_equal_extracted": true
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "IBME/WANG-PW-PUBLICATION-SNAPSHOT/1",
+  "source_head": "2d5d2bf8bc09d9c775c533392feab4591c3a2eaf",
+  "scope": "Two existing uncommitted Wang sampler files, copied without changing the source worktree",
+  "files": [
+    {
+      "path": "src/ibme/ibs/wang_pw_target/perturbation.py",
+      "source_worktree_sha256": "c310cb30ec4e69859d49be3f59fcbbd999f571723da9a4893cd736f9ac5ccd00",
+      "git_lf_sha256": "2dd66da0c7cfb0475014c5fe5547c1f626c9a0b577ea4ac24a981572135797d2"
+    },
+    {
+      "path": "tests/test_wang_pw_target_perturbation.py",
+      "source_worktree_sha256": "b51d3c1f31b560fb68f50710f0a55c2dd2348a66312a81a7ab4bca81a61eaf3a",
+      "git_lf_sha256": "1f898a765fb30499c196dd920cf3a201b86785927d2643c3bc59a5e1ae80a25e"
+    }
+  ],
+  "target_receipts_cover_this_snapshot": false,
+  "reason": "The snapshot changes ROUNDING_SIGMA from 1.0 to 1.5; saved target receipts do not bind this change.",
+  "normalization": "CRLF to LF and one final newline; source worktree unchanged"
+}

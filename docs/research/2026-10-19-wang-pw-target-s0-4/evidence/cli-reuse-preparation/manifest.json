@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "bytes": 15916,
+      "path": "cli-import-final.xml",
+      "sha256": "7bc83ab380f4c7f26e3a377760ad24db3d1cc8dfecbf86858d43867ebbf657f7"
+    },
+    {
+      "bytes": 99,
+      "path": "existing-wang-cli.log",
+      "sha256": "e77f00cf3bf6a6bf60f1b62f149eeadc422afeadda75a819ace1f308cec1199b"
+    },
+    {
+      "bytes": 642,
+      "path": "existing-wang-cli.xml",
+      "sha256": "b7fad69ded2753ab1359cb21a56e6eae652690b9728c37ed8846d5288bedb18b"
+    },
+    {
+      "bytes": 976,
+      "path": "generic-cli-final.xml",
+      "sha256": "9119e75ee42b8ca282e93de71ad49e324c249b15c98f40d2679900301671d337"
+    },
+    {
+      "bytes": 397,
+      "path": "generic-cli-role-only-recheck.xml",
+      "sha256": "1d72b4f0920c3fbbff5467bc2c78e531505cd19b56089632a45e8d96e3147b41"
+    },
+    {
+      "bytes": 15182,
+      "path": "legacy-cli-final.xml",
+      "sha256": "9244c200db7c6d7e462bc4ea9861df094117f28f270c8a50a62a8326b3d71f5e"
+    },
+    {
+      "bytes": 529,
+      "path": "reuse-source-transfer.json",
+      "sha256": "65924d175e0bed56946a6816f4d1e0648c956685e156e540fadf87522a8302ed"
+    },
+    {
+      "bytes": 4177,
+      "path": "review.json",
+      "sha256": "1fa88f3e63a7be19d441fef11550049e9a865c453a77c4ad1cbf565c7e09c10e"
+    },
+    {
+      "bytes": 6107,
+      "path": "running-snapshot.json",
+      "sha256": "ed844dde9058dd46e61e58c2e876bad728797dcda77fd7bfa78624f63c2db178"
+    }
+  ],
+  "schema": "IBME/WANG-PW-EVIDENCE-MANIFEST/1",
+  "self_excluded": true
+}

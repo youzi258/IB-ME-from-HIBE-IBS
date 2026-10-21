@@ -1,0 +1,635 @@
+{
+  "id": "wang-pw",
+  "layer": "primitive",
+  "environment": "sage",
+  "files": [
+    "tests/test_cli_role_import.py",
+    "tests/test_wang_pw_boundary_regressions.py",
+    "tests/test_wang_pw_ibs.py",
+    "tests/test_wang_pw_linear_regressions.py",
+    "tests/test_wang_pw_numeric_full.py",
+    "tests/test_wang_pw_numeric_native.py",
+    "tests/test_wang_pw_numeric_sampler.py",
+    "tests/test_wang_pw_reference.py",
+    "tests/test_wang_pw_root_basis_numpy.py",
+    "tests/test_wang_pw_sampling_regressions.py",
+    "tests/test_wang_pw_service.py",
+    "tests/test_wang_pw_target_adoption.py",
+    "tests/test_wang_pw_target_audit.py",
+    "tests/test_wang_pw_target_backend.py",
+    "tests/test_wang_pw_target_cli.py",
+    "tests/test_wang_pw_target_combination.py",
+    "tests/test_wang_pw_target_combination_process.py",
+    "tests/test_wang_pw_target_component_budgets.py",
+    "tests/test_wang_pw_target_continuation.py",
+    "tests/test_wang_pw_target_diagnostics.py",
+    "tests/test_wang_pw_target_environment.py",
+    "tests/test_wang_pw_target_independent.py",
+    "tests/test_wang_pw_target_independent_diagnostics.py",
+    "tests/test_wang_pw_target_key_resource_audit.py",
+    "tests/test_wang_pw_target_native.py",
+    "tests/test_wang_pw_target_native_reasons.py",
+    "tests/test_wang_pw_target_objects.py",
+    "tests/test_wang_pw_target_parameter_planning.py",
+    "tests/test_wang_pw_target_params.py",
+    "tests/test_wang_pw_target_perturbation.py",
+    "tests/test_wang_pw_target_qr.py",
+    "tests/test_wang_pw_target_random_failures.py",
+    "tests/test_wang_pw_target_registration.py",
+    "tests/test_wang_pw_target_reused_cli.py",
+    "tests/test_wang_pw_target_reused_combination.py",
+    "tests/test_wang_pw_target_reused_service.py",
+    "tests/test_wang_pw_target_runner.py",
+    "tests/test_wang_pw_target_screen.py",
+    "tests/test_wang_pw_target_service.py"
+  ],
+  "status": "partial",
+  "security_claim": "none",
+  "combination_accepted": false,
+  "command": [
+    "/home/youzi/miniforge3/envs/sage/bin/python3.13",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--tb=short",
+    "tests/test_cli_role_import.py",
+    "tests/test_wang_pw_boundary_regressions.py",
+    "tests/test_wang_pw_ibs.py",
+    "tests/test_wang_pw_linear_regressions.py",
+    "tests/test_wang_pw_numeric_full.py",
+    "tests/test_wang_pw_numeric_native.py",
+    "tests/test_wang_pw_numeric_sampler.py",
+    "tests/test_wang_pw_reference.py",
+    "tests/test_wang_pw_root_basis_numpy.py",
+    "tests/test_wang_pw_sampling_regressions.py",
+    "tests/test_wang_pw_service.py",
+    "tests/test_wang_pw_target_adoption.py",
+    "tests/test_wang_pw_target_audit.py",
+    "tests/test_wang_pw_target_backend.py",
+    "tests/test_wang_pw_target_cli.py",
+    "tests/test_wang_pw_target_combination.py",
+    "tests/test_wang_pw_target_combination_process.py",
+    "tests/test_wang_pw_target_component_budgets.py",
+    "tests/test_wang_pw_target_continuation.py",
+    "tests/test_wang_pw_target_diagnostics.py",
+    "tests/test_wang_pw_target_environment.py",
+    "tests/test_wang_pw_target_independent.py",
+    "tests/test_wang_pw_target_independent_diagnostics.py",
+    "tests/test_wang_pw_target_key_resource_audit.py",
+    "tests/test_wang_pw_target_native.py",
+    "tests/test_wang_pw_target_native_reasons.py",
+    "tests/test_wang_pw_target_objects.py",
+    "tests/test_wang_pw_target_parameter_planning.py",
+    "tests/test_wang_pw_target_params.py",
+    "tests/test_wang_pw_target_perturbation.py",
+    "tests/test_wang_pw_target_qr.py",
+    "tests/test_wang_pw_target_random_failures.py",
+    "tests/test_wang_pw_target_registration.py",
+    "tests/test_wang_pw_target_reused_cli.py",
+    "tests/test_wang_pw_target_reused_combination.py",
+    "tests/test_wang_pw_target_reused_service.py",
+    "tests/test_wang_pw_target_runner.py",
+    "tests/test_wang_pw_target_screen.py",
+    "tests/test_wang_pw_target_service.py",
+    "--junitxml=/tmp/ibme-pr84-completed-route-obpp2b3i/wang-pw.xml"
+  ],
+  "exit_code": 0,
+  "counts": {
+    "tests": 1159,
+    "passed": 1063,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 96,
+    "xfailed": 0
+  },
+  "skip_reasons": [
+    {
+      "test": "tests.test_cli_role_import.test_import_and_same_role_issue_are_zero_sampling_and_read_only[False-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_and_same_role_issue_are_zero_sampling_and_read_only[False-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_and_same_role_issue_are_zero_sampling_and_read_only[True-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_and_same_role_issue_are_zero_sampling_and_read_only[True-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[new-identity-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[new-identity-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[wrong-role-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[wrong-role-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[missing-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[missing-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[truncated-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[truncated-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[appended-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[appended-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[misplaced-msk-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_imported_issue_never_repairs_or_reissues[misplaced-msk-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_any_misplaced_master_entry_blocks_all_role_commands_before_runtime[directory-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_any_misplaced_master_entry_blocks_all_role_commands_before_runtime[directory-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_any_misplaced_master_entry_blocks_all_role_commands_before_runtime[dangling-link-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_any_misplaced_master_entry_blocks_all_role_commands_before_runtime[dangling-link-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_any_misplaced_master_entry_blocks_all_role_commands_before_runtime[foreign-file-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_any_misplaced_master_entry_blocks_all_role_commands_before_runtime[foreign-file-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[version-True]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[identity_bytes-True]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[backend_admitted-0]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[parameters_are_formal-0]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[master_persisted_before_key_publication-0]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[master_persisted_before_key_publication-True]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[security_claim-128-bit]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[state_origin-None]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[state_origin-new-untrusted-origin]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[state_origin-1]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[imported_role-master]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[imported_role-True]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[imported_role-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[imported_identity_sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[imported_identity_sha256-0000000000000000000000000000000000000000000000000000000000000000]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[imported_identity_sha256-1]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_metadata_types_unknown_fields_and_bindings_fail_closed[unexpected-unknown fields are not ignored]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[other-root-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[other-root-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[wrong-role-wire-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[wrong-role-wire-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[outer-identity-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[outer-identity-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[truncated-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[truncated-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[appended-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[appended-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[primitive-only-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[primitive-only-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[wrong-parameters-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_nonmatching_canonical_inputs_rejected_before_creating_state[wrong-parameters-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[newline-suite]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[duplicate-suite]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[unknown-suite]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[public-extra]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[symlink-key]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[empty-key]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[directory-key]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[both-roles]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_source_bounds_and_strict_syntax[no-role]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_target_rejects_overwrite_alias_and_git[populated]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_target_rejects_overwrite_alias_and_git[symlink]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_import_target_rejects_overwrite_alias_and_git[inside-git]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[False-public-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[False-public-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[False-role-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[False-role-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[False-metadata-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[False-metadata-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[True-public-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[True-public-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[True-role-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[True-role-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[True-metadata-sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_each_publication_failure_is_durable_and_never_automatically_retried[True-metadata-receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_hard_process_exit_keeps_pending_and_blocks_all_use[False-mpk.bin]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_hard_process_exit_keeps_pending_and_blocks_all_use[False-sender-]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_hard_process_exit_keeps_pending_and_blocks_all_use[False-state.json]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_hard_process_exit_keeps_pending_and_blocks_all_use[True-mpk.bin]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_hard_process_exit_keeps_pending_and_blocks_all_use[True-sender-]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_hard_process_exit_keeps_pending_and_blocks_all_use[True-state.json]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_two_independent_imports_publish_once_and_never_overwrite",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_binary64_identity_real_lifecycle_recovers_in_independent_processes",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_utf8_and_hex_spellings_restore_the_identical_key[sender]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_utf8_and_hex_spellings_restore_the_identical_key[receiver]",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_cli_role_import.test_existing_selected_v2_metadata_and_cached_keys_remain_compatible",
+      "reason": "explicitly prepare the external LATTE bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_combination.test_real_latte_wang_debug_common_driver_acceptance",
+      "reason": "explicitly prepare the external LATTE native bridge first",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_combination_process.test_real_latte_wang_cli_processes_and_role_only_state",
+      "reason": "prepare the external LATTE native bridge before this test",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_parameter_planning.test_real_tool_small_frozen_rejection_then_conditional_cost",
+      "reason": "existing frozen estimator is absent; no download is attempted",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_reused_cli.test_public_cli_import_binary_identity_one_sign_recovery_and_all_attacks",
+      "reason": "prepare the existing LATTE bridge",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_reused_cli.test_cli_runner_errors_do_not_publish_private_operator_paths",
+      "reason": "prepare the existing LATTE bridge",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_reused_combination.test_reused_binary_identity_one_sign_role_recovery_and_attacks",
+      "reason": "prepare the existing LATTE bridge",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_reused_combination.test_driver_errors_redact_operator_paths",
+      "reason": "prepare the existing LATTE bridge",
+      "type": "pytest.skip"
+    },
+    {
+      "test": "tests.test_wang_pw_target_screen.test_real_frozen_estimator_norm2_rejects_conditional_beta",
+      "reason": "the configured existing estimator checkout is absent",
+      "type": "pytest.skip"
+    }
+  ],
+  "source_sha256": {
+    "tests/test_cli_role_import.py": "2b65e5ee75879723e7835c01d5e5357a252fd0ccb3788aa6c1018d74176ebb6d",
+    "tests/test_wang_pw_boundary_regressions.py": "0e8cf124126917fa885cfd04d5fc50c5e8d21ec30cc4a017667ce1744f770707",
+    "tests/test_wang_pw_ibs.py": "d212dd7625a3b6e8120cd678c67946378628bd17961a96e55f8c06f9c64e9dbd",
+    "tests/test_wang_pw_linear_regressions.py": "a1c677d3c31f1ce4233afff2b3d9410a9d29933c8d265115591d0d92bef3815c",
+    "tests/test_wang_pw_numeric_full.py": "ea3ff3b8ff011d73296198b922794c959797bae1c6a40a5ac7acc0454f4946e9",
+    "tests/test_wang_pw_numeric_native.py": "0f32287e7b47aaddd95fc07c05e79ed94e929b6d31e9fe9a037fe52af0e59af1",
+    "tests/test_wang_pw_numeric_sampler.py": "538aeed46ed2642a47017e7f7589a9d35ab02613ea46ca80e614c2dea22cf168",
+    "tests/test_wang_pw_reference.py": "fccaef8c6692273dcece149cb051f275b51e741486ea8cef670c98a755d1e2e2",
+    "tests/test_wang_pw_root_basis_numpy.py": "6cbee900609da99e6620243ce2f3d32bddeb9221864ebd240b8cc6d4d3996683",
+    "tests/test_wang_pw_sampling_regressions.py": "c12423b2ec85b99bb400980b0e3612d7833c2cc26ba039927324d9fffedbe9ca",
+    "tests/test_wang_pw_service.py": "b1ab6413354f784fd098fc1552ed18772aca3c5982e45f43bc1d7f2c1060aa47",
+    "tests/test_wang_pw_target_adoption.py": "8bdfb654f46be793a23d9275c042d215d9ef41acd6114b40631f7aa4ad764fee",
+    "tests/test_wang_pw_target_audit.py": "5799a1e7d2794682ce2aaa377175b34a01cc70245b872350268dde6acc130147",
+    "tests/test_wang_pw_target_backend.py": "6ecf20c29568828cc68bf11c8c828ea8c10cbff720f0ff22cdba145c0fffd542",
+    "tests/test_wang_pw_target_cli.py": "b16af42c648b58838a83b635267200397cf5baa42400fef302491b98eb37471d",
+    "tests/test_wang_pw_target_combination.py": "3b8dc003ed21da8545bf1690bce647dd18e4ac6995364f3798bc5237503b9221",
+    "tests/test_wang_pw_target_combination_process.py": "2589b0e01bfd6f4cd1cd334e559ec7477100fc168ad621b3ba94f66055500b7c",
+    "tests/test_wang_pw_target_component_budgets.py": "24492dab9e173028a7bf0c92da08fd11fbdfbc47c194c10ff774964c00ee1faf",
+    "tests/test_wang_pw_target_continuation.py": "d188f9e5e7683618e05939321bd03e90bcd0d1532795e38cbe0738973af525a5",
+    "tests/test_wang_pw_target_diagnostics.py": "52afa24f2ad8fe3f603c309a38262a5a8fa187b037d1fdc630e07a2ecb2222d2",
+    "tests/test_wang_pw_target_environment.py": "93ca9a553773e85882d25674b9d133e189d9e2a7a208d4417d850748eacd6645",
+    "tests/test_wang_pw_target_independent.py": "a84664b941d04f4b8e4f541e2815033e59307c88cf4704bf1f8bf59b90b6ab09",
+    "tests/test_wang_pw_target_independent_diagnostics.py": "193f65f89dfc3ae35195eac041ba6e28fe9b04f55e4c71907501d497075b688d",
+    "tests/test_wang_pw_target_key_resource_audit.py": "6dbe5d25e22c0891b92dd37d7a0b8ff45a789bf38da5bcbfc64794b3baa08cd7",
+    "tests/test_wang_pw_target_native.py": "6f1bc4c0edd22d20c79c6ecb8642e8078c462de21e96cf941151c0117fe35579",
+    "tests/test_wang_pw_target_native_reasons.py": "40a7e8b8e5cc6e544ef18b62770a2df7ed4fad0e7fea5c4a82ebbfe50683ebb4",
+    "tests/test_wang_pw_target_objects.py": "2e454d308ae0d0a5d06bf7f5b9dbcd82dde4084b0517b9c718bcbeb465a7a12c",
+    "tests/test_wang_pw_target_parameter_planning.py": "a19bed09f7755477f99c7c756b786acbc36953e4c0784d4dc95ef8e39671103d",
+    "tests/test_wang_pw_target_params.py": "8a360c8388bb5604e3a44bbd925bee3ed3f478af17925ad666f849fabf684f2a",
+    "tests/test_wang_pw_target_perturbation.py": "1f898a765fb30499c196dd920cf3a201b86785927d2643c3bc59a5e1ae80a25e",
+    "tests/test_wang_pw_target_qr.py": "64bd7120110bf4cf4daacb58d3cc958a5ad4c11c844f9e47e082791a131b51e1",
+    "tests/test_wang_pw_target_random_failures.py": "4e97422649c003f87a9c8ddbf8a7c417f0fc87761646858fdb71da92b86f3aff",
+    "tests/test_wang_pw_target_registration.py": "0ff60c734df012d3a83464a79191dfbb184f2e4c2f575a01ae610b943c7ecebf",
+    "tests/test_wang_pw_target_reused_cli.py": "035e3154ac39e7c9ccf35820325632db9454693b1d4545f18a86d61235713456",
+    "tests/test_wang_pw_target_reused_combination.py": "9297d7a18a02d397dea202407bf1f6c6ec01ccf492be0c4f63148dd320667d64",
+    "tests/test_wang_pw_target_reused_service.py": "1508efeed5d0d5200598b7d21b6c2fb873cf1698072e664abd7e26280f2f64f1",
+    "tests/test_wang_pw_target_runner.py": "9f7b8d7cd8fd9ab66449b808b823244d4cec437a4946a8d58cd8258697809187",
+    "tests/test_wang_pw_target_screen.py": "6da084cfb921b82036c4022434fecb140eb60308099e2cbe66c6ddd43437c210",
+    "tests/test_wang_pw_target_service.py": "219f137a56244d81fb3a15c529e124047f6f11e1b07fe7966b082156d1a1f664",
+    "ci/run.py": "942c38b3c973aadad93332818a347705f3c36cd4e972230e13427d9ca54fc839",
+    "ci/suites.json": "746d9879ae5d87bb348f351c19b7aaad295ed05023d31425848e8f7852dc9254",
+    "src/ibme/assembly/catalog.py": "3c4a5efddacd6c75490576ae1c3c7eafdc82115c1c8b594d42e3383afe29b1c4"
+  },
+  "revision": "68bbe37ec85673fd00aff4fc8cc7918865803cbf",
+  "working_tree_dirty": true
+}

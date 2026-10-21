@@ -1,0 +1,62 @@
+{
+  "backend_admitted": false,
+  "continuation": {
+    "authorized_by_user_after_failure": true,
+    "new_setup_or_extract_authorized": false,
+    "preserve_original_failure_receipts": true,
+    "reuse_only_existing_wang_key": true,
+    "status": "not-started"
+  },
+  "diagnosis": {
+    "dense_matrix_storage_estimate_after_gib": 54,
+    "dense_matrix_storage_estimate_before_gib": 72,
+    "elements": 2415919104,
+    "historical_exception_unique_location_established": false,
+    "physical_ram_exhaustion_established": false,
+    "scipy_full_cblas_int_buffer_defect_identified": true,
+    "single_int64_or_float64_matrix_bytes": 19327352832,
+    "square_dimension": 49152,
+    "storage_estimates_are_measured_peaks": false
+  },
+  "duration_seconds": 6121.073011933,
+  "finished_utc": "2026-10-20T03:35:49.092+00:00",
+  "lifecycle_sampled_rss_peak_bytes": 41887293440,
+  "local_qr_fix_commit": "24f820723c65617fd202c636a1d3ad366d456359",
+  "nist_security_category": null,
+  "original_failure_phase": "sign",
+  "original_failure_type": "MemoryError",
+  "original_phases_passed": [
+    "setup",
+    "extract"
+  ],
+  "original_status": "failed",
+  "parameters_are_formal": false,
+  "phases_not_executed": [
+    "verify",
+    "restore",
+    "sign-restored"
+  ],
+  "private_material_collected": false,
+  "qr_fix_deployed_to_target": false,
+  "qr_fix_target_tested": false,
+  "requested_lifecycle_complete": false,
+  "schema": "IBME/WANG-PW-TARGET-FAILURE-REVIEW/1",
+  "security_claim": "none",
+  "source_binding": {
+    "src/ibme/ibs/wang_pw_target/math.py": "26121cd7483cdfcd269e1bff4e78a1d803b65283d4c26493305d117087acbd7d",
+    "tests/test_wang_pw_target_qr.py": "64bd7120110bf4cf4daacb58d3cc958a5ad4c11c844f9e47e082791a131b51e1"
+  },
+  "source_commit": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+  "source_stable": true,
+  "supervisor_child_returncode": 1,
+  "supervisor_sampled_rss_peak_bytes": 41677619200,
+  "test_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src IBME_WANG_PW_TARGET_NATIVE=/home/zhang/.cache/ibme-native-tools/wang-pw-target-s0-4/libibme_wang_pw_gaussian.so ~/miniconda3/envs/sage/bin/python -B -m pytest -q -p no:cacheprovider tests/test_wang_pw_target_qr.py tests/test_wang_pw_target_backend.py tests/test_wang_pw_target_independent.py --junitxml=build/outputs/wang-pw-failure-2026-10-20/qr-regression.xml",
+  "test_environment": "Local WSL Sage; path above is observed external environment evidence, not a portable requirement",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "junit_seconds": 22.569,
+    "passed": 28,
+    "skipped": 0
+  }
+}

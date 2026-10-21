@@ -1,0 +1,164 @@
+{
+  "archive_copies_bound_to_original_ignored_outputs": 9,
+  "backend_admitted": false,
+  "baseline_commit": "af11011e437b094162928c54c13ff7c7cb24bc27",
+  "first_rejected_fixture_preserved": true,
+  "frozen_payloads_unchanged_by_attribute_fix": {
+    "count": 13,
+    "files": {
+      "backend-af11011.py": {
+        "bytes": 8273,
+        "sha256": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548"
+      },
+      "baseline-parity.json": {
+        "bytes": 3535,
+        "sha256": "3ece0ccf91c6e753c5ff71c1505f0958ed58fa29e7b9190f777d15d7619fcfcd"
+      },
+      "baseline-parity.log": {
+        "bytes": 2946,
+        "sha256": "b28010d9f05ff3be048ff2e6fabd9b1b2a2e89588862b1bc3bee17c46f4feb6a"
+      },
+      "baseline-parity.py": {
+        "bytes": 5768,
+        "sha256": "b1df8f22add499916c062539099fbabaa232ef81e2c27f1cad166b18ab01dc49"
+      },
+      "baseline-provenance.json": {
+        "bytes": 227,
+        "sha256": "2c04cf9e59f67b4b4c5f03d9719589a63c97a8e5ea877b902aa3f6cbde3b2404"
+      },
+      "diagnostics.log": {
+        "bytes": 101,
+        "sha256": "ccb9ef252a2ccb4da150d2c25fdaec8fdab7d9ca9c555251e45b8687565a0be2"
+      },
+      "diagnostics.xml": {
+        "bytes": 7304,
+        "sha256": "b383f3d57f8e7ceecf5222767086bd981aa6fab89f0db6ed38b8ed1334836d57"
+      },
+      "fixture-setup-rejected.json": {
+        "bytes": 1037,
+        "sha256": "6114a32672a57a302aa6e5454c7861023dc5a0a446da10e76e430e7ee5406536"
+      },
+      "fixture-setup-rejected.log": {
+        "bytes": 717,
+        "sha256": "0850a4facea08d308503b8d202d6077185ba9f579a37fbb188800b74d7def119"
+      },
+      "fixture-setup-rejected.py": {
+        "bytes": 5403,
+        "sha256": "e26d2f631db8355a28f36cb3172ef209db08281a5efe37e3766141151404c640"
+      },
+      "implementation-provenance.json": {
+        "bytes": 1640,
+        "sha256": "9975f23e92a137c03a892cd85aba2872cd3a495a6b49b60f95643a2b572915d4"
+      },
+      "regression.log": {
+        "bytes": 261,
+        "sha256": "8a23447dddd28994d177bc18144795ad44fda9595919dd43d0330f35237dd1d8"
+      },
+      "regression.xml": {
+        "bytes": 26031,
+        "sha256": "61df6eafda46d3f04b4511568753bfa4fa68cda028563c20acbb03d47a08cb0b"
+      }
+    }
+  },
+  "git_whitespace_policy": {
+    "algorithm_or_test_failure": false,
+    "attributes": [
+      "* -text",
+      "* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol"
+    ],
+    "cr_at_eol_allowed": true,
+    "frozen_evidence_line_endings_converted": false,
+    "reason": "Frozen byte-exact evidence contains original CRLF line endings. Git must preserve those bytes and recognize CR before LF as a line-ending component, while retaining ordinary whitespace checks.",
+    "retained_checks": [
+      "blank-at-eol",
+      "blank-at-eof",
+      "space-before-tab"
+    ],
+    "scope": "This evidence directory only."
+  },
+  "implementation_commit": "ed10d6f126fb5deb89692164d749b95d5512b0a6",
+  "implementation_files_bound_to_git": 7,
+  "limits": [
+    "The audit verifies recorded local debug runs and their source/log binding; it does not rerun sampling.",
+    "Local n2/q257 parity does not establish n512 signing success, target resource acceptance, formal parameters, or security.",
+    "Environment version and hardware fields in review.json are recorded provenance, not remeasured by this audit.",
+    "The original baseline-parity scripts remain byte-exact record copies and require their original ignored output location."
+  ],
+  "local_existing_native_library_hash_rechecked": "70692653547d96f1883c4ad3d1059425f0154bffcad9f21dbc624623e0c04f69",
+  "local_existing_native_receipt": {
+    "abi_version": 1,
+    "compiler": "g++",
+    "library_sha256": "70692653547d96f1883c4ad3d1059425f0154bffcad9f21dbc624623e0c04f69",
+    "schema": "IBME-WANG-PW-NATIVE-BUILD-v1",
+    "source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e"
+  },
+  "native_rebuilt_by_this_audit": false,
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "preserved_prior_evidence_files_bound_to_git": 27,
+  "private_material_review": {
+    "binary_key_signature_salt_payloads_present": false,
+    "file_allowlist_reviewed": true,
+    "long_hex_payloads_present": false,
+    "pem_private_key_markers_present": false,
+    "public_source_code_and_debug_seeds_present": true,
+    "signature_material": "SHA256 and byte lengths of public deterministic debug signatures only",
+    "test_names": "Include deliberate fixed PRIVATE placeholder sentinels; not actual secret material"
+  },
+  "processed_logs_reconstructed_and_hash_verified": 4,
+  "schema": "IBME/WANG-PW-SIGN-DIAGNOSTICS-INDEPENDENT-LOCAL-AUDIT/1",
+  "security_claim": "none",
+  "server_contacted_by_this_audit": false,
+  "small_real_algorithm_parity": {
+    "cache_order": [
+      "cold",
+      "warm"
+    ],
+    "cross_verify": true,
+    "numerical_inputs_equal": true,
+    "parameters": {
+      "n": 2,
+      "q": 257,
+      "s0": 4.0,
+      "threads": 2
+    },
+    "random_bytes_and_request_sizes_equal": true,
+    "rerun_performed_by_this_audit": false,
+    "result_matches_original_stdout_json": true,
+    "script_static_calls_reviewed": true,
+    "setup_extract_signature_bytes_equal": true,
+    "signatures": 2
+  },
+  "status": "passed",
+  "target_experiment_started_by_this_audit": false,
+  "testcase_intersection": 0,
+  "tests": {
+    "diagnostics": {
+      "classes": {
+        "tests.test_wang_pw_target_diagnostics": 46
+      },
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "unique_testcases": 46
+    },
+    "regression": {
+      "classes": {
+        "tests.test_wang_pw_target_backend": 12,
+        "tests.test_wang_pw_target_continuation": 84,
+        "tests.test_wang_pw_target_independent": 8,
+        "tests.test_wang_pw_target_independent_diagnostics": 33,
+        "tests.test_wang_pw_target_native": 9,
+        "tests.test_wang_pw_target_qr": 8,
+        "tests.test_wang_pw_target_random_failures": 9,
+        "tests.test_wang_pw_target_runner": 10
+      },
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "unique_testcases": 173
+    }
+  },
+  "total_unique_passed_testcases": 219,
+  "unchanged_algorithm_parameter_encoding_files": 5
+}

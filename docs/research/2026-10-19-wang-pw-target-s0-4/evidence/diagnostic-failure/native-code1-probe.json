@@ -1,0 +1,78 @@
+{
+  "backend_admitted": false,
+  "checked_at": "2026-10-20T05:42:04.449154+00:00",
+  "draw": {
+    "duration_seconds": 0.19861338300000053,
+    "expected_fixed_sigma_gate_message_matched": true,
+    "failure_type": "SamplingError",
+    "native_code": 1,
+    "public_center": 0.0,
+    "public_count": 1,
+    "public_reason": "native-return-code",
+    "public_sigma": 1000000000000.0,
+    "status": "expected-rejection"
+  },
+  "extract_called": false,
+  "fixed_public_seed": "32 zero bytes; explicit test_only=True",
+  "gpv": {
+    "absolute_determinant": 1,
+    "configured_upper_gs_gate": 1048576,
+    "determinant": -1,
+    "duration_seconds": 0.0036938319999997304,
+    "expected_fixed_sigma_gate_message_matched": true,
+    "failure_type": "SamplingError",
+    "native_code": 1,
+    "public_basis": [
+      [
+        1000000,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "public_coordinate_sigmas": [
+      3.346570404912028,
+      3346570404915.375
+    ],
+    "public_gs_squared_norms": [
+      1000000000001.0,
+      9.99999999999e-13
+    ],
+    "public_maximum_gs": 1000000.0000005,
+    "public_particular": [
+      0,
+      0
+    ],
+    "public_reason": "native-return-code",
+    "public_sign_sigma": 3346570.4049137016,
+    "sigma_gate_exceeded_at_public_coordinate": 1,
+    "status": "expected-rejection",
+    "upper_gs_gate_passes": true
+  },
+  "native_library_sha256": "70692653547d96f1883c4ad3d1059425f0154bffcad9f21dbc624623e0c04f69",
+  "native_rebuilt": false,
+  "native_source_sha256": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+  "nist_security_category": null,
+  "parameters_are_formal": false,
+  "policy": {
+    "mass_bits": 192,
+    "max_attempts": 4096,
+    "precision_bits": 256,
+    "tail_sigma": 20.0,
+    "test_only": true,
+    "threads": 1
+  },
+  "schema": "IBME/WANG-PW-PUBLIC-NATIVE-CODE1-PROBE/1",
+  "scope": "Public-input engineering rejection reproduction only; does not uniquely attribute server failure.",
+  "security_claim": "none",
+  "server_contacted": false,
+  "setup_called": false,
+  "sigma_cap": 54975581388.8,
+  "sign_called": false,
+  "status": "both-public-resource-gates-reproduced",
+  "target_root_or_key_generated": false,
+  "target_root_or_key_loaded": false,
+  "target_signature_generated": false
+}

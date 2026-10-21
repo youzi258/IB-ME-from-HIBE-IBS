@@ -1,0 +1,68 @@
+{
+  "backend_admitted": false,
+  "generic_ibme_cli_target_tested": false,
+  "implementation_commit": "f56e488d990a8aba1b6a59da1d140b9d66458cb1",
+  "local_service_and_entropy_tests": {
+    "duration_seconds": 23.858,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 64
+  },
+  "new_target_root_started": false,
+  "nist_security_category": null,
+  "original_issuance_performed_by_import_service": false,
+  "parameters_are_formal": false,
+  "real_debug_combination_tests": {
+    "duration_seconds": 64.83,
+    "errors": 0,
+    "evidence": "reused-combination-local.log",
+    "failures": 0,
+    "junit_requested": false,
+    "latte_author_profile": true,
+    "skipped": 0,
+    "tests": 4,
+    "wang_n": 2,
+    "wang_q": 257
+  },
+  "reviewed_utc": "2026-10-20T02:19:47.280961+00:00",
+  "schema": "IBME/WANG-PW-REUSE-PREPARATION/1",
+  "security_claim": "none",
+  "source_sha256": {
+    "experiments/research/wang_pw_target/README.md": "97152812f71daa17c1cddf3e1ca9be25c0badc4a4790a4c2272a8883f2d3ddb3",
+    "experiments/research/wang_pw_target/run_reused_combination.py": "3f6ab3681eee1416208377fa0e84dbddab4f41e03eeb77945609a064fa027015",
+    "experiments/research/wang_pw_target/run_reused_service.py": "791783b499e86a023504f94f73b646061e81061723c4d77ff62a1155c8696f24",
+    "src/ibme/ibs/wang_pw_target/service.py": "93dd67215ff071f62dc9c74e3f78178e41486bd9b324ef09c3c67b036ee0f17c",
+    "tests/test_wang_pw_target_adoption.py": "8bdfb654f46be793a23d9275c042d215d9ef41acd6114b40631f7aa4ad764fee",
+    "tests/test_wang_pw_target_random_failures.py": "4e97422649c003f87a9c8ddbf8a7c417f0fc87761646858fdb71da92b86f3aff",
+    "tests/test_wang_pw_target_reused_combination.py": "9297d7a18a02d397dea202407bf1f6c6ec01ccf492be0c4f63148dd320667d64",
+    "tests/test_wang_pw_target_reused_service.py": "1508efeed5d0d5200598b7d21b6c2fb873cf1698072e664abd7e26280f2f64f1"
+  },
+  "status": "local-preparation-passed/target-still-running",
+  "subsequent_failure_sanitizer_tests": {
+    "duration_seconds": 1.751,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 2
+  },
+  "target_reuse_combination_executed": false,
+  "target_reuse_service_executed": false,
+  "target_snapshot": {
+    "elapsed_seconds": 1367.592756078,
+    "final_result": false,
+    "frozen_git_blob_hashes_match": true,
+    "lifecycle_status": "running",
+    "phase": "extract",
+    "sampled_tree_rss_peak_bytes": 36794908672,
+    "server_bound_source_check": {
+      "source_files_checked": 13,
+      "unchanged": true
+    },
+    "setup_seconds": 536.6256611220001,
+    "source_commit": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+    "source_files_checked": 13,
+    "supervisor_status": "running"
+  },
+  "test_counts_are_not_added": true
+}

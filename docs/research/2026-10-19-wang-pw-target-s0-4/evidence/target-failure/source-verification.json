@@ -1,0 +1,25 @@
+{
+  "all_source_hashes_match": true,
+  "file_count": 13,
+  "no_retry_performed": true,
+  "original_processes_gone": true,
+  "private_material_collected": false,
+  "schema": "IBME/WANG-PW-FROZEN-SOURCE-CHECK/1",
+  "source_commit": "b47cc6ad8332cc433597c8d789da68b543e41f05",
+  "source_hashes": {
+    "experiments/research/wang_pw_target/README.md": "462d4c079f3f9fb3851b486e8b465cf464c1dc2aeb26ebac4b1f4be25c87620e",
+    "experiments/research/wang_pw_target/run_lifecycle.py": "fc9e2e6ee0e4e0490725ce4d12bf3d17c79ed4e11b7d275eccc10c87b2c1076c",
+    "experiments/research/wang_pw_target/sign_independent.py": "80ac0de70e8e79446bb9ceb16c4c5e5c861f58144afec9bc9493e4206f39b491",
+    "src/ibme/ibs/wang_pw_target/__init__.py": "6cd0138157344c281b051a260c11daf0e9300b822539085bf737e3e4a8cb1056",
+    "src/ibme/ibs/wang_pw_target/backend.py": "2c1bf30f6f8ed2b87d96e4d04d64a3ac94eeb0bb35654818567f536fe3a89548",
+    "src/ibme/ibs/wang_pw_target/hashing.py": "fce854050c71d17440d02404ca0a315ffddc3b8daa5326a1dbe4289b1a4335cf",
+    "src/ibme/ibs/wang_pw_target/math.py": "3679740e5dc4d365fb9e45cbc87a0838429c98c7935ad4936f294de396f70936",
+    "src/ibme/ibs/wang_pw_target/native.py": "496464eadeb112f8bcb8000b70e618bad5398564eead0ed2a7a56beefe1bd900",
+    "src/ibme/ibs/wang_pw_target/native/gaussian.cpp": "cc6a8891d639eff9cc9ad945681fad01d4f7a84203615204cddf2f259dc5aa3e",
+    "src/ibme/ibs/wang_pw_target/objects.py": "96d9f96217c451064cd20677361f227fc16a8770f41e8d99d1683e5a363f9798",
+    "src/ibme/ibs/wang_pw_target/parameter_audit.py": "66c4830b6a21e1d782ceaa1b446a6384e2388ff834fc475ec03345bf01c6710b",
+    "src/ibme/ibs/wang_pw_target/params.py": "0c512b6c16569eababc0b884ae0539f19448247c85b6d1b4f1aa162e14fa2e59",
+    "src/ibme/ibs/wang_pw_target/service.py": "2f9786adffccac4f37777b59756dbe9281f4aa051836b06a36a7662e7aff8331"
+  },
+  "time_argv_lines_removed": 1
+}
