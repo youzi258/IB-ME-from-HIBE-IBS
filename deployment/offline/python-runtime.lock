@@ -1,0 +1,2 @@
+# Linux x86-64 ABI3 wheel; cffi/pycparser are pinned in the conda lock.
+cryptography==50.0.2 --hash=sha256:9dab55f57c74c3cad24c323bacbbd04be4705ba6eb0d92e920b1fc4837ed5079
