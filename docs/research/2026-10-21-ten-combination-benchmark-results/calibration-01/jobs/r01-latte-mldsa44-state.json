@@ -1,0 +1,13 @@
+{
+  "active_mode": "generation",
+  "case": "latte-mldsa44",
+  "failure_type": "AssertionError",
+  "generation": {
+    "finished_at": "2026-10-21T06:59:05.224595+00:00",
+    "sha256": "12d4cd45887cbbe664f6fca04e89fb1fc6843c2c26cb31d8ed6122924d546e8b",
+    "status": "failed"
+  },
+  "job_id": "r01-latte-mldsa44",
+  "root": 1,
+  "status": "failed"
+}

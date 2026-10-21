@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "name": "latte-mldsa44",
+      "preflight": true,
+      "suite_digest": "bb8006f036dfcbe3ea2d765e2cdf44a595568f4465e3b786d0b802fb4e0baf91"
+    },
+    {
+      "name": "latte-falcon512",
+      "preflight": true,
+      "suite_digest": "c4be84c99ec7cf780681508bdf3b9e229ec9229fa5cb63779a602062da6aa413"
+    },
+    {
+      "name": "latte-luo-compact",
+      "preflight": true,
+      "suite_digest": "5bfa7a2afcb4101420138f1d51dadee2830b522c570dd1aa44967c90a09b4846"
+    },
+    {
+      "name": "latte-srgg-I-compact",
+      "preflight": true,
+      "suite_digest": "8b9fef332ed20f8c34fc1eedb3f81b5f3b3236533e6bca7c07d6687ccf546c61"
+    },
+    {
+      "name": "latte-sageloli-I",
+      "preflight": true,
+      "suite_digest": "abe857ba25576f25bd86e1ddf31abf59f381a888aea41832f00e062761995c62"
+    },
+    {
+      "name": "lai-c2-mldsa44",
+      "preflight": true,
+      "suite_digest": "5f1a80143d25b4490eafee007d88008e8498b97a415ac406cbed3234f4e458d9"
+    },
+    {
+      "name": "lai-c2-falcon512",
+      "preflight": true,
+      "suite_digest": "727fdf2596b6689b04dc2c3a9623b8e6c78e6c54d16c7170c858ad687d87fe2e"
+    },
+    {
+      "name": "lai-c2-luo-compact",
+      "preflight": true,
+      "suite_digest": "16c8f689f9029b238b067a1f3ceb98fb90fe18408680af3cd3972b2dfaf9b868"
+    },
+    {
+      "name": "lai-c2-srgg-I-compact",
+      "preflight": true,
+      "suite_digest": "71402905458dc6e8a8dfb8911c1bbbb09b5c67fc2615888a47d9555f73712a51"
+    },
+    {
+      "name": "lai-c2-sageloli-I",
+      "preflight": true,
+      "suite_digest": "8692c5917fcd731fb6b2109f1a5307014c66edbd4a1f17d4190b14873cf4a200"
+    }
+  ],
+  "abc_equal": 3,
+  "cross_hibe_ibs_equal": 5,
+  "relative_links": 3,
+  "cryptographic_runs": 0
+}

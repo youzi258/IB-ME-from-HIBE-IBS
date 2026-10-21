@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "latte-sageloli-I",
+  "generation": {
+    "finished_at": "2026-10-21T09:58:12.499768+00:00",
+    "sha256": "1ac3dde38c856c42616afc95f5b8f5f9afdff0e28806c321c3357deb1a6b608b",
+    "status": "passed"
+  },
+  "job_id": "r01-latte-sageloli-I",
+  "restore": {
+    "finished_at": "2026-10-21T09:58:15.135452+00:00",
+    "sha256": "1243010bcf4b375033aa7ba8069062a3fcb1177986e0ed2af71b33947c085bf2",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}

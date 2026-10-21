@@ -29,7 +29,7 @@
 | 范围 | 已接收的结果 | 尚未由此完成的工作 |
 |---|---|---|
 | 公共框架／CLI／Web | 独立选参、能力和容量预检、规范wire、固定状态及真实组合工具；[Web改版](deliveries/2026-10-20-web-redesign/README.md)加入A/B/C固定入口、精简工作区、实际阶段与刷新重连，A/B六情形浏览器实跑；[错配与篡改补图及同会话导出](deliveries/2026-10-20-web-rejection-screenshots/README.md)已补齐 | C本轮只核对固定配置与环境，未新增长流程实验；Web服务重启清空会话，持久恢复使用CLI |
-| LATTE／Lai、SRGG论文档、Sageloli环v3 | [已有组合数据索引](research/2026-10-20-combination-data-inventory/README.md)核对两个HIBE×五类IBS共10个主要配对，整理三批跨组合数据与原始来源；包含早期Lai C2＋Luo收据 | 各参数档的重复性能、安装和负例按实际覆盖分别验收；尚无统一条件的完整2×5重复性能矩阵 |
+| LATTE／Lai、SRGG论文档、Sageloli环v3 | [已有组合数据索引](research/2026-10-20-combination-data-inventory/README.md)保留原三批来源；[十组同机基本性能](research/2026-10-21-ten-combination-benchmark-results/README.md)已完成统一条件2×5矩阵，每组1根、首次／重复／恢复各1次，包含时间、对象尺寸与内存 | 各参数档的多根重复、安装和负例按实际覆盖分别验收；本次基本比较不增加多根或多消息长度试验 |
 | ABB-ROM／CHKP／MP12各变体 | 已有小参数完整研究流程、对象和恢复；[3m原型](research/team-a-delivery/2026-10-18-3m-feasibility/README.md)与资源筛查保留 | 目标参数完整运行仍由队长安排的其它AI推进；本机资源受限不等于算法普遍不可行，暂不在本线程扩维 |
 | Wang＋PW | [目标规模交付](research/2026-10-19-wang-pw-target-s0-4/PUBLICATION_zh-CN.md)已完成：s0=4/n512独立后端、有限Gaussian、固定服务与规范恢复、公共CLI及LATTE组合；保存修正后的目标签验、服务与组合/CLI回执和早期失败。[PR84复核](deliveries/2026-10-21-pr84-review/README.md)记录用户对WIP误标的更正和CI修复 | 本项目暂按约115位量子安全的工作假设开展实现与比较；当前配置的具体攻击成本尚未复核。历史源码绑定、残差谱估计和整链有限误差/中止预算的限制照实保留；跨版本恢复不写成同一版本全新六阶段，不据此把已完成的实现交付重新列为WIP |
 | Luo模格／BNN-Falcon | 既有完整组合、重复基准、CLI／Web及恢复材料，作为辅助对照保留 | 不替换已冻结的三代表，不把参数或格式变化计为新算法 |
@@ -58,7 +58,7 @@
 
 ## 3. 当前并行包与完成条件
 
-2026-10-21本线程任务：[十组同机基本性能比较方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)及[十组完整配置／规划预检](research/2026-10-21-ten-combination-benchmark-plan/README.md)已整理供审查。统一64 B身份、32 B消息，每格3个独立根；本轮仅提交方案，runner适配、校准和长实验尚未开始，不将公共预检计为性能数据。
+2026-10-21：[PR87方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)已审查合并；按用户确认的单根方法，[十组基本性能比较](research/2026-10-21-ten-combination-benchmark-results/README.md)已全部完成，零失败。每组1根、首次／重复／新进程恢复各1次，统一64 B身份、32 B消息，20次加密、30次解密、10次恢复和20次外层拒绝全部通过。三组复用同口径校准，七组完成补测；原长批次额外数据另存。Ultra9/Sage10.9、固定源码与原生引擎下的[完整表、尺寸和内存](research/2026-10-21-ten-combination-benchmark-results/basic-comparison/basic-comparison.md)、原始收据和两张图已交付，公开副本复算一致，42项驱动／汇总控制测试通过；对应[PR90](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/90)，尚待纳入报告正文。按用户要求，[PR89](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/89)已将独立Wang原语CI改为手动触发。
 
 ### 当前未完成项（按依赖推进）
 

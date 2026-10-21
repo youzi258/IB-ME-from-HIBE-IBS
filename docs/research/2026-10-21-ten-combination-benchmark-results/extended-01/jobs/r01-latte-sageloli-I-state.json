@@ -1,0 +1,11 @@
+{
+  "active_mode": "generation",
+  "case": "latte-sageloli-I",
+  "generation": {
+    "started_at": "2026-10-21T08:55:10.456460+00:00",
+    "status": "running"
+  },
+  "job_id": "r01-latte-sageloli-I",
+  "root": 1,
+  "status": "running"
+}

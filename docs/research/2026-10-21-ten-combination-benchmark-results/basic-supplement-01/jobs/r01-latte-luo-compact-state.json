@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "latte-luo-compact",
+  "generation": {
+    "finished_at": "2026-10-21T09:28:23.713972+00:00",
+    "sha256": "f183d0d6f72d6ab7af0a2f3d097adfdfc6a68aa15734abe916f01ddfcdda3155",
+    "status": "passed"
+  },
+  "job_id": "r01-latte-luo-compact",
+  "restore": {
+    "finished_at": "2026-10-21T09:28:25.749543+00:00",
+    "sha256": "235e95320e715ae5b2d276765d64581003c68d2d86c8a10f75c266015b73acaa",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}

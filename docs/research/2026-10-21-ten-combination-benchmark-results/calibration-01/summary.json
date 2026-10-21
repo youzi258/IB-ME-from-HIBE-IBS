@@ -1,0 +1,790 @@
+{
+  "batch_id": "ten-combinations-calibration-20261021-01",
+  "calibration": true,
+  "cases": {
+    "lai-c2-luo-compact": {
+      "operations": {
+        "cold-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "first-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "receiver-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore-objects": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restored-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "sender-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "setup": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "passed_roots": 0,
+      "planned_roots": 1,
+      "process_wall_seconds": {
+        "generation": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "sampled_tree_rss_root_maxima": {
+        "cold-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "first-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "receiver-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore-objects": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restored-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "sender-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "setup": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "sizes": {
+        "ciphertext.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "master.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "public.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "receiver.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "sender.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        }
+      },
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": true,
+        "hibe": "lai-ideal-hibe",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "k": 39,
+          "l": 2,
+          "max_message_bytes": 32,
+          "message_mode": "seed32",
+          "n": 2048,
+          "p": 2,
+          "q": 274877976577,
+          "sigma": 2.0,
+          "sigma_r": 1.0
+        },
+        "hibe_version": "lai-a-256-v1",
+        "hybrid_limits": {
+          "backend_id": "lai-a-256-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 65536
+        },
+        "ibs": "luo-module",
+        "ibs_params": {
+          "degree": 256,
+          "dropped_bits": 28,
+          "eta": 1,
+          "gamma1": 125440,
+          "gamma2": 31470387200,
+          "gamma3": 15270991360,
+          "identity_max_bytes": 64,
+          "k": 11,
+          "kappa": 64,
+          "l": 10,
+          "max_cached_identities": 64,
+          "max_extract_attempts": 1024,
+          "max_sign_attempts": 1024,
+          "max_uniform_attempts": 128,
+          "message_max_bytes": 4096,
+          "q": 274877844481,
+          "root": 153250464611
+        },
+        "ibs_version": "luo-module-ref1",
+        "parameters_are_formal": true,
+        "protocol": "byteauth-v1",
+        "security_claim": "secure",
+        "signature_format": "compact",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "suite_digest": "16c8f689f9029b238b067a1f3ceb98fb90fe18408680af3cd3972b2dfaf9b868"
+    },
+    "lai-c2-sageloli-I": {
+      "operations": {
+        "cold-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "first-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "receiver-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore-objects": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restored-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "sender-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "setup": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "passed_roots": 0,
+      "planned_roots": 1,
+      "process_wall_seconds": {
+        "generation": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "sampled_tree_rss_root_maxima": {
+        "cold-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "first-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "receiver-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore-objects": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restored-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "sender-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "setup": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "sizes": {
+        "ciphertext.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "master.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "public.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "receiver.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "sender.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        }
+      },
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": true,
+        "hibe": "lai-ideal-hibe",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "k": 39,
+          "l": 2,
+          "max_message_bytes": 32,
+          "message_mode": "seed32",
+          "n": 2048,
+          "p": 2,
+          "q": 274877976577,
+          "sigma": 2.0,
+          "sigma_r": 1.0
+        },
+        "hibe_version": "lai-a-256-v1",
+        "hybrid_limits": {
+          "backend_id": "lai-a-256-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 8388608
+        },
+        "ibs": "sageloli-rsis",
+        "ibs_params": {
+          "d": 2048,
+          "identity_max_bytes": 256,
+          "identity_width_squared": 2720281532542,
+          "k": 65,
+          "l": 132,
+          "mass_bits": 320,
+          "max_sign_attempts": 64,
+          "max_users": 2,
+          "message_max_bytes": 4096,
+          "r_squared": 49,
+          "salt_bytes": 32,
+          "signature_width_squared": 270116709797628319132317,
+          "tail_bits": 256
+        },
+        "ibs_version": "Sageloli-RSIS-structured-v3",
+        "parameters_are_formal": true,
+        "protocol": "byteauth-v1",
+        "security_claim": "secure",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "suite_digest": "8692c5917fcd731fb6b2109f1a5307014c66edbd4a1f17d4190b14873cf4a200"
+    },
+    "latte-mldsa44": {
+      "operations": {
+        "cold-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "first-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "receiver-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore-objects": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restored-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "sender-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "setup": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "passed_roots": 0,
+      "planned_roots": 1,
+      "process_wall_seconds": {
+        "generation": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "sampled_tree_rss_root_maxima": {
+        "cold-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "first-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "receiver-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restore-objects": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "restored-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "sender-key": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "setup": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-decrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        },
+        "warm-encrypt": {
+          "independent_roots": 0,
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations_by_root": [],
+          "root_medians": []
+        }
+      },
+      "sizes": {
+        "ciphertext.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "master.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "public.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "receiver.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        },
+        "sender.bin": {
+          "maximum": null,
+          "median": null,
+          "minimum": null,
+          "observations": []
+        }
+      },
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": true,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 65536
+        },
+        "ibs": "cert-ml-dsa",
+        "ibs_params": {
+          "backend_admitted": true,
+          "base_algorithm": "ml-dsa-44",
+          "identity_bytes": 64,
+          "max_identities": 16,
+          "message_max_bytes": 65536,
+          "parameters_are_formal": true,
+          "security_claim": "secure",
+          "timeout_seconds": 30
+        },
+        "ibs_version": "IBME/CERTIBS/1",
+        "parameters_are_formal": true,
+        "protocol": "byteauth-v1",
+        "security_claim": "secure",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "suite_digest": "bb8006f036dfcbe3ea2d765e2cdf44a595568f4465e3b786d0b802fb4e0baf91"
+    }
+  },
+  "completed_jobs": 0,
+  "counts": {
+    "honest_decrypt_passed": 2,
+    "honest_encrypt_passed": 3,
+    "outer_rejections_passed": 0,
+    "restores_passed": 0
+  },
+  "execution_digest": "22dd6665dbe96a147a04f6ba80847b0cc5ce7ea7ed424b2e4924c56877a93d1c",
+  "failures": [
+    {
+      "case": "latte-mldsa44",
+      "failure_type": "AssertionError",
+      "job_id": "r01-latte-mldsa44",
+      "root": 1,
+      "status": "failed"
+    },
+    {
+      "case": "lai-c2-luo-compact",
+      "failure_type": "calibration-observer-fix-interruption",
+      "job_id": "r01-lai-c2-luo-compact",
+      "root": 1,
+      "status": "interrupted"
+    }
+  ],
+  "method": "median of independent-root medians; three within-root repeats are dependent",
+  "pending": [
+    {
+      "case": "lai-c2-sageloli-I",
+      "job_id": "r01-lai-c2-sageloli-I",
+      "root": 1,
+      "status": "pending"
+    }
+  ],
+  "planned_jobs": 3,
+  "rss_method": "10ms process-tree RSS samples, shared pages may be counted twice; lifetime ru_maxrss separate",
+  "schema": "TEN-COMBINATION-SUMMARY/1",
+  "status": "partial"
+}

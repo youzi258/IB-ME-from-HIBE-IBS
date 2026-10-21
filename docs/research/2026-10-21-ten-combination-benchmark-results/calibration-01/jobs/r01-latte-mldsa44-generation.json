@@ -1,0 +1,303 @@
+{
+  "active_stage": "outer-rejection",
+  "active_stage_started_unix": 1792565945.0204365,
+  "backend_admitted": true,
+  "case": "latte-mldsa44",
+  "execution_digest": "22dd6665dbe96a147a04f6ba80847b0cc5ce7ea7ed424b2e4924c56877a93d1c",
+  "failure_stage": "outer-rejection",
+  "failure_type": "AssertionError",
+  "finished_at": "2026-10-21T06:59:05.070416+00:00",
+  "fresh_process_wall_seconds": 2.4046113640000044,
+  "full_ciphertext_bytes": [
+    142079,
+    142099
+  ],
+  "identity_bytes": 64,
+  "job_id": "r01-latte-mldsa44",
+  "message_bytes": 32,
+  "mode": "generation",
+  "no_outer_retry": true,
+  "observation": {
+    "derive_calls": 2,
+    "derive_seconds": 0.07320064399999637,
+    "entropy_bytes": 131448,
+    "entropy_reads": 15,
+    "native": {
+      "latte:decrypt": 2,
+      "latte:delegate": 1,
+      "latte:encrypt": 2,
+      "latte:extract": 1,
+      "latte:meta": 8,
+      "latte:setup": 1,
+      "mldsa:keypair": 2,
+      "mldsa:meta": 17,
+      "mldsa:public": 7,
+      "mldsa:sign": 3,
+      "mldsa:signature": 4,
+      "mldsa:verify": 7
+    }
+  },
+  "parameters_are_formal": true,
+  "phases": [
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 224591872,
+      "name": "runtime-prepare",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {
+          "latte:meta": 1,
+          "mldsa:meta": 2
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 231141376,
+      "sampled_self_peak_rss_bytes": 231141376,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.5807867199999919,
+      "self_kernel_lifetime_peak_rss_bytes": 230621184,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 236978176,
+      "name": "setup",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 64,
+        "entropy_reads": 2,
+        "native": {
+          "latte:meta": 1,
+          "latte:setup": 1,
+          "mldsa:keypair": 1,
+          "mldsa:meta": 2,
+          "mldsa:public": 1
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 247480320,
+      "sampled_self_peak_rss_bytes": 237543424,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.6654599940000026,
+      "self_kernel_lifetime_peak_rss_bytes": 236978176,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 236978176,
+      "name": "persist-root-state",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 237711360,
+      "sampled_self_peak_rss_bytes": 237711360,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.00864746099999536,
+      "self_kernel_lifetime_peak_rss_bytes": 236978176,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 237174784,
+      "name": "sender-key",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 64,
+        "entropy_reads": 2,
+        "native": {
+          "mldsa:keypair": 1,
+          "mldsa:meta": 3,
+          "mldsa:public": 2,
+          "mldsa:sign": 1,
+          "mldsa:verify": 1
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 238084096,
+      "sampled_self_peak_rss_bytes": 237895680,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.01318588300000556,
+      "self_kernel_lifetime_peak_rss_bytes": 237174784,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 237371392,
+      "name": "receiver-key",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 32,
+        "entropy_reads": 1,
+        "native": {
+          "latte:delegate": 1,
+          "latte:meta": 1,
+          "mldsa:meta": 2,
+          "mldsa:public": 2,
+          "mldsa:verify": 1
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 261459968,
+      "sampled_self_peak_rss_bytes": 238084096,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.23436004100000218,
+      "self_kernel_lifetime_peak_rss_bytes": 237371392,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 237371392,
+      "name": "persist-issued-state",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 238084096,
+      "sampled_self_peak_rss_bytes": 238084096,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.013647184000006973,
+      "self_kernel_lifetime_peak_rss_bytes": 237371392,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 237371392,
+      "name": "cold-encrypt",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 65644,
+        "entropy_reads": 5,
+        "native": {
+          "latte:encrypt": 1,
+          "latte:meta": 1,
+          "mldsa:meta": 2,
+          "mldsa:public": 1,
+          "mldsa:sign": 1,
+          "mldsa:verify": 1
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 239534080,
+      "sampled_self_peak_rss_bytes": 239534080,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.012278050000006147,
+      "self_kernel_lifetime_peak_rss_bytes": 238944256,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 239337472,
+      "name": "first-decrypt",
+      "observation": {
+        "derive_calls": 1,
+        "derive_seconds": 0.062260921999993,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {
+          "latte:decrypt": 1,
+          "latte:extract": 1,
+          "latte:meta": 2,
+          "mldsa:meta": 2,
+          "mldsa:signature": 2,
+          "mldsa:verify": 2
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 266358784,
+      "sampled_self_peak_rss_bytes": 239869952,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.10537130600000921,
+      "self_kernel_lifetime_peak_rss_bytes": 239337472,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 239337472,
+      "name": "persist-state",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 239869952,
+      "sampled_self_peak_rss_bytes": 239869952,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.004954416999993327,
+      "self_kernel_lifetime_peak_rss_bytes": 239337472,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 239337472,
+      "name": "warm-encrypt",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 65644,
+        "entropy_reads": 5,
+        "native": {
+          "latte:encrypt": 1,
+          "latte:meta": 1,
+          "mldsa:meta": 2,
+          "mldsa:public": 1,
+          "mldsa:sign": 1,
+          "mldsa:verify": 1
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 239869952,
+      "sampled_self_peak_rss_bytes": 239869952,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.011397004000002653,
+      "self_kernel_lifetime_peak_rss_bytes": 239337472,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 239730688,
+      "name": "warm-decrypt",
+      "observation": {
+        "derive_calls": 1,
+        "derive_seconds": 0.010939722000003371,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {
+          "latte:decrypt": 1,
+          "latte:meta": 1,
+          "mldsa:meta": 2,
+          "mldsa:signature": 2,
+          "mldsa:verify": 1
+        }
+      },
+      "sampled_process_tree_peak_rss_bytes": 240295936,
+      "sampled_self_peak_rss_bytes": 240295936,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.0566389570000041,
+      "self_kernel_lifetime_peak_rss_bytes": 239730688,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 239730688,
+      "name": "outer-rejection",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 240295936,
+      "sampled_self_peak_rss_bytes": 240295936,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.032181450999999583,
+      "self_kernel_lifetime_peak_rss_bytes": 239730688,
+      "status": "failed"
+    }
+  ],
+  "root": 1,
+  "schema": "TEN-COMBINATION-WORKER/1",
+  "security_claim": "secure",
+  "source_commit": "09a1e7759be43cdfcff9d6de651ba70a611ced1c",
+  "started_at": "2026-10-21T06:59:02.865858+00:00",
+  "status": "failed",
+  "suite_digest": "bb8006f036dfcbe3ea2d765e2cdf44a595568f4465e3b786d0b802fb4e0baf91",
+  "uses_ROM": true
+}
