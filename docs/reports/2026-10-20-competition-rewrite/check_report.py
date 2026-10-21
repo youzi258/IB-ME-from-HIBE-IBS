@@ -13,6 +13,7 @@ import sys
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+README = HERE / "README.md"
 SOURCE = HERE / "作品设计报告.tex"
 PDF = SOURCE.with_suffix(".pdf")
 OLD_SOURCE = ROOT / "docs/reports/2026-10-19-research-draft/研究报告初稿.tex"
@@ -54,11 +55,12 @@ def main() -> int:
     parser.add_argument(
         "--submission-ready",
         action="store_true",
-        help="apply final-release checks; expected to fail until every rewrite batch is complete",
+        help="apply final-release checks, including the recorded full-PDF visual review",
     )
     args = parser.parse_args()
 
     checks = Checks()
+    readme = README.read_text(encoding="utf-8")
     text = SOURCE.read_text(encoding="utf-8")
     selection = json.loads(SELECTION.read_text(encoding="utf-8"))
     template = json.loads(TEMPLATE_FACTS.read_text(encoding="utf-8"))
@@ -149,21 +151,21 @@ def main() -> int:
         "有效外层／无效内层",
         "3924 B最大应用消息尚未完成诚实往返",
         "不用来估计总体失败概率",
-        "项目随机源零新增输出",
+        "未消耗新的协议随机数",
         "七步",
         "A、B各使用一个新随机根完成一次加密和六次解密",
         "142095字节和149255字节",
         "同一服务进程",
         "服务重启会清空会话",
-        "页面预检实际核对Lai C2",
+        "C组的界面入口会检查Lai C2",
         "270116709797628319132317",
         "下载文件也使用HTTP原始响应",
         "2种HIBE与5类IBS共10个配对",
         "每一格都包含诚实往返及身份错配拒绝",
         r"2\(\times\)5性能排名",
-        "时间盒调整已披露",
-        "不能写成“首次无重试通过”",
-        "三组功能链均不依赖原开发目录",
+        "调整阶段上限后完成",
+        "在调整阶段资源上限后",
+        "在独立安装环境中的可复现性",
     )
     for fragment in required_fragments:
         checks.expect(f"required report fact: {fragment}", fragment in text)
@@ -180,6 +182,25 @@ def main() -> int:
         r"backend\_admitted",
         r"parameters\_are\_formal",
         "收据",
+        "评委",
+        "功能验收",
+        "精确验收",
+        "后端交付",
+        "最终报告",
+        "报告主线",
+        "失败目录",
+        "故障关闭标记",
+        "不能写成",
+        "最终发布还需",
+        "原开发目录",
+        "页面预检",
+        "实跑",
+        "随仓库保留",
+        "硬填",
+        "干净wheel",
+        "冒充",
+        "包装成本作品原创",
+        "误写成",
     )
     for fragment in forbidden_fragments:
         checks.expect(f"internal process language absent: {fragment}", fragment not in text)
@@ -361,7 +382,7 @@ def main() -> int:
         rendered_messages = "/".join(str(value) for value in messages)
         checks.expect(
             f"NixOS {label} report row",
-            f"{label} & {rendered_messages} & {maximum_wire} & 25 & 一次执行通过" in text,
+            f"{label} & {rendered_messages} & {maximum_wire} & 25 & 单次流程完成" in text,
         )
     c_nixos = nixos_runs["C"]
     checks.expect(
@@ -396,18 +417,18 @@ def main() -> int:
         "NixOS C single-stage timings disclosed",
         f'{c_stages[0]["seconds"]:.2f}、{c_stages[1]["seconds"]:.2f}和'
         f'{c_stages[2]["seconds"]:.2f}秒' in text
-        and "三个工作进程有部分并行且每项只有1次" in text
-        and "秒数只说明900秒时间盒不足，不进入性能排名" in text,
+        and "三个工作进程有部分并行，且每项只有1次观测" in text
+        and "这些数值用于确认900秒上限不足，不纳入性能排名" in text,
     )
     checks.expect(
         "NixOS C report row",
         c_nixos.get("message_bytes") == 0
         and c_nixos.get("ciphertext_bytes") == 4555404
-        and "C & 0 & 4555404 & 13 & 功能通过；时间盒调整已披露" in text,
+        and "C & 0 & 4555404 & 13 & 调整阶段上限后完成" in text,
     )
     checks.expect(
         "NixOS C wire variation disclosed",
-        "本批空消息wire为4555404 B" in text
+        "该次空消息wire为4555404 B" in text
         and "另一随机批次的4555436 B相差32 B" in text
         and "不据此假定C的完整密文恒定长度" in text,
     )
@@ -479,11 +500,19 @@ def main() -> int:
     for token in ("github.com/youzi258", "youzi258", "/home/", "C:\\Users\\"):
         checks.expect(f"anonymous source excludes {token}", token not in text)
 
-    reference_numbers = [
-        int(number)
-        for number in re.findall(r"^\\noindent\[(\d+)\]", text, flags=re.MULTILINE)
-    ]
-    checks.expect("thirteen ordered references", reference_numbers == list(range(1, 14)), repr(reference_numbers))
+    bibliography_keys = re.findall(r"^\\bibitem\{([^}]+)\}", text, flags=re.MULTILINE)
+    cited_keys = {
+        key.strip()
+        for group in re.findall(r"\\cite\{([^}]+)\}", text)
+        for key in group.split(",")
+    }
+    checks.expect("thirteen ordered references", len(bibliography_keys) == 13, repr(bibliography_keys))
+    checks.expect("all bibliography entries cited", cited_keys == set(bibliography_keys), repr(sorted(cited_keys)))
+    checks.expect("formal bibliography title", r"\renewcommand{\bibname}{参考文献}" in text)
+    checks.expect(
+        "manual numeric citations absent",
+        re.search(r"~\[[0-9,\-– ]+\]", text) is None,
+    )
     checks.expect("balanced TeX groups", text.count(r"\begingroup") == text.count(r"\endgroup"))
     for environment in (
         "document",
@@ -531,7 +560,8 @@ def main() -> int:
                 checks.expect(f"anonymous PDF excludes {token!r}", token not in payload)
 
     if args.submission_ready:
-        checks.expect("all rewrite and release batches complete", False, "citation, page-by-page layout and release closure remain")
+        checks.expect("submission candidate state recorded", "状态为 **提交候选版" in readme)
+        checks.expect("full PDF visual review recorded", "38/38页视觉复核完成" in readme)
 
     if checks.failures:
         print(f"Competition report rewrite validation failed: {len(checks.failures)}/{checks.count} checks")
