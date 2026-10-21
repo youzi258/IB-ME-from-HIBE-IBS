@@ -1,0 +1,26 @@
+{
+  "schema": "IBME-REPORT-COPY-BASELINE/1",
+  "source_directory": "docs/reports/2026-10-21-review-refinement",
+  "source_commit": "8dd6cda5a4d62426bd96040c714827825a12bc48",
+  "files": {
+    "README.md": "ee264c766a933246b7579f1b545caaf3e3320c1cacc30ff397b2b2d7dacc2abd",
+    "作品设计报告.tex": "023c56efe0c3d52bce6e78a769d5bee1e9f4260839ef9891a27741fbaf7af8b7",
+    "作品设计报告.pdf": "02b2df46787b7b54688817d2831fe2f1141861190368b1b1a96a38f184de2930",
+    "build_pdf.py": "e82eb62dbb5a4b71aba68305110d71c269944a522802ff80216c139462c47425",
+    "check_report.py": "4067f2906247b846dbf3c5e83023e7d5ccafb2e20dd3e07666c3d30c9ee2c3ad",
+    "prepare_materials.py": "5d40c93c046778cf29f53e835bffcd8efd2e91f91bb7d196b191a5310b3f3d88",
+    "chapters/01-introduction.tex": "a2a7d91b090215c260c20c12ddfef563b94706bde754f2e7658184e982540cf5",
+    "chapters/02-foundations.tex": "b8d8dbcd08cb992e306709d62bc651ee943c6437ab7a0979a84735721da9ea91",
+    "chapters/03-design.tex": "1793e6654732acfaae96638448261f5b101d4fd3eb97fc74d49491a120526f5b",
+    "chapters/04-algorithms.tex": "410eb58a6d2659cb12a01517d13b7faa526b89813b26e40d09137a5d6cbac84d",
+    "chapters/05-optimizations.tex": "a2bcdeac1bd634ece59ff4596a64ca4beb3cc54209acdcc6f58e5654795d6f69",
+    "chapters/06-system.tex": "557d8a9b1d2920a8f1678f3d82193eb6055a6aba05398973e13d90e18aca0865",
+    "chapters/07-experiments.tex": "cd77654123bb2cf57a2408bc7325667f9cbd391ccc30a15d69f2618a036b31b7",
+    "chapters/08-applications.tex": "bccb1e356d7751f25a6868579be83a3626258757d60273a018efeb821ae3c679",
+    "chapters/09-conclusion.tex": "fc028e8dc0f7fd041dcfa76d21210a57cc8fce315db8a09fc5dce93eac5d84f4",
+    "appendices/reproduction.tex": "ac3d49f112020b21d8d86478ac0eabe21365f6671b41fffad2f47c449b529e93",
+    "DEFERRED_REVISION_PLAN.md": "eddcb6456ceb304748ae9bb999a0524439e91a1427bebd1d2ec30da2be91651e",
+    "format-accounting.json": "3f17e28250af26213b8bba1ec52d749f7224265a33365caae0f6dc71d912e8dc",
+    "material-sources.json": "b08d64b62ff3a8880dd1b29d16f065ac915f83e8516384030eeaccdcfa5aa0cc"
+  }
+}

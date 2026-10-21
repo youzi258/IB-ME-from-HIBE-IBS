@@ -1,0 +1,235 @@
+\chapter{基础知识}
+
+本章建立理解后续设计所需的理论基础。内容从格与模运算开始，依次说明格困难问题、离散
+Gaussian与陷门、HIBE、IBS以及IB-ME，为第三章的通用协议和第四章的具体算法统一概念与符号。
+
+\section{数学符号与格基础}
+
+\subsection{向量、矩阵与模运算}
+
+记整数集合为$\mathbb Z$，模$q$整数环为$\mathbb Z_q=\mathbb Z/q\mathbb Z$。向量使用粗体
+小写字母表示，矩阵使用大写字母表示。对$x\in\mathbb Z_q$，程序既可以保存区间$[0,q)$中的
+非负代表元，也可以在需要计算范数时转换为中心区间$(-q/2,q/2]$中的代表元；两种表示必须在
+接口处明确区分。
+
+对向量$\mathbf x=(x_1,\ldots,x_n)$，报告主要使用欧氏范数和无穷范数
+\[
+ \lVert\mathbf x\rVert_2=\sqrt{\sum_{i=1}^{n}x_i^2},
+ \qquad
+ \lVert\mathbf x\rVert_\infty=\max_i|x_i|.
+\]
+签名方案通常要求响应向量满足给定范数界；加密方案则要求误差足够小，使解密时能够区分编码
+区间。所有维数、模数和范数门都属于算法参数，不能由公共协议自行推断或修改。
+
+表~\ref{tab:foundation-symbols}列出后文频繁使用的符号。
+
+\begin{table}[H]
+\centering\small
+\caption{基础数学符号}
+\label{tab:foundation-symbols}
+\begin{tabularx}{\textwidth}{@{}p{.22\textwidth}X@{}}
+\toprule
+\rowcolor{black!8} 符号 & 含义 \\
+\midrule
+$n,m,d,k,\ell$ & 格维数、矩阵宽度、环次数或模块秩等整数参数，具体含义由方案给出 \\
+$q$ & 模数；$\mathbb Z_q$表示模$q$整数环 \\
+$A,\mathbf a$ & 公开矩阵或公开向量 \\
+$\mathbf s,\mathbf e$ & 秘密向量与小误差向量 \\
+$\lVert\cdot\rVert_2,\lVert\cdot\rVert_\infty$ & 欧氏范数与无穷范数 \\
+$R_q$ & 多项式商环$\mathbb Z_q[x]/(f(x))$ \\
+$D_{\Lambda,s,\mathbf c}$ & 格$\Lambda$上中心为$\mathbf c$、宽度为$s$的离散Gaussian分布 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{格与$q$元格}
+
+给定线性无关向量组成的基$B=[\mathbf b_1,\ldots,\mathbf b_n]\in\mathbb R^{m\times n}$，
+由$B$生成的格为
+\[
+  \Lambda(B)=\{B\mathbf z:\mathbf z\in\mathbb Z^n\}.
+\]
+同一个格可以具有许多不同的基。长而近似相关的公开基便于描述格，短而接近正交的基则可以作为
+陷门，帮助持有者求短向量或短原像。格密码利用“公开描述容易生成、没有陷门时相关计算困难”
+这一差异构造加密和签名。
+
+模$q$矩阵$A\in\mathbb Z_q^{n\times m}$可以定义两类常见$q$元格：
+\[
+ \Lambda_q^\perp(A)=\{\mathbf x\in\mathbb Z^m:A\mathbf x=\mathbf0\pmod q\},
+\]
+以及给定目标$\mathbf u$的陪集
+\[
+ \Lambda_q^{\mathbf u}(A)=\{\mathbf x\in\mathbb Z^m:A\mathbf x=\mathbf u\pmod q\}.
+\]
+身份基发钥和格签名经常需要在后一集合中找到满足范数要求的短向量。主陷门的作用不是改变目标
+方程，而是使合法发钥机构能够高效完成这种短原像采样。
+
+\section{格上困难问题及结构变体}
+
+\subsection{LWE问题}
+
+学习带误差问题（Learning With Errors，LWE）由Regev系统提出并用于构造公钥密码
+\cite{regev2005lwe}。取均匀矩阵$A\in\mathbb Z_q^{m\times n}$、秘密$\mathbf s\in\mathbb
+Z_q^n$和小误差$\mathbf e\in\mathbb Z^m$，观察值为
+\[
+  \mathbf b=A\mathbf s+\mathbf e\pmod q.
+\]
+搜索型LWE要求从$(A,\mathbf b)$恢复$\mathbf s$；判定型LWE要求区分$(A,\mathbf b)$与均匀
+样本。若没有误差，线性方程可以直接求解；小误差使恢复秘密成为格上的困难问题。格加密通常将
+明文或封装种子叠加在这类带误差关系上，合法密钥可以消去主线性项并解码小扰动。
+
+\subsection{SIS问题}
+
+短整数解问题（Short Integer Solution，SIS）与Ajtai建立的平均情形格问题有关
+\cite{ajtai1996}。给定均匀矩阵$A\in\mathbb Z_q^{n\times m}$，目标是找到非零短向量
+$\mathbf z$，满足
+\[
+ A\mathbf z=\mathbf0\pmod q,
+ \qquad 0<\lVert\mathbf z\rVert_2\leq\beta.
+\]
+非齐次版本给出目标$\mathbf u$，要求寻找短向量$\mathbf z$使$A\mathbf z=\mathbf u\pmod q$。
+格签名常把身份和消息哈希为目标向量，再由陷门采样满足方程的短原像。验证者检查模方程和范数，
+而不知道陷门的参与者难以为新目标构造合格短向量。
+
+\subsection{环格、模格与NTRU结构}
+
+普通矩阵格直接保存$A$及其向量，表达灵活，但公开矩阵和密钥可能较大。环格把对象组织为商环
+\[
+ R_q=\mathbb Z_q[x]/(x^N+1)
+\]
+中的多项式，环乘法对应具有特定结构的线性变换。Ring-LWE和Ring-SIS由此获得紧凑表示和快速
+多项式运算\cite{lpr2013ring}。
+
+模格在$R_q$上使用低秩向量或矩阵，在普通矩阵格的灵活性和环格的结构性之间折中；对应问题通常
+称为Module-LWE与Module-SIS\cite{langlois2015module}。ML-DSA和本作品采用的多种原生IBS
+属于这一技术路线。
+
+NTRU结构同样在多项式环上运算，通过短多项式关系形成结构化格。该结构可以用于加密、签名和
+陷门委派。LATTE利用NTRU结构完成HIBE，Falcon利用NTRU格完成普通数字签名。这里的“普通
+矩阵格、环格、模格和NTRU结构格”描述对象结构与困难问题来源，不表示彼此之间的安全等级高低。
+
+\begin{table}[H]
+\centering\small
+\caption{本作品涉及的格结构及其一般工程特征}
+\label{tab:lattice-families}
+\begin{tabularx}{\textwidth}{@{}p{.18\textwidth}p{.25\textwidth}X@{}}
+\toprule
+\rowcolor{black!8} 结构 & 典型对象 & 一般工程特征 \\
+\midrule
+普通矩阵格 & $\mathbb Z_q$上的矩阵与整数向量 & 表达直接，目标参数下矩阵和陷门对象可能较大 \\
+环格 & 商环多项式与环向量 & 可利用卷积和频域结构，需处理环采样与数值变换 \\
+模格 & 小秩环向量或环矩阵 & 在结构复用与方案灵活性之间折中 \\
+NTRU结构格 & 满足短多项式关系的结构化基 & 对象较紧凑，可支持快速签名、加密和陷门委派 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{离散Gaussian与格陷门}
+
+\subsection{离散Gaussian采样}
+
+对格$\Lambda$、中心$\mathbf c$和宽度$s>0$，连续Gaussian权重写为
+\[
+ \rho_{s,\mathbf c}(\mathbf x)=
+ \exp\!\left(-\pi\frac{\lVert\mathbf x-\mathbf c\rVert_2^2}{s^2}\right).
+\]
+离散Gaussian分布$D_{\Lambda,s,\mathbf c}$在$\Lambda$上按归一化后的$\rho_{s,\mathbf c}$取样。
+当采样空间是$q$元格的某个陪集时，输出同时满足目标模方程和短向量要求。宽度过小可能无法满足
+分布条件，宽度过大又会增大签名范数或解密误差，因此必须采用方案给出的参数和采样方法。
+
+实际实现中，普通矩阵格、环格和NTRU结构使用的采样器并不相同。采样过程可能包含扰动采样、
+Gram--Schmidt信息、FFT／NTT变换、Babai反演或逐系数拒绝采样。均匀随机数不能替代离散
+Gaussian；数值近似也必须在输出后接受精确模方程和范数检查。
+
+\subsection{陷门生成、委派与短原像采样}
+
+格陷门是一份能够帮助合法持有者完成短原像采样的秘密辅助信息。典型算法可以概括为：
+
+\begin{enumerate}
+  \item $\mathsf{TrapGen}$生成统计上接近均匀的公开矩阵$A$及短陷门$T_A$；
+  \item $\mathsf{SamplePre}(A,T_A,\mathbf u)$为目标$\mathbf u$采样短向量$\mathbf x$，使
+        $A\mathbf x=\mathbf u\pmod q$；
+  \item 委派算法把已有陷门扩展到包含新身份块的公开矩阵，同时保持可用的短基或结构化陷门。
+\end{enumerate}
+
+Micciancio--Peikert陷门框架使用公开gadget矩阵组织这些关系\cite{micciancio2012trapdoors}。
+HIBE通过陷门委派沿身份层级生成密钥，原生格IBS通过短原像采样生成身份密钥或签名。后文的
+Sageloli、Lai和Wang--PW虽采用不同结构，其核心计算都可以在“公开目标关系＋秘密短陷门＋短
+原像采样”这一框架下理解。
+
+\section{身份基加密与分层身份基加密}
+
+\subsection{身份基加密}
+
+身份基加密（Identity-Based Encryption，IBE）使用身份字符串代替传统用户公钥。可信发钥
+机构运行$\mathsf{Setup}$得到主公钥$\mathsf{mpk}$和主秘密$\mathsf{msk}$；用户通过
+$\mathsf{Extract}(\mathsf{msk},\mathsf{id})$领取身份私钥；发送者以$\mathsf{id}$和
+$\mathsf{mpk}$加密；接收者使用对应身份私钥解密。其正确性要求对任意合法身份和消息，诚实
+生成的身份私钥能够恢复消息。
+
+IBE把公钥发现问题转换为身份规范与发钥机构管理问题。通信者只需知道对方规范身份和系统公开
+参数，但发钥机构必须可靠核验身份、保护主秘密并管理密钥生命周期。因而，IBE适合具有明确组织
+边界和统一身份管理的系统。
+
+\subsection{HIBE的分层身份与密钥委派}
+
+分层身份基加密（Hierarchical Identity-Based Encryption，HIBE）把身份扩展为路径
+$(\mathsf{id}_1,\ldots,\mathsf{id}_d)$。除$\mathsf{Setup}$、$\mathsf{Extract}$、
+$\mathsf{Encrypt}$和$\mathsf{Decrypt}$外，HIBE还包含密钥委派$\mathsf{Derive}$：持有前缀
+路径密钥的实体可以为下一层身份生成子密钥，无需再次调用根主秘密。
+
+本项目使用两层HIBE。第一层是接收身份$r$，第二层是发送身份$s$：
+\[
+  (\mathsf{id}_1,\mathsf{id}_2)=(r,s).
+\]
+发钥机构为$r$生成一级密钥$\mathsf{dk}_r$，接收者再根据认可的发送身份$s$委派叶密钥
+$\mathsf{dk}_{r,s}$。发送者以同一身份路径加密。路径中任一身份改变，生成的叶密钥都不能按
+正确路径恢复密文。
+
+除消息机密性外，IB-ME还需要HIBE具备身份匿名性。匿名性要求攻击者不能仅从密文判断其对应的
+身份路径。该性质用于避免公开密文直接泄露“谁向谁发送”的关系。具体安全模型与参数由各HIBE
+方案给出，公共协议只调用其规定的算法接口。
+
+\section{身份基签名}
+
+一套身份基签名包含四个核心算法：
+\[
+\begin{aligned}
+ (\mathsf{ipk},\mathsf{imsk})&\leftarrow\mathsf{Setup}(1^\lambda),\\
+ \mathsf{sk}_{\mathsf{id}}&\leftarrow\mathsf{KeyExtract}(\mathsf{imsk},\mathsf{id}),\\
+ \sigma&\leftarrow\mathsf{Sign}(\mathsf{sk}_{\mathsf{id}},M),\\
+ b&\leftarrow\mathsf{Verify}(\mathsf{ipk},\mathsf{id},M,\sigma).
+\end{aligned}
+\]
+正确性要求合法身份密钥产生的签名能够通过验证。不可伪造性要求攻击者即使获得其他身份的密钥
+和多条签名，也不能为未获授权的身份与新消息生成有效签名。
+
+IBS可以采用原生身份关系，也可以由普通数字签名经认证转换得到。认证转换中，发钥机构为用户
+普通验签公钥签发与身份绑定的证书，完整IBS签名携带用户公钥、机构证书和用户签名；验证者先
+检查证书，再检查用户签名。原生格IBS则让身份直接进入目标向量、挑战或陷门采样关系。两类方案
+在接口上都完成“身份＋消息＋签名”的公开验证，但密钥尺寸、签名尺寸和运行成本不同。
+
+在IB-ME中，IBS的职责是认证发送者。接收端使用自己认可的发送身份验签，因而更换$s$不仅会
+改变HIBE第二层路径，也会改变IBS验证输入。两种检查共同把发送身份绑定到消息恢复过程。
+
+\section{身份基匹配加密与通用构造}
+
+IB-ME包含系统建立、发送者发钥、接收者发钥、消息加密和匹配解密五项算法。发送者发钥为身份
+$s$生成加密所需的发送密钥，接收者发钥为身份$r$生成接收密钥。加密算法同时接收发送密钥、
+接收身份$r$和消息$M$；解密算法同时接收接收密钥、认可发送身份$s'$和密文。正确性条件为
+$r=r'$且$s=s'$时恢复$M$。
+
+Wang等人的通用构造使用两层匿名HIBE与IBS实现这一语法\cite{wang2024ibme}。HIBE沿$(r,s)$
+路径保护内部秘密，IBS以$s$认证发送者生成的协议消息。两种原语承担不同职责：HIBE决定哪一条
+双方身份路径能够恢复秘密，IBS决定恢复后的消息是否确由指定发送身份产生。通用构造不要求二者
+使用相同的维度、模数或格结构。
+
+该构造讨论的基本目标包括消息与身份隐私、发送来源认证以及合法用户之间的自我伪造防护。软件
+实现还需要处理完整密文字节认证、规范解析和状态恢复，但这些工程机制不替代底层HIBE与IBS的
+密码性质。第三章将说明本作品如何在不读取原语私有对象的前提下完成五算法与完整传输格式。
+
+\section{本章小结}
+
+本章从格、模运算和短向量出发，介绍了LWE、SIS及其环、模和NTRU结构变体，并说明离散
+Gaussian与格陷门如何支持短原像采样。随后给出IBE、HIBE、IBS和IB-ME的基本语法及相互关系。
+这些内容构成后续通用设计的理论基础；具体采用的算法、参数和代表组合将在第四章集中介绍。

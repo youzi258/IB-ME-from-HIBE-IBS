@@ -1,0 +1,64 @@
+\chapter{实验与材料复现入口}
+
+本附录给出正文图表所对应的源码、参数和公开数据入口。报告源文件位于
+\nolinkurl{docs/reports/2026-10-21-review-refinement/}；同目录的
+\nolinkurl{build-manifest.json}记录主文件、各章、图片和PDF的SHA-256摘要，
+\nolinkurl{material-sources.json}记录所有生成表图的输入摘要。十种组合的实际运行源码提交为
+\texttt{a202c6d3c87798911675b11a46b44903405370df}，源码归档摘要为
+\texttt{acd3f84e655a29a7fac2b755889ff5c04ac128a995bb2664bf91d09c7ff614dc}。
+
+\section{数据、参数与源码位置}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.2\textwidth}>{\raggedright\arraybackslash}p{.76\textwidth}@{}}
+\toprule
+\rowcolor{black!8} 内容 & 仓库入口 \\
+\midrule
+十种组合同机比较 & \nolinkurl{docs/research/2026-10-21-ten-combination-benchmark-results/}；主表为\nolinkurl{basic-comparison/basic-comparison.csv}，公开逐项记录位于\nolinkurl{calibration-02/}和\nolinkurl{basic-supplement-01/} \\
+A/B多根及通信量 & \nolinkurl{docs/deliveries/2026-10-19-report-experiment-supplement/}，其中\nolinkurl{master-table.json}汇总时间和对象尺寸，\nolinkurl{evidence/benchmark-A.json}与\nolinkurl{evidence/benchmark-B.json}保存逐根观测 \\
+Sageloli结构化采样 & \nolinkurl{docs/research/team-b-delivery/2026-10-19-sageloli-ring-target/}；两档运行记录位于\nolinkurl{evidence/param-I-fresh.json}与\nolinkurl{evidence/param-II-fresh.json} \\
+SRGG紧凑编码 & \nolinkurl{docs/research/team-b-delivery/2026-10-18-srgg-compact-benchmark/}；对象结果为\nolinkurl{wire.csv}，协议载荷配对记录位于\nolinkurl{docs/research/2026-10-19-srgg-paper-latte/} \\
+Lai接收会话 & \nolinkurl{docs/research/2026-10-20-multi-backend-optimization/verified-summary.json}；C组条目记录原路径、准备和会话内解密中位时间 \\
+Wang--PW目标档 & \nolinkurl{docs/research/2026-10-19-wang-pw-target-s0-4/}；公开说明、分阶段结果和验证入口见\nolinkurl{PUBLICATION_zh-CN.md}及\nolinkurl{publication/} \\
+完整参数配置 & 三组代表位于\nolinkurl{docs/deliveries/2026-10-19-report-three-selection/suites/}；十种组合矩阵位于\nolinkurl{docs/research/2026-10-21-ten-combination-benchmark-plan/matrix.json} \\
+\bottomrule
+\end{longtable}
+
+\section{报告图表与PDF重建}
+
+在仓库根目录使用本机配置的Python与Tectonic运行以下命令；中文字体路径只作为命令参数传入，
+不写入报告源文件。
+
+\begingroup\footnotesize
+\begin{verbatim}
+git ibme-run python3 docs/reports/2026-10-21-review-refinement/\
+prepare_materials.py --font <中文字体路径>
+git ibme-run python3 docs/reports/2026-10-21-review-refinement/\
+build_pdf.py
+git ibme-run python3 docs/reports/2026-10-21-review-refinement/\
+check_report.py --require-pdf
+\end{verbatim}
+\endgroup
+
+第一条命令从公开JSON和CSV重建九份数据表、八张数据图、密文字段核算与来源摘要，不执行新的
+密码运算。第二条命令调用Tectonic生成PDF并写入输入摘要。第三条命令检查父稿未被修改、章节与
+引文结构、数据绑定、A4页面和编译日志；逐页视觉复核另记录在
+\nolinkurl{visual-review.json}。
+
+十种组合的公开结果可由比较工具重新汇总。下列命令只读取已归档记录，并把结果写入新的输出目录：
+
+\begingroup\footnotesize
+\begin{verbatim}
+git ibme-run python3 -m experiments.research.\
+ten_combination_basic_comparison \
+  --design docs/research/2026-10-21-ten-combination-benchmark-results/\
+basic-design.json \
+  --reused-public docs/research/2026-10-21-ten-combination-benchmark-results/\
+calibration-02 \
+  --supplemental-public docs/research/2026-10-21-ten-combination-benchmark-results/\
+basic-supplement-01 --output <新输出目录> --plots
+\end{verbatim}
+\endgroup
+
+真实重跑入口为\nolinkurl{experiments/research/ten_combination_benchmark.py}及其工作进程；运行时应
+重新记录源码提交、原生组件、依赖、线程和硬件信息，并使用新的私有状态目录。正文中的时间数据
+绑定上述已归档批次，重建表图与重新执行密码实验是两个独立步骤。
