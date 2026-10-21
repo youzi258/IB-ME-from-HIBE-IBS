@@ -10,7 +10,7 @@
   "sha256": "d3565a25a7f62282f28c55b7cb2bea567fd16089183c757558d8eeb66c3156ca",
   "application_source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
   "recipe_files": {
-    "assemble_supporting.py": "d1338d1dc9a84b51d1182934c82c22f752e4d80b27959635110b59b1883e8318",
+    "assemble_supporting.py": "541c2a467a4b993861d908e93a9df4bc10a776235e3e73cc492cf02b2454f498",
     "build_native.py": "0dbaa6d56e8ecdcbd854f705e584fa0882c78c452d70a1b3d0edfb93b172a25f",
     "check_runtime.py": "2c43978a4e8955d11eeae71934889dbd7fab8913b24a94130df8ed81595570e5",
     "collect_licenses.py": "4a0678f21d1b5c085012b3ffdff83f2ab16cefe9d923926b41a6e832fb403813",
@@ -25,8 +25,8 @@
     "source-info.json": "57eec43b66ac37bfc0be325606a461a392cdfa4d1d259aa57f2e68df13d6fd64",
     "start.ps1": "407d5b2dca12a5d2187a95e091096effe42b4890b221a15d101c494e3ee8b726",
     "start.sh": "2be89fd3bc70ad319b0e927beb93718678ed1dbd6d9109efafc547ea9cfbdd51",
-    "verify_supporting.py": "c3dc68eb9109716d8101e3f8545b425003671334031a6b12458726543cf9a6f0",
+    "verify_supporting.py": "3d62f71d4336420d776e3b72b491cbff447a4413fd55593ee7221d3209a2a762",
     "verify_web.py": "db18adc567fa8f8a0c708f9fadaff44037920ab88c87a21abff9a70c7ebd5a6c"
   },
-  "container_recipe_commit": "ba5495caf1f67b7266cde44ee7f6fd0f114bd9cc"
+  "container_recipe_commit": "29975e0882138ae5b6ac78b45dc325086a42f41b"
 }
