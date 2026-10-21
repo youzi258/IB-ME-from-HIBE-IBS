@@ -3,5 +3,28 @@
   "fresh_extraction_files": 1151,
   "checksummed_payload_files": 1149,
   "tampered_copy_rejected": true,
-  "original_archive_unchanged": true
+  "original_archive_unchanged": true,
+  "copyright_display_authorized": true,
+  "remaining_known_identity_matches": [],
+  "changed_archive_members_from_review": [
+    "00_材料说明/阅读指引.md",
+    "01_程序源码/LICENSE",
+    "05_安装文件/ibme-0.1.0-py3-none-any.whl",
+    "05_安装文件/环境依赖说明.txt",
+    "README.txt",
+    "SHA256SUMS.txt",
+    "文件清单.json"
+  ],
+  "wheel_changed_members": [
+    "ibme-0.1.0.dist-info/RECORD",
+    "ibme-0.1.0.dist-info/licenses/LICENSE"
+  ],
+  "source_package_regression": {
+    "passed": 60,
+    "failed": 0,
+    "skipped": 0,
+    "fresh_anonymous_extraction": true
+  },
+  "report_copy_byte_exact": true,
+  "repository_original_license_unchanged": true
 }

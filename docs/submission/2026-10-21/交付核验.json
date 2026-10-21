@@ -1,6 +1,6 @@
 {
   "schema": "IBME-SUPPORTING-DELIVERY-CHECKS/1",
-  "status": "prepared-for-team-review",
+  "status": "supporting-materials-prepared-for-upload",
   "source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
   "report_checks_passed": 225,
   "report_pages": 37,
@@ -16,15 +16,16 @@
   "wheel": {
     "package_files_checked": 612,
     "python_files_checked": 516,
-    "sha256": "4a0e6e30065c1a05eded8bc8209e970bfeb96a1668e15f742e2097ad937a778b",
-    "bytes": 2128802,
+    "sha256": "573592e2fc74b6370590e5ea414984d85c2505203f7b2d7a4dba5c74240dae77",
+    "bytes": 2128841,
     "native_binaries_included": false
   },
   "source_package_regression": {
     "passed": 60,
     "failed": 0,
     "skipped": 0,
-    "scope": "Web/jobs/HTTP/catalog; no cryptographic experiments"
+    "scope": "Web/jobs/HTTP/catalog; no cryptographic experiments",
+    "fresh_anonymous_extraction": true
   },
   "packaging_omission_fixed": {
     "passed": 56,
@@ -33,21 +34,73 @@
   },
   "guide_visual_review": "3/3 pages, no clipping or overlap",
   "archive": {
-    "filename": "CACR2026T4PMR7-2026密码竞赛复赛相关支撑材料-待署名确认.zip",
-    "bytes": 8579282,
-    "sha256": "b38ea929f03536bc2d6985fa74f8686a5c95ddba6e3d7e623be20a6881e8848d",
-    "crc": "passed"
+    "filename": "CACR2026T4PMR7-2026密码竞赛复赛相关支撑材料.zip",
+    "bytes": 8579555,
+    "sha256": "b9f0716d8614c5b311bd358c8b6abf57c4c0f6f70389e477329bc6f8122e4efa",
+    "crc": "passed",
+    "uncompressed_bytes": 19169736,
+    "parts": {
+      "00_材料说明": {
+        "files": 5,
+        "uncompressed_bytes": 140272,
+        "compressed_bytes": 120310
+      },
+      "01_程序源码": {
+        "files": 1084,
+        "uncompressed_bytes": 11674047,
+        "compressed_bytes": 4869373
+      },
+      "02_参数配置": {
+        "files": 3,
+        "uncompressed_bytes": 3029,
+        "compressed_bytes": 1387
+      },
+      "03_实验数据": {
+        "files": 47,
+        "uncompressed_bytes": 3884952,
+        "compressed_bytes": 885272
+      },
+      "04_演示截图": {
+        "files": 6,
+        "uncompressed_bytes": 311100,
+        "compressed_bytes": 274281
+      },
+      "05_安装文件": {
+        "files": 2,
+        "uncompressed_bytes": 2129529,
+        "compressed_bytes": 2064502
+      },
+      "包根说明与清单": {
+        "files": 4,
+        "uncompressed_bytes": 1026807,
+        "compressed_bytes": 145208
+      }
+    }
   },
+  "copyright_display_authorized": true,
+  "copyright_display_authorization_date": "2026-10-21",
+  "copyright_display_scope": "submission source and wheel only; root repository LICENSE unchanged",
+  "changed_wheel_members": [
+    "ibme-0.1.0.dist-info/RECORD",
+    "ibme-0.1.0.dist-info/licenses/LICENSE"
+  ],
+  "prior_review_archive_sha256": "b38ea929f03536bc2d6985fa74f8686a5c95ddba6e3d7e623be20a6881e8848d",
   "pending_manual_items": [
-    "authorize copyright display for anonymous submission copy",
     "complete real approval and signatures"
   ],
-  "remaining_identity_locations": [
-    "01_程序源码/LICENSE",
-    "05_安装文件/ibme-0.1.0-py3-none-any.whl!/ibme-0.1.0.dist-info/licenses/LICENSE"
-  ],
+  "remaining_identity_locations": [],
   "original_report_modified": false,
   "original_code_modified": false,
   "original_data_modified": false,
-  "cryptographic_experiments_run": false
+  "cryptographic_experiments_run": false,
+  "changed_archive_members_from_review": [
+    "00_材料说明/阅读指引.md",
+    "01_程序源码/LICENSE",
+    "05_安装文件/ibme-0.1.0-py3-none-any.whl",
+    "05_安装文件/环境依赖说明.txt",
+    "README.txt",
+    "SHA256SUMS.txt",
+    "文件清单.json"
+  ],
+  "repository_original_license_unchanged": true
 }

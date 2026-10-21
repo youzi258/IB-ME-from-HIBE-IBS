@@ -37,8 +37,8 @@
     },
     {
       "path": "00_材料说明/阅读指引.md",
-      "bytes": 3252,
-      "sha256": "8cee72ab6dc446dafec4563a3a319f0bae3c5ab4ebcb144f403b4bfd554e7c0a"
+      "bytes": 3251,
+      "sha256": "8e7943f6ca943ceecf7790796625788910b57da91a99d28608ba0960633dc746"
     },
     {
       "path": "02_参数配置/A-latte-mldsa44.json",
@@ -490,18 +490,18 @@
     },
     {
       "path": "05_安装文件/ibme-0.1.0-py3-none-any.whl",
-      "bytes": 2128802,
-      "sha256": "4a0e6e30065c1a05eded8bc8209e970bfeb96a1668e15f742e2097ad937a778b"
+      "bytes": 2128841,
+      "sha256": "573592e2fc74b6370590e5ea414984d85c2505203f7b2d7a4dba5c74240dae77"
     },
     {
       "path": "05_安装文件/环境依赖说明.txt",
       "bytes": 688,
-      "sha256": "4269bcd60f1ec6216410585e7b220bcfad8334041fa2fa13dee2496cd0b6fc41"
+      "sha256": "c28e79401cbd72d555f115a0e490dc2acc27d34a265bd5fa684c0535777542ff"
     },
     {
       "path": "README.txt",
-      "bytes": 360,
-      "sha256": "dabc26853b4e426551d2756c01576afae85f2d57fb394824d6b8c2c1549f2597"
+      "bytes": 437,
+      "sha256": "47d4a8a33c02703700deb89256d9d3e8002d4b5427d2a9e71ea9913f78d351f0"
     },
     {
       "path": "核对文件.py",
