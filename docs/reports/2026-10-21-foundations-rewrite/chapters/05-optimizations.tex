@@ -1,0 +1,257 @@
+\chapter{关键算法优化}
+
+第四章介绍的算法后端在结构、参数和对象规模上差异明显。直接照搬数学定义虽然可以描述算法，
+却不能解决目标参数运行时出现的内存、存储和重复计算问题。本章围绕三个实际瓶颈展开：
+Sageloli相关扰动不能展开为稠密矩阵，SRGG参考对象存在较大的文本表示开销，Lai在固定身份对
+通信中会反复生成相同叶密钥。三项优化分别改变计算组织、对象编码和运行时生命周期，但不改变
+原方案的公开方程与公共协议接口。
+
+\section{Sageloli结构化环采样优化}
+
+\subsection{稠密矩阵展开的资源瓶颈}
+
+Sageloli的身份发钥和签名都需要在格陪集中采样。相关扰动由陷门决定其形状，再与离散采样
+结合，生成满足方程和范数要求的短向量。环元素本来以多项式系数表示，乘法可以直接在
+负循环环上计算；若把每个环元素展开为旋转矩阵，陷门和协方差会随之变成规模很大的实数矩阵。
+
+PARAM-I取$d=2048$、$\ell=132$、$k=65$，签名相关扰动的系数维数为
+\[
+ D=d(\ell+k)=403456.
+\]
+仅显式保存一个$D\times D$双精度实数矩阵就需要约1.18~TiB，还没有计入矩阵分解和临时工作区。
+这一数量超过常规工作站的可用内存，因此优化的重点不是减少常数，而是避免形成该矩阵。
+
+实现始终保留多项式结构。公钥、主陷门和身份陷门分别以$\ell\times d$、
+$(\ell-k)\times k\times d$和$\ell\times k\times d$的系数数组保存，环乘法在原环上执行。
+每次发钥和签名结束后仍以精确整数算术检查
+\[
+ A=[\bar A\mid g-\bar AR],\qquad
+ AT_s=H_1(P,\rho,s)-g\pmod q,
+\]
+因此改变的是内部计算方式，而不是密钥关系和验签条件。
+
+\subsection{逐频率低秩分解}
+
+设当前陷门为$T$，其形状为$\ell\times k$个环元素，并令
+\[
+ J=\begin{bmatrix}-T\\I_k\end{bmatrix},\qquad
+ a=s^2-r^2,\qquad c=9r^2.
+\]
+相关扰动所需协方差为
+\[
+ \Sigma=aI-cJJ^\star,
+\]
+其中$\star$表示环上的伴随。$aI$是标量矩阵，修正项由只有$k$列的$J$生成。对任何与
+$\operatorname{span}(J)$正交的向量，$J^\star x=0$，所以修正项$JJ^\star$不起作用，平方根算子
+只需在$J$张成的至多$k$维子空间内改变$\sqrt a I$。这正是把大空间计算转移到低维子空间的依据。
+
+首先对多项式执行负循环Fourier变换。在每个频率$\nu$上，环乘法变为复数乘法，$J$对应
+$(\ell+k)\times k$复矩阵$J_\nu$。随后计算
+\[
+ G_\nu=J_\nu^*J_\nu
+      =U_\nu\operatorname{diag}(\lambda_i)U_\nu^*.
+\]
+在PARAM-I中，每个频率上需要分解的最大矩阵为$65\times65$，而不是$403456\times403456$。
+$G_\nu$的特征向量给出$\operatorname{span}(J_\nu)$中的正交方向，特征值则给出各方向上需要从
+$a$减去的修正量；在该子空间的正交补上，平方根作用仍是简单的$\sqrt a$倍缩放。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=8mm and 7mm]
+ \node[flow,text width=39mm] (poly) {陷门多项式$T$\\保存系数数组};
+ \node[flow,text width=39mm,right=of poly] (fourier) {负循环Fourier变换\\$J_\nu$：$197\times65$};
+ \node[flow,text width=39mm,right=of fourier] (gram) {计算$J_\nu^*J_\nu$\\分解$65\times65$矩阵};
+ \node[check,text width=39mm,below=of gram] (apply) {对新随机向量应用\\低秩平方根};
+ \node[check,text width=39mm,left=of apply] (inverse) {逆变换回系数域\\逐系数离散采样};
+ \node[check,text width=39mm,left=of inverse] (verify) {检查精确模方程\\和原方案范数条件};
+ \draw[flowarrow](poly)--(fourier);
+ \draw[flowarrow](fourier)--(gram);
+ \draw[flowarrow](gram)--(apply);
+ \draw[flowarrow](apply)--(inverse);
+ \draw[flowarrow](inverse)--(verify);
+\end{tikzpicture}
+\caption{Sageloli结构化相关扰动的计算流程（矩阵形状对应PARAM-I）}
+\label{fig:ring-sampler}
+\end{figure}
+
+根据小矩阵的特征分解构造平方根算子
+\[
+ L_\nu=\sqrt a I-
+ J_\nu U_\nu\operatorname{diag}\!\left(
+ \frac{c}{\sqrt a+\sqrt{a-c\lambda_i}}
+ \right)U_\nu^*J_\nu^*.
+\]
+该算子满足$L_\nu L_\nu^*=aI-cJ_\nu J_\nu^*$。应用算子时，程序先把新生成的标准随机向量
+投影到$J_\nu$的列空间，再用$65\times65$特征分解修正这些分量；其余分量直接乘以$\sqrt a$。
+整个过程只执行小矩阵与向量乘法，不形成完整$L_\nu$。逆变换回系数域后，继续执行原方案要求的
+离散Gaussian和三进制陪集采样。该方法沿用格陷门采样中的扰动思想\cite{micciancio2012trapdoors}，
+并针对当前方案的环结构组织计算。
+
+主要存储量由陷门系数和逐频率小矩阵计划组成，规模为$O(d\ell k+dk^2)$，不再随$D^2$增长。
+固定陷门的系数数组、Fourier表示和各频率特征分解可以复用；每次发钥或签名仍重新生成Gaussian
+源向量、相关扰动和陪集样本。表~\ref{tab:sageloli-representation}比较两种计算组织。
+
+\begin{table}[H]
+\centering\small
+\caption{Sageloli稠密表示与结构化实现对照}
+\label{tab:sageloli-representation}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.2\textwidth}>{\raggedright\arraybackslash}p{.24\textwidth}>{\raggedright\arraybackslash}p{.25\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\rowcolor{black!8} 计算组织 & 核心分解规模 & 主要存储 & PARAM-I结果 \\
+\midrule
+系数空间稠密展开 & 一个$403456\times403456$实矩阵 & 单个双精度矩阵约1.18~TiB，尚未计分解工作区 & 资源估算，不执行展开 \\
+逐频率低秩实现 & 2048个$197\times65$的$J_\nu$，各分解$65\times65$的Gram矩阵 & $O(d\ell k+dk^2)$系数与数值计划 & 完成发钥、签名和公开验证，实测峰值RSS约1.36~GiB \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Sageloli原论文给出SIS／RSIS两类IBS构造、ROM／QROM分析以及Table~6参数\cite{sageloli2023ibs}。
+本作品围绕其中RSIS参数补充系数原生对象、逐频率低秩SampleF、目标尺寸编解码和精确环方程检查，
+并把后端接入通用IB-ME流程。这里的工程贡献是把论文参数组织成可运行、可保存的结构化实现，
+公开验签关系和困难假设仍采用原方案。
+
+\subsection{数值采样与精确代数校验}
+
+Fourier变换和特征分解使用数值运算，方案中的模方程则必须精确成立。实现将两类职责分开：
+数值计划在建立时检查正定充分条件和变换误差；回到系数域后，以整数算术检查环方程。大模数
+$q=3^k$的公开乘积使用FLINT整数多项式，私有小整数乘法采用双素数NTT与CRT恢复，并检查
+整数卷积幅度处于可唯一恢复范围。
+
+签名生成后继续执行原方案的范数门和验签方程。浮点计算负责生成相关扰动，精确算术负责确认
+最终代数关系。第七章给出PARAM-I、PARAM-II的实测时间、峰值内存及验签结果。
+
+\section{SRGG对象的范围感知编码}
+\label{sec:srgg-codec}
+
+\subsection{参考表示的空间开销}
+
+SRGG的公钥、陷门和签名包含大量多项式系数。JSON会把每个整数写成十进制字符串，并重复保存
+负号、逗号、括号和字段名。对于大对象，这些语法字符和文本数字会形成显著的额外开销。
+
+紧凑编码依据各字段的数学取值范围选择位数。例如，取值为$-1,0,1$的陷门系数只有三种可能，
+每项用2~bit即可表示；公开模$Q=15744063$的系数位于$[0,Q)$，每项使用24~bit。短密钥和
+签名响应先以Zigzag映射处理符号，再选择能够容纳该字段的最小统一位宽。
+
+\begin{table}[H]
+\centering\small
+\caption{SRGG不同字段的紧凑编码方法}
+\label{tab:codec-fields}
+\begin{tabularx}{\textwidth}{@{}p{.23\textwidth}p{.25\textwidth}X@{}}
+\toprule
+\rowcolor{black!8} 数据 & 存储方法 & 解码时检查 \\
+\midrule
+公开模$Q$系数 & 每系数24~bit & $0\leq x<Q$ \\
+三值陷门系数 & 每系数2~bit & 拒绝第四个未使用码字 \\
+短密钥、响应整数 & Zigzag与最小统一位宽 & 数值范围、位宽最小性 \\
+二元挑战 & 每系数1~bit & 固定多项式次数与长度 \\
+类型、参数与上下文 & 固定头部和长度前缀 & 对象类别、公钥和参数一致 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+对包含$N$个系数、统一位宽为$b$的字段，主体长度为$\lceil Nb/8\rceil$字节，再加必要头部。
+解码后得到与JSON格式相同的数学对象，签名与验证仍调用原算法。
+
+\subsection{四类对象的规范编解码}
+
+范围感知编码同时用于公钥、主状态、用户密钥和签名。四类对象使用独立类型标识，系数顺序固定，
+末字节中未使用的位必须为零。解析器先根据参数和形状计算预期长度，再读取数据，并检查对象类型、
+身份、公钥上下文和系数范围。解码后重新编码必须得到相同字节串，从而排除同一数学对象的多种
+字节表示。
+
+对象变短可以减少密钥文件和传输字节，但收益取决于对象在完整协议中的占比。例如，IBS签名
+变短会直接减少对称加密载荷，而HIBE胶囊和一次性认证仍构成固定开销。第七章同时报告四类对象
+的JSON与紧凑格式长度、编解码时间以及完整密文组成，以区分对象级收益和协议级收益。
+
+SRGG原论文给出PARAM-I、II、III三档规范、QROM安全分析和概念验证实现\cite{jia2025ibs}。
+本作品在此基础上为公钥、主状态、用户密钥和签名建立统一的无损规范编码，补充严格解析、状态
+持久化、通用IB-ME接入及完整载荷核算。表~\ref{tab:srgg-protocol-impact}使用同一PARAM-I对象
+的两份已有功能记录，比较参考表示与紧凑表示；这是一项基于既有记录的协议载荷核算。
+
+\begin{table}[H]
+\centering\small
+\caption{SRGG PARAM-I编码对完整LATTE＋SRGG载荷的影响}
+\label{tab:srgg-protocol-impact}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\rowcolor{black!8} 对象 & 参考表示 & 紧凑表示 & 减少 \\
+\midrule
+% BEGIN DATA srgg-protocol-impact.tex
+SRGG签名 & 35,289~B & 13,400~B & 21,889~B（62.0\%） \\
+完整B密文 & 171,114~B & 149,231~B & 21,883~B（12.8\%） \\
+% END DATA srgg-protocol-impact.tex
+\bottomrule
+\end{tabular}
+\begin{minipage}{.96\textwidth}\footnotesize
+两份记录均使用LATTE、SRGG PARAM-I、10字节消息及同一协议格式；数值来自已有配对功能记录，
+不计作新的性能实验。
+\end{minipage}
+\end{table}
+
+\section{Lai接收会话优化}
+\label{sec:lai-session}
+
+\subsection{固定身份对下的重复委派}
+
+在Lai组合中，接收者持有第一层密钥$\mathsf{dk}_r$。解密来自发送者$s$的消息前，需要运行
+\[
+ \mathsf{dk}_{r,s}\leftarrow\mathsf{Derive}(\mathsf{dk}_r,s).
+\]
+同一接收者连续读取同一发送者的消息时，委派输入保持不变，逐消息生成叶钥会重复支付相同的
+计算成本。与此同时，每条消息的HIBE胶囊、对称密文和IBS签名都不同，仍须逐条认证与解密。
+
+作品引入显式接收会话：会话建立时生成并验证一次叶钥，随后在固定双方身份下复用。图
+\ref{fig:receiver-session}对比两种计算安排。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=6mm and 6mm]
+ \node[font=\small,anchor=east] (old) {逐条委派};
+ \node[flow,right=of old,text width=30mm] (o1) {委派＋解密1};
+ \node[flow,right=of o1,text width=30mm] (o2) {委派＋解密2};
+ \node[flow,right=of o2,text width=30mm] (o3) {委派＋解密3};
+ \node[font=\small,anchor=east,below=22mm of old] (new) {接收会话};
+ \node[check,right=of new,text width=30mm] (prep) {委派一次\\验证并保留叶钥};
+ \node[check,right=of prep,text width=30mm] (dec) {解密1、2、3\\逐条认证与验签};
+ \node[check,right=of dec,text width=30mm] (close) {关闭会话\\停止使用叶钥};
+ \draw[flowarrow](o1)--(o2);
+ \draw[flowarrow](o2)--(o3);
+ \draw[flowarrow](prep)--(dec);
+ \draw[flowarrow](dec)--(close);
+\end{tikzpicture}
+\caption{Lai接收会话将与密文无关的委派移至准备阶段}
+\label{fig:receiver-session}
+\end{figure}
+
+\subsection{身份绑定与会话生命周期}
+
+会话建立时先检查公开上下文、接收者身份和一级密钥绑定；生成叶钥后再检查完整$(r,s)$路径及
+陷门方程。会话只服务于当前公钥和身份对，关闭后停止解密。每条消息继续执行规范解析、外层字节
+认证、HIBE解封装、AES-GCM验证、IBS验签和一次性公钥承诺核对。
+
+叶钥作为秘密状态仅保留在进程内，会话对象不支持序列化；长期保存的接收密钥继续采用原有持久
+格式。该边界避免为了性能而增加新的长期密钥文件，同时明确会话优化适用于双方身份固定的连续
+通信。
+
+\subsection{连续消息的摊销成本}
+
+设一次会话准备耗时为$T_{\rm prep}$，会话内单条解密耗时为$T_{\rm sess}$。处理$N$条消息的
+总成本和平均成本分别为
+\[
+ T_{\rm total}(N)=T_{\rm prep}+NT_{\rm sess},\qquad
+ \bar T(N)=\frac{T_{\rm prep}}{N}+T_{\rm sess}.
+\]
+与每条消息均重新委派的原路径$NT_{\rm original}$相比，会话累计成本更低的条件为
+\[
+ N>\frac{T_{\rm prep}}{T_{\rm original}-T_{\rm sess}}.
+\]
+现有阶段中位时间为$T_{\rm prep}=509.548$秒、$T_{\rm original}=526.272$秒、
+$T_{\rm sess}=28.568$秒，代入得到$N>1.024$，因此最小整数临界点为2条消息。该结论是基于
+现有中位时间的成本模型；第七章另列实际测量次数和36,414,052字节的叶钥编码长度。
+
+\section{本章小结}
+
+三项优化分别针对不可承受的中间矩阵、冗长的对象表示和固定身份对下的重复委派。Sageloli优化
+通过逐频率低秩分解避免$O(D^2)$稠密表示；SRGG优化按字段范围建立规范二进制编码；Lai优化以
+受身份和公钥约束的会话复用叶密钥。它们都保留原算法方程与通用协议接口，具体效果在第七章以
+实测数据验证。

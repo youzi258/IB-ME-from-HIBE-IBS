@@ -1,0 +1,266 @@
+\chapter{通用IB-ME系统设计}
+
+本章只讨论所有算法组合共享的系统设计。底层HIBE和IBS被视为相互独立的密码后端，具体方案、
+参数和代表组合留到第四章介绍。公共协议负责双方身份顺序、短种子封装、发送身份认证、完整密文
+字节保护、规范对象和异常处理。
+
+\section{设计目标与总体架构}
+
+通用设计需要满足四项要求。第一，不同HIBE与IBS能够独立替换，公共协议不读取后端内部的矩阵、
+多项式和陷门。第二，HIBE只处理固定长度短秘密，使签名尺寸和应用消息长度不受其明文容量直接
+限制。第三，发送身份、接收身份、应用消息和完整密文字节保持不可拆分的绑定。第四，公开对象、
+角色密钥和密文能够规范保存，并在程序重启后恢复。
+
+图~\ref{fig:common-architecture}给出公共协议的层次。原语层实现HIBE和IBS；适配层统一算法入口、
+对象编码和能力声明；协议层执行IB-ME五算法；状态层负责固定发钥和对象恢复；命令行与浏览器
+仅调用同一应用服务，不各自实现密码流程。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=7mm and 8mm]
+ \node[flow,text width=34mm] (hibe) {HIBE后端\\Setup／Extract／Derive\\Encrypt／Decrypt};
+ \node[flow,text width=34mm,right=of hibe] (ibs) {IBS后端\\Setup／KeyExtract\\Sign／Verify};
+ \node[flow,text width=39mm,right=of ibs] (adapter) {适配与装配层\\能力声明、规范对象\\兼容性检查};
+ \node[check,text width=41mm,below=of ibs] (protocol) {公共IB-ME五算法\\混合加密与完整字节认证};
+ \node[check,text width=37mm,left=of protocol] (state) {状态与发钥服务\\保存、恢复、身份账本};
+ \node[check,text width=37mm,right=of protocol] (entry) {应用入口\\CLI与浏览器界面};
+ \draw[flowarrow](hibe)--(adapter);
+ \draw[flowarrow](ibs)--(adapter);
+ \draw[flowarrow](adapter)--(protocol);
+ \draw[flowarrow](protocol)--(state);
+ \draw[flowarrow](protocol)--(entry);
+\end{tikzpicture}
+\caption{通用IB-ME系统的分层架构}
+\label{fig:common-architecture}
+\end{figure}
+
+\section{参与者、对象与身份顺序}
+
+系统包含可信发钥机构、发送者和接收者。发钥机构保管HIBE与IBS的主秘密，公开两套公开参数。
+发送者领取与自身身份$s$绑定的签名密钥，并在加密时指定接收身份$r$；接收者领取身份$r'$的
+HIBE一级密钥，并在解密时填写认可发送身份$s'$。
+
+HIBE路径固定为$(r,s)$，即第一层为接收者，第二层为发送者。接收者持有一级密钥
+$\mathsf{dk}_{r'}$，再根据$s'$派生叶密钥$\mathsf{dk}_{r',s'}$。这一顺序贯穿对象编码、状态
+文件、签名输入和错误身份测试，后端不能自行交换两层身份。
+
+表~\ref{tab:notations}列出公共协议符号。HIBE与IBS分别维护自己的参数和对象；公共层只保存
+严格类型对象及其规范字节，不要求二者共享$q$、维度或环。
+
+\begin{table}[H]
+\centering\small
+\caption{通用协议主要符号}
+\label{tab:notations}
+\begin{tabularx}{\textwidth}{@{}p{.23\textwidth}X@{}}
+\toprule
+\rowcolor{black!8} 符号 & 含义 \\
+\midrule
+$r,s$；$r',s'$ & 密文指定的接收者与实际发送者；接收密钥身份与接收者认可的发送者 \\
+$\mathcal H,\mathcal S$ & 两层匿名HIBE后端与IBS后端 \\
+$\mathsf{hpk},\mathsf{hmsk}$ & HIBE公开参数与主秘密 \\
+$\mathsf{ipk},\mathsf{imsk}$ & IBS公开参数与主秘密 \\
+$\mathsf{dk}_r,\mathsf{sk}_s$ & 接收者一级密钥与发送者签名密钥 \\
+$M,\sigma$ & 应用消息与IBS签名 \\
+$z,K$ & 32字节随机种子与由其派生的对称密钥 \\
+$\mathsf{ovk},\mathsf{osk},\tau$ & 一次性验签公钥、一次性签名私钥与外层签名 \\
+$\mathrm{LP}(x)$ & 4字节长度前缀与字节串$x$的拼接 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+系统公开对象$\mathsf{MPK}$包含$\mathsf{hpk}$、$\mathsf{ipk}$和组合配置$\mathsf{suite}$；主状态
+$\mathsf{MSK}$保存$\mathsf{hmsk}$、$\mathsf{imsk}$及发钥记录。发送密钥$\mathsf{EK}_s$绑定
+身份$s$和IBS用户密钥，接收密钥$\mathsf{DK}_r$绑定身份$r$和HIBE一级密钥。所有对象都记录
+同一组合标识、参数摘要和编码版本。
+
+\section{原语接口与兼容性检查}
+
+HIBE后端提供$\mathsf{Setup}$、$\mathsf{Extract}$、$\mathsf{Derive}$、$\mathsf{Encrypt}$和
+$\mathsf{Decrypt}$；IBS后端提供$\mathsf{Setup}$、$\mathsf{KeyExtract}$、$\mathsf{Sign}$和
+$\mathsf{Verify}$。每个后端还要提供公开对象、秘密对象和密文／签名对象的规范编码与加载方法。
+
+能力声明描述身份字节上限、HIBE明文长度、IBS签名输入上限、签名长度上界、对象编码版本以及
+是否支持持久化。装配层在Setup前完成以下检查：
+
+\begin{enumerate}
+  \item 两层HIBE能够接收规范化后的接收身份与发送身份；
+  \item HIBE能够加密固定的32字节种子；
+  \item IBS能够签署包含接收身份、应用消息和一次性公钥承诺的规范字节；
+  \item 对称载荷预算能够容纳IBS签名、消息和格式开销；
+  \item 两个后端的对象版本、随机源要求和保存能力满足组合配置。
+\end{enumerate}
+
+检查结果给出该组合的应用消息上限。这样，不兼容配置在生成主密钥之前即被拒绝；公共协议无需
+通过运行失败猜测后端容量。
+
+\section{IB-ME五算法伪代码}
+
+伪代码用于明确输入、输出、调用顺序和拒绝条件。它描述公共协议，不展开任何具体格后端的矩阵
+运算；第四章再说明各项接口如何由具体算法实现。
+
+\begin{ibmealgorithm}{系统建立 $\mathsf{Setup}$}
+\label{alg:setup}
+\textbf{输入：}组合配置$\mathsf{suite}$，密码随机源。\par
+\textbf{输出：}系统公开对象$\mathsf{MPK}$，主状态$\mathsf{MSK}$。
+\begin{enumerate}
+  \item 读取HIBE与IBS能力声明，执行身份、容量、编码和持久化兼容性检查；
+  \item 运行$(\mathsf{hpk},\mathsf{hmsk})\leftarrow\mathcal H.\mathsf{Setup}()$；
+  \item 运行$(\mathsf{ipk},\mathsf{imsk})\leftarrow\mathcal S.\mathsf{Setup}()$；
+  \item 计算公开参数、参数快照和$\mathsf{suite}$的规范摘要；
+  \item 输出$\mathsf{MPK}=(\mathsf{hpk},\mathsf{ipk},\mathsf{suite})$及仅由机构保存的
+        $\mathsf{MSK}=(\mathsf{hmsk},\mathsf{imsk},\mathsf{suite})$。
+\end{enumerate}
+\end{ibmealgorithm}
+
+\begin{ibmealgorithm}{发送者密钥生成 $\mathsf{SenderKeyGen}$}
+\label{alg:sender-keygen}
+\textbf{输入：}$\mathsf{MSK}$，发送身份$s$。\par
+\textbf{输出：}发送密钥$\mathsf{EK}_s$或拒绝$\bot$。
+\begin{enumerate}
+  \item 按发送者域标识和长度前缀规范编码$s$，检查身份长度；
+  \item 调用$\mathsf{sk}_s\leftarrow\mathcal S.\mathsf{KeyExtract}(\mathsf{imsk},s)$；
+  \item 检查返回对象类型、参数摘要和身份绑定；
+  \item 输出$\mathsf{EK}_s=(s,\mathsf{sk}_s,\mathsf{suite})$，并由固定发钥服务记录摘要。
+\end{enumerate}
+\end{ibmealgorithm}
+
+\begin{ibmealgorithm}{接收者密钥生成 $\mathsf{ReceiverKeyGen}$}
+\label{alg:receiver-keygen}
+\textbf{输入：}$\mathsf{MSK}$，接收身份$r$。\par
+\textbf{输出：}接收密钥$\mathsf{DK}_r$或拒绝$\bot$。
+\begin{enumerate}
+  \item 按接收者域标识和长度前缀规范编码$r$，检查身份长度；
+  \item 调用$\mathsf{dk}_r\leftarrow\mathcal H.\mathsf{Extract}(\mathsf{hmsk},r)$；
+  \item 检查一级密钥的参数摘要、层级和身份绑定；
+  \item 输出$\mathsf{DK}_r=(r,\mathsf{dk}_r,\mathsf{suite})$。
+\end{enumerate}
+\end{ibmealgorithm}
+
+\begin{ibmealgorithm}{消息加密 $\mathsf{Encrypt}$}
+\label{alg:encrypt}
+\textbf{输入：}$\mathsf{MPK}$，$\mathsf{EK}_s$，接收身份$r$，消息$M$。\par
+\textbf{输出：}规范密文$C$或拒绝$\bot$。
+\begin{enumerate}
+  \item 检查组合摘要、身份和消息上限，生成一次性密钥对$(\mathsf{ovk},\mathsf{osk})$；
+  \item 计算$d_{\rm ovk}=H_{\rm commit}(\mathsf{ovk})$，将$M$和$d_{\rm ovk}$编码为内层信封$E$，
+        再令$E_{\rm sig}=\operatorname{EncMsg}(r,E)$；
+  \item 生成$\sigma\leftarrow\mathcal S.\mathsf{Sign}(\mathsf{sk}_s,E_{\rm sig})$，编码内部载荷$P$；
+  \item 新取32字节种子$z$，调用$C_0\leftarrow\mathcal H.\mathsf{Encrypt}
+        (\mathsf{hpk},(r,s),z)$；
+  \item 由$z$派生$K$，使用AES-256-GCM加密$P$得到$C_1$；
+  \item 对公开上下文、$\mathsf{ovk}$、$C_0$和$C_1$的规范字节生成一次性签名$\tau$；
+  \item 输出$C=\operatorname{Encode}(\mathsf{ctx},\mathsf{ovk},C_0,C_1,\tau)$。
+\end{enumerate}
+\end{ibmealgorithm}
+
+\begin{ibmealgorithm}{匹配解密 $\mathsf{Decrypt}$}
+\label{alg:decrypt}
+\textbf{输入：}$\mathsf{MPK}$，$\mathsf{DK}_{r'}$，认可发送身份$s'$，密文$C$。\par
+\textbf{输出：}消息$M$或拒绝$\bot$。
+\begin{enumerate}
+  \item 规范解析$C$，检查版本、字段长度、配置摘要和公开上下文；
+  \item 用$\mathsf{ovk}$验证$\tau$；失败则返回$\bot$；
+  \item 计算$\mathsf{dk}_{r',s'}\leftarrow\mathcal H.\mathsf{Derive}(\mathsf{dk}_{r'},s')$；
+  \item 解开$C_0$得到$z$，派生$K$并验证GCM标签，恢复$P$；
+  \item 解析$E$与$\sigma$，计算$E_{\rm sig}=\operatorname{EncMsg}(r',E)$，以身份$s'$调用
+        $\mathcal S.\mathsf{Verify}$；
+  \item 解析$E$中的$d_{\rm ovk}$与$M$，核对$d_{\rm ovk}$来自外层$\mathsf{ovk}$；
+  \item 所有检查通过后返回$M$；任一步失败均返回$\bot$。
+\end{enumerate}
+\end{ibmealgorithm}
+
+\section{基于短种子封装的混合加密}
+
+IBS签名尺寸从数KiB到数MiB不等，而HIBE直接明文容量通常只有几十字节。公共协议采用
+KEM--DEM式混合结构：HIBE只加密固定的32字节随机种子，对称加密承担签名和应用消息组成的
+可变长度载荷。
+
+外部身份先用角色标识、长度前缀和零填充编码为定长输入。当前64字节外部身份对应86字节内部
+身份；接收者与发送者使用不同角色字节。HIBE封装和密钥派生为
+\begin{align*}
+ C_0&\leftarrow\mathcal H.\mathsf{Encrypt}
+       (\mathsf{hpk},(\operatorname{Pad}_P(r),\operatorname{Pad}_C(s)),z),\\
+ K&\leftarrow\operatorname{HKDF\text{-}SHA256}(z;\mathsf{ctx}_H,\mathsf D_{\rm kdf}),\\
+ C_1&\leftarrow\operatorname{AES\text{-}256\text{-}GCM.Enc}(K,n,P;\mathsf{AAD}).
+\end{align*}
+这里$n$是每条消息新生成的12字节nonce。HKDF和GCM分别采用RFC~5869与NIST SP~800-38D规定
+的原语\cite{rfc5869,nist2007gcm}。附加认证数据包含组合上下文、HIBE胶囊$C_0$、nonce和载荷
+长度。修改胶囊或把对称密文移动到另一组合中，都会导致认证失败。
+
+混合结构把底层HIBE需要处理的明文固定为32字节。应用容量转而由IBS签名输入上限、签名最大
+尺寸和对称载荷预算共同决定，装配层可以在建立主密钥之前计算消息上限。
+
+\section{发送身份绑定与完整密文字节认证}
+
+仅验证解密后的IBS签名不能覆盖传输中的版本、字段边界和HIBE胶囊。本作品使用Lamport型一次性
+签名连接内外两层认证\cite{lamport1979ots}。加密时先把一次性验签公钥承诺写入IBS签名消息：
+\begin{align*}
+ d_{\rm ovk}&=H_{\rm commit}(\mathsf{ovk}),\\
+ E&=\mathsf D_{\rm bound}\parallel\mathrm{LP}(d_{\rm ovk})
+       \parallel\mathrm{LP}(M),\\
+ E_{\rm sig}&=\operatorname{EncMsg}(r,E),\\
+ \sigma&\leftarrow\mathcal S.\mathsf{Sign}
+       (\mathsf{sk}_s,E_{\rm sig}),\\
+ P&=\mathsf D_{\rm sig}\parallel\mathrm{LP}(\sigma)\parallel\mathrm{LP}(E).
+\end{align*}
+得到HIBE胶囊和对称密文后，再对全部内层传输字节签名：
+\[
+ \tau\leftarrow\mathsf{OTS.Sign}_{\mathsf{osk}}
+    (\mathsf D_{\rm ct}\parallel\mathrm{LP}(\mathsf{ctx})
+      \parallel\mathrm{LP}(\mathsf{ovk})\parallel\mathrm{LP}(C_0,C_1)).
+\]
+
+接收端先验证外层一次性签名，再解密载荷并检查IBS签名中的$d_{\rm ovk}$。攻击者即使重新生成
+一次性密钥并为修改后的外层字节签名，也不能让原IBS签名承诺新的公钥；原一次性签名也不能验证
+任何变化后的胶囊或对称密文。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=8mm and 8mm]
+ \node[flow,text width=42mm] (input) {消息$M$＋接收身份$r$\\一次性公钥承诺};
+ \node[flow,right=of input,text width=42mm] (sig) {发送者IBS签名\\形成载荷$P$};
+ \node[flow,below=of input,text width=42mm] (seed) {新32字节种子$z$\\HIBE按$(r,s)$加密};
+ \node[flow,below=of sig,text width=42mm] (dem) {由$z$派生密钥\\GCM加密载荷$P$};
+ \node[check,below=of dem,text width=42mm] (outer) {对全部内层字节签名\\输出一次性认证外帧};
+ \draw[flowarrow] (input)--(sig);
+ \draw[flowarrow] (sig)--(dem);
+ \draw[flowarrow] (seed)--node[above,font=\small]{$K$}(dem);
+ \draw[flowarrow] (dem)--(outer);
+ \draw[flowarrow] (seed.south)|-(outer.west);
+\end{tikzpicture}
+\caption{身份签名、短种子封装与完整字节认证的关系}
+\label{fig:protocol-generation}
+\end{figure}
+
+\section{规范编码与状态边界}
+
+所有公开对象、主状态、角色密钥和密文均使用类型标识、版本、参数摘要和长度前缀。编码器固定字段
+顺序，解码器检查总长度、字段上限、未知或重复字段、整数范围和末尾未使用位。解码后重新编码必须
+得到相同字节，从而避免同一数学对象存在多种可接受表示。
+
+长期状态包括主秘密、已发身份记录、发送者密钥和接收者一级密钥；会话状态只保存某次固定身份对
+的叶密钥和上下文；逐消息对象包括随机种子、GCM nonce、一次性签名密钥和密文。三类状态采用
+不同生命周期，逐消息随机量不得写入固定发钥记录，会话叶密钥也不作为长期角色密钥导出。
+
+恢复对象时，程序先加载公开配置，再检查对象中的算法名、参数摘要和身份绑定。恢复过程不重新
+发钥，也不改变既有身份对象。这样，命令行和浏览器入口可以在不同进程中使用同一套已生成状态。
+
+\section{正确性与异常处理}
+
+当$r=r'$且$s=s'$时，接收端派生的叶密钥与加密路径一致，HIBE恢复同一个$z$；HKDF得到同一
+$K$，GCM恢复载荷$P$；IBS以同一发送身份验证签名，内外一次性公钥承诺也一致，最终输出$M$。
+
+接收身份错误时，一级密钥不能形成正确叶密钥；认可发送身份错误时，HIBE第二层路径和IBS验签
+身份同时改变。应用消息、IBS签名或一次性公钥承诺变化时，IBS验证失败；胶囊、对称密文、上下文、
+nonce或外层签名变化时，一次性签名或GCM验证失败。
+
+解码器先检查魔数、版本、总长度和字段上限，再分配大型对象。未知字段、重复字段、截断、追加、
+非规范整数、错误对象类型和配置摘要不匹配均直接拒绝。运行环境缺少依赖或超过资源上限时，程序
+返回运行错误，不把系统故障解释为身份错配。
+
+\section{本章小结}
+
+本章给出了与具体格方案无关的IB-ME公共协议。五算法伪代码明确了原语调用和拒绝顺序；短种子
+封装解决HIBE明文容量与大签名之间的矛盾；IBS和一次性签名分别绑定发送身份与完整密文字节；
+规范对象和状态边界支持固定发钥与重启恢复。由此，不同后端可以共享同一身份语义、处理顺序和
+失败结果，而不需要公共协议读取其内部矩阵、环元素或陷门。

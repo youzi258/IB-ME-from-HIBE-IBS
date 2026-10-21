@@ -1,0 +1,31 @@
+{
+  "schema": "IBME-REPORT-COPY-BASELINE/1",
+  "source_directory": "docs/reports/2026-10-21-chapter1-research-rewrite",
+  "source_commit": "59e8236ee85b3293bafefaa73de00e38cb1e503c",
+  "files": {
+    "README.md": "45cc1d38dea76033a0af32e6d1619db26f8f88535606c810276cedcf853fcb85",
+    "作品设计报告.tex": "d89e64c4bf72d0de15869a34fc7be513e02a6d8520d37c01a6cecd9ccd8d3b45",
+    "作品设计报告.pdf": "241db147d82ae91d723c6f24b0d39322334eb83e2172c7daaec01261901dd0e3",
+    "build_pdf.py": "f2e1a03b27c595cacf1a6ee213fdc7acc9996a6ebe9d6f41e67bc80d5b40a5f9",
+    "check_report.py": "112880e9555260ee55eb0f1cee83143ac371e9b10403266ec8d97eee9c42c3c0",
+    "prepare_materials.py": "5d40c93c046778cf29f53e835bffcd8efd2e91f91bb7d196b191a5310b3f3d88",
+    "chapters/01-introduction.tex": "bef20423fdadc5719615e8d51924d4c20bb9047c3d279273dc33cc132a2cc609",
+    "chapters/02-foundations.tex": "b8d8dbcd08cb992e306709d62bc651ee943c6437ab7a0979a84735721da9ea91",
+    "chapters/03-design.tex": "1793e6654732acfaae96638448261f5b101d4fd3eb97fc74d49491a120526f5b",
+    "chapters/04-algorithms.tex": "410eb58a6d2659cb12a01517d13b7faa526b89813b26e40d09137a5d6cbac84d",
+    "chapters/05-optimizations.tex": "a2bcdeac1bd634ece59ff4596a64ca4beb3cc54209acdcc6f58e5654795d6f69",
+    "chapters/06-system.tex": "557d8a9b1d2920a8f1678f3d82193eb6055a6aba05398973e13d90e18aca0865",
+    "chapters/07-experiments.tex": "cd77654123bb2cf57a2408bc7325667f9cbd391ccc30a15d69f2618a036b31b7",
+    "chapters/08-applications.tex": "bccb1e356d7751f25a6868579be83a3626258757d60273a018efeb821ae3c679",
+    "chapters/09-conclusion.tex": "fc028e8dc0f7fd041dcfa76d21210a57cc8fce315db8a09fc5dce93eac5d84f4",
+    "appendices/reproduction.tex": "ac3d49f112020b21d8d86478ac0eabe21365f6671b41fffad2f47c449b529e93",
+    "CHAPTER1_RESEARCH_NOTES.md": "4864bd911a9a1498fe2bd15d43fc360b3f82949732ee1dc4fd4c19b491648ffb",
+    "DEFERRED_REVISION_PLAN.md": "a3a53b9d2b99dfd549dca36c1dadee8c739486e12a78b9b6483d22de4d3f8ad2",
+    "EXPANSION_PLAN.md": "e879674f10d94c5e4937f7c3328e423a6d6efdc3a2cda698c2aea1f687f0efb6",
+    "REFERENCE_STYLE_STUDY.md": "c8b6db9ac5882e9aaaf5f10a72e897c9deed9878293b667cbe4e5591747bec0e",
+    "USER_REVIEW_CHECKLIST.md": "41541c5e8d5a72ca87bcf838c11f53a414c55ec01dbee921c8f9a26fb8fa40fa",
+    "format-accounting.json": "3f17e28250af26213b8bba1ec52d749f7224265a33365caae0f6dc71d912e8dc",
+    "material-sources.json": "b08d64b62ff3a8880dd1b29d16f065ac915f83e8516384030eeaccdcfa5aa0cc",
+    "visual-review.json": "ca4496d35c5c039933acbe19079f2b4a6a18981891f0c90ffd0fa28dda34f350"
+  }
+}
