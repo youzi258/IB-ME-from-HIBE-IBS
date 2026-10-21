@@ -1,0 +1,968 @@
+{
+  "binding": {
+    "batch_id": "ten-combinations-20261021-01",
+    "calibration": false,
+    "cases": [
+      "latte-mldsa44",
+      "latte-falcon512",
+      "latte-luo-compact",
+      "latte-srgg-I-compact",
+      "latte-sageloli-I",
+      "lai-c2-mldsa44",
+      "lai-c2-falcon512",
+      "lai-c2-luo-compact",
+      "lai-c2-srgg-I-compact",
+      "lai-c2-sageloli-I"
+    ],
+    "execution_digest": "0bbf4ccb276098d9e4bfaf00cdcffe04cd2bd38fd2414167dedc7ecba8da4f55",
+    "input": {
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "receiver_identity_hex": "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242",
+      "sender_identity_hex": "41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141"
+    },
+    "plan_digest": "fa4efff5893648edf166bb1769ad577a1b9a004966eb1034a251a987bbffb73a",
+    "policy": {
+      "batch_seconds": 129600,
+      "cooldown_seconds": 30,
+      "generation_seconds": 7200,
+      "logical_cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "minimum_available_memory_bytes": 4294967296,
+      "minimum_disk_free_bytes": 12884901888,
+      "restore_seconds": 5400,
+      "rss_limit_bytes": 4294967296,
+      "rss_sample_seconds": 0.01,
+      "scheduler_seed": 20261021,
+      "stage_seconds": 1800
+    },
+    "restore_repetitions": 3,
+    "roots": 3,
+    "warm_repetitions": 3
+  },
+  "jobs": [
+    {
+      "case": "lai-c2-luo-compact",
+      "job_id": "r01-lai-c2-luo-compact",
+      "root": 1
+    },
+    {
+      "case": "latte-sageloli-I",
+      "job_id": "r01-latte-sageloli-I",
+      "root": 1
+    },
+    {
+      "case": "lai-c2-mldsa44",
+      "job_id": "r01-lai-c2-mldsa44",
+      "root": 1
+    },
+    {
+      "case": "latte-falcon512",
+      "job_id": "r01-latte-falcon512",
+      "root": 1
+    },
+    {
+      "case": "latte-luo-compact",
+      "job_id": "r01-latte-luo-compact",
+      "root": 1
+    },
+    {
+      "case": "lai-c2-sageloli-I",
+      "job_id": "r01-lai-c2-sageloli-I",
+      "root": 1
+    },
+    {
+      "case": "latte-srgg-I-compact",
+      "job_id": "r01-latte-srgg-I-compact",
+      "root": 1
+    },
+    {
+      "case": "latte-mldsa44",
+      "job_id": "r01-latte-mldsa44",
+      "root": 1
+    },
+    {
+      "case": "lai-c2-falcon512",
+      "job_id": "r01-lai-c2-falcon512",
+      "root": 1
+    },
+    {
+      "case": "lai-c2-srgg-I-compact",
+      "job_id": "r01-lai-c2-srgg-I-compact",
+      "root": 1
+    },
+    {
+      "case": "latte-luo-compact",
+      "job_id": "r02-latte-luo-compact",
+      "root": 2
+    },
+    {
+      "case": "latte-falcon512",
+      "job_id": "r02-latte-falcon512",
+      "root": 2
+    },
+    {
+      "case": "lai-c2-luo-compact",
+      "job_id": "r02-lai-c2-luo-compact",
+      "root": 2
+    },
+    {
+      "case": "lai-c2-mldsa44",
+      "job_id": "r02-lai-c2-mldsa44",
+      "root": 2
+    },
+    {
+      "case": "latte-sageloli-I",
+      "job_id": "r02-latte-sageloli-I",
+      "root": 2
+    },
+    {
+      "case": "lai-c2-sageloli-I",
+      "job_id": "r02-lai-c2-sageloli-I",
+      "root": 2
+    },
+    {
+      "case": "lai-c2-srgg-I-compact",
+      "job_id": "r02-lai-c2-srgg-I-compact",
+      "root": 2
+    },
+    {
+      "case": "latte-srgg-I-compact",
+      "job_id": "r02-latte-srgg-I-compact",
+      "root": 2
+    },
+    {
+      "case": "latte-mldsa44",
+      "job_id": "r02-latte-mldsa44",
+      "root": 2
+    },
+    {
+      "case": "lai-c2-falcon512",
+      "job_id": "r02-lai-c2-falcon512",
+      "root": 2
+    },
+    {
+      "case": "latte-srgg-I-compact",
+      "job_id": "r03-latte-srgg-I-compact",
+      "root": 3
+    },
+    {
+      "case": "latte-sageloli-I",
+      "job_id": "r03-latte-sageloli-I",
+      "root": 3
+    },
+    {
+      "case": "latte-mldsa44",
+      "job_id": "r03-latte-mldsa44",
+      "root": 3
+    },
+    {
+      "case": "lai-c2-luo-compact",
+      "job_id": "r03-lai-c2-luo-compact",
+      "root": 3
+    },
+    {
+      "case": "lai-c2-sageloli-I",
+      "job_id": "r03-lai-c2-sageloli-I",
+      "root": 3
+    },
+    {
+      "case": "lai-c2-mldsa44",
+      "job_id": "r03-lai-c2-mldsa44",
+      "root": 3
+    },
+    {
+      "case": "latte-luo-compact",
+      "job_id": "r03-latte-luo-compact",
+      "root": 3
+    },
+    {
+      "case": "lai-c2-srgg-I-compact",
+      "job_id": "r03-lai-c2-srgg-I-compact",
+      "root": 3
+    },
+    {
+      "case": "latte-falcon512",
+      "job_id": "r03-latte-falcon512",
+      "root": 3
+    },
+    {
+      "case": "lai-c2-falcon512",
+      "job_id": "r03-lai-c2-falcon512",
+      "root": 3
+    }
+  ],
+  "plan": {
+    "cases": [
+      {
+        "capacity": {
+          "hibe_payload_bytes": 65536,
+          "ibs_input_bytes": 65536,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 37587,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 59191,
+          "protocol_payload_overhead": 6345,
+          "signature_max_bytes": 6237,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": true,
+        "name": "latte-mldsa44",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-ml-dsa",
+          "ibs_params": "ml-dsa-44",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "latte",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "max_children": 2,
+            "max_receivers": 2,
+            "message_mode": "seed32",
+            "native_timeout_seconds": 60
+          },
+          "hibe_version": "latte3-cosac-fix-v1",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-ml-dsa",
+          "ibs_params": {
+            "backend_admitted": true,
+            "base_algorithm": "ml-dsa-44",
+            "identity_bytes": 64,
+            "max_identities": 16,
+            "message_max_bytes": 65536,
+            "parameters_are_formal": true,
+            "security_claim": "secure",
+            "timeout_seconds": 30
+          },
+          "ibs_version": "IBME/CERTIBS/1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "reference",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "bb8006f036dfcbe3ea2d765e2cdf44a595568f4465e3b786d0b802fb4e0baf91"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 65536,
+          "ibs_input_bytes": 65536,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 37587,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 63106,
+          "protocol_payload_overhead": 2430,
+          "signature_max_bytes": 2322,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": true,
+        "name": "latte-falcon512",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-falcon",
+          "ibs_params": "falcon-padded-512",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "latte",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "max_children": 2,
+            "max_receivers": 2,
+            "message_mode": "seed32",
+            "native_timeout_seconds": 60
+          },
+          "hibe_version": "latte3-cosac-fix-v1",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-falcon",
+          "ibs_params": {
+            "backend_admitted": true,
+            "base_algorithm": "falcon-padded-512",
+            "identity_bytes": 64,
+            "max_identities": 16,
+            "message_max_bytes": 65536,
+            "parameters_are_formal": true,
+            "security_claim": "secure",
+            "timeout_seconds": 30
+          },
+          "ibs_version": "IBME/CERTIBS/1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "reference",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "c4be84c99ec7cf780681508bdf3b9e229ec9229fa5cb63779a602062da6aa413"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 65536,
+          "ibs_input_bytes": 4096,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 37587,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 3924,
+          "protocol_payload_overhead": 16171,
+          "signature_max_bytes": 16063,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": true,
+        "name": "latte-luo-compact",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "luo-module",
+          "ibs_params": "research",
+          "protocol": "byteauth-v1",
+          "signature_format": "compact",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "latte",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "max_children": 2,
+            "max_receivers": 2,
+            "message_mode": "seed32",
+            "native_timeout_seconds": 60
+          },
+          "hibe_version": "latte3-cosac-fix-v1",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "luo-module",
+          "ibs_params": {
+            "degree": 256,
+            "dropped_bits": 28,
+            "eta": 1,
+            "gamma1": 125440,
+            "gamma2": 31470387200,
+            "gamma3": 15270991360,
+            "identity_max_bytes": 64,
+            "k": 11,
+            "kappa": 64,
+            "l": 10,
+            "max_cached_identities": 64,
+            "max_extract_attempts": 1024,
+            "max_sign_attempts": 1024,
+            "max_uniform_attempts": 128,
+            "message_max_bytes": 4096,
+            "q": 274877844481,
+            "root": 153250464611
+          },
+          "ibs_version": "luo-module-ref1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "compact",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "5bfa7a2afcb4101420138f1d51dadee2830b522c570dd1aa44967c90a09b4846"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 131072,
+          "ibs_input_bytes": 65536,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 37587,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 65364,
+          "protocol_payload_overhead": 15812,
+          "signature_max_bytes": 15704,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": true,
+        "name": "latte-srgg-I-compact",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 131072
+          },
+          "ibs": "srgg2025-paper",
+          "ibs_params": "PARAM-I",
+          "protocol": "byteauth-v1",
+          "signature_format": "compact",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "latte",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "max_children": 2,
+            "max_receivers": 2,
+            "message_mode": "seed32",
+            "native_timeout_seconds": 60
+          },
+          "hibe_version": "latte3-cosac-fix-v1",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 131072
+          },
+          "ibs": "srgg2025-paper",
+          "ibs_params": {
+            "interpretation": "table-standard-deviation",
+            "profile_name": "PARAM-I"
+          },
+          "ibs_version": "SRGG-PAPER-TABLE4-factor1-v1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "compact",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "8b9fef332ed20f8c34fc1eedb3f81b5f3b3236533e6bca7c07d6687ccf546c61"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 8388608,
+          "ibs_input_bytes": 4096,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 37587,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 3924,
+          "protocol_payload_overhead": 3227932,
+          "signature_max_bytes": 3227824,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": true,
+        "name": "latte-sageloli-I",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "latte",
+          "hibe_params": "seed32",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 8388608
+          },
+          "ibs": "sageloli-rsis",
+          "ibs_params": "PARAM-I",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "latte",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "max_children": 2,
+            "max_receivers": 2,
+            "message_mode": "seed32",
+            "native_timeout_seconds": 60
+          },
+          "hibe_version": "latte3-cosac-fix-v1",
+          "hybrid_limits": {
+            "backend_id": "latte3-cosac-fix-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 8388608
+          },
+          "ibs": "sageloli-rsis",
+          "ibs_params": {
+            "d": 2048,
+            "identity_max_bytes": 256,
+            "identity_width_squared": 2720281532542,
+            "k": 65,
+            "l": 132,
+            "mass_bits": 320,
+            "max_sign_attempts": 64,
+            "max_users": 2,
+            "message_max_bytes": 4096,
+            "r_squared": 49,
+            "salt_bytes": 32,
+            "signature_width_squared": 270116709797628319132317,
+            "tail_bits": 256
+          },
+          "ibs_version": "Sageloli-RSIS-structured-v3",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "reference",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "abe857ba25576f25bd86e1ddf31abf59f381a888aea41832f00e062761995c62"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 65536,
+          "ibs_input_bytes": 65536,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 1228844,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 59191,
+          "protocol_payload_overhead": 6345,
+          "signature_max_bytes": 6237,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": false,
+        "name": "lai-c2-mldsa44",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": "target-research",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-ml-dsa",
+          "ibs_params": "ml-dsa-44",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "k": 39,
+            "l": 2,
+            "max_message_bytes": 32,
+            "message_mode": "seed32",
+            "n": 2048,
+            "p": 2,
+            "q": 274877976577,
+            "sigma": 2.0,
+            "sigma_r": 1.0
+          },
+          "hibe_version": "lai-a-256-v1",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-ml-dsa",
+          "ibs_params": {
+            "backend_admitted": true,
+            "base_algorithm": "ml-dsa-44",
+            "identity_bytes": 64,
+            "max_identities": 16,
+            "message_max_bytes": 65536,
+            "parameters_are_formal": true,
+            "security_claim": "secure",
+            "timeout_seconds": 30
+          },
+          "ibs_version": "IBME/CERTIBS/1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "reference",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "5f1a80143d25b4490eafee007d88008e8498b97a415ac406cbed3234f4e458d9"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 65536,
+          "ibs_input_bytes": 65536,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 1228844,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 63106,
+          "protocol_payload_overhead": 2430,
+          "signature_max_bytes": 2322,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": false,
+        "name": "lai-c2-falcon512",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": "target-research",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-falcon",
+          "ibs_params": "falcon-padded-512",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "k": 39,
+            "l": 2,
+            "max_message_bytes": 32,
+            "message_mode": "seed32",
+            "n": 2048,
+            "p": 2,
+            "q": 274877976577,
+            "sigma": 2.0,
+            "sigma_r": 1.0
+          },
+          "hibe_version": "lai-a-256-v1",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "cert-falcon",
+          "ibs_params": {
+            "backend_admitted": true,
+            "base_algorithm": "falcon-padded-512",
+            "identity_bytes": 64,
+            "max_identities": 16,
+            "message_max_bytes": 65536,
+            "parameters_are_formal": true,
+            "security_claim": "secure",
+            "timeout_seconds": 30
+          },
+          "ibs_version": "IBME/CERTIBS/1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "reference",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "727fdf2596b6689b04dc2c3a9623b8e6c78e6c54d16c7170c858ad687d87fe2e"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 65536,
+          "ibs_input_bytes": 4096,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 1228844,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 3924,
+          "protocol_payload_overhead": 16171,
+          "signature_max_bytes": 16063,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": false,
+        "name": "lai-c2-luo-compact",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": "target-research",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "luo-module",
+          "ibs_params": "research",
+          "protocol": "byteauth-v1",
+          "signature_format": "compact",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "k": 39,
+            "l": 2,
+            "max_message_bytes": 32,
+            "message_mode": "seed32",
+            "n": 2048,
+            "p": 2,
+            "q": 274877976577,
+            "sigma": 2.0,
+            "sigma_r": 1.0
+          },
+          "hibe_version": "lai-a-256-v1",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 65536
+          },
+          "ibs": "luo-module",
+          "ibs_params": {
+            "degree": 256,
+            "dropped_bits": 28,
+            "eta": 1,
+            "gamma1": 125440,
+            "gamma2": 31470387200,
+            "gamma3": 15270991360,
+            "identity_max_bytes": 64,
+            "k": 11,
+            "kappa": 64,
+            "l": 10,
+            "max_cached_identities": 64,
+            "max_extract_attempts": 1024,
+            "max_sign_attempts": 1024,
+            "max_uniform_attempts": 128,
+            "message_max_bytes": 4096,
+            "q": 274877844481,
+            "root": 153250464611
+          },
+          "ibs_version": "luo-module-ref1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "compact",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "16c8f689f9029b238b067a1f3ceb98fb90fe18408680af3cd3972b2dfaf9b868"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 131072,
+          "ibs_input_bytes": 65536,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 1228844,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 65364,
+          "protocol_payload_overhead": 15812,
+          "signature_max_bytes": 15704,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": false,
+        "name": "lai-c2-srgg-I-compact",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": "target-research",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 131072
+          },
+          "ibs": "srgg2025-paper",
+          "ibs_params": "PARAM-I",
+          "protocol": "byteauth-v1",
+          "signature_format": "compact",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "k": 39,
+            "l": 2,
+            "max_message_bytes": 32,
+            "message_mode": "seed32",
+            "n": 2048,
+            "p": 2,
+            "q": 274877976577,
+            "sigma": 2.0,
+            "sigma_r": 1.0
+          },
+          "hibe_version": "lai-a-256-v1",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 131072
+          },
+          "ibs": "srgg2025-paper",
+          "ibs_params": {
+            "interpretation": "table-standard-deviation",
+            "profile_name": "PARAM-I"
+          },
+          "ibs_version": "SRGG-PAPER-TABLE4-factor1-v1",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "compact",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "71402905458dc6e8a8dfb8911c1bbbb09b5c67fc2615888a47d9555f73712a51"
+      },
+      {
+        "capacity": {
+          "hibe_payload_bytes": 8388608,
+          "ibs_input_bytes": 4096,
+          "identity_bytes": 64,
+          "inner_hibe_ciphertext_max_bytes": 1228844,
+          "inner_hibe_identity_bytes": 86,
+          "inner_hibe_payload_bytes": 32,
+          "max_application_bytes": 3924,
+          "protocol_payload_overhead": 3227932,
+          "signature_max_bytes": 3227824,
+          "signed_input_overhead": 172
+        },
+        "hibe_persistent_identity_cache": false,
+        "name": "lai-c2-sageloli-I",
+        "selection": {
+          "allow_mock": false,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": "target-research",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 8388608
+          },
+          "ibs": "sageloli-rsis",
+          "ibs_params": "PARAM-I",
+          "protocol": "byteauth-v1",
+          "signature_format": "reference",
+          "transport": "hybrid"
+        },
+        "suite": {
+          "allow_mock": false,
+          "backend_admitted": true,
+          "hibe": "lai-ideal-hibe",
+          "hibe_params": {
+            "identity_bytes": 86,
+            "k": 39,
+            "l": 2,
+            "max_message_bytes": 32,
+            "message_mode": "seed32",
+            "n": 2048,
+            "p": 2,
+            "q": 274877976577,
+            "sigma": 2.0,
+            "sigma_r": 1.0
+          },
+          "hibe_version": "lai-a-256-v1",
+          "hybrid_limits": {
+            "backend_id": "lai-a-256-v1",
+            "identity_max_bytes": 64,
+            "max_capsule_bytes": 4194304,
+            "max_payload_bytes": 8388608
+          },
+          "ibs": "sageloli-rsis",
+          "ibs_params": {
+            "d": 2048,
+            "identity_max_bytes": 256,
+            "identity_width_squared": 2720281532542,
+            "k": 65,
+            "l": 132,
+            "mass_bits": 320,
+            "max_sign_attempts": 64,
+            "max_users": 2,
+            "message_max_bytes": 4096,
+            "r_squared": 49,
+            "salt_bytes": 32,
+            "signature_width_squared": 270116709797628319132317,
+            "tail_bits": 256
+          },
+          "ibs_version": "Sageloli-RSIS-structured-v3",
+          "parameters_are_formal": true,
+          "protocol": "byteauth-v1",
+          "security_claim": "secure",
+          "signature_format": "reference",
+          "state_policy": "single-writer-commit-before-publish-v1",
+          "transport": "hybrid",
+          "version": "IBME/SUITE/1"
+        },
+        "suite_digest": "8692c5917fcd731fb6b2109f1a5307014c66edbd4a1f17d4190b14873cf4a200"
+      }
+    ],
+    "input": {
+      "identity_bytes": 64,
+      "message_bytes": 32,
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "receiver_identity_hex": "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242",
+      "sender_identity_hex": "41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141"
+    },
+    "phase": "design-only-no-performance-measurements",
+    "planning_source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
+    "schema": "TEN-COMBINATION-BENCHMARK-PLAN/1"
+  },
+  "schema": "TEN-COMBINATION-BATCH/1",
+  "started_at": "2026-10-21T07:57:57.449596+00:00",
+  "started_unix": 1792569477.4496067
+}

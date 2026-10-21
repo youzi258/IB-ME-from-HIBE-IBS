@@ -58,7 +58,7 @@
 
 ## 3. 当前并行包与完成条件
 
-2026-10-21：[PR87十组同机补测方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)已审查合并，固定配置10/10预检通过；[本机驱动、校准与运行位置](research/2026-10-21-ten-combination-benchmark-results/README.md)已交付，三组校准进行中，LATTE＋ML-DSA已完整通过。统一64 B身份、32 B消息，校准全过后自动串行启动每格3根的正式30个job，当前不计十组完成。实际本机为Ultra9/Sage10.9，与i9/Sage10.7规划观察分别记账。按用户要求，[PR89](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/89)已将独立Wang原语CI改为手动触发，不再进入普通PR自动矩阵。
+2026-10-21：[PR87方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)已审查合并；按用户最新要求减少次数，[十组基本性能比较](research/2026-10-21-ten-combination-benchmark-results/README.md)现采用每组1根、首次／重复／新进程恢复各1次，统一64 B身份、32 B消息，共20次加密与30次解密。三组同口径校准已完整通过并复用，其余七组正在补测；原30根长批次在首个完整试验结束后停止，已有数据另存。实际测量仍是Ultra9/Sage10.9及同一只读源码归档。42项驱动／汇总控制测试通过，当前尚未齐十组。按用户要求，[PR89](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/89)已将独立Wang原语CI改为手动触发。
 
 ### 当前未完成项（按依赖推进）
 

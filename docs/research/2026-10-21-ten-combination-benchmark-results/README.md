@@ -1,61 +1,70 @@
-# 十组HIBE×IBS本机基本性能补测
+# 十组HIBE×IBS本机基本性能比较
 
-状态：**运行中，驱动已实现；第二轮三组校准已启动，LATTE＋ML-DSA已完整通过，两个Lai组合继续执行。正式批次尚未启动。** 本目录接续已合并[PR87方案](../../superpowers/plans/2026-10-21-ten-combination-benchmark.md)，独立于原规划记录、历史实验和两版报告。
+**当前采用每组1个独立根，首次加解密、重复加解密和新进程恢复解密各测1次。** 三组已完成的同口径记录直接复用，其余七组正在补测。原30根长批次已在首个完整试验结束后停止，已有结果保留。
 
-范围为LATTE、Lai C2各配ML-DSA-44、Falcon padded-512、Luo模格compact、SRGG PARAM-I compact、Sageloli RSIS v3 PARAM-I。完整Suite直接读取[固定matrix](../2026-10-21-ten-combination-benchmark-plan/matrix.json)，使用原64 B身份、32 B消息和既有secure/true/true声明，不改变算法或参数。
+## 当前方法
 
-## 本机与方法
+十组为LATTE、Lai C2分别搭配ML-DSA-44、Falcon padded-512、Luo模格compact、SRGG PARAM-I compact、Sageloli RSIS v3 PARAM-I。完整参数直接读取[固定matrix](../2026-10-21-ten-combination-benchmark-plan/matrix.json)，A/B/C原冻结Suite不变。
 
-本机实际为Intel Core Ultra9 275HX、WSL2、Sage10.9/Python3.13.14，NumPy2.5.1、cryptography49.0.0、pytest9.1.1。它与PR87的i9/Sage10.7规划观察不同，本批十组统一使用本机环境，不并入旧数据。现有原生引擎通过源码ABI预检；执行前固定二进制、链接库、编译器、依赖及源码指纹。CPU固定逻辑0–3，OMP4，OpenBLAS/MKL/NUMEXPR各1线程。
+| 项目 | 当前安排 |
+|---|---|
+| 独立根 | 每组合1根，共10根 |
+| 首次加密／解密 | 每根各1次 |
+| 同进程重复加密／解密 | 每根各1次 |
+| 新进程恢复 | 每根恢复1次，解密1次 |
+| 基本比较总调用 | 20次加密、30次解密、10次恢复 |
+| 外层拒绝 | 每根截断、翻转1 bit各1次，另行记账 |
+| 输入 | 双方身份各64 B，消息为00—1f共32 B |
+| 输出 | 逐项耗时、完整密文与密钥尺寸、内存、来源及结果 |
 
-每组3个独立完整根，分三轮串行执行；每根1对首次、3对同进程重复、1次新进程恢复及3次恢复解密。计划30个根、120次诚实加密和210次诚实解密，另列截断与篡改拒绝。每根先取中位数，再对独立根汇总；不将9次共享根的重复算成9个独立根。
+本机为Ultra9 275HX、WSL2、Sage10.9/Python3.13.14，NumPy2.5.1、cryptography49.0.0。串行执行，固定逻辑CPU0–3，OMP4，OpenBLAS/MKL/NUMEXPR各1线程。源码、原生引擎、链接库及依赖指纹相同，不将旧机器数据补入本表。
 
-Lai每次正常解密执行一次新的随机委派，单列委派时间和次数；本表不使用接收会话。LATTE新进程恢复遵守既有持久缓存及零新熵契约，并禁止原生发钥与签名。所有恢复只打开本批保存的公钥、接收钥和首个密文，不读取主密钥或发送者私钥。
+Lai每次解密执行真实的新随机委派；LATTE恢复使用既有持久缓存并检查零新熵。完整协议包含IBS、Hybrid、BYTEAUTH、wire编解码和身份校验。单阶段1800秒、生成7200秒、恢复5400秒及4GiB进程树RSS控制仍保留，job之间等待30秒。RSS为10ms采样，可能遗漏短峰并重复计入共享页，内核累计峰值单列。
 
-保持计划中的单阶段1800秒、生成7200秒、恢复5400秒、整批36小时上限；进程树RSS达到4GiB停止该job，每个job后等待30秒。进程树10ms RSS采样可能遗漏短峰、重复计共享页，内核累计峰值另列。失败保留原根与部分记录，不自动抽根替换。
+参数来源及ROM条件沿用固定参数卡，当前secure/true/true声明不变。这里测量固定配置的工程性能，功能记录不另构成安全证明；算法、参数、随机源和报告正文均未改动。
 
-## 代码与执行
+## 复用与补测
 
-- `experiments/research/ten_combination_benchmark.py`：固定配置校验、来源与环境、顺序、监督、超时与续跑。
-- `experiments/research/ten_combination_worker.py`：公共API生成／恢复、逐阶段计时、调用与熵计数、私有持久化。
-- `experiments/research/ten_combination_summary.py`：公开字段白名单、来源核对、逐根统计、CSV与图。
-- `tests/test_ten_combination_benchmark.py`：调度、失败、恢复、统计与字段控制夹具，不生成正式性能数据。
+已完成的calibration-02中，LATTE＋ML-DSA、Lai＋Luo compact、Lai＋Sageloli均正好是上述1根／1重复／1恢复安排。三组有完整新根、真实加解密、恢复及拒绝结果，现按相同条件纳入基本比较。原收据的calibration标签原样保留，来源在汇总中列明。
 
-在Linux本地冻结源码目录、指定Sage环境设置四种已核原生引擎及上述线程变量后执行：
+basic-supplement-01只运行其余七组，不重建这三组已完成的根。[basic-design.json](basic-design.json)在补测启动前锁定来源分配、次数和配置摘要；比较脚本核对十组恰好覆盖一次、相同源码环境及20/30次调用。
+
+旧batch-01已完成一个Lai＋Luo完整根（4次加密、7次解密、1次恢复），在完整job结束后停止后续安排。额外记录单独保存，不混入单次主表。PR87原30根方案作为历史计划保留，单根方法是当前执行安排。
+
+## 代码与复算
+
+- experiments/research/ten_combination_benchmark.py、ten_combination_worker.py：公开API的真实执行，继续使用同一只读归档，未修改。
+- experiments/research/ten_combination_summary.py：逐job收据核对和原始统计，未修改。
+- experiments/research/ten_combination_basic_comparison.py：只读取公开记录，在临时副本中复核，生成十组CSV、阅读表和图，不改原收据。
+- [run_basic_remainder.py](run_basic_remainder.py)：锁定三组复用来源，串行补齐七组。
+- [watch_basic_comparison.py](watch_basic_comparison.py)：七组结束后自动复核并生成比较；缺项保留partial结果。
 
 ```text
-python -m experiments.research.ten_combination_benchmark --plan docs/research/2026-10-21-ten-combination-benchmark-plan/matrix.json --check-only
-python -m experiments.research.ten_combination_benchmark --plan docs/research/2026-10-21-ten-combination-benchmark-plan/matrix.json --source-commit <完整冻结提交> --batch-id ten-combinations-20261021-01 --private-dir <Linux私有目录> --public-dir <独立公开目录>
+python -m experiments.research.ten_combination_basic_comparison --design <basic-design.json> --reused-public <calibration-02/public> --supplemental-public <basic-supplement-01/public> --output <比较输出目录> --plots
+python -m pytest -q tests/test_ten_combination_basic_comparison.py tests/test_ten_combination_benchmark.py
 ```
 
-正式启动前另做LATTE＋ML-DSA、Lai＋Sageloli、Lai＋Luo compact各一根校准，每根1次同进程重复、1次恢复后解密，使用`--calibration --roots 1 --warm-repetitions 1 --restore-repetitions 1 --cases ...`；单独批次ID和目录，不混入正式30根。续跑只追加`--resume`，冻结来源或配置不一致即拒绝，已启动失败阶段不重试。
+控制测试42项通过，涵盖复用／补测覆盖、来源变化、隐藏额外采样、统计和恢复契约。先前公共框架定向回归169项、CI控制27项分别记账。私有对象和原始诊断不进Git，公开文件只含参数、环境、源码、尺寸、时间、计数和结果。
 
-私有目录位于本机`~/.cache/ibme-bench/`，权限0700/0600，不进Git。公开目录只保存环境、来源、参数、时间、尺寸、计数与结果，异常文本及原生日志留在私有区。批次运行后从逐job收据生成`summary.json`和`measurements.csv`，独立调用汇总器可重算。
+## 本机运行位置
 
-## 当前验证与剩余工作
+实际测量继续使用a202c6d3c87798911675b11a46b44903405370df的Linux本地只读Git归档，SHA-256为acd3f84e655a29a7fac2b755889ff5c04ac128a995bb2664bf91d09c7ff614dc。
 
-新驱动公共预检10/10通过，输出30个待执行job；驱动及装配、组合、Hybrid、接收会话和CLI选参定向回归169项通过，修正观察器后控制测试35项通过。本轮没有新增安全性或匿名性证明任务；实验用于测量固定配置成本，功能成功不另构成安全证明。各算法ROM条件与参数来源沿用原参数卡和固定Suite。
-
-仍需完成三组真实校准、冻结正式运行及全部30个job，再复核公开收据、重算主表并交付结果。未完成的格保留计划／完成／失败数，不以旧数据补齐。报告正文与支撑ZIP不自动修改。
-
-首轮校准固定源码为`09a1e7759be43cdfcff9d6de651ba70a611ced1c`。LATTE＋ML-DSA的首次及重复加解密成功；观察器将外层拒绝错误地比较为`None`，而公共协议使用`BOTTOM`哨兵，因此把正确拒绝误判为失败。该问题只在测量脚本，已更正并增加直接核对协议哨兵的控制用例。旧批次停止，原根、失败和Lai在途阶段均保留；新的校准另编号，不重抽替换旧失败记录。
-
-## 当前运行位置与接续
-
-第二轮校准和待启动正式批次使用同一固定源码`a202c6d3c87798911675b11a46b44903405370df`。受控Git归档SHA-256为`acd3f84e655a29a7fac2b755889ff5c04ac128a995bb2664bf91d09c7ff614dc`；执行源码从该归档导出到Linux本地并设为只读，不包含Windows工作树中的未提交文件。
-
-本机批次根目录为`~/.cache/ibme-bench/ten-combinations-20261021/`：
+根目录：~/.cache/ibme-bench/ten-combinations-20261021/。
 
 | 路径 | 内容 |
 |---|---|
-| `source-a202c6d/` | 固定只读执行源码及归档清单 |
-| `runtime-env.sh` | 本机原生引擎路径与固定线程环境 |
-| `calibration-01/` | 已停止的首轮校准；公开副本见本目录`calibration-01/`，私有原根继续本机保留 |
-| `calibration-02/public/` | 当前三组校准清单、公开收据和逐job状态 |
-| `calibration-02/private/` | 本轮真实私有对象和阶段诊断，不进Git |
-| `batch-01/public/`、`batch-01/private/` | 三组校准全过后才创建的正式批次输出 |
-| `supervisor-status.json` | 后续调度的等待、运行、结束或停止状态 |
+| source-a202c6d/、runtime-env.sh | 固定源码、原生引擎路径和线程环境 |
+| calibration-02/public/ | 三组已完成的单根记录，公开副本见本目录calibration-02/ |
+| basic-supplement-01/public/ | 七组真实补测与逐job进度 |
+| basic-design.json | 当前方法与复用分配 |
+| basic-supervisor-status.json | 七组运行状态 |
+| basic-comparison/ | 十组JSON、CSV、阅读表和两张图 |
+| basic-comparison-status.json | 十组整体完成／缺项状态 |
+| batch-01/public/ | 原长批次的一个完整试验与停止记录 |
 
-[后续调度器](run_after_calibration.py)在独立本机进程中等待当前校准结束，核验3个通过根、6次加密、9次解密、3次恢复及同一源码环境，然后自动串行启动正式30个job。校准未全过则停止，不降参或自动换根。正式批次结束后自动重算CSV与两张成本图，并核对120/210次诚实调用和30次恢复；结果不足时标为partial。
+各批次private/权限0700、文件0600，只在本机保留。当前进度以对应公开状态文件为准。
 
-该调度器不执行密码运算，实际测量始终调用上述归档中的驱动。当前进度以本机逐job状态为准；本目录本次快照仍不代表正式十组已经完成。后续交付复制公开结果并复核，不读取或提交私有目录。
+## 已保留的早期记录
+
+首轮calibration-01使用09a1e77，观察器把协议拒绝哨兵BOTTOM误比较为None，误判正常拒绝；已修正并加入控制用例。原根、失败和中断阶段保留在[calibration-01](calibration-01/)及本机私有区，不用于本次基本比较。[PR87审查与合并记录](../../deliveries/2026-10-21-pr87-review/README.md)另存。

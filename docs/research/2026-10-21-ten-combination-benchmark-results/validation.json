@@ -5,10 +5,10 @@
   "cryptographic_runs": 0,
   "tests": [
     {
-      "command": "python -m pytest -q tests/test_ten_combination_benchmark.py",
-      "receipt": "runner-final-controls.xml",
-      "passed": 35,
-      "failed": 0
+      "failed": 0,
+      "command": "python -m pytest -q tests/test_ten_combination_basic_comparison.py tests/test_ten_combination_benchmark.py",
+      "passed": 42,
+      "receipt": "reduced-controls.xml"
     },
     {
       "command": "python -m pytest -q tests/test_ten_combination_benchmark.py tests/test_assembly.py tests/test_combination_matrix.py tests/test_hybrid_hibe.py tests/test_prepared_receiver.py tests/test_cli_selection.py",
@@ -17,5 +17,5 @@
       "failed": 0
     }
   ],
-  "execution_notes": "Calibration 02 is running from frozen commit a202c6d3c87798911675b11a46b44903405370df. LATTE/ML-DSA passed; both Lai calibrations remain. Formal batch starts only after all calibrations pass. Calibration 01 observer failure and interrupted state are retained."
+  "execution_notes": "User reduced the basic comparison to one root per pair and one first, repeated and recovered operation. Three completed single-root measurements are reused; the remaining seven are running from the same a202c6d frozen archive. The stopped 30-root batch and its completed Lai/Luo root are retained separately."
 }

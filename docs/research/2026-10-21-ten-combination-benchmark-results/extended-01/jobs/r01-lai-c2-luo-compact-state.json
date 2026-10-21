@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "lai-c2-luo-compact",
+  "generation": {
+    "finished_at": "2026-10-21T08:32:59.474173+00:00",
+    "sha256": "d7c768a1372441c25e52f5e736e6bede36fcd3102014e9012f5c38fbc256d625",
+    "status": "passed"
+  },
+  "job_id": "r01-lai-c2-luo-compact",
+  "restore": {
+    "finished_at": "2026-10-21T08:54:40.248613+00:00",
+    "sha256": "3b12cc6fa0934d36fe2d0d4c3fbfe5d5e841dba03641587a258af6c71d2ca5bd",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}
