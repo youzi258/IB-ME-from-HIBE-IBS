@@ -19,7 +19,10 @@ def main():
             failures.append({"path": name, "reason": "missing"})
             continue
         with target.open("rb") as stream:
-            value = hashlib.file_digest(stream, "sha256").hexdigest()
+            hasher = hashlib.sha256()
+            for block in iter(lambda: stream.read(4 * 1024 * 1024), b""):
+                hasher.update(block)
+            value = hasher.hexdigest()
         if target.stat().st_size != record["bytes"] or value != record["sha256"]:
             failures.append({"path": name, "reason": "changed"})
     actual = {p.relative_to(root).as_posix() for p in root.rglob("*") if p.is_file()}

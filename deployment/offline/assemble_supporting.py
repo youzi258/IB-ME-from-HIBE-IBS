@@ -47,8 +47,11 @@ def main():
         shutil.copytree(args.offline_release, destination)
         shutil.copyfile(HERE / "verify_supporting.py", root / "核对文件.py")
         readme = root / "README.txt"
+        old_readme = readme.read_text(encoding="utf-8").replace(
+            "本包不含Sage等运行环境，依赖安装步骤见运行与演示.md。",
+            "本包的06_离线运行环境已含Sage等运行依赖；手动重建仍可参考运行与演示.md。")
         readme.write_text("离线启动：先进入 06_离线运行环境，Windows 运行 start.ps1，Linux 运行 sh start.sh。\n"
-                          "完整说明和镜像 SHA-256 位于该目录；无需重新安装 Sage 或编译原生库。\n\n" + readme.read_text(encoding="utf-8"), encoding="utf-8")
+                          "完整说明和镜像 SHA-256 位于该目录；A/B/C演示无需重新安装 Sage 或编译原生库。\n\n" + old_readme, encoding="utf-8")
         guide = root / "00_材料说明/阅读指引.md"
         guide.write_text(guide.read_text(encoding="utf-8") + "\n\n## 离线运行补充\n\n"
                          "优先使用 [离线运行环境](../06_离线运行环境/README.md)。原使用说明 PDF 和手工安装说明继续保留，供源码重建参考；"

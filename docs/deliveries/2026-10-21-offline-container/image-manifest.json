@@ -27,5 +27,6 @@
     "start.sh": "2be89fd3bc70ad319b0e927beb93718678ed1dbd6d9109efafc547ea9cfbdd51",
     "verify_supporting.py": "c3dc68eb9109716d8101e3f8545b425003671334031a6b12458726543cf9a6f0",
     "verify_web.py": "db18adc567fa8f8a0c708f9fadaff44037920ab88c87a21abff9a70c7ebd5a6c"
-  }
+  },
+  "container_recipe_commit": "ba5495caf1f67b7266cde44ee7f6fd0f114bd9cc"
 }
