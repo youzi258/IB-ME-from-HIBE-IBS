@@ -1,0 +1,27 @@
+{
+  "schema": "IBME-REPORT-MATERIAL-SOURCES/1",
+  "new_cryptographic_runs": 0,
+  "sources": {
+    "docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json": "e2041dbd507871d8c082b6440ab752d8119fc365a29fd9539d203a20976e42a6",
+    "docs/research/2026-10-20-multi-backend-optimization/verified-summary.json": "7ff0ce91b06da2ca387ea06388a1f71333c16616ce5175ba323c51898ad4a255",
+    "docs/research/team-b-delivery/2026-10-18-srgg-compact-benchmark/wire.csv": "5e92d1b08be5a5cd69dcf4dad353dde0d127907cb5ac5f77f0db6e80d353c3c0",
+    "docs/research/team-b-delivery/2026-10-18-srgg-compact-benchmark/benchmark.json": "b757dde0b1706f9571a06301b0511c8129f67c8b4e8567ab8270cdf8ac0dcea1",
+    "docs/research/2026-10-19-full-system-placement/evidence/placement.json": "6ca629f694358a985241025f6a947ef2bd039e2bf60c7585942ac1d71913e6e6",
+    "docs/research/2026-10-20-combination-data-inventory/inventory.json": "349f2d16f246a0dbdd518bd288c5ea00bdb20a1f5b71cf797aaa482f244439c3",
+    "docs/research/team-b-delivery/2026-10-19-sageloli-ring-target/evidence/param-I-fresh.json": "a323d73e74db3e5f570ceb9727bcf7f382ff2177b3279ff08f8e4081765edcf7",
+    "docs/research/team-b-delivery/2026-10-19-sageloli-ring-target/evidence/param-II-fresh.json": "9d20fc20e8414bacbf448bb4887daf76723551b560e847e1997feb928d8d0793",
+    "docs/deliveries/2026-10-20-nixos-independent-reproduction/C.json": "86e07e8c1501d25c094433d2e65c914acc8b2e3c14542e416710705f07c48997",
+    "docs/deliveries/2026-10-20-nixos-independent-reproduction/environment.json": "9b8fbf342bfeb00d666de5b40610697e0442666d829117a27a738ff0079e13c6",
+    "docs/deliveries/2026-10-20-web-redesign/A.json": "9c79caed07b8d44425f3574231427fed46de8e5ff3ebe526bb343125cee11b96",
+    "docs/deliveries/2026-10-20-web-redesign/B.json": "0217ea94b8241fb01e464789a2bd2e9c0ea80410fbb6db100327a1ab673b9062",
+    "docs/research/2026-10-21-ten-combination-benchmark-results/basic-comparison/basic-comparison.csv": "1faa30fabc21664cd65053c01b1f64e0efe8e73447b94a6cc6192406f2316535",
+    "docs/research/2026-10-21-ten-combination-benchmark-results/basic-design.json": "b0861edc5b1bb4d203a17c61d6249755bc50cc4583cc926dbaa592bc1900e4f3",
+    "docs/research/2026-10-21-ten-combination-benchmark-results/basic-supplement-01/environment.json": "4a3249f91320fdc4ded2eb985412855f607414bf1d75504077922773e116d11d",
+    "docs/research/2026-10-21-ten-combination-benchmark-results/validation.json": "e7ff23e1167da97e7001d93ed9b7b5c0109d5ae4d79443c3bbb31a9ee2034e18",
+    "src/ibme/core/encoding.py": "705ba169dd71831dd5cef558f90a2cf084c0d1da91da51f38c3f448d098a996d",
+    "src/ibme/core/lamport_ots.py": "6322e025e01c299e20769ba6cd3a3bb02b9a14a98cf7fc530c81950adda046a5",
+    "src/ibme/protocol/baseline.py": "3bffb26ce97294c8268430719c8ed1fbf66b118bb11bc5930e7e27f8dcab0b16",
+    "src/ibme/protocol/byteauth.py": "d174c0be104ab756c70fdb7fea8ade13b3afb8d6b59e6295019db42efe2f7414",
+    "src/ibme/protocol/hybrid_hibe.py": "490bac05703fe44b2a36f89987c65386fb05d81264ff5700d5e8c3f827e03561"
+  }
+}

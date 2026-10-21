@@ -1,0 +1,21 @@
+{
+  "schema": "IBME-REPORT-COPY-BASELINE/1",
+  "source_directory": "docs/reports/2026-10-21-reader-rewrite",
+  "source_commit": "47c700a15daf85504f8a022dec255187014c97de",
+  "files": {
+    "README.md": "afc17044933566aee7b1b950d1203caa961fe0177e66110a032719327fe19af5",
+    "作品设计报告.tex": "96947a2ae2f577111f6a2e7eac6a01a7ed9bb0e4ebd0d05a7d7e79a07ef6e495",
+    "作品设计报告.pdf": "8e0e087165a325eb0b2034eec9cac2a90aed8eaffba1e6d5f9c04bba0a33d02a",
+    "build_pdf.py": "30c59e9cce6c2a8597cf0e15fe1d06612f7ec2c63b9b53100b638318ef243705",
+    "check_report.py": "f30824dc24adb2c0aecb8d4260f27a05b0292366fecb4b72b1cea395d4ca1dc4",
+    "prepare_materials.py": "0b1d40cc6cc67660ef86309231e2cfce311a8115e094430a1693f4c4e3fa5e71",
+    "chapters/01-introduction.tex": "ba01ec424d8d9e5ba7bcd6dd1e38883ad3b13092b9097aaae47fd3683ebaf255",
+    "chapters/02-protocol.tex": "4ece8072d0653b02cbadd5e9da3bc144aa1b3a6f2c4b72fcf3a2bfc3098635e1",
+    "chapters/03-optimizations.tex": "5c7c6ce5a05e131a372f49652b7f9886f1e48cf7ffd12fcb9274d8112679872c",
+    "chapters/04-system.tex": "2f291c40396dd3b94e8fc1a31ba9763fed039c4404c5394a3945e1f0905331d8",
+    "chapters/05-experiments.tex": "a1e4be6f0cc005161ed55b2f7cc16cacfef3ec51e3cbb543f243276e3404aa61",
+    "chapters/06-conclusion.tex": "1abf59e5c9c24ceeab14952aa6c74314a06ba81fb6c2476a443cf0021925bf02",
+    "format-accounting.json": "3f17e28250af26213b8bba1ec52d749f7224265a33365caae0f6dc71d912e8dc",
+    "material-sources.json": "8c6a212f0afb6b61e1b69bb3f9f6228b4cf5da7334d92e05b8c95826ff6f3389"
+  }
+}

@@ -1,0 +1,374 @@
+\chapter{关键原语实现与工程优化}
+
+公共协议只看到HIBE与IBS接口，实际计算则由各后端完成。本章先说明两种HIBE和主要IBS的实现，
+再展开结构化采样、紧凑编码和接收会话三项优化。每一节都从该原语在IB-ME中的职责出发，随后
+给出关键方程和软件中的对象表示。
+
+\section{两种分层身份基加密}
+
+\subsection{LATTE两层身份委派机制}
+
+LATTE在负循环环$R_q=\mathbb Z_q[x]/(x^N+1)$上建立NTRU结构陷门
+~\cite{zhao2024latte}。作品采用LATTE-3参数：$N=1024$、$q=68718428161$，分层深度为2。
+建立阶段生成短多项式$f,g$，求解NTRU方程
+\[
+ fG-gF=q,
+ \qquad h=gf^{-1}\pmod q,
+ \qquad S_0=\begin{pmatrix}g&-f\\G&-F\end{pmatrix}.
+\]
+$h$进入公开参数，$S_0$作为根陷门保存在主状态中。
+
+接收身份$r$经过独立域标识的哈希得到$A_1=H_1(r)$。发钥算法利用根陷门为第一层身份生成
+短基，得到接收密钥$\mathsf{dk}_r$。接收者指定发送身份$s$后，再计算
+$A'_2=H_2(r,s)$并委派叶钥$(t_0,t_1,t_2)$。叶钥满足
+\[
+ t_0+t_1h+t_2A_1=A'_2\pmod q.
+\]
+这条关系既用于解密，也是密钥从磁盘恢复时的绑定检查。若把另一个接收身份或发送身份放入
+同一对象，等式右端随之变化，加载器会拒绝该组合。
+
+加密算法取短噪声，把32字节种子编码进环元素，并沿$(r,s)$路径生成胶囊。解密使用叶钥消去
+公开环项，恢复种子后再执行一次确定性重加密核对。该核对用于排除落在解码区间内的错误结果，
+随后才把种子交给混合加密层。
+
+实现复用了LATTE作者代码中的Gaussian采样和ffSampling路径，并把C对象包装为严格的Python
+后端。接入过程中修正了COSAC读取Box--Muller新缓冲的位置；每次原生采样完成后，Python层
+使用精确环算术检查NTRU关系、委派关系和对象形状。公开参数、主陷门、一级密钥、叶密钥和
+密文分别使用独立对象类型，参数快照随对象保存。
+
+LATTE的建立和一级发钥时间在三组代表中都较低，因此A、B共用它作为HIBE。相同HIBE也使两组
+差异主要来自IBS，便于分析认证转换与原生模格签名在完整协议中的开销。
+
+\subsection{Lai分层身份块扩展机制}
+
+Lai方案使用理想格陷门组织分层委派~\cite{lai2015trapdoors}。根公开向量与短陷门满足
+\[
+ \mathbf a_0^{\mathsf T}R+\mathbf a_1=\mathbf g.
+\]
+两层身份分别映射为二进制环元素$\mathrm{id}_1$和$\mathrm{id}_2$。第一层公开项与完整身份公开项
+写成
+\[
+ \mathbf a_{\mathrm{id}_1}=\mathbf u_0+\mathrm{id}_1\mathbf u_1,
+ \qquad
+ \mathbf a_{\mathrm{ID}}=\mathbf a_{\mathrm{id}_1}+\mathrm{id}_2\mathbf u_2.
+\]
+发钥和委派每进行一层，就向公开矩阵追加对应身份块，并为扩展后的矩阵生成新陷门。接收者$r$
+对应第一层，期望发送者$s$对应第二层。
+
+加密时取短矩阵$R_0,R_1,R_2$，组合为
+\[
+ R_{\mathrm{ID}}=R_0+\mathrm{id}_1R_1+\mathrm{id}_2R_2,
+ \qquad \mathbf e_1=-\mathbf e_0^{\mathsf T}R_{\mathrm{ID}},
+\]
+再计算
+\[
+ \mathbf u=F_1\mathbf s+p\mathbf e_0,
+ \qquad
+ \mathbf v=(\mathbf a_{\mathrm{ID}}+h'\mathbf g)\mathbf s
+          +p\mathbf e_1+\mathbf m.
+\]
+叶陷门对$(\mathbf u,\mathbf v)$执行Babai反演，检查误差的模$p$结构并恢复32字节种子。
+
+C组采用$n=2048$、$q=274877976577$、$k=39$、深度2、$p=2$的C2配置，噪声参数为
+$\sigma=2$、$\sigma_r=1$。身份映射使用二进制系数，避免身份乘短矩阵时放大噪声。实现按层
+追加身份块，统一矩阵形状，并用Klein/GPV路径完成陪集采样。公开参数、根陷门、两级密钥与
+密文均按5字节系数编码。
+
+Lai的主要成本在二级委派。一次完整C组解密中，委派占总时间的绝大部分；第~\ref{sec:lai-session}
+节因此把固定身份对的委派移动到接收会话准备阶段。
+
+\section{身份基签名后端}
+
+\subsection{BNN认证转换与ML-DSA／Falcon接入}
+
+BNN转换把普通数字签名变为身份基签名~\cite{galindo2006ibs}。系统建立时，发钥机构生成一套
+机构签名密钥。为身份$s$发钥时，先为用户生成普通签名密钥对
+$(\mathsf{vk}_s,\mathsf{xk}_s)$，再由机构签署
+\[
+ \mathsf{cert}_s=\mathsf{DS.Sign}_{\mathsf{sk}_{\rm CA}}
+       (\mathsf{Enc}(s,\mathsf{vk}_s)).
+\]
+用户签名密钥由$\mathsf{xk}_s$、$\mathsf{vk}_s$和$\mathsf{cert}_s$组成。签消息时，用户对
+上下文、身份、公钥、证书和协议消息的规范编码签名。完整IBS签名携带用户公钥、证书和用户
+签名；验证者先检查证书，再检查用户签名。
+
+同一转换核心接入ML-DSA与Falcon两个普通签名引擎。ML-DSA实现固定FIPS~204的参数与对象格式
+~\cite{nist2024fips204}；A组选用ML-DSA-44，其基础公钥为1,312字节、基础签名为2,420字节，
+组合后的IBS签名为6,237字节。Falcon后端采用Falcon-512和Falcon-1024的固定作者实现与
+padded格式~\cite{falcon2020}。两者共享机构证书流程，但底层密钥、签名编码和版本号完全分开。
+
+认证转换的优势是建立和在线签名较快，也便于复用标准化实现。其额外空间来自用户公钥、机构
+证书和用户签名三部分。A组的实验说明，即使采用较小的ML-DSA参数，完整密文仍会受到一次性
+认证和HIBE胶囊的固定开销影响。
+
+\subsection{Luo模格身份签名}
+
+Luo后端实现论文的模块格IBS~\cite{luo2024ibs}。身份哈希、消息挑战、响应和提示信息直接进入
+签名方程，验证者只需公开参数、身份和消息即可验签。实现保留参考格式，同时提供无损紧凑格式；
+两种格式加载后得到同一数学对象，签名算法和验签方程不变。
+
+Luo后端在组合矩阵中分别与LATTE、Lai配对。它不是A、B、C三组的重点代表，但承担两个作用：
+一是验证公共协议能够接入另一种原生模格IBS；二是为十组同机补测提供与SRGG不同的模格实现。
+后端公开身份上限、签名输入上限和签名尺寸，装配层据此计算应用容量。
+
+\subsection{SRGG身份目标与消息挑战关系}
+
+SRGG采用模块格结构，公开矩阵写成
+\[
+ A=[I_d\mid\widehat A\mid B]
+\]
+~\cite{jia2025ibs}。身份$s$决定目标$h=H_1(P,s)$，用户短见证$y$满足
+$Ay=h\pmod Q$。签名构造矩阵和响应为
+\[
+ M_h=[\,2A\mid Qj-2h\,]\pmod{2Q},
+ \qquad
+ z=p_0+\begin{bmatrix}y\\1\end{bmatrix}(\zeta u+c),
+\]
+其中$\zeta=1+x^{n/2}$、$j=\zeta^\star e_1$。扰动$p_0$的承诺和消息共同决定挑战$c$。
+验证者由
+\[
+ W'=M_hz-Qjc
+\]
+恢复承诺，重新计算挑战，并检查响应范数。
+
+B组采用PARAM-I：多项式次数$n=512$、模块秩2、$p=16383$、$Q=15744063$，gadget基为31、
+位数为2。建立阶段生成公开矩阵和短陷门；身份发钥执行相关扰动与短原像采样；签名阶段重新
+采样承诺和挑战。实现同时保留JSON参考格式与紧凑格式，二者由同一后端运算。第
+~\ref{sec:srgg-codec}节说明四类对象的位级编码。
+
+\subsection{Sageloli环陷门与非齐次签名方程}
+
+Sageloli的公开向量与主陷门$R$满足~\cite{sageloli2023ibs}
+\[
+ A=[\bar A\mid g-\bar AR].
+\]
+为身份$s$发钥时，算法先取身份盐$\rho$，计算$h=H_1(P,\rho,s)$，再采样身份陷门$T_s$，使
+\[
+ AT_s=h-g\pmod q.
+\]
+签名另取消息盐$\eta$，通过相关扰动和三进制陪集采样得到响应$z$。验证者检查范数及
+\[
+ [A,h]z=H_2(P,\rho,s,\eta,M')\pmod q.
+\]
+
+C组采用PARAM-I：$(d,k,\ell)=(2048,65,132)$、$q=3^{65}$、$r^2=49$；身份与签名采样宽度
+平方分别为$2720281532542$和$270116709797628319132317$。PARAM-II保持同一算法而增大参数。
+两档均使用环原生后端、规范对象和固定身份发钥服务。
+
+该方案的难点不是验签方程，而是论文参数下的相关扰动。若把环乘法展开为普通矩阵，单个中间
+矩阵就超过常规工作站内存。下一节说明作品如何保留环结构完成采样。
+
+\subsection{Wang--PW目标规模矩阵SIS实现}
+
+这里的Wang--PW指Wang基本IBS加Pan--Wagner自适应转换，它与第~2章所述的Wang通用IB-ME
+构造是两个层次：前者是可替换的IBS后端，后者规定HIBE与IBS怎样组合。基本IBS采用矩阵SIS
+路线，Pan--Wagner转换为身份和消息分别加入随机盐~\cite{wang2024ibme,pan2021ibs}。
+
+目标档参数为
+\[
+ n=512,\qquad q=4294967291,\qquad s_0=4.
+\]
+令$k=\lceil\log_2q\rceil=32$，则gadget宽度$w=nk=16384$。实现取
+$\bar m=w$、$m=\bar m+w=32768$，签名向量维数为
+$M=m+w=49152$。根公开矩阵由G陷门构造：
+\[
+ A=[\bar A\mid G-\bar AR],
+\]
+其中短矩阵$R$只保存在发行机构的主状态中。
+
+发钥时，Pan--Wagner外层先为身份$s$生成固定身份盐$\rho$，再计算
+$H_1(P,\rho,s)$。后端逐列采样用户陷门$X$，使
+\[
+ AX+H_1=G,
+ \qquad
+ F_s=[A\mid H_1],
+ \qquad
+ F_s\begin{bmatrix}X\\I\end{bmatrix}=G\pmod q.
+\]
+用户密钥只保存$X$、身份盐和公开上下文，不包含主陷门$R$。签名时重新生成消息盐$\eta$，
+计算消息目标$H_2(P,\rho,s,\eta,M')$，再使用用户G陷门采样短向量$z$：
+\[
+ F_s z=H_2(P,\rho,s,\eta,M')\pmod q.
+\]
+完整签名为$(\rho,\eta,z)$。验签重新计算$H_1$和$H_2$，检查维数、非零条件、整数平方范数和
+模方程。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=7mm and 7mm]
+ \node[flow,text width=35mm] (root) {Setup\\生成$A$与主陷门$R$};
+ \node[flow,right=of root,text width=36mm] (key) {KeyExtract\\身份盐$\rho$与用户陷门$X$};
+ \node[flow,right=of key,text width=36mm] (sign) {Sign\\消息盐$\eta$与短原像$z$};
+ \node[check,below=of key,text width=43mm] (verify) {Verify\\公开重算目标、范数和模方程};
+ \draw[flowarrow](root)--(key);
+ \draw[flowarrow](key)--(sign);
+ \draw[flowarrow](sign)--(verify);
+\end{tikzpicture}
+\caption{Wang--PW后端的身份发钥、签名与公开验签}
+\label{fig:wang-pw-flow}
+\end{figure}
+
+有限离散Gaussian由独立C++组件执行。实现使用256 bit MPFR精度、192 bit概率质量和20个标准差
+截断窗口；根采样、用户发钥和签名分别使用固定宽度与公开门限。Python层负责参数快照、域分隔
+哈希、对象编码和精确模方程，原生组件只承担有限Gaussian采样。
+
+目标档的公钥约64.0~MiB，主状态约576~MiB，用户签名密钥约2.06~GiB，签名约384~KiB。
+大对象采用流式保存和恢复，签名进程只读取用户密钥
+与公开参数。固定发行服务记录身份盐和已发布密钥，使同一身份在重启后继续使用同一用户对象。
+
+该实现已完成独立签名、公开验签、错误身份与消息、签名篡改、状态恢复以及LATTE组合。项目按
+约115 bit量子安全工作值使用该目标档。它的Setup、发钥和签名消耗显著高于常规十组，第~6章
+单独列出分阶段实测结果。
+
+\section{Sageloli结构化环采样优化}
+\subsection{稠密矩阵展开的资源瓶颈}
+Sageloli的发钥和签名都需要在格陪集中采样。相关扰动由陷门决定其形状，再与离散采样配合，得到满足方程和范数要求的短向量。实现既要得到正确的相关性，也要承受论文参数下的对象规模。
+
+环元素是一组多项式系数，乘法可以直接在负循环环上计算。如果把每个环元素展开成旋转矩阵，后续陷门与协方差也会随之变成很大的实数矩阵。PARAM-I取$d=2048$、$\ell=132$、$k=65$，签名相关扰动的系数维数为
+\[
+ D=d(\ell+k)=403456.
+\]
+仅显式保存一个$D\times D$实数矩阵，按每项8字节估算就需要约1.18 TiB，还未计入分解工作区。因此，实际实现需要利用原式的结构来组织计算。
+
+本作品始终保存多项式系数。公钥、主陷门和身份陷门分别以$\ell\times d$、$(\ell-k)\times k\times d$和$\ell\times k\times d$的系数数组表示。环乘法在原环上执行，结果仍检查
+\[
+ A=[\bar A\mid g-\bar AR],\qquad AT_s=H_1(P,\rho,s)-g\pmod q.
+\]
+这样，公钥和密钥关系保持不变，计算过程避免展开旋转矩阵。
+
+\subsection{逐频率低秩分解方法}
+设当前陷门为$T$，其形状为$\ell\times k$个环元素，令
+\[
+ J=\begin{bmatrix}-T\\I_k\end{bmatrix},\qquad
+ a=s^2-r^2,\qquad c=9r^2.
+\]
+这里$r$是基础采样宽度，$s$是该次相关扰动使用的宽度。需要计算的协方差形状为
+\[
+ \Sigma=aI-cJJ^\star,
+\]
+其中$\star$表示环上的伴随。这个式子的主要部分是标量矩阵$aI$，修正部分由只有$k$列的$J$产生。利用这一点，可以将分解限制在较小的子空间。
+
+第一步，对多项式执行负循环Fourier变换。在每个频率$\nu$上，环乘法变为复数乘法，$J$对应一个$(\ell+k)\times k$的复数矩阵$J_\nu$。第二步，计算Gram矩阵
+\[
+ G_\nu=J_\nu^*J_\nu
+      =U_\nu\operatorname{diag}(\lambda_i)U_\nu^*.
+\]
+$G_\nu$只有$k\times k$；在PARAM-I中，最大特征分解为$65\times65$。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=8mm and 7mm]
+ \node[flow,text width=39mm] (poly) {陷门多项式$T$\\保存系数数组};
+ \node[flow,text width=39mm,right=of poly] (fourier) {负循环Fourier变换\\$J_\nu$：$197\times65$};
+ \node[flow,text width=39mm,right=of fourier] (gram) {计算$J_\nu^*J_\nu$\\分解$65\times65$矩阵};
+ \node[check,text width=39mm,below=of gram] (apply) {对新随机向量应用\\低秩平方根};
+ \node[check,text width=39mm,left=of apply] (inverse) {逆变换回系数域\\逐系数离散采样};
+ \node[check,text width=39mm,left=of inverse] (check) {检查精确模方程\\和原方案范数条件};
+ \draw[flowarrow](poly)--(fourier);
+ \draw[flowarrow](fourier)--(gram);
+ \draw[flowarrow](gram)--(apply);
+ \draw[flowarrow](apply)--(inverse);
+ \draw[flowarrow](inverse)--(check);
+\end{tikzpicture}
+\caption{结构化采样的计算步骤；矩阵形状对应PARAM-I}
+\label{fig:ring-sampler}
+\end{figure}
+
+第三步，利用小矩阵的特征分解构造平方根算子
+\[
+ L_\nu=\sqrt a I-
+ J_\nu U_\nu\operatorname{diag}\!\left(
+ \frac{c}{\sqrt a+\sqrt{a-c\lambda_i}}
+ \right)U_\nu^*J_\nu^*.
+\]
+该式满足$L_\nu L_\nu^*=aI-cJ_\nu J_\nu^*$。对新随机向量应用$L_\nu$时，按右侧的小矩阵与向量乘法逐步计算，无需形成完整的$L_\nu$。随后逆变换回系数域，继续执行原方案要求的离散Gaussian和三进制陪集采样。方法使用格陷门采样中的扰动思想~\cite{micciancio2012trapdoors}，并针对本方案的环结构组织执行。
+
+需要保存的主要数据量为$O(d\ell k+dk^2)$，对应陷门系数和各频率的小矩阵计划。相较$O(D^2)$的稠密表示，这直接降低了表示和分解规模。已经计算好的计划可在同一陷门下复用，每次发钥和签名仍生成新的随机样本。
+
+\subsection{数值采样与精确代数校验}
+Fourier步骤使用数值运算，方案中的模方程则必须精确成立。实现将两部分分开：数值计划在建立时检查正定充分条件和变换误差；回到系数域后，环方程由整数运算检查。大模数$q=3^k$的公开乘积使用FLINT整数多项式，私有小整数乘法采用双素数NTT与CRT恢复，并检查整数卷积幅度落在可唯一恢复的范围内。
+
+签名生成后继续执行原方案的范数门与验签方程。这样，浮点计算的职责是产生相关扰动，精确算术的职责是验证代数关系；两者在采样接口处衔接。第6章给出PARAM-I与PARAM-II的实际运行成本。
+
+\section{SRGG对象的范围感知编码}
+\label{sec:srgg-codec}
+\subsection{参考表示的空间开销}
+SRGG的公钥、陷门和签名含有大量多项式系数。JSON将每个整数写成十进制字符串，还需要负号、逗号、括号和字段名。对大对象，表示开销会累积到与数学数据相近甚至更大的规模。
+
+紧凑编码依据字段的数学取值范围选择位数。以取值为$-1,0,1$的陷门系数为例，三种可能值只需2 bit；公开模$Q=15744063$的系数落在$[0,Q)$，使用24 bit。对短密钥和签名响应，先以Zigzag映射处理正负号，再选取能够容纳该字段的最小统一位宽。
+
+\begin{table}[H]
+\centering\small
+\caption{SRGG不同字段的编码方法}
+\label{tab:codec-fields}
+\begin{tabularx}{\textwidth}{@{}p{.23\textwidth}p{.25\textwidth}X@{}}
+\toprule
+\rowcolor{black!8} 数据 & 存储方法 & 解码时检查 \\
+\midrule
+公开模$Q$系数 & 每系数24 bit & $0\leq x<Q$ \\
+三值陷门系数 & 每系数2 bit & 拒绝第四个未使用码字 \\
+短密钥、响应整数 & Zigzag与最小统一位宽 & 数值范围、位宽最小性 \\
+二元挑战 & 每系数1 bit & 固定多项式次数与长度 \\
+类型、参数与上下文 & 固定头部和长度前缀 & 对象类别、公钥、参数一致 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+对含$N$个系数、统一位宽为$b$的字段，其主要编码长度为$\lceil Nb/8\rceil$字节，再加必要头部。解码后得到与JSON格式相同的数学对象，签名和验证继续使用原算法。
+
+\subsection{四类对象的规范编码与解码}
+该方法同时用于公钥、主状态、用户密钥和签名。各类对象有独立类型标识，系数顺序固定，末字节未使用位必须为零。解析器先根据形状计算长度，再读取数据，并检查参数、身份、公钥上下文及取值范围。解码后重新编码应得到相同字节串，从而保证同一个对象只有一种规范表示。
+
+对象尺寸的改善会减少密钥文件和传输字节，实际收益取决于该对象在完整协议中的占比。例如，签名变短可以直接缩短对称加密载荷，但HIBE胶囊和一次性认证仍占固定空间。第6章将四类对象的编码对照与完整密文组成放在一起分析。编解码也有计算成本，实验同时保留该项测量。
+
+\section{Lai接收会话优化}
+\label{sec:lai-session}
+\subsection{重复委派的性能瓶颈}
+在Lai组合中，接收者持有第一层密钥$\mathsf{dk}_r$。解密来自发送者$s$的消息前，需要运行
+\[
+ \mathsf{dk}_{r,s}\leftarrow\mathsf{Derive}(\mathsf{dk}_r,s).
+\]
+同一接收者连续读取同一发送者的消息时，委派输入保持相同；反复执行会重复支付生成叶钥的开销。加密种子、密文与每条消息的签名则各不相同，需要逐条处理。
+
+本作品引入显式接收会话：在会话建立时生成并验证一次叶钥，后续在固定双方身份下复用。图~\ref{fig:receiver-session}展示计算安排的变化。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=6mm and 6mm]
+ \node[font=\small,anchor=east] (old) {逐条委派};
+ \node[flow,right=of old,text width=30mm] (o1) {委派＋解密1};
+ \node[flow,right=of o1,text width=30mm] (o2) {委派＋解密2};
+ \node[flow,right=of o2,text width=30mm] (o3) {委派＋解密3};
+ \node[font=\small,anchor=east,below=22mm of old] (new) {接收会话};
+ \node[check,right=of new,text width=30mm] (prep) {委派一次\\验证并保留叶钥};
+ \node[check,right=of prep,text width=30mm] (dec) {解密1、2、3\\逐条认证与验签};
+ \node[check,right=of dec,text width=30mm] (close) {关闭会话\\停止使用叶钥};
+ \draw[flowarrow](o1)--(o2);\draw[flowarrow](o2)--(o3);
+ \draw[flowarrow](prep)--(dec);\draw[flowarrow](dec)--(close);
+\end{tikzpicture}
+\caption{会话把与密文无关的委派安排到准备阶段}
+\label{fig:receiver-session}
+\end{figure}
+
+\subsection{身份绑定与会话生命周期}
+会话建立时检查公开上下文、接收者身份和一级钥绑定；生成叶钥后检查完整$(r,s)$路径及陷门方程。会话只服务于该公钥和身份对，关闭后停止解密。每条消息继续执行规范解析、外层字节认证、HIBE解封装、GCM验证、IBS验签及一次性公钥承诺核对。
+
+叶钥作为秘密状态保留在进程内，使用者显式关闭会话，会话对象不支持序列化。长期保存的接收密钥仍采用原持久格式。该设计适合双方身份固定的连续通信，并带来明确的额外密钥存储成本。
+
+\subsection{连续消息的摊销成本}
+设一次会话准备耗时为$T_{\rm prep}$，会话内单条解密为$T_{\rm sess}$。处理$N$条消息的总成本与平均成本分别为
+\[
+ T_{\rm total}(N)=T_{\rm prep}+NT_{\rm sess},\qquad
+ \bar T(N)=\frac{T_{\rm prep}}{N}+T_{\rm sess}.
+\]
+首条消息承担全部准备成本；连续消息逐渐摊薄这部分开销。第6章同时展示准备、后续解密和保留叶钥大小，以判断实际使用方式。
+
+\section{本章小结}
+
+本章说明了公共接口背后的具体计算。LATTE通过NTRU结构陷门完成两层委派，Lai通过追加身份块
+形成叶陷门；BNN转换、Luo、SRGG、Sageloli和Wang--PW分别提供不同结构的身份签名。六种IBS
+在公共协议中的职责相同，但签名生成、对象尺寸和运行资源差异明显。
+
+三项优化直接对应这些差异。Sageloli利用环结构把大分解转成逐频率低秩计算，SRGG按字段范围
+编码四类对象，Lai会话复用固定身份对的叶密钥。第~6章将用实际时间、尺寸和内存说明每项方法
+带来的变化。

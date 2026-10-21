@@ -1,0 +1,29 @@
+{
+  "schema": "IBME-REPORT-FORMAT-ACCOUNTING/1",
+  "new_encryptions": 0,
+  "method": "serializer length probe plus existing public totals; capsule length inferred",
+  "rows": [
+    {
+      "representative": "A",
+      "message_bytes": 32,
+      "ots_public_bytes": 65536,
+      "ots_signature_bytes": 32768,
+      "ibs_signature_bytes": 6237,
+      "capsule_bytes": 37088,
+      "framing_and_tag_bytes": 432,
+      "total_bytes": 142093,
+      "capsule_method": "recorded total minus exact fixed-format components"
+    },
+    {
+      "representative": "C",
+      "message_bytes": 0,
+      "ots_public_bytes": 65536,
+      "ots_signature_bytes": 32768,
+      "ibs_signature_bytes": 3227824,
+      "capsule_bytes": 1228844,
+      "framing_and_tag_bytes": 432,
+      "total_bytes": 4555404,
+      "capsule_method": "recorded total minus exact fixed-format components"
+    }
+  ]
+}
