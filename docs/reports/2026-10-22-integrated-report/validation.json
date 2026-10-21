@@ -1,0 +1,12 @@
+{
+  "schema": "IBME-REPORT-INTEGRATION-VALIDATION/1",
+  "checks": 1009,
+  "passed": 1009,
+  "failures": [],
+  "pdf_pages": 66,
+  "pdf_sha256": "11308dec25f82dc2799754431c7c295d8f1861fc53695c33f47fbf6cfddef7b3",
+  "canonical_commit": "ea409c8f0563e018b1d2a21eaf8770e1861853ed",
+  "chapter1_citation_calls": 24,
+  "chapter2_display_equations": 20,
+  "new_cryptographic_experiments": 0
+}

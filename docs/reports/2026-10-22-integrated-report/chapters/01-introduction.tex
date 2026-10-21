@@ -1,0 +1,292 @@
+\chapter{作品概述}
+
+\section{应用背景与研究意义}
+
+\subsection{机构定向通信的身份管理需求}
+
+由统一机构管理账号、岗位和设备身份的通信系统，一条消息往往同时受到接收权限和发送来源两类
+约束。以设备管理为例，运维中心向受控终端下发配置指令时，不仅要把内容限定给目标终端，还要让
+终端只接受其认可的运维身份。机构内部的定向文件投递、跨部门业务流转和来源受限的数据分发也有
+相同特点：通信双方的身份都参与消息能否被处理的判断。
+
+公钥加密与数字签名经过正确组合可以完成机密传输和来源认证，但两项身份关系通常由证书、账号
+目录、签名对象和加密对象分别表达。应用协议还要明确先签名还是先加密、签名覆盖哪些字段、证书
+怎样取得，以及身份不符时如何拒绝。同一业务规则因此分散在密码算法和应用逻辑的多个环节；只要
+身份表示或对象绑定不一致，就可能出现“密文发给了正确设备，但签名对应的并非接收端所认可角色”
+之类的语义偏差。
+
+身份基密码为机构已经建立的身份管理体系提供了另一种表达方式。Shamir提出以用户身份直接参与
+公钥密码运算的设想后，身份基加密、分层身份基加密和身份基签名分别发展出面向加密、分层发钥和
+来源认证的算法\cite{shamir1984,gentrysilverberg2002,hess2003ibs}。邮箱、机构账号或设备编号经
+规范编码后即可作为密码输入，可信发钥机构负责核验现实身份并签发私钥。该机制适合具有明确管理边界的组织，发钥机构负责保护主私钥并管理身份私钥的发放流程。
+
+\subsection{双向身份匹配与通信关系保护}
+
+身份基匹配加密（Identity-Based Matchmaking Encryption，IB-ME）把上述双向身份条件纳入同一
+密码功能。发送者以自身身份$s$和目标接收身份$r$生成密文；接收者持有身份$r'$的接收方密钥，并在
+解密时指定自己认可的发送身份$s'$。只有$r=r'$且$s=s'$同时成立时，接收端才恢复消息。IB-ME
+最初作为匹配加密在身份策略下的专门形式提出，用于在完成双向匹配的同时提供消息隐私、发送来源
+认证和通信身份保护\cite{ateniese2019me}。
+
+IB-ME把“谁可以接收”和“接收者认可谁发送”统一纳入密码算法的输入和处理规则。身份条件随密钥、密文和解密输入共同参与处理；当底层身份基加密
+具备匿名性时，公开信道上的观察者也不能直接从密文读出目标身份。图~\ref{fig:application-background}
+以机构运维为例说明这种关系。可信发钥机构核验并发放身份密钥，发送端和接收端分别表达对方身份，
+公开网络只承载密文。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=10mm and 10mm]
+ \node[check,text width=36mm] (authority) {可信发钥机构\\核验身份并发放角色密钥};
+ \node[flow,text width=37mm,below left=of authority] (sender) {运维中心$s$\\指定接收终端$r$};
+ \node[flow,text width=34mm,right=of sender] (channel) {公开网络\\传输IB-ME密文};
+ \node[check,text width=39mm,right=of channel] (receiver) {受控终端$r'$\\只认可运维中心$s'$};
+ \node[check,text width=41mm,below=of channel] (result) {$r=r'$且$s=s'$：执行指令\\任一身份不匹配：拒绝};
+ \draw[flowarrow] (authority)--node[left,font=\small]{发送方密钥}(sender);
+ \draw[flowarrow] (authority)--node[right,font=\small]{接收方密钥}(receiver);
+ \draw[flowarrow] (sender)--(channel);
+ \draw[flowarrow] (channel)--(receiver);
+ \draw[flowarrow] (receiver)--(result);
+\end{tikzpicture}
+\caption{机构定向通信中的身份与密钥关系}
+\label{fig:application-background}
+\end{figure}
+
+这类能力能够对应到日常信息服务中的具体流程。例如，医院向患者发送检验报告或电子处方时，
+内容只应由指定患者读取，患者端同时需要确认消息来自指定医院或医生；学校向学生、家长发送定向
+通知时，接收者既要属于目标范围，也要确认发送方是相应学校或部门；智能设备接收配置或升级指令
+时，设备身份与控制中心身份同样需要双向核对。它还可用于跨部门受控文件流转，以及原始IB-ME
+研究讨论的隐私公告板等匿名而可认证的通信方式\cite{ateniese2019me}。这些应用模式共享双向身份
+约束，但对在线延迟、密文长度、离线准备和连续通信成本的要求并不相同。因而，具体系统不仅需要
+一个可运行的IB-ME方案，还需要根据使用方式选择和替换底层原语。
+
+\subsection{后量子迁移下的格密码实现需求}
+
+公钥加密和数字签名是上述通信机制的基础。当前广泛使用的RSA、Diffie--Hellman和椭圆曲线密码
+分别依赖整数分解或离散对数问题。Shor算法表明，具备足够规模的通用量子计算机可以在多项式时间
+内求解这两类问题\cite{shor1994}。对于需要长期保护的数据和生命周期较长的信息系统，密码迁移需要同步处理身份管理、协议组合、对象格式、运行资源和软件接入问题。
+
+格密码以高维格上的计算问题为基础，是后量子公钥密码的重要技术路线。LWE、SIS及其环、模和NTRU结构变体能够支持加密、签名、身份基加密和身份基签名，并形成不同的实现路线。
+矩阵与多项式表示、陷门形式、Gaussian采样和参数规模的差异，会直接改变密钥尺寸、密文长度、
+运行时间和内存需求。这些原语进入同一软件时，需要统一接口、对象编码与调用规则。
+
+因此，格上IB-ME的工程研究需要统一多类HIBE与IBS的协议接口，协调HIBE明文容量与签名、应用消息的长度，并降低结构化采样、对象编码和重复委派的成本。
+
+\section{国内外研究现状}
+
+身份基密码研究形成了加密、认证与匹配通信等多条支线。HIBE与IBS分别沿加密和认证方向发展，IB-ME研究围绕双向身份匹配、匿名性和认证模型展开；Wang等人的通用构造使这些支线在
+两层匿名HIBE与IBS的组合处汇合。图~\ref{fig:research-timeline}按照原始论文的发表时间和技术关系
+概括与本作品直接相关的研究节点与技术联系。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  branchlabel/.style={font=\small\bfseries,align=right,text width=16mm},
+  milestone/.style={draw=ibmeblue,rounded corners=2pt,fill=ibmelight,
+    align=center,minimum height=13mm,text width=29mm,font=\footnotesize},
+  mergepoint/.style={draw=black!60,rounded corners=2pt,fill=ibmegreen,
+    align=center,minimum height=23mm,text width=31mm,font=\footnotesize},
+  timelinearrow/.style={-{Latex[length=1.8mm]},draw=black!60,thick}
+]
+  \node[branchlabel] (lh) {HIBE};
+  \node[milestone,right=3mm of lh] (h1) {1984--2002\\身份基密码与分层委派};
+  \node[milestone,right=4mm of h1] (h2) {2008--2010\\格陷门、格IBE与格HIBE};
+  \node[milestone,right=4mm of h2] (h3) {2015--2025\\结构化陷门、实用评测与自适应研究};
+
+  \node[branchlabel,below=15mm of lh] (li) {IBS};
+  \node[milestone,right=3mm of li] (i1) {1984--2004\\身份基签名与认证转换};
+  \node[milestone,right=4mm of i1] (i2) {2010--2021\\格HIBS与紧致安全方案};
+  \node[milestone,right=4mm of i2] (i3) {2023--2025\\更短、免陷门与实现型方案};
+
+  \node[branchlabel,below=15mm of li] (lm) {\mbox{IB-ME}};
+  \node[milestone,right=3mm of lm] (m1) {2019\\IB-ME提出};
+  \node[milestone,right=4mm of m1] (m2) {2021--2022\\隐私模型与标准假设构造};
+  \node[milestone,right=4mm of m2] (m3) {2023--2026\\强认证、CCA与格上标准模型};
+
+  \node[mergepoint,right=7mm of i3] (merge) {两层匿名HIBE＋IBS\\通用构造与格上实例\\完整实现与优化问题};
+  \draw[timelinearrow] (h1)--(h2);
+  \draw[timelinearrow] (h2)--(h3);
+  \draw[timelinearrow] (i1)--(i2);
+  \draw[timelinearrow] (i2)--(i3);
+  \draw[timelinearrow] (m1)--(m2);
+  \draw[timelinearrow] (m2)--(m3);
+  \draw[timelinearrow] (h3.east)--(merge.north west);
+  \draw[timelinearrow] (i3.east)--(merge.west);
+  \draw[timelinearrow] (m3.east)--(merge.south west);
+\end{tikzpicture}
+\caption{与本作品相关的三条研究支线及其汇合关系}
+\label{fig:research-timeline}
+\end{figure}
+
+\subsection{身份基加密与分层委派的发展}
+
+Shamir于1984年提出身份基密码的基本思想，但当时尚未给出完整实用的身份基加密方案
+\cite{shamir1984}。Boneh和Franklin于2001年给出基于双线性对的IBE构造，使任意字符串作为加密
+目标成为可实现的密码功能\cite{bonehfranklin2003}。Gentry和Silverberg随后提出HIBE，将单一发钥
+机构扩展为分层体系：上层持钥者可以为下级身份委派私钥，而下级不能反向获得父级或兄弟节点密钥
+\cite{gentrysilverberg2002}。这一变化使身份基加密能够对应机构、部门、岗位和设备构成的管理层级。
+
+格上身份基密码的关键基础来自陷门和短原像采样。GPV工作在2008年给出格陷门、签名和匿名IBE
+构造\cite{gpv2008}；Cash等人的Bonsai Trees以及Agrawal、Boneh和Boyen的两项工作在2010年把
+格陷门委派用于HIBE，分别解决非双线性对HIBE、标准模型构造和委派后维度增长等问题
+\cite{cash2010bonsai,agrawal2010hibe,agrawal2010delegation}。这些方案同时说明了格HIBE的主要
+代价：身份深度、陷门表示与委派方法会影响私钥、密文和计算规模，委派算法的具体实现是影响运行成本的重要因素。
+
+后续研究继续沿结构化表示和安全模型推进。Lai等人将Micciancio--Peikert型陷门扩展到理想格，
+以环元素代替部分普通矩阵，并用于具有身份匿名性的（H）IBE\cite{lai2015trapdoors}。LATTE则面向
+公开安全通信场景完成NTRU结构HIBE的系统化实现与评测，表明KeyGen、Delegate、Extract和
+Gaussian采样是决定方案能否实际运行的核心环节\cite{zhao2024latte}。2025年的工作进一步推进了
+标准假设下自适应安全和匿名HIBE的理论构造\cite{goyal2025adaptivehibe}。理论能力不断增强的同时，
+具体方案在对象表示、委派成本和实现成熟度上的差异仍然显著，这也是本作品同时实现LATTE与Lai
+两条HIBE路线的研究背景。
+
+\subsection{身份基签名的格上实现路线}
+
+Shamir在提出身份基密码时已经给出身份基签名（Identity-Based Signature，IBS）的设想。IBS
+允许验证者使用签名者身份和系统公开参数验签，省去为每名用户单独传递公钥证书的步骤。Bellare、
+Namprempre和Neven随后形式化了认证转换：发钥机构为用户生成的普通验签公钥签发身份证书，用户
+再用相应签名密钥签署消息\cite{bellare2004ibs}。这种路线能够复用成熟数字签名，但IBS签名需要
+携带用户公钥、机构证书和消息签名；Galindo等人进一步研究了该转换对附加签名性质的适用范围
+\cite{galindo2006ibs}。
+
+格IBS的直接构造形成了另一条路线。Rückert于2010年给出格上层次身份签名，展示了陷门委派与
+GPV型签名的组合\cite{ruckert2010hibs}。Pan和Wagner在2021年提出基于SIS与Ring-SIS的紧致安全
+IBS，随后Sageloli等人简化参数和签名关系、去除一次昂贵的陷门委派，并给出具体参数
+\cite{pan2021ibs,sageloli2023ibs}。这一路线使身份直接进入矩阵或环上的短向量关系，但陷门委派、
+预像采样和大尺寸用户密钥仍会带来明显的时间与空间成本。
+
+近年的工作进一步分化出不同工程取舍。Luo等人以两次Lyubashevsky型签名构造免陷门的模格IBS，
+避免在发钥时进行格预像采样\cite{luo2024ibs}；SRGG将适合理想格IBE的预像采样与椭球
+Gaussian形式的G＋G签名结合，并给出三组参数和概念验证实现\cite{jia2025ibs}。Wang等人还在
+格上IB-ME研究中改进SIS型IBS，以缩短进入最终密文的签名\cite{wang2024ibme}。因此，认证转换、
+矩阵SIS、模格和环格方案虽然都提供IBS接口，其发钥方式、签名计算、对象尺寸和内存需求并不相同；
+通用组合设计通过独立后端管理这些特征。
+
+\subsection{身份基匹配加密及格上构造的发展}
+
+Ateniese等人在CRYPTO 2019提出匹配加密及其身份基特例，使发送端和接收端可以在不公开身份与
+策略的条件下进行双向匹配\cite{ateniese2019me}。随后研究主要沿安全模型和构造基础两方面推进。
+Francati等人在2021年研究无随机预言机的IB-ME并加强身份不匹配时的隐私描述
+\cite{francati2021ibme}；Chen等人在2022年给出基于标准假设的构造\cite{chen2022ibme}。这些工作
+仍主要依赖双线性群，因而尚未解决格上后量子实现问题。
+
+Wang等人把发送消息的认证范围和自我伪造问题纳入更强认证目标，并提出由自适应安全的两层匿名
+HIBE与IBS组成的通用构造。两层身份依次对应接收者和发送者，IBS为发送者生成的协议对象提供认证；
+以格HIBE和格IBS实例化后，得到可抵抗量子攻击路线的IB-ME方案\cite{wang2024ibme}。这一构造
+也是本作品公共协议的理论基础。其价值在于把HIBE和IBS的选择分离，其工程实现需要进一步统一软件对象、传输格式和容量规则。
+
+2023年以来，相关研究又覆盖CCA隐私、标准格假设下的IB-ME以及标准模型中的格IBS与IB-ME
+框架\cite{chiku2023ibme,belfiore2024ibme,yu2026ibme}。研究重点已经从“能否实现双向身份匹配”
+扩展到不同隐私和认证目标、不同构造工具及后量子实例。与此相比，公开文献对多种目标参数HIBE、
+IBS进入同一完整消息软件后的接口适配、状态保存、载荷组成和同机比较讨论较少。由此产生的具体
+实现问题，构成下一节和本作品技术路线的出发点。
+
+\section{现有研究的工程实现问题}
+
+已有研究分别建立了分层身份加密、身份认证和双向身份匹配的理论工具，也给出了多种格上实例。
+将这些原语组成支持应用消息、状态保存与后端替换的软件，还需要协调接口、对象与运行过程。本作品选取的具体方案在对象结构、明文容量、采样方法和状态生命周期上存在
+明显差异，完整实现需要集中解决以下四类问题。
+
+\textbf{原语接口和对象表示不同。} 本作品采用的HIBE与IBS分别使用矩阵、多项式、模向量和NTRU
+对象，参数版本、身份映射、采样器和序列化方法也不相同。如果公共协议直接读取后端矩阵或陷门
+字段，每增加一种算法都需要修改协议代码，组合数量增加后也难以保证处理逻辑一致。
+
+\textbf{HIBE明文容量与IBS签名尺寸不匹配。} 部分HIBE只适合加密几十字节，而IBS签名可能达到
+数KiB、数百KiB甚至更大，应用消息也没有固定长度。将“签名＋消息”直接作为HIBE明文，会使
+不少组合超过容量上限。完整系统需要分离短秘密封装和大载荷加密，同时防止两部分被替换或重组。
+
+\textbf{论文参数下的计算和存储开销较高。} 矩阵平方根、离散Gaussian采样和陷门委派若按稠密
+矩阵直接实现，可能产生远超常规工作站容量的中间对象。通用JSON表示虽然便于调试，却会重复保存
+大量整数的符号、分隔符和十进制字符。实现既要保持原有代数关系，也要减少不必要的矩阵展开和
+对象膨胀。
+
+\textbf{连续消息服务需要区分准备与逐消息成本。} 系统建立、用户发钥和固定身份对的叶密钥委派可以
+被后续消息复用。如果每条消息都重新执行全部步骤，测试结果会被准备成本主导。软件需要区分长期
+状态、会话状态和逐消息对象，并分别测量首次、重复和恢复后的运行成本。
+
+\section{作品研究内容与技术路线}
+
+本作品首先定义HIBE与IBS相互独立的后端接口，并依据两层匿名HIBE与IBS的通用构造实现系统建立、
+发送者发钥、接收者发钥、消息加密和匹配解密五个公共算法。协议固定双方身份顺序和认证上下文，通过原语接口完成调用。
+
+其次，作品实现LATTE、Lai两种HIBE，以及BNN＋ML-DSA、BNN＋Falcon、Luo、SRGG、Sageloli
+五种常规IBS，形成十种端到端组合。另实现Wang--PW目标参数矩阵SIS后端，并完成其与LATTE的
+完整消息流程。报告以“Wang--PW”表示这一具体IBS后端，并以Wang等人的通用构造建立公共IB-ME协议。
+
+再次，作品针对实际运行中最突出的三类瓶颈完成Sageloli结构化环采样、SRGG范围感知编码和Lai
+接收会话。三项工作分别减少大型中间矩阵、序列化空间和固定身份对的重复委派成本。
+
+最后，作品建设规范对象、状态持久化、命令行和浏览器操作入口，并记录系统建立、双方发钥、首次
+与重复收发、错误身份、密文篡改、对象尺寸和峰值内存。两种HIBE与五种常规IBS形成的十种组合
+还在同一机器、输入和线程配置下完成基本性能比较，用于区分HIBE与IBS对协议各阶段的影响。
+图~\ref{fig:work-overview}给出从底层原语到应用入口的总体技术路线。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=9mm and 10mm]
+ \node[flow,text width=34mm] (primitive) {格HIBE与格IBS\\独立后端};
+ \node[flow,right=of primitive,text width=34mm] (assembly) {能力声明与兼容性检查\\组合配置};
+ \node[flow,right=of assembly,text width=36mm] (protocol) {IB-ME五算法\\混合加密与字节认证};
+ \node[check,below=of assembly,text width=34mm] (state) {规范对象\\发钥与状态恢复};
+ \node[check,right=of state,text width=36mm] (entry) {命令行与浏览器\\消息收发};
+ \draw[flowarrow] (primitive)--(assembly);
+ \draw[flowarrow] (assembly)--(protocol);
+ \draw[flowarrow] (assembly)--(state);
+ \draw[flowarrow] (protocol)--(entry);
+ \draw[flowarrow] (state)--(entry);
+\end{tikzpicture}
+\caption{作品总体技术路线}
+\label{fig:work-overview}
+\end{figure}
+
+\section{主要工作}
+
+本作品完成了从格密码原语、通用IB-ME协议到实际消息收发软件的完整系统。两种HIBE与五种常规
+IBS形成十种组合，另接入LATTE＋Wang--PW目标规模组合。所有组合共用系统建立、双方密钥生成、
+消息加密和匹配解密五个算法，并支持角色密钥保存、新进程恢复、命令行与浏览器操作。
+
+\textbf{将目标规模环格采样组织为逐频率低秩计算。} Sageloli PARAM-I的相关扰动若展开为
+$403456\times403456$双精度矩阵，单个矩阵的理论存储约为1.18~TiB。作品保留多项式表示，
+在每个频率分解$65\times65$的Gram矩阵，完成PARAM-I、II的发钥、签名和公开验证；两档运行
+实测峰值RSS分别约为1.36~GiB和6.19~GiB。具体算法和测量见第五章及第七章。
+
+\textbf{用范围感知编码压缩原生IBS对象。} SRGG的公钥、机构状态、用户密钥和签名按字段取值范围
+选择位宽，并采用规范二进制表示。三档参数中，机构状态长度降至对应JSON的18.3\%至19.8\%，
+签名长度降至37.7\%至39.1\%；完整B组合采用紧凑签名格式。
+
+\textbf{将固定身份对的委派移入接收会话。} Lai接收会话在准备阶段生成叶密钥，随后复用该密钥
+处理连续消息。专项实验中，会话准备约510秒，后续解密中位时间由原路径的526秒降至28.6秒，
+会话内解密提速约18.4倍、耗时减少约94.6\%。叶密钥编码长度为34.7~MiB。
+
+十种常规组合在相同机器、源码、线程和输入下完成基本比较。表~\ref{tab:work-highlights}摘录
+三组代表的在线收发指标；第七章给出全部组合、各阶段时间、对象长度和运行内存。
+
+\begin{table}[H]
+\centering\small
+\caption{三组代表的同机在线收发结果}
+\label{tab:work-highlights}
+\begin{tabularx}{\textwidth}{@{}p{.30\textwidth}rrX@{}}
+\toprule
+\rowcolor{black!8} 代表组合 & 重复加密 & 重复解密 & 完整密文 \\
+\midrule
+A：LATTE＋ML-DSA & 13.5~ms & 59.4~ms & 139~KiB \\
+B：LATTE＋SRGG & 11.3~s & 68.7~ms & 146~KiB \\
+C：Lai＋Sageloli & 89.4~s & 409~s & 4.34~MiB \\
+\bottomrule
+\end{tabularx}
+\begin{minipage}{.98\textwidth}\footnotesize
+环境：Ultra~9~275HX，Sage~10.9，Python~3.13.14；双方身份各64~B，消息32~B。
+每组1个独立系统，各项为固定密钥下第二次操作的实测值。C行采用逐次委派路径。
+\end{minipage}
+\end{table}
+
+软件同时完成双方身份匹配、三类身份错配、密文字节篡改和对象恢复测试。十种组合共完成20次
+诚实加密、30次诚实解密、10次新进程恢复和20次外层异常拒绝；网页入口支持消息发送、身份核对和解密结果查看。
+
+
+\section{报告结构}
+
+全文共九章。第1章说明研究背景、相关工作、工程问题和主要工作，第2章介绍格密码、身份基密码
+与IB-ME所需的基础知识；第3章给出通用协议、五算法和对象边界，第4章介绍已实现算法、组合矩阵
+及三组代表方案，第5章展开Sageloli采样、SRGG编码和Lai接收会话三项优化；第6章说明软件架构、
+后端接入、状态恢复与操作流程，第7章给出十种组合及各项专项实验的结果，第8章归纳创新性并分析
+应用前景，第9章总结作品并提出后续工作。
