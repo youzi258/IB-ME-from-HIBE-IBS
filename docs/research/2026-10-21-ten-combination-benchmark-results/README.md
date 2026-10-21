@@ -1,6 +1,6 @@
 # 十组HIBE×IBS本机基本性能补测
 
-状态：**WIP，驱动已实现；校准及正式批次尚未启动。** 本目录接续已合并[PR87方案](../../superpowers/plans/2026-10-21-ten-combination-benchmark.md)，独立于原规划记录、历史实验和两版报告。
+状态：**WIP，驱动已实现；首轮校准因观察器错误停止，修正后将另起校准；正式批次尚未启动。** 本目录接续已合并[PR87方案](../../superpowers/plans/2026-10-21-ten-combination-benchmark.md)，独立于原规划记录、历史实验和两版报告。
 
 范围为LATTE、Lai C2各配ML-DSA-44、Falcon padded-512、Luo模格compact、SRGG PARAM-I compact、Sageloli RSIS v3 PARAM-I。完整Suite直接读取[固定matrix](../2026-10-21-ten-combination-benchmark-plan/matrix.json)，使用原64 B身份、32 B消息和既有secure/true/true声明，不改变算法或参数。
 
@@ -37,3 +37,5 @@ python -m experiments.research.ten_combination_benchmark --plan docs/research/20
 新驱动公共预检10/10通过，输出30个待执行job；驱动及装配、组合、Hybrid、接收会话和CLI选参定向回归169项通过，随后驱动控制测试34项重新通过。本轮没有新增安全性或匿名性证明任务；实验用于测量固定配置成本，功能成功不另构成安全证明。各算法ROM条件与参数来源沿用原参数卡和固定Suite。
 
 仍需完成三组真实校准、冻结正式运行及全部30个job，再复核公开收据、重算主表并交付结果。未完成的格保留计划／完成／失败数，不以旧数据补齐。报告正文与支撑ZIP不自动修改。
+
+首轮校准固定源码为`09a1e7759be43cdfcff9d6de651ba70a611ced1c`。LATTE＋ML-DSA的首次及重复加解密成功；观察器将外层拒绝错误地比较为`None`，而公共协议使用`BOTTOM`哨兵，因此把正确拒绝误判为失败。该问题只在测量脚本，已更正并增加直接核对协议哨兵的控制用例。旧批次停止，原根、失败和Lai在途阶段均保留；新的校准另编号，不重抽替换旧失败记录。

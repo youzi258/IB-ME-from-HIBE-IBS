@@ -112,6 +112,12 @@ def cache_info(backend):
     return result
 
 
+def require_rejection(value):
+    from ibme.protocol.baseline import BOTTOM
+    if value is not BOTTOM:
+        raise AssertionError("outer malformed ciphertext was accepted")
+
+
 def loaded_sources(expected):
     from .ten_combination_benchmark import SOURCE_ROOT
     result = {}
@@ -254,8 +260,7 @@ def worker(directory, mode):
                 rejected = []
                 for changed in (first_wire[:-1], first_wire[:-1] + bytes([first_wire[-1] ^ 1])):
                     def reject(changed=changed):
-                        if runtime.proto.decrypt(public, receiver, sender_id, changed) is not None:
-                            raise AssertionError("outer malformed ciphertext was accepted")
+                        require_rejection(runtime.proto.decrypt(public, receiver, sender_id, changed))
                     phase("outer-rejection", reject)
                     rejected.append(True)
                 report.update(outer_rejections=rejected, receiver_unchanged=True,

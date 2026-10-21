@@ -10,7 +10,7 @@ import pytest
 
 from experiments.research import ten_combination_benchmark as bench
 from experiments.research import ten_combination_summary as summary
-from experiments.research.ten_combination_worker import Observation, check_decrypt_observation
+from experiments.research.ten_combination_worker import Observation, check_decrypt_observation, require_rejection
 
 
 PLAN = bench.SOURCE_ROOT / "docs/research/2026-10-21-ten-combination-benchmark-plan/matrix.json"
@@ -104,6 +104,14 @@ def test_restore_prohibits_even_deterministic_native_key_generation():
         with pytest.raises(AssertionError):
             observer.native_wrapper(family, lambda *a: called.append(a))(None, operation)
     assert called == []
+
+
+def test_outer_rejection_uses_the_actual_protocol_bottom_sentinel():
+    from ibme.protocol.baseline import BOTTOM
+    require_rejection(BOTTOM)
+    for value in (None, b"", b"accepted"):
+        with pytest.raises(AssertionError):
+            require_rejection(value)
 
 
 def test_per_root_medians_are_not_the_pooled_repeated_observations():
