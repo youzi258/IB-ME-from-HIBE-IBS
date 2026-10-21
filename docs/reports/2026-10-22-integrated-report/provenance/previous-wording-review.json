@@ -1,0 +1,681 @@
+{
+  "schema": "IBME-REPORT-WORDING-REVIEW/1",
+  "review_date": "2026-10-22",
+  "attachment_sha256": "5349bfc4e77b50cfde17a8c6c334264579e9f87463c23b56cde525a0b6cb142e",
+  "attachment_name": "报告防御性说明逐项审核-2026-10-22(1).md",
+  "baseline_directory": "docs/reports/2026-10-21-review-refinement",
+  "items": [
+    {
+      "item": 1,
+      "location": "01｜正文第1页（PDF第5页），1.1.1｜删除",
+      "original_excerpt": "而不只是作为日志中的附加字段。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 2,
+      "location": "02｜正文第1页（PDF第5页），1.1.1｜改写",
+      "original_excerpt": "该机制适合具有明确管理边界的组织，但也要求机构妥善保护主密钥并建立安全的私钥发放流程，并非对所有公钥基础设施的无条件替代。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 3,
+      "location": "03｜正文第1页（PDF第5页），1.1.2｜改写",
+      "original_excerpt": "IB-ME 的意义不在于宣称普通加密与签名无法组合出相同业务功能，而在于把“谁可以接收”和“接收者认可谁发送”固定为一个密码语法。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 4,
+      "location": "04｜正文第2页（PDF第6页），1.1.3｜改写",
+      "original_excerpt": "密码迁移不能只在最后阶段替换一个算法名称，还要同步处理身份管理、协议组合、对象格式、运行资源和软件接入问题。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 5,
+      "location": "05｜正文第2页（PDF第6页），1.1.3｜删除",
+      "original_excerpt": "但它们并不是同一种实现的不同名称。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 6,
+      "location": "06｜正文第2页（PDF第6页），1.1.3｜改写",
+      "original_excerpt": "理论上可组合的原语，未必能够在同一软件中直接交换。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 7,
+      "location": "07｜正文第3页（PDF第7页），1.2 开头｜删除",
+      "original_excerpt": "身份基密码、格 HIBE、格 IBS 和 IB-ME 并非前后替代的单一路线。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 8,
+      "location": "08｜正文第3页（PDF第7页），1.2.1｜删除",
+      "original_excerpt": "委派不能只被视为一个抽象接口。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 9,
+      "location": "09｜正文第4页（PDF第8页），1.2.2｜改写",
+      "original_excerpt": "这些差异正是通用组合设计必须保留而不能抹平的后端特征。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 10,
+      "location": "10｜正文第4页（PDF第8页），1.2.3｜改写",
+      "original_excerpt": "但论文层面的可替换性并不自动给出统一的软件对象、传输格式或性能边界。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 11,
+      "location": "11｜正文第5页（PDF第9页），1.3 开头｜删除",
+      "original_excerpt": "并不是把论文中的算法接口依次连接即可。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 12,
+      "location": "12｜正文第5页（PDF第9页），1.3｜改写",
+      "original_excerpt": "单次算法实验不能代表连续消息服务。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 13,
+      "location": "13｜正文第5页（PDF第9页），1.4｜合并",
+      "original_excerpt": "不读取后端内部的矩阵、陷门或采样状态。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 14,
+      "location": "14｜正文第7页（PDF第11页），2.1.1｜改写",
+      "original_excerpt": "所有维数、模数和范数门都属于算法参数，不能由公共协议自行推断或修改。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 15,
+      "location": "15｜正文第8页（PDF第12页），2.1.2｜改写",
+      "original_excerpt": "并不直接保存完整格基。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 16,
+      "location": "16｜正文第8页（PDF第12页），2.1.2｜删除",
+      "original_excerpt": "不能笼统称为“公开长基”",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 17,
+      "location": "17｜正文第8页（PDF第12页），2.1.2｜删除",
+      "original_excerpt": "不应直接称为另一种格。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 18,
+      "location": "18｜正文第8页（PDF第12页），2.1.2｜改写",
+      "original_excerpt": "陷门不改变目标方程，而是帮助合法持有者高效完成这种短原像采样。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 19,
+      "location": "19｜正文第9页（PDF第13页），2.2.3｜删除",
+      "original_excerpt": "不表示彼此之间的安全等级高低。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 20,
+      "location": "20｜正文第9页（PDF第13页），2.2.4｜改写",
+      "original_excerpt": "不能把数值频域结果直接当作已经通过精确模方程检查的整数对象。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 21,
+      "location": "21｜正文第10页（PDF第14页），2.3.1｜删除",
+      "original_excerpt": "不能直接把其中的 s 与 σ 按相同数值代入",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 22,
+      "location": "22｜正文第10页（PDF第14页），2.3.1｜改写",
+      "original_excerpt": "检查模方程与范数能够确认输出的代数关系和大小，但不能单独证明输出服从目标分布。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 23,
+      "location": "23｜正文第10页（PDF第14页），2.3.1｜删除",
+      "original_excerpt": "均匀随机数不能替代离散 Gaussian",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 24,
+      "location": "24｜正文第10页（PDF第14页），2.3.2｜改写",
+      "original_excerpt": "上述三项是功能角色，而不是所有方案共用的一套算法。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 25,
+      "location": "25｜正文第11页（PDF第15页），2.3.3｜删除",
+      "original_excerpt": "不同后端仍须分别遵守原论文的陷门形式和采样条件。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 26,
+      "location": "26｜正文第12页（PDF第16页），2.4.2｜改写",
+      "original_excerpt": "以免与概率统计中的协方差数值混淆。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 27,
+      "location": "27｜正文第12页（PDF第16页），2.4.2｜改写",
+      "original_excerpt": "连续相关扰动只是离散陪集采样的一部分，后续仍需离散化、目标陪集采样和精确方程检查。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 28,
+      "location": "28｜正文第12页（PDF第16页），2.5.2｜合并",
+      "original_excerpt": "具体安全模型与参数由各 HIBE 方案给出，公共协议只调用其规定的算法接口。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 29,
+      "location": "29｜正文第13页（PDF第17页），2.7｜删除",
+      "original_excerpt": "但这些工程机制不替代底层 HIBE 与 IBS 的密码性质。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 30,
+      "location": "30｜正文第13页（PDF第17页），2.7｜合并",
+      "original_excerpt": "本作品的五个公共算法只通过原语接口使用这些能力，不读取后端的私有矩阵或陷门。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 31,
+      "location": "31｜正文第13—14页（PDF第17—18页），2.7.1｜改写",
+      "original_excerpt": "不同论文对查询权限和挑战限制的定义并不完全相同，具体结论应随所引用方案分别说明",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 32,
+      "location": "32｜正文第14页（PDF第18页），2.7.1｜删除",
+      "original_excerpt": "不是可直接互换的安全等级，也不能仅由功能测试结果推出。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 33,
+      "location": "33｜正文第15页（PDF第19页），第三章开头｜改写",
+      "original_excerpt": "本章只讨论所有算法组合共享的系统设计。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 34,
+      "location": "34｜正文第15页（PDF第19页），3.1｜改写",
+      "original_excerpt": "公共协议不读取后端内部的矩阵、多项式和陷门。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 35,
+      "location": "35｜正文第15页（PDF第19页），3.1｜改写",
+      "original_excerpt": "命令行与浏览器仅调用同一应用服务，不各自实现密码流程。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 36,
+      "location": "36｜正文第15页（PDF第19页），3.2｜删除",
+      "original_excerpt": "后端不能自行交换两层身份。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 37,
+      "location": "37｜正文第15页（PDF第19页），3.2｜改写",
+      "original_excerpt": "不要求二者共享 q、维度或环。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 38,
+      "location": "38｜正文第16页（PDF第20页），3.3｜删除",
+      "original_excerpt": "公共协议无需通过运行失败猜测后端容量。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 39,
+      "location": "39｜正文第17页（PDF第21页），3.4｜改写",
+      "original_excerpt": "它描述公共协议，不展开任何具体格后端的矩阵运算",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 40,
+      "location": "40｜正文第20页（PDF第24页），3.7｜改写",
+      "original_excerpt": "恢复过程不重新发钥，也不改变既有身份对象。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 41,
+      "location": "41｜正文第20页（PDF第24页），3.8｜改写",
+      "original_excerpt": "不把系统故障解释为身份错配。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 42,
+      "location": "42｜正文第20页（PDF第24页），3.9｜合并",
+      "original_excerpt": "而不需要公共协议读取其内部矩阵、环元素或陷门。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 43,
+      "location": "43｜正文第22页（PDF第26页），4.2.2｜改写",
+      "original_excerpt": "两种格式加载后恢复为同一数学对象，签名与验签算法不变。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 44,
+      "location": "44｜正文第22页（PDF第26页），4.2.3｜改写",
+      "original_excerpt": "在不改变数学对象的前提下减少保存与传输字节。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 45,
+      "location": "45｜正文第23页（PDF第27页），4.2.5｜移位",
+      "original_excerpt": "本项目按约 115 bit 量子安全的工作假设使用该目标档",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 46,
+      "location": "46｜正文第24页（PDF第28页），4.3｜删除",
+      "original_excerpt": "统一机器与输入用于比较实现成本，不改变这些配置各自的理论来源。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 47,
+      "location": "47｜正文第25页（PDF第29页），4.4｜改写",
+      "original_excerpt": "同一算法的参数档或编码格式不重复计为新方案。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 48,
+      "location": "48｜正文第25页（PDF第29页），4.4｜删除",
+      "original_excerpt": "Lai 与 Wang–PW 尚未组成完整运行记录。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 49,
+      "location": "49｜正文第25页（PDF第29页），4.5｜改写",
+      "original_excerpt": "避免三组代表重复覆盖相同结构。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 50,
+      "location": "50｜正文第27页（PDF第31页），4.7｜删除",
+      "original_excerpt": "不能由单一指标概括。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 51,
+      "location": "51｜正文第28页（PDF第32页），第五章开头｜删除",
+      "original_excerpt": "直接照搬数学定义虽然可以描述算法，却不能解决目标参数运行时出现的内存、存储和重复计算问题。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 52,
+      "location": "52｜正文第28页（PDF第32页），第五章开头｜改写",
+      "original_excerpt": "Sageloli 相关扰动不能展开为稠密矩阵",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 53,
+      "location": "53｜正文第28页（PDF第32页），第五章开头｜删除",
+      "original_excerpt": "但不改变原方案的公开方程与公共协议接口。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 54,
+      "location": "54｜正文第28页（PDF第32页），5.1.1｜改写",
+      "original_excerpt": "优化的重点不是减少常数，而是避免形成该矩阵。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 55,
+      "location": "55｜正文第28页（PDF第32页），5.1.1｜删除",
+      "original_excerpt": "因此改变的是内部计算方式，而不是密钥关系和验签条件。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 56,
+      "location": "56｜正文第29页（PDF第33页），表 5.1｜改写",
+      "original_excerpt": "资源估算，不执行展开",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 57,
+      "location": "57｜正文第29—30页（PDF第33—34页），5.1.2 末尾｜改写",
+      "original_excerpt": "这里的工程贡献是把论文参数组织成可运行、可保存的结构化实现，公开验签关系和困难假设仍采用原方案。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 58,
+      "location": "58｜正文第31页（PDF第35页），表 5.3 注｜删除",
+      "original_excerpt": "不计作新的性能实验。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 59,
+      "location": "59｜正文第32页（PDF第36页），5.3.2｜改写",
+      "original_excerpt": "该边界避免为了性能而增加新的长期密钥文件，同时明确会话优化适用于双方身份固定的连续通信。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 60,
+      "location": "60｜正文第32页（PDF第36页），5.4｜删除",
+      "original_excerpt": "它们都保留原算法方程与通用协议接口",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 61,
+      "location": "61｜正文第33页（PDF第37页），6.1｜改写",
+      "original_excerpt": "公共协议不根据算法名称编写分支。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 62,
+      "location": "62｜正文第33页（PDF第37页），6.1｜合并",
+      "original_excerpt": "应用入口不直接操作陷门、矩阵或多项式",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 63,
+      "location": "63｜正文第34页（PDF第38页），6.2｜删除",
+      "original_excerpt": "公共层无需了解其中的系数排列。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 64,
+      "location": "64｜正文第34页（PDF第38页），6.2｜删除",
+      "original_excerpt": "同一方法在不同入口下因此保持相同的随机性边界。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 65,
+      "location": "65｜正文第35页（PDF第39页），6.3.2｜改写",
+      "original_excerpt": "公共协议、Hybrid、BYTEAUTH、状态文件和应用入口均不修改。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 66,
+      "location": "66｜正文第35页（PDF第39页），6.3.2｜删除",
+      "original_excerpt": "不增加后端专属分支。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 67,
+      "location": "67｜正文第35页（PDF第39页），6.3.2｜删除",
+      "original_excerpt": "而不是复制一套 IB-ME 实现。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 68,
+      "location": "68｜正文第35页（PDF第39页），6.4｜删除",
+      "original_excerpt": "现实系统不会为每条消息重新建立主密钥。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 69,
+      "location": "69｜正文第36页（PDF第40页），6.5｜改写",
+      "original_excerpt": "浏览器界面使用同一运行时，不另写一套密码代码。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 70,
+      "location": "70｜正文第38页（PDF第42页），6.6｜删除",
+      "original_excerpt": "该调整不改变算法、参数和密文格式",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 71,
+      "location": "71｜正文第38页（PDF第42页），6.6 末尾｜移位",
+      "original_excerpt": "这次复现用于检查安装、对象恢复和完整调用路径；性能分析仍采用第七章逐项列明的原始实验环境。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 72,
+      "location": "72｜正文第39页（PDF第43页），7.1.1｜删除",
+      "original_excerpt": "同一算法的不同参数档及参考／紧凑格式不重复计为新方案。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 73,
+      "location": "73｜正文第40页（PDF第44页），7.1.2｜改写",
+      "original_excerpt": "网络侧则关心完整密文而不是单个签名。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 74,
+      "location": "74｜正文第40页（PDF第44页），7.2.1｜移位",
+      "original_excerpt": "三组来自同口径预运行，另外七组在相同环境下补齐；两批的源码摘要、软件环境、线程设置和输入完全一致。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 75,
+      "location": "75｜正文第40页（PDF第44页），7.2.1｜移位",
+      "original_excerpt": "所用配置均为第四章列出的目标或论文参数而非教学参数",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 76,
+      "location": "76｜正文第40页（PDF第44页），7.2.1｜移位",
+      "original_excerpt": "功能与性能测试不替代安全性论证。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 77,
+      "location": "77｜正文第41页（PDF第45页），7.2.2｜删除",
+      "original_excerpt": "发送者发钥是表中的独立阶段，其差异由“发送者发钥”列反映。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 78,
+      "location": "78｜正文第41页（PDF第45页），7.2.2｜删除",
+      "original_excerpt": "IBS 自身代价应结合表中独立的发送者发钥列判断。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 79,
+      "location": "79｜正文第42页（PDF第46页），7.2.3｜改写",
+      "original_excerpt": "因为恢复不会缓存新的随机委派结果；这与第五章另行讨论的“准备接收会话”是两种不同状态策略。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 80,
+      "location": "80｜正文第42页（PDF第46页），7.2.4｜删除",
+      "original_excerpt": "不使用数学对象的内存估算。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 81,
+      "location": "81｜正文第43页（PDF第47页），7.2.4｜删除",
+      "original_excerpt": "它记录的是进程树采样值，并非物理页的精确分解。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 82,
+      "location": "82｜正文第44页（PDF第48页），7.3 开头｜合并",
+      "original_excerpt": "这些数据按各自实验条件单独呈现；表 7.1 中的十种组合单根实测继续作为统一横向比较。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 83,
+      "location": "83｜正文第45页（PDF第49页），7.3.1｜合并",
+      "original_excerpt": "该批结果用于补充多根运行波动，前述单根同机结果用于组合间横向比较。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 84,
+      "location": "84｜正文第47—48页（PDF第51—52页），7.3.4 末尾｜删除",
+      "original_excerpt": "三组代表保持 A、B、C 不变，Wang–PW 作为目标规模补充方案单独展示。",
+      "baseline_literal_match": false,
+      "result": "原句未逐字出现在63页基线中，已核对相应章节的同类表达"
+    },
+    {
+      "item": 85,
+      "location": "85｜正文第48页（PDF第52页），表 7.8 注｜删除",
+      "original_excerpt": "该核算没有新增加密实验。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 86,
+      "location": "86｜正文第49页（PDF第53页），7.5.1｜合并",
+      "original_excerpt": "本表记录的是未展开该矩阵的结构化实现，因此二者分别说明原始瓶颈与实际资源占用。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 87,
+      "location": "87｜正文第51页（PDF第55页），7.5.3｜合并",
+      "original_excerpt": "右图是将已有阶段中位时间代入成本公式得到的模型曲线。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 88,
+      "location": "88｜正文第51页（PDF第55页），7.5.3｜合并",
+      "original_excerpt": "该组样本来自一套系统，后续扩大测量可进一步观察不同主密钥下的波动。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 89,
+      "location": "89｜正文第54页（PDF第58页），表 8.1｜改写",
+      "original_excerpt": "Sageloli 目标参数不能展开完整相关扰动矩阵",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 90,
+      "location": "90｜正文第56页（PDF第60页），8.4｜改写",
+      "original_excerpt": "因此更适合由网关承担密码处理，而不是直接部署到极小型传感器。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 91,
+      "location": "91｜正文第57页（PDF第61页），8.6｜删除",
+      "original_excerpt": "后量子迁移不仅是把一种算法替换成另一种算法，还要处理参数、对象格式、密文容量和运行依赖的变化。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 92,
+      "location": "92｜正文第57页（PDF第61页），8.7｜合并",
+      "original_excerpt": "该批每种组合只有一个独立根，给出成本量级和主要瓶颈；运行波动可结合 A/B 多根实验，并在目标服务器上增加重复测量。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 93,
+      "location": "93｜正文第58页（PDF第62页），9.1｜删除",
+      "original_excerpt": "三项优化都不改变相应算法的公开方程，也不要求修改通用 IB-ME 协议。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 94,
+      "location": "94｜正文第58页（PDF第62页），9.2｜合并",
+      "original_excerpt": "该批每组使用一个独立系统根，因此这些数值用于比较成本量级；多根运行波动由 A/B 专项实验另行记录。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 95,
+      "location": "95｜正文第61页（PDF第65页），A.2｜改写",
+      "original_excerpt": "不执行新的密码运算。",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    },
+    {
+      "item": 96,
+      "location": "96｜正文第61页（PDF第65页），A.2｜移位",
+      "original_excerpt": "第三条命令检查父稿未被修改",
+      "baseline_literal_match": true,
+      "result": "已定位并删除、改写或整合对应表达"
+    }
+  ]
+}
