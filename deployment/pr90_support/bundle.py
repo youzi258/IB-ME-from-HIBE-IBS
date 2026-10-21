@@ -172,6 +172,9 @@ def seal(args):
         raise ValueError("successful real recomputation receipt required")
     verify_seal_sources(root, info, validation)
     old = {r["path"]: r for r in manifest["files"]}
+    for name in old:
+        if not (root / name).is_file():
+            raise ValueError("missing original material: " + name)
     records = []
     for path in sorted(root.rglob("*")):
         if not path.is_file():

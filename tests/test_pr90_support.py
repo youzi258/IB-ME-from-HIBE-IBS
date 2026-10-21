@@ -2,6 +2,9 @@
 import importlib.util
 import json
 from pathlib import Path
+import shutil
+from types import SimpleNamespace
+import zipfile
 
 import pytest
 
@@ -85,3 +88,48 @@ def test_seal_rejects_input_changed_after_a_successful_validation(tmp_path):
     data.write_bytes(b'changed after validation')
     with pytest.raises(ValueError, match='bound PR90 input'):
         tool.verify_seal_sources(tmp_path, info, validation)
+
+
+@pytest.fixture
+def staged_materials(tmp_path):
+    tool = module('bundle')
+    root = tmp_path / 'materials'; root.mkdir()
+    section = root / tool.SECTION
+    (section / '验收').mkdir(parents=True)
+    shutil.copyfile(ROOT / 'deployment/offline/verify_supporting.py', root / '核对文件.py')
+    (root / 'image.tar.gz').write_bytes(b'original offline image')
+    (root / 'README.txt').write_text('Original navigation\n', encoding='utf-8')
+    records = [{'path': p.name, 'bytes': p.stat().st_size, 'sha256': tool.sha256(p)}
+               for p in (root / '核对文件.py', root / 'image.tar.gz', root / 'README.txt')]
+    (root / '文件清单.json').write_text(json.dumps({'files': records}), encoding='utf-8')
+    binding = section / 'source-records.json'
+    binding.write_text(json.dumps({'files': {}}), encoding='utf-8')
+    receipt = {'status': 'passed', 'completed_cases': 10,
+               'input_binding_sha256': tool.sha256(binding)}
+    (section / '验收/提交副本复算验证.json').write_text(json.dumps(receipt), encoding='utf-8')
+    return tool, root
+
+
+def test_seal_rejects_missing_original_before_rewriting_manifest(staged_materials, tmp_path):
+    tool, root = staged_materials
+    before = (root / '文件清单.json').read_bytes()
+    (root / 'image.tar.gz').unlink()
+    output = tmp_path / 'sealed.zip'
+    with pytest.raises(ValueError, match='missing original material: image.tar.gz'):
+        tool.seal(SimpleNamespace(stage=root, output=output))
+    assert (root / '文件清单.json').read_bytes() == before
+    assert not (root / 'SHA256SUMS.txt').exists()
+    assert not output.exists()
+
+
+def test_seal_preserves_original_payload_and_allows_navigation_update(staged_materials, tmp_path):
+    tool, root = staged_materials
+    (root / 'README.txt').write_text('Updated navigation\n', encoding='utf-8')
+    output = tmp_path / 'sealed.zip'
+    tool.seal(SimpleNamespace(stage=root, output=output))
+    with zipfile.ZipFile(output) as archive:
+        assert archive.read('image.tar.gz') == b'original offline image'
+        manifest = json.loads(archive.read('文件清单.json'))
+        records = {r['path']: r for r in manifest['files']}
+        assert set(records) == set(archive.namelist()) - {'文件清单.json', 'SHA256SUMS.txt'}
+        assert records['README.txt']['transformation'] == 'PR90 material navigation'
