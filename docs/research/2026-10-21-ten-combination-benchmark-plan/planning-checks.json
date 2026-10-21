@@ -1,0 +1,218 @@
+{
+  "schema": "TEN-COMBINATION-PLANNING-CHECKS/1",
+  "status": "public-configuration-checks-only",
+  "planning_source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
+  "cpu": "Intel(R) Core(TM) i9-14900HX",
+  "python": "3.12.13",
+  "sage": "10.7",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.3",
+    "cryptography": "50.0.2",
+    "pytest": "not-discovered",
+    "setuptools": "82.0.1"
+  },
+  "available_logical_cpus": 32,
+  "memory_total_bytes": 8176910336,
+  "dependency_reference": "docs/research/2026-10-20-multi-backend-optimization/native-environment.json",
+  "native_artifact_hashes": {
+    "falcon512": "de7d7c5e285d375e432bf7d2c3625e3f2f295cc57ba6c2a008beeca1164ee366",
+    "latte": "6fb0930f75d150950dbf91eddf98fce36fcb611db344af5f847ee26f94f5a958",
+    "mldsa44": "99e8d0e84dbefa89c456869f128b4cb4f93ec6002bed5b95910e54d8a0c96dd0",
+    "sageloli-ring": "3e2bc9a1ee6d5f6e8494cda8836e8dece76622ab99addda114e1066c67fe0387"
+  },
+  "cases": [
+    {
+      "name": "latte-mldsa44",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 59191,
+        "signature_max_bytes": 6237,
+        "ibs_input_bytes": 65536,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 6345,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 37587
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "latte-falcon512",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 63106,
+        "signature_max_bytes": 2322,
+        "ibs_input_bytes": 65536,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 2430,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 37587
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "latte-luo-compact",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 3924,
+        "signature_max_bytes": 16063,
+        "ibs_input_bytes": 4096,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 16171,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 37587
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "latte-srgg-I-compact",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 65364,
+        "signature_max_bytes": 15704,
+        "ibs_input_bytes": 65536,
+        "hibe_payload_bytes": 131072,
+        "protocol_payload_overhead": 15812,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 37587
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "latte-sageloli-I",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 3924,
+        "signature_max_bytes": 3227824,
+        "ibs_input_bytes": 4096,
+        "hibe_payload_bytes": 8388608,
+        "protocol_payload_overhead": 3227932,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 37587
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "lai-c2-mldsa44",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 59191,
+        "signature_max_bytes": 6237,
+        "ibs_input_bytes": 65536,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 6345,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 1228844
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "lai-c2-falcon512",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 63106,
+        "signature_max_bytes": 2322,
+        "ibs_input_bytes": 65536,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 2430,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 1228844
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "lai-c2-luo-compact",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 3924,
+        "signature_max_bytes": 16063,
+        "ibs_input_bytes": 4096,
+        "hibe_payload_bytes": 65536,
+        "protocol_payload_overhead": 16171,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 1228844
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "lai-c2-srgg-I-compact",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 65364,
+        "signature_max_bytes": 15704,
+        "ibs_input_bytes": 65536,
+        "hibe_payload_bytes": 131072,
+        "protocol_payload_overhead": 15812,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 1228844
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    },
+    {
+      "name": "lai-c2-sageloli-I",
+      "ok": true,
+      "errors": [],
+      "capacity": {
+        "identity_bytes": 64,
+        "max_application_bytes": 3924,
+        "signature_max_bytes": 3227824,
+        "ibs_input_bytes": 4096,
+        "hibe_payload_bytes": 8388608,
+        "protocol_payload_overhead": 3227932,
+        "signed_input_overhead": 172,
+        "inner_hibe_payload_bytes": 32,
+        "inner_hibe_identity_bytes": 86,
+        "inner_hibe_ciphertext_max_bytes": 1228844
+      },
+      "runtime_available": true,
+      "preflight_only": true
+    }
+  ],
+  "cryptographic_experiments_run": false,
+  "private_states_opened": false
+}

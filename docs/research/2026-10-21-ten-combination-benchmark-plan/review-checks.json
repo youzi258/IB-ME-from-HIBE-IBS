@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "matrix_cases": 10,
+  "suite_digests_verified": 10,
+  "public_preflights_passed": 10,
+  "abc_frozen_suites_unchanged": 3,
+  "same_ibs_cross_hibe_parameters_and_budgets_verified": 5,
+  "planned_independent_roots": 30,
+  "planned_honest_encrypt_calls": 120,
+  "planned_honest_decrypt_calls": 210,
+  "relative_links_checked": 10,
+  "cryptographic_experiments_run": false,
+  "source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5"
+}

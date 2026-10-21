@@ -58,6 +58,8 @@
 
 ## 3. 当前并行包与完成条件
 
+2026-10-21本线程任务：[十组同机基本性能比较方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)及[十组完整配置／规划预检](research/2026-10-21-ten-combination-benchmark-plan/README.md)已整理供审查。统一64 B身份、32 B消息，每格3个独立根；本轮仅提交方案，runner适配、校准和长实验尚未开始，不将公共预检计为性能数据。
+
 ### 当前未完成项（按依赖推进）
 
 | 顺序 | 交付物 | 完成判据 |
