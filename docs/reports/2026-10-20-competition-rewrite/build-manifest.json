@@ -1,8 +1,8 @@
 {
   "schema": "IBME-COMPETITION-REPORT-BUILD/1",
   "source": "作品设计报告.tex",
-  "source_sha256": "f45ccb60865bfec743f98866913b9bc95e65813f2b5001fd79b28e0e7c582d4c",
+  "source_sha256": "50ec14c09359cb637e1ca895fefc6fc34e89fd3a70365cc8e8868afbeea51e1b",
   "pdf": "作品设计报告.pdf",
-  "pdf_sha256": "cefbf7b46e4441ddb86c0511040ba15ff03f4f2b4d938f526121eae1cb500894",
+  "pdf_sha256": "09c1a14f51f60e3345cbce83f22b3db17830152c049b1cb069e9d48a175e30b0",
   "engine": "tectonic"
 }
