@@ -49,6 +49,7 @@ def write_config(root, config):
     lambda c: c["algorithms"][0].update(source_markers=["C:/private.py"]),
     lambda c: c["algorithms"][0].update(environment="shell"),
     lambda c: c["algorithms"][0].update(allow_skips="true"),
+    lambda c: c["algorithms"][0].update(automatic="false"),
 ])
 def test_bad_config_fails_closed(tmp_path, mutation):
     config = copy.deepcopy(run.load_config())
@@ -120,7 +121,8 @@ def test_missing_receipts_and_pending_routes_are_visible(monkeypatch):
     assert rows["xie-ntru-ibs"]["status"] == "scheduled"
     assert rows["xie-ntru-ibs"]["source_stage"] == "corrected_equation_study"
     assert rows["cert-falcon"]["status"] == "scheduled"
-    assert rows["wang-pw"]["status"] == rows["srgg2025"]["status"] == "scheduled"
+    assert rows["wang-pw"]["status"] == "manual_only"
+    assert rows["srgg2025"]["status"] == "scheduled"
     # Simulate absent tests instead of making a newly delivered algorithm the
     # permanent pending fixture. Existing qualification tests are not backends.
     selected = run.selected_files
@@ -132,8 +134,22 @@ def test_missing_receipts_and_pending_routes_are_visible(monkeypatch):
     receipts = {row["id"]: {"status": "passed"} for row in planned["rows"] if row["test_files"]}
     text, failed = run.render_summary(planned, receipts)
     assert not failed and "| gkr2025 | primitive | awaiting_tests |" in text
-    receipts["wang-pw"]["status"] = "failed"
+    receipts["srgg2025"]["status"] = "failed"
     assert run.render_summary(planned, receipts)[1]
+
+
+def test_wang_pw_is_only_scheduled_on_explicit_manual_request():
+    default = run.plan()
+    manual = run.plan(include_manual=True)
+    assert "wang-pw" not in {row["id"] for row in default["sage"]["include"]}
+    assert "wang-pw" in {row["id"] for row in manual["sage"]["include"]}
+    assert default["route_count"] == manual["route_count"] == 19
+    receipts = {row["id"]: {"status": "passed"} for row in default["rows"]
+                if row["status"] == "scheduled"}
+    assert not run.render_summary(default, receipts)[1]
+    assert run.render_summary(manual, receipts)[1]
+    receipts["wang-pw"] = {"status": "passed"}
+    assert not run.render_summary(manual, receipts)[1]
 
 
 def test_stale_receipts_cannot_survive_new_invocation(tmp_path):

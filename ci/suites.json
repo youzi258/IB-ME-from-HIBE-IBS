@@ -213,6 +213,7 @@
     },
     {
       "id": "wang-pw",
+      "automatic": false,
       "tests": [
         "tests/test_wang_pw_*.py",
         "tests/test_cli_role_import.py"
