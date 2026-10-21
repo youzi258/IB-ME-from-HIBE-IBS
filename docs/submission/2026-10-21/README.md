@@ -2,9 +2,11 @@
 
 本目录维护竞赛附件的文字说明与交付清单。报告活动入口为[37页作品设计报告](../../reports/2026-10-20-competition-rewrite/README.md)，本次不修改其源稿或PDF。
 
-远端交付：[PR86](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/86)。
+当前完整上传件为 **PR90补充版，1,197,810,107 B（约1.20 GB）**，含06离线镜像与07十组合表图／公开收据／参数／离线复算入口，低于4 GB。文件位于本机 `D:/ibme/交付材料/CACR2026T4PMR7-2026-10-21/PR90补充提交版/`，大ZIP不存入Git。详见[最终交付核验](../../deliveries/2026-10-21-pr90-supporting/README.md)及[复算说明](../../../deployment/pr90_support/README.md)。报告和审批签字页仍分别上传，本轮不改报告。
 
-**支撑材料上传件已准备。** [下载支撑材料ZIP](CACR2026T4PMR7-2026密码竞赛复赛相关支撑材料.zip)（8,673,311 B，约8.67 MB），[ZIP摘要](支撑材料.zip.sha256)。用户于2026-10-21确认仅在竞赛提交副本中以作品编号显示本项目著作权人；源码与wheel已按此处理，仓库根LICENSE、MIT授权条款与所有第三方署名保留原文。审批及签字页仍需团队真实完成。
+远端交付：基础轻量包[PR86](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/86)、离线镜像[PR91](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/91)、本轮补充[PR93](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/93)。
+
+**基础轻量包留档。** [下载原支撑材料ZIP](CACR2026T4PMR7-2026密码竞赛复赛相关支撑材料.zip)（8,673,311 B，约8.67 MB），[ZIP摘要](支撑材料.zip.sha256)；该历史包没有06离线环境和07十组合补充，当前完整上传件使用上面的本地交付版本。用户于2026-10-21确认仅在竞赛提交副本中以作品编号显示本项目著作权人；源码与wheel已按此处理，仓库根LICENSE、MIT授权条款与所有第三方署名保留原文。审批及签字页仍需团队真实完成。
 
 - [阅读指引](阅读指引.md)：材料目录、报告各章对应关系与数据读法。
 - [运行与演示](运行与演示.md)：Sage／WSL环境、A/B启动、C依赖、CLI及测试入口。
