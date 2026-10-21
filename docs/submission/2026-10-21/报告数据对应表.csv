@@ -1,0 +1,48 @@
+﻿report_reference,file,scope,source_path
+第五章：固定LATTE时三类IBS的同机重复子集,03_实验数据/01_组合与原始基准/latte-mldsa44.json,各3根，每根3对warm，64 B身份/32 B消息；Ultra9批次,docs/research/2026-10-18-full-system-baseline/evidence/latte-mldsa44.json
+第五章：固定LATTE时三类IBS的同机重复子集,03_实验数据/01_组合与原始基准/latte-falcon512.json,各3根，每根3对warm，64 B身份/32 B消息；Ultra9批次,docs/research/2026-10-18-full-system-falcon/evidence/latte-falcon512.json
+第五章：固定LATTE时三类IBS的同机重复子集,03_实验数据/01_组合与原始基准/latte-luo-compact.json,各3根，每根3对warm，64 B身份/32 B消息；Ultra9批次,docs/research/2026-10-18-full-system-luo/evidence/latte-luo-compact.json
+第五章：固定LATTE时三类IBS的同机重复子集,03_实验数据/01_组合与原始基准/LATTE-三IBS汇总.json,与三份原始基准相同,docs/research/2026-10-18-full-system-luo/evidence/comparison.json
+第四章：SRGG紧凑编码与PARAM-I基准,03_实验数据/01_组合与原始基准/SRGG-I-reference.json,各3根；两种格式分别抽根，非同根配对,docs/research/2026-10-19-srgg-paper-latte/benchmark-param-i-reference.json
+第四章：SRGG紧凑编码与PARAM-I基准,03_实验数据/01_组合与原始基准/SRGG-I-compact.json,各3根；两种格式分别抽根，非同根配对,docs/research/2026-10-19-srgg-paper-latte/benchmark-param-i-compact.json
+第四章：SRGG三档真实对象的reference/compact字节数,03_实验数据/01_组合与原始基准/functional-param-i-reference.json,论文三档×两种编码，六个完整功能配置；不计新增算法,docs/research/2026-10-19-srgg-paper-latte/functional-param-i-reference.json
+第四章：SRGG三档真实对象的reference/compact字节数,03_实验数据/01_组合与原始基准/functional-param-i-compact.json,论文三档×两种编码，六个完整功能配置；不计新增算法,docs/research/2026-10-19-srgg-paper-latte/functional-param-i-compact.json
+第四章：SRGG三档真实对象的reference/compact字节数,03_实验数据/01_组合与原始基准/functional-param-ii-reference.json,论文三档×两种编码，六个完整功能配置；不计新增算法,docs/research/2026-10-19-srgg-paper-latte/functional-param-ii-reference.json
+第四章：SRGG三档真实对象的reference/compact字节数,03_实验数据/01_组合与原始基准/functional-param-ii-compact.json,论文三档×两种编码，六个完整功能配置；不计新增算法,docs/research/2026-10-19-srgg-paper-latte/functional-param-ii-compact.json
+第四章：SRGG三档真实对象的reference/compact字节数,03_实验数据/01_组合与原始基准/functional-param-iii-reference.json,论文三档×两种编码，六个完整功能配置；不计新增算法,docs/research/2026-10-19-srgg-paper-latte/functional-param-iii-reference.json
+第四章：SRGG三档真实对象的reference/compact字节数,03_实验数据/01_组合与原始基准/functional-param-iii-compact.json,论文三档×两种编码，六个完整功能配置；不计新增算法,docs/research/2026-10-19-srgg-paper-latte/functional-param-iii-compact.json
+第五章：固定Lai C2时四类IBS的单次组合观测,03_实验数据/01_组合与原始基准/Lai-C2-四IBS.json,共享1个HIBE根，各1次加密，四身份情形；最多6个解密进程,docs/research/2026-10-19-lai-c2-combinations/evidence/trials.json
+第三章2×5覆盖,03_实验数据/01_组合与原始基准/Lai-C2-Luo-CLI.json,另批1根，14 B消息，CLI计时,docs/research/team-c-delivery/2026-10-19-lai-publication/evidence/target-c2-receipt.json
+第三章2×5覆盖,03_实验数据/01_组合与原始基准/LATTE-Sageloli-CLI.json,1根、15步CLI与34项同根检查；32 B消息,docs/research/2026-10-19-sageloli-ring-integration/evidence/integration.json
+第五章：A/B同机时间、对象尺寸、消息长度与功能矩阵,03_实验数据/02_三代表实验/master-table.json,三代表批次主表；A/B同机各3根，安装CLI单列,docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json
+第五章：A/B同机时间、对象尺寸、消息长度与功能矩阵,03_实验数据/02_三代表实验/measurements.csv,三代表批次主表；A/B同机各3根，安装CLI单列,docs/deliveries/2026-10-19-report-experiment-supplement/measurements.csv
+第五章：A/B同机时间、对象尺寸、消息长度与功能矩阵,03_实验数据/02_三代表实验/benchmark-suites.json,三代表批次主表；A/B同机各3根，安装CLI单列,docs/deliveries/2026-10-19-report-experiment-supplement/benchmark-suites.json
+第五章：A/B同机时间、对象尺寸、消息长度与功能矩阵,03_实验数据/02_三代表实验/verification.json,三代表批次主表；A/B同机各3根，安装CLI单列,docs/deliveries/2026-10-19-report-experiment-supplement/verification.json
+第五章：A/B同机时间、对象尺寸、消息长度与功能矩阵,03_实验数据/02_三代表实验/negative-controls.json,三代表批次主表；A/B同机各3根，安装CLI单列,docs/deliveries/2026-10-19-report-experiment-supplement/negative-controls.json
+第五章：A/B同机时间、对象尺寸、消息长度与功能矩阵,03_实验数据/02_三代表实验/archive-status.json,三代表批次主表；A/B同机各3根，安装CLI单列,docs/deliveries/2026-10-19-report-experiment-supplement/archive-status.json
+第五章：同机A/B完整系统中位时间,03_实验数据/02_三代表实验/benchmark-A.json,各3根、9对warm；i9-14900HX/Sage10.7,docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-A.json
+第五章：同机A/B完整系统中位时间,03_实验数据/02_三代表实验/benchmark-B.json,各3根、9对warm；i9-14900HX/Sage10.7,docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-B.json
+第五章：实测应用消息长度与完整wire字节数,03_实验数据/02_三代表实验/消息与完整密文.png,实际CLI长度与wire；保留原图,docs/deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/A.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/A.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/B.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/B.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/C.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/C.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/Luo.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/Luo.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/Falcon.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/Falcon.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/Luo-replay.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/Luo-replay.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/verified-summary.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/verified-summary.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/installation.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/installation.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/native-environment.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/native-environment.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/source-manifest.json,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/source-manifest.json
+第四／五章：准备复用、会话摊销与优化消融,03_实验数据/03_优化对照/optimization.png,A/B/Luo/Falcon各3根开关对照；C1根；Luo重放单列,docs/research/2026-10-20-multi-backend-optimization/optimization.png
+第四章：代表A同参数运行位置消融,03_实验数据/03_优化对照/部署消融.json,同参数三状态、每状态每路10次；源码/Windows wheel/Linux wheel,docs/research/2026-10-19-full-system-placement/evidence/placement.json
+第五章：功能与负例矩阵的随机输入批次,03_实验数据/04_随机功能批次/随机批次.json,3根，2×2身份，0/1/32/1024 B；60项结果；公开输入种子非密钥种子,docs/research/2026-10-19-primary-random-batch/receipt.json
+第五章：NixOS隔离安装中三组代表的单根功能复现,03_实验数据/05_异机复现/A.json,NixOS隔离安装；A/B各1根，C同根超时与拆分阶段完整保留,docs/deliveries/2026-10-20-nixos-independent-reproduction/A.json
+第五章：NixOS隔离安装中三组代表的单根功能复现,03_实验数据/05_异机复现/B.json,NixOS隔离安装；A/B各1根，C同根超时与拆分阶段完整保留,docs/deliveries/2026-10-20-nixos-independent-reproduction/B.json
+第五章：NixOS隔离安装中三组代表的单根功能复现,03_实验数据/05_异机复现/C.json,NixOS隔离安装；A/B各1根，C同根超时与拆分阶段完整保留,docs/deliveries/2026-10-20-nixos-independent-reproduction/C.json
+第五章：NixOS隔离安装中三组代表的单根功能复现,03_实验数据/05_异机复现/environment.json,NixOS隔离安装；A/B各1根，C同根超时与拆分阶段完整保留,docs/deliveries/2026-10-20-nixos-independent-reproduction/environment.json
+第五章：NixOS隔离安装中三组代表的单根功能复现,03_实验数据/05_异机复现/build.json,NixOS隔离安装；A/B各1根，C同根超时与拆分阶段完整保留,docs/deliveries/2026-10-20-nixos-independent-reproduction/build.json
+第五章：NixOS隔离安装中三组代表的单根功能复现,03_实验数据/05_异机复现/verification.json,NixOS隔离安装；A/B各1根，C同根超时与拆分阶段完整保留,docs/deliveries/2026-10-20-nixos-independent-reproduction/verification.json
+第六章,03_实验数据/06_Web操作/A.json,A/B各1根六情形；C仅预检,docs/deliveries/2026-10-20-web-redesign/A.json
+第六章,03_实验数据/06_Web操作/B.json,A/B各1根六情形；C仅预检,docs/deliveries/2026-10-20-web-redesign/B.json
+第六章,03_实验数据/06_Web操作/C-preflight.json,A/B各1根六情形；C仅预检,docs/deliveries/2026-10-20-web-redesign/C-preflight.json
+第六章补充截图,03_实验数据/06_Web操作/A-拒绝补图操作.json,1根、1次加密、正确/接收者错配/篡改三次解密,docs/deliveries/2026-10-20-web-rejection-screenshots/measurements.json

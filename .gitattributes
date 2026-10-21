@@ -19,6 +19,8 @@
 *.docx   binary
 *.bin    binary
 *.bundle binary
+*.zip    binary
+*.whl    binary
 *.pyc    binary
 
 # Byte-exact MIT upstream snapshot for source auditing. Its original trailing

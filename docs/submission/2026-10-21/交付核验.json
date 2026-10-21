@@ -1,0 +1,53 @@
+{
+  "schema": "IBME-SUPPORTING-DELIVERY-CHECKS/1",
+  "status": "prepared-for-team-review",
+  "source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
+  "report_checks_passed": 225,
+  "report_pages": 37,
+  "report_sha256": "efaeef77051f9578054ed3ae18982169bb994ba29ebf421c0a0c2656dc65597e",
+  "guide_pages": 3,
+  "payload_files": 1149,
+  "archive_files": 1151,
+  "source_files": 1084,
+  "public_data_files": 47,
+  "screenshots": 6,
+  "metadata_path_fields_generalized": 2102,
+  "upstream_files_verified": 81,
+  "wheel": {
+    "package_files_checked": 612,
+    "python_files_checked": 516,
+    "sha256": "4a0e6e30065c1a05eded8bc8209e970bfeb96a1668e15f742e2097ad937a778b",
+    "bytes": 2128802,
+    "native_binaries_included": false
+  },
+  "source_package_regression": {
+    "passed": 60,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Web/jobs/HTTP/catalog; no cryptographic experiments"
+  },
+  "packaging_omission_fixed": {
+    "passed": 56,
+    "failed": 4,
+    "cause": "two omitted fixed test documents; both added byte-exactly; no code/assertion changes"
+  },
+  "guide_visual_review": "3/3 pages, no clipping or overlap",
+  "archive": {
+    "filename": "CACR2026T4PMR7-2026密码竞赛复赛相关支撑材料-待署名确认.zip",
+    "bytes": 8579282,
+    "sha256": "b38ea929f03536bc2d6985fa74f8686a5c95ddba6e3d7e623be20a6881e8848d",
+    "crc": "passed"
+  },
+  "pending_manual_items": [
+    "authorize copyright display for anonymous submission copy",
+    "complete real approval and signatures"
+  ],
+  "remaining_identity_locations": [
+    "01_程序源码/LICENSE",
+    "05_安装文件/ibme-0.1.0-py3-none-any.whl!/ibme-0.1.0.dist-info/licenses/LICENSE"
+  ],
+  "original_report_modified": false,
+  "original_code_modified": false,
+  "original_data_modified": false,
+  "cryptographic_experiments_run": false
+}

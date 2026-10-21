@@ -1,0 +1,519 @@
+{
+  "schema": "IBME-SUPPORTING-INPUTS/1",
+  "source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
+  "source_paths": [
+    "src/",
+    "experiments/",
+    "tests/",
+    "ci/",
+    "pyproject.toml",
+    "conftest.py",
+    "LICENSE",
+    "docs/third-party-code.json",
+    "docs/ALGORITHM_CATALOG.md",
+    "docs/deliveries/2026-10-18-main-showcase-cards/evidence/cards.json",
+    "docs/deliveries/2026-10-19-report-three-selection/suites/"
+  ],
+  "artifacts": [
+    {
+      "path": "00_材料说明/使用说明.pdf",
+      "bytes": 117778,
+      "sha256": "d3289dfb196dea8f2271874b6bd656fd164c44355e0907e9130e7803476c3385"
+    },
+    {
+      "path": "00_材料说明/报告数据对应表.csv",
+      "bytes": 11414,
+      "sha256": "b06a610e027a5890dc434ca93780d55bf67e586770d06f5a7346b4319ea5cdea"
+    },
+    {
+      "path": "00_材料说明/来源与许可.md",
+      "bytes": 2118,
+      "sha256": "96338dcbbe5d44657db2f12660a2c80e496bec1eedac8e02ca3241d38ee98de4"
+    },
+    {
+      "path": "00_材料说明/运行与演示.md",
+      "bytes": 5711,
+      "sha256": "7924b2fc33cf0d9e0c1d7d567770c2888875f9a540849b7d236e2ccc1f38fc74"
+    },
+    {
+      "path": "00_材料说明/阅读指引.md",
+      "bytes": 3252,
+      "sha256": "8cee72ab6dc446dafec4563a3a319f0bae3c5ab4ebcb144f403b4bfd554e7c0a"
+    },
+    {
+      "path": "02_参数配置/A-latte-mldsa44.json",
+      "bytes": 1001,
+      "sha256": "075e243e65af40d0d043d1fc21d57fafc6d88e2d13afd22005f8e2f4a291a746",
+      "source_path": "docs/deliveries/2026-10-19-report-three-selection/suites/A-latte-mldsa44.json",
+      "source_sha256": "075e243e65af40d0d043d1fc21d57fafc6d88e2d13afd22005f8e2f4a291a746",
+      "byte_exact": true
+    },
+    {
+      "path": "02_参数配置/B-latte-srgg-I-compact.json",
+      "bytes": 855,
+      "sha256": "41e9c282c33441f3c262d29960217c8ed7220818e5e3609b978241416f12ec10",
+      "source_path": "docs/deliveries/2026-10-19-report-three-selection/suites/B-latte-srgg-I-compact.json",
+      "source_sha256": "41e9c282c33441f3c262d29960217c8ed7220818e5e3609b978241416f12ec10",
+      "byte_exact": true
+    },
+    {
+      "path": "02_参数配置/C-lai-c2-sageloli-I.json",
+      "bytes": 1173,
+      "sha256": "163e4707caa0632056cac94fa926e0b49583dd2aa8139a8932e26523ceba5ed4",
+      "source_path": "docs/deliveries/2026-10-19-report-three-selection/suites/C-lai-c2-sageloli-I.json",
+      "source_sha256": "163e4707caa0632056cac94fa926e0b49583dd2aa8139a8932e26523ceba5ed4",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/LATTE-Sageloli-CLI.json",
+      "bytes": 64681,
+      "sha256": "72196d45e5d1dad2587391196411e3e10f30ee5d0ff5304e600cfbcdc0058262",
+      "source_path": "docs/research/2026-10-19-sageloli-ring-integration/evidence/integration.json",
+      "source_sha256": "72196d45e5d1dad2587391196411e3e10f30ee5d0ff5304e600cfbcdc0058262",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/LATTE-三IBS汇总.json",
+      "bytes": 23427,
+      "sha256": "00673cda58d83eb066201dda24c837628382f5e519fd934a7daafdec521721c8",
+      "source_path": "docs/research/2026-10-18-full-system-luo/evidence/comparison.json",
+      "source_sha256": "00673cda58d83eb066201dda24c837628382f5e519fd934a7daafdec521721c8",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/Lai-C2-Luo-CLI.json",
+      "bytes": 2595,
+      "sha256": "a4e922fad10508623fc0e067836e93806e87bbb2eb6f45644823c010dcdc3326",
+      "source_path": "docs/research/team-c-delivery/2026-10-19-lai-publication/evidence/target-c2-receipt.json",
+      "source_sha256": "a4e922fad10508623fc0e067836e93806e87bbb2eb6f45644823c010dcdc3326",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/Lai-C2-四IBS.json",
+      "bytes": 67120,
+      "sha256": "6c9749bb79235e14bbf5d1c2e2ba3b469709c2b5b095c9a4261a4f8c323b5897",
+      "source_path": "docs/research/2026-10-19-lai-c2-combinations/evidence/trials.json",
+      "source_sha256": "6c9749bb79235e14bbf5d1c2e2ba3b469709c2b5b095c9a4261a4f8c323b5897",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/SRGG-I-compact.json",
+      "bytes": 279503,
+      "sha256": "91b30d1639aacbf89a5ba8bc3a604b40dac01ea684a3ddbdf18fa62b06cd95ad",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/benchmark-param-i-compact.json",
+      "source_sha256": "91b30d1639aacbf89a5ba8bc3a604b40dac01ea684a3ddbdf18fa62b06cd95ad",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/SRGG-I-reference.json",
+      "bytes": 276171,
+      "sha256": "09b5e5e2eaaa3e676c5f3563dc2b7fd9e20628fbdbb6e8db7b724e1c4621218f",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/benchmark-param-i-reference.json",
+      "source_sha256": "09b5e5e2eaaa3e676c5f3563dc2b7fd9e20628fbdbb6e8db7b724e1c4621218f",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/functional-param-i-compact.json",
+      "bytes": 8689,
+      "sha256": "89761670c7e45b112f6c62fa4ae262fa6a3ad7ce564ac87e684339220f0043bd",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-i-compact.json",
+      "source_sha256": "89761670c7e45b112f6c62fa4ae262fa6a3ad7ce564ac87e684339220f0043bd",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/functional-param-i-reference.json",
+      "bytes": 8695,
+      "sha256": "aa6082fc2e9a33e86912e9b41da12b1272b10d9120617a15be4e456e4eedc7c7",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-i-reference.json",
+      "source_sha256": "aa6082fc2e9a33e86912e9b41da12b1272b10d9120617a15be4e456e4eedc7c7",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/functional-param-ii-compact.json",
+      "bytes": 8694,
+      "sha256": "a8ecbd199fb0aa4932a050773970505bb72ec8dc09ef86437cc492cdc8d55bbd",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-ii-compact.json",
+      "source_sha256": "a8ecbd199fb0aa4932a050773970505bb72ec8dc09ef86437cc492cdc8d55bbd",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/functional-param-ii-reference.json",
+      "bytes": 8700,
+      "sha256": "b00fb40e9e7250187755c5b11797b3ef312d2a84ec8e54fbfc4d822c92f2d5ab",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-ii-reference.json",
+      "source_sha256": "b00fb40e9e7250187755c5b11797b3ef312d2a84ec8e54fbfc4d822c92f2d5ab",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/functional-param-iii-compact.json",
+      "bytes": 8699,
+      "sha256": "67927d2285f9599dceaa03d24d2afcf5ebc13e70374ba9c9ccbf3cfe1c437868",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-iii-compact.json",
+      "source_sha256": "67927d2285f9599dceaa03d24d2afcf5ebc13e70374ba9c9ccbf3cfe1c437868",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/functional-param-iii-reference.json",
+      "bytes": 8705,
+      "sha256": "cde6255109f97309b26ef0bf8922214e98d2549d5e46bcb819413cbb78be3869",
+      "source_path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-iii-reference.json",
+      "source_sha256": "cde6255109f97309b26ef0bf8922214e98d2549d5e46bcb819413cbb78be3869",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/latte-falcon512.json",
+      "bytes": 267042,
+      "sha256": "1937d36253490a6c4cf4447a57f2399dbaaf09805a403444d0d0bfa453c4b511",
+      "source_path": "docs/research/2026-10-18-full-system-falcon/evidence/latte-falcon512.json",
+      "source_sha256": "1937d36253490a6c4cf4447a57f2399dbaaf09805a403444d0d0bfa453c4b511",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/latte-luo-compact.json",
+      "bytes": 267877,
+      "sha256": "311ff021ec88f4084a789027803d4b548725b9fa0e9c243129e9cd8a5b2b9395",
+      "source_path": "docs/research/2026-10-18-full-system-luo/evidence/latte-luo-compact.json",
+      "source_sha256": "311ff021ec88f4084a789027803d4b548725b9fa0e9c243129e9cd8a5b2b9395",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/01_组合与原始基准/latte-mldsa44.json",
+      "bytes": 266660,
+      "sha256": "dc8e5cef04534df6cd643a6c4aa908cb7b74e5e27c27e6730becadbe038ef8ab",
+      "source_path": "docs/research/2026-10-18-full-system-baseline/evidence/latte-mldsa44.json",
+      "source_sha256": "dc8e5cef04534df6cd643a6c4aa908cb7b74e5e27c27e6730becadbe038ef8ab",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/archive-status.json",
+      "bytes": 789,
+      "sha256": "d405a6eaf3b28829cf640a23e5cc04e72600e4cf5a5622593a8e308b2448d22b",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/archive-status.json",
+      "source_sha256": "d405a6eaf3b28829cf640a23e5cc04e72600e4cf5a5622593a8e308b2448d22b",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/benchmark-A.json",
+      "bytes": 258968,
+      "sha256": "d9437604567df3213822243b1091adf8e67bda9ce883fe19867fcb4c4d76b58a",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-A.json",
+      "source_sha256": "d9437604567df3213822243b1091adf8e67bda9ce883fe19867fcb4c4d76b58a",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/benchmark-B.json",
+      "bytes": 291192,
+      "sha256": "523f8bbde0ffa44f725616b0413d74a7c8c854d3cb27b9f6c620ef40ad6ef759",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-B.json",
+      "source_sha256": "523f8bbde0ffa44f725616b0413d74a7c8c854d3cb27b9f6c620ef40ad6ef759",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/benchmark-suites.json",
+      "bytes": 1763,
+      "sha256": "694dd09dfa246d1b883598c1e447b7f1219ec786f06e12bd25838de49d99854d",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/benchmark-suites.json",
+      "source_sha256": "694dd09dfa246d1b883598c1e447b7f1219ec786f06e12bd25838de49d99854d",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/master-table.json",
+      "bytes": 28392,
+      "sha256": "e2041dbd507871d8c082b6440ab752d8119fc365a29fd9539d203a20976e42a6",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json",
+      "source_sha256": "e2041dbd507871d8c082b6440ab752d8119fc365a29fd9539d203a20976e42a6",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/measurements.csv",
+      "bytes": 4700,
+      "sha256": "b257316e3478d44d4de29c4746deca2c59cb588367f5aab0debcc5c12bdd4573",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/measurements.csv",
+      "source_sha256": "b257316e3478d44d4de29c4746deca2c59cb588367f5aab0debcc5c12bdd4573",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/negative-controls.json",
+      "bytes": 707,
+      "sha256": "6cecb4fe05ecf4db492aa86a1c888ddbfec3c5daac36ee2b4176dcbfb6ad2f5a",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/negative-controls.json",
+      "source_sha256": "6cecb4fe05ecf4db492aa86a1c888ddbfec3c5daac36ee2b4176dcbfb6ad2f5a",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/verification.json",
+      "bytes": 494,
+      "sha256": "14144b4ef7e92c2112239c7798ab74fff30a1e4263ea055f9fe8bf12749199fe",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/verification.json",
+      "source_sha256": "14144b4ef7e92c2112239c7798ab74fff30a1e4263ea055f9fe8bf12749199fe",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/02_三代表实验/消息与完整密文.png",
+      "bytes": 69290,
+      "sha256": "059d091c7e2302d207ba7d0099ee47ac4847563e69a09061f3221978e9183b77",
+      "source_path": "docs/deliveries/2026-10-19-report-experiment-supplement/figures/message-wire.png",
+      "source_sha256": "059d091c7e2302d207ba7d0099ee47ac4847563e69a09061f3221978e9183b77",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/03_优化对照/A.json",
+      "bytes": 187704,
+      "sha256": "0375dd6dfe94b1ae9cf5aabc5576b482cc2c8a5e8a00e80a525c73150ecd9833",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/A.json",
+      "source_sha256": "8c9a4767595477569c46c9d8607a7674443d3933fda350d99deebff65df66976",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/03_优化对照/B.json",
+      "bytes": 201648,
+      "sha256": "1600578ea72d21b92f7e9713cbe9e996051b4ce13ab879c758c5de90c6aa1685",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/B.json",
+      "source_sha256": "086c402785447ab3ff9af5b60c417a831045634b27e470eb24c03ce54b5f3553",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/03_优化对照/C.json",
+      "bytes": 55552,
+      "sha256": "8390eb757207ccdfb4eb889d1a62efe3bcdf63725b0854d084def185934b6441",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/C.json",
+      "source_sha256": "cd6a34544ac6a70d7036bedafa2ea298d542a2e57e7195ede35321f1f2789f2f",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/03_优化对照/Falcon.json",
+      "bytes": 187956,
+      "sha256": "41d73ad9aff15146600b3485408ce4d438722ae97c49c46e42fc10cd0e4312f9",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/Falcon.json",
+      "source_sha256": "276635552a83cb6b0b4919965a45f99d96de638ddcb1be381a29b4262a33e684",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/03_优化对照/Luo-replay.json",
+      "bytes": 60643,
+      "sha256": "edc72907ea388006a932d7b2524330faa1cc970acb13ca671b573aa2d1377c61",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/Luo-replay.json",
+      "source_sha256": "e27e3fc71c1a800ca02488f0447673aa1426dd80368bb7ac13889ec592d41229",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/03_优化对照/Luo.json",
+      "bytes": 181238,
+      "sha256": "d241fd1652ea18ad178187ef561482e5f57e56cc8a10c0dfb9a0eda26cff5808",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/Luo.json",
+      "source_sha256": "d7067d8fd6008f7a28159e45f87b2f349f80e0cf6d231f0b463d75121754f010",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/03_优化对照/installation.json",
+      "bytes": 371,
+      "sha256": "30a0de9dfc6a358f25dbfe54a270ddc1510cfbcb136c783e9fa5be87c1024e36",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/installation.json",
+      "source_sha256": "610efa3328232e1ec32fd03b67e5abd5eb2b74b2adcb2a9c7c50c989ff1eb28f",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/03_优化对照/native-environment.json",
+      "bytes": 2046,
+      "sha256": "8399b2dae9eb17adf42f2af3fafbb43a2cd48eb6daffaa1da35b9fbee742ffe7",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/native-environment.json",
+      "source_sha256": "8399b2dae9eb17adf42f2af3fafbb43a2cd48eb6daffaa1da35b9fbee742ffe7",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/03_优化对照/optimization.png",
+      "bytes": 139447,
+      "sha256": "6698ad1125c6f916de52e723a63f0f25b3404a7401cfd9ebfab9c085eb36206c",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/optimization.png",
+      "source_sha256": "6698ad1125c6f916de52e723a63f0f25b3404a7401cfd9ebfab9c085eb36206c",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/03_优化对照/source-manifest.json",
+      "bytes": 59305,
+      "sha256": "37a60bdec5a232fbc9d9f6a019b6a0c06e3913e749730fff26a2ebae497cf3cc",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/source-manifest.json",
+      "source_sha256": "37a60bdec5a232fbc9d9f6a019b6a0c06e3913e749730fff26a2ebae497cf3cc",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/03_优化对照/verified-summary.json",
+      "bytes": 3816,
+      "sha256": "7ff0ce91b06da2ca387ea06388a1f71333c16616ce5175ba323c51898ad4a255",
+      "source_path": "docs/research/2026-10-20-multi-backend-optimization/verified-summary.json",
+      "source_sha256": "7ff0ce91b06da2ca387ea06388a1f71333c16616ce5175ba323c51898ad4a255",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/03_优化对照/部署消融.json",
+      "bytes": 322063,
+      "sha256": "d3c1037bec48b9299aea81730ac8ee9590d2ef199db9e3f3b6f37eb825dbb1b1",
+      "source_path": "docs/research/2026-10-19-full-system-placement/evidence/placement.json",
+      "source_sha256": "6ca629f694358a985241025f6a947ef2bd039e2bf60c7585942ac1d71913e6e6",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/04_随机功能批次/随机批次.json",
+      "bytes": 130120,
+      "sha256": "21f1bb84052004749dc172e396328f683ae46290011fd6cee7cc0e1b31b88de9",
+      "source_path": "docs/research/2026-10-19-primary-random-batch/receipt.json",
+      "source_sha256": "21f1bb84052004749dc172e396328f683ae46290011fd6cee7cc0e1b31b88de9",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/05_异机复现/A.json",
+      "bytes": 41515,
+      "sha256": "1d6e5c915c5260b9e1c2a9ee2d6b1a1c08ab7cca11d80707585975de8fc22cf6",
+      "source_path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/A.json",
+      "source_sha256": "1d6e5c915c5260b9e1c2a9ee2d6b1a1c08ab7cca11d80707585975de8fc22cf6",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/05_异机复现/B.json",
+      "bytes": 42448,
+      "sha256": "c0366273be311f1fe10a7f12f70a51af73758f6479334095022d3d5eeddd9a22",
+      "source_path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/B.json",
+      "source_sha256": "c0366273be311f1fe10a7f12f70a51af73758f6479334095022d3d5eeddd9a22",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/05_异机复现/C.json",
+      "bytes": 25775,
+      "sha256": "86e07e8c1501d25c094433d2e65c914acc8b2e3c14542e416710705f07c48997",
+      "source_path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/C.json",
+      "source_sha256": "86e07e8c1501d25c094433d2e65c914acc8b2e3c14542e416710705f07c48997",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/05_异机复现/build.json",
+      "bytes": 2100,
+      "sha256": "f66695790c1655690bb93f8098490801f278b10215b14b3e4a8a0d9ab7c0ef3d",
+      "source_path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/build.json",
+      "source_sha256": "f66695790c1655690bb93f8098490801f278b10215b14b3e4a8a0d9ab7c0ef3d",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/05_异机复现/environment.json",
+      "bytes": 659,
+      "sha256": "9b8fbf342bfeb00d666de5b40610697e0442666d829117a27a738ff0079e13c6",
+      "source_path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/environment.json",
+      "source_sha256": "9b8fbf342bfeb00d666de5b40610697e0442666d829117a27a738ff0079e13c6",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/05_异机复现/verification.json",
+      "bytes": 354,
+      "sha256": "8d430c04a6a6bc64c940ee6b8053994fb186ec91d5075825fed91192498c1448",
+      "source_path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/verification.json",
+      "source_sha256": "8d430c04a6a6bc64c940ee6b8053994fb186ec91d5075825fed91192498c1448",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/06_Web操作/A-拒绝补图操作.json",
+      "bytes": 3781,
+      "sha256": "097b69188086e25afc91ea00645bba310939cc9c5fbc0f73728219d0650f5632",
+      "source_path": "docs/deliveries/2026-10-20-web-rejection-screenshots/measurements.json",
+      "source_sha256": "097b69188086e25afc91ea00645bba310939cc9c5fbc0f73728219d0650f5632",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/06_Web操作/A.json",
+      "bytes": 4705,
+      "sha256": "9c79caed07b8d44425f3574231427fed46de8e5ff3ebe526bb343125cee11b96",
+      "source_path": "docs/deliveries/2026-10-20-web-redesign/A.json",
+      "source_sha256": "9c79caed07b8d44425f3574231427fed46de8e5ff3ebe526bb343125cee11b96",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/06_Web操作/B.json",
+      "bytes": 4546,
+      "sha256": "0217ea94b8241fb01e464789a2bd2e9c0ea80410fbb6db100327a1ab673b9062",
+      "source_path": "docs/deliveries/2026-10-20-web-redesign/B.json",
+      "source_sha256": "0217ea94b8241fb01e464789a2bd2e9c0ea80410fbb6db100327a1ab673b9062",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/06_Web操作/C-preflight.json",
+      "bytes": 3607,
+      "sha256": "c51f9baf0473fda5e5e33baea11bb0eef7e9e08cffe9fdfb6b9705350ddfc9d1",
+      "source_path": "docs/deliveries/2026-10-20-web-redesign/C-preflight.json",
+      "source_sha256": "c51f9baf0473fda5e5e33baea11bb0eef7e9e08cffe9fdfb6b9705350ddfc9d1",
+      "byte_exact": true
+    },
+    {
+      "path": "04_演示截图/A-六情形记录.png",
+      "bytes": 39731,
+      "sha256": "3c3029be8c4b96b9c5d5e88a8e1ad754eaaff85124887c4bc912a6f50e7f3085",
+      "source_path": "docs/deliveries/2026-10-20-web-redesign/records.png",
+      "source_sha256": "3c3029be8c4b96b9c5d5e88a8e1ad754eaaff85124887c4bc912a6f50e7f3085",
+      "byte_exact": true
+    },
+    {
+      "path": "04_演示截图/A-密文篡改.png",
+      "bytes": 63618,
+      "sha256": "90ce6825dd8bccf49a31bd6d8639d344bd976348e3283e1866a4e8530223f046",
+      "source_path": "docs/deliveries/2026-10-20-web-rejection-screenshots/tampered-ciphertext.png",
+      "source_sha256": "90ce6825dd8bccf49a31bd6d8639d344bd976348e3283e1866a4e8530223f046",
+      "byte_exact": true
+    },
+    {
+      "path": "04_演示截图/A-接收者身份错配.png",
+      "bytes": 63585,
+      "sha256": "7aee11c2f756235d97196cde3727e8911935d912f6e9387ba3ed71a79099f0b7",
+      "source_path": "docs/deliveries/2026-10-20-web-rejection-screenshots/wrong-receiver.png",
+      "source_sha256": "7aee11c2f756235d97196cde3727e8911935d912f6e9387ba3ed71a79099f0b7",
+      "byte_exact": true
+    },
+    {
+      "path": "04_演示截图/A-正确解密.png",
+      "bytes": 62918,
+      "sha256": "3faa22db2b1f9bfac026e1bd9c4bdf6e55bbae2548e5f13a7210718b536f199a",
+      "source_path": "docs/deliveries/2026-10-20-web-redesign/desktop.png",
+      "source_sha256": "3faa22db2b1f9bfac026e1bd9c4bdf6e55bbae2548e5f13a7210718b536f199a",
+      "byte_exact": true
+    },
+    {
+      "path": "04_演示截图/B-六情形记录.png",
+      "bytes": 36902,
+      "sha256": "be22f02fad69dad597e9d8f1783b9d8c835beb77e38846f4030ca9645e27c332",
+      "source_path": "docs/deliveries/2026-10-20-pr78-review/evidence/web-B-records.png",
+      "source_sha256": "be22f02fad69dad597e9d8f1783b9d8c835beb77e38846f4030ca9645e27c332",
+      "byte_exact": true
+    },
+    {
+      "path": "04_演示截图/移动页面.png",
+      "bytes": 44346,
+      "sha256": "9755bad688b04e58fbb3d3bdd4dcd98803bdc8a83ec40bb4a05dca429a3b4891",
+      "source_path": "docs/deliveries/2026-10-20-web-redesign/mobile.png",
+      "source_sha256": "9755bad688b04e58fbb3d3bdd4dcd98803bdc8a83ec40bb4a05dca429a3b4891",
+      "byte_exact": true
+    },
+    {
+      "path": "05_安装文件/ibme-0.1.0-py3-none-any.whl",
+      "bytes": 2128802,
+      "sha256": "4a0e6e30065c1a05eded8bc8209e970bfeb96a1668e15f742e2097ad937a778b"
+    },
+    {
+      "path": "05_安装文件/环境依赖说明.txt",
+      "bytes": 688,
+      "sha256": "4269bcd60f1ec6216410585e7b220bcfad8334041fa2fa13dee2496cd0b6fc41"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 360,
+      "sha256": "dabc26853b4e426551d2756c01576afae85f2d57fb394824d6b8c2c1549f2597"
+    },
+    {
+      "path": "核对文件.py",
+      "bytes": 1109,
+      "sha256": "1b39783c37acf146fb99f6e4ac4fc2e502285e4fa611f7fcd789e0671e64059c"
+    }
+  ],
+  "excluded": [
+    "Git metadata",
+    "private runtime state/keys",
+    "unrelated paper PDFs",
+    "previous competition works",
+    "development transcripts"
+  ]
+}
