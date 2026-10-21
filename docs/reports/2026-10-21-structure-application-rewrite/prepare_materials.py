@@ -26,6 +26,10 @@ SOURCES = {
     "nixos_environment": "docs/deliveries/2026-10-20-nixos-independent-reproduction/environment.json",
     "web_A": "docs/deliveries/2026-10-20-web-redesign/A.json",
     "web_B": "docs/deliveries/2026-10-20-web-redesign/B.json",
+    "ten_combinations": "docs/research/2026-10-21-ten-combination-benchmark-results/basic-comparison/basic-comparison.csv",
+    "ten_design": "docs/research/2026-10-21-ten-combination-benchmark-results/basic-design.json",
+    "ten_environment": "docs/research/2026-10-21-ten-combination-benchmark-results/basic-supplement-01/environment.json",
+    "ten_validation": "docs/research/2026-10-21-ten-combination-benchmark-results/validation.json",
 }
 OPERATIONS = [
     ("系统建立", "setup"), ("发送者发钥", "sender-key"),
@@ -34,6 +38,29 @@ OPERATIONS = [
     ("重复加密", "warm-encrypt"), ("重复解密", "warm-decrypt"),
     ("对象恢复", "restore-objects"), ("恢复后解密", "restored-decrypt"),
 ]
+COMBINATION_ORDER = [
+    "latte-mldsa44", "latte-falcon512", "latte-luo-compact",
+    "latte-srgg-I-compact", "latte-sageloli-I", "lai-c2-mldsa44",
+    "lai-c2-falcon512", "lai-c2-luo-compact", "lai-c2-srgg-I-compact",
+    "lai-c2-sageloli-I",
+]
+COMBINATION_LABELS = {
+    "latte-mldsa44": "LATTE＋ML-DSA",
+    "latte-falcon512": "LATTE＋Falcon",
+    "latte-luo-compact": "LATTE＋Luo",
+    "latte-srgg-I-compact": "LATTE＋SRGG",
+    "latte-sageloli-I": "LATTE＋Sageloli",
+    "lai-c2-mldsa44": "Lai＋ML-DSA",
+    "lai-c2-falcon512": "Lai＋Falcon",
+    "lai-c2-luo-compact": "Lai＋Luo",
+    "lai-c2-srgg-I-compact": "Lai＋SRGG",
+    "lai-c2-sageloli-I": "Lai＋Sageloli",
+}
+REPRESENTATIVE_CASES = {
+    "A": "latte-mldsa44",
+    "B": "latte-srgg-I-compact",
+    "C": "lai-c2-sageloli-I",
+}
 
 
 def load_materials() -> dict:
@@ -50,6 +77,26 @@ def load_materials() -> dict:
 
 def number(value: float) -> str:
     return f"{value:.3g}"
+
+
+def duration(value: float) -> str:
+    if value < 1:
+        return f"{value * 1000:.3g}~ms"
+    return f"{value:.3g}~s"
+
+
+def binary_size(value: float) -> str:
+    if value >= 1024**2:
+        return f"{value / 1024**2:.3g}~MiB"
+    return f"{value / 1024:.3g}~KiB"
+
+
+def ordered_combinations(data: dict) -> list[dict]:
+    rows = {row["case"]: row for row in data["ten_combinations"]}
+    missing = set(COMBINATION_ORDER) - rows.keys()
+    if missing:
+        raise ValueError(f"ten-combination table is missing: {sorted(missing)}")
+    return [rows[name] for name in COMBINATION_ORDER]
 
 
 def frame_accounting(master: dict) -> dict:
@@ -128,6 +175,39 @@ def tables(data: dict, accounting: dict) -> dict[str, str]:
                                    "message_bytes", "framing_and_tag_bytes", "total_bytes")]
         rows.append(row["representative"] + " & " + " & ".join(f"{v:,}" for v in values) + r" \\")
     result["ciphertext-parts.tex"] = "\n".join(rows) + "\n"
+    combinations = ordered_combinations(data)
+    rows = []
+    for row in combinations:
+        values = [float(row[key]) for key in (
+            "setup_seconds", "sender-key_seconds", "receiver-key_seconds",
+            "cold-encrypt_seconds", "first-decrypt_seconds",
+        )]
+        rows.append(COMBINATION_LABELS[row["case"]] + " & "
+                    + " & ".join(number(value) for value in values) + r" \\")
+    result["ten-first-times.tex"] = "\n".join(rows) + "\n"
+    rows = []
+    for row in combinations:
+        values = [float(row[key]) for key in (
+            "public_bytes", "master_bytes", "sender_bytes", "receiver_bytes", "ciphertext_bytes",
+        )]
+        rows.append(COMBINATION_LABELS[row["case"]] + " & "
+                    + " & ".join(binary_size(value) for value in values) + r" \\")
+    result["ten-object-sizes.tex"] = "\n".join(rows) + "\n"
+    representatives = {label: next(row for row in combinations if row["case"] == name)
+                       for label, name in REPRESENTATIVE_CASES.items()}
+    metrics = [
+        ("首次加密", "cold-encrypt_seconds", duration),
+        ("首次解密", "first-decrypt_seconds", duration),
+        ("重复加密", "warm-encrypt_seconds", duration),
+        ("重复解密", "warm-decrypt_seconds", duration),
+        ("恢复后解密", "restored-decrypt_seconds", duration),
+        ("完整密文", "ciphertext_bytes", binary_size),
+    ]
+    rows = []
+    for title, key, formatter in metrics:
+        rows.append(title + " & " + " & ".join(
+            formatter(float(representatives[label][key])) for label in ("A", "B", "C")) + r" \\")
+    result["ten-representatives.tex"] = "\n".join(rows) + "\n"
     return result
 
 
@@ -142,7 +222,8 @@ def plot_all(data: dict, accounting: dict, font: str | None) -> None:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    from matplotlib import font_manager
+    from matplotlib import font_manager, ticker
+    from matplotlib.lines import Line2D
     import numpy as np
     candidates = ([Path(font)] if font else []) + [Path("C:/Windows/Fonts/msyh.ttc"), Path("/mnt/c/Windows/Fonts/msyh.ttc"),
         Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc")]
@@ -186,54 +267,68 @@ def plot_all(data: dict, accounting: dict, font: str | None) -> None:
     axis.legend(loc="center", bbox_to_anchor=(.57, .52))
     save(fig, "ab-times.png")
 
-    master = data["master"]["rows"]
-    c_record = next(row for row in data["combinations"]["combinations"]
-                    if row.get("hibe") == "Lai C2" and row.get("parameter_label") == "sageloli-I")
-    c_session = data["optimization"]["summary"]["C"]
-    raw_profiles = {
-        "A": [master["A"]["benchmark"]["timing_seconds"]["warm-encrypt"]["median"],
-              master["A"]["benchmark"]["timing_seconds"]["warm-decrypt"]["median"],
-              statistics.median([master["A"]["benchmark"]["ciphertext_bytes"]["minimum"],
-                                 master["A"]["benchmark"]["ciphertext_bytes"]["maximum"]]),
-              master["A"]["installed_cli"]["capacity"]["max_application_bytes"]],
-        "B": [master["B"]["benchmark"]["timing_seconds"]["warm-encrypt"]["median"],
-              master["B"]["benchmark"]["timing_seconds"]["warm-decrypt"]["median"],
-              statistics.median([master["B"]["benchmark"]["ciphertext_bytes"]["minimum"],
-                                 master["B"]["benchmark"]["ciphertext_bytes"]["maximum"]]),
-              master["B"]["installed_cli"]["capacity"]["max_application_bytes"]],
-        "C": [c_record["encrypt_seconds"], c_session["prepared_decrypt_seconds"],
-              c_record["ciphertext_bytes"],
-              master["C"]["installed_cli"]["capacity"]["max_application_bytes"]],
-    }
-    raw = np.array(list(raw_profiles.values()), dtype=float)
-    scores = np.empty_like(raw)
-    for column in range(3):
-        best = raw[:, column].min()
-        scores[:, column] = 100 / (1 + np.log10(raw[:, column] / best))
-    best_capacity = raw[:, 3].max()
-    scores[:, 3] = 100 / (1 + np.log10(best_capacity / raw[:, 3]))
-    scores = np.clip(scores, 0, 100)
-    profile_labels = ["发送响应", "接收响应", "通信紧凑性", "应用容量"]
-    angles = np.linspace(0, 2*np.pi, len(profile_labels), endpoint=False)
-    closed_angles = np.r_[angles, angles[0]]
-    fig, axis = plt.subplots(figsize=(7.2, 5.4), subplot_kw={"projection": "polar"},
-                             layout="constrained")
-    for i, (label, values) in enumerate(zip(raw_profiles, scores)):
-        closed = np.r_[values, values[0]]
-        axis.plot(closed_angles, closed, color=colors[i], linewidth=2.2, marker="o",
-                  markersize=4, label=label)
-        axis.fill(closed_angles, closed, color=colors[i], alpha=.08)
-    axis.set_theta_offset(3*np.pi/4)
-    axis.set_theta_direction(-1)
-    axis.set_xticks(angles, profile_labels)
-    axis.tick_params(axis="x", pad=13, labelsize=11)
-    axis.set_ylim(0, 100)
-    axis.set_yticks([25, 50, 75, 100], ["25", "50", "75", "100"])
-    axis.set_rlabel_position(0)
-    axis.grid(alpha=.25)
-    axis.spines["polar"].set_color("#B5BDC9")
-    axis.legend(loc="upper right", bbox_to_anchor=(1.23, 1.15))
-    save(fig, "representative-profile.png")
+    combinations = ordered_combinations(data)
+    representative_by_case = {case: label for label, case in REPRESENTATIVE_CASES.items()}
+    plot_labels = [
+        (representative_by_case.get(row["case"], "") + "  " if row["case"] in representative_by_case else "")
+        + COMBINATION_LABELS[row["case"]]
+        for row in combinations
+    ]
+    positions = np.arange(len(combinations))
+    fig, axes = plt.subplots(1, 2, figsize=(9.1, 5.25), sharey=True, layout="constrained")
+    time_panels = (
+        (axes[0], (("cold-encrypt_seconds", "首次", "o", colors[0]),
+                   ("warm-encrypt_seconds", "重复", "s", colors[1])), "完整加密"),
+        (axes[1], (("first-decrypt_seconds", "首次", "o", colors[0]),
+                   ("warm-decrypt_seconds", "重复", "s", colors[1]),
+                   ("restored-decrypt_seconds", "恢复后", "^", colors[2])), "匹配解密"),
+    )
+    for axis, series, title in time_panels:
+        for key, label, marker, color in series:
+            values = [float(row[key]) for row in combinations]
+            axis.scatter(values, positions, s=42, marker=marker, color=color,
+                         edgecolor="white", linewidth=.45, zorder=3, label=label)
+        axis.axhline(4.5, color="#9AA4B2", linewidth=.8)
+        axis.set_xscale("log")
+        axis.set_xlabel("时间 / 秒（对数刻度）")
+        axis.set_title(title)
+        axis.grid(axis="x", which="both", alpha=.2)
+        axis.legend(loc="lower right", fontsize=9)
+    axes[0].set_yticks(positions, plot_labels)
+    axes[0].invert_yaxis()
+    save(fig, "ten-combination-times.png")
+
+    rss_fields = [key for key in combinations[0] if key.endswith("_sampled_rss_bytes")]
+    ciphertext_mib = [float(row["ciphertext_bytes"]) / 1024**2 for row in combinations]
+    peak_rss_gib = [max(float(row[key]) for key in rss_fields) / 1024**3 for row in combinations]
+    fig, axes = plt.subplots(1, 2, figsize=(9.1, 5.25), layout="constrained")
+    hibe_colors = [colors[0]] * 5 + [colors[1]] * 5
+    axes[0].scatter(ciphertext_mib, positions, s=45, color=hibe_colors,
+                    edgecolor="white", linewidth=.45, zorder=3)
+    axes[0].set_xscale("log")
+    axes[0].set_xlim(.1, 6)
+    axes[0].xaxis.set_major_locator(ticker.FixedLocator([.125, .25, .5, 1, 2, 4]))
+    axes[0].xaxis.set_major_formatter(ticker.FuncFormatter(lambda value, _: f"{value:g}"))
+    axes[0].xaxis.set_minor_formatter(ticker.NullFormatter())
+    axes[0].set_xlabel("完整密文 / MiB（对数刻度）")
+    axes[0].set_title("完整密文长度")
+    axes[1].scatter(peak_rss_gib, positions, s=45, color=hibe_colors,
+                    edgecolor="white", linewidth=.45, zorder=3)
+    axes[1].set_xlabel("各阶段最大采样RSS / GiB")
+    axes[1].set_title("运行内存")
+    for axis in axes:
+        axis.axhline(4.5, color="#9AA4B2", linewidth=.8)
+        axis.grid(axis="x", which="both", alpha=.2)
+        axis.set_yticks(positions)
+        axis.set_ylim(len(combinations) - .5, -.5)
+    axes[0].set_yticklabels(plot_labels)
+    axes[1].set_yticklabels([])
+    axes[1].legend(handles=[
+        Line2D([], [], marker="o", linestyle="", color=colors[0], label="LATTE"),
+        Line2D([], [], marker="o", linestyle="", color=colors[1], label="Lai"),
+    ], loc="lower right", fontsize=9)
+    save(fig, "ten-combination-resources.png")
+    (output / "representative-profile.png").unlink(missing_ok=True)
 
     fig, axes = plt.subplots(2, 2, figsize=(8, 5.6), layout="constrained")
     for axis, key, title in zip(axes.flat, ("public", "master", "key", "signature"),
@@ -322,7 +417,7 @@ def main():
     for name, value in (("format-accounting.json",accounting),("material-sources.json",manifest())):
         (HERE/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     if not args.no_plots: plot_all(data, accounting, args.font)
-    print("Prepared 5 data tables, format accounting and" + (" 6 figures" if not args.no_plots else " source bindings"))
+    print("Prepared 8 data tables, format accounting and" + (" 7 figures" if not args.no_plots else " source bindings"))
 
 
 if __name__ == "__main__":

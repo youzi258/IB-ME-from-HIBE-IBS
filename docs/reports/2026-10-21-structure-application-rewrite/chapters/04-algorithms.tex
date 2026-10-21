@@ -152,9 +152,11 @@ Wang--PW计入组合矩阵。
 
 \section{代表方案的性能指标与选取依据}
 
-十种常规组合用于验证通用性，A、B、C三组用于深入说明不同成本分布。A与B固定LATTE，便于
-观察认证转换和原生模格IBS的差别；C同时采用Lai与Sageloli，用于研究高成本委派、环格采样和
-会话复用。表~\ref{tab:representatives}先列出算法和容量。
+十种常规组合用于检验通用接口并比较成本分布，A、B、C三组则分别承担不同的分析任务。代表方案
+不是按单项速度从十组中取前三名：A选择标准化签名路径和低延迟组合，B选择具有紧凑编码优化的
+原生模格IBS，C选择另一种HIBE与环格IBS，用于分析委派、结构化采样和会话复用。LATTE＋Falcon
+与A具有相近的在线时间和更短的密文，但二者同属BNN认证转换路线，因此保留ML-DSA作为主演示，
+避免三组代表重复覆盖相同结构。表~\ref{tab:representatives}列出三组算法和容量。
 
 \begin{table}[H]
 \centering\small
@@ -171,9 +173,9 @@ C & Lai C2 & Sageloli PARAM-I & 3,924 B \\
 \end{tabularx}
 \end{table}
 
-表~\ref{tab:representative-indicators}汇总当前可直接用于理解使用方式的原始指标。A、B数据来自
-同机重复实验；C的完整运行和接收会话来自另一台机器，因此该表保留测量条件，不把三组折算为
-单一总分。
+表~\ref{tab:representative-indicators}从第七章的Ultra~9~275HX十组同机基本比较中摘出三组代表。
+三组使用相同源码、运行时、线程配置、64字节双方身份和32字节消息；每组为一个独立系统根，
+表中各项均为一次实测值。这样可以直接比较完整协议成本，同时不把单次观测写成统计分布。
 
 \begin{table}[H]
 \centering\small
@@ -183,26 +185,26 @@ C & Lai C2 & Sageloli PARAM-I & 3,924 B \\
 \toprule
 \rowcolor{black!8} 指标 & A & B & C \\
 \midrule
-重复／在线加密 & 0.0785 s（中位数） & 9.17 s（中位数） & 99.0 s（单次完整运行） \\
-重复／会话后解密 & 0.152 s（中位数） & 0.161 s（中位数） & 28.6 s（会话后中位数） \\
-首次完整解密 & 0.284 s & 0.239 s & 425 s，其中委派393 s \\
-完整密文 & 约139 KiB & 约146 KiB & 约4.34 MiB \\
-主要资源位置 & 发送与接收均为低延迟 & 发送端SRGG签名 & 接收端Lai委派、较大密文 \\
+% BEGIN DATA ten-representatives.tex
+首次加密 & 12.9~ms & 17.6~s & 96.4~s \\
+首次解密 & 103~ms & 125~ms & 412~s \\
+重复加密 & 13.5~ms & 11.3~s & 89.4~s \\
+重复解密 & 59.4~ms & 68.7~ms & 409~s \\
+恢复后解密 & 61.6~ms & 68.2~ms & 406~s \\
+完整密文 & 139~KiB & 146~KiB & 4.34~MiB \\
+% END DATA ten-representatives.tex
 \bottomrule
 \end{tabularx}
+\begin{minipage}{.96\textwidth}\footnotesize
+“重复”表示同一进程、同一套已生成对象下的第二次操作；“恢复后解密”表示新进程加载规范对象后
+完成的解密。C组会话准备后的28.6秒解密属于另一项专项实验，不替代本表的完整解密。
+\end{minipage}
 \end{table}
 
-图~\ref{fig:representative-profile}参考多指标性能图的表达方式，将在线加密时间、在线接收时间、
-完整密文长度和应用容量映射为0--100的“使用特征分值”。耗时和长度采用“越小越高”，容量采用
-“越大越高”；映射在对数尺度上按本图三组的最好值归一化。原始数值仍以表
-~\ref{tab:representative-indicators}和表~\ref{tab:representatives}为准，雷达图用于观察组合特征，
-不代替同机性能表。
-
-\begin{figure}[H]
-\centering\includegraphics[width=.78\textwidth]{figures/representative-profile.png}
-\caption{三组代表的归一化使用特征；分值越高表示对应指标越有利}
-\label{fig:representative-profile}
-\end{figure}
+同机结果使三组差异可以直接落到协议阶段。A的首次和重复收发均处于亚秒级；B的接收时间与A
+接近，主要增加发送者发钥和加密中的SRGG签名成本；C的加密、解密和密文长度均明显增加，重点
+在于验证Lai与Sageloli能够进入同一完整协议，并为第五章的会话与结构化采样优化提供对象。
+十种组合的完整时间、对象尺寸和内存对照见第七章。
 
 \section{三组代表的应用定位}
 
@@ -216,7 +218,7 @@ A组采用LATTE-3与BNN／ML-DSA-44。其重复加密和解密均处于亚秒级
 \subsection{B组：原生模格身份认证与紧凑状态}
 
 B组采用LATTE-3与SRGG PARAM-I。其接收端时间与A接近，主要额外成本集中在发送者发钥和
-签名。范围感知编码显著减少SRGG主状态、用户密钥和签名长度。该组适合发送端能够承担数秒签名、
+签名。范围感知编码显著减少SRGG主状态、用户密钥和签名长度。该组适合发送端能够承担十余秒签名、
 接收端需要快速验证的批量定向投递，也适合研究原生模格IBS和紧凑对象在完整协议中的作用。
 
 \subsection{C组：固定身份对的连续通信}
