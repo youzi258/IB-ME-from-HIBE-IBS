@@ -142,11 +142,11 @@
 \hline
 \noindent\textbf{作品内容摘要：}\par
 \setlength{\parindent}{2em}
-身份基匹配加密要求接收身份与期望发送身份同时匹配，适用于定向消息投递。本作品基于两层匿名HIBE与IBS的通用构造，实现可替换密码组件、混合加密、完整密文字节认证、发钥及恢复，完成两种HIBE与五类IBS的十种配对。
+身份基匹配加密要求接收者身份与其认可的发送者身份同时匹配，适用于机构内定向投递、受控设备通信等场景。本作品以两层匿名HIBE与IBS的通用构造为基础，实现了可替换密码后端、混合加密、完整密文字节认证、固定发钥和重启恢复。LATTE、Lai两种HIBE与五种常规IBS形成十种完整配对；目标规模Wang--PW IBS另与LATTE完成端到端组合。
 
-围绕实现成本，作品重点改进环采样、对象编码和重复接收。Sageloli后端利用多项式与低秩计算，完成论文PARAM-I、PARAM-II的建立、发钥、签名和验证；SRGG四类对象按字段取值范围无损编码，主状态缩小约5.05至5.46倍；Lai接收会话把固定身份对的委派安排在准备阶段，已有实验中后续解密中位数为28.6秒，准备约510秒，额外叶钥约34.7 MiB。
+作品围绕三项主要瓶颈进行优化。Sageloli后端利用多项式结构和低秩计算完成PARAM-I、PARAM-II的建立、发钥、签名和验证；SRGG公钥、主状态、用户密钥和签名按字段范围无损编码，三档参数的主状态缩小约5.05至5.46倍；Lai接收会话预先完成固定身份对的委派，使后续解密中位数降至28.6秒，准备过程约510秒，额外保存约34.7 MiB叶密钥。
 
-报告以三组完整实例分析时间、内存和通信量。主实验中，A组重复加密和解密分别约78.5毫秒和152毫秒；密文组成核算表明，小消息的主要开销来自一次性认证或大尺寸签名与HIBE胶囊。系统提供命令行、浏览器演示及独立主机安装记录，为不同格原语的完整组合与实际优化提供实现基础。\\
+报告以A、B、C三组代表分析时间、内存和通信量。A组重复加密与解密中位数为78.5毫秒和152毫秒；B、C两组分别展示原生模格IBS和高成本环格方案的工程特点。系统提供命令行、浏览器演示和规范状态文件，可从同一入口选择密码组合并完成实际消息收发。\\
 \hline
 \textbf{关键词（五个）：}身份基匹配加密；格密码；分层身份基加密；身份基签名；系统优化\\
 \hline
@@ -160,13 +160,15 @@
 
 \chapter*{摘要}
 \addcontentsline{toc}{chapter}{摘要}
-身份基匹配加密（IB-ME）使消息仅在接收身份与期望发送身份均匹配时恢复。已有两层匿名分层身份基加密（HIBE）与身份基签名（IBS）通用构造提供了算法基础，实际组合仍面临原语容量不同、格采样对象过大、密钥表示冗长和重复委派耗时等问题。
+身份基匹配加密（Identity-Based Matchmaking Encryption，IB-ME）用于同时核对通信双方的身份。发送者在加密时指定接收者，接收者在解密时指定自己认可的发送者；只有这两个条件同时成立，消息才能恢复。这种机制把“谁能读取”和“接受谁发送”放进同一次密码处理，适用于机构内定向投递、受控设备通信和来源受限的消息服务。
 
-本作品实现HIBE与IBS独立替换的抗量子IB-ME框架，以32字节种子的混合封装承载应用消息，将一次性公钥承诺纳入身份签名，对完整密文字节认证，并支持规范对象保存和重启恢复。两种HIBE与五类IBS形成十种已运行配对，选取LATTE＋BNN/ML-DSA、LATTE＋SRGG、Lai＋Sageloli三组展开分析。
+本作品基于两层匿名分层身份基加密（HIBE）与身份基签名（IBS）的通用构造，设计并实现抗量子IB-ME软件系统。HIBE和IBS由独立接口接入，可以采用不同的格结构、参数和对象格式。协议以HIBE封装32字节随机种子，再用HKDF和AES-256-GCM加密应用载荷；一次性公钥承诺进入IBS签名，完整密文字节另由一次性签名保护。系统还实现规范编码、固定身份发钥、状态保存和重启恢复。
 
-主要优化包括三项：保留环多项式结构并按频率执行低秩采样，使Sageloli两档论文参数完成实际生命周期；依据字段取值范围无损编码SRGG公钥、主状态、用户钥和签名，三档主状态长度缩小约5.05至5.46倍、签名约2.55至2.65倍；建立固定身份对的Lai接收会话，已有一套系统实验中后续解密中位数降至28.6秒，准备约510秒，额外叶钥约34.7 MiB。
+常规组合矩阵包含LATTE、Lai两种HIBE，以及BNN＋ML-DSA、BNN＋Falcon、Luo、SRGG、Sageloli五种IBS，共十种端到端配对。报告选择LATTE＋BNN/ML-DSA、LATTE＋SRGG、Lai＋Sageloli三组代表，分别展示低延迟基线、原生模格IBS和高成本环格方案。目标规模Wang--PW IBS随后与LATTE完成一套端到端组合，补充矩阵SIS路线。
 
-完整系统实验同时测量建立、发钥、首次与重复收发、恢复及对象尺寸。A组主实验重复加密与解密中位数为78.5毫秒和152毫秒；密文组成分析解释了小消息仍有较大固定开销的原因。系统通过身份错配、篡改和恢复测试，并提供真实浏览器操作及另一主机的安装复现。结果展示了不同原语组合的运行特点，以及计算、存储和连续接收优化的收益与使用条件。
+针对实测瓶颈，作品完成三项主要优化。第一，Sageloli后端保留环多项式结构，把巨型矩阵的分解转化为逐频率的低秩计算，使PARAM-I、PARAM-II都能完成建立、发钥、签名和验证。第二，SRGG根据各字段的真实取值范围编码公钥、主状态、用户密钥和签名，三档参数的主状态长度缩小约5.05至5.46倍，签名缩小约2.55至2.65倍。第三，Lai接收会话预先完成固定双方的叶密钥委派；已有实验中，约510秒的准备完成后，后续解密中位数为28.6秒，额外状态约34.7 MiB。
+
+实验覆盖系统建立、双方发钥、首次与重复收发、错误身份、密文篡改、状态恢复、对象尺寸和峰值内存。A组重复加密与解密中位数分别为78.5毫秒和152毫秒。密文组成结果表明，小消息的空间开销主要来自一次性认证、IBS签名和HIBE胶囊。命令行与浏览器演示共用同一协议实现，能够从选择算法组合开始，完成发钥、消息发送、匹配解密和重启恢复。
 
 \noindent\textbf{关键词：}身份基匹配加密；格密码；分层身份基加密；身份基签名；抗量子密码；可复现评测
 
@@ -175,13 +177,15 @@
 \addcontentsline{toc}{chapter}{Abstract}
 \begingroup
 \linespread{1.15}\selectfont
-Identity-Based Matchmaking Encryption (IB-ME) recovers a message only when both the receiver identity and the expected sender identity match. A generic construction based on a two-level anonymous HIBE and an IBS provides the cryptographic foundation. Its implementation must also address incompatible capacities, expensive lattice sampling, large serialized objects, and repeated delegation.
+Identity-Based Matchmaking Encryption (IB-ME) checks both parties of a communication. A sender encrypts to a designated receiver, while the receiver specifies an accepted sender. The message is recovered only when both identities match. This property combines access control and source authentication for directed messaging and controlled-device communication.
 
-This work implements a common post-quantum IB-ME framework with independently replaceable HIBE and IBS components. A 32-byte encrypted seed supports hybrid encryption of application messages. A commitment to an ephemeral one-time verification key is included in the IBS message to bind full-ciphertext authentication to the sender identity. Canonical objects support persistent issuance and recovery. All ten pairings of two HIBEs and five IBS families complete functional tests; three representative systems are evaluated in detail.
+This work implements a post-quantum IB-ME system from a two-level anonymous HIBE and an IBS. The two primitives use independent interfaces and may have different lattice structures, parameters, and object formats. The HIBE encapsulates a fresh 32-byte seed; HKDF and AES-256-GCM then protect the application payload. An ephemeral verification-key commitment is signed by the IBS, and a one-time signature authenticates the complete ciphertext bytes. Canonical encodings support persistent key issuance and restart recovery.
 
-Three implementation improvements address measured costs. A polynomial representation and frequency-wise low-rank sampling make two Sageloli paper parameter sets executable. Lossless SRGG encodings reduce authority-state sizes by factors of 5.05 to 5.46 and signature sizes by 2.55 to 2.65 across three parameter sets. A Lai receiver session delegates once for a fixed identity pair: in a single-system experiment, subsequent decryption has a median of 28.6 seconds after about 510 seconds of preparation, with 34.7 MiB of additional serialized leaf-key state.
+The regular combination matrix contains two HIBEs, LATTE and Lai, and five IBS implementations: certified ML-DSA, certified Falcon, Luo, SRGG, and Sageloli. All ten pairings complete end-to-end operations. Three representative systems are studied in detail: LATTE with ML-DSA, LATTE with SRGG, and Lai with Sageloli. A target-scale Wang--PW IBS is additionally integrated with LATTE as a matrix-SIS case.
 
-Full-system experiments cover setup, key issuance, initial and repeated operations, recovery, object sizes, and memory. The main A configuration has median repeated encryption and decryption times of 78.5 ms and 152 ms. Ciphertext accounting explains the fixed communication cost of small messages. Browser operation, rejection tests, and installation on a separate host demonstrate the completed system. The results relate each improvement to its computational cost, storage requirement, and intended usage.
+Three optimizations address the dominant measured costs. Polynomial storage and frequency-wise low-rank computation make both Sageloli paper parameter sets executable. Range-aware lossless encoding reduces SRGG authority-state sizes by factors of 5.05 to 5.46 and signature sizes by factors of 2.55 to 2.65. A Lai receiver session performs leaf-key delegation once for a fixed identity pair; after about 510 seconds of preparation, the measured median subsequent decryption time is 28.6 seconds with 34.7 MiB of additional state.
+
+The experiments cover setup, key issuance, initial and repeated messaging, identity mismatch, ciphertext modification, restart recovery, serialized sizes, and peak memory. The main A configuration reaches median repeated encryption and decryption times of 78.5 ms and 152 ms. Ciphertext accounting shows that one-time authentication, the IBS signature, and the HIBE capsule dominate short-message communication. The command-line and browser interfaces share the same protocol implementation and provide a complete operational workflow.
 
 \raggedright\noindent\textbf{Keywords:} identity-based matchmaking encryption; lattice cryptography; hierarchical identity-based encryption; identity-based signature; post-quantum cryptography
 \par\endgroup
@@ -203,11 +207,12 @@ Full-system experiments cover setup, key issuance, initial and repeated operatio
 \pagestyle{mainmatter}
 
 \input{chapters/01-introduction}
-\input{chapters/02-protocol}
-\input{chapters/03-optimizations}
-\input{chapters/04-system}
-\input{chapters/05-experiments}
-\input{chapters/06-conclusion}
+\input{chapters/02-foundations}
+\input{chapters/03-design}
+\input{chapters/04-primitives-optimizations}
+\input{chapters/05-system}
+\input{chapters/06-experiments}
+\input{chapters/07-conclusion}
 
 \clearpage
 \addcontentsline{toc}{chapter}{参考文献}
@@ -243,6 +248,12 @@ Shorter and Faster Identity-Based Signatures with Tight Security in the (Q)ROM f
 In \emph{ACNS 2023}, 2023.
 doi: 10.1007/978-3-031-33488-7\_24.
 
+\bibitem{pan2021ibs}
+Jiaxin Pan and Benedikt Wagner.
+Short Identity-Based Signatures with Tight Security from Lattices.
+In \emph{PQCrypto 2021}, 2021.
+ePrint 2021/970.
+
 \bibitem{galindo2006ibs}
 David Galindo, Javier Herranz, and Eike Kiltz.
 On the Generic Construction of Identity-Based Signatures with Additional Properties.
@@ -257,6 +268,16 @@ FIPS 204, 2024.
 Daniele Micciancio and Chris Peikert.
 Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller.
 In \emph{EUROCRYPT 2012}, 2012.
+
+\bibitem{lpr2013ring}
+Vadim Lyubashevsky, Chris Peikert, and Oded Regev.
+On Ideal Lattices and Learning with Errors over Rings.
+\emph{Journal of the ACM}, 60(6), 2013.
+
+\bibitem{langlois2015module}
+Adeline Langlois and Damien Stehl\'e.
+Worst-Case to Average-Case Reductions for Module Lattices.
+\emph{Designs, Codes and Cryptography}, 75, pp. 565--599, 2015.
 
 \bibitem{rfc5869}
 Hugo Krawczyk and Pasi Eronen.

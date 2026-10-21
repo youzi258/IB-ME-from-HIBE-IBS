@@ -49,7 +49,7 @@ def main():
             included.append(path)
     text = source + "\n" + "\n".join(p.read_text(encoding="utf-8") for p in included)
     chapters = re.findall(r"\\chapter\{([^}]+)\}", text)
-    check("six chapters", chapters == ["作品概述", "IB-ME方案设计", "关键算法实现与优化", "系统实现与使用", "实验结果与分析", "总结"])
+    check("seven chapters", chapters == ["作品概述", "基础知识与方案依据", "通用IB-ME系统设计", "关键原语实现与工程优化", "软件系统与操作流程", "测试与结果分析", "总结与展望"])
     check("expanded-draft cover", "扩写重写稿" in source)
     check("official number", r"\newcommand{\worknumber}{CACR2026T4PMR7}" in source)
     check("two official fields", source.count(r"\worknumberfield{") == 2)
@@ -90,7 +90,7 @@ def main():
             ("C capacity gap", "尚缺该最大长度的加密解密记录"),
             ("NixOS initial timeout", "900秒阶段上限导致超时"),
             ("NixOS changed bound", "3600秒后完成"),
-            ("SRGG parameter target", "量子密钥恢复与伪造成本95 bit和93 bit")):
+            ("SRGG parameter target", "量子密钥恢复与伪造成本分别约为95 bit和93 bit")):
         check(label, fragment in text)
 
     if args.require_pdf or args.require_visual_review:
