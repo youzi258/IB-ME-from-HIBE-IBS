@@ -1,0 +1,24 @@
+{
+  "schema": "IBME-COMPETITION-REPORT-BUILD/1",
+  "source": "作品设计报告.tex",
+  "source_sha256": "d1c7c1343aa60043aa7b673fbd48ded9c53c173bff86eacbbede184f594f19e0",
+  "pdf": "作品设计报告.pdf",
+  "pdf_sha256": "86b5588d4c214e4850376c2fb057cb233e8eef77f7492b23ff2b04b063a5fe89",
+  "engine": "tectonic",
+  "inputs": {
+    "作品设计报告.tex": "d1c7c1343aa60043aa7b673fbd48ded9c53c173bff86eacbbede184f594f19e0",
+    "chapters/01-introduction.tex": "ba01ec424d8d9e5ba7bcd6dd1e38883ad3b13092b9097aaae47fd3683ebaf255",
+    "chapters/02-protocol.tex": "4ece8072d0653b02cbadd5e9da3bc144aa1b3a6f2c4b72fcf3a2bfc3098635e1",
+    "chapters/03-optimizations.tex": "5c7c6ce5a05e131a372f49652b7f9886f1e48cf7ffd12fcb9274d8112679872c",
+    "chapters/04-system.tex": "2f291c40396dd3b94e8fc1a31ba9763fed039c4404c5394a3945e1f0905331d8",
+    "chapters/05-experiments.tex": "a1e4be6f0cc005161ed55b2f7cc16cacfef3ec51e3cbb543f243276e3404aa61",
+    "chapters/06-conclusion.tex": "1abf59e5c9c24ceeab14952aa6c74314a06ba81fb6c2476a443cf0021925bf02",
+    "figures/ab-times.png": "420676aa9001ca19842e790c1435e3e9832eb2e42545470520ac97eee59b2ee0",
+    "figures/ciphertext-parts.png": "efeb7d944c87227faecc63a84c36401bab0253eb734faf25ee021dca7347cb5a",
+    "figures/codec.png": "b452459cff0808daf64c10470df64b43eee7c94df7cf9ed837be7fef10fb8f2c",
+    "figures/placement.png": "00ffd498e0250e308e3c6e915715d4f90cc2c80884fa59d7a51c820d41039bae",
+    "figures/session.png": "88d71a6d9084c1e56cfeaddd4381cc3d6b5ea4a7a3f209a59b766afb29bc9abd",
+    "../2026-10-19-research-draft/figures/cacr-logo.jpg": "908993f5ce1186b588114ea4a2f30e88691dbf1e7aef9b43a1b7080ff1324b4e",
+    "../../deliveries/2026-10-20-web-redesign/desktop.png": "3faa22db2b1f9bfac026e1bd9c4bdf6e55bbae2548e5f13a7210718b536f199a"
+  }
+}

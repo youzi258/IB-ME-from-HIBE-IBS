@@ -1,0 +1,288 @@
+% !TeX program = xelatex
+% Active LaTeX source for the competition design report.
+\documentclass[UTF8,a4paper,12pt,oneside,openany,fontset=fandol]{ctexrep}
+\usepackage[
+  top=20mm,
+  bottom=20mm,
+  left=20mm,
+  right=20mm,
+  headheight=15pt,
+  headsep=5mm,
+  footskip=10mm
+]{geometry}
+\usepackage{amsmath,amssymb,graphicx,longtable,tabularx,array,booktabs,needspace}
+\usepackage{float}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\usepackage[font=small,labelfont=bf,labelsep=quad]{caption}
+\usepackage[hidelinks,unicode,bookmarksnumbered]{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+
+\definecolor{ibmeblue}{HTML}{2F5597}
+\definecolor{ibmelight}{HTML}{EAF0F8}
+\definecolor{ibmegreen}{HTML}{EAF4EA}
+\definecolor{ibmegray}{HTML}{F2F2F2}
+\tikzset{
+  flow/.style={draw=ibmeblue,rounded corners=2pt,fill=ibmelight,
+    align=center,minimum height=10mm,text width=31mm,font=\small},
+  check/.style={draw=black!55,rounded corners=2pt,fill=ibmegreen,
+    align=center,minimum height=10mm,text width=31mm,font=\small},
+  flowarrow/.style={-{Latex[length=2.2mm]},thick,draw=black!65}
+}
+
+\newcommand{\reporttitle}{基于多类格困难假设的抗量子身份基匹配加密通用设计与优化实现}
+\newcommand{\competitiontitle}{2026年第十一届全国密码技术竞赛作品设计报告}
+\newcommand{\reportdate}{2026年10月}
+\newcommand{\worknumber}{CACR2026T4PMR7}
+\newcommand{\worknumberfield}[1]{\underline{\makebox[#1][c]{\worknumber}}}
+\newcommand{\reportheader}{全国密码技术竞赛作品设计报告}
+\renewcommand{\bibname}{参考文献}
+
+\hypersetup{
+  pdftitle={\reporttitle},
+  pdfsubject={\competitiontitle：扩写重写稿},
+  pdfkeywords={身份基匹配加密, 格密码, HIBE, IBS, 抗量子密码}
+}
+\ctexset{
+  chapter={format=\centering\heiti\zihao{2},beforeskip=0pt,afterskip=24pt},
+  section={format=\heiti\zihao{3},beforeskip=18pt,afterskip=10pt},
+  subsection={format=\heiti\zihao{4},beforeskip=12pt,afterskip=6pt}
+}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\linespread{1.28}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\LTpre}{9pt}
+\setlength{\LTpost}{9pt}
+\setcounter{tocdepth}{2}
+\AddToHook{cmd/section/before}{\Needspace{8\baselineskip}}
+
+\fancypagestyle{frontmatter}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyfoot[C]{\thepage}
+}
+\fancypagestyle{mainmatter}{
+  \fancyhf{}
+  \fancyhead[C]{\small\songti\reportheader}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{7mm}
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+\zihao{4}
+作品编号：\worknumberfield{47mm}\\[8mm]
+作品类别：\(\boxtimes\)软件设计\quad
+\(\square\)硬件制作\quad
+\(\square\)工程实践\\[3mm]
+\hspace*{5em}\(\square\)密码应用技术\quad
+\(\square\)其它
+\end{minipage}%
+\begin{minipage}[t]{0.27\textwidth}
+\raggedleft
+\includegraphics[width=30mm]{../2026-10-19-research-draft/figures/cacr-logo.jpg}
+\end{minipage}
+
+\vspace{34mm}
+\begin{center}
+{\heiti\zihao{-2}\competitiontitle\par}
+\vspace{5mm}
+\rule{0.86\textwidth}{1.2pt}
+
+\vspace{24mm}
+{\zihao{3}作品题目：基于多类格困难假设的抗量子\par}
+\vspace{4mm}
+{\zihao{3}身份基匹配加密通用设计与优化实现\par}
+
+\vfill
+{\zihao{4}\reportdate\par}
+\vspace{3mm}
+{\zihao{5}扩写重写稿\par}
+\vspace{5mm}
+{\zihao{4}中国密码学会\par}
+\end{center}
+\end{titlepage}
+
+\clearpage
+\thispagestyle{empty}
+\begingroup
+\zihao{-4}
+\linespread{1.25}\selectfont
+\setlength{\arrayrulewidth}{0.6pt}
+\setlength{\tabcolsep}{3mm}
+\renewcommand{\arraystretch}{1.18}
+\noindent
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|}
+\hline
+\centering\heiti\zihao{3}基本信息表\arraybackslash\\[1mm]
+\hline
+编号：\worknumberfield{48mm}\\
+\hline
+作品题目：\reporttitle\\
+\hline
+作品类别：\(\boxtimes\)软件设计\quad
+\(\square\)硬件制作\quad
+\(\square\)工程实践\quad
+\(\square\)密码应用技术\quad
+\(\square\)其它\\
+\hline
+\noindent\textbf{作品内容摘要：}\par
+\setlength{\parindent}{2em}
+身份基匹配加密要求接收身份与期望发送身份同时匹配，适用于定向消息投递。本作品基于两层匿名HIBE与IBS的通用构造，实现可替换密码组件、混合加密、完整密文字节认证、发钥及恢复，完成两种HIBE与五类IBS的十种配对。
+
+围绕实现成本，作品重点改进环采样、对象编码和重复接收。Sageloli后端利用多项式与低秩计算，完成论文PARAM-I、PARAM-II的建立、发钥、签名和验证；SRGG四类对象按字段取值范围无损编码，主状态缩小约5.05至5.46倍；Lai接收会话把固定身份对的委派安排在准备阶段，已有实验中后续解密中位数为28.6秒，准备约510秒，额外叶钥约34.7 MiB。
+
+报告以三组完整实例分析时间、内存和通信量。主实验中，A组重复加密和解密分别约78.5毫秒和152毫秒；密文组成核算表明，小消息的主要开销来自一次性认证或大尺寸签名与HIBE胶囊。系统提供命令行、浏览器演示及独立主机安装记录，为不同格原语的完整组合与实际优化提供实现基础。\\
+\hline
+\textbf{关键词（五个）：}身份基匹配加密；格密码；分层身份基加密；身份基签名；系统优化\\
+\hline
+\end{tabularx}
+\endgroup
+
+\clearpage
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\pagestyle{frontmatter}
+
+\chapter*{摘要}
+\addcontentsline{toc}{chapter}{摘要}
+身份基匹配加密（IB-ME）使消息仅在接收身份与期望发送身份均匹配时恢复。已有两层匿名分层身份基加密（HIBE）与身份基签名（IBS）通用构造提供了算法基础，实际组合仍面临原语容量不同、格采样对象过大、密钥表示冗长和重复委派耗时等问题。
+
+本作品实现HIBE与IBS独立替换的抗量子IB-ME框架，以32字节种子的混合封装承载应用消息，将一次性公钥承诺纳入身份签名，对完整密文字节认证，并支持规范对象保存和重启恢复。两种HIBE与五类IBS形成十种已运行配对，选取LATTE＋BNN/ML-DSA、LATTE＋SRGG、Lai＋Sageloli三组展开分析。
+
+主要优化包括三项：保留环多项式结构并按频率执行低秩采样，使Sageloli两档论文参数完成实际生命周期；依据字段取值范围无损编码SRGG公钥、主状态、用户钥和签名，三档主状态长度缩小约5.05至5.46倍、签名约2.55至2.65倍；建立固定身份对的Lai接收会话，已有一套系统实验中后续解密中位数降至28.6秒，准备约510秒，额外叶钥约34.7 MiB。
+
+完整系统实验同时测量建立、发钥、首次与重复收发、恢复及对象尺寸。A组主实验重复加密与解密中位数为78.5毫秒和152毫秒；密文组成分析解释了小消息仍有较大固定开销的原因。系统通过身份错配、篡改和恢复测试，并提供真实浏览器操作及另一主机的安装复现。结果展示了不同原语组合的运行特点，以及计算、存储和连续接收优化的收益与使用条件。
+
+\noindent\textbf{关键词：}身份基匹配加密；格密码；分层身份基加密；身份基签名；抗量子密码；可复现评测
+
+\clearpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\begingroup
+\linespread{1.15}\selectfont
+Identity-Based Matchmaking Encryption (IB-ME) recovers a message only when both the receiver identity and the expected sender identity match. A generic construction based on a two-level anonymous HIBE and an IBS provides the cryptographic foundation. Its implementation must also address incompatible capacities, expensive lattice sampling, large serialized objects, and repeated delegation.
+
+This work implements a common post-quantum IB-ME framework with independently replaceable HIBE and IBS components. A 32-byte encrypted seed supports hybrid encryption of application messages. A commitment to an ephemeral one-time verification key is included in the IBS message to bind full-ciphertext authentication to the sender identity. Canonical objects support persistent issuance and recovery. All ten pairings of two HIBEs and five IBS families complete functional tests; three representative systems are evaluated in detail.
+
+Three implementation improvements address measured costs. A polynomial representation and frequency-wise low-rank sampling make two Sageloli paper parameter sets executable. Lossless SRGG encodings reduce authority-state sizes by factors of 5.05 to 5.46 and signature sizes by 2.55 to 2.65 across three parameter sets. A Lai receiver session delegates once for a fixed identity pair: in a single-system experiment, subsequent decryption has a median of 28.6 seconds after about 510 seconds of preparation, with 34.7 MiB of additional serialized leaf-key state.
+
+Full-system experiments cover setup, key issuance, initial and repeated operations, recovery, object sizes, and memory. The main A configuration has median repeated encryption and decryption times of 78.5 ms and 152 ms. Ciphertext accounting explains the fixed communication cost of small messages. Browser operation, rejection tests, and installation on a separate host demonstrate the completed system. The results relate each improvement to its computational cost, storage requirement, and intended usage.
+
+\raggedright\noindent\textbf{Keywords:} identity-based matchmaking encryption; lattice cryptography; hierarchical identity-based encryption; identity-based signature; post-quantum cryptography
+\par\endgroup
+
+\clearpage
+\begingroup
+\linespread{1.15}\selectfont
+\tableofcontents
+\clearpage
+\endgroup
+\pagenumbering{arabic}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[C]{\small\songti\reportheader}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{mainmatter}
+
+\input{chapters/01-introduction}
+\input{chapters/02-protocol}
+\input{chapters/03-optimizations}
+\input{chapters/04-system}
+\input{chapters/05-experiments}
+\input{chapters/06-conclusion}
+
+\clearpage
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\small
+
+\bibitem{wang2024ibme}
+Yuejun Wang, Baocang Wang, Qiqi Lai, and Yu Zhan.
+Identity-based Matchmaking Encryption with Stronger Security and Instantiation on Lattices.
+\emph{Theoretical Computer Science}, 2024.
+doi: 10.1016/j.tcs.2024.115048.
+
+\bibitem{zhao2024latte}
+Raymond K. Zhao, Sarah McCarthy, Ron Steinfeld, Amin Sakzad, and Máire O'Neill.
+Quantum-safe HIBE: Does It Cost a LATTE?
+\emph{IEEE Transactions on Information Forensics and Security}, 2023.
+
+\bibitem{lai2015trapdoors}
+Russell W. F. Lai, Henry K. F. Cheung, and Sherman S. M. Chow.
+Trapdoors for Ideal Lattices with Applications.
+In \emph{Inscrypt 2014}, LNCS 8957, pp. 239--256, 2015.
+doi: 10.1007/978-3-319-16745-9\_14.
+
+\bibitem{jia2025ibs}
+Huiwen Jia, Ying Liu, Chunming Tang, and Lin Wang.
+Constructing Efficient Identity-Based Signatures on Lattices.
+\emph{IET Information Security}, 2025.
+doi: 10.1049/ise2/6684889.
+
+\bibitem{sageloli2023ibs}
+Éric Sageloli, Pierre Pébereau, Pierrick Méaux, and Céline Chevalier.
+Shorter and Faster Identity-Based Signatures with Tight Security in the (Q)ROM from Lattices.
+In \emph{ACNS 2023}, 2023.
+doi: 10.1007/978-3-031-33488-7\_24.
+
+\bibitem{galindo2006ibs}
+David Galindo, Javier Herranz, and Eike Kiltz.
+On the Generic Construction of Identity-Based Signatures with Additional Properties.
+In \emph{ASIACRYPT 2006}, 2006.
+
+\bibitem{nist2024fips204}
+National Institute of Standards and Technology.
+\emph{Module-Lattice-Based Digital Signature Standard}.
+FIPS 204, 2024.
+
+\bibitem{micciancio2012trapdoors}
+Daniele Micciancio and Chris Peikert.
+Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller.
+In \emph{EUROCRYPT 2012}, 2012.
+
+\bibitem{rfc5869}
+Hugo Krawczyk and Pasi Eronen.
+HMAC-based Extract-and-Expand Key Derivation Function (HKDF).
+RFC 5869, 2010.
+
+\bibitem{nist2007gcm}
+National Institute of Standards and Technology.
+\emph{Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC}.
+Special Publication 800-38D, 2007.
+
+\bibitem{lamport1979ots}
+Leslie Lamport.
+Constructing Digital Signatures from a One Way Function.
+SRI International, CSL-98, 1979.
+
+\bibitem{luo2024ibs}
+Pingbin Luo, Xinjian Chen, Willy Susilo, and Qiong Huang.
+Identity-Based Signature from Lattices without Trapdoors.
+In \emph{ICICS 2024}, 2024.
+
+\bibitem{falcon2020}
+Pierre-Alain Fouque et al.
+\emph{Falcon: Fast-Fourier Lattice-based Compact Signatures over NTRU}.
+Specification v1.2, 2020.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,69 @@
+\chapter{作品概述}
+
+\section{从单向保密到双方身份匹配}
+设想一个机构内的定向消息系统：发送者Alice希望把消息交给Bob；Bob只接收自己指定来源Alice的消息。系统需要同时回答两个问题：谁有权读取，以及读取时认可谁是发送者。身份基匹配加密（Identity-Based Matchmaking Encryption，IB-ME）把这两个条件放在同一次消息恢复过程中。
+
+记发送者身份为$s$、发送者指定的接收身份为$r$；接收密钥所属身份为$r'$，接收者期望的发送身份为$s'$。只有
+\[
+  (r=r')\ \land\ (s=s')
+\]
+时，接收者才能恢复消息。Alice向Bob发送消息后，Bob以Alice为期望发送者能够读取；更换接收密钥，或把期望发送者改成另一个身份，系统均应拒绝。图~\ref{fig:identity-match}展示了这一使用方式。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=13mm and 13mm]
+ \node[flow,text width=34mm] (sender) {Alice的发送密钥\\指定接收者Bob};
+ \node[flow,text width=30mm,right=of sender] (ct) {加密消息\\通过公开信道传输};
+ \node[check,text width=42mm,right=of ct] (receiver) {Bob的接收密钥\\期望发送者Alice};
+ \node[check,text width=42mm,below=of receiver] (result) {双方身份匹配：恢复原文\\任一身份错配：拒绝};
+ \draw[flowarrow] (sender)--(ct);
+ \draw[flowarrow] (ct)--(receiver);
+ \draw[flowarrow] (receiver)--(result);
+\end{tikzpicture}
+\caption{一次消息恢复同时检查接收身份与期望发送身份}
+\label{fig:identity-match}
+\end{figure}
+
+这种机制适合机构内定向投递、受控设备之间的消息交换，以及需要限制消息来源的通信服务。用户使用身份字符串指定通信对象，可信发钥机构负责核验现实身份并签发密钥。作品提供密码处理与软件原型；实际部署时，账户管理和身份审核由业务系统完成。
+
+\section{已有构造与实现中的主要问题}
+Wang等给出了格上IB-ME通用构造：以两层匿名分层身份基加密（HIBE）控制消息的恢复路径，以身份基签名（IBS）认证发送者~\cite{wang2024ibme}。第一层身份为接收者，第二层为发送者。该构造为本作品提供了算法基础，也使HIBE和IBS能够分别选择不同的格方案。
+
+现有原语各有特点。LATTE提供基于NTRU格陷门的HIBE及相应实现~\cite{zhao2024latte}；Lai等采用理想格陷门组织分层委派~\cite{lai2015trapdoors}。IBS方面，BNN转换可以把普通签名用于身份认证~\cite{galindo2006ibs}，从而利用ML-DSA等标准签名实现~\cite{nist2024fips204}；SRGG和Sageloli则分别给出原生模块格和环结构IBS~\cite{jia2025ibs,sageloli2023ibs}。
+
+把这些原语组成完整软件系统，需要解决三类实际问题。
+
+\textbf{第一，不同原语的输入和对象格式差异较大。} HIBE和IBS的身份长度、消息容量、模数及密钥表示各不相同。IBS签名连同应用消息可能远大于HIBE能够直接承载的明文。公共协议还需要明确身份如何绑定、密文如何传输，以及重启后怎样继续使用已签发密钥。
+
+\textbf{第二，直接展开数学对象会带来过大的计算和存储开销。} 环运算可以用多项式紧凑表示，也可以展开成大矩阵；两者在实现成本上差别很大。另一方面，通用JSON把大量整数写成十进制文本，便于阅读却增加了密钥和签名的存储、传输长度。
+
+\textbf{第三，重复使用中的成本需要单独处理。} 对固定通信双方，每次解密都执行相同身份路径的委派，会重复支付较大的准备成本。仅报告单个原语的签名或解密速度，也难以判断这些开销在完整IB-ME中占多少。
+
+本作品沿用已有密码构造，重点完成原语实现、公共组合与针对这些瓶颈的优化。表~\ref{tab:problems-and-work}给出问题、方法和评价指标的对应关系。
+
+\begin{table}[H]
+\centering\small
+\caption{主要问题与本作品的处理方法}
+\label{tab:problems-and-work}
+\begin{tabularx}{\textwidth}{@{}p{.23\textwidth}XX@{}}
+\toprule
+\rowcolor{black!8} 实际问题 & 处理方法 & 主要评价指标 \\
+\midrule
+原语容量、身份与格式不同 & 分离HIBE、IBS和组合协议；用短种子封装应用载荷 & 组合正确性、应用容量、恢复能力 \\
+环采样的大矩阵开销 & 保存多项式结构，按频率计算低秩平方根 & 可运行参数、发钥耗时、内存 \\
+密钥与签名的文本表示冗长 & 按字段取值范围进行无损位级编码 & 公钥、主状态、用户钥与签名尺寸 \\
+同一身份对反复委派 & 建立接收会话，保存已经委派和验证的叶钥 & 准备时间、后续解密、额外状态 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{完成的系统与主要改进}
+作品实现了可独立替换HIBE与IBS的公共框架。协议层通过公开算法调用部件，检查身份、容量和对象类型；采用32字节种子的混合加密承载应用数据，并对完整密文字节认证。系统支持建立、双方发钥、加密、匹配解密、错误输入拒绝和持久状态恢复。两种HIBE与五类IBS形成的十种配对已完成加密解密和身份错配测试。
+
+在完整系统基础上，作品完成三项重点优化。
+
+\textbf{环结构采样实现。} Sageloli后端直接保存多项式系数，以环上的变换和低秩计算替代巨型稠密矩阵的显式分解；配合精确整数运算和采样结果检查，使论文PARAM-I、PARAM-II能够完成建立、发钥、签名与验证。
+
+\textbf{四类对象的无损编码。} 对SRGG公钥、主状态、用户密钥和签名分别选择定长、短整数及二元编码，保留原数学对象和参数。三档参数实测中，主状态长度缩至JSON格式的约五分之一，签名长度缩至约五分之二。
+
+\textbf{固定身份对的接收会话。} 在会话建立时为固定双方委派并验证Lai叶钥，后续消息复用该叶钥，并继续逐条认证、解密和验签，降低连续接收的平均成本。
