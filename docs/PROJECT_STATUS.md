@@ -58,7 +58,7 @@
 
 ## 3. 当前并行包与完成条件
 
-2026-10-21本线程任务：[十组同机基本性能比较方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)及[十组完整配置／规划预检](research/2026-10-21-ten-combination-benchmark-plan/README.md)已整理供审查。统一64 B身份、32 B消息，每格3个独立根；本轮仅提交方案，runner适配、校准和长实验尚未开始，不将公共预检计为性能数据。
+2026-10-21：[PR87十组同机补测方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)已审查合并，固定配置10/10预检通过；[本机驱动、校准与运行位置](research/2026-10-21-ten-combination-benchmark-results/README.md)已交付，三组校准进行中，LATTE＋ML-DSA已完整通过。统一64 B身份、32 B消息，校准全过后自动串行启动每格3根的正式30个job，当前不计十组完成。实际本机为Ultra9/Sage10.9，与i9/Sage10.7规划观察分别记账。按用户要求，[PR89](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/89)已将独立Wang原语CI改为手动触发，不再进入普通PR自动矩阵。
 
 ### 当前未完成项（按依赖推进）
 

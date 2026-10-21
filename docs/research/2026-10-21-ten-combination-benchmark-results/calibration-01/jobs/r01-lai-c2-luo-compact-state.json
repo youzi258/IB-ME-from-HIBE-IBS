@@ -1,0 +1,12 @@
+{
+  "active_mode": "generation",
+  "case": "lai-c2-luo-compact",
+  "failure_type": "calibration-observer-fix-interruption",
+  "generation": {
+    "sha256": "601abe470bfcd685df811eb6cd2c6d9d636e5d9bcd3f78fe2216bc853d1e0283",
+    "status": "failed"
+  },
+  "job_id": "r01-lai-c2-luo-compact",
+  "root": 1,
+  "status": "interrupted"
+}
