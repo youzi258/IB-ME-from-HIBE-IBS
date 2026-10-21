@@ -1,0 +1,44 @@
+{
+  "anonymous_audit_execution_digest": "54355cf56b42ec82e996b7b4d44447e65ab52ed539c24b6efaf37fcedf7c05e8",
+  "completed_cases": 10,
+  "control_test_exit_code": 0,
+  "counts": {
+    "honest_decrypt_passed": 30,
+    "honest_encrypt_passed": 20,
+    "outer_rejections_passed": 20,
+    "restores_passed": 10
+  },
+  "cryptographic_measurements_executed": 0,
+  "csv_markdown_byte_exact": true,
+  "export_source_commit": "8c95cbd398981869ad57a8f38ca639b0940ab230",
+  "input_binding_sha256": "aeb9c05ef4faf3bcd60561bac56316353143a412b6b1d6bb32c867ddff92be92",
+  "json_identity_fields": "anonymous execution digest and temporary audit source hashes",
+  "json_statistical_fields_equal": true,
+  "measurement_source_commit": "a202c6d3c87798911675b11a46b44903405370df",
+  "original_execution_digest": "0bbf4ccb276098d9e4bfaf00cdcffe04cd2bd38fd2414167dedc7ecba8da4f55",
+  "original_files_unchanged": true,
+  "outputs": {
+    "basic-comparison.csv": "1faa30fabc21664cd65053c01b1f64e0efe8e73447b94a6cc6192406f2316535",
+    "basic-comparison.md": "54ed75b97162070fee91803d5f94dbf7071c3015c861bca7c8e98245e24982c9",
+    "basic-summary.json": "63431fba804583c2cc7093032fbb877f4be9b600d126ff3b8b161e8accc9640b",
+    "object-sizes.png": "d85061c6442cf00e7e2c85a62fc5b2a5dce5ae237963d02093a7dae831b06d20",
+    "operation-times.png": "2e2331024f9b2ef6c40ae36968c96b5a8c5bdd6d38ad9ebe1c856329c264285e"
+  },
+  "plot_dimensions": {
+    "object-sizes.png": [
+      2720,
+      1530
+    ],
+    "operation-times.png": [
+      2720,
+      2040
+    ]
+  },
+  "recompute_runtime": {
+    "matplotlib": "3.11.0",
+    "numpy": "2.4.3",
+    "python": "3.12.13"
+  },
+  "schema": "PR90-SUBMISSION-RECOMPUTATION/1",
+  "status": "passed"
+}

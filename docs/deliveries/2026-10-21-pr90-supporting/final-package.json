@@ -1,0 +1,29 @@
+{
+  "schema": "PR90-SUPPORTING-FINAL-DELIVERY/1",
+  "zip_filename": "CACR2026T4PMR7-2026密码竞赛复赛相关支撑材料.zip",
+  "bytes": 1197810107,
+  "sha256": "e8c77fdeb59ea7f0687f82a2e251620822e8eb9df787d45139cc306e9e32dafa",
+  "payload_files": 1296,
+  "bound_pr90_files_verified": 74,
+  "zip_crc_verified": true,
+  "independent_extract_sha256_verified": true,
+  "original_payload_changed": [
+    "00_材料说明/阅读指引.md",
+    "README.txt"
+  ],
+  "application_wheel_unchanged": true,
+  "docker_archive_unchanged": true,
+  "report_changed": false,
+  "new_section": "07_十组合性能实验",
+  "source_commit": "8c95cbd398981869ad57a8f38ca639b0940ab230",
+  "packager_source_commit": "be6b36e30f55e84f04b1f008f71840454603f6b6",
+  "limit_bytes": 4000000000,
+  "under_limit": true,
+  "focused_posix_tests_passed": 55,
+  "docker_control_tests_passed_per_launcher": 42,
+  "linux_shell_test_environment": "WSL shell via real Windows Docker CLI to the same Linux Docker Desktop daemon; not an independent Linux host",
+  "plots_visually_checked": true,
+  "new_readme_local_links_checked": true,
+  "final_zip_recompute_passed": true,
+  "final_zip_control_tests_passed": 42
+}
