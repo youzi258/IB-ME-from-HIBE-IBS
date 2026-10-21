@@ -1,0 +1,135 @@
+{
+  "schema": "PR90-OFFLINE-WHEELS/1",
+  "target": "CPython3.12 linux/amd64",
+  "provided_by_base_image": {
+    "numpy": "2.4.3"
+  },
+  "wheels": [
+    {
+      "filename": "contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "name": "contourpy",
+      "version": "1.4.0",
+      "bytes": 383243,
+      "sha256": "875f42444c9cf48d56f724f2637e60d0f73b3b12c9041e1484580a233edf9591",
+      "license": "BSD-3-Clause",
+      "source": "https://pypi.org/project/contourpy/1.4.0/"
+    },
+    {
+      "filename": "cycler-0.12.1-py3-none-any.whl",
+      "name": "cycler",
+      "version": "0.12.1",
+      "bytes": 8321,
+      "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+      "license": "see license texts in wheel dist-info",
+      "source": "https://pypi.org/project/cycler/0.12.1/"
+    },
+    {
+      "filename": "fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "name": "fonttools",
+      "version": "4.67.0",
+      "bytes": 5408233,
+      "sha256": "eb3c98cac93aac4b9f6e3ce2008325340b234cc9b0338ca6b513f31962a1e278",
+      "license": "MIT",
+      "source": "https://pypi.org/project/fonttools/4.67.0/"
+    },
+    {
+      "filename": "iniconfig-2.3.1-py3-none-any.whl",
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "bytes": 7552,
+      "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+      "license": "MIT",
+      "source": "https://pypi.org/project/iniconfig/2.3.1/"
+    },
+    {
+      "filename": "kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "bytes": 1477929,
+      "sha256": "34633ecf50d16187ab8e5528b7a2530f2feb4e23f300db4672538b51cfc5cd38",
+      "license": "see license texts in wheel dist-info",
+      "source": "https://pypi.org/project/kiwisolver/1.5.1/"
+    },
+    {
+      "filename": "matplotlib-3.11.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "name": "matplotlib",
+      "version": "3.11.0",
+      "bytes": 10031353,
+      "sha256": "be5f93a1d21981bfb802ded0d77a0caa92d4342a47d45754fac77e314a506344",
+      "license": "see license texts in wheel dist-info",
+      "source": "https://pypi.org/project/matplotlib/3.11.0/"
+    },
+    {
+      "filename": "packaging-26.3-py3-none-any.whl",
+      "name": "packaging",
+      "version": "26.3",
+      "bytes": 129956,
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "source": "https://pypi.org/project/packaging/26.3/"
+    },
+    {
+      "filename": "pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "name": "pillow",
+      "version": "13.0.0",
+      "bytes": 7144542,
+      "sha256": "42d63be3af4f9b951b199b0a9d23365d37ab14687e6d77b74940432c8515c4ca",
+      "license": "MIT-CMU",
+      "source": "https://pypi.org/project/pillow/13.0.0/"
+    },
+    {
+      "filename": "pluggy-1.7.0-py3-none-any.whl",
+      "name": "pluggy",
+      "version": "1.7.0",
+      "bytes": 27082,
+      "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+      "license": "MIT",
+      "source": "https://pypi.org/project/pluggy/1.7.0/"
+    },
+    {
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "name": "Pygments",
+      "version": "2.21.0",
+      "bytes": 1250147,
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "license": "BSD-2-Clause",
+      "source": "https://pypi.org/project/Pygments/2.21.0/"
+    },
+    {
+      "filename": "pyparsing-3.3.3-py3-none-any.whl",
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "bytes": 126420,
+      "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4",
+      "license": "MIT",
+      "source": "https://pypi.org/project/pyparsing/3.3.3/"
+    },
+    {
+      "filename": "pytest-8.4.2-py3-none-any.whl",
+      "name": "pytest",
+      "version": "8.4.2",
+      "bytes": 365750,
+      "sha256": "872f880de3fc3a5bdc88a11b39c9710c3497a547cfa9320bc3c5e62fbf272e79",
+      "license": "MIT",
+      "source": "https://pypi.org/project/pytest/8.4.2/"
+    },
+    {
+      "filename": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "bytes": 229892,
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "license": "Dual License",
+      "source": "https://pypi.org/project/python-dateutil/2.9.0.post0/"
+    },
+    {
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "name": "six",
+      "version": "1.17.0",
+      "bytes": 11050,
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "license": "MIT",
+      "source": "https://pypi.org/project/six/1.17.0/"
+    }
+  ]
+}
