@@ -2,7 +2,7 @@
 
 为竞赛支撑材料提供完整离线运行镜像，应用源码固定为 `cb96cdb9417c5df2f3837e2668c4b9f49db726f5`，与已整理支撑包的 wheel 一致。本次修改仅涉及部署、安装文件核对和支撑包导航；没有重跑十组合性能实验，没有修改报告或历史实验数据。
 
-构建与使用说明见 [deployment/offline](../../../deployment/offline/README.md)。大镜像和含镜像 ZIP 留在本机交付目录，Git 只保存构建文件、锁、来源和公开验收记录。
+远端交付：[PR #91](https://github.com/youzi258/IB-ME-from-HIBE-IBS/pull/91)。构建与使用说明见 [deployment/offline](../../../deployment/offline/README.md)。大镜像和含镜像 ZIP 留在本机交付目录，Git 只保存构建文件、锁、来源和公开验收记录。
 
 ## 固定环境
 
