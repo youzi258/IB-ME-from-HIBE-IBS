@@ -1,0 +1,7 @@
+{
+  "private_state_retained": true,
+  "reason": "measurement observer compared None instead of protocol BOTTOM; not an algorithm rejection failure",
+  "replacement_calibration": "ten-combinations-calibration-20261021-02",
+  "schema": "TEN-COMBINATION-CALIBRATION-INTERRUPTION/1",
+  "source_commit": "09a1e7759be43cdfcff9d6de651ba70a611ced1c"
+}

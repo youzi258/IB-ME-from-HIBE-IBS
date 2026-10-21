@@ -12,6 +12,7 @@
 | 看报告三代表和精确配置 | [三代表选择与冻结Suite](deliveries/2026-10-19-report-three-selection/README.md) |
 | 阅读／修改当前报告 | [重写说明](reports/2026-10-20-competition-rewrite/README.md)、[LaTeX](reports/2026-10-20-competition-rewrite/作品设计报告.tex)、[PDF](reports/2026-10-20-competition-rewrite/作品设计报告.pdf) |
 | 核对本届官方报告格式和签字页 | [2026复赛官方模板及指纹](competition/2026/README.md) |
+| 准备提交的附加材料、运行说明和数据附件 | [支撑材料审阅包、PDF导读、来源清单与校验](submission/2026-10-21/README.md) |
 | 理解模块与公共构造 | [架构](../ARCHITECTURE.md)、[复用指南](FRAMEWORK_REUSE_GUIDE.md) |
 | 接入原语、检查接口和验收边界 | [公共规范](../IMPLEMENTATION_SPEC.md)、[算法专属契约](specs/) |
 | 分工、文件认领和交接 | [协作流程](../AI_WORKFLOW.md)、[三人计划](workplans/三人方案分工与统一框架交付.md)、[仓库规则](../AGENTS.md) |
@@ -42,6 +43,7 @@
 | 三代表如何选、参数与容量是多少 | [三代表选择、Suite与来源指纹](deliveries/2026-10-19-report-three-selection/README.md) |
 | 三代表的同机基准、必要消息长度和精确安装 | [报告第二项主表、原始公开收据、CSV与图](deliveries/2026-10-19-report-experiment-supplement/README.md)；接收状态见当前进度 |
 | HIBE×IBS 哪些组合实际跑过、哪些数据能比较 | [十个主要组合、分批性能表与原始数据索引](research/2026-10-20-combination-data-inventory/README.md) |
+| 十组组合怎样统一机器与计时补测 | [同机基本性能比较方案](superpowers/plans/2026-10-21-ten-combination-benchmark.md)、[十组完整配置与规划预检](research/2026-10-21-ten-combination-benchmark-plan/README.md)；尚未启动长实验 |
 | A：LATTE＋ML-DSA完整基准 | [原重复基准](research/2026-10-18-full-system-baseline/README.md)、[同参数部署消融](research/2026-10-19-full-system-placement/README.md) |
 | B：LATTE＋SRGG论文档 | [参数、完整功能矩阵及重复测量](research/2026-10-19-srgg-paper-latte/README.md) |
 | C：Lai C2＋Sageloli环v3 | [Lai四组合完整收据](research/2026-10-19-lai-c2-combinations/README.md)、[Sageloli公共接入与LATTE安装恢复](research/2026-10-19-sageloli-ring-integration/README.md)；后者不能替代C的安装验收 |

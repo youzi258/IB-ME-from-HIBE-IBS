@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "lai-c2-falcon512",
+  "generation": {
+    "finished_at": "2026-10-21T09:18:30.548841+00:00",
+    "sha256": "11a382b7afb7de5e9838ada28b13ced9812dce0b41d8539484eafef4e871489f",
+    "status": "passed"
+  },
+  "job_id": "r01-lai-c2-falcon512",
+  "restore": {
+    "finished_at": "2026-10-21T09:26:07.554616+00:00",
+    "sha256": "aa4755f7bd5a3388ced00488e08be9f4d72be5f818735a1b9de6d69a66f4dc7b",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}

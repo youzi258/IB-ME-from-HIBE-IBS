@@ -1,0 +1,146 @@
+{
+  "active_stage": "first-decrypt",
+  "active_stage_started_unix": 1792566101.2503216,
+  "backend_admitted": true,
+  "case": "lai-c2-luo-compact",
+  "execution_digest": "22dd6665dbe96a147a04f6ba80847b0cc5ce7ea7ed424b2e4924c56877a93d1c",
+  "failure_type": "calibration-observer-fix-interruption",
+  "full_ciphertext_bytes": [
+    1343675
+  ],
+  "identity_bytes": 64,
+  "job_id": "r01-lai-c2-luo-compact",
+  "message_bytes": 32,
+  "mode": "generation",
+  "no_outer_retry": true,
+  "parameters_are_formal": true,
+  "phases": [
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 179306496,
+      "name": "runtime-prepare",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 230223872,
+      "sampled_self_peak_rss_bytes": 230223872,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.5604650559999982,
+      "self_kernel_lifetime_peak_rss_bytes": 230707200,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 179306496,
+      "name": "setup",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 3750676,
+        "entropy_reads": 33611,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 261451776,
+      "sampled_self_peak_rss_bytes": 261451776,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 2.156183046999999,
+      "self_kernel_lifetime_peak_rss_bytes": 260849664,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 179306496,
+      "name": "persist-root-state",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 262402048,
+      "sampled_self_peak_rss_bytes": 262402048,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.11418833099999404,
+      "self_kernel_lifetime_peak_rss_bytes": 272252928,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 179306496,
+      "name": "sender-key",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 228597,
+        "entropy_reads": 76199,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 296710144,
+      "sampled_self_peak_rss_bytes": 296710144,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 1.036196695000001,
+      "self_kernel_lifetime_peak_rss_bytes": 300220416,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 179306496,
+      "name": "receiver-key",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 21889024,
+        "entropy_reads": 334,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 371658752,
+      "sampled_self_peak_rss_bytes": 371658752,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 30.874551144999998,
+      "self_kernel_lifetime_peak_rss_bytes": 397168640,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 179306496,
+      "name": "persist-issued-state",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 0,
+        "entropy_reads": 0,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 427753472,
+      "sampled_self_peak_rss_bytes": 427753472,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 0.43475171200000773,
+      "self_kernel_lifetime_peak_rss_bytes": 432017408,
+      "status": "passed"
+    },
+    {
+      "completed_children_kernel_lifetime_max_rss_bytes": 179306496,
+      "name": "cold-encrypt",
+      "observation": {
+        "derive_calls": 0,
+        "derive_seconds": 0.0,
+        "entropy_bytes": 135555191,
+        "entropy_reads": 20516,
+        "native": {}
+      },
+      "sampled_process_tree_peak_rss_bytes": 559104000,
+      "sampled_self_peak_rss_bytes": 559104000,
+      "sampling_interval_seconds": 0.01,
+      "seconds": 86.86116257399999,
+      "self_kernel_lifetime_peak_rss_bytes": 558608384,
+      "status": "passed"
+    }
+  ],
+  "root": 1,
+  "schema": "TEN-COMBINATION-WORKER/1",
+  "security_claim": "secure",
+  "source_commit": "09a1e7759be43cdfcff9d6de651ba70a611ced1c",
+  "started_at": "2026-10-21T06:59:35.482055+00:00",
+  "status": "failed",
+  "suite_digest": "16c8f689f9029b238b067a1f3ceb98fb90fe18408680af3cd3972b2dfaf9b868",
+  "uses_ROM": true
+}

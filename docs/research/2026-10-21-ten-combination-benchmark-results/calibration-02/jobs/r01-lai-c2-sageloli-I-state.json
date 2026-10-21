@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "lai-c2-sageloli-I",
+  "generation": {
+    "finished_at": "2026-10-21T07:49:58.799578+00:00",
+    "sha256": "2c3368cd1f2afbf567f5fb74bf5c87a284d3f3a1f8b2fbce77019b1f026a6366",
+    "status": "passed"
+  },
+  "job_id": "r01-lai-c2-sageloli-I",
+  "restore": {
+    "finished_at": "2026-10-21T07:57:16.320962+00:00",
+    "sha256": "b5bb9871f834d46dd70d85cf3fff5482467e88117d5e36418c9b215b32e7cb51",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}

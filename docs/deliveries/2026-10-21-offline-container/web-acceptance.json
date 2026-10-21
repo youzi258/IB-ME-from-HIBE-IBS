@@ -1,0 +1,306 @@
+{
+  "scope": "deployment acceptance; one root per preset; no performance ranking",
+  "results": [
+    {
+      "preset": "primary",
+      "suite_digest": "bb8006f036dfcbe3ea2d765e2cdf44a595568f4465e3b786d0b802fb4e0baf91",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": true,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 65536
+        },
+        "ibs": "cert-ml-dsa",
+        "ibs_params": {
+          "backend_admitted": true,
+          "base_algorithm": "ml-dsa-44",
+          "identity_bytes": 64,
+          "max_identities": 16,
+          "message_max_bytes": 65536,
+          "parameters_are_formal": true,
+          "security_claim": "secure",
+          "timeout_seconds": 30
+        },
+        "ibs_version": "IBME/CERTIBS/1",
+        "parameters_are_formal": true,
+        "protocol": "byteauth-v1",
+        "security_claim": "secure",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "message_bytes": 32,
+      "prepare_events": [
+        {
+          "label": "构建运行时",
+          "seconds": 0.010683106999977099
+        },
+        {
+          "label": "Setup",
+          "seconds": 0.7506896239999605
+        },
+        {
+          "label": "签发发送者密钥",
+          "seconds": 0.014482276000080674
+        },
+        {
+          "label": "签发接收者密钥",
+          "seconds": 0.3454914919998373
+        },
+        {
+          "label": "签发错误接收者密钥",
+          "seconds": 0.4378008559999671
+        }
+      ],
+      "ciphertext": {
+        "bytes": 142090,
+        "sha256": "0c9cc1445eb3ccdea12c701a91716761c9e634b55d1b9dcd67af6db20e26efbf",
+        "seconds": 0.01612932400007594,
+        "message_bytes": 32
+      },
+      "observations": [
+        {
+          "mode": "normal",
+          "bottom": false,
+          "expectation_met": true,
+          "seconds": 0.11520910800004458
+        },
+        {
+          "mode": "wrong_sender",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.1117041979998703
+        },
+        {
+          "mode": "wrong_receiver",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.18645735099994454
+        },
+        {
+          "mode": "both_wrong",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.12788978900016446
+        },
+        {
+          "mode": "tamper",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.043995089000191
+        },
+        {
+          "mode": "truncate",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.042188204000012774
+        }
+      ]
+    },
+    {
+      "preset": "srgg",
+      "suite_digest": "8b9fef332ed20f8c34fc1eedb3f81b5f3b3236533e6bca7c07d6687ccf546c61",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": true,
+        "hibe": "latte",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "max_children": 2,
+          "max_receivers": 2,
+          "message_mode": "seed32",
+          "native_timeout_seconds": 60
+        },
+        "hibe_version": "latte3-cosac-fix-v1",
+        "hybrid_limits": {
+          "backend_id": "latte3-cosac-fix-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 131072
+        },
+        "ibs": "srgg2025-paper",
+        "ibs_params": {
+          "interpretation": "table-standard-deviation",
+          "profile_name": "PARAM-I"
+        },
+        "ibs_version": "SRGG-PAPER-TABLE4-factor1-v1",
+        "parameters_are_formal": true,
+        "protocol": "byteauth-v1",
+        "security_claim": "secure",
+        "signature_format": "compact",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "message_bytes": 32,
+      "prepare_events": [
+        {
+          "label": "构建运行时",
+          "seconds": 0.01856219199999032
+        },
+        {
+          "label": "Setup",
+          "seconds": 0.5124391159999959
+        },
+        {
+          "label": "签发发送者密钥",
+          "seconds": 25.284048983000048
+        },
+        {
+          "label": "签发接收者密钥",
+          "seconds": 0.404476041999942
+        },
+        {
+          "label": "签发错误接收者密钥",
+          "seconds": 0.5384667620000982
+        }
+      ],
+      "ciphertext": {
+        "bytes": 149236,
+        "sha256": "c698aaa07fb5a530fe67b8f176f7843b586141881a4a864c4513f6b943ad28f6",
+        "seconds": 8.09943605300009,
+        "message_bytes": 32
+      },
+      "observations": [
+        {
+          "mode": "normal",
+          "bottom": false,
+          "expectation_met": true,
+          "seconds": 0.14615691499989225
+        },
+        {
+          "mode": "wrong_sender",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.12492146799991133
+        },
+        {
+          "mode": "wrong_receiver",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.12131855799998448
+        },
+        {
+          "mode": "both_wrong",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.12172311700010141
+        },
+        {
+          "mode": "tamper",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.05471867400001429
+        },
+        {
+          "mode": "truncate",
+          "bottom": true,
+          "expectation_met": true,
+          "seconds": 0.08106987900009699
+        }
+      ]
+    },
+    {
+      "preset": "ring",
+      "suite_digest": "8692c5917fcd731fb6b2109f1a5307014c66edbd4a1f17d4190b14873cf4a200",
+      "suite": {
+        "allow_mock": false,
+        "backend_admitted": true,
+        "hibe": "lai-ideal-hibe",
+        "hibe_params": {
+          "identity_bytes": 86,
+          "k": 39,
+          "l": 2,
+          "max_message_bytes": 32,
+          "message_mode": "seed32",
+          "n": 2048,
+          "p": 2,
+          "q": 274877976577,
+          "sigma": 2.0,
+          "sigma_r": 1.0
+        },
+        "hibe_version": "lai-a-256-v1",
+        "hybrid_limits": {
+          "backend_id": "lai-a-256-v1",
+          "identity_max_bytes": 64,
+          "max_capsule_bytes": 4194304,
+          "max_payload_bytes": 8388608
+        },
+        "ibs": "sageloli-rsis",
+        "ibs_params": {
+          "d": 2048,
+          "identity_max_bytes": 256,
+          "identity_width_squared": 2720281532542,
+          "k": 65,
+          "l": 132,
+          "mass_bits": 320,
+          "max_sign_attempts": 64,
+          "max_users": 2,
+          "message_max_bytes": 4096,
+          "r_squared": 49,
+          "salt_bytes": 32,
+          "signature_width_squared": 270116709797628319132317,
+          "tail_bits": 256
+        },
+        "ibs_version": "Sageloli-RSIS-structured-v3",
+        "parameters_are_formal": true,
+        "protocol": "byteauth-v1",
+        "security_claim": "secure",
+        "signature_format": "reference",
+        "state_policy": "single-writer-commit-before-publish-v1",
+        "transport": "hybrid",
+        "version": "IBME/SUITE/1"
+      },
+      "message_bytes": 32,
+      "prepare_events": [
+        {
+          "label": "构建运行时",
+          "seconds": 0.04876381999997648
+        },
+        {
+          "label": "Setup",
+          "seconds": 8.02194480900016
+        },
+        {
+          "label": "签发发送者密钥",
+          "seconds": 59.72321552900007
+        },
+        {
+          "label": "签发接收者密钥",
+          "seconds": 50.43967145199986
+        },
+        {
+          "label": "签发错误接收者密钥",
+          "seconds": 47.19358826500002
+        }
+      ],
+      "ciphertext": {
+        "bytes": 4555436,
+        "sha256": "4a974d79c174a2157cd739b437c64ada0893391411cfcdfd18fb4cc2dbe0012b",
+        "seconds": 116.01238207300003,
+        "message_bytes": 32
+      },
+      "observations": [
+        {
+          "mode": "normal",
+          "bottom": false,
+          "expectation_met": true,
+          "seconds": 479.0500383130002
+        }
+      ]
+    }
+  ]
+}

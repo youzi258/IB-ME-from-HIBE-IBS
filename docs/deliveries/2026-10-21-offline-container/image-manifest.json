@@ -1,0 +1,32 @@
+{
+  "schema": "IBME-OFFLINE-IMAGE/1",
+  "image_id": "sha256:09f183ad4facb5d1654732c672c86fe7d6d0a865a0f165974bfde1f95ba49fad",
+  "tag": "cacr2026t4pmr7/ibme:2026-10-21",
+  "os": "linux",
+  "architecture": "amd64",
+  "minimum_cpu": "x86-64-v3 with AES-NI",
+  "archive": "CACR2026T4PMR7-ibme-linux-amd64.tar.gz",
+  "bytes": 1161386399,
+  "sha256": "d3565a25a7f62282f28c55b7cb2bea567fd16089183c757558d8eeb66c3156ca",
+  "application_source_commit": "cb96cdb9417c5df2f3837e2668c4b9f49db726f5",
+  "recipe_files": {
+    "assemble_supporting.py": "541c2a467a4b993861d908e93a9df4bc10a776235e3e73cc492cf02b2454f498",
+    "build_native.py": "0dbaa6d56e8ecdcbd854f705e584fa0882c78c452d70a1b3d0edfb93b172a25f",
+    "check_runtime.py": "2c43978a4e8955d11eeae71934889dbd7fab8913b24a94130df8ed81595570e5",
+    "collect_licenses.py": "4a0678f21d1b5c085012b3ffdff83f2ab16cefe9d923926b41a6e832fb403813",
+    "Dockerfile": "69d85158990b5e711967aa322d847333661aa2fac4f86923768e0dd9497f324f",
+    "entrypoint.sh": "ae252eff7f96ff00d6627a473de476f160c3b6524ce2889cb92f9920c2d01d83",
+    "environment-linux-64.lock": "2f1d909e6b9954f390c25ecf40cb940a53de7e07d786accc78c5449f807cb1fb",
+    "environment-sources.json": "86da8252c12cdd163ef89bfa64a2e0d925f73edd4d5cb6a0d7f85ffbd594dbbe",
+    "export_image.py": "472beba880298a78355ca3fdc26e0600c1eda6b72aeb2ba9c47c7dc617f24333",
+    "prepare.py": "f1cbb9b0313f33d105f5b1d8a43b036a344ead4b4c203988b4ab3548e64ef82c",
+    "python-runtime.lock": "442b45fc71e80f81d9739cd685d068d62e4e9be72f087e0d15809e7f365034ab",
+    "README.md": "8e1197f2186ab5595ab3876bc02e682b6be20ce965490888d0bdfeb2fa2b8bfb",
+    "source-info.json": "57eec43b66ac37bfc0be325606a461a392cdfa4d1d259aa57f2e68df13d6fd64",
+    "start.ps1": "407d5b2dca12a5d2187a95e091096effe42b4890b221a15d101c494e3ee8b726",
+    "start.sh": "2be89fd3bc70ad319b0e927beb93718678ed1dbd6d9109efafc547ea9cfbdd51",
+    "verify_supporting.py": "3d62f71d4336420d776e3b72b491cbff447a4413fd55593ee7221d3209a2a762",
+    "verify_web.py": "db18adc567fa8f8a0c708f9fadaff44037920ab88c87a21abff9a70c7ebd5a6c"
+  },
+  "container_recipe_commit": "29975e0882138ae5b6ac78b45dc325086a42f41b"
+}

@@ -41,6 +41,8 @@ def load_config(root=ROOT):
             raise ValueError("unknown test layer")
         if type(spec["allow_skips"]) is not bool:
             raise ValueError("allow_skips must be explicit")
+        if type(spec.get("automatic", True)) is not bool:
+            raise ValueError("automatic must be a boolean")
         for pattern in spec["tests"] + spec.get("exclude", []):
             if (not pattern.startswith("tests/test_") or not pattern.endswith(".py")
                     or ".." in pattern or "\\" in pattern or ":" in pattern):
@@ -61,15 +63,16 @@ def selected_files(spec, root=ROOT):
     return sorted(p.relative_to(root).as_posix() for p in include - exclude)
 
 
-def plan(root=ROOT, *, registry=None):
+def plan(root=ROOT, *, registry=None, include_manual=False):
     config = load_config(root)
     routes = {r["id"]: r for r in algorithm_catalog(registry=registry)["routes"]}
     jobs, rows = [], []
     for spec in config["algorithms"] + config["groups"]:
         files = selected_files(spec, root)
+        scheduled = files and (spec.get("automatic", True) or include_manual)
         row = dict(id=spec["id"], layer=spec["layer"], environment=spec["environment"],
                    files=files, test_files=len(files), execution="not_executed",
-                   status="scheduled" if files else "awaiting_tests",
+                   status="scheduled" if scheduled else "manual_only" if files else "awaiting_tests",
                    scope=spec.get("scope", "Selected route tests; not a formal security proof."))
         if spec["id"] in routes:
             row["route"] = routes[spec["id"]]
@@ -83,7 +86,7 @@ def plan(root=ROOT, *, registry=None):
                 raise ValueError(f"{spec['id']}: source exists but no dedicated tests were selected")
         elif not files:
             raise ValueError(f"required common suite {spec['id']} has no tests")
-        if files:
+        if scheduled:
             jobs.append(dict(id=spec["id"], environment=spec["environment"]))
         rows.append(row)
     return dict(schema=1, route_count=len(routes), rows=rows,
@@ -200,8 +203,9 @@ def render_summary(planned, receipts):
     missing = False
     for row in planned["rows"]:
         result = receipts.get(row["id"], {})
-        status = result.get("status", "not_executed" if row["test_files"] else "awaiting_tests")
-        if row["test_files"] and status not in ("passed", "partial", "passed_with_known_xfails"):
+        status = ("manual_only" if row["status"] == "manual_only" else
+                  result.get("status", "not_executed" if row["test_files"] else "awaiting_tests"))
+        if row["test_files"] and row["status"] != "manual_only" and status not in ("passed", "partial", "passed_with_known_xfails"):
             missing = True
         combination = ("awaiting selected pair acceptance" if row["layer"] == "primitive"
                        else "named regression only" if row["layer"] == "combination" else "not applicable")
@@ -216,13 +220,14 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("plan"); s.add_argument("--output", type=Path, default=Path("ci-results"))
+    s.add_argument("--include-manual", action="store_true", help="Explicitly schedule optional manual suites")
     s = sub.add_parser("run"); s.add_argument("suite"); s.add_argument("--output", type=Path, default=Path("ci-results"))
     s = sub.add_parser("summary"); s.add_argument("--input", type=Path, default=Path("ci-results"))
     args = p.parse_args(argv)
     if args.command == "run":
         return run_suite(args.suite, args.output.resolve())
     if args.command == "plan":
-        value = plan()
+        value = plan(include_manual=args.include_manual)
         args.output.mkdir(parents=True, exist_ok=True)
         (args.output / "plan.json").write_text(json.dumps(value, indent=2)+"\n", encoding="utf-8")
         if os.environ.get("GITHUB_OUTPUT"):

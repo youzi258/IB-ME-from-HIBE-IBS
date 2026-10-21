@@ -1,0 +1,38 @@
+{
+  "schema": "IBME-OFFLINE-ACCEPTANCE/1",
+  "date": "2026-10-21",
+  "host_cpu": "Intel Core i9-14900HX",
+  "docker_desktop": "4.96.0",
+  "docker_engine": "29.9.1",
+  "docker_logical_cpus": 32,
+  "docker_memory_bytes": 8176910336,
+  "image_id": "sha256:09f183ad4facb5d1654732c672c86fe7d6d0a865a0f165974bfde1f95ba49fad",
+  "uid_gid": "57439:57439",
+  "runtime_host_mounts": 0,
+  "web_bind_host_ip": "127.0.0.1",
+  "network_none_preflight_before_export": true,
+  "network_none_web_actual_cases": {
+    "A": 6,
+    "B": 6,
+    "C": 1
+  },
+  "image_removed_before_manual_load": true,
+  "image_id_preserved_after_load": true,
+  "network_none_preflight_after_load": true,
+  "windows_powershell5_automatic_load_from_absent_image": true,
+  "windows_http_status": 200,
+  "fresh_web_session_after_start": true,
+  "same_name_container_rejected_without_replacement": true,
+  "checksum_mismatch_rejected_before_import": true,
+  "linux_shell_launcher_http_status": 200,
+  "linux_launcher_environment": "WSL shell using a forwarding executable to the real Windows Docker CLI and the same Linux Docker Desktop daemon; not a separate Linux host",
+  "focused_posix_pytest": {
+    "passed": 25,
+    "failed": 0
+  },
+  "limits": [
+    "linux/amd64 x86-64-v3 + AES-NI; ARM not verified",
+    "C: one 32-byte honest roundtrip; no new maximum-message or negative cases",
+    "Deployment acceptance timings are not ten-combination benchmark data"
+  ]
+}

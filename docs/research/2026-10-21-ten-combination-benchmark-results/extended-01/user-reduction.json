@@ -1,0 +1,10 @@
+{
+  "schema": "TEN-COMBINATION-USER-REDUCTION/1",
+  "job_id": "r01-lai-c2-luo-compact",
+  "status": "passed",
+  "user_requested": "one independent root per combination, one warm pair and one restored decrypt",
+  "original_records_preserved": true,
+  "stopped_scheduler_pids": [
+    2471
+  ]
+}

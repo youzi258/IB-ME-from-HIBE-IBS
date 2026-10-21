@@ -1,0 +1,34 @@
+{
+  "additional_batch": "batch-01 retained separately; excluded from this ten-pair basic table",
+  "execution_digest": "0bbf4ccb276098d9e4bfaf00cdcffe04cd2bd38fd2414167dedc7ecba8da4f55",
+  "execution_mode": "existing single-root CLI mode; original calibration flags are preserved",
+  "expected_counts": {
+    "honest_decrypt_passed": 30,
+    "honest_encrypt_passed": 20,
+    "outer_rejections_passed": 20,
+    "restores_passed": 10
+  },
+  "plan_digest": "fa4efff5893648edf166bb1769ad577a1b9a004966eb1034a251a987bbffb73a",
+  "restore_repetitions": 1,
+  "reused_batch": "calibration-02",
+  "reused_cases": [
+    "latte-mldsa44",
+    "lai-c2-luo-compact",
+    "lai-c2-sageloli-I"
+  ],
+  "roots_per_case": 1,
+  "schema": "TEN-COMBINATION-BASIC-DESIGN/1",
+  "source_commit": "a202c6d3c87798911675b11a46b44903405370df",
+  "supplemental_batch": "basic-supplement-01",
+  "supplemental_cases": [
+    "latte-falcon512",
+    "latte-luo-compact",
+    "latte-srgg-I-compact",
+    "latte-sageloli-I",
+    "lai-c2-mldsa44",
+    "lai-c2-falcon512",
+    "lai-c2-srgg-I-compact"
+  ],
+  "user_decision": "one root per combination; one first pair, one repeat pair, one new-process restored decrypt",
+  "warm_repetitions": 1
+}

@@ -1,0 +1,17 @@
+{
+  "active_mode": "restore",
+  "case": "latte-srgg-I-compact",
+  "generation": {
+    "finished_at": "2026-10-21T09:27:45.644660+00:00",
+    "sha256": "c218452ad285a206b497800ba3a5b6902db8515ab6b4a4a0bba977c2212839a0",
+    "status": "passed"
+  },
+  "job_id": "r01-latte-srgg-I-compact",
+  "restore": {
+    "finished_at": "2026-10-21T09:27:47.487803+00:00",
+    "sha256": "114b8853f587f032caa8252e192c107d9c36389e506420f91469a29ee7facbb6",
+    "status": "passed"
+  },
+  "root": 1,
+  "status": "passed"
+}
