@@ -1,0 +1,267 @@
+{
+  "baseline_report_commit": "c3625490576d7e611f0d296d9a4cd244a64ea90f",
+  "sources": {
+    "master": [
+      {
+        "path": "docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json",
+        "sha256": "e2041dbd507871d8c082b6440ab752d8119fc365a29fd9539d203a20976e42a6"
+      }
+    ],
+    "optimization": [
+      {
+        "path": "docs/research/2026-10-20-multi-backend-optimization/verified-summary.json",
+        "sha256": "7ff0ce91b06da2ca387ea06388a1f71333c16616ce5175ba323c51898ad4a255"
+      }
+    ],
+    "codec": [
+      {
+        "path": "docs/research/team-b-delivery/2026-10-18-srgg-compact-benchmark/wire.csv",
+        "sha256": "5e92d1b08be5a5cd69dcf4dad353dde0d127907cb5ac5f77f0db6e80d353c3c0"
+      }
+    ],
+    "codec_benchmark": [
+      {
+        "path": "docs/research/team-b-delivery/2026-10-18-srgg-compact-benchmark/benchmark.json",
+        "sha256": "b757dde0b1706f9571a06301b0511c8129f67c8b4e8567ab8270cdf8ac0dcea1"
+      }
+    ],
+    "placement": [
+      {
+        "path": "docs/research/2026-10-19-full-system-placement/evidence/placement.json",
+        "sha256": "6ca629f694358a985241025f6a947ef2bd039e2bf60c7585942ac1d71913e6e6"
+      }
+    ],
+    "combinations": [
+      {
+        "path": "docs/research/2026-10-20-combination-data-inventory/inventory.json",
+        "sha256": "349f2d16f246a0dbdd518bd288c5ea00bdb20a1f5b71cf797aaa482f244439c3"
+      }
+    ],
+    "sageloli_I": [
+      {
+        "path": "docs/research/team-b-delivery/2026-10-19-sageloli-ring-target/evidence/param-I-fresh.json",
+        "sha256": "a323d73e74db3e5f570ceb9727bcf7f382ff2177b3279ff08f8e4081765edcf7"
+      }
+    ],
+    "sageloli_II": [
+      {
+        "path": "docs/research/team-b-delivery/2026-10-19-sageloli-ring-target/evidence/param-II-fresh.json",
+        "sha256": "9d20fc20e8414bacbf448bb4887daf76723551b560e847e1997feb928d8d0793"
+      }
+    ],
+    "nixos_C": [
+      {
+        "path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/C.json",
+        "sha256": "86e07e8c1501d25c094433d2e65c914acc8b2e3c14542e416710705f07c48997"
+      }
+    ],
+    "nixos_environment": [
+      {
+        "path": "docs/deliveries/2026-10-20-nixos-independent-reproduction/environment.json",
+        "sha256": "9b8fbf342bfeb00d666de5b40610697e0442666d829117a27a738ff0079e13c6"
+      }
+    ],
+    "web_A": [
+      {
+        "path": "docs/deliveries/2026-10-20-web-redesign/A.json",
+        "sha256": "9c79caed07b8d44425f3574231427fed46de8e5ff3ebe526bb343125cee11b96"
+      }
+    ],
+    "web_B": [
+      {
+        "path": "docs/deliveries/2026-10-20-web-redesign/B.json",
+        "sha256": "0217ea94b8241fb01e464789a2bd2e9c0ea80410fbb6db100327a1ab673b9062"
+      }
+    ],
+    "ten_combinations": [
+      {
+        "path": "docs/research/2026-10-21-ten-combination-benchmark-results/basic-comparison/basic-comparison.csv",
+        "sha256": "1faa30fabc21664cd65053c01b1f64e0efe8e73447b94a6cc6192406f2316535"
+      }
+    ],
+    "ten_design": [
+      {
+        "path": "docs/research/2026-10-21-ten-combination-benchmark-results/basic-design.json",
+        "sha256": "b0861edc5b1bb4d203a17c61d6249755bc50cc4583cc926dbaa592bc1900e4f3"
+      }
+    ],
+    "ten_environment": [
+      {
+        "path": "docs/research/2026-10-21-ten-combination-benchmark-results/basic-supplement-01/environment.json",
+        "sha256": "4a3249f91320fdc4ded2eb985412855f607414bf1d75504077922773e116d11d"
+      }
+    ],
+    "ten_validation": [
+      {
+        "path": "docs/research/2026-10-21-ten-combination-benchmark-results/validation.json",
+        "sha256": "e7ff23e1167da97e7001d93ed9b7b5c0109d5ae4d79443c3bbb31a9ee2034e18"
+      }
+    ],
+    "ab_A": [
+      {
+        "path": "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-A.json",
+        "sha256": "d9437604567df3213822243b1091adf8e67bda9ce883fe19867fcb4c4d76b58a"
+      }
+    ],
+    "ab_B": [
+      {
+        "path": "docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-B.json",
+        "sha256": "523f8bbde0ffa44f725616b0413d74a7c8c854d3cb27b9f6c620ef40ad6ef759"
+      }
+    ],
+    "srgg_reference": [
+      {
+        "path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-i-reference.json",
+        "sha256": "aa6082fc2e9a33e86912e9b41da12b1272b10d9120617a15be4e456e4eedc7c7"
+      }
+    ],
+    "srgg_compact": [
+      {
+        "path": "docs/research/2026-10-19-srgg-paper-latte/functional-param-i-compact.json",
+        "sha256": "89761670c7e45b112f6c62fa4ae262fa6a3ad7ce564ac87e684339220f0043bd"
+      }
+    ],
+    "accounting": [
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/format-accounting.json",
+        "sha256": "3f17e28250af26213b8bba1ec52d749f7224265a33365caae0f6dc71d912e8dc"
+      }
+    ],
+    "report_chapters": [
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/01-introduction.tex",
+        "sha256": "3dcb63131bb34d4cd9153057cfa14ccfc23aed538222114c106036828c32ef6b"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/02-foundations.tex",
+        "sha256": "7c0585db276c03b03f1582cfb2b7e2223d48c1e523d63525e6334f88ddb270ac"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/03-design.tex",
+        "sha256": "9901be66075f97de9fbd2560f880ab1de0d8a34e2a2551a28939073c12e521b5"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/04-algorithms.tex",
+        "sha256": "d39653889e7c104ce37adbc9b3f618ee648f44169645e34ed08985ba29c22696"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/05-optimizations.tex",
+        "sha256": "32b677e70617b3a7ec2290a4fafb47cfb004dc884b6a6216ec739c657deff1d3"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/06-system.tex",
+        "sha256": "4cab80c60036a0d89d9bbd6f7202678ee9aab902b9378a67d29d89f5ac77179d"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/07-experiments.tex",
+        "sha256": "136b5960b9d0b1174eac098dfbe485eb3b7900ee320935bc2ac62b2afb87eb4b"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/08-applications.tex",
+        "sha256": "bf2be80fb59ab77684631d0bb2033ace7703ebd9678df174f9a227e0447b6c84"
+      },
+      {
+        "path": "docs/reports/2026-10-22-integrated-report/chapters/09-conclusion.tex",
+        "sha256": "d30bea5553f28f134e07864ecc7da08ac3d4c20e36101450c5714005d94344dc"
+      }
+    ],
+    "protocol": [
+      {
+        "path": "src/ibme/protocol/__init__.py",
+        "sha256": "362828a85b5b1190ae145b8dde11d83a2f61cc58079aaef860ae7cde8e05b240"
+      },
+      {
+        "path": "src/ibme/protocol/baseline.py",
+        "sha256": "3bffb26ce97294c8268430719c8ed1fbf66b118bb11bc5930e7e27f8dcab0b16"
+      },
+      {
+        "path": "src/ibme/protocol/byteauth.py",
+        "sha256": "d174c0be104ab756c70fdb7fea8ade13b3afb8d6b59e6295019db42efe2f7414"
+      },
+      {
+        "path": "src/ibme/protocol/hybrid_hibe.py",
+        "sha256": "490bac05703fe44b2a36f89987c65386fb05d81264ff5700d5e8c3f827e03561"
+      },
+      {
+        "path": "src/ibme/protocol/luo_hybrid.py",
+        "sha256": "9d9d9095da3fadd33a57c5027abf1c0f41a63452f64f92ae1b2603071810e572"
+      },
+      {
+        "path": "src/ibme/protocol/prepared.py",
+        "sha256": "237dfde9644d0725fdd2a4e1d5aa3afb23bb8910545d9469b8f2f75019d38b72"
+      }
+    ],
+    "codec_spec": [
+      {
+        "path": "docs/specs/srgg-paper-compact.md",
+        "sha256": "7bd1d1523c7d29fff5e0b70089af8686851a39f6a2d6012c1dbbb0fc791ac8aa"
+      }
+    ],
+    "codec_code": [
+      {
+        "path": "experiments/research/candidates/srgg/paper_compact.py",
+        "sha256": "020c685441cfb8774ac0e64daf01951ff16bfece3341ae04d2bc34ed81c8226a"
+      }
+    ],
+    "issuer": [
+      {
+        "path": "src/ibme/cli_state.py",
+        "sha256": "531aa3d7f4c9d6e1929847b3ed603b2427911e9fa4c1f98db440d8ae70d35567"
+      }
+    ],
+    "web_screenshot": [
+      {
+        "path": "docs/deliveries/2026-10-20-web-redesign/desktop.png",
+        "sha256": "3faa22db2b1f9bfac026e1bd9c4bdf6e55bbae2548e5f13a7210718b536f199a"
+      }
+    ],
+    "wrong_receiver_screenshot": [
+      {
+        "path": "docs/deliveries/2026-10-20-web-rejection-screenshots/wrong-receiver.png",
+        "sha256": "7aee11c2f756235d97196cde3727e8911935d912f6e9387ba3ed71a79099f0b7"
+      }
+    ],
+    "papers": [
+      {
+        "path": "papers/2024_quantum_safe_hibe_zhao.pdf",
+        "sha256": "aefa8c6808b4ee7aa565587ccd48d64ca8e8ab81a9cba600e4691227253d70ca"
+      },
+      {
+        "path": "papers/2015_ideal_lattice_trapdoors_lai.pdf",
+        "sha256": "0985cb1d8cc760a18070a38d30b8de5b532bca52b5c06e05e65b2d712bdf338c"
+      },
+      {
+        "path": "papers/2006_generic_ibs_galindo.pdf",
+        "sha256": "b3362442d3278953ddaaea1fa4921f8d6f051f166108fb6d81013b22b510aed2"
+      },
+      {
+        "path": "papers/2024_ibs_without_trapdoors_luo.pdf",
+        "sha256": "12c70ae7635c0b88c132bca14990480a8e0cdec2e786a6dcf39256e5bb0dd455"
+      },
+      {
+        "path": "papers/2025_efficient_ibs_jia.pdf",
+        "sha256": "258583c5b90255afe91343a282cb62840198b1192b6462dfc9597a24f8c01152"
+      },
+      {
+        "path": "papers/2023_shorter_faster_ibs_sageloli.pdf",
+        "sha256": "0e92f184828bc8643a774e9c334b14689346387981e766c311c596239ef73e3e"
+      },
+      {
+        "path": "papers/2022_identity_matchmaking_wang.pdf",
+        "sha256": "fa3a97cfe2db59f2f8208d45b76f3c14d289774cb4075e7946dd5051ae84c597"
+      },
+      {
+        "path": "papers/2021_short_ibs_pan.pdf",
+        "sha256": "0aa96c6104a3f89d3db1157860695166336a53e1fb57e626fa8009832990f7af"
+      },
+      {
+        "path": "papers/2024_ml_dsa_fips204.pdf",
+        "sha256": "57239b9f84c03227eda3ca0991204dc7764c79af9ce2e6824eda774918d46b6b"
+      },
+      {
+        "path": "papers/2020_falcon_spec_fouque.pdf",
+        "sha256": "f887f3f9f367c664fb36639a830bf24390f19b3505abeac2e2c076fd1ad6c6f3"
+      }
+    ]
+  }
+}

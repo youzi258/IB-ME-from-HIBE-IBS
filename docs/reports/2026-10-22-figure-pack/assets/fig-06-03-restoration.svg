@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="327.6pt" viewBox="0 0 720 327.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-22T03:53:40.548843</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 327.6
+L 720 327.6
+L 720 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.8 75.6
+L 219.6 75.6
+Q 223.2 75.6 223.2 79.2
+L 223.2 140.4
+Q 223.2 144 219.6 144
+L 28.8 144
+Q 25.2 144 25.2 140.4
+L 25.2 79.2
+Q 25.2 75.6 28.8 75.6
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 223.2 109.8
+Q 243 109.62 261.123018 109.455245
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 256.301399 107.098979
+L 261.123018 109.455245
+L 256.345034 111.898781
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 266.4 75.6
+L 457.2 75.6
+Q 460.8 75.6 460.8 79.2
+L 460.8 140.4
+Q 460.8 144 457.2 144
+L 266.4 144
+Q 262.8 144 262.8 140.4
+L 262.8 79.2
+Q 262.8 75.6 266.4 75.6
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 460.8 109.8
+Q 480.6 109.62 498.723018 109.455245
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 493.901399 107.098979
+L 498.723018 109.455245
+L 493.945034 111.898781
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 504 75.6
+L 694.8 75.6
+Q 698.4 75.6 698.4 79.2
+L 698.4 140.4
+Q 698.4 144 694.8 144
+L 504 144
+Q 500.4 144 500.4 140.4
+L 500.4 79.2
+Q 500.4 75.6 504 75.6
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 266.4 216
+L 457.2 216
+Q 460.8 216 460.8 219.6
+L 460.8 284.4
+Q 460.8 288 457.2 288
+L 266.4 288
+Q 262.8 288 262.8 284.4
+L 262.8 219.6
+Q 262.8 216 266.4 216
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 504 216
+L 694.8 216
+Q 698.4 216 698.4 219.6
+L 698.4 284.4
+Q 698.4 288 694.8 288
+L 504 288
+Q 500.4 288 500.4 284.4
+L 500.4 219.6
+Q 500.4 216 504 216
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 361.44 180
+Q 361.62 198 361.78323 214.323033
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 364.135113 209.499274
+L 361.78323 214.323033
+L 359.335353 209.547272
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 460.8 252
+Q 480.6 252 498.722949 252
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 493.922949 249.6
+L 498.722949 252
+L 493.922949 254.4
+z
+" clip-path="url(#pf0eecd4172)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 35.28 85.68
+L 35.28 133.92
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 272.88 85.68
+L 272.88 133.92
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 510.48 85.68
+L 510.48 133.92
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 272.88 226.08
+L 272.88 277.92
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 510.48 226.08
+L 510.48 277.92
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 599.04 144
+L 599.04 180
+L 361.44 180
+" clip-path="url(#pf0eecd4172)" style="fill: none; stroke: #8595a4; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="25.2" y="29.323125" transform="rotate(-0 25.2 29.323125)">持久对象恢复</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="45.36" y="101.341875" transform="rotate(-0 45.36 101.341875)">读取保存对象</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="45.36" y="128.037109" transform="rotate(-0 45.36 128.037109)">主公钥、机构状态、角色密钥</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="282.96" y="101.348906" transform="rotate(-0 282.96 101.348906)">规范解码</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="282.96" y="128.069609" transform="rotate(-0 282.96 128.069609)">编码版本、字段与长度</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="520.56" y="101.378203" transform="rotate(-0 520.56 101.378203)">检查绑定</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="520.56" y="128.024922" transform="rotate(-0 520.56 128.024922)">组合摘要、身份、主公钥</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="282.96" y="242.828906" transform="rotate(-0 282.96 242.828906)">后端与账本校验</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="282.96" y="270.881953" transform="rotate(-0 282.96 270.881953)">代数关系、身份发钥记录</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="520.56" y="242.799609" transform="rotate(-0 520.56 242.799609)">恢复运行实例</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="520.56" y="270.925625" transform="rotate(-0 520.56 270.925625)">继续加密或解密</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf0eecd4172">
+   <rect x="0" y="0" width="720" height="327.6"/>
+  </clipPath>
+ </defs>
+</svg>

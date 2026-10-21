@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="363.6pt" viewBox="0 0 720 363.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-22T03:53:43.911602</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 363.6
+L 720 363.6
+L 720 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.8 72
+L 216 72
+Q 219.6 72 219.6 75.6
+L 219.6 154.8
+Q 219.6 158.4 216 158.4
+L 28.8 158.4
+Q 25.2 158.4 25.2 154.8
+L 25.2 75.6
+Q 25.2 72 28.8 72
+z
+" clip-path="url(#pf2e32a13c6)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 122.4 205.2
+Q 122.4 226.8 122.4 246.722949
+" clip-path="url(#pf2e32a13c6)" style="fill: none; stroke: #245a81; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 124.8 241.922949
+L 122.4 246.722949
+L 120 241.922949
+z
+" clip-path="url(#pf2e32a13c6)" style="fill: #245a81; stroke: #245a81; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 266.4 72
+L 453.6 72
+Q 457.2 72 457.2 75.6
+L 457.2 154.8
+Q 457.2 158.4 453.6 158.4
+L 266.4 158.4
+Q 262.8 158.4 262.8 154.8
+L 262.8 75.6
+Q 262.8 72 266.4 72
+z
+" clip-path="url(#pf2e32a13c6)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 360 205.2
+Q 360 226.8 360 246.722949
+" clip-path="url(#pf2e32a13c6)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 362.4 241.922949
+L 360 246.722949
+L 357.6 241.922949
+z
+" clip-path="url(#pf2e32a13c6)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 504 72
+L 691.2 72
+Q 694.8 72 694.8 75.6
+L 694.8 154.8
+Q 694.8 158.4 691.2 158.4
+L 504 158.4
+Q 500.4 158.4 500.4 154.8
+L 500.4 75.6
+Q 500.4 72 504 72
+z
+" clip-path="url(#pf2e32a13c6)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 597.6 205.2
+Q 597.6 226.8 597.6 246.722949
+" clip-path="url(#pf2e32a13c6)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 600 241.922949
+L 597.6 246.722949
+L 595.2 241.922949
+z
+" clip-path="url(#pf2e32a13c6)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 28.8 248.4
+L 691.2 248.4
+Q 694.8 248.4 694.8 252
+L 694.8 309.6
+Q 694.8 313.2 691.2 313.2
+L 28.8 313.2
+Q 25.2 313.2 25.2 309.6
+L 25.2 252
+Q 25.2 248.4 28.8 248.4
+z
+" clip-path="url(#pf2e32a13c6)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 35.28 82.08
+L 35.28 148.32
+" clip-path="url(#pf2e32a13c6)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 272.88 82.08
+L 272.88 148.32
+" clip-path="url(#pf2e32a13c6)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 510.48 82.08
+L 510.48 148.32
+" clip-path="url(#pf2e32a13c6)" style="fill: none; stroke: #8595a4; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 35.28 258.48
+L 35.28 303.12
+" clip-path="url(#pf2e32a13c6)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="25.2" y="29.341875" transform="rotate(-0 25.2 29.341875)">组合配置与运行前检查</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="45.36" y="103.148906" transform="rotate(-0 45.36 103.148906)">算法与参数</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(45.36 128.907031)">HIBE / IBS</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(45.36 144.749766)">各自参数档</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #637183" x="122.4" y="194.251875" transform="rotate(-0 122.4 194.251875)">后端可用、两层身份</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="282.96" y="103.215703" transform="rotate(-0 282.96 103.215703)">身份与消息</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(282.96 129.313281)">身份长度、种子长度</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(282.96 144.755859)">签名上界、载荷预算</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #637183" x="360" y="194.293125" transform="rotate(-0 360 194.293125)">可编码、可封装、可装入载荷</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #8595a4" x="520.56" y="103.127813" transform="rotate(-0 520.56 103.127813)">对象与环境</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(520.56 129.268594)">密钥与签名格式</text>
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; fill: #637183" transform="translate(520.56 144.78125)">协议版本、数学库</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #637183" x="597.6" y="194.264062" transform="rotate(-0 597.6 194.264062)">编码一致、组件可用</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="45.36" y="272.2275" transform="rotate(-0 45.36 272.2275)">SuiteConfig 与配置摘要</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="45.36" y="298.323203" transform="rotate(-0 45.36 298.323203)">运行前完成核对，计算消息上限，再生成系统密钥</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="25.2" y="347.646563" transform="rotate(-0 25.2 347.646563)">主公钥和角色密钥携带配置摘要；导入时核对是否来自同一套设置。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf2e32a13c6">
+   <rect x="0" y="0" width="720" height="363.6"/>
+  </clipPath>
+ </defs>
+</svg>

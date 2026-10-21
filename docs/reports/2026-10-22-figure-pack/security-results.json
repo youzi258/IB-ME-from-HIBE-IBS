@@ -1,0 +1,137 @@
+[
+  {
+    "scheme": "LATTE",
+    "correctness": "Encrypt / Decrypt 的\n编码、重加密一致性",
+    "security": "ID-IND-CCA；经典 ROM\nNTRU / RLWE 与论文的 FO、\n有限精度采样条件",
+    "locator": "§III；§IV-A、D\nPDF 6–9、12",
+    "paper": "2024_quantum_safe_hibe_zhao.pdf",
+    "checks": [
+      [
+        8,
+        "ID-IND-CCA"
+      ],
+      [
+        9,
+        "classical Random Oracle Model"
+      ]
+    ]
+  },
+  {
+    "scheme": "Lai",
+    "correctness": "ringInvert / ringSampleDO\n正确性；原文 (H)IBE 解密",
+    "security": "原论文构造为 INDr-ID-CCA\nPLWE 假设与原文陷门、误差条件；\nINDr 包含消息隐私与接收者匿名性",
+    "locator": "Theorem 6、8、10\n§5.1–5.2\nPDF 11、13–15",
+    "paper": "2015_ideal_lattice_trapdoors_lai.pdf",
+    "checks": [
+      [
+        13,
+        "Algorithm 7 is correct"
+      ],
+      [
+        15,
+        "INDr-ID-CCA-secure"
+      ]
+    ]
+  },
+  {
+    "scheme": "BNN + ML-DSA",
+    "correctness": "机构证书与消息签名\n分别通过底层验签",
+    "security": "认证转换得到 IBS 不可伪造性\n条件：两套底层普通签名安全；\n此行底层采用 ML-DSA-44",
+    "locator": "Galindo 等 §3\nTheorem 1，PDF 5\nFIPS 204",
+    "paper": "2006_generic_ibs_galindo.pdf",
+    "checks": [
+      [
+        5,
+        "secure standard signature schemes"
+      ]
+    ]
+  },
+  {
+    "scheme": "BNN + Falcon",
+    "correctness": "机构证书与消息签名\n分别通过底层验签",
+    "security": "同一认证转换定理\n条件：两套底层普通签名安全；\n此行底层采用 Falcon-512",
+    "locator": "Galindo 等 §3\nTheorem 1，PDF 5\nFalcon v1.2",
+    "paper": "2006_generic_ibs_galindo.pdf",
+    "checks": [
+      [
+        5,
+        "secure identity-based signature scheme"
+      ]
+    ]
+  },
+  {
+    "scheme": "Luo",
+    "correctness": "恢复签名承诺的等式\n与拒绝采样后的范数条件",
+    "security": "原文 SIS 归约；经典 ROM\n条件：原定理的挑战空间、\n拒绝采样及范数参数",
+    "locator": "§3.1–3.2\nTheorem 1\nPDF 7–8",
+    "paper": "2024_ibs_without_trapdoors_luo.pdf",
+    "checks": [
+      [
+        7,
+        "Correctness Analysis"
+      ],
+      [
+        8,
+        "Theorem 1"
+      ]
+    ]
+  },
+  {
+    "scheme": "SRGG",
+    "correctness": "原文签名验证方程\n及响应向量范数检查",
+    "security": "sEUF-ID-CMA；QROM\nTheorem 2 条件：底层 SIG\n满足 sEUF-CMA",
+    "locator": "Algorithm 7–8\nTheorem 2\nPDF 7–8",
+    "paper": "2025_efficient_ibs_jia.pdf",
+    "checks": [
+      [
+        8,
+        "sEUF-ID-CMA"
+      ],
+      [
+        8,
+        "Theorem 2"
+      ]
+    ]
+  },
+  {
+    "scheme": "Sageloli-RSIS",
+    "correctness": "Proposition 10 的完备性\n模方程与分块范数条件",
+    "security": "RSIS；ROM / QROM\n非自适应 Theorem 3，结合\nTheorem 1、Proposition 11",
+    "locator": "Table 4；§5、§7\nPDF 16、24",
+    "paper": "2023_shorter_faster_ibs_sageloli.pdf",
+    "checks": [
+      [
+        24,
+        "Proposition 10"
+      ],
+      [
+        24,
+        "Theorem 3"
+      ]
+    ]
+  },
+  {
+    "scheme": "Wang + PW",
+    "correctness": "Wang Lemma 5.1\nPW 转换保持完备性",
+    "security": "Wang：SIS 下 UF-naCMA\nPW Theorem 2：随机预言机与\n盐长条件下转为 UF-CMA",
+    "locator": "Wang PDF 16–17\nPW §3.2，PDF 12",
+    "paper": "2022_identity_matchmaking_wang.pdf",
+    "checks": [
+      [
+        16,
+        "Lemma 5.1"
+      ],
+      [
+        17,
+        "Theorem 5.1"
+      ]
+    ],
+    "extra_checks": [
+      [
+        "2021_short_ibs_pan.pdf",
+        12,
+        "UF-CMA secure"
+      ]
+    ]
+  }
+]

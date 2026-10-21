@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="439.2pt" viewBox="0 0 720 439.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-22T03:53:42.940808</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 439.2
+L 720 439.2
+L 720 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.8 90
+L 298.8 90
+Q 302.4 90 302.4 93.6
+L 302.4 158.4
+Q 302.4 162 298.8 162
+L 28.8 162
+Q 25.2 162 25.2 158.4
+L 25.2 93.6
+Q 25.2 90 28.8 90
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 421.2 90
+L 691.2 90
+Q 694.8 90 694.8 93.6
+L 694.8 158.4
+Q 694.8 162 691.2 162
+L 421.2 162
+Q 417.6 162 417.6 158.4
+L 417.6 93.6
+Q 417.6 90 421.2 90
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 302.4 126
+Q 360 126 415.922949 126
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 411.122949 123.6
+L 415.922949 126
+L 411.122949 128.4
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 147.6 228.24
+Q 147.6 240.84 147.6 251.762949
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 150 246.962949
+L 147.6 251.762949
+L 145.2 246.962949
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 111.6 265.68
+L 147.6 265.68
+L 147.6 304.56
+L 111.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 147.6 265.68
+L 183.6 265.68
+L 183.6 304.56
+L 147.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 255.6 228.24
+Q 255.6 240.84 255.6 251.762949
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 258 246.962949
+L 255.6 251.762949
+L 253.2 246.962949
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 219.6 265.68
+L 255.6 265.68
+L 255.6 304.56
+L 219.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 255.6 265.68
+L 291.6 265.68
+L 291.6 304.56
+L 255.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 363.6 228.24
+Q 363.6 240.84 363.6 251.762949
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 366 246.962949
+L 363.6 251.762949
+L 361.2 246.962949
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 327.6 265.68
+L 363.6 265.68
+L 363.6 304.56
+L 327.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 363.6 265.68
+L 399.6 265.68
+L 399.6 304.56
+L 363.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 471.6 228.24
+Q 471.6 240.84 471.6 251.762949
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 474 246.962949
+L 471.6 251.762949
+L 469.2 246.962949
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 435.6 265.68
+L 471.6 265.68
+L 471.6 304.56
+L 435.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 471.6 265.68
+L 507.6 265.68
+L 507.6 304.56
+L 471.6 304.56
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #eaf3f0; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 129.6 368.64
+L 244.555932 368.64
+L 244.555932 405.36
+L 129.6 405.36
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #f3f6f8; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 244.555932 368.64
+L 378.671186 368.64
+L 378.671186 405.36
+L 244.555932 405.36
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #f3f6f8; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 378.671186 368.64
+L 522.366102 368.64
+L 522.366102 405.36
+L 378.671186 405.36
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #f3f6f8; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 522.366102 368.64
+L 694.8 368.64
+L 694.8 405.36
+L 522.366102 405.36
+z
+" clip-path="url(#p705c65e5ec)" style="fill: #f3f6f8; stroke: #ffffff; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 35.28 100.08
+L 35.28 151.92
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #8595a4; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 427.68 100.08
+L 427.68 151.92
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 25.2 360
+L 694.8 360
+" clip-path="url(#p705c65e5ec)" style="fill: none; stroke: #d7dfe5; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="25.2" y="29.302813" transform="rotate(-0 25.2 29.302813)">SRGG 范围感知编码：从系数到字节</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="25.2" y="52.959375" transform="rotate(-0 25.2 52.959375)">系数区示例：三值系数 [-1, 0, 1, 0] 的 2-bit witness 编码</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #8595a4" x="45.36" y="116.844141" transform="rotate(-0 45.36 116.844141)">JSON 系数区</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="45.36" y="144.307109" transform="rotate(-0 45.36 144.307109)">[-1,0,1,0]  →  10 B ASCII</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="437.76" y="116.830078" transform="rotate(-0 437.76 116.830078)">紧凑系数区</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="437.76" y="144.906328" transform="rotate(-0 437.76 144.906328)">每项 2 bit；4 项打包为 1 B</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #218478" x="360" y="116.869375" transform="rotate(-0 360 116.869375)">按实际取值范围</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="147.6" y="218.970234" transform="rotate(-0 147.6 218.970234)">-1</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="129.6" y="291.927656" transform="rotate(-0 129.6 291.927656)">0</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="165.6" y="291.927656" transform="rotate(-0 165.6 291.927656)">0</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="255.6" y="218.825469" transform="rotate(-0 255.6 218.825469)">0</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="237.6" y="291.927656" transform="rotate(-0 237.6 291.927656)">0</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="273.6" y="292.076719" transform="rotate(-0 273.6 292.076719)">1</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="363.6" y="218.970234" transform="rotate(-0 363.6 218.970234)">1</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="345.6" y="292.076719" transform="rotate(-0 345.6 292.076719)">1</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="381.6" y="291.927656" transform="rotate(-0 381.6 291.927656)">0</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="471.6" y="218.825469" transform="rotate(-0 471.6 218.825469)">0</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="453.6" y="291.927656" transform="rotate(-0 453.6 291.927656)">0</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="489.6" y="292.076719" transform="rotate(-0 489.6 292.076719)">1</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #218478" x="360" y="337.318594" transform="rotate(-0 360 337.318594)">00 01 10 01  =  00011001₂  =  0x19</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #202c39" x="25.2" y="388.693125" transform="rotate(-0 25.2 388.693125)">主私钥容器</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="187.077966" y="391.184062" transform="rotate(-0 187.077966 391.184062)">固定头 54 B</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="311.613559" y="391.178437" transform="rotate(-0 311.613559 391.178437)">嵌入公钥</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="450.518644" y="391.720312" transform="rotate(-0 450.518644 391.720312)">2-bit witness</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="608.583051" y="391.21875" transform="rotate(-0 608.583051 391.21875)">身份缓存与状态</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="25.2" y="429.04125" transform="rotate(-0 25.2 429.04125)">其他字段：公开模 Q 系数用 24 bit；有符号短向量用 Zigzag 与最小统一位宽。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p705c65e5ec">
+   <rect x="0" y="0" width="720" height="439.2"/>
+  </clipPath>
+ </defs>
+</svg>

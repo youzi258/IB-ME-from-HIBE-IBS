@@ -1,0 +1,532 @@
+{
+  "combinations": [
+    {
+      "case": "latte-mldsa44",
+      "hibe": "latte",
+      "ibs": "cert-ml-dsa",
+      "passed_roots": "1",
+      "source_batch": "calibration-02",
+      "setup_seconds": "0.7288892379999652",
+      "sender-key_seconds": "0.013944148999996742",
+      "receiver-key_seconds": "0.22361101899997493",
+      "cold-encrypt_seconds": "0.012868722999996862",
+      "first-decrypt_seconds": "0.10297087200001442",
+      "warm-encrypt_seconds": "0.013494899000022542",
+      "warm-decrypt_seconds": "0.05940697199997658",
+      "restore-objects_seconds": "0.6579383229999962",
+      "restored-decrypt_seconds": "0.06159016800000927",
+      "setup_sampled_rss_bytes": "247418880",
+      "sender-key_sampled_rss_bytes": "238026752",
+      "receiver-key_sampled_rss_bytes": "260952064",
+      "cold-encrypt_sampled_rss_bytes": "243126272",
+      "first-decrypt_sampled_rss_bytes": "266588160",
+      "warm-encrypt_sampled_rss_bytes": "246779904",
+      "warm-decrypt_sampled_rss_bytes": "240648192",
+      "restore-objects_sampled_rss_bytes": "239161344",
+      "restored-decrypt_sampled_rss_bytes": "242012160",
+      "public_bytes": "14398",
+      "master_bytes": "145639",
+      "sender_bytes": "8050",
+      "receiver_bytes": "128087",
+      "ciphertext_bytes": "142124"
+    },
+    {
+      "case": "latte-falcon512",
+      "hibe": "latte",
+      "ibs": "cert-falcon",
+      "passed_roots": "1",
+      "source_batch": "basic-supplement-01",
+      "setup_seconds": "0.689290217000007",
+      "sender-key_seconds": "0.022865987999921344",
+      "receiver-key_seconds": "0.3404517210001359",
+      "cold-encrypt_seconds": "0.01525187599986566",
+      "first-decrypt_seconds": "0.09514704399998664",
+      "warm-encrypt_seconds": "0.01468806200000472",
+      "warm-decrypt_seconds": "0.05254766800021571",
+      "restore-objects_seconds": "0.5757947930001137",
+      "restored-decrypt_seconds": "0.0545416509999086",
+      "setup_sampled_rss_bytes": "247484416",
+      "sender-key_sampled_rss_bytes": "239464448",
+      "receiver-key_sampled_rss_bytes": "261685248",
+      "cold-encrypt_sampled_rss_bytes": "238202880",
+      "first-decrypt_sampled_rss_bytes": "266579968",
+      "warm-encrypt_sampled_rss_bytes": "240877568",
+      "warm-decrypt_sampled_rss_bytes": "240324608",
+      "restore-objects_sampled_rss_bytes": "239099904",
+      "restored-decrypt_sampled_rss_bytes": "240545792",
+      "public_bytes": "13991",
+      "master_bytes": "140282",
+      "sender_bytes": "4195",
+      "receiver_bytes": "128236",
+      "ciphertext_bytes": "138163"
+    },
+    {
+      "case": "latte-luo-compact",
+      "hibe": "latte",
+      "ibs": "luo-module",
+      "passed_roots": "1",
+      "source_batch": "basic-supplement-01",
+      "setup_seconds": "0.8188393709999673",
+      "sender-key_seconds": "1.6361861689999841",
+      "receiver-key_seconds": "0.37008996899999147",
+      "cold-encrypt_seconds": "0.9742252150001605",
+      "first-decrypt_seconds": "0.19951159200013535",
+      "warm-encrypt_seconds": "0.3510964150000291",
+      "warm-decrypt_seconds": "0.11934817800010933",
+      "restore-objects_seconds": "0.691794759000004",
+      "restored-decrypt_seconds": "0.13004324200005613",
+      "setup_sampled_rss_bytes": "247578624",
+      "sender-key_sampled_rss_bytes": "244973568",
+      "receiver-key_sampled_rss_bytes": "268083200",
+      "cold-encrypt_sampled_rss_bytes": "247861248",
+      "first-decrypt_sampled_rss_bytes": "493895680",
+      "warm-encrypt_sampled_rss_bytes": "248569856",
+      "warm-decrypt_sampled_rss_bytes": "248528896",
+      "restore-objects_sampled_rss_bytes": "244817920",
+      "restored-decrypt_sampled_rss_bytes": "246509568",
+      "public_bytes": "260827",
+      "master_bytes": "490325",
+      "sender_bytes": "313813",
+      "receiver_bytes": "128216",
+      "ciphertext_bytes": "151902"
+    },
+    {
+      "case": "latte-srgg-I-compact",
+      "hibe": "latte",
+      "ibs": "srgg2025-paper",
+      "passed_roots": "1",
+      "source_batch": "basic-supplement-01",
+      "setup_seconds": "1.076100882999981",
+      "sender-key_seconds": "33.330556547000015",
+      "receiver-key_seconds": "0.384981899999957",
+      "cold-encrypt_seconds": "17.64963278999994",
+      "first-decrypt_seconds": "0.12539566099985677",
+      "warm-encrypt_seconds": "11.273717884999996",
+      "warm-decrypt_seconds": "0.06868127999996432",
+      "restore-objects_seconds": "0.6126755309999226",
+      "restored-decrypt_seconds": "0.06824353000001793",
+      "setup_sampled_rss_bytes": "249303040",
+      "sender-key_sampled_rss_bytes": "249511936",
+      "receiver-key_sampled_rss_bytes": "274432000",
+      "cold-encrypt_sampled_rss_bytes": "252407808",
+      "first-decrypt_sampled_rss_bytes": "280223744",
+      "warm-encrypt_sampled_rss_bytes": "261017600",
+      "warm-decrypt_sampled_rss_bytes": "254107648",
+      "restore-objects_sampled_rss_bytes": "241106944",
+      "restored-decrypt_sampled_rss_bytes": "242561024",
+      "public_bytes": "47286",
+      "master_bytes": "236143",
+      "sender_bytes": "84342",
+      "receiver_bytes": "128086",
+      "ciphertext_bytes": "149300"
+    },
+    {
+      "case": "latte-sageloli-I",
+      "hibe": "latte",
+      "ibs": "sageloli-rsis",
+      "passed_roots": "1",
+      "source_batch": "basic-supplement-01",
+      "setup_seconds": "3.114951190999818",
+      "sender-key_seconds": "50.94326253500003",
+      "receiver-key_seconds": "9.977094213999862",
+      "cold-encrypt_seconds": "12.884328418000223",
+      "first-decrypt_seconds": "0.6162945900000523",
+      "warm-encrypt_seconds": "8.041766223000195",
+      "warm-decrypt_seconds": "0.5459061379997365",
+      "restore-objects_seconds": "0.7742365290000635",
+      "restored-decrypt_seconds": "0.5772116429998277",
+      "setup_sampled_rss_bytes": "432115712",
+      "sender-key_sampled_rss_bytes": "934612992",
+      "receiver-key_sampled_rss_bytes": "1629249536",
+      "cold-encrypt_sampled_rss_bytes": "1763581952",
+      "first-decrypt_sampled_rss_bytes": "1167740928",
+      "warm-encrypt_sampled_rss_bytes": "1718276096",
+      "warm-decrypt_sampled_rss_bytes": "1172004864",
+      "restore-objects_sampled_rss_bytes": "285114368",
+      "restored-decrypt_sampled_rss_bytes": "353345536",
+      "public_bytes": "3527544",
+      "master_bytes": "156657141",
+      "sender_bytes": "144089680",
+      "receiver_bytes": "128215",
+      "ciphertext_bytes": "3363671"
+    },
+    {
+      "case": "lai-c2-mldsa44",
+      "hibe": "lai-ideal-hibe",
+      "ibs": "cert-ml-dsa",
+      "passed_roots": "1",
+      "source_batch": "basic-supplement-01",
+      "setup_seconds": "1.9514815519996773",
+      "sender-key_seconds": "0.5493982030002371",
+      "receiver-key_seconds": "30.625172941000073",
+      "cold-encrypt_seconds": "86.48885327300013",
+      "first-decrypt_seconds": "422.49839205800026",
+      "warm-encrypt_seconds": "83.61130520799998",
+      "warm-decrypt_seconds": "424.827498526",
+      "restore-objects_seconds": "11.438269098999626",
+      "restored-decrypt_seconds": "428.23709081800007",
+      "setup_sampled_rss_bytes": "257736704",
+      "sender-key_sampled_rss_bytes": "293814272",
+      "receiver-key_sampled_rss_bytes": "370995200",
+      "cold-encrypt_sampled_rss_bytes": "555610112",
+      "first-decrypt_sampled_rss_bytes": "838692864",
+      "warm-encrypt_sampled_rss_bytes": "700162048",
+      "warm-decrypt_sampled_rss_bytes": "918577152",
+      "restore-objects_sampled_rss_bytes": "553783296",
+      "restored-decrypt_sampled_rss_bytes": "860930048",
+      "public_bytes": "1619667",
+      "master_bytes": "4047076",
+      "sender_bytes": "8050",
+      "receiver_bytes": "20439584",
+      "ciphertext_bytes": "1333849"
+    },
+    {
+      "case": "lai-c2-falcon512",
+      "hibe": "lai-ideal-hibe",
+      "ibs": "cert-falcon",
+      "passed_roots": "1",
+      "source_batch": "basic-supplement-01",
+      "setup_seconds": "2.1371729310000003",
+      "sender-key_seconds": "0.6206152129999989",
+      "receiver-key_seconds": "31.962031509",
+      "cold-encrypt_seconds": "90.922440094",
+      "first-decrypt_seconds": "439.5071405389999",
+      "warm-encrypt_seconds": "85.21101696799997",
+      "warm-decrypt_seconds": "425.6126499830001",
+      "restore-objects_seconds": "12.432576414000096",
+      "restored-decrypt_seconds": "424.93513576300006",
+      "setup_sampled_rss_bytes": "259137536",
+      "sender-key_sampled_rss_bytes": "293773312",
+      "receiver-key_sampled_rss_bytes": "375570432",
+      "cold-encrypt_sampled_rss_bytes": "555397120",
+      "first-decrypt_sampled_rss_bytes": "838594560",
+      "warm-encrypt_sampled_rss_bytes": "699973632",
+      "warm-decrypt_sampled_rss_bytes": "918315008",
+      "restore-objects_sampled_rss_bytes": "533463040",
+      "restored-decrypt_sampled_rss_bytes": "860917760",
+      "public_bytes": "1619260",
+      "master_bytes": "4041535",
+      "sender_bytes": "4195",
+      "receiver_bytes": "20439584",
+      "ciphertext_bytes": "1329934"
+    },
+    {
+      "case": "lai-c2-luo-compact",
+      "hibe": "lai-ideal-hibe",
+      "ibs": "luo-module",
+      "passed_roots": "1",
+      "source_batch": "calibration-02",
+      "setup_seconds": "2.137593232000029",
+      "sender-key_seconds": "0.8000330779999558",
+      "receiver-key_seconds": "31.237316131",
+      "cold-encrypt_seconds": "84.96450922499997",
+      "first-decrypt_seconds": "426.69492357600006",
+      "warm-encrypt_seconds": "85.4986646399999",
+      "warm-decrypt_seconds": "416.63343187600003",
+      "restore-objects_seconds": "10.955200839999861",
+      "restored-decrypt_seconds": "410.063152447",
+      "setup_sampled_rss_bytes": "259833856",
+      "sender-key_sampled_rss_bytes": "296796160",
+      "receiver-key_sampled_rss_bytes": "376459264",
+      "cold-encrypt_sampled_rss_bytes": "559087616",
+      "first-decrypt_sampled_rss_bytes": "867852288",
+      "warm-encrypt_sampled_rss_bytes": "703602688",
+      "warm-decrypt_sampled_rss_bytes": "928415744",
+      "restore-objects_sampled_rss_bytes": "567656448",
+      "restored-decrypt_sampled_rss_bytes": "865009664",
+      "public_bytes": "1866104",
+      "master_bytes": "4391625",
+      "sender_bytes": "313813",
+      "receiver_bytes": "20439584",
+      "ciphertext_bytes": "1343675"
+    },
+    {
+      "case": "lai-c2-srgg-I-compact",
+      "hibe": "lai-ideal-hibe",
+      "ibs": "srgg2025-paper",
+      "passed_roots": "1",
+      "source_batch": "basic-supplement-01",
+      "setup_seconds": "2.263383474999955",
+      "sender-key_seconds": "28.148801878999848",
+      "receiver-key_seconds": "30.703403643",
+      "cold-encrypt_seconds": "91.1928156649999",
+      "first-decrypt_seconds": "427.62294527200015",
+      "warm-encrypt_seconds": "89.77506768099965",
+      "warm-decrypt_seconds": "412.6346630039998",
+      "restore-objects_seconds": "11.041000231999988",
+      "restored-decrypt_seconds": "414.26383774299984",
+      "setup_sampled_rss_bytes": "261394432",
+      "sender-key_sampled_rss_bytes": "295616512",
+      "receiver-key_sampled_rss_bytes": "368218112",
+      "cold-encrypt_sampled_rss_bytes": "567005184",
+      "first-decrypt_sampled_rss_bytes": "851308544",
+      "warm-encrypt_sampled_rss_bytes": "709246976",
+      "warm-decrypt_sampled_rss_bytes": "922251264",
+      "restore-objects_sampled_rss_bytes": "566714368",
+      "restored-decrypt_sampled_rss_bytes": "862732288",
+      "public_bytes": "1652640",
+      "master_bytes": "4137691",
+      "sender_bytes": "84311",
+      "receiver_bytes": "20439584",
+      "ciphertext_bytes": "1341012"
+    },
+    {
+      "case": "lai-c2-sageloli-I",
+      "hibe": "lai-ideal-hibe",
+      "ibs": "sageloli-rsis",
+      "passed_roots": "1",
+      "source_batch": "calibration-02",
+      "setup_seconds": "4.604453460000059",
+      "sender-key_seconds": "49.92536724699994",
+      "receiver-key_seconds": "39.51595367099981",
+      "cold-encrypt_seconds": "96.42989143499994",
+      "first-decrypt_seconds": "412.16380637500015",
+      "warm-encrypt_seconds": "89.39326387700021",
+      "warm-decrypt_seconds": "409.224427397",
+      "restore-objects_seconds": "11.02372473100013",
+      "restored-decrypt_seconds": "406.0471737349999",
+      "setup_sampled_rss_bytes": "442724352",
+      "sender-key_sampled_rss_bytes": "950685696",
+      "receiver-key_sampled_rss_bytes": "1655599104",
+      "cold-encrypt_sampled_rss_bytes": "1869950976",
+      "first-decrypt_sampled_rss_bytes": "1746919424",
+      "warm-encrypt_sampled_rss_bytes": "2113261568",
+      "warm-decrypt_sampled_rss_bytes": "1839579136",
+      "restore-objects_sampled_rss_bytes": "584192000",
+      "restored-decrypt_sampled_rss_bytes": "898789376",
+      "public_bytes": "5132798",
+      "master_bytes": "160558447",
+      "sender_bytes": "144089680",
+      "receiver_bytes": "20439584",
+      "ciphertext_bytes": "4555436"
+    }
+  ],
+  "capacities": {
+    "A": 59191,
+    "B": 65364,
+    "C": 3924
+  },
+  "accounting": {
+    "schema": "IBME-REPORT-FORMAT-ACCOUNTING/1",
+    "new_encryptions": 0,
+    "method": "serializer length probe plus existing public totals; capsule length inferred",
+    "rows": [
+      {
+        "representative": "A",
+        "message_bytes": 32,
+        "ots_public_bytes": 65536,
+        "ots_signature_bytes": 32768,
+        "ibs_signature_bytes": 6237,
+        "capsule_bytes": 37088,
+        "framing_and_tag_bytes": 432,
+        "total_bytes": 142093,
+        "capsule_method": "recorded total minus exact fixed-format components"
+      },
+      {
+        "representative": "C",
+        "message_bytes": 0,
+        "ots_public_bytes": 65536,
+        "ots_signature_bytes": 32768,
+        "ibs_signature_bytes": 3227824,
+        "capsule_bytes": 1228844,
+        "framing_and_tag_bytes": 432,
+        "total_bytes": 4555404,
+        "capsule_method": "recorded total minus exact fixed-format components"
+      }
+    ]
+  },
+  "codec": [
+    {
+      "profile": "PARAM-I",
+      "object": "key",
+      "json_bytes_median": "84165",
+      "compact_bytes_median": "18256",
+      "paired_ratio_median": "4.610265118317265"
+    },
+    {
+      "profile": "PARAM-I",
+      "object": "master",
+      "json_bytes_median": "102606",
+      "compact_bytes_median": "20306",
+      "paired_ratio_median": "5.05298926425687"
+    },
+    {
+      "profile": "PARAM-I",
+      "object": "public",
+      "json_bytes_median": "34463",
+      "compact_bytes_median": "12374",
+      "paired_ratio_median": "2.785113948601907"
+    },
+    {
+      "profile": "PARAM-I",
+      "object": "signature",
+      "json_bytes_median": "35368",
+      "compact_bytes_median": "13400",
+      "paired_ratio_median": "2.639402985074627"
+    },
+    {
+      "profile": "PARAM-II",
+      "object": "key",
+      "json_bytes_median": "176919",
+      "compact_bytes_median": "36496",
+      "paired_ratio_median": "4.847627137220518"
+    },
+    {
+      "profile": "PARAM-II",
+      "object": "master",
+      "json_bytes_median": "218520",
+      "compact_bytes_median": "41106",
+      "paired_ratio_median": "5.316012260983798"
+    },
+    {
+      "profile": "PARAM-II",
+      "object": "public",
+      "json_bytes_median": "76954",
+      "compact_bytes_median": "27734",
+      "paired_ratio_median": "2.774716953919377"
+    },
+    {
+      "profile": "PARAM-II",
+      "object": "signature",
+      "json_bytes_median": "51117",
+      "compact_bytes_median": "19288",
+      "paired_ratio_median": "2.650197013687267"
+    },
+    {
+      "profile": "PARAM-III",
+      "object": "key",
+      "json_bytes_median": "303453",
+      "compact_bytes_median": "60880",
+      "paired_ratio_median": "4.984444809461235"
+    },
+    {
+      "profile": "PARAM-III",
+      "object": "master",
+      "json_bytes_median": "377344",
+      "compact_bytes_median": "69074",
+      "paired_ratio_median": "5.4628948663751915"
+    },
+    {
+      "profile": "PARAM-III",
+      "object": "public",
+      "json_bytes_median": "136433",
+      "compact_bytes_median": "49238",
+      "paired_ratio_median": "2.770888338275316"
+    },
+    {
+      "profile": "PARAM-III",
+      "object": "signature",
+      "json_bytes_median": "67076",
+      "compact_bytes_median": "26264",
+      "paired_ratio_median": "2.553914102954615"
+    }
+  ],
+  "codec_timing": {
+    "codec-key-compact-decode": 0.032317835,
+    "codec-key-compact-encode": 0.014168631,
+    "codec-key-json-decode": 0.015061759,
+    "codec-key-json-encode": 0.000462258,
+    "codec-master-compact-decode": 0.061257948,
+    "codec-master-compact-encode": 0.023088573,
+    "codec-master-json-decode": 0.037316558,
+    "codec-master-json-encode": 0.000973698,
+    "codec-public-compact-decode": 0.005276344,
+    "codec-public-compact-encode": 0.002007942,
+    "codec-public-json-decode": 0.002136702,
+    "codec-public-json-encode": 0.000280379,
+    "codec-signature-compact-decode": 0.005587699,
+    "codec-signature-compact-encode": 0.00257091,
+    "codec-signature-json-decode": 0.000983068,
+    "codec-signature-json-encode": 0.000309657
+  },
+  "ab_samples": {
+    "A": {
+      "warm-encrypt": [
+        [
+          0.208021518999999,
+          0.07434462700001632,
+          0.08343053500001929
+        ],
+        [
+          0.25134993800000416,
+          0.07456136000001834,
+          0.15183473499999423
+        ],
+        [
+          0.07847284700000046,
+          0.077750702000003,
+          0.07753739599999676
+        ]
+      ],
+      "warm-decrypt": [
+        [
+          0.15297645900000134,
+          0.14873668800001383,
+          0.20180616599998302
+        ],
+        [
+          0.15056259400000727,
+          0.14423261799998954,
+          0.154332801999999
+        ],
+        [
+          0.24625143000000094,
+          0.14719180500000562,
+          0.15195069799997896
+        ]
+      ]
+    },
+    "B": {
+      "warm-encrypt": [
+        [
+          7.776251147000011,
+          7.781287670000012,
+          7.663592378000004
+        ],
+        [
+          9.172153894000019,
+          8.985253120999971,
+          9.344332030000032
+        ],
+        [
+          9.457766456000002,
+          9.406197830999986,
+          48.174364185
+        ]
+      ],
+      "warm-decrypt": [
+        [
+          0.146435007000008,
+          0.15128824700002497,
+          0.12861080700000116
+        ],
+        [
+          0.1608209000000329,
+          0.16066960599999902,
+          0.12659448499999826
+        ],
+        [
+          0.25655623699998387,
+          0.16432175099998858,
+          0.24157046299995955
+        ]
+      ]
+    }
+  },
+  "session": {
+    "amortized_seconds": {
+      "1": 538.1153560289997,
+      "10": 79.5223485164998,
+      "100": 33.663047765249814,
+      "2": 283.34146296649976,
+      "3": 198.41683194566644
+    },
+    "independent_roots": 1,
+    "leaf_key_bytes": 36414052,
+    "original_decrypt_seconds": 526.2724327254999,
+    "paired_benchmark": false,
+    "preparation_seconds": 509.5477861249999,
+    "prepared_decrypt_seconds": 28.56756990399981,
+    "repeated_decrypt_ratio": 18.422023101510476
+  }
+}

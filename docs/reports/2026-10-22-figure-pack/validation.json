@@ -1,0 +1,2127 @@
+{
+  "passed": true,
+  "checks": 530,
+  "visual_review_complete": true,
+  "details": [
+    {
+      "check": "31 catalog entries",
+      "passed": true
+    },
+    {
+      "check": "unique asset identifiers",
+      "passed": true
+    },
+    {
+      "check": "all 22 current report figures covered",
+      "passed": true
+    },
+    {
+      "check": "nine supplementary items",
+      "passed": true
+    },
+    {
+      "check": "correct integrated report PDF unchanged",
+      "passed": true
+    },
+    {
+      "check": "every integrated report file unchanged",
+      "passed": true
+    },
+    {
+      "check": "existing experiment records used",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-01-roles.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-01-roles.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-01-roles.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-02-research-timeline.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-02-research-timeline.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-02-research-timeline.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-03-roadmap.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-03-roadmap.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-01-03-roadmap.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-02-01-preimage.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-02-01-preimage.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-02-01-preimage.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-03-01-architecture.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-03-01-architecture.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-03-01-architecture.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-03-02-encryption.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-03-02-encryption.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-03-02-encryption.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-04-01-representatives.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-04-01-representatives.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-04-01-representatives.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-05-01-sampler.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-05-01-sampler.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-05-01-sampler.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-05-02-session-flow.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-05-02-session-flow.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-05-02-session-flow.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-01-software.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-01-software.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-01-software.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-02-backend-integration.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-02-backend-integration.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-02-backend-integration.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-03-restoration.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-03-restoration.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-03-restoration.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-04-web.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-04-web.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-04-web.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-05-web-results.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-05-web-results.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-05-web-results.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-06-deployment.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-06-deployment.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-06-06-deployment.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-01-times.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-01-times.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-01-times.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-02-resources.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-02-resources.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-02-resources.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-03-ab-samples.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-03-ab-samples.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-03-ab-samples.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-04-ciphertext-parts.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-04-ciphertext-parts.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-04-ciphertext-parts.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-05-codec-sizes.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-05-codec-sizes.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-05-codec-sizes.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-06-session.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-06-session.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-07-06-session.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-08-01-application.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-08-01-application.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/fig-08-01-application.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-01-message-sequence.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-01-message-sequence.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-01-message-sequence.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-02-ciphertext-layout.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-02-ciphertext-layout.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-02-ciphertext-layout.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-03-paper-results.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-03-paper-results.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-03-paper-results.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-04-srgg-byte-layout.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-04-srgg-byte-layout.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-04-srgg-byte-layout.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-05-phase-composition.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-05-phase-composition.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-05-phase-composition.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-06-issuance-state.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-06-issuance-state.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-06-issuance-state.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-07-codec-timing.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-07-codec-timing.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-07-codec-timing.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-08-suite-settings.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-08-suite-settings.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-08-suite-settings.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-09-operation-flow.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-09-operation-flow.png",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: assets/new-09-operation-flow.svg",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: 图表预览册.pdf",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: plot-data.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: source-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: paper-result-evidence.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: catalog.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: layout-report.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: security-results.json",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: security-results.csv",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: security-results.md",
+      "passed": true
+    },
+    {
+      "check": "artifact digest: README.md",
+      "passed": true
+    },
+    {
+      "check": "generator digest: build_pack.py",
+      "passed": true
+    },
+    {
+      "check": "generator digest: charts.py",
+      "passed": true
+    },
+    {
+      "check": "generator digest: diagrams.py",
+      "passed": true
+    },
+    {
+      "check": "generator digest: drawing.py",
+      "passed": true
+    },
+    {
+      "check": "generator digest: references.py",
+      "passed": true
+    },
+    {
+      "check": "generator digest: screenshots.py",
+      "passed": true
+    },
+    {
+      "check": "generator digest: verify_pack.py",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: master",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-19-report-experiment-supplement/master-table.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: optimization",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-20-multi-backend-optimization/verified-summary.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: codec",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/team-b-delivery/2026-10-18-srgg-compact-benchmark/wire.csv",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: codec_benchmark",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/team-b-delivery/2026-10-18-srgg-compact-benchmark/benchmark.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: placement",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-19-full-system-placement/evidence/placement.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: combinations",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-20-combination-data-inventory/inventory.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: sageloli_I",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/team-b-delivery/2026-10-19-sageloli-ring-target/evidence/param-I-fresh.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: sageloli_II",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/team-b-delivery/2026-10-19-sageloli-ring-target/evidence/param-II-fresh.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: nixos_C",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-20-nixos-independent-reproduction/C.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: nixos_environment",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-20-nixos-independent-reproduction/environment.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: web_A",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-20-web-redesign/A.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: web_B",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-20-web-redesign/B.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: ten_combinations",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-21-ten-combination-benchmark-results/basic-comparison/basic-comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: ten_design",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-21-ten-combination-benchmark-results/basic-design.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: ten_environment",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-21-ten-combination-benchmark-results/basic-supplement-01/environment.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: ten_validation",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-21-ten-combination-benchmark-results/validation.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: ab_A",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-A.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: ab_B",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-19-report-experiment-supplement/evidence/benchmark-B.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: srgg_reference",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-19-srgg-paper-latte/functional-param-i-reference.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: srgg_compact",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/research/2026-10-19-srgg-paper-latte/functional-param-i-compact.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: accounting",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/format-accounting.json",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: report_chapters",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/01-introduction.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/02-foundations.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/03-design.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/04-algorithms.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/05-optimizations.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/06-system.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/07-experiments.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/08-applications.tex",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/reports/2026-10-22-integrated-report/chapters/09-conclusion.tex",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: protocol",
+      "passed": true
+    },
+    {
+      "check": "source digest: src/ibme/protocol/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source digest: src/ibme/protocol/baseline.py",
+      "passed": true
+    },
+    {
+      "check": "source digest: src/ibme/protocol/byteauth.py",
+      "passed": true
+    },
+    {
+      "check": "source digest: src/ibme/protocol/hybrid_hibe.py",
+      "passed": true
+    },
+    {
+      "check": "source digest: src/ibme/protocol/luo_hybrid.py",
+      "passed": true
+    },
+    {
+      "check": "source digest: src/ibme/protocol/prepared.py",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: codec_spec",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/specs/srgg-paper-compact.md",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: codec_code",
+      "passed": true
+    },
+    {
+      "check": "source digest: experiments/research/candidates/srgg/paper_compact.py",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: issuer",
+      "passed": true
+    },
+    {
+      "check": "source digest: src/ibme/cli_state.py",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: web_screenshot",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-20-web-redesign/desktop.png",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: wrong_receiver_screenshot",
+      "passed": true
+    },
+    {
+      "check": "source digest: docs/deliveries/2026-10-20-web-rejection-screenshots/wrong-receiver.png",
+      "passed": true
+    },
+    {
+      "check": "nonempty source set: papers",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2024_quantum_safe_hibe_zhao.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2015_ideal_lattice_trapdoors_lai.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2006_generic_ibs_galindo.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2024_ibs_without_trapdoors_luo.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2025_efficient_ibs_jia.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2023_shorter_faster_ibs_sageloli.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2022_identity_matchmaking_wang.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2021_short_ibs_pan.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2024_ml_dsa_fips204.pdf",
+      "passed": true
+    },
+    {
+      "check": "source digest: papers/2020_falcon_spec_fouque.pdf",
+      "passed": true
+    },
+    {
+      "check": "all assets checked for layout",
+      "passed": true
+    },
+    {
+      "check": "no text overlaps, clipping or box padding findings",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "source links: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "source links: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "source links: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "source links: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "source links: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "source links: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "source links: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "source links: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "source links: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "source links: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "editable SVG text: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "single-page PDF: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "embedded PDF fonts: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "vector PDF: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "300dpi dimensions: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "300dpi metadata: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "32-page vector preview book",
+      "passed": true
+    },
+    {
+      "check": "single source: ten_combinations",
+      "passed": true
+    },
+    {
+      "check": "ten same-machine combinations",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: latte-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: latte-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: latte-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: latte-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: latte-falcon512",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: latte-falcon512",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: latte-falcon512",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: latte-falcon512",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: latte-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: latte-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: latte-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: latte-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: latte-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: latte-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: latte-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: latte-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: latte-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: latte-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: latte-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: latte-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: lai-c2-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: lai-c2-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: lai-c2-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: lai-c2-mldsa44",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: lai-c2-falcon512",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: lai-c2-falcon512",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: lai-c2-falcon512",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: lai-c2-falcon512",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: lai-c2-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: lai-c2-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: lai-c2-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: lai-c2-luo-compact",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: lai-c2-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: lai-c2-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: lai-c2-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: lai-c2-srgg-I-compact",
+      "passed": true
+    },
+    {
+      "check": "all raw fields unchanged: lai-c2-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "timing strip scale contains values: lai-c2-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "RSS scale contains values: lai-c2-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "ciphertext scale contains values: lai-c2-sageloli-I",
+      "passed": true
+    },
+    {
+      "check": "single source: ab_A",
+      "passed": true
+    },
+    {
+      "check": "nine observations retained: A/warm-encrypt",
+      "passed": true
+    },
+    {
+      "check": "nine observations retained: A/warm-decrypt",
+      "passed": true
+    },
+    {
+      "check": "single source: ab_B",
+      "passed": true
+    },
+    {
+      "check": "nine observations retained: B/warm-encrypt",
+      "passed": true
+    },
+    {
+      "check": "nine observations retained: B/warm-decrypt",
+      "passed": true
+    },
+    {
+      "check": "single source: codec",
+      "passed": true
+    },
+    {
+      "check": "all 12 codec size rows unchanged",
+      "passed": true
+    },
+    {
+      "check": "single source: codec_benchmark",
+      "passed": true
+    },
+    {
+      "check": "all 16 codec timing medians unchanged",
+      "passed": true
+    },
+    {
+      "check": "single source: optimization",
+      "passed": true
+    },
+    {
+      "check": "session model uses archived measurements",
+      "passed": true
+    },
+    {
+      "check": "session cumulative model: 1 messages",
+      "passed": true
+    },
+    {
+      "check": "session cumulative model: 10 messages",
+      "passed": true
+    },
+    {
+      "check": "session cumulative model: 100 messages",
+      "passed": true
+    },
+    {
+      "check": "session cumulative model: 2 messages",
+      "passed": true
+    },
+    {
+      "check": "session cumulative model: 3 messages",
+      "passed": true
+    },
+    {
+      "check": "single source: master",
+      "passed": true
+    },
+    {
+      "check": "representative capacity: A",
+      "passed": true
+    },
+    {
+      "check": "representative capacity: B",
+      "passed": true
+    },
+    {
+      "check": "representative capacity: C",
+      "passed": true
+    },
+    {
+      "check": "ciphertext byte accounting: A",
+      "passed": true
+    },
+    {
+      "check": "ciphertext byte accounting: C",
+      "passed": true
+    },
+    {
+      "check": "SRGG coefficient JSON example: 10 bytes",
+      "passed": true
+    },
+    {
+      "check": "SRGG 2-bit example: 0x19",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: LATTE/8/ID-IND-CCA",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: LATTE/9/classical Random Oracle Model",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Lai/13/Algorithm 7 is correct",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Lai/15/INDr-ID-CCA-secure",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: BNN + ML-DSA/5/secure standard signature schemes",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: BNN + Falcon/5/secure identity-based signature scheme",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Luo/7/Correctness Analysis",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Luo/8/Theorem 1",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: SRGG/8/sEUF-ID-CMA",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: SRGG/8/Theorem 2",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Sageloli-RSIS/24/Proposition 10",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Sageloli-RSIS/24/Theorem 3",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Wang + PW/16/Lemma 5.1",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Wang + PW/17/Theorem 5.1",
+      "passed": true
+    },
+    {
+      "check": "original-paper anchor: Wang + PW/12/UF-CMA secure",
+      "passed": true
+    },
+    {
+      "check": "all 31 exported PDFs visually reviewed",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-03-paper-results",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "reviewed final PDF: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "no open visual findings",
+      "passed": true
+    }
+  ]
+}
