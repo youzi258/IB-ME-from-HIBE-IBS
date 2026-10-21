@@ -1,0 +1,22 @@
+{
+  "schema": "IBME-REPORT-COPY-BASELINE/1",
+  "source_directory": "docs/reports/2026-10-21-expanded-rewrite",
+  "source_commit": "5904cf29854cb728c602fd4d387f11167b58dd11",
+  "files": {
+    "README.md": "8112a0467b4561654d3dfc2ef6e3314a093ee20b234c72488e1d9334422b85e5",
+    "作品设计报告.tex": "0fd75f826b763872ef5edad7869128031323e3d9822688c98b25364c88c0684e",
+    "作品设计报告.pdf": "26c3bc5ece7e15a88fd0290de201158f51aab2a11cb85178c0a17bc647df4550",
+    "build_pdf.py": "5b4104f12101bfe6f9cd1331f0f9455507d04e5ef9fa031584cbc68d3a76c4a3",
+    "check_report.py": "704c32a0092bc1ccb579f8c9db05ccd2c864bbd0501c4154220d89709bc63da3",
+    "prepare_materials.py": "0b1d40cc6cc67660ef86309231e2cfce311a8115e094430a1693f4c4e3fa5e71",
+    "chapters/01-introduction.tex": "6754a099a38243e069a0b1f55b9541add6d3195c132f48ff765e6bfe2e60c629",
+    "chapters/02-foundations.tex": "3341ec5df4b955ddd21ba7ddb73913ed2995f9fbd72c49bb661d1b7ef8a8336a",
+    "chapters/03-design.tex": "05a448586d3dafe7c1619d13cb72efbe92f84f30425ab16285ab0c28ea9678c2",
+    "chapters/04-primitives-optimizations.tex": "1c801cfeed79273f2c225d070f80cc1730eb3ae3f9176c985f8f4ea99ae6496f",
+    "chapters/05-system.tex": "82fa47c917b8b10497fc3bb9cf4b549f350ebcffe8a1aca7163ed818be535d02",
+    "chapters/06-experiments.tex": "4d70d3b2cf69e24f56f4175b066e42341f2b46fbd691e860fd64869744873b61",
+    "chapters/07-conclusion.tex": "d9b76416bb71d303da4375c1cb72e48cb2c2a7717c5a087b7d86c989df6d60dc",
+    "format-accounting.json": "3f17e28250af26213b8bba1ec52d749f7224265a33365caae0f6dc71d912e8dc",
+    "material-sources.json": "8c6a212f0afb6b61e1b69bb3f9f6228b4cf5da7334d92e05b8c95826ff6f3389"
+  }
+}
