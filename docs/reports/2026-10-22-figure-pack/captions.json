@@ -1,0 +1,350 @@
+[
+  {
+    "id": "fig-01-01-roles",
+    "label": "图 1.1",
+    "title": "机构定向通信中的身份与密钥关系",
+    "notes": [
+      "r = r′ 且 s = s′：恢复指令；身份不匹配：拒绝"
+    ],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-01-02-research-timeline",
+    "label": "图 1.2",
+    "title": "三条研究支线与通用构造",
+    "notes": [
+      "研究节点及具体文献对应报告1.2节。"
+    ],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-01-03-roadmap",
+    "label": "图 1.3",
+    "title": "作品总体技术路线",
+    "notes": [],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-02-01-preimage",
+    "label": "图 2.1",
+    "title": "目标陪集、陷门与短原像的关系",
+    "notes": [],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-03-01-architecture",
+    "label": "图 3.1",
+    "title": "通用 IB-ME 系统的分层架构",
+    "notes": [],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-03-02-encryption",
+    "label": "图 3.2",
+    "title": "身份签名、短种子封装与完整字节认证的关系",
+    "notes": [
+      "身份签名与种子加密并行准备，最终由一次性签名统一认证。"
+    ],
+    "source_keys": [
+      "report_chapters",
+      "protocol"
+    ]
+  },
+  {
+    "id": "fig-04-01-representatives",
+    "label": "图 4.1",
+    "title": "三组代表的性能与容量",
+    "notes": [
+      "A：LATTE + ML-DSA    B：LATTE + SRGG    C：Lai + Sageloli",
+      "各面板采用对数刻度；时间和密文来自十组同机数据。"
+    ],
+    "source_keys": [
+      "ten_combinations",
+      "master"
+    ]
+  },
+  {
+    "id": "fig-05-01-sampler",
+    "label": "图 5.1",
+    "title": "Sageloli 结构化相关扰动的计算流程",
+    "notes": [
+      "PARAM-I：d=2048，ℓ=132，k=65；按频率组织低秩计算。数值计划随固定陷门复用，发钥与签名使用新的采样随机量。"
+    ],
+    "source_keys": [
+      "report_chapters",
+      "sageloli_I"
+    ]
+  },
+  {
+    "id": "fig-05-02-session-flow",
+    "label": "图 5.2",
+    "title": "Lai 接收会话将委派移至准备阶段",
+    "notes": [
+      "同一身份对复用接收会话，将叶密钥委派移至准备阶段。"
+    ],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-06-01-software",
+    "label": "图 6.1",
+    "title": "软件系统的分层结构",
+    "notes": [],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-06-02-backend-integration",
+    "label": "图 6.2",
+    "title": "新增密码后端的接入过程",
+    "notes": [],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-06-03-restoration",
+    "label": "图 6.3",
+    "title": "持久对象恢复流程",
+    "notes": [],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-06-04-web",
+    "label": "图 6.4",
+    "title": "A 组实际收发界面",
+    "notes": [
+      "归档截图保留方案、身份、消息和运行指标。"
+    ],
+    "source_keys": [
+      "web_screenshot"
+    ]
+  },
+  {
+    "id": "fig-06-05-web-results",
+    "label": "图 6.5",
+    "title": "网页演示的匹配与拒绝结果",
+    "notes": [
+      "两次操作使用同一消息与发送者，右侧更换接收者为Carol。"
+    ],
+    "source_keys": [
+      "web_screenshot",
+      "wrong_receiver_screenshot"
+    ]
+  },
+  {
+    "id": "fig-06-06-deployment",
+    "label": "图 6.6",
+    "title": "发钥机构、发送端与接收端的部署关系",
+    "notes": [
+      "各端通过同一组合配置识别算法、参数与编码版本"
+    ],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "fig-07-01-times",
+    "label": "图 7.1",
+    "title": "十种组合的完整收发时间",
+    "notes": [
+      "条带共用对数刻度，右侧为实测秒数。每组1套系统、32 B消息；A/B/C为代表组合。"
+    ],
+    "source_keys": [
+      "ten_combinations",
+      "ten_design"
+    ]
+  },
+  {
+    "id": "fig-07-02-resources",
+    "label": "图 7.2",
+    "title": "十种组合的密文长度与运行内存",
+    "notes": [
+      "按 IBS 成对比较两种 HIBE；密文采用对数刻度，RSS 采用线性刻度",
+      "RSS为各阶段进程树采样最大值；同机，每组1套系统。"
+    ],
+    "source_keys": [
+      "ten_combinations"
+    ]
+  },
+  {
+    "id": "fig-07-03-ab-samples",
+    "label": "图 7.3",
+    "title": "A/B 重复收发的逐次观测",
+    "notes": [
+      "每组 3 个独立根，每根 3 次；不同点形表示独立根"
+    ],
+    "source_keys": [
+      "ab_A",
+      "ab_B"
+    ]
+  },
+  {
+    "id": "fig-07-04-ciphertext-parts",
+    "label": "图 7.4",
+    "title": "完整密文的字节组成",
+    "notes": [
+      "按每条密文的总长度归一化；两条记录的消息长度分别为 32 B 和 0 B"
+    ],
+    "source_keys": [
+      "accounting",
+      "master"
+    ]
+  },
+  {
+    "id": "fig-07-05-codec-sizes",
+    "label": "图 7.5",
+    "title": "SRGG 对象紧凑编码的空间收益",
+    "notes": [
+      "同一对象的 JSON 与紧凑格式配对测量；每档 3 套系统"
+    ],
+    "source_keys": [
+      "codec"
+    ]
+  },
+  {
+    "id": "fig-07-06-session",
+    "label": "图 7.6",
+    "title": "Lai 接收会话的时间成本",
+    "notes": [
+      "左：已有运行的阶段实测；右：将准备成本摊入连续消息的计算模型",
+      "原路径2次、准备1次、会话内解密3次；累计模型使用阶段中位时间。"
+    ],
+    "source_keys": [
+      "optimization"
+    ]
+  },
+  {
+    "id": "fig-08-01-application",
+    "label": "图 8.1",
+    "title": "机构定向消息中的身份签发与密文流转",
+    "notes": [
+      "双方身份匹配后，恢复并处理业务消息"
+    ],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "new-01-message-sequence",
+    "label": "new-01",
+    "title": "完整 IB-ME 收发时序",
+    "notes": [
+      "系统向双方发布主公钥，分别签发发送方与接收方密钥。发送端生成IBS签名、封装32 B种子、加密载荷并完成一次性认证；接收端依次完成外层验签、叶密钥派生、解封装、GCM解密及IBS验签。"
+    ],
+    "source_keys": [
+      "report_chapters",
+      "protocol"
+    ]
+  },
+  {
+    "id": "new-02-ciphertext-layout",
+    "label": "new-02",
+    "title": "密文层次与认证范围",
+    "notes": [
+      "图中展开逻辑字段；各层使用域分隔与长度前缀。OTS覆盖上下文、公钥和全部内层密文字节。IBS签名输入为EncMsg(r,E)，其中E包含公钥承诺和消息。",
+      "发送身份s参与IBS验证。C₀解出z，HKDF从z派生K，GCM用K恢复P；d_ovk绑定外层ovk。"
+    ],
+    "source_keys": [
+      "report_chapters",
+      "protocol"
+    ]
+  },
+  {
+    "id": "new-03-paper-results",
+    "label": "new-03",
+    "title": "各方案的原论文正确性与安全结果",
+    "notes": [
+      "表内使用原论文的安全模型与结论名称；完整定理条件、PDF页序和正确性依据列于security-results.md、CSV和JSON。ROM指随机预言机模型，QROM允许量子查询。"
+    ],
+    "source_keys": [
+      "papers"
+    ]
+  },
+  {
+    "id": "new-04-srgg-byte-layout",
+    "label": "new-04",
+    "title": "SRGG 范围感知编码示例",
+    "notes": [
+      "三值系数[-1,0,1,0]逐项映射为00、01、10、01，合成0x19；JSON系数区10 B，紧凑系数区1 B。主私钥容器另有54 B固定头、嵌入公钥及身份缓存与状态。公开模Q系数用24 bit，有符号短向量用Zigzag与最小统一位宽。"
+    ],
+    "source_keys": [
+      "codec_spec",
+      "codec_code"
+    ]
+  },
+  {
+    "id": "new-05-phase-composition",
+    "label": "new-05",
+    "title": "首次完整流程的阶段构成",
+    "notes": [
+      "分别查看准备成本与首次在线收发；由表 7.2 的原始同机数据计算",
+      "每组1套系统。准备总量为建立及两类发钥耗时之和，在线总量为首次加密与首次解密之和。"
+    ],
+    "source_keys": [
+      "ten_combinations"
+    ]
+  },
+  {
+    "id": "new-06-issuance-state",
+    "label": "new-06",
+    "title": "发钥事务与持久状态",
+    "notes": [
+      "机构状态保存成功后发布角色密钥，同一身份取回已发布对象。生成中断则留下待处理记录；恢复时识别记录并停止继续发钥。"
+    ],
+    "source_keys": [
+      "report_chapters",
+      "issuer"
+    ]
+  },
+  {
+    "id": "new-07-codec-timing",
+    "label": "new-07",
+    "title": "SRGG 编码长度与处理时间",
+    "notes": [
+      "PARAM-I；3 套独立系统，每套对同一对象交替测量两种格式各 5 次",
+      "机构状态100.2 KiB→19.8 KiB；编码0.974→23.1 ms，解码37.3→61.3 ms。",
+      "计时包含编码接口的对象检查；先取每套运行中位数，再取三套中位数。"
+    ],
+    "source_keys": [
+      "codec_benchmark",
+      "codec"
+    ]
+  },
+  {
+    "id": "new-08-suite-settings",
+    "label": "new-08",
+    "title": "组合配置与运行前检查",
+    "notes": [
+      "运行前检查后端、身份深度、编码和组件，计算消息上限后建立系统。主公钥与角色密钥携带配置摘要，导入时检查一致性。"
+    ],
+    "source_keys": [
+      "report_chapters"
+    ]
+  },
+  {
+    "id": "new-09-operation-flow",
+    "label": "new-09",
+    "title": "系统建立、发钥、收发与恢复",
+    "notes": [
+      "系统建立后保存主公钥和机构状态，向双方签发角色密钥。发送者指定接收身份，接收者指定认可发送身份；新进程导入保存对象后继续收发。"
+    ],
+    "source_keys": [
+      "report_chapters"
+    ]
+  }
+]

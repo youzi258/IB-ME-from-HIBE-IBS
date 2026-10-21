@@ -1,0 +1,122 @@
+[
+  {
+    "scheme": "LATTE",
+    "paper": "papers/2024_quantum_safe_hibe_zhao.pdf",
+    "sha256": "aefa8c6808b4ee7aa565587ccd48d64ca8e8ab81a9cba600e4691227253d70ca",
+    "pdf_page": 8,
+    "anchor": "ID-IND-CCA",
+    "excerpt": "ors on L ATTE. A. RD Security Reduction The security reduction to establish the ID-IND-CCA of the IDEAL (infinite precision) LATTE HIBE scheme is summarised in [13, Annex C] and proceeds in two steps. Here, we show how to obtain a security reduction that takes into account and quantifies the security impact of the R EAL (finite precision)"
+  },
+  {
+    "scheme": "LATTE",
+    "paper": "papers/2024_quantum_safe_hibe_zhao.pdf",
+    "sha256": "aefa8c6808b4ee7aa565587ccd48d64ca8e8ab81a9cba600e4691227253d70ca",
+    "pdf_page": 9,
+    "anchor": "classical Random Oracle Model",
+    "excerpt": "ails). We remark that the security reduction analysis discussed above is in the classical Random Oracle Model (ROM) [43]. A security analysis of L ATTE in the Quantum Random Oracle Model (QROM) is out of the scope of this work; QROM analysis results on Fujisaki-Okamoto transform in the QROM (e.g. [44], [45]) and GPV-IBE [46] can serve as starting points for"
+  },
+  {
+    "scheme": "Lai",
+    "paper": "papers/2015_ideal_lattice_trapdoors_lai.pdf",
+    "sha256": "0985cb1d8cc760a18070a38d30b8de5b532bca52b5c06e05e65b2d712bdf338c",
+    "pdf_page": 13,
+    "anchor": "Algorithm 7 is correct",
+    "excerpt": "Trapdoors for Ideal Lattices with Applications 13 Theorem 8. Algorithm 7 is correct. Proof. Let ⃗x← ringSampleDO(R, ⃗a0, h, u, σ ). Then ⃗aT ⃗x = [⃗aT 0|h⃗gT− ⃗aT 0 R] ([ ⃗p1 ⃗p2 ] + [ R Ik ] ⃗z ) = ⃗aT 0 ⃗p1 + ⃗aT 0 R⃗z + h⃗gT ⃗p2− ⃗aT 0 R⃗p2 + h⃗gT⃗z− ⃗aT 0 R⃗z = ⃗aT 0 (⃗p1− R⃗p2) + h⃗gT ⃗p2 + hv = w0 + hw1 + u− w0− hw1 = u Now, "
+  },
+  {
+    "scheme": "Lai",
+    "paper": "papers/2015_ideal_lattice_trapdoors_lai.pdf",
+    "sha256": "0985cb1d8cc760a18070a38d30b8de5b532bca52b5c06e05e65b2d712bdf338c",
+    "pdf_page": 15,
+    "anchor": "INDr-ID-CCA-secure",
+    "excerpt": "vided in [12] and the INDr-ID-CPA-secure (H)IBE s cheme in [8], we construct an INDr-ID-CCA-secure (H)IBE in ideal lattices. We only present the basic IBE scheme below, because the HIBE scheme can be obtained trivially by deﬁning the Derive algorithm of HIBE to be the same as the Extract algorithm of the basic IBE in our case. The basic IBE schem"
+  },
+  {
+    "scheme": "BNN + ML-DSA",
+    "paper": "papers/2006_generic_ibs_galindo.pdf",
+    "sha256": "b3362442d3278953ddaaea1fa4921f8d6f051f166108fb6d81013b22b510aed2",
+    "pdf_page": 5,
+    "anchor": "secure standard signature schemes",
+    "excerpt": "pre, and Neven [3] prove the following result: Theorem 1. If S and S 0 are both secure standard signature schemes then IB S is a secure identity-based signature scheme. Let PS be a signature scheme with the property P. We extend the above construction to an IBS with additional properties IB PS in a straightforward way: as with signing/veri cation, all functiona"
+  },
+  {
+    "scheme": "BNN + Falcon",
+    "paper": "papers/2006_generic_ibs_galindo.pdf",
+    "sha256": "b3362442d3278953ddaaea1fa4921f8d6f051f166108fb6d81013b22b510aed2",
+    "pdf_page": 5,
+    "anchor": "secure identity-based signature scheme",
+    "excerpt": "eorem 1. If S and S 0 are both secure standard signature schemes then IB S is a secure identity-based signature scheme. Let PS be a signature scheme with the property P. We extend the above construction to an IBS with additional properties IB PS in a straightforward way: as with signing/veri cation, all functionality provided by PS is \\lifted\""
+  },
+  {
+    "scheme": "Luo",
+    "paper": "papers/2024_ibs_without_trapdoors_luo.pdf",
+    "sha256": "12c70ae7635c0b88c132bca14990480a8e0cdec2e786a6dcf39256e5bb0dd455",
+    "pdf_page": 7,
+    "anchor": "Correctness Analysis",
+    "excerpt": "Az − (Wid + TH1(Wid, id))c 2 Return ||z||∞ < γ 2 − β2 and c = H2(id, w′, µ) 3.1 Correctness Analysis In this section, we prove the correctness of the signature scheme. According to the construction of the IBS scheme, we know that Az = ASidc + Ay = ASidc + w. Since ASid = AZid = Wid + TH1(Wid, id) , we have Az = (Wid + TH1(Wid, id))c + w. Then we ca"
+  },
+  {
+    "scheme": "Luo",
+    "paper": "papers/2024_ibs_without_trapdoors_luo.pdf",
+    "sha256": "12c70ae7635c0b88c132bca14990480a8e0cdec2e786a6dcf39256e5bb0dd455",
+    "pdf_page": 8,
+    "anchor": "Theorem 1",
+    "excerpt": "gorithm and Sign algorithm from Extract Oracle and Hybrid Sign is neg- ligible. Theorem 1. If there is a polynomial-time forger , which makes at most s queries to the Extract and Sign oracle, and h queries to the random oracle H1 and H2, breaks the IBS with probability δ, then there is a polynomial-time algorithm which can solve the SISn"
+  },
+  {
+    "scheme": "SRGG",
+    "paper": "papers/2025_efficient_ibs_jia.pdf",
+    "sha256": "258583c5b90255afe91343a282cb62840198b1192b6462dfc9597a24f8c01152",
+    "pdf_page": 8,
+    "anchor": "sEUF-ID-CMA",
+    "excerpt": "Let IBS and SIG are constructed as above. IfSIG is sEUF-CMA secure, then IBS is sEUF-ID-CMA secure in the QROM. Proof. Let A represent a quantum adversary that can issue at most qH queries to the hash oracleOH , qS queries to the signing oracle Osign,a n dqE queries to the key extraction oracleOextract, and that breaks IBS with nonnegligib"
+  },
+  {
+    "scheme": "SRGG",
+    "paper": "papers/2025_efficient_ibs_jia.pdf",
+    "sha256": "258583c5b90255afe91343a282cb62840198b1192b6462dfc9597a24f8c01152",
+    "pdf_page": 8,
+    "anchor": "Theorem 2",
+    "excerpt": "Sigðskid; HðidÞ; μÞ:.  IBS:Vrfyðmpk; id; sigÞ:: output SIG:Vrfyðid; μ; sigÞ: . Theorem 2. Let IBS and SIG are constructed as above. IfSIG is sEUF-CMA secure, then IBS is sEUF-ID-CMA secure in the QROM. Proof. Let A represent a quantum adversary that can issue at most qH queries to the hash oracleOH , qS queries to the signing oracle Osi"
+  },
+  {
+    "scheme": "Sageloli-RSIS",
+    "paper": "papers/2023_shorter_faster_ibs_sageloli.pdf",
+    "sha256": "0e92f184828bc8643a774e9c334b14689346387981e766c311c596239ef73e3e",
+    "pdf_page": 24,
+    "anchor": "Proposition 10",
+    "excerpt": "Proposition 10 (completeness). Consider the scheme IBSR with the parameters of Table 4. Then, it is (ξ1, ξ 2)-complete with ξ1 = k(2ϵ + γSample d,dl,ϵ ) + 3 \u0010 −d (2k−l) 4 + 3 2 \u0011 + 2− (dk−1) 4 = negl(d) and ξ2 = 2kq−0.196d + 3 \u0010 −d (2k−l) 4 +3 \u0011 = negl(d). Proof. "
+  },
+  {
+    "scheme": "Sageloli-RSIS",
+    "paper": "papers/2023_shorter_faster_ibs_sageloli.pdf",
+    "sha256": "0e92f184828bc8643a774e9c334b14689346387981e766c311c596239ef73e3e",
+    "pdf_page": 24,
+    "anchor": "Theorem 3",
+    "excerpt": "r to the proof of Proposition 9. Non-adaptive Security in the ROM and the QROM. Theorem 3 ( EUF-naCMA security of IBSNA,R). Consider a set of parameters with the con- ditions indicated in Table 4. Let QCorr, QS ∈ N and A a PPT adversary of EUFnaCMAIBSNA,R QCorr,QS that makes QH1 quantum queries to H1, QH2 quantum queries to H2 and such t"
+  },
+  {
+    "scheme": "Wang + PW",
+    "paper": "papers/2022_identity_matchmaking_wang.pdf",
+    "sha256": "fa3a97cfe2db59f2f8208d45b76f3c14d289774cb4075e7946dd5051ae84c597",
+    "pdf_page": 16,
+    "anchor": "Lemma 5.1",
+    "excerpt": "ill accept valid signatures generated by user id with overwhelming probability. Lemma 5.1 The identity-based signature schemeIBSSIS in Fig.4 is correct with overwhelming probability. Proof. For master public key and master secret key(A, TA) ← Setup(1λ), an identityid ∈ ID and message m ∈ M. Let skid ← KeyExt(msk, id) and z ← Sign(skid, m"
+  },
+  {
+    "scheme": "Wang + PW",
+    "paper": "papers/2022_identity_matchmaking_wang.pdf",
+    "sha256": "fa3a97cfe2db59f2f8208d45b76f3c14d289774cb4075e7946dd5051ae84c597",
+    "pdf_page": 17,
+    "anchor": "Theorem 5.1",
+    "excerpt": "resented in [PW21], the final scheme will achieve the adaptive UF-CMA security. Theorem 5.1 Assuming the hardness ofSISn,m,q,β, then the identity-based signature scheme described in Fig. 4 achieves UF-naCMA security (Def.6) in the random oracle model. In particular, for every p.p.t. algorithm A there is a p.p.t. algorithmB such that AdvUF-"
+  },
+  {
+    "scheme": "Wang + PW",
+    "paper": "papers/2021_short_ibs_pan.pdf",
+    "sha256": "0aa96c6104a3f89d3db1157860695166336a53e1fb57e626fa8009832990f7af",
+    "pdf_page": 12,
+    "anchor": "UF-CMA secure",
+    "excerpt": "dom oracles andℓ = ℓ(λ) ∈ ω(log(λ)). If IBS′ is UF-naCMA secure, then IBSROM is UF-CMA secure. In particular, for every algorithm A making at mostQS signing queries,QC secret key queries andQH hash queries (including the indirect ones induced by singing and key queries) there is an algorithmB such that T(B) ≈ T(A) and AdvUF-CMA A,IBSROM(λ) ≤"
+  }
+]

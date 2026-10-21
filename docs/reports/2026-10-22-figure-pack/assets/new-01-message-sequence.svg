@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="701.28pt" height="566.2925pt" viewBox="0 0 701.28 566.2925" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-22T04:12:14.671034</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 566.2925
+L 701.28 566.2925
+L 701.28 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 113.04 46.739531
+L 113.04 535.619531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #d7dfe5; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 343.44 46.739531
+L 343.44 535.619531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #d7dfe5; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 584.64 46.739531
+L 584.64 535.619531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #d7dfe5; stroke-width: 1.2"/>
+   </g>
+   <g id="patch_2">
+    <path d="M 26.64 71.219531
+L 199.44 71.219531
+Q 203.04 71.219531 203.04 74.819531
+L 203.04 128.819531
+Q 203.04 132.419531 199.44 132.419531
+L 26.64 132.419531
+Q 23.04 132.419531 23.04 128.819531
+L 23.04 74.819531
+Q 23.04 71.219531 26.64 71.219531
+z
+" clip-path="url(#p9be769b12b)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 113.04 151.859531
+Q 348.84 151.859531 582.962949 151.859531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 578.162949 149.459531
+L 582.962949 151.859531
+L 578.162949 154.259531
+z
+" clip-path="url(#p9be769b12b)" style="fill: #8595a4; stroke: #8595a4; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 113.04 173.459531
+Q 228.24 173.459531 341.762949 173.459531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #245a81; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 336.962949 171.059531
+L 341.762949 173.459531
+L 336.962949 175.859531
+z
+" clip-path="url(#p9be769b12b)" style="fill: #245a81; stroke: #245a81; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 113.04 208.739531
+Q 348.84 208.739531 582.962949 208.739531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 578.162949 206.339531
+L 582.962949 208.739531
+L 578.162949 211.139531
+z
+" clip-path="url(#p9be769b12b)" style="fill: #218478; stroke: #218478; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 246.24 272.819531
+L 440.64 272.819531
+Q 444.24 272.819531 444.24 276.419531
+L 444.24 362.819531
+Q 444.24 366.419531 440.64 366.419531
+L 246.24 366.419531
+Q 242.64 366.419531 242.64 362.819531
+L 242.64 276.419531
+Q 242.64 272.819531 246.24 272.819531
+z
+" clip-path="url(#p9be769b12b)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 343.44 396.659531
+Q 464.04 396.659531 582.962949 396.659531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #202c39; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 578.162949 394.259531
+L 582.962949 396.659531
+L 578.162949 399.059531
+z
+" clip-path="url(#p9be769b12b)" style="fill: #202c39; stroke: #202c39; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 483.84 428.339531
+L 685.44 428.339531
+Q 689.04 428.339531 689.04 431.939531
+L 689.04 518.339531
+Q 689.04 521.939531 685.44 521.939531
+L 483.84 521.939531
+Q 480.24 521.939531 480.24 518.339531
+L 480.24 431.939531
+Q 480.24 428.339531 483.84 428.339531
+z
+" clip-path="url(#p9be769b12b)" style="fill: #ffffff; stroke: #d7dfe5; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 33.12 81.299531
+L 33.12 122.339531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #8595a4; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 8.64 235.379531
+L 692.64 235.379531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #d7dfe5; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 252.72 282.899531
+L 252.72 356.339531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #245a81; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 490.32 438.419531
+L 490.32 511.859531
+" clip-path="url(#p9be769b12b)" style="fill: none; stroke: #218478; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #8595a4" x="113.04" y="25.655625" transform="rotate(-0 113.04 25.655625)">发钥机构</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #245a81" x="343.44" y="25.655625" transform="rotate(-0 343.44 25.655625)">发送方 s</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #218478" x="584.64" y="25.6725" transform="rotate(-0 584.64 25.6725)">接收方 r′</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="8.64" y="64.672969" transform="rotate(-0 8.64 64.672969)">系统准备</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #8595a4" x="43.2" y="93.483047" transform="rotate(-0 43.2 93.483047)">Setup</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="43.2" y="118.976172" transform="rotate(-0 43.2 118.976172)">HIBE · IBS</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #637183" x="458.64" y="142.492891" transform="rotate(-0 458.64 142.492891)">MPK（双方）</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #245a81" x="228.24" y="165.764453" transform="rotate(-0 228.24 165.764453)">发送方密钥 EKₛ</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #218478" x="473.04" y="196.724453" transform="rotate(-0 473.04 196.724453)">接收方密钥 DKᵣ′</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="8.64" y="259.032656" transform="rotate(-0 8.64 259.032656)">消息收发</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #245a81" x="262.8" y="304.671797" transform="rotate(-0 262.8 304.671797)">Encrypt(M, r)</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="262.8" y="343.256172" transform="rotate(-0 262.8 343.256172)">IBS · HIBE · GCM · OTS</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #202c39" x="463.68" y="384.623672" transform="rotate(-0 463.68 384.623672)">规范密文 C</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #218478" x="500.4" y="460.286719" transform="rotate(-0 500.4 460.286719)">Decrypt(C, s′)</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 13px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: start; fill: #637183" x="500.4" y="498.776172" transform="rotate(-0 500.4 498.776172)">OTS → HIBE → GCM → IBS</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 14px; font-family: 'Microsoft YaHei', 'DejaVu Sans'; text-anchor: middle; fill: #218478" x="584.64" y="554.276094" transform="rotate(-0 584.64 554.276094)">消息 M</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9be769b12b">
+   <rect x="-9.36" y="-7.980469" width="720" height="576"/>
+  </clipPath>
+ </defs>
+</svg>

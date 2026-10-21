@@ -1,0 +1,163 @@
+{
+  "baseline_commit": "9682975068ad4bf7fa4dbb1929ff903c153f26b9",
+  "before": 5723,
+  "after": 3369,
+  "reduction": 0.4113227328324306,
+  "assets": [
+    {
+      "id": "fig-01-01-roles",
+      "before": 87,
+      "after": 68
+    },
+    {
+      "id": "fig-01-02-research-timeline",
+      "before": 258,
+      "after": 203
+    },
+    {
+      "id": "fig-01-03-roadmap",
+      "before": 89,
+      "after": 59
+    },
+    {
+      "id": "fig-02-01-preimage",
+      "before": 119,
+      "after": 77
+    },
+    {
+      "id": "fig-03-01-architecture",
+      "before": 133,
+      "after": 119
+    },
+    {
+      "id": "fig-03-02-encryption",
+      "before": 125,
+      "after": 80
+    },
+    {
+      "id": "fig-04-01-representatives",
+      "before": 212,
+      "after": 134
+    },
+    {
+      "id": "fig-05-01-sampler",
+      "before": 219,
+      "after": 98
+    },
+    {
+      "id": "fig-05-02-session-flow",
+      "before": 102,
+      "after": 51
+    },
+    {
+      "id": "fig-06-01-software",
+      "before": 114,
+      "after": 95
+    },
+    {
+      "id": "fig-06-02-backend-integration",
+      "before": 110,
+      "after": 59
+    },
+    {
+      "id": "fig-06-03-restoration",
+      "before": 85,
+      "after": 69
+    },
+    {
+      "id": "fig-06-04-web",
+      "before": 27,
+      "after": 0
+    },
+    {
+      "id": "fig-06-05-web-results",
+      "before": 64,
+      "after": 13
+    },
+    {
+      "id": "fig-06-06-deployment",
+      "before": 88,
+      "after": 47
+    },
+    {
+      "id": "fig-07-01-times",
+      "before": 384,
+      "after": 320
+    },
+    {
+      "id": "fig-07-02-resources",
+      "before": 248,
+      "after": 175
+    },
+    {
+      "id": "fig-07-03-ab-samples",
+      "before": 132,
+      "after": 86
+    },
+    {
+      "id": "fig-07-04-ciphertext-parts",
+      "before": 126,
+      "after": 86
+    },
+    {
+      "id": "fig-07-05-codec-sizes",
+      "before": 267,
+      "after": 227
+    },
+    {
+      "id": "fig-07-06-session",
+      "before": 187,
+      "after": 115
+    },
+    {
+      "id": "fig-08-01-application",
+      "before": 82,
+      "after": 51
+    },
+    {
+      "id": "new-01-message-sequence",
+      "before": 161,
+      "after": 123
+    },
+    {
+      "id": "new-02-ciphertext-layout",
+      "before": 215,
+      "after": 89
+    },
+    {
+      "id": "new-03-paper-results",
+      "before": 885,
+      "after": 349
+    },
+    {
+      "id": "new-04-srgg-byte-layout",
+      "before": 213,
+      "after": 63
+    },
+    {
+      "id": "new-05-phase-composition",
+      "before": 312,
+      "after": 233
+    },
+    {
+      "id": "new-06-issuance-state",
+      "before": 137,
+      "after": 41
+    },
+    {
+      "id": "new-07-codec-timing",
+      "before": 249,
+      "after": 115
+    },
+    {
+      "id": "new-08-suite-settings",
+      "before": 170,
+      "after": 65
+    },
+    {
+      "id": "new-09-operation-flow",
+      "before": 123,
+      "after": 59
+    }
+  ]
+}
