@@ -1,0 +1,14 @@
+{
+  "schema": "IBME-REPORT-COPY-BASELINE/1",
+  "source_directory": "docs/reports/2026-10-20-competition-rewrite",
+  "source_commit": "70df939f43da6558716f0315503ef3bc9d4d051b",
+  "files": {
+    "build-manifest.json": "13d6f8f55a576e883dc6037d6d655d124432501e3a5541c67af7f7f20601d4f3",
+    "build_pdf.py": "7b322a6bc72ef93ef5b73930ca9e89be7e26e3309c86b07893f307a4badb5987",
+    "check_report.py": "075eae5ef2fb9d765c65940ea278f84b616dc14838e6bf625f08f5956328bc2c",
+    "README.md": "0f555a819aab6caa223077a26586caf1591985b6e2ad28804ed8396cd7299f56",
+    "visual-review.json": "ac570c50d44e23cd45c8ba77e823ceb521d5f218d8b2888af3dec9557dafd813",
+    "作品设计报告.pdf": "efaeef77051f9578054ed3ae18982169bb994ba29ebf421c0a0c2656dc65597e",
+    "作品设计报告.tex": "9dd7bfad417ca2d882241f674d5b2991f6456fbecee6998564df68b0260e85e9"
+  }
+}
