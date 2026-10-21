@@ -2,7 +2,10 @@
 
 这是应用户要求复制后重写的独立版本，当前为30页、六章，供阅读审核。原37页报告及其目录中的七个已跟踪文件保持原字节，见[复制基线](baseline-manifest.json)。本目录的修改不会覆盖原版。
 
-直接阅读[PDF](作品设计报告.pdf)，编辑入口为[主TeX文件](作品设计报告.tex)，正文分为[六个章节](chapters)。改稿依据为[与往届报告的对照复审](../2026-10-21-comparative-review/README.md)。
+直接阅读[PDF](作品设计报告.pdf)，编辑入口为[主TeX文件](作品设计报告.tex)，正文分为
+[六个章节](chapters)。改稿依据为[与往届报告的对照复审](../2026-10-21-comparative-review/README.md)。
+PR88 完成后的进一步分析见[PR88 与往届作品写作方式对照](REFERENCE_STYLE_STUDY.md)，下一轮正文
+安排见[报告重写与扩写方案](EXPANSION_PLAN.md)。
 
 ## 写作思路
 
