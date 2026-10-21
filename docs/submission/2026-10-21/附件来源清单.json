@@ -16,14 +16,19 @@
   ],
   "artifacts": [
     {
+      "path": "00_材料说明/Wang-PW补充说明.md",
+      "bytes": 3392,
+      "sha256": "bad78b29ec5229dffeb296c8376772dd0be8bd4fbb646ae672c3b14dbb7d631f"
+    },
+    {
       "path": "00_材料说明/使用说明.pdf",
       "bytes": 117778,
       "sha256": "d3289dfb196dea8f2271874b6bd656fd164c44355e0907e9130e7803476c3385"
     },
     {
       "path": "00_材料说明/报告数据对应表.csv",
-      "bytes": 11414,
-      "sha256": "b06a610e027a5890dc434ca93780d55bf67e586770d06f5a7346b4319ea5cdea"
+      "bytes": 24455,
+      "sha256": "0da69a79ad36bb163fd06b609886bb6b52aac0cc5006b78a8e2e570d15f3a9cf"
     },
     {
       "path": "00_材料说明/来源与许可.md",
@@ -32,13 +37,13 @@
     },
     {
       "path": "00_材料说明/运行与演示.md",
-      "bytes": 5711,
-      "sha256": "7924b2fc33cf0d9e0c1d7d567770c2888875f9a540849b7d236e2ccc1f38fc74"
+      "bytes": 6122,
+      "sha256": "78736a3af090d8fef483ab6d1f88aeb05180b424872ae7e74a331c331f66f0c4"
     },
     {
       "path": "00_材料说明/阅读指引.md",
-      "bytes": 3251,
-      "sha256": "8e7943f6ca943ceecf7790796625788910b57da91a99d28608ba0960633dc746"
+      "bytes": 3794,
+      "sha256": "9fdd8e34176922eb686275d4f9cbcc860e49c291cf8dcbb591aa386e97a7a27c"
     },
     {
       "path": "02_参数配置/A-latte-mldsa44.json",
@@ -441,6 +446,294 @@
       "byte_exact": true
     },
     {
+      "path": "03_实验数据/07_Wang-PW目标规模/integration/current-profile-regression.xml",
+      "bytes": 17742,
+      "sha256": "1bdf1c6460cc3af7d385a19654e4fa0e9d241322619583af25c6d78db4840423",
+      "source_path": "docs/deliveries/2026-10-21-pr84-review/current-profile-regression.xml",
+      "source_sha256": "d55f599f179f2b21030e8e7f8c79d0d03c014cb929dd07b67039bd53f3300915",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/integration/validation.json",
+      "bytes": 12771,
+      "sha256": "1894931bec73ce38472d936c20f73228a32e44bb5bfd5af887533a1640411b13",
+      "source_path": "docs/deliveries/2026-10-21-pr84-review/validation.json",
+      "source_sha256": "aef9e67032ca538da2aca16422d4f490991df37dc734291239123cae3c366069",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/integration/wang-pw-route.json",
+      "bytes": 32640,
+      "sha256": "25cae93790f5f6c48b3c2ba007aa6fa186e8d099232163edb841b7cb8ecb9e7d",
+      "source_path": "docs/deliveries/2026-10-21-pr84-review/wang-pw-route.json",
+      "source_sha256": "4776abd797320ae05ef5e4ad4d55cba944456babcec2239c37c747260634d2ba",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/integration/wang-pw-route.xml",
+      "bytes": 203102,
+      "sha256": "384d3ad78a43be8cf1589a142f043a2280d563ea561a68902cdcecb84f0e187f",
+      "source_path": "docs/deliveries/2026-10-21-pr84-review/wang-pw-route.xml",
+      "source_sha256": "f6373152c1d925a26944d9d592b6f87823093140aa94b435733b9e77f57add88",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/environment/environment-ready.json",
+      "bytes": 1447,
+      "sha256": "b70951be010416b2fc34c456fa252ec5e7d7c609240e42d3d96b0dcb8057cec1",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/environment/environment-ready.json",
+      "source_sha256": "b70951be010416b2fc34c456fa252ec5e7d7c609240e42d3d96b0dcb8057cec1",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/key-audit-20261020/receipt.json",
+      "bytes": 1132,
+      "sha256": "ea3ca6051f305b25ac6a33136865bb9ea7a89c2d381a3c11241e8c55eeff5727",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/key-audit-20261020/receipt.json",
+      "source_sha256": "ea3ca6051f305b25ac6a33136865bb9ea7a89c2d381a3c11241e8c55eeff5727",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/combination.json",
+      "bytes": 11782,
+      "sha256": "1de2458b17ff96c8f604c0b010101d15830798858ef3282880f8c711b7ec65ce",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/combination.json",
+      "source_sha256": "1de2458b17ff96c8f604c0b010101d15830798858ef3282880f8c711b7ec65ce",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final-combination.json",
+      "bytes": 11789,
+      "sha256": "4cca07f41fc03a1523027246a004006dfd461efcbb2778f4c0a347e5052d73a1",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-combination.json",
+      "source_sha256": "4cca07f41fc03a1523027246a004006dfd461efcbb2778f4c0a347e5052d73a1",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final-generic-cli.json",
+      "bytes": 17725,
+      "sha256": "e9bd295a02df8aade42c5aa31c9a9f4eb3939c4bcdb7380ac44f05b67a508a56",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-generic-cli.json",
+      "source_sha256": "e9bd295a02df8aade42c5aa31c9a9f4eb3939c4bcdb7380ac44f05b67a508a56",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final-public-verifier.json",
+      "bytes": 1675,
+      "sha256": "ab47ae997117b8d6261d86e2ee3a5f612db3485b1f8fd40ea38f348bfb2c1c11",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-public-verifier.json",
+      "source_sha256": "ab47ae997117b8d6261d86e2ee3a5f612db3485b1f8fd40ea38f348bfb2c1c11",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final-service-adopt.json",
+      "bytes": 1633,
+      "sha256": "4d05859f109a38955d0d4cf9c1864432f7de67fdfef51e7dcf938943951ad998",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-service-adopt.json",
+      "source_sha256": "4d05859f109a38955d0d4cf9c1864432f7de67fdfef51e7dcf938943951ad998",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final-service-recover.json",
+      "bytes": 1635,
+      "sha256": "c577b493f6b2f23b3a958b827eb4dfe2299bc72eaf2c9c72ee60ab5733cde66c",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final-service-recover.json",
+      "source_sha256": "c577b493f6b2f23b3a958b827eb4dfe2299bc72eaf2c9c72ee60ab5733cde66c",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final2-combination.json",
+      "bytes": 11781,
+      "sha256": "c15ce43a1af39c4b06b8af058c53e0753513aaeee6ab37334a29a601e94109be",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-combination.json",
+      "source_sha256": "c15ce43a1af39c4b06b8af058c53e0753513aaeee6ab37334a29a601e94109be",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final2-generic-cli.json",
+      "bytes": 17725,
+      "sha256": "33e37de289d715edbedbe7feee9d9f1929cbc86d614b746aaccc3762285dcb1f",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-generic-cli.json",
+      "source_sha256": "33e37de289d715edbedbe7feee9d9f1929cbc86d614b746aaccc3762285dcb1f",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final2-public-verifier.json",
+      "bytes": 1675,
+      "sha256": "ab47ae997117b8d6261d86e2ee3a5f612db3485b1f8fd40ea38f348bfb2c1c11",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-public-verifier.json",
+      "source_sha256": "ab47ae997117b8d6261d86e2ee3a5f612db3485b1f8fd40ea38f348bfb2c1c11",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final2-service-adopt.json",
+      "bytes": 1634,
+      "sha256": "91c4a54003209793a6a2c170049e9545aa7f232dc71f249fb92975589a7395e6",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-adopt.json",
+      "source_sha256": "91c4a54003209793a6a2c170049e9545aa7f232dc71f249fb92975589a7395e6",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/final2-service-recover.json",
+      "bytes": 1635,
+      "sha256": "19bfc8af2bcaae9bffdb1483e248cf3095d7415e848535d9e7c38690aad5be3d",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/final2-service-recover.json",
+      "source_sha256": "19bfc8af2bcaae9bffdb1483e248cf3095d7415e848535d9e7c38690aad5be3d",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/generic-cli.json",
+      "bytes": 17723,
+      "sha256": "9d9805a6ba8c7114fbaaad7c8b7cea7a1a7fb16f33ddb51bc8c2bd34c62a0427",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/generic-cli.json",
+      "source_sha256": "9d9805a6ba8c7114fbaaad7c8b7cea7a1a7fb16f33ddb51bc8c2bd34c62a0427",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/public-verifier.json",
+      "bytes": 1675,
+      "sha256": "7412c5bce220fa2ad64625ee3ad47ea711fb6b0fbc0a68ea86c4544aa3043d1b",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/public-verifier.json",
+      "source_sha256": "7412c5bce220fa2ad64625ee3ad47ea711fb6b0fbc0a68ea86c4544aa3043d1b",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/service-adopt.json",
+      "bytes": 1633,
+      "sha256": "f1a7579aba16d3bee7a64764d65b3fafb0a1c17ec0e1eb885bf3c1f7c80d342c",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/service-adopt.json",
+      "source_sha256": "f1a7579aba16d3bee7a64764d65b3fafb0a1c17ec0e1eb885bf3c1f7c80d342c",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/service-recover.json",
+      "bytes": 1636,
+      "sha256": "072ddde322988532dc97ecd9b7a969dfccdf9165f2c076bdb78ac70a34607011",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/service-recover.json",
+      "source_sha256": "072ddde322988532dc97ecd9b7a969dfccdf9165f2c076bdb78ac70a34607011",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/sign-1.json",
+      "bytes": 1107,
+      "sha256": "39b6e924870077938e8f652bce36466180dd37f8453f34ba675b7ceded16483a",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-1.json",
+      "source_sha256": "39b6e924870077938e8f652bce36466180dd37f8453f34ba675b7ceded16483a",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/sign-2.json",
+      "bytes": 1107,
+      "sha256": "8c109887a93c0463fd172acce4b065355f8343bc3ca6ccbacbfe48f3882992a6",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-2.json",
+      "source_sha256": "8c109887a93c0463fd172acce4b065355f8343bc3ca6ccbacbfe48f3882992a6",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/sign-final-1.json",
+      "bytes": 1107,
+      "sha256": "adebaa8ef7ae2633d280772064f1a9948a69cc49851085f56b63dfd0f4cdb02e",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-final-1.json",
+      "source_sha256": "adebaa8ef7ae2633d280772064f1a9948a69cc49851085f56b63dfd0f4cdb02e",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/sign-final-2.json",
+      "bytes": 1107,
+      "sha256": "d27e4d912912f04c7c147b6f996f927ffcc5670c534fa18d883a344f425d3dd2",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-final-2.json",
+      "source_sha256": "d27e4d912912f04c7c147b6f996f927ffcc5670c534fa18d883a344f425d3dd2",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/sign-v3-1.json",
+      "bytes": 1107,
+      "sha256": "bccd941315127146362f416cc4263e3a3eea48f8fd020b9422b9a658de7dbd65",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-1.json",
+      "source_sha256": "bccd941315127146362f416cc4263e3a3eea48f8fd020b9422b9a658de7dbd65",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/perturbation-20261020/sign-v3-2.json",
+      "bytes": 1107,
+      "sha256": "5e22d3c9f3d26a93ebad94840307af5c3b41e13477ba9b5fb9a18bf74b421900",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/perturbation-20261020/sign-v3-2.json",
+      "source_sha256": "5e22d3c9f3d26a93ebad94840307af5c3b41e13477ba9b5fb9a18bf74b421900",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/server-resume/environment-ready.json",
+      "bytes": 4082,
+      "sha256": "24ec72aca48da323a7e974087f99cb2e0cc45152f09d63e2e7dea7868c3eba9d",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/server-resume/environment-ready.json",
+      "source_sha256": "24ec72aca48da323a7e974087f99cb2e0cc45152f09d63e2e7dea7868c3eba9d",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/target-failure/target-n512.json",
+      "bytes": 7990,
+      "sha256": "7a8d1ea4176fb7c55eb422e254f2392b14d54b3739251aaa8cc2c80de7487966",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target-n512.json",
+      "source_sha256": "7a8d1ea4176fb7c55eb422e254f2392b14d54b3739251aaa8cc2c80de7487966",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/evidence/target-failure/target-n512.phases.jsonl",
+      "bytes": 2541,
+      "sha256": "e85fe8855473352dc0a961abcd3457bb0dc7fcdbde60e28d10e644339e6650d8",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/evidence/target-failure/target-n512.phases.jsonl",
+      "source_sha256": "e85fe8855473352dc0a961abcd3457bb0dc7fcdbde60e28d10e644339e6650d8",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/publication/environment.json",
+      "bytes": 1134,
+      "sha256": "7bae5dff2d33df19054938a785e473730dbc8044c8eee0d4ca7ad64b4b54b4e6",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/environment.json",
+      "source_sha256": "4c38abc1ef5a6b36f48a502d88445332546dae1f61db4932d5bcc9b65cfd2ca8",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/publication/initial-regression.xml",
+      "bytes": 112277,
+      "sha256": "57b07f97492410c616dc11747ca77eb52a37902c8369c2d2c7a38cc7c72d478f",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/initial-regression.xml",
+      "source_sha256": "f0fbe0c30802738ebd3460fffd52571bdf1621b1ceabe8640ad1c21067323f6a",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/publication/late-source-update.json",
+      "bytes": 3441,
+      "sha256": "7655ee3ae1793e65bbed7c82a259222907253ee0ee192a2dd27a9dd884033ab1",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/late-source-update.json",
+      "source_sha256": "7655ee3ae1793e65bbed7c82a259222907253ee0ee192a2dd27a9dd884033ab1",
+      "byte_exact": true
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/publication/regression.xml",
+      "bytes": 11329,
+      "sha256": "7ce12437c3d6b34a8f8904fecebafa044d2a4ea764b663372bae1cbdede42928",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/regression.xml",
+      "source_sha256": "06e53dc352be5d6a21b062b9fa2bf9394fa622aa94de058ae0327fee69d86f18",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/publication/review.json",
+      "bytes": 6008,
+      "sha256": "12f984dc0b05b29e4ab2e3fc60911d8faa50e7a2894f4f72661ae62eab43d008",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/review.json",
+      "source_sha256": "65978b2e8bd4729f60109cb06d490fedbcab8b8a6b88cbf68fdd4dbdbede35e3",
+      "byte_exact": false
+    },
+    {
+      "path": "03_实验数据/07_Wang-PW目标规模/target/publication/source-snapshot.json",
+      "bytes": 1006,
+      "sha256": "d4aa389fe671b0368eba78fd2b1d4008b09be8533b444cfb4a47ddd20542dc47",
+      "source_path": "docs/research/2026-10-19-wang-pw-target-s0-4/publication/source-snapshot.json",
+      "source_sha256": "d4aa389fe671b0368eba78fd2b1d4008b09be8533b444cfb4a47ddd20542dc47",
+      "byte_exact": true
+    },
+    {
       "path": "04_演示截图/A-六情形记录.png",
       "bytes": 39731,
       "sha256": "3c3029be8c4b96b9c5d5e88a8e1ad754eaaff85124887c4bc912a6f50e7f3085",
@@ -500,8 +793,8 @@
     },
     {
       "path": "README.txt",
-      "bytes": 437,
-      "sha256": "47d4a8a33c02703700deb89256d9d3e8002d4b5427d2a9e71ea9913f78d351f0"
+      "bytes": 567,
+      "sha256": "736350229f62a06baa7ff0acdbad65adda87d4caf557fe0739ab2cc18e756660"
     },
     {
       "path": "核对文件.py",
