@@ -44,7 +44,7 @@ Wang IBS不在本批范围内：其现有组合流程超过一小时且私钥与
 仓库根目录执行：
 
 ```text
-git ibme-run python3 docs/deliveries/2026-10-20-nixos-independent-reproduction/verify.py --self-test
+python3 docs/deliveries/2026-10-20-nixos-independent-reproduction/verify.py --self-test
 ```
 
 本批实际通过72项公开文件／范围检查。校验器还执行六个篡改负例，分别改变A的wire尺寸、B的内层拒绝、C的重试口径、C的超时历史、C恢复阶段的随机委派和wheel摘要；六项均被拒绝。

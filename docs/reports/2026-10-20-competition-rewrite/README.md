@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-状态为 **提交候选版：正式化重写、引用统一和38/38页视觉复核完成**。
+状态为 **提交候选版：正式化重写、引用统一和37/37页视觉复核完成**。
 
 当前版本已经完成：
 
@@ -22,16 +22,16 @@
 
 ## 构建与检查
 
-本checkout使用`.git/config`中解析的NixOS本机工具，优先通过`git ibme-run`执行：
+在仓库根目录使用Python 3运行。构建脚本会查找本机的Tectonic、latexmk或XeLaTeX；未加入PATH时，通过`--engine`指定可执行文件的完整路径。开发者自设的`git ibme-run`别名和`.git/config`工具路径不属于移交依赖：
 
 ```text
-git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
-git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/build_pdf.py --engine "$(git config --local --get ibme.tectonic)"
-git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf
-git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf --submission-ready
+python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
+python3 docs/reports/2026-10-20-competition-rewrite/build_pdf.py
+python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf
+python3 docs/reports/2026-10-20-competition-rewrite/check_report.py --require-pdf --submission-ready
 ```
 
-当前检查结果为：209项源稿检查、219项PDF绑定检查和221项提交候选检查全部通过。生成物为38页A4 PDF；38/38页视觉复核完成，未见裁切、重叠、异常空白或不可辨认表格。Tectonic日志无未定义引用、缺失引文、overfull或underfull警告。PDF文本层未发现`??`、`Undefined`等未解析标记。
+当前检查结果为：209项源稿检查、219项PDF绑定检查和225项提交候选检查全部通过。生成物为37页A4 PDF；37/37页视觉复核完成，未见裁切、重叠、异常空白或不可辨认表格。Tectonic日志无未定义引用、缺失引文、overfull或underfull警告。PDF文本层未发现`??`、`Undefined`等未解析标记。
 
 `--submission-ready`表示正文、引用、构建绑定和全稿视觉复核已经收口，不替代参赛团队对作品事实、匿名要求和最终上传文件的最后确认。
 
@@ -43,3 +43,5 @@ git ibme-run python3 docs/reports/2026-10-20-competition-rewrite/check_report.py
 - 功能与负例测试验证实现行为；底层安全目标、模型和参数说明仍以对应论文与标准为依据。
 
 报告正文不得出现Git提交、PR编号、内部状态字段或开发往返；这些信息只保留在本说明、审核记录和支撑材料中。
+
+本次接收修订将目录压为两页，移除仅含一行参考文献条目的目录续页；正文和前置摘要共35页与作者版对应页面逐像素相同。视觉复核记录见[visual-review.json](visual-review.json)，提交候选检查同时核对源稿、PDF摘要和完整页清单，旧记录不能验证新生成物。

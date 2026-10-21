@@ -1,0 +1,10 @@
+{
+  "negative_cases_rejected": [
+    "stale PDF",
+    "stale source",
+    "missing page",
+    "wrong JSON type"
+  ],
+  "count": 4,
+  "artifact_files_modified_by_negative_tests": false
+}

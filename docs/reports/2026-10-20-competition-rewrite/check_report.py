@@ -561,7 +561,22 @@ def main() -> int:
 
     if args.submission_ready:
         checks.expect("submission candidate state recorded", "状态为 **提交候选版" in readme)
-        checks.expect("full PDF visual review recorded", "38/38页视觉复核完成" in readme)
+        try:
+            visual = json.loads((HERE / "visual-review.json").read_bytes())
+        except (OSError, ValueError):
+            visual = {}
+        if type(visual) is not dict:
+            visual = {}
+        checks.expect("PDF visual review schema", visual.get("schema") == "IBME-REPORT-PDF-VISUAL-REVIEW/1")
+        checks.expect("PDF visual review status", visual.get("status") == "reviewed")
+        checks.expect("PDF visual review binds source", visual.get("source_sha256")
+                      == hashlib.sha256(SOURCE.read_bytes()).hexdigest())
+        checks.expect("PDF visual review binds PDF", PDF.is_file() and visual.get("pdf_sha256")
+                      == hashlib.sha256(PDF.read_bytes()).hexdigest())
+        page_count = visual.get("page_count")
+        complete_pages = type(page_count) is int and 1 <= page_count <= 500
+        checks.expect("all PDF pages visually reviewed", complete_pages
+                      and visual.get("reviewed_pages") == list(range(1, page_count + 1)))
 
     if checks.failures:
         print(f"Competition report rewrite validation failed: {len(checks.failures)}/{checks.count} checks")
