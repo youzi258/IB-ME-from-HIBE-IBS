@@ -1,0 +1,40 @@
+{
+  "authoritative_base": {
+    "filename": "报告正确底稿整合版-2026-10-22.zip",
+    "sha256": "d28f7e6f5b15c3670d1081e805b85e18d9d61d9f6d8d7e49ddae2e8dcf1977e4",
+    "pdf_sha256": "11308dec25f82dc2799754431c7c295d8f1861fc53695c33f47fbf6cfddef7b3",
+    "pdf_pages": 66,
+    "snapshot": "provenance/correct-base-source.zip"
+  },
+  "edit_donor": {
+    "filename": "2026-10-22-content-revision(3).7z",
+    "role": "editing reference only; never replace researched chapters 1 and 2",
+    "snapshot": "provenance/edit-donor-source.zip"
+  },
+  "newly_attached_tex": {
+    "filename": "作品设计报告.tex",
+    "matches_donor_main": true,
+    "role": "wrong pre-edit base supplied by user"
+  },
+  "core_sha256": {
+    "作品设计报告.tex": "141aa974d0fbb49e662dccfbe3e23dba8f262da3303f9311f26aebbf93f68917",
+    "chapters/01-introduction.tex": "3dcb63131bb34d4cd9153057cfa14ccfc23aed538222114c106036828c32ef6b",
+    "chapters/02-foundations.tex": "7c0585db276c03b03f1582cfb2b7e2223d48c1e523d63525e6334f88ddb270ac",
+    "chapters/03-design.tex": "9901be66075f97de9fbd2560f880ab1de0d8a34e2a2551a28939073c12e521b5",
+    "chapters/04-algorithms.tex": "d39653889e7c104ce37adbc9b3f618ee648f44169645e34ed08985ba29c22696",
+    "chapters/05-optimizations.tex": "32b677e70617b3a7ec2290a4fafb47cfb004dc884b6a6216ec739c657deff1d3",
+    "chapters/06-system.tex": "4cab80c60036a0d89d9bbd6f7202678ee9aab902b9378a67d29d89f5ac77179d",
+    "chapters/07-experiments.tex": "136b5960b9d0b1174eac098dfbe485eb3b7900ee320935bc2ac62b2afb87eb4b",
+    "chapters/08-applications.tex": "bf2be80fb59ab77684631d0bb2033ace7703ebd9678df174f9a227e0447b6c84",
+    "chapters/09-conclusion.tex": "d30bea5553f28f134e07864ecc7da08ac3d4c20e36101450c5714005d94344dc",
+    "tables/ab-sizes.tex": "1d3fa864006d6539af75eb5586715462d578ca6a77e125b5eec891e33cfe6d83",
+    "tables/ab-timings.tex": "1006cc4c935f44ed0e1f4236c7db5e18b4da325cdba560dc8e376496672f0797",
+    "tables/ciphertext-parts.tex": "96b412ce9d9777a2c7e0e91c2147561fe8375d587002ebd20882cd041c355ce3",
+    "tables/codec-sizes.tex": "21e9bd3902ca1c725045c8c889dec8d68d20f409bfea926f6a2725a29cd3e92f",
+    "tables/sageloli-times.tex": "2735f02ddc7407fe84a41e68d536165a6baa39d54af62142589b14ed90c62263",
+    "tables/srgg-protocol-impact.tex": "8502180039ddf4f99f9e33910ee35d50d5f1c3d14c15eb8db7a62aced75c855f",
+    "tables/ten-first-times.tex": "92000da1314c24bcfe177ac905cd595d4ea2d9a4c58a0f0606b3a149179b0eaf",
+    "tables/ten-object-sizes.tex": "3d3a1add5d85549e13db666bb1909097718c1da48a4493921e97d335a4d4c43b",
+    "tables/ten-representatives.tex": "ce3f7cdcbd9f74d0de87302f666c67bd12f319e444e36a996ca70a3283c1e0bc"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "separate_build_directory": true,
+  "all_inputs_self_contained": true,
+  "input_digests_identical": true,
+  "all_70_pages_text_identical": true,
+  "pdf_sha256": "a85325ea9b0de2bac14a86c9e40caef67f3f0bc9059ca6e8d0d7736f7d76570f",
+  "clean_build_pdf_sha256": "b65fd1926629ad2e2dc91f3d7889ab653285f93a7ebd04ff9cc4b46726075812"
+}

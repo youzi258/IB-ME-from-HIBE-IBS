@@ -1,0 +1,2721 @@
+{
+  "passed": true,
+  "checks": 677,
+  "pages": 70,
+  "replaced_figures": 22,
+  "added_figures": 8,
+  "added_tables": 1,
+  "editorial_merge_preserved": true,
+  "correct_baseline_verified": true,
+  "visual_review_complete": true,
+  "details": [
+    {
+      "check": "user-designated correct baseline",
+      "passed": true
+    },
+    {
+      "check": "correct 66-page PDF identity",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: 作品设计报告.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/01-introduction.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/02-foundations.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/03-design.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/04-algorithms.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/05-optimizations.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/06-system.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/07-experiments.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/08-applications.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: chapters/09-conclusion.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/ab-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/ab-timings.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/ciphertext-parts.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/codec-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/sageloli-times.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/srgg-protocol-impact.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/ten-first-times.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/ten-object-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "correct baseline snapshot: tables/ten-representatives.tex",
+      "passed": true
+    },
+    {
+      "check": "editorial snapshot bound to merge record",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 应用背景与研究意义",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 机构定向通信的身份管理需求",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 双向身份匹配与通信关系保护",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 后量子迁移下的格密码实现需求",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 国内外研究现状",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 身份基加密与分层委派的发展",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 身份基签名的格上实现路线",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 身份基匹配加密及格上构造的发展",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 现有研究的工程实现问题",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 作品研究内容与技术路线",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 主要工作",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 报告结构",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/shamir1984",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/gentrysilverberg2002",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/hess2003ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/ateniese2019me",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/shor1994",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/bonehfranklin2003",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/gpv2008",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/cash2010bonsai",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/agrawal2010hibe",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/agrawal2010delegation",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/zhao2024latte",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/goyal2025adaptivehibe",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/bellare2004ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/ruckert2010hibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/pan2021ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/luo2024ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/jia2025ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/francati2021ibme",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/chen2022ibme",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/chiku2023ibme",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/belfiore2024ibme",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 01-introduction.tex/yu2026ibme",
+      "passed": true
+    },
+    {
+      "check": "correct researched object retained: fig:application-background",
+      "passed": true
+    },
+    {
+      "check": "correct researched object retained: fig:research-timeline",
+      "passed": true
+    },
+    {
+      "check": "correct researched object retained: fig:work-overview",
+      "passed": true
+    },
+    {
+      "check": "correct researched object retained: tab:work-highlights",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 数学符号与格基础",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 向量、矩阵与模运算",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 格、$q$元核格与目标陪集",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 格上困难问题及结构变体",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: LWE问题",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: SIS问题",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 环格、模格与NTRU结构",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 环伴随与频域表示",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 离散Gaussian与格陷门",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 离散Gaussian采样",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 陷门生成、委派与短原像采样",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: gadget矩阵与结构化陷门",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 频域表示与低秩线性代数",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: Gram矩阵与低维子空间",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: Gaussian参数矩阵与平方根作用",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 身份基加密与分层身份基加密",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 身份基加密",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: HIBE的分层身份与密钥委派",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 身份基签名",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 身份基匹配加密与通用构造",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 安全目标与证明模型术语",
+      "passed": true
+    },
+    {
+      "check": "correct researched heading retained: 本章小结",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/gpv2008",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/micciancio2012trapdoors",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/regev2005lwe",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/ajtai1996",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/lpr2013ring",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/langlois2015module",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "correct researched citation retained: 02-foundations.tex/sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "correct researched object retained: tab:foundation-symbols",
+      "passed": true
+    },
+    {
+      "check": "correct researched object retained: tab:lattice-families",
+      "passed": true
+    },
+    {
+      "check": "correct researched object retained: fig:preimage-sampling-foundation",
+      "passed": true
+    },
+    {
+      "check": "all 20 correct foundation display equations retained exactly",
+      "passed": true
+    },
+    {
+      "check": "correct mathematical material: 格、$q$元核格与目标陪集",
+      "passed": true
+    },
+    {
+      "check": "correct mathematical material: 环伴随与频域表示",
+      "passed": true
+    },
+    {
+      "check": "correct mathematical material: gadget矩阵与结构化陷门",
+      "passed": true
+    },
+    {
+      "check": "correct mathematical material: Gram矩阵与低维子空间",
+      "passed": true
+    },
+    {
+      "check": "correct mathematical material: Gaussian参数矩阵与平方根作用",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 机构定向通信的身份管理需求",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 双向身份匹配与通信关系保护",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 后量子迁移下的格密码实现需求",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 身份基加密与分层委派的发展",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 身份基签名的格上实现路线",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 身份基匹配加密及格上构造的发展",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 医院向患者",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 学校向学生",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: GPV工作",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: Bonsai Trees",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: Francati",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: Chen等人",
+      "passed": true
+    },
+    {
+      "check": "correct chapter-one material: 2023年以来",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 程序",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: Python",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 本项目",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 后端",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 状态恢复",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 接口处",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 对象编码",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 第五章",
+      "passed": true
+    },
+    {
+      "check": "foundations free of specific software commentary: 第四章",
+      "passed": true
+    },
+    {
+      "check": "all 37 numbered user requirements recorded",
+      "passed": true
+    },
+    {
+      "check": "all 37 numbered user requirements individually reviewed",
+      "passed": true
+    },
+    {
+      "check": "nine separately paragraphed chapter descriptions",
+      "passed": true
+    },
+    {
+      "check": "useful donor identity table merged into full correct chapter one",
+      "passed": true
+    },
+    {
+      "check": "chapter three retains six sections",
+      "passed": true
+    },
+    {
+      "check": "combination matrix comes first",
+      "passed": true
+    },
+    {
+      "check": "requested chapter-four headings",
+      "passed": true
+    },
+    {
+      "check": "all paper security statements and theorem locations retained",
+      "passed": true
+    },
+    {
+      "check": "representative reasons explained individually",
+      "passed": true
+    },
+    {
+      "check": "representative comparison uses concise common settings",
+      "passed": true
+    },
+    {
+      "check": "zero padding explained plainly",
+      "passed": true
+    },
+    {
+      "check": "LATTE reuse subject explicit",
+      "passed": true
+    },
+    {
+      "check": "three innovations, integration and grouped application prospects",
+      "passed": true
+    },
+    {
+      "check": "three application scenarios under one heading",
+      "passed": true
+    },
+    {
+      "check": "Wang-PW separate from three principal optimizations",
+      "passed": true
+    },
+    {
+      "check": "future directions free of concrete task list: 第一项",
+      "passed": true
+    },
+    {
+      "check": "future directions free of concrete task list: 第二项",
+      "passed": true
+    },
+    {
+      "check": "future directions free of concrete task list: 第三项",
+      "passed": true
+    },
+    {
+      "check": "future directions free of concrete task list: 第四项",
+      "passed": true
+    },
+    {
+      "check": "future directions free of concrete task list: 多算法研究原型",
+      "passed": true
+    },
+    {
+      "check": "future directions free of concrete task list: 最大应用消息",
+      "passed": true
+    },
+    {
+      "check": "selection reasoning does not repeat scenario introduction",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 向量使用粗体",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 接口处明确区分",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 不能把数值频域结果",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 不能直接把",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 公开、规则、便于求预像",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 不是可直接互换的安全等级",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 本章只讨论",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 不各自实现密码流程",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 严格的Python",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 冻结配置",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 冻结档",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 目标档",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 参数快照",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 对称载荷预算",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 因此第五章进一步",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 第五章的范围感知",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: 实验章单列",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: \\appendix",
+      "passed": true
+    },
+    {
+      "check": "requested wording removed: appendices/",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 1",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 2",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 3",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 4",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 5",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 6",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 7",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 8",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 9",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 10",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 11",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 12",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 13",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 14",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 15",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 16",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 17",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 18",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 19",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 20",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 21",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 22",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 23",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 24",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 25",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 26",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 27",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 28",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 29",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 30",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 31",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 32",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 33",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 34",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 35",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 36",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 37",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 38",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 39",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 40",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 41",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 42",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 43",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 44",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 45",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 46",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 47",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 48",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 49",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 50",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 51",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 52",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 53",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 54",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 55",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 56",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 57",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 58",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 59",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 60",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 61",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 62",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 63",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 64",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 65",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 66",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 67",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 68",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 69",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 70",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 71",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 72",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 73",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 74",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 75",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 76",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 77",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 78",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 79",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 80",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 81",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 82",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 83",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 84",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 85",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 86",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 87",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 88",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 89",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 90",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 91",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 92",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 93",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 94",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 95",
+      "passed": true
+    },
+    {
+      "check": "previous 96-item wording cleanup retained: 96",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/ab-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/ab-timings.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/ciphertext-parts.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/codec-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/sageloli-times.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/srgg-protocol-impact.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/ten-first-times.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/ten-object-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "experimental data unchanged: tables/ten-representatives.tex",
+      "passed": true
+    },
+    {
+      "check": "complete correct bibliography retained",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: 作品设计报告.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/01-introduction.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:application-background",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:research-timeline",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:work-overview",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/02-foundations.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:preimage-sampling-foundation",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/03-design.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:common-architecture",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:protocol-generation",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/04-algorithms.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:representative-profile",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/05-optimizations.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:ring-sampler",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:receiver-session",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/06-system.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:system-structure",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:new-backend",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:state-recovery",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:web-demo",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:web-demo-details",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:deployment",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/07-experiments.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:ten-combination-times",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:ten-combination-resources",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:ab-times",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:codec",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:session",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/08-applications.tex",
+      "passed": true
+    },
+    {
+      "check": "original caption and label retained: fig:institutional-message",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: chapters/09-conclusion.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/ab-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/ab-timings.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/ciphertext-parts.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/codec-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/sageloli-times.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/srgg-protocol-impact.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/ten-first-times.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/ten-object-sizes.tex",
+      "passed": true
+    },
+    {
+      "check": "prose, equations, original tables and headings preserved: tables/ten-representatives.tex",
+      "passed": true
+    },
+    {
+      "check": "no duplicate labels",
+      "passed": true
+    },
+    {
+      "check": "30 final figures",
+      "passed": true
+    },
+    {
+      "check": "31 figure/table placements",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:application-background",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:work-overview",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:research-timeline",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:preimage-sampling-foundation",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:common-architecture",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:protocol-generation",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:representative-profile",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:ring-sampler",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:receiver-session",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:system-structure",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:new-backend",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:state-recovery",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:web-demo",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:web-demo-details",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:deployment",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:ten-combination-times",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:ten-combination-resources",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:ab-times",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:codec",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:session",
+      "passed": true
+    },
+    {
+      "check": "original figure retained: fig:institutional-message",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:message-sequence-added",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:ciphertext-layout-added",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:srgg-bits-added",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:suite-settings-added",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:issuance-added",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:operation-flow-added",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:phase-cost-added",
+      "passed": true
+    },
+    {
+      "check": "new figure has one caption and one text reference: fig:codec-time-added",
+      "passed": true
+    },
+    {
+      "check": "new native table and its text reference",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:identity-cases",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:application-background",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:research-timeline",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:work-overview",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:work-highlights",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:foundation-symbols",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:preimage-sampling-foundation",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:common-architecture",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:notations",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:message-sequence-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:ciphertext-layout-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:implemented-matrix",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:assumption-source-map",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:paper-results-summary",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:representatives",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:representative-indicators",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:sageloli-representation",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:srgg-bits-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:srgg-protocol-impact",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:receiver-session",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:session-amortization",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:backend-interfaces",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:suite-settings-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:issuance-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:state-recovery",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:operation-flow-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:web-demo",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:environments",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:assumption-source-map",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:assumption-source-map",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:ten-first-times",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:phase-cost-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:ten-combination-times",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:ten-object-sizes",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:ten-combination-resources",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:specialized-environments",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:ab-times",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:ab-times",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:ab-sizes",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:specialized-environments",
+      "passed": true
+    },
+    {
+      "check": "reference target: sec:lai-session-results",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:ten-object-sizes",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:message-coverage",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:sageloli-times",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:codec",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "reference target: fig:codec-time-added",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:wang-results",
+      "passed": true
+    },
+    {
+      "check": "reference target: tab:functional",
+      "passed": true
+    },
+    {
+      "check": "citation key: shamir1984",
+      "passed": true
+    },
+    {
+      "check": "citation key: gentrysilverberg2002",
+      "passed": true
+    },
+    {
+      "check": "citation key: hess2003ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: ateniese2019me",
+      "passed": true
+    },
+    {
+      "check": "citation key: ateniese2019me",
+      "passed": true
+    },
+    {
+      "check": "citation key: shor1994",
+      "passed": true
+    },
+    {
+      "check": "citation key: shamir1984",
+      "passed": true
+    },
+    {
+      "check": "citation key: bonehfranklin2003",
+      "passed": true
+    },
+    {
+      "check": "citation key: gentrysilverberg2002",
+      "passed": true
+    },
+    {
+      "check": "citation key: gpv2008",
+      "passed": true
+    },
+    {
+      "check": "citation key: cash2010bonsai",
+      "passed": true
+    },
+    {
+      "check": "citation key: agrawal2010hibe",
+      "passed": true
+    },
+    {
+      "check": "citation key: agrawal2010delegation",
+      "passed": true
+    },
+    {
+      "check": "citation key: lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: zhao2024latte",
+      "passed": true
+    },
+    {
+      "check": "citation key: goyal2025adaptivehibe",
+      "passed": true
+    },
+    {
+      "check": "citation key: hess2003ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: bellare2004ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: ruckert2010hibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: pan2021ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: luo2024ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: jia2025ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: ateniese2019me",
+      "passed": true
+    },
+    {
+      "check": "citation key: francati2021ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: chen2022ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: chiku2023ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: belfiore2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: yu2026ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: gpv2008",
+      "passed": true
+    },
+    {
+      "check": "citation key: micciancio2012trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: regev2005lwe",
+      "passed": true
+    },
+    {
+      "check": "citation key: ajtai1996",
+      "passed": true
+    },
+    {
+      "check": "citation key: lpr2013ring",
+      "passed": true
+    },
+    {
+      "check": "citation key: langlois2015module",
+      "passed": true
+    },
+    {
+      "check": "citation key: gpv2008",
+      "passed": true
+    },
+    {
+      "check": "citation key: micciancio2012trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: gpv2008",
+      "passed": true
+    },
+    {
+      "check": "citation key: micciancio2012trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: rfc5869",
+      "passed": true
+    },
+    {
+      "check": "citation key: nist2007gcm",
+      "passed": true
+    },
+    {
+      "check": "citation key: lamport1979ots",
+      "passed": true
+    },
+    {
+      "check": "citation key: zhao2024latte",
+      "passed": true
+    },
+    {
+      "check": "citation key: lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: nist2024fips204",
+      "passed": true
+    },
+    {
+      "check": "citation key: falcon2020",
+      "passed": true
+    },
+    {
+      "check": "citation key: luo2024ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: jia2025ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: pan2021ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: zhao2024latte",
+      "passed": true
+    },
+    {
+      "check": "citation key: lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: nist2024fips204",
+      "passed": true
+    },
+    {
+      "check": "citation key: galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: falcon2020",
+      "passed": true
+    },
+    {
+      "check": "citation key: luo2024ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: jia2025ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: pan2021ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: zhao2024latte",
+      "passed": true
+    },
+    {
+      "check": "citation key: lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: nist2024fips204",
+      "passed": true
+    },
+    {
+      "check": "citation key: falcon2020",
+      "passed": true
+    },
+    {
+      "check": "citation key: luo2024ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: jia2025ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: pan2021ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: micciancio2012trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: jia2025ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: zhao2024latte",
+      "passed": true
+    },
+    {
+      "check": "citation key: lai2015trapdoors",
+      "passed": true
+    },
+    {
+      "check": "citation key: galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: nist2024fips204",
+      "passed": true
+    },
+    {
+      "check": "citation key: galindo2006ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: falcon2020",
+      "passed": true
+    },
+    {
+      "check": "citation key: luo2024ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: jia2025ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: sageloli2023ibs",
+      "passed": true
+    },
+    {
+      "check": "citation key: wang2024ibme",
+      "passed": true
+    },
+    {
+      "check": "citation key: pan2021ibs",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-01-01-roles",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-01-02-research-timeline",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-01-03-roadmap",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-02-01-preimage",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-03-01-architecture",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-03-02-encryption",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-04-01-representatives",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-05-01-sampler",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-05-02-session-flow",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-06-01-software",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-06-02-backend-integration",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-06-03-restoration",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-06-04-web",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-06-05-web-results",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-06-06-deployment",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-07-01-times",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-07-02-resources",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-07-03-ab-samples",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-07-04-ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-07-05-codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-07-06-session",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: fig-08-01-application",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-01-message-sequence",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-02-ciphertext-layout",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-04-srgg-byte-layout",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-08-suite-settings",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-06-issuance-state",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-09-operation-flow",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-05-phase-composition",
+      "passed": true
+    },
+    {
+      "check": "concise figure unchanged: new-07-codec-timing",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/01-introduction.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/02-foundations.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/03-design.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/04-algorithms.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/05-optimizations.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/06-system.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/07-experiments.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/08-applications.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: chapters/09-conclusion.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figure-layout.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/cacr-logo.jpg",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-01-01-roles.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-01-02-research-timeline.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-01-03-roadmap.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-02-01-preimage.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-03-01-architecture.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-03-02-encryption.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-04-01-representatives.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-05-01-sampler.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-05-02-session-flow.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-06-01-software.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-06-02-backend-integration.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-06-03-restoration.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-06-04-web.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-06-05-web-results.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-06-06-deployment.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-07-01-times.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-07-02-resources.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-07-03-ab-samples.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-07-04-ciphertext-parts.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-07-05-codec-sizes.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-07-06-session.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/fig-08-01-application.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-01-message-sequence.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-02-ciphertext-layout.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-04-srgg-byte-layout.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-05-phase-composition.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-06-issuance-state.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-07-codec-timing.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-08-suite-settings.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: figures/new-09-operation-flow.pdf",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: paper-results.tex",
+      "passed": true
+    },
+    {
+      "check": "self-contained build input: 作品设计报告.tex",
+      "passed": true
+    },
+    {
+      "check": "PDF bound to final source build",
+      "passed": true
+    },
+    {
+      "check": "complete researched report PDF",
+      "passed": true
+    },
+    {
+      "check": "no unresolved reference marks in PDF",
+      "passed": true
+    },
+    {
+      "check": "no LaTeX Overfull warnings",
+      "passed": true
+    },
+    {
+      "check": "no LaTeX Missing character warnings",
+      "passed": true
+    },
+    {
+      "check": "no LaTeX undefined references warnings",
+      "passed": true
+    },
+    {
+      "check": "no LaTeX undefined citations warnings",
+      "passed": true
+    },
+    {
+      "check": "no LaTeX Float too large warnings",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:identity-cases",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:application-background",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:research-timeline",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:work-overview",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:work-highlights",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:foundation-symbols",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:lattice-families",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:preimage-sampling-foundation",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:common-architecture",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:notations",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:message-sequence-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: alg:setup",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: alg:sender-keygen",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: alg:receiver-keygen",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: alg:encrypt",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: alg:decrypt",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:protocol-generation",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:ciphertext-layout-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:implemented-matrix",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:assumption-source-map",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:representatives",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:representative-indicators",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:representative-profile",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:ring-sampler",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:sageloli-representation",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: sec:srgg-codec",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:codec-fields",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:srgg-bits-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:srgg-protocol-impact",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: sec:lai-session",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:receiver-session",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:session-amortization",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:system-structure",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:backend-interfaces",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:suite-settings",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:suite-settings-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:new-backend",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:issuance-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:state-recovery",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:operation-flow-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:web-demo",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:web-demo-details",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:deployment",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:installation-reproduction",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:environments",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:ten-first-times",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:phase-cost-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:ten-combination-times",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:ten-object-sizes",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:ten-combination-resources",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:specialized-environments",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:ab-times",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:ab-times",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:ab-sizes",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:message-coverage",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:sageloli-times",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:codec",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:codec-sizes",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:codec-time-added",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: sec:lai-session-results",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:session",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:wang-results",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:functional",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: fig:institutional-message",
+      "passed": true
+    },
+    {
+      "check": "compiled label number: tab:paper-results-summary",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:application-background",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:research-timeline",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:work-overview",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:preimage-sampling-foundation",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:common-architecture",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:protocol-generation",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:representative-profile",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:ring-sampler",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:receiver-session",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:system-structure",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:new-backend",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:state-recovery",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:web-demo",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:web-demo-details",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:deployment",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:ten-combination-times",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:ten-combination-resources",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:ab-times",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:ciphertext-parts",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:codec",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:session",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:institutional-message",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:message-sequence-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:ciphertext-layout-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:srgg-bits-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:suite-settings-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:issuance-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:operation-flow-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:phase-cost-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: fig:codec-time-added",
+      "passed": true
+    },
+    {
+      "check": "one complete caption in PDF: tab:paper-results-summary",
+      "passed": true
+    },
+    {
+      "check": "visual review matches final PDF",
+      "passed": true
+    },
+    {
+      "check": "every physical page reviewed",
+      "passed": true
+    },
+    {
+      "check": "no open visual findings",
+      "passed": true
+    },
+    {
+      "check": "visual review required",
+      "passed": true
+    },
+    {
+      "check": "independent clean build matches the delivered report",
+      "passed": true
+    }
+  ]
+}

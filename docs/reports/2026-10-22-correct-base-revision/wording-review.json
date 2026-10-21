@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "previous_96_excerpts_absent": true,
+  "user_numbered_requirements": 37,
+  "first_chapter_full_researched_material_retained": true,
+  "new_paragraphs_reviewed": [
+    "traditional-message explanation",
+    "identity cases table introduction",
+    "Hess research addition",
+    "four engineering problems",
+    "chapter-by-chapter report structure",
+    "chapter-two mathematical replacements",
+    "native paper results table"
+  ],
+  "remaining_negatives_reviewed": {
+    "research_history": "Historical facts about dates and construction progress",
+    "security_definitions": "Attacker inability and path mismatch are mathematical properties",
+    "parsing_and_tests": "Rejection conditions describe actual algorithms and tests"
+  },
+  "new_self_defence_or_scope_disclaimers": false
+}
