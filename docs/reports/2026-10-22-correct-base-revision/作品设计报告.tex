@@ -1,0 +1,400 @@
+% !TeX program = xelatex
+% Active LaTeX source for the competition design report.
+\documentclass[UTF8,a4paper,12pt,oneside,openany,fontset=fandol]{ctexrep}
+\usepackage[
+  top=20mm,
+  bottom=20mm,
+  left=20mm,
+  right=20mm,
+  headheight=15pt,
+  headsep=5mm,
+  footskip=10mm
+]{geometry}
+\usepackage{amsmath,amssymb,graphicx,longtable,tabularx,array,booktabs,needspace}
+\usepackage{float}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\usepackage[font=small,labelfont=bf,labelsep=quad]{caption}
+\usepackage[hidelinks,unicode,bookmarksnumbered]{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\input{figure-layout.tex}
+
+\definecolor{ibmeblue}{HTML}{2F5597}
+\definecolor{ibmelight}{HTML}{EAF0F8}
+\definecolor{ibmegreen}{HTML}{EAF4EA}
+\definecolor{ibmegray}{HTML}{F2F2F2}
+\tikzset{
+  flow/.style={draw=ibmeblue,rounded corners=2pt,fill=ibmelight,
+    align=center,minimum height=10mm,text width=31mm,font=\small},
+  check/.style={draw=black!55,rounded corners=2pt,fill=ibmegreen,
+    align=center,minimum height=10mm,text width=31mm,font=\small},
+  flowarrow/.style={-{Latex[length=2.2mm]},thick,draw=black!65}
+}
+
+\newcommand{\reporttitle}{基于多类格困难假设的抗量子身份基匹配加密通用设计与优化实现}
+\newcommand{\competitiontitle}{2026年第十一届全国密码技术竞赛作品设计报告}
+\newcommand{\reportdate}{2026年10月22日}
+\newcommand{\worknumber}{CACR2026T4PMR7}
+\newcommand{\worknumberfield}[1]{\underline{\makebox[#1][c]{\worknumber}}}
+\newcommand{\reportheader}{全国密码技术竞赛作品设计报告}
+\newcommand{\checkedbox}{\makebox[1.05em][c]{\rlap{\(\square\)}\hspace{0.08em}\raisebox{0.08em}{\(\checkmark\)}}}
+\newcounter{ibmealgorithm}[chapter]
+\renewcommand{\theibmealgorithm}{\thechapter.\arabic{ibmealgorithm}}
+\newenvironment{ibmealgorithm}[1]{%
+  \refstepcounter{ibmealgorithm}%
+  \begin{center}\begin{minipage}{0.94\textwidth}\small
+  \setlength{\parindent}{0pt}%
+  \hrule\vspace{1.5mm}
+  \textbf{算法~\theibmealgorithm\quad #1}\par\vspace{1mm}
+}{%
+  \vspace{1mm}\hrule
+  \end{minipage}\end{center}
+}
+\renewcommand{\bibname}{参考文献}
+
+\makeatletter
+\renewcommand{\@cite}[2]{\textsuperscript{[#1\if@tempswa , #2\fi]}}
+\makeatother
+
+\hypersetup{
+  pdftitle={\reporttitle},
+  pdfsubject={\competitiontitle},
+  pdfkeywords={身份基匹配加密, 格密码, HIBE, IBS, 格陷门采样}
+}
+\ctexset{
+  chapter={format=\centering\heiti\zihao{2},beforeskip=0pt,afterskip=24pt},
+  section={format=\heiti\zihao{3},beforeskip=18pt,afterskip=10pt},
+  subsection={format=\heiti\zihao{4},beforeskip=12pt,afterskip=6pt}
+}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\linespread{1.28}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\LTpre}{9pt}
+\setlength{\LTpost}{9pt}
+\setcounter{tocdepth}{1}
+\AddToHook{cmd/section/before}{\Needspace{6\baselineskip}}
+
+\fancypagestyle{frontmatter}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyfoot[C]{\thepage}
+}
+\fancypagestyle{mainmatter}{
+  \fancyhf{}
+  \fancyhead[C]{\small\songti\reportheader}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{7mm}
+\noindent
+\begin{minipage}[t]{0.73\textwidth}
+\zihao{4}
+作品编号：\worknumberfield{47mm}\\[8mm]
+作品类别：\checkedbox 软件设计\quad
+\(\square\)硬件制作\quad
+\(\square\)工程实践\\[3mm]
+\hspace*{5em}\(\square\)密码应用技术\quad
+\(\square\)其它
+\end{minipage}%
+\begin{minipage}[t]{0.27\textwidth}
+\raggedleft
+\includegraphics[width=30mm]{figures/cacr-logo.jpg}
+\end{minipage}
+
+\vspace{34mm}
+\begin{center}
+{\heiti\zihao{-2}\competitiontitle\par}
+\vspace{5mm}
+\rule{0.86\textwidth}{1.2pt}
+
+\vspace{24mm}
+{\zihao{3}作品题目：基于多类格困难假设的抗量子\par}
+\vspace{4mm}
+{\zihao{3}身份基匹配加密通用设计与优化实现\par}
+
+\vfill
+{\zihao{4}\reportdate\par}
+\vspace{8mm}
+{\zihao{4}中国密码学会\par}
+\end{center}
+\end{titlepage}
+
+\clearpage
+\thispagestyle{empty}
+\begingroup
+\zihao{-4}
+\linespread{1.25}\selectfont
+\setlength{\arrayrulewidth}{0.6pt}
+\setlength{\tabcolsep}{3mm}
+\renewcommand{\arraystretch}{1.18}
+\noindent
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|}
+\hline
+\centering\heiti\zihao{3}基本信息表\arraybackslash\\[1mm]
+\hline
+编号：\worknumberfield{48mm}\\
+\hline
+作品题目：\reporttitle\\
+\hline
+作品类别：\checkedbox 软件设计\quad
+\(\square\)硬件制作\quad
+\(\square\)工程实践\quad
+\(\square\)密码应用技术\quad
+\(\square\)其它\\
+\hline
+\noindent\textbf{作品内容摘要：}\par
+\setlength{\parindent}{2em}
+量子计算的发展对基于整数分解和离散对数问题的传统公钥密码提出了新的安全挑战，面向后量子环境的密码迁移已经成为网络与信息系统建设的重要问题。格密码具有多样的困难问题和丰富的结构形式，是抗量子公钥密码的重要技术路线。与此同时，证书体系下的加密与签名通常分别完成接收者访问控制和发送者身份认证；在机构定向投递、受控设备通信和来源受限的消息服务中，系统还需要在一次消息处理过程中同时核对通信双方的身份。身份基匹配加密正是面向这一需求：只有接收者身份与发送者指定的身份一致，并且发送者身份与接收者认可的身份一致时，消息才能被恢复。
+
+本作品基于两层匿名分层身份基加密（HIBE）与身份基签名（IBS）的通用构造，设计并实现一套基于多类格困难假设的抗量子身份基匹配加密系统。系统将HIBE与IBS封装为彼此独立、可替换的密码后端，通过统一接口、能力声明和兼容性检查完成组合。HIBE只封装32字节随机种子，应用消息由该种子派生的AES-256-GCM密钥保护，从而适配不同后端的明文容量；IBS负责绑定发送身份和一次性验签公钥，外层一次性签名进一步认证完整密文字节。系统还实现了规范对象编码、固定身份发钥、状态持久化、异常拒绝和重启恢复。
+
+作品完成LATTE、Lai两种HIBE与BNN＋ML-DSA、BNN＋Falcon、Luo、SRGG、Sageloli五种常规IBS的十种端到端组合，并将目标规模Wang--PW IBS接入LATTE组合。针对完整系统运行中暴露的计算与存储瓶颈，作品实现三项重点优化：利用多项式结构和逐频率低秩计算避免Sageloli采样中的稠密矩阵展开；按照字段实际取值范围对SRGG公钥、机构状态、用户密钥和签名进行无损编码，降低对象保存与传输开销；为固定身份对建立Lai接收会话，将重复委派移出逐消息解密路径，降低连续通信中的逐消息成本。
+
+十种常规组合在统一机器、输入与运行配置下全部完成，功能测试覆盖正确匹配、身份错配、密文篡改和新进程恢复。实验结果表明，不同HIBE主要改变接收状态、种子密文尺寸和解密成本，不同IBS主要影响发送者密钥的生成成本、签名开销和密钥尺寸；三组代表方案由此分别面向交互式定向消息、后台异步投递和固定机构间周期报送。软件提供命令行与浏览器两种操作入口，能够完成系统建立、双方发钥、消息发送、匹配解密、错误输入拒绝和状态恢复。该设计可用于机构定向消息、受控终端指令和跨部门协作等双方身份均受约束的通信场景，并为后量子身份密码的算法替换、部署选型与持续优化提供统一实现基础。\\
+\hline
+\textbf{关键词（五个）：}身份基匹配加密；格密码；分层身份基加密；身份基签名；格陷门采样\\
+\hline
+\end{tabularx}
+\endgroup
+
+\clearpage
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\pagestyle{frontmatter}
+\begingroup
+\linespread{1.15}\selectfont
+\tableofcontents
+\clearpage
+\endgroup
+\pagenumbering{arabic}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[C]{\small\songti\reportheader}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{mainmatter}
+
+\input{chapters/01-introduction}
+\input{chapters/02-foundations}
+\input{chapters/03-design}
+\input{chapters/04-algorithms}
+\input{chapters/05-optimizations}
+\input{chapters/06-system}
+\input{chapters/07-experiments}
+\input{chapters/08-applications}
+\input{chapters/09-conclusion}
+
+\clearpage
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{99}
+\small
+
+\bibitem{shor1994}
+Peter W. Shor.
+Algorithms for Quantum Computation: Discrete Logarithms and Factoring.
+In \emph{Proceedings of the 35th Annual Symposium on Foundations of Computer Science},
+pp. 124--134, 1994.
+
+\bibitem{shamir1984}
+Adi Shamir.
+Identity-Based Cryptosystems and Signature Schemes.
+In \emph{Advances in Cryptology---CRYPTO 1984}, LNCS 196, pp. 47--53, 1985.
+
+\bibitem{bonehfranklin2003}
+Dan Boneh and Matthew Franklin.
+Identity-Based Encryption from the Weil Pairing.
+\emph{SIAM Journal on Computing}, 32(3), pp. 586--615, 2003.
+
+\bibitem{gentrysilverberg2002}
+Craig Gentry and Alice Silverberg.
+Hierarchical ID-Based Cryptography.
+In \emph{ASIACRYPT 2002}, LNCS 2501, pp. 548--566, 2002.
+
+\bibitem{hess2003ibs}
+Florian Hess.
+Efficient Identity Based Signature Schemes Based on Pairings.
+In \emph{Selected Areas in Cryptography 2002}, LNCS 2595, pp. 310--324, 2003.
+
+\bibitem{bellare2004ibs}
+Mihir Bellare, Chanathip Namprempre, and Gregory Neven.
+Security Proofs for Identity-Based Identification and Signature Schemes.
+In \emph{EUROCRYPT 2004}, LNCS 3027, pp. 268--286, 2004.
+
+\bibitem{ajtai1996}
+Miklós Ajtai.
+Generating Hard Instances of Lattice Problems.
+In \emph{Proceedings of the 28th Annual ACM Symposium on Theory of Computing},
+pp. 99--108, 1996.
+
+\bibitem{regev2005lwe}
+Oded Regev.
+On Lattices, Learning with Errors, Random Linear Codes, and Cryptography.
+In \emph{Proceedings of the 37th Annual ACM Symposium on Theory of Computing},
+pp. 84--93, 2005.
+
+\bibitem{gpv2008}
+Craig Gentry, Chris Peikert, and Vinod Vaikuntanathan.
+Trapdoors for Hard Lattices and New Cryptographic Constructions.
+In \emph{Proceedings of the 40th Annual ACM Symposium on Theory of Computing},
+pp. 197--206, 2008.
+
+\bibitem{cash2010bonsai}
+David Cash, Dennis Hofheinz, Eike Kiltz, and Chris Peikert.
+Bonsai Trees, or How to Delegate a Lattice Basis.
+In \emph{EUROCRYPT 2010}, LNCS 6110, pp. 523--552, 2010.
+
+\bibitem{agrawal2010hibe}
+Shweta Agrawal, Dan Boneh, and Xavier Boyen.
+Efficient Lattice (H)IBE in the Standard Model.
+In \emph{EUROCRYPT 2010}, LNCS 6110, pp. 553--572, 2010.
+
+\bibitem{agrawal2010delegation}
+Shweta Agrawal, Dan Boneh, and Xavier Boyen.
+Lattice Basis Delegation in Fixed Dimension and Shorter-Ciphertext Hierarchical IBE.
+In \emph{CRYPTO 2010}, LNCS 6223, pp. 98--115, 2010.
+
+\bibitem{ruckert2010hibs}
+Markus R\"uckert.
+Strongly Unforgeable Signatures and Hierarchical Identity-Based Signatures from Lattices without Random Oracles.
+In \emph{PQCrypto 2010}, LNCS 6061, pp. 182--200, 2010.
+
+\bibitem{ateniese2019me}
+Giuseppe Ateniese, Danilo Francati, David Nu\~nez, and Daniele Venturi.
+Match Me If You Can: Matchmaking Encryption and Its Applications.
+In \emph{CRYPTO 2019}, LNCS 11693, pp. 701--731, 2019.
+
+\bibitem{francati2021ibme}
+Danilo Francati, Alessio Guidi, Luigi Russo, and Daniele Venturi.
+Identity-Based Matchmaking Encryption without Random Oracles.
+In \emph{INDOCRYPT 2021}, LNCS 13143, pp. 415--435, 2021.
+
+\bibitem{chen2022ibme}
+Jie Chen, Yu Li, Jinming Wen, and Jian Weng.
+Identity-Based Matchmaking Encryption from Standard Assumptions.
+In \emph{ASIACRYPT 2022}, LNCS 13793, pp. 394--422, 2022.
+
+\bibitem{wang2024ibme}
+Yuejun Wang, Baocang Wang, Qiqi Lai, and Yu Zhan.
+Identity-based Matchmaking Encryption with Stronger Security and Instantiation on Lattices.
+\emph{Theoretical Computer Science}, 1029:115048, 2025.
+doi: 10.1016/j.tcs.2024.115048.
+
+\bibitem{chiku2023ibme}
+Sohto Chiku, Keitaro Hashimoto, Keisuke Hara, and Junji Shikata.
+Identity-Based Matchmaking Encryption with Enhanced Privacy Against Chosen-Ciphertext Attacks.
+Cryptology ePrint Archive, Paper 2023/1435, 2023, revised 2026.
+
+\bibitem{belfiore2024ibme}
+Roberta Cimorelli Belfiore, Andrea De Cosmo, and Anna Lisa Ferrara.
+Identity-Based Matchmaking Encryption from Standard Lattice Assumptions.
+In \emph{ACNS 2024}, LNCS 14584, pp. 163--188, 2024.
+
+\bibitem{goyal2025adaptivehibe}
+Rishab Goyal, Venkata Koppula, and Mahesh Sreekumar Rajasree.
+A Note on Adaptive Security in Hierarchical Identity-Based Encryption.
+In \emph{CRYPTO 2025}, LNCS 16002, pp. 101--136, 2025.
+
+\bibitem{yu2026ibme}
+Qing Yu, Shengli Liu, and Yiming Li.
+Identity-Based Signature and Identity-Based Matchmaking Encryption from Lattices.
+\emph{Theoretical Computer Science}, 1082:116152, 2026.
+doi: 10.1016/j.tcs.2026.116152.
+
+\bibitem{zhao2024latte}
+Raymond K. Zhao, Sarah McCarthy, Ron Steinfeld, Amin Sakzad, and Máire O'Neill.
+Quantum-safe HIBE: Does It Cost a LATTE?
+\emph{IEEE Transactions on Information Forensics and Security}, 2023.
+
+\bibitem{lai2015trapdoors}
+Russell W. F. Lai, Henry K. F. Cheung, and Sherman S. M. Chow.
+Trapdoors for Ideal Lattices with Applications.
+In \emph{Inscrypt 2014}, LNCS 8957, pp. 239--256, 2015.
+doi: 10.1007/978-3-319-16745-9\_14.
+
+\bibitem{jia2025ibs}
+Huiwen Jia, Ying Liu, Chunming Tang, and Lin Wang.
+Constructing Efficient Identity-Based Signatures on Lattices.
+\emph{IET Information Security}, 2025.
+doi: 10.1049/ise2/6684889.
+
+\bibitem{sageloli2023ibs}
+Éric Sageloli, Pierre Pébereau, Pierrick Méaux, and Céline Chevalier.
+Shorter and Faster Identity-Based Signatures with Tight Security in the (Q)ROM from Lattices.
+In \emph{ACNS 2023}, 2023.
+doi: 10.1007/978-3-031-33488-7\_24.
+
+\bibitem{pan2021ibs}
+Jiaxin Pan and Benedikt Wagner.
+Short Identity-Based Signatures with Tight Security from Lattices.
+In \emph{PQCrypto 2021}, 2021.
+ePrint 2021/970.
+
+\bibitem{galindo2006ibs}
+David Galindo, Javier Herranz, and Eike Kiltz.
+On the Generic Construction of Identity-Based Signatures with Additional Properties.
+In \emph{ASIACRYPT 2006}, 2006.
+
+\bibitem{nist2024fips204}
+National Institute of Standards and Technology.
+\emph{Module-Lattice-Based Digital Signature Standard}.
+FIPS 204, 2024.
+
+\bibitem{micciancio2012trapdoors}
+Daniele Micciancio and Chris Peikert.
+Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller.
+In \emph{EUROCRYPT 2012}, 2012.
+
+\bibitem{lpr2013ring}
+Vadim Lyubashevsky, Chris Peikert, and Oded Regev.
+On Ideal Lattices and Learning with Errors over Rings.
+\emph{Journal of the ACM}, 60(6), 2013.
+
+\bibitem{langlois2015module}
+Adeline Langlois and Damien Stehl\'e.
+Worst-Case to Average-Case Reductions for Module Lattices.
+\emph{Designs, Codes and Cryptography}, 75, pp. 565--599, 2015.
+
+\bibitem{rfc5869}
+Hugo Krawczyk and Pasi Eronen.
+HMAC-based Extract-and-Expand Key Derivation Function (HKDF).
+RFC 5869, 2010.
+
+\bibitem{nist2007gcm}
+National Institute of Standards and Technology.
+\emph{Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC}.
+Special Publication 800-38D, 2007.
+
+\bibitem{lamport1979ots}
+Leslie Lamport.
+Constructing Digital Signatures from a One Way Function.
+SRI International, CSL-98, 1979.
+
+\bibitem{luo2024ibs}
+Pingbin Luo, Xinjian Chen, Willy Susilo, and Qiong Huang.
+Identity-Based Signature from Lattices without Trapdoors.
+In \emph{ICICS 2024}, 2024.
+
+\bibitem{falcon2020}
+Pierre-Alain Fouque et al.
+\emph{Falcon: Fast-Fourier Lattice-based Compact Signatures over NTRU}.
+Specification v1.2, 2020.
+
+\end{thebibliography}
+
+\end{document}

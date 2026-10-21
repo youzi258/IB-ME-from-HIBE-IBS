@@ -1,0 +1,494 @@
+\chapter{测试与结果分析}
+
+\section{实验设置}
+实验依次考察十种组合的整体性能、三组代表的运行与通信成本、三项优化的收益，以及身份匹配、
+错误输入和恢复结果。表~\ref{tab:environments}列出主比较的统一环境。各阶段记录从操作开始到
+结果返回的实际耗时，同时测量密钥文件、完整密文的长度及运算时的内存占用。
+
+\begin{table}[H]
+\centering\small
+\caption{十种常规组合的同机实验环境与方法}
+\label{tab:environments}
+\begin{tabularx}{\textwidth}{@{}p{.24\textwidth}X@{}}
+\toprule
+\rowcolor{black!8} 项目 & 统一条件 \\
+\midrule
+硬件与系统 & Intel Core Ultra 9 275HX；WSL2 Linux；固定逻辑CPU 0--3 \\
+运行时与线程 & Sage 10.9、Python 3.13.14；OMP 4，OpenBLAS、MKL与NUMEXPR均为1线程 \\
+输入 & 发送与接收身份各64 B，应用消息32 B，系统随机源 \\
+算法与参数 & 两种HIBE与五种常规IBS；配置及ROM／QROM模型见表~\ref{tab:assumption-source-map}；教学参数：否 \\
+重复方式 & 每种组合建立1个独立根；首次、同进程重复和新进程恢复后操作各1次 \\
+记录项目 & 各阶段实际耗时、规范对象与完整密文字节数、进程树采样RSS、消息恢复与篡改拒绝结果 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+完整流程计时包含组合编码、对象检查和原语调用。首次解密包含叶密钥生成；恢复实验另起进程加载
+已有对象。十种组合的实验固定逻辑CPU~0--3，OpenBLAS、MKL与NUMEXPR均为1线程，首次操作在运行库
+准备后开始计时。表中重复测量描述固定密钥下的运行波动，独立建立系统的数量单独列出。下文时间
+通常保留3位有效数字；B、KiB、MiB分别表示字节、$2^{10}$字节和$2^{20}$字节。
+
+\subsection{实验组合与代表方案}
+
+两种HIBE分别搭配五种IBS，共十种组合。每组完成系统建立、双方发钥、首次与重复消息收发、新进程恢复和外层篡改
+拒绝。
+
+三组代表另测固定密钥下的重复收发，并分析委派、通信量和会话准备成本。Wang--PW是在常规十种组合之后接入的第六种IBS，目前完成LATTE＋Wang--PW目标参数，
+其运行环境、输入与阶段结果列于本章专项实验。
+
+\subsection{评价指标}
+
+实验按“离线准备、在线收发、持久恢复”三阶段记录。离线准备包括系统建立与双方发钥；在线
+收发包括首次加密、首次解密和固定密钥下的重复操作；持久恢复另起进程加载公钥对象与角色密钥。
+时间采用实际耗时，尺寸采用实际规范编码字节数，内存采用定期采样的进程树RSS峰值。
+
+这些指标对应不同部署选择。发钥机构更关心Setup、KeyExtract和机构状态，发送端更关心签名与
+完整加密，接收端更关心叶密钥委派和解密，网络侧主要考察完整密文长度。后文先分析
+完整系统，再把总成本分解到具体优化。
+
+\section{十种组合的整体性能}
+
+\subsection{实验方法与完成情况}
+
+十种组合使用相同源码、原生组件、依赖版本、线程设置和输入，按串行方式运行。每种
+组合建立一套独立系统及主密钥，依次执行首次加解密、同进程重复加解密、新进程对象恢复和恢复后
+解密，并分别检查密文截断和单比特翻转。
+
+十种组合全部完成，共通过20次诚实加密、30次诚实解密、10次新进程恢复和20次外层拒绝。每项时间为一个独立根上的一次实测。参数组及ROM／QROM模型见表~\ref{tab:assumption-source-map}，哈希与随机预言机接口采用SHAKE实例化。
+
+\subsection{首次完整流程时间}
+
+表~\ref{tab:ten-first-times}列出从系统建立到首次解密的五个阶段。系统建立和双方发钥
+主要反映可信发钥机构的准备成本，首次加密与首次解密则包含完整协议编码、签名、HIBE封装、叶密钥
+生成和认证检查。
+
+\begin{table}[H]
+\centering\small
+\caption{十种组合的首次完整流程实测时间，单位为秒}
+\label{tab:ten-first-times}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\rowcolor{black!8} 组合 & 建立 & \shortstack{发送方\\密钥生成} & \shortstack{接收方\\密钥生成} & 首次加密 & 首次解密 \\
+\midrule
+% BEGIN DATA ten-first-times.tex
+LATTE＋ML-DSA & 0.729 & 0.0139 & 0.224 & 0.0129 & 0.103 \\
+LATTE＋Falcon & 0.689 & 0.0229 & 0.34 & 0.0153 & 0.0951 \\
+LATTE＋Luo & 0.819 & 1.64 & 0.37 & 0.974 & 0.2 \\
+LATTE＋SRGG & 1.08 & 33.3 & 0.385 & 17.6 & 0.125 \\
+LATTE＋Sageloli & 3.11 & 50.9 & 9.98 & 12.9 & 0.616 \\
+Lai＋ML-DSA & 1.95 & 0.549 & 30.6 & 86.5 & 422 \\
+Lai＋Falcon & 2.14 & 0.621 & 32 & 90.9 & 440 \\
+Lai＋Luo & 2.14 & 0.8 & 31.2 & 85 & 427 \\
+Lai＋SRGG & 2.26 & 28.1 & 30.7 & 91.2 & 428 \\
+Lai＋Sageloli & 4.6 & 49.9 & 39.5 & 96.4 & 412 \\
+% END DATA ten-first-times.tex
+\bottomrule
+\end{tabular}
+\end{table}
+
+LATTE与ML-DSA、Falcon组合的首次加密分别为12.9和15.3毫秒；更换为Luo、SRGG和Sageloli后，
+首次加密分别为0.974、17.6和12.9秒，差异主要来自签名所需的数值准备、随机采样和对象处理。
+LATTE五组首次解密为
+95.1至616毫秒，说明在接收HIBE不变时，五种IBS的接收成本均为亚秒级。
+
+Lai五组首次加密集中在85.0至96.4秒，首次解密集中在412至440秒。更换IBS后结果仍处于同一
+量级，表明该配置下Lai封装与叶密钥委派是在线收发的主要成本。Sageloli使发送方密钥生成进一步
+增至约50秒\addedfigref{fig:phase-cost-added}。
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/new-05-phase-composition.pdf}
+\caption{系统准备与首次在线收发的阶段耗时}
+\label{fig:phase-cost-added}
+\end{figure}
+
+\subsection{重复操作与新进程恢复}
+
+图~\ref{fig:ten-combination-times}同时展示首次、同进程重复和恢复后操作。时间条带采用对数尺度，以
+容纳毫秒级LATTE认证转换组合和分钟级Lai组合；每个点对应一个独立根上的一次实测。
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/fig-07-01-times.pdf}
+\caption{十种组合的首次、重复与恢复后完整操作时间；A、B、C为三组代表}
+\label{fig:ten-combination-times}
+\end{figure}
+
+LATTE＋Luo、SRGG和Sageloli的重复加密分别降至0.351、11.3和8.04秒，与相同发送方密钥下可以
+复用部分数值准备的实现结构一致。LATTE五组恢复后解密为54.5至577毫秒，与同进程重复解密接近。Lai五组恢复后解密仍为406至428秒。新进程恢复后执行新的委派；接收会话复用已生成的叶密钥。
+
+\subsection{规范对象尺寸与运行内存}
+
+表~\ref{tab:ten-object-sizes}列出同一系统根产生的主公钥、机构状态、双方角色对象和完整密文。
+尺寸均为实际规范编码长度。
+
+\begin{table}[H]
+\centering\small
+\caption{十种组合的规范对象与完整密文长度}
+\label{tab:ten-object-sizes}
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\rowcolor{black!8} 组合 & 主公钥 & 机构状态 & \shortstack{发送方\\密钥} & 接收状态 & 完整密文 \\
+\midrule
+% BEGIN DATA ten-object-sizes.tex
+LATTE＋ML-DSA & 14.1~KiB & 142~KiB & 7.86~KiB & 125~KiB & 139~KiB \\
+LATTE＋Falcon & 13.7~KiB & 137~KiB & 4.1~KiB & 125~KiB & 135~KiB \\
+LATTE＋Luo & 255~KiB & 479~KiB & 306~KiB & 125~KiB & 148~KiB \\
+LATTE＋SRGG & 46.2~KiB & 231~KiB & 82.4~KiB & 125~KiB & 146~KiB \\
+LATTE＋Sageloli & 3.36~MiB & 149~MiB & 137~MiB & 125~KiB & 3.21~MiB \\
+Lai＋ML-DSA & 1.54~MiB & 3.86~MiB & 7.86~KiB & 19.5~MiB & 1.27~MiB \\
+Lai＋Falcon & 1.54~MiB & 3.85~MiB & 4.1~KiB & 19.5~MiB & 1.27~MiB \\
+Lai＋Luo & 1.78~MiB & 4.19~MiB & 306~KiB & 19.5~MiB & 1.28~MiB \\
+Lai＋SRGG & 1.58~MiB & 3.95~MiB & 82.3~KiB & 19.5~MiB & 1.28~MiB \\
+Lai＋Sageloli & 4.9~MiB & 153~MiB & 137~MiB & 19.5~MiB & 4.34~MiB \\
+% END DATA ten-object-sizes.tex
+\bottomrule
+\end{tabular}
+\end{table}
+
+接收状态几乎完全由HIBE决定：LATTE五组约为125~KiB，Lai五组约为19.5~MiB。发送方密钥则主要由
+IBS决定，同一种IBS分别搭配两种HIBE时长度基本一致。完整密文也呈现可分解的结构：固定IBS后，
+由LATTE换为Lai会增加约1.137~MiB；采用Sageloli时，大型IBS签名又使完整密文达到3.21和
+4.34~MiB。该规律与后文按字段核算密文组成的结果一致。
+
+图~\ref{fig:ten-combination-resources}把完整密文与运行期间的最大采样RSS并列。除Sageloli外，
+十种组合各阶段最大采样RSS约为254至885~MiB；LATTE＋Sageloli约1.64~GiB，Lai＋Sageloli约
+1.97~GiB。RSS每10毫秒采样一次，包含运行库与子进程，共享页可能重复计数。
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/fig-07-02-resources.pdf}
+\caption{十种组合的完整密文长度与各阶段最大进程树采样RSS}
+\label{fig:ten-combination-resources}
+\end{figure}
+
+\subsection{组合差异与代表方案}
+
+横向结果表明，HIBE和IBS影响完整系统的不同位置。HIBE主要决定接收状态、HIBE种子密文和解密委派；
+IBS主要决定发送方密钥生成、签名生成、发送方密钥和签名字段。采用LATTE时，五种IBS的发送差异可以直接
+观察；采用Lai时，HIBE成本占主导，但不同IBS仍通过密钥和密文长度体现。系统选型分别考察发钥机构、发送端、接收端和网络侧资源。
+
+A面向交互式消息，B面向后台异步投递，C面向固定机构间周期报送。后续分析分别考察接收响应、
+密钥与密文长度，以及固定对端下的委派成本。
+
+\section{三组代表的运行与通信分析}
+专项实验用于分析运行波动、单项优化和内部阶段，所用机器、输入与重复方式列于表
+~\ref{tab:specialized-environments}。
+
+\begin{table}[H]
+\centering\small
+\caption{代表方案与优化专项实验的环境及用途}
+\label{tab:specialized-environments}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.18\textwidth}>{\raggedright\arraybackslash}p{.34\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\rowcolor{black!8} 实验 & 环境 & 输入、重复与用途 \\
+\midrule
+A/B多根重复 & i9-14900HX，Sage 10.7／Python 3.12.13 & 每组3个独立根，每根3对重复操作；观察根间与根内波动 \\
+Sageloli采样 & Ultra 7 255HX，Python 3.13.15 & PARAM-I、II各1套；测量结构化发钥、签名和验证 \\
+SRGG编码 & Ultra 7 255HX，Python 3.13.15 & 每组参数3套；同一对象两种格式各交替测量5次 \\
+C阶段分解 & Ultra 9 275HX，Sage 10.9／Python 3.13.14 & C组合1次，分解委派与后续阶段 \\
+Lai接收会话 & i9-14900HX，Sage 10.7／Python 3.12.13 & 1套系统；原路径2次、准备1次、会话内解密3次 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{A/B多根重复实验}
+A、B使用相同LATTE参数与相同输入，主要差别在IBS。该批实验在另一台机器上分别建立3个独立
+系统根，每根执行3次重复操作，用于观察固定组合的运行波动。表~\ref{tab:ab-times}给出完整生命
+周期的中位时间，图~\ref{fig:ab-times}展示每组9次重复收发；点形区分三个独立系统，短竖线为中位数，横轴采用对数刻度。
+
+\begin{table}[H]
+\centering\small
+\caption{A/B完整流程中位时间，单位为秒}
+\label{tab:ab-times}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\rowcolor{black!8} 操作 & A & B & 测量次数（A/B） \\
+\midrule
+% BEGIN DATA ab-timings.tex
+系统建立 & 1.12 & 1.6 & 3/3 \\
+发送方密钥生成 & 0.0954 & 32.1 & 3/3 \\
+接收方密钥生成 & 0.427 & 0.457 & 3/3 \\
+首次加密 & 0.0963 & 9.14 & 3/3 \\
+首次解密 & 0.284 & 0.239 & 3/3 \\
+重复加密 & 0.0785 & 9.17 & 9/9 \\
+重复解密 & 0.152 & 0.161 & 9/9 \\
+对象恢复 & 0.845 & 0.89 & 3/3 \\
+恢复后解密 & 0.154 & 0.134 & 9/9 \\
+% END DATA ab-timings.tex
+\bottomrule
+\end{tabular}
+\end{table}
+
+两组接收方密钥生成和重复解密接近，额外成本主要出现在B的发送方密钥生成与签名生成。A、B重复加密中位数分别为78.5毫秒和9.17秒，重复解密分别为152毫秒和161毫秒。A的低延迟适合交互式定向消息；B将签名放入后台投递队列后，接收服务可在约161毫秒内完成该批重复解密。
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/fig-07-03-ab-samples.pdf}
+\caption{A/B重复收发耗时}
+\label{fig:ab-times}
+\end{figure}
+
+全部观测显示，B有一次重复加密耗时约48.2秒，明显高于其中位数；A也有较慢观测。首次解密包含
+叶密钥生成，因此通常高于重复解密；恢复对象后，解密回到与重复操作相近的量级。
+
+\subsection{A/B多根实验的对象尺寸与内存}
+表~\ref{tab:ab-sizes}汇总主公钥、机构状态和双方密钥的编码长度。A、B完整密文约139 KiB和146 KiB；本章后面的密文组成分析进一步解释这些字节来自哪里。
+
+\begin{table}[H]
+\centering\small
+\caption{A/B对象编码长度约值与运行内存}
+\label{tab:ab-sizes}
+\begin{tabular}{@{}crrrrrr@{}}
+\toprule
+\rowcolor{black!8} 组 & 公钥 & 机构状态 & 发送方密钥 & 接收状态 & 完整密文 & 内存/MiB \\
+\midrule
+% BEGIN DATA ab-sizes.tex
+A & 14 & 173 & 7.86 & 125 & 139 & 460 \\
+B & 46.2 & 262 & 82.4 & 125 & 146 & 485 \\
+% END DATA ab-sizes.tex
+\bottomrule
+\end{tabular}
+\begin{minipage}{.96\textwidth}\footnotesize
+前五项单位为KiB。对象长度按记录范围取近似值；内存为每10毫秒采样的进程树RSS最高值，包含运行库和子进程，短时峰值可能未被采样捕获。
+\end{minipage}
+\end{table}
+
+B的公钥、机构状态与发送方密钥大于A，接收状态接近，符合两组共用HIBE而采用不同IBS的结构。本批运算的最高内存占用分别约为460和485~MiB，可据此为机构接收服务预留运行内存。
+
+\subsection{C组合的委派开销}
+十种组合的主实验中，C的首次加密和解密分别为96.4秒和412秒。另一次保存了内部阶段的32字节消息
+测试记录：加密99.0秒，匹配解密425秒，其中Lai委派为393秒，占约92.5\%。两次运行的条件和
+用途分别为完整运行和内部阶段分析，两份记录都表明接收端的主要瓶颈是为认可发送身份生成叶密钥。阶段记录存在并发，测量环境见表~\ref{tab:specialized-environments}。
+
+约92.5\%的解密时间集中在叶密钥委派，因而固定机构间周期报送可在首次接收前准备会话，
+由后续消息复用叶密钥。第\ref{sec:lai-session-results}节给出准备与会话内解密的实测结果。
+
+\subsection{密文组成与通信量}
+表~\ref{tab:ten-object-sizes}列出了完整密文长度。本节进一步分解这些传输字节：HIBE种子密文、IBS签名、一次性认证及应用载荷。依据现有安装运行记录与实际编码格式，可将A的一条32字节消息和C的一条空消息分解为表~\ref{tab:ciphertext-parts}。
+
+\begin{table}[H]
+\centering\small
+\caption{两条已有密文的字节组成核算}
+\label{tab:ciphertext-parts}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\rowcolor{black!8} 组成部分 & A：消息32 B & C：空消息 \\
+\midrule
+一次性公钥 & 65,536 & 65,536 \\
+一次性签名 & 32,768 & 32,768 \\
+IBS签名 & 6,237 & 3,227,824 \\
+HIBE种子密文 & 37,088 & 1,228,844 \\
+应用消息 & 32 & 0 \\
+上下文、格式、nonce与标签 & 432 & 432 \\
+\midrule
+合计 & 142,093 & 4,555,404 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{.96\textwidth}\footnotesize
+整包长度来自已有运行；固定字段按序列化模块核算，HIBE种子密文长度由整包扣除其他组成得到。
+\end{minipage}
+\end{table}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/fig-07-04-ciphertext-parts.pdf}
+\caption{A、C密文的字节组成}
+\label{fig:ciphertext-parts}
+\end{figure}
+
+Lamport一次性公钥含1,024个64字节哈希像，签名含512个64字节原像，两项合计固定96 KiB，约占这条A密文的69.2\%。因此，缩短几字节应用消息几乎不会改变A的整包长度。C的IBS签名约占70.9\%，HIBE种子密文约占27.0\%；其后续通信优化应优先考察这两部分。
+
+这也解释了SRGG签名紧凑编码与完整B密文的关系：签名字段变短会减少对称载荷，但整包还包含与A相同的一次性认证结构和LATTE种子密文。对象长度与其整包占比共同决定通信收益。
+
+\subsection{消息长度与可用容量}
+安装运行测试已完成A的0、32、1,024和59,191字节消息，B的0、32、1,024和65,364字节消息；超过应用上限1字节时，系统在生成新密文前拒绝。该批最大长度密文约为197 KiB和210 KiB。
+
+C的两条实测密文相差1,024字节，对应空消息与1,024字节消息。表~\ref{tab:message-coverage}汇总计算容量和实际测试长度；容量计算使用签名长度上界，签名及种子密文的实际长度随随机输出取值变化。
+
+\begin{table}[H]
+\centering\small
+\caption{应用消息上限与测试长度}
+\label{tab:message-coverage}
+\begin{tabular}{@{}crl@{}}
+\toprule
+\rowcolor{black!8} 代表 & 计算上限／B & 完成诚实往返的长度／B \\
+\midrule
+A & 59,191 & 0、32、1,024、59,191 \\
+B & 65,364 & 0、32、1,024、65,364 \\
+C & 3,924 & 0、1,024 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{三项优化的实际收益}
+\subsection{Sageloli结构化采样结果}
+Sageloli两个参数组均完成建立、身份发钥、两次签名和验证。表~\ref{tab:sageloli-times}给出各组参数一套系统的运行记录。
+
+\begin{table}[H]
+\centering\small
+\caption{Sageloli结构化实现的时间与实测峰值RSS}
+\label{tab:sageloli-times}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+\rowcolor{black!8} 参数组 & 建立 & 发钥 & 首次签名 & 后续签名 & 验证 & RSS/GiB \\
+\midrule
+% BEGIN DATA sageloli-times.tex
+PARAM-I & 4.99 & 85.1 & 9.28 & 2.02 & 0.517 & 1.36 \\
+PARAM-II & 43.6 & 520 & 38.6 & 5.02 & 1.36 & 6.19 \\
+% END DATA sageloli-times.tex
+\bottomrule
+\end{tabular}
+\end{table}
+
+PARAM-I发钥约85.1秒，记录峰值RSS约1.36 GiB；PARAM-II发钥约520秒，约6.19 GiB。首次签名
+明显高于第二次，与同一身份陷门下数值计划可以复用的实现结构相符。两组参数都完成采样和公开
+验证。
+
+\Needspace{.45\textheight}
+\subsection{SRGG紧凑编码结果}
+图~\ref{fig:codec}和表~\ref{tab:codec-sizes}展示三组SRGG参数的四类对象编码。专项实验覆盖公钥、机构状态、用户密钥与签名；完整B组合使用紧凑签名，密钥采用JSON表示。每组参数独立建立3套系统，在同一对象上交替执行两种格式的编解码。
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/fig-07-05-codec-sizes.pdf}
+\caption{SRGG三组参数的四类对象尺寸；I、II、III表示参数组}
+\label{fig:codec}
+\end{figure}
+
+\begin{table}[H]
+\centering\small
+\caption{SRGG对象编码长度，单位为KiB}
+\label{tab:codec-sizes}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\rowcolor{black!8} 参数组／格式 & 公钥 & 机构状态 & 用户密钥 & 签名 \\
+\midrule
+% BEGIN DATA codec-sizes.tex
+I／JSON & 33.7 & 100 & 82.2 & 34.5 \\
+I／紧凑 & 12.1 & 19.8 & 17.8 & 13.1 \\
+II／JSON & 75.2 & 213 & 173 & 49.9 \\
+II／紧凑 & 27.1 & 40.1 & 35.6 & 18.8 \\
+III／JSON & 133 & 368 & 296 & 65.5 \\
+III／紧凑 & 48.1 & 67.5 & 59.5 & 25.6 \\
+% END DATA codec-sizes.tex
+\bottomrule
+\end{tabular}
+\end{table}
+
+紧凑格式下，公钥占相应JSON长度的35.9\%至36.2\%，机构状态占18.3\%至19.8\%，用户密钥占
+20.1\%至21.7\%，签名占37.7\%至39.1\%。机构状态中小范围陷门系数所占比例较高，按实际取值
+范围位打包后，长度降幅最明显。
+
+空间收益伴随位打包和规范检查的时间成本。以PARAM-I机构状态为例，紧凑编码、解码中位时间约为
+23.1毫秒和61.3毫秒，JSON编码、解码约为0.974毫秒和37.3毫秒。对于机构状态保存、角色密钥
+传递和签名传输，长度下降带来的收益更直接；高频内存内转换则需要同时考虑额外处理时间\addedfigref{fig:codec-time-added}。
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/new-07-codec-timing.pdf}
+\caption{SRGG PARAM-I的编码与解码耗时}
+\label{fig:codec-time-added}
+\end{figure}
+
+\subsection{Lai接收会话结果}
+\label{sec:lai-session-results}
+Lai会话实验使用一套主密钥，原路径解密2次，建立会话1次，会话内解密3次。原解密中位数为526秒，会话准备约510秒，后续解密中位数为28.6秒；叶密钥编码长度为34.7~MiB。
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth,height=.62\textheight,keepaspectratio]{figures/fig-07-06-session.pdf}
+\caption{Lai会话解密与累计成本模型}
+\label{fig:session}
+\end{figure}
+
+\textbf{会话内单条解密提速约18.4倍，耗时减少约94.6\%，每条减少约498秒。}把准备计入后，首条平均成本约538秒；按$\bar T(N)$模型，处理10条和100条消息时约为79.5秒和33.7秒。累计成本临界式给出$N>1.024$，因此从第2条消息起，会话模型的累计时间低于逐条委派。
+
+会话方法把主要委派开销移到首次使用，适合固定身份对的连续消息。短暂的一次通信仍要承担完整准备；长期会话则以额外秘密状态换取较低的后续延迟。
+
+\section{Wang--PW目标规模组合}
+
+Wang--PW目标参数使用$n=512$、$q=4294967291$和$s_0=4$。其密钥和采样工作区远大于常规组合，
+因此在128~GiB级服务器上完成目标规模运行。表~\ref{tab:wang-results}汇总已经保存的建立、发钥、
+独立签名和LATTE组合结果。
+
+\begin{table}[H]
+\centering\small
+\caption{Wang--PW目标参数与LATTE组合的实测结果}
+\label{tab:wang-results}
+\begin{tabularx}{\textwidth}{@{}p{.28\textwidth}rX@{}}
+\toprule
+\rowcolor{black!8} 项目 & 结果 & 说明 \\
+\midrule
+Setup & 536.63 s & 生成目标参数公开矩阵和根陷门 \\
+主公钥 & 67,109,371 B & 规范二进制对象 \\
+机构状态 & 603,980,295 B & 保存紧凑根陷门与参数 \\
+KeyExtract & 5,431.95 s & 为一个64字节身份生成用户陷门 \\
+用户签名密钥 & 2,214,593,131 B & 规范二进制对象 \\
+独立Sign & 175.79 s、175.15 s & 两次恢复后的新消息签名均通过公开验签 \\
+签名 & 393,320 B & 包含身份盐、消息盐和短原像 \\
+签名峰值RSS & 约41.3 GiB & 进程树采样峰值 \\
+LATTE＋Wang加密 & 192.54 s & 78字节应用消息，包含一次新Wang签名 \\
+匹配解密 & 2.85 s & 从恢复的接收状态完成诚实解密 \\
+完整密文 & 529,207 B & Hybrid与完整字节认证后的wire长度 \\
+组合驱动总时长 & 254.86 s & 含准备、一次加密、诚实解密和错误输入检查 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+目标参数实验分阶段保存并复用已经生成的根和用户密钥。Setup、KeyExtract来自较早的目标生命周期，
+最终两次签名与LATTE组合使用修订后的签名实现；表中按阶段独立呈现各项结果。
+
+从使用过程看，Setup和KeyExtract适合放在发钥机构的离线阶段。发送端一次签名约176秒，并需要
+约41.3~GiB峰值内存，是组合加密的主要成本。接收端只进行公开验签与LATTE解封装，诚实解密约
+2.85秒。393,320字节IBS签名进入对称载荷后，完整密文约517~KiB，明显小于用户签名密钥，
+但仍高于A、B。
+
+这一结果表明通用框架能够容纳大对象矩阵SIS后端，同时也说明它更适合低频签名、离线发钥和
+资源充足的发送端。
+
+\section{身份匹配与恢复测试}
+十种组合各生成2条密文，完成3次解密和1次新进程恢复，累计20次加密、30次解密与10次恢复
+均成功。每组还对密文执行一次截断和一次单比特翻转，20条改动后的密文均被拒绝。
+
+A、B、C三组代表进一步测试身份错误、内部签名错误及其他格式改动，结果见表~\ref{tab:functional}。
+A另使用3套系统测试12组身份与消息输入，60项结果均符合预期。
+
+\begin{table}[H]
+\centering\small
+\caption{三组完整协议的主要功能结果}
+\label{tab:functional}
+\begin{tabularx}{\textwidth}{@{}Xccc@{}}
+\toprule
+\rowcolor{black!8} 检查情况 & A & B & C \\
+\midrule
+双方身份匹配 & 恢复原文 & 恢复原文 & 恢复原文 \\
+仅接收身份不匹配 & 拒绝 & 拒绝 & 拒绝 \\
+仅期望发送身份不匹配 & 拒绝 & 拒绝 & 拒绝 \\
+双方身份都不匹配 & 拒绝 & 拒绝 & 拒绝 \\
+密文字节修改、截断、追加或重复字段 & 拒绝 & 拒绝 & 拒绝 \\
+外层认证有效、内部签名无效 & 拒绝 & 拒绝 & 拒绝 \\
+新进程加载对象后解密 & 成功 & 成功 & 成功 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+将接收身份改错、认可的发送身份改错，或同时改错，三组均拒绝读取消息。修改密文字节、截断、
+追加和重复字段后，系统同样拒绝处理。为检查内部签名，将其改错后重新生成有效的外层认证，
+三组仍拒绝该消息。最后在新进程中导入已保存的主公钥和角色密钥，再次解密原密文，均恢复原文。
+
+\section{本章小结}
+
+十种常规组合在统一机器、输入和运行配置下全部完成。横向结果表明，HIBE主要决定接收状态、种子密文
+长度和解密委派，IBS主要决定发送方密钥生成、签名生成和发送方密钥尺寸。A的在线收发处于毫秒级；B的
+主要时间集中在发送端SRGG签名，接收端仍为亚秒级；C的主要时间集中在Lai叶密钥委派。Wang--PW
+的Setup、发钥和签名需要服务器级资源，接收端解密保持在数秒量级。
+
+通信量分析表明，A的密文主要由一次性认证构成，C主要由IBS签名和HIBE种子密文构成。对象级优化
+能否明显缩短完整密文，取决于目标字段在整包中的占比。功能测试与恢复测试进一步确认，同一套
+协议在A、B、C以及十种常规组合中保持一致的身份匹配和字节处理流程。三项主要优化分别降低了
+Sageloli采样内存、SRGG对象尺寸和Lai连续解密延迟。

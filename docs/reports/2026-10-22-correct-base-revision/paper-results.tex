@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering\small
+\caption{各方案的原论文正确性与安全结论概要}
+\label{tab:paper-results-summary}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.16\textwidth}>{\raggedright\arraybackslash}p{.19\textwidth}>{\raggedright\arraybackslash}p{.29\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\rowcolor{black!8} 方案 & 正确性依据 & 原文安全结果 & 定位 \\
+\midrule
+LATTE & 编码、重加密 & ID-IND-CCA；ROM；NTRU／RLWE & 第III、IV-A、IV-D节\cite{zhao2024latte} \\
+Lai & 原像采样、解密 & $\mathrm{IND}^{r}$-ID-CCA；PLWE & 定理6、8、10\cite{lai2015trapdoors} \\
+BNN＋ML-DSA & 证书与消息验签 & 底层两套普通签名安全时，IBS不可伪造 & Galindo定理1；FIPS~204\cite{galindo2006ibs,nist2024fips204} \\
+BNN＋Falcon & 证书与消息验签 & 底层两套普通签名安全时，IBS不可伪造 & Galindo定理1；Falcon第2.2.1节\cite{galindo2006ibs,falcon2020} \\
+Luo & 验证方程、范数 & EUF-ID-CMA；ROM；MLWE／MSIS & 模格版本第4.4节\cite{luo2024ibs} \\
+SRGG & 验证方程、范数 & QROM中由底层SIG的sEUF-CMA得到sEUF-ID-CMA & 算法7--8、定理2\cite{jia2025ibs} \\
+Sageloli & 模方程、分块范数 & 自适应不可伪造；RSIS；ROM／QROM & 定理1、3；命题10--11\cite{sageloli2023ibs} \\
+Wang--PW & Wang引理5.1 & SIS与ROM下，UF-naCMA转换为UF-CMA & Wang定理5.1；PW定理2\cite{wang2024ibme,pan2021ibs} \\
+\bottomrule
+\end{tabularx}
+\end{table}

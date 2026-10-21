@@ -1,0 +1,282 @@
+[
+  {
+    "type": "replace",
+    "chapter": "chapters/01-introduction.tex",
+    "label": "fig:application-background",
+    "asset": "fig-01-01-roles",
+    "number": "1.1",
+    "printed_page": "2",
+    "pdf_page": 6
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/01-introduction.tex",
+    "label": "fig:research-timeline",
+    "asset": "fig-01-02-research-timeline",
+    "number": "1.2",
+    "printed_page": "3",
+    "pdf_page": 7
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/01-introduction.tex",
+    "label": "fig:work-overview",
+    "asset": "fig-01-03-roadmap",
+    "number": "1.3",
+    "printed_page": "6",
+    "pdf_page": 10
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/02-foundations.tex",
+    "label": "fig:preimage-sampling-foundation",
+    "asset": "fig-02-01-preimage",
+    "number": "2.1",
+    "printed_page": "12",
+    "pdf_page": 16
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/03-design.tex",
+    "label": "fig:common-architecture",
+    "asset": "fig-03-01-architecture",
+    "number": "3.1",
+    "printed_page": "16",
+    "pdf_page": 20
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/03-design.tex",
+    "label": "fig:protocol-generation",
+    "asset": "fig-03-02-encryption",
+    "number": "3.3",
+    "printed_page": "22",
+    "pdf_page": 26
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/04-algorithms.tex",
+    "label": "fig:representative-profile",
+    "asset": "fig-04-01-representatives",
+    "number": "4.1",
+    "printed_page": "31",
+    "pdf_page": 35
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/05-optimizations.tex",
+    "label": "fig:ring-sampler",
+    "asset": "fig-05-01-sampler",
+    "number": "5.1",
+    "printed_page": "34",
+    "pdf_page": 38
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/05-optimizations.tex",
+    "label": "fig:receiver-session",
+    "asset": "fig-05-02-session-flow",
+    "number": "5.3",
+    "printed_page": "37",
+    "pdf_page": 41
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:system-structure",
+    "asset": "fig-06-01-software",
+    "number": "6.1",
+    "printed_page": "39",
+    "pdf_page": 43
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:new-backend",
+    "asset": "fig-06-02-backend-integration",
+    "number": "6.3",
+    "printed_page": "42",
+    "pdf_page": 46
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:state-recovery",
+    "asset": "fig-06-03-restoration",
+    "number": "6.5",
+    "printed_page": "43",
+    "pdf_page": 47
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:web-demo",
+    "asset": "fig-06-04-web",
+    "number": "6.7",
+    "printed_page": "44",
+    "pdf_page": 48
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:web-demo-details",
+    "asset": "fig-06-05-web-results",
+    "number": "6.8",
+    "printed_page": "44",
+    "pdf_page": 48
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:deployment",
+    "asset": "fig-06-06-deployment",
+    "number": "6.9",
+    "printed_page": "45",
+    "pdf_page": 49
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:ten-combination-times",
+    "asset": "fig-07-01-times",
+    "number": "7.2",
+    "printed_page": "49",
+    "pdf_page": 53
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:ten-combination-resources",
+    "asset": "fig-07-02-resources",
+    "number": "7.3",
+    "printed_page": "50",
+    "pdf_page": 54
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:ab-times",
+    "asset": "fig-07-03-ab-samples",
+    "number": "7.4",
+    "printed_page": "52",
+    "pdf_page": 56
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:ciphertext-parts",
+    "asset": "fig-07-04-ciphertext-parts",
+    "number": "7.5",
+    "printed_page": "53",
+    "pdf_page": 57
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:codec",
+    "asset": "fig-07-05-codec-sizes",
+    "number": "7.6",
+    "printed_page": "55",
+    "pdf_page": 59
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:session",
+    "asset": "fig-07-06-session",
+    "number": "7.8",
+    "printed_page": "56",
+    "pdf_page": 60
+  },
+  {
+    "type": "replace",
+    "chapter": "chapters/08-applications.tex",
+    "label": "fig:institutional-message",
+    "asset": "fig-08-01-application",
+    "number": "8.1",
+    "printed_page": "61",
+    "pdf_page": 65
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/03-design.tex",
+    "label": "fig:message-sequence-added",
+    "asset": "new-01-message-sequence",
+    "number": "3.2",
+    "printed_page": "18",
+    "pdf_page": 22
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/03-design.tex",
+    "label": "fig:ciphertext-layout-added",
+    "asset": "new-02-ciphertext-layout",
+    "number": "3.4",
+    "printed_page": "22",
+    "pdf_page": 26
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/05-optimizations.tex",
+    "label": "fig:srgg-bits-added",
+    "asset": "new-04-srgg-byte-layout",
+    "number": "5.2",
+    "printed_page": "36",
+    "pdf_page": 40
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:suite-settings-added",
+    "asset": "new-08-suite-settings",
+    "number": "6.2",
+    "printed_page": "41",
+    "pdf_page": 45
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:issuance-added",
+    "asset": "new-06-issuance-state",
+    "number": "6.4",
+    "printed_page": "42",
+    "pdf_page": 46
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/06-system.tex",
+    "label": "fig:operation-flow-added",
+    "asset": "new-09-operation-flow",
+    "number": "6.6",
+    "printed_page": "43",
+    "pdf_page": 47
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:phase-cost-added",
+    "asset": "new-05-phase-composition",
+    "number": "7.1",
+    "printed_page": "48",
+    "pdf_page": 52
+  },
+  {
+    "type": "add",
+    "chapter": "chapters/07-experiments.tex",
+    "label": "fig:codec-time-added",
+    "asset": "new-07-codec-timing",
+    "number": "7.7",
+    "printed_page": "56",
+    "pdf_page": 60
+  },
+  {
+    "type": "add table",
+    "chapter": "chapters/04-algorithms.tex",
+    "label": "tab:paper-results-summary",
+    "asset": "new-03-paper-results",
+    "note": "Native table; Luo module and Sageloli adaptive conclusions follow the supplied revision.",
+    "number": "4.3",
+    "printed_page": "29",
+    "pdf_page": 33
+  }
+]

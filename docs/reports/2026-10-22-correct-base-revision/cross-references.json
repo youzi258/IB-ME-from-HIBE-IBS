@@ -1,0 +1,270 @@
+{
+  "tab:identity-cases": {
+    "number": "1.1",
+    "page": "1"
+  },
+  "fig:application-background": {
+    "number": "1.1",
+    "page": "2"
+  },
+  "fig:research-timeline": {
+    "number": "1.2",
+    "page": "3"
+  },
+  "fig:work-overview": {
+    "number": "1.3",
+    "page": "6"
+  },
+  "tab:work-highlights": {
+    "number": "1.2",
+    "page": "6"
+  },
+  "tab:foundation-symbols": {
+    "number": "2.1",
+    "page": "8"
+  },
+  "tab:lattice-families": {
+    "number": "2.2",
+    "page": "10"
+  },
+  "fig:preimage-sampling-foundation": {
+    "number": "2.1",
+    "page": "12"
+  },
+  "fig:common-architecture": {
+    "number": "3.1",
+    "page": "16"
+  },
+  "tab:notations": {
+    "number": "3.1",
+    "page": "17"
+  },
+  "fig:message-sequence-added": {
+    "number": "3.2",
+    "page": "18"
+  },
+  "alg:setup": {
+    "number": "3.1",
+    "page": "19"
+  },
+  "alg:sender-keygen": {
+    "number": "3.2",
+    "page": "19"
+  },
+  "alg:receiver-keygen": {
+    "number": "3.3",
+    "page": "19"
+  },
+  "alg:encrypt": {
+    "number": "3.4",
+    "page": "20"
+  },
+  "alg:decrypt": {
+    "number": "3.5",
+    "page": "20"
+  },
+  "fig:protocol-generation": {
+    "number": "3.3",
+    "page": "22"
+  },
+  "fig:ciphertext-layout-added": {
+    "number": "3.4",
+    "page": "22"
+  },
+  "tab:implemented-matrix": {
+    "number": "4.1",
+    "page": "24"
+  },
+  "tab:assumption-source-map": {
+    "number": "4.2",
+    "page": "27"
+  },
+  "tab:paper-results-summary": {
+    "number": "4.3",
+    "page": "29"
+  },
+  "tab:representatives": {
+    "number": "4.4",
+    "page": "29"
+  },
+  "tab:representative-indicators": {
+    "number": "4.5",
+    "page": "30"
+  },
+  "fig:representative-profile": {
+    "number": "4.1",
+    "page": "31"
+  },
+  "fig:ring-sampler": {
+    "number": "5.1",
+    "page": "34"
+  },
+  "tab:sageloli-representation": {
+    "number": "5.1",
+    "page": "35"
+  },
+  "sec:srgg-codec": {
+    "number": "5.2",
+    "page": "35"
+  },
+  "tab:codec-fields": {
+    "number": "5.2",
+    "page": "36"
+  },
+  "fig:srgg-bits-added": {
+    "number": "5.2",
+    "page": "36"
+  },
+  "tab:srgg-protocol-impact": {
+    "number": "5.3",
+    "page": "37"
+  },
+  "sec:lai-session": {
+    "number": "5.3",
+    "page": "37"
+  },
+  "fig:receiver-session": {
+    "number": "5.3",
+    "page": "37"
+  },
+  "tab:session-amortization": {
+    "number": "5.4",
+    "page": "38"
+  },
+  "fig:system-structure": {
+    "number": "6.1",
+    "page": "39"
+  },
+  "tab:backend-interfaces": {
+    "number": "6.1",
+    "page": "40"
+  },
+  "tab:suite-settings": {
+    "number": "6.2",
+    "page": "41"
+  },
+  "fig:suite-settings-added": {
+    "number": "6.2",
+    "page": "41"
+  },
+  "fig:new-backend": {
+    "number": "6.3",
+    "page": "42"
+  },
+  "fig:issuance-added": {
+    "number": "6.4",
+    "page": "42"
+  },
+  "fig:state-recovery": {
+    "number": "6.5",
+    "page": "43"
+  },
+  "fig:operation-flow-added": {
+    "number": "6.6",
+    "page": "43"
+  },
+  "fig:web-demo": {
+    "number": "6.7",
+    "page": "44"
+  },
+  "fig:web-demo-details": {
+    "number": "6.8",
+    "page": "44"
+  },
+  "fig:deployment": {
+    "number": "6.9",
+    "page": "45"
+  },
+  "tab:installation-reproduction": {
+    "number": "6.3",
+    "page": "45"
+  },
+  "tab:environments": {
+    "number": "7.1",
+    "page": "46"
+  },
+  "tab:ten-first-times": {
+    "number": "7.2",
+    "page": "47"
+  },
+  "fig:phase-cost-added": {
+    "number": "7.1",
+    "page": "48"
+  },
+  "fig:ten-combination-times": {
+    "number": "7.2",
+    "page": "49"
+  },
+  "tab:ten-object-sizes": {
+    "number": "7.3",
+    "page": "49"
+  },
+  "fig:ten-combination-resources": {
+    "number": "7.3",
+    "page": "50"
+  },
+  "tab:specialized-environments": {
+    "number": "7.4",
+    "page": "51"
+  },
+  "tab:ab-times": {
+    "number": "7.5",
+    "page": "51"
+  },
+  "fig:ab-times": {
+    "number": "7.4",
+    "page": "52"
+  },
+  "tab:ab-sizes": {
+    "number": "7.6",
+    "page": "52"
+  },
+  "tab:ciphertext-parts": {
+    "number": "7.7",
+    "page": "53"
+  },
+  "fig:ciphertext-parts": {
+    "number": "7.5",
+    "page": "53"
+  },
+  "tab:message-coverage": {
+    "number": "7.8",
+    "page": "54"
+  },
+  "tab:sageloli-times": {
+    "number": "7.9",
+    "page": "54"
+  },
+  "fig:codec": {
+    "number": "7.6",
+    "page": "55"
+  },
+  "tab:codec-sizes": {
+    "number": "7.10",
+    "page": "55"
+  },
+  "fig:codec-time-added": {
+    "number": "7.7",
+    "page": "56"
+  },
+  "sec:lai-session-results": {
+    "number": "7.4.3",
+    "page": "56"
+  },
+  "fig:session": {
+    "number": "7.8",
+    "page": "56"
+  },
+  "tab:wang-results": {
+    "number": "7.11",
+    "page": "57"
+  },
+  "tab:functional": {
+    "number": "7.12",
+    "page": "58"
+  },
+  "fig:institutional-message": {
+    "number": "8.1",
+    "page": "61"
+  }
+}

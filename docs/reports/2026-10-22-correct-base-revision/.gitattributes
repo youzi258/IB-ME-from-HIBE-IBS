@@ -1,0 +1,7 @@
+*.tex text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.pdf binary
+*.diff text eol=lf -whitespace
+*.log text eol=lf

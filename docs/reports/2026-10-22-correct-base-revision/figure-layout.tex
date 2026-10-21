@@ -1,0 +1,23 @@
+% Layout for the correct-base editorial merge and concise figures.
+\usepackage[section]{placeins}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.7}
+\setlength{\textfloatsep}{11pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\captionsetup[figure]{font=small,skip=5pt}
+\newcommand{\addedfigref}[1]{（见图~\ref{#1}）}
+\newcommand{\addedtabref}[1]{（见表~\ref{#1}）}
+\newenvironment{mathchapterlayout}{%
+  \setlength{\abovedisplayskip}{7pt plus 2pt minus 2pt}%
+  \setlength{\belowdisplayskip}{7pt plus 2pt minus 2pt}%
+  \setlength{\abovedisplayshortskip}{5pt plus 2pt minus 1pt}%
+  \setlength{\belowdisplayshortskip}{5pt plus 2pt minus 1pt}%
+}{}
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{14pt plus 2pt minus 2pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
