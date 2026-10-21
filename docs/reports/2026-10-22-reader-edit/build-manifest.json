@@ -1,0 +1,32 @@
+{
+  "schema": "IBME-COMPETITION-REPORT-BUILD/1",
+  "source": "作品设计报告.tex",
+  "source_sha256": "14accd0e3b9c30af2a4af02e952e0f7e004030d64b0ff84d727ccdaa073c2db3",
+  "pdf": "作品设计报告.pdf",
+  "pdf_sha256": "f69f52829f834c569204afc1bcf1f1d8e1d2bd3f3c2cf6bc26a34dbb7096c171",
+  "engine": "tectonic",
+  "inputs": {
+    "../../deliveries/2026-10-20-web-redesign/desktop.png": "3faa22db2b1f9bfac026e1bd9c4bdf6e55bbae2548e5f13a7210718b536f199a",
+    "../../deliveries/2026-10-20-web-rejection-screenshots/wrong-receiver.png": "7aee11c2f756235d97196cde3727e8911935d912f6e9387ba3ed71a79099f0b7",
+    "../2026-10-19-research-draft/figures/cacr-logo.jpg": "908993f5ce1186b588114ea4a2f30e88691dbf1e7aef9b43a1b7080ff1324b4e",
+    "appendices/reproduction.tex": "94c1be7a5e35fdc21d2afc7c4f424fb3fc489af81a52e30fe9bb5c6fd2abb061",
+    "chapters/01-introduction.tex": "b33fa6f8ad50e8ca376c78a6788048edd29dfe545bc2decb2a459325ba0c83fc",
+    "chapters/02-foundations.tex": "5d4914c06ea8e19858d96766906cefe4c504794ae81d72881769e64395fc2d06",
+    "chapters/03-design.tex": "9901be66075f97de9fbd2560f880ab1de0d8a34e2a2551a28939073c12e521b5",
+    "chapters/04-algorithms.tex": "f932f5290e9f2048ac95ec99fcc430ca36158fd3e5f25242ee0a8fe28ea3c4a9",
+    "chapters/05-optimizations.tex": "2c5584689489f2baa305f1ef3dff5b94f7dd21b6b59dcabcae15c2ce7fd9c1fa",
+    "chapters/06-system.tex": "6a856e8048ef336cd84532324ee83f4534d6ff3a0c6aa18c4424a980c2693d80",
+    "chapters/07-experiments.tex": "240d08ac7c49840d13dadedbe8ae67cdc929f6c9696cb91293057ddad6e380ed",
+    "chapters/08-applications.tex": "587534fe0c6c17a1a671ce0bdc74d1f92bd03bb22cd43b9ea2f84c5204f604ae",
+    "chapters/09-conclusion.tex": "053821a9cbe6f8e2c2ed22e82118c7e8ac39d4080bd64218da5d3d5ad6ab2d3d",
+    "figures/ab-times.png": "97ee151539375a4c7dc257df34bd9b3bafe315a7ead7bf1a79e98220c59da29d",
+    "figures/ciphertext-parts.png": "8f03452db1b958fb62464d3cefd418bfaec69464dce40413085e13449781ab34",
+    "figures/codec.png": "1a93dfb14b096b4c33fac3cc5da1641bdf10eb171f2d8797ba1a39e0d224a42f",
+    "figures/placement.png": "cb103bf1ce7d8792de3b1b49adb99ffc9ff67fbd91ee5d01bee974c1779898f2",
+    "figures/representative-profile.png": "b58a93d7e2d72efbc976b595ee92d2ac87bd8a7a3d160b17f3b029f9a2aeabae",
+    "figures/session.png": "26b7472707c4733e360839f9bcfef14828d45c09317c3850831b419a1fac6248",
+    "figures/ten-combination-resources.png": "ddfc5fdf61f587f91c65615cd0025ef3b69a5de3c909daacf340d7594d82697b",
+    "figures/ten-combination-times.png": "fd432c0157c4c68bb40349a460448f1551f5bc756432ab72a73db241319ee6e5",
+    "作品设计报告.tex": "14accd0e3b9c30af2a4af02e952e0f7e004030d64b0ff84d727ccdaa073c2db3"
+  }
+}
