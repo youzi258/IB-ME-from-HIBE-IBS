@@ -32,6 +32,14 @@ def test_budget_substitution_stops_before_any_command_or_private_output(tmp_path
     assert not private.exists() and calls == []
 
 
+@pytest.mark.parametrize('timeout', [0, 3601, True, 1.5])
+def test_per_command_timeout_is_bounded_before_private_output(tmp_path, timeout):
+    private = tmp_path/'private'
+    with pytest.raises(ValueError, match='per-command timeout'):
+        probe.generate(private, SUITE, 'test-only', timeout=timeout)
+    assert not private.exists()
+
+
 def test_duplicate_configuration_is_not_accepted_as_frozen(tmp_path):
     path = tmp_path/'duplicate.json'
     path.write_text('{"transport":"hybrid",'+SUITE.read_text(encoding='utf-8').lstrip()[1:])

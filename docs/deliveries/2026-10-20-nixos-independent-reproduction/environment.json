@@ -1,0 +1,22 @@
+{
+  "schema": "IBME-NIXOS-INDEPENDENT-ENVIRONMENT/1",
+  "date": "2026-10-20",
+  "operating_system": "NixOS",
+  "platform": "Linux-6.18.56-x86_64-with-glibc2.44",
+  "architecture": "x86_64",
+  "cpu": "Intel(R) Xeon(R) Silver 4216 CPU @ 2.10GHz",
+  "available_logical_cpus": 12,
+  "memory_total_bytes": 135003209728,
+  "python": "3.14.7",
+  "sage": "10.9",
+  "tectonic": "0.17.0",
+  "gcc": "16.2.0",
+  "gxx": "16.2.0",
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1",
+  "NUMEXPR_NUM_THREADS": "1",
+  "runtime_source": "repository-local NixOS configuration",
+  "wsl_runtime_used": false,
+  "tracked_absolute_nix_paths": false
+}

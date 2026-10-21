@@ -1,0 +1,152 @@
+{
+  "original_pages": 38,
+  "final_pages": 37,
+  "original_toc_orphan_removed": true,
+  "pixel_equal_pages": [
+    {
+      "final_page": 1,
+      "original_page": 1
+    },
+    {
+      "final_page": 2,
+      "original_page": 2
+    },
+    {
+      "final_page": 3,
+      "original_page": 3
+    },
+    {
+      "final_page": 4,
+      "original_page": 4
+    },
+    {
+      "final_page": 7,
+      "original_page": 8
+    },
+    {
+      "final_page": 8,
+      "original_page": 9
+    },
+    {
+      "final_page": 9,
+      "original_page": 10
+    },
+    {
+      "final_page": 10,
+      "original_page": 11
+    },
+    {
+      "final_page": 11,
+      "original_page": 12
+    },
+    {
+      "final_page": 12,
+      "original_page": 13
+    },
+    {
+      "final_page": 13,
+      "original_page": 14
+    },
+    {
+      "final_page": 14,
+      "original_page": 15
+    },
+    {
+      "final_page": 15,
+      "original_page": 16
+    },
+    {
+      "final_page": 16,
+      "original_page": 17
+    },
+    {
+      "final_page": 17,
+      "original_page": 18
+    },
+    {
+      "final_page": 18,
+      "original_page": 19
+    },
+    {
+      "final_page": 19,
+      "original_page": 20
+    },
+    {
+      "final_page": 20,
+      "original_page": 21
+    },
+    {
+      "final_page": 21,
+      "original_page": 22
+    },
+    {
+      "final_page": 22,
+      "original_page": 23
+    },
+    {
+      "final_page": 23,
+      "original_page": 24
+    },
+    {
+      "final_page": 24,
+      "original_page": 25
+    },
+    {
+      "final_page": 25,
+      "original_page": 26
+    },
+    {
+      "final_page": 26,
+      "original_page": 27
+    },
+    {
+      "final_page": 27,
+      "original_page": 28
+    },
+    {
+      "final_page": 28,
+      "original_page": 29
+    },
+    {
+      "final_page": 29,
+      "original_page": 30
+    },
+    {
+      "final_page": 30,
+      "original_page": 31
+    },
+    {
+      "final_page": 31,
+      "original_page": 32
+    },
+    {
+      "final_page": 32,
+      "original_page": 33
+    },
+    {
+      "final_page": 33,
+      "original_page": 34
+    },
+    {
+      "final_page": 34,
+      "original_page": 35
+    },
+    {
+      "final_page": 35,
+      "original_page": 36
+    },
+    {
+      "final_page": 36,
+      "original_page": 37
+    },
+    {
+      "final_page": 37,
+      "original_page": 38
+    }
+  ],
+  "pixel_changed_pages": [],
+  "toc_pages_requiring_review": [
+    5,
+    6
+  ]
+}

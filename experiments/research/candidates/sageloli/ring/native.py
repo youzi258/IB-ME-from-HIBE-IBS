@@ -16,19 +16,28 @@ def source_id():
     return sha256((HERE/"native.cpp").read_bytes()+b"-O3 -fopenmp -lflint -lgmp v1").hexdigest()
 
 
-def build(directory):
+def build(directory, *, dependency_mode=None):
     directory=Path(directory).resolve();directory.mkdir(parents=True,exist_ok=True)
+    if os.name!="posix": raise RuntimeError("native build requires a POSIX host")
+    mode=dependency_mode or os.environ.get("IBME_NATIVE_DEPENDENCY_MODE","sage-prefix")
+    if mode not in ("sage-prefix","host-toolchain"):
+        raise RuntimeError("choose sage-prefix or host-toolchain native dependencies")
     prefix=Path.home()/"miniconda3/envs/sage"
-    if os.name!="posix" or not (prefix/"include/flint/fmpz_poly.h").is_file():
-        raise RuntimeError("build in prescribed WSL Sage environment")
+    if mode=="sage-prefix" and not (prefix/"include/flint/fmpz_poly.h").is_file():
+        raise RuntimeError("configured Sage prefix lacks FLINT development headers")
+    cxx=os.environ.get("CXX","g++")
+    if not cxx or any(character.isspace() for character in cxx):
+        raise RuntimeError("CXX must name one compiler executable without arguments")
     target=directory/("sageloli-ring-"+source_id()+".so")
     if target.exists(): return target
     with tempfile.TemporaryDirectory(prefix="build-",dir=directory) as tmp:
         out=Path(tmp)/"ring.so"
-        cmd=["g++","-O3","-std=c++17","-fPIC","-shared","-fopenmp",
-             '-DSG_SOURCE_ID="'+source_id()+'"',"-I"+str(prefix/"include"),
-             str(HERE/"native.cpp"),"-L"+str(prefix/"lib"),
-             "-Wl,-rpath,"+str(prefix/"lib"),"-lflint","-lgmp","-o",str(out)]
+        cmd=[cxx,"-O3","-std=c++17","-fPIC","-shared","-fopenmp",
+             '-DSG_SOURCE_ID="'+source_id()+'"']
+        if mode=="sage-prefix": cmd.extend(["-I"+str(prefix/"include")])
+        cmd.append(str(HERE/"native.cpp"))
+        if mode=="sage-prefix": cmd.extend(["-L"+str(prefix/"lib"),"-Wl,-rpath,"+str(prefix/"lib")])
+        cmd.extend(["-lflint","-lgmp","-o",str(out)])
         result=subprocess.run(cmd,capture_output=True,text=True,timeout=180)
         if result.returncode: raise RuntimeError("native build failed: "+result.stderr[-4000:])
         out.replace(target)
