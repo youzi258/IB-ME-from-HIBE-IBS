@@ -38,12 +38,13 @@
 \newcommand{\worknumber}{CACR2026T4PMR7}
 \newcommand{\worknumberfield}[1]{\underline{\makebox[#1][c]{\worknumber}}}
 \newcommand{\reportheader}{全国密码技术竞赛作品设计报告}
+\newcommand{\checkedbox}{\makebox[1.05em][c]{\rlap{\(\square\)}\hspace{0.08em}\raisebox{0.08em}{\(\checkmark\)}}}
 \renewcommand{\bibname}{参考文献}
 
 \hypersetup{
   pdftitle={\reporttitle},
-  pdfsubject={\competitiontitle：扩写重写稿},
-  pdfkeywords={身份基匹配加密, 格密码, HIBE, IBS, 抗量子密码}
+  pdfsubject={\competitiontitle},
+  pdfkeywords={身份基匹配加密, 格密码, HIBE, IBS, 格陷门采样}
 }
 \ctexset{
   chapter={format=\centering\heiti\zihao{2},beforeskip=0pt,afterskip=24pt},
@@ -86,7 +87,7 @@
 \begin{minipage}[t]{0.73\textwidth}
 \zihao{4}
 作品编号：\worknumberfield{47mm}\\[8mm]
-作品类别：\(\boxtimes\)软件设计\quad
+作品类别：\checkedbox 软件设计\quad
 \(\square\)硬件制作\quad
 \(\square\)工程实践\\[3mm]
 \hspace*{5em}\(\square\)密码应用技术\quad
@@ -110,9 +111,7 @@
 
 \vfill
 {\zihao{4}\reportdate\par}
-\vspace{3mm}
-{\zihao{5}扩写重写稿\par}
-\vspace{5mm}
+\vspace{8mm}
 {\zihao{4}中国密码学会\par}
 \end{center}
 \end{titlepage}
@@ -134,7 +133,7 @@
 \hline
 作品题目：\reporttitle\\
 \hline
-作品类别：\(\boxtimes\)软件设计\quad
+作品类别：\checkedbox 软件设计\quad
 \(\square\)硬件制作\quad
 \(\square\)工程实践\quad
 \(\square\)密码应用技术\quad
@@ -142,13 +141,15 @@
 \hline
 \noindent\textbf{作品内容摘要：}\par
 \setlength{\parindent}{2em}
-身份基匹配加密要求接收者身份与其认可的发送者身份同时匹配，适用于机构内定向投递、受控设备通信等场景。本作品以两层匿名HIBE与IBS的通用构造为基础，实现了可替换密码后端、混合加密、完整密文字节认证、固定发钥和重启恢复。LATTE、Lai两种HIBE与五种常规IBS形成十种完整配对；目标规模Wang--PW IBS另与LATTE完成端到端组合。
+量子计算的发展对基于整数分解和离散对数问题的传统公钥密码提出了新的安全挑战，面向后量子环境的密码迁移已经成为网络与信息系统建设的重要问题。格密码具有多样的困难问题和丰富的结构形式，是抗量子公钥密码的重要技术路线。与此同时，证书体系下的加密与签名通常分别完成接收者访问控制和发送者身份认证；在机构定向投递、受控设备通信和来源受限的消息服务中，系统还需要在一次消息处理过程中同时核对通信双方的身份。身份基匹配加密正是面向这一需求：只有接收者身份与发送者指定的身份一致，并且发送者身份与接收者认可的身份一致时，消息才能被恢复。
 
-作品围绕三项主要瓶颈进行优化。Sageloli后端利用多项式结构和低秩计算完成PARAM-I、PARAM-II的建立、发钥、签名和验证；SRGG公钥、主状态、用户密钥和签名按字段范围无损编码，三档参数的主状态缩小约5.05至5.46倍；Lai接收会话预先完成固定身份对的委派，使后续解密中位数降至28.6秒，准备过程约510秒，额外保存约34.7 MiB叶密钥。
+本作品基于两层匿名分层身份基加密（HIBE）与身份基签名（IBS）的通用构造，设计并实现一套基于多类格困难假设的抗量子身份基匹配加密系统。系统将HIBE与IBS封装为彼此独立、可替换的密码后端，通过统一接口、能力声明和兼容性检查完成组合。HIBE只封装32字节随机种子，应用消息由该种子派生的AES-256-GCM密钥保护，从而适配不同后端的明文容量；IBS负责绑定发送身份和一次性验签公钥，外层一次性签名进一步认证完整密文字节。系统还实现了规范对象编码、固定身份发钥、状态持久化、异常拒绝和重启恢复。
 
-报告以A、B、C三组代表分析时间、内存和通信量。A组重复加密与解密中位数为78.5毫秒和152毫秒；B、C两组分别展示原生模格IBS和高成本环格方案的工程特点。系统提供命令行、浏览器演示和规范状态文件，可从同一入口选择密码组合并完成实际消息收发。\\
+作品完成LATTE、Lai两种HIBE与BNN＋ML-DSA、BNN＋Falcon、Luo、SRGG、Sageloli五种常规IBS的十种端到端组合，并将目标规模Wang--PW IBS接入LATTE组合。针对完整系统运行中暴露的计算与存储瓶颈，作品实现三项重点优化：利用多项式结构和逐频率低秩计算降低Sageloli采样的中间矩阵开销；按照字段实际取值范围对SRGG公钥、主状态、用户密钥和签名进行无损编码；为固定身份对建立Lai接收会话，将重复委派移出逐消息解密路径。实测中，SRGG三档主状态缩小约5.05至5.46倍；Lai会话准备约510秒，完成后续解密的中位数为28.6秒。
+
+报告选取三组代表组合分析运行时间、内存和通信量。其中，A组重复加密与解密中位数分别为78.5毫秒和152毫秒；B组用于分析原生模格IBS的计算与对象开销；C组用于展示高成本环格方案及会话复用的效果。软件提供命令行与浏览器两种操作入口，能够完成系统建立、双方发钥、消息发送、匹配解密、错误身份拒绝和状态恢复，形成从多类格原语到完整消息应用的统一实现。\\
 \hline
-\textbf{关键词（五个）：}身份基匹配加密；格密码；分层身份基加密；身份基签名；系统优化\\
+\textbf{关键词（五个）：}身份基匹配加密；格密码；分层身份基加密；身份基签名；格陷门采样\\
 \hline
 \end{tabularx}
 \endgroup
@@ -157,40 +158,6 @@
 \hypersetup{pageanchor=true}
 \pagenumbering{roman}
 \pagestyle{frontmatter}
-
-\chapter*{摘要}
-\addcontentsline{toc}{chapter}{摘要}
-身份基匹配加密（Identity-Based Matchmaking Encryption，IB-ME）用于同时核对通信双方的身份。发送者在加密时指定接收者，接收者在解密时指定自己认可的发送者；只有这两个条件同时成立，消息才能恢复。这种机制把“谁能读取”和“接受谁发送”放进同一次密码处理，适用于机构内定向投递、受控设备通信和来源受限的消息服务。
-
-本作品基于两层匿名分层身份基加密（HIBE）与身份基签名（IBS）的通用构造，设计并实现抗量子IB-ME软件系统。HIBE和IBS由独立接口接入，可以采用不同的格结构、参数和对象格式。协议以HIBE封装32字节随机种子，再用HKDF和AES-256-GCM加密应用载荷；一次性公钥承诺进入IBS签名，完整密文字节另由一次性签名保护。系统还实现规范编码、固定身份发钥、状态保存和重启恢复。
-
-常规组合矩阵包含LATTE、Lai两种HIBE，以及BNN＋ML-DSA、BNN＋Falcon、Luo、SRGG、Sageloli五种IBS，共十种端到端配对。报告选择LATTE＋BNN/ML-DSA、LATTE＋SRGG、Lai＋Sageloli三组代表，分别展示低延迟基线、原生模格IBS和高成本环格方案。目标规模Wang--PW IBS随后与LATTE完成一套端到端组合，补充矩阵SIS路线。
-
-针对实测瓶颈，作品完成三项主要优化。第一，Sageloli后端保留环多项式结构，把巨型矩阵的分解转化为逐频率的低秩计算，使PARAM-I、PARAM-II都能完成建立、发钥、签名和验证。第二，SRGG根据各字段的真实取值范围编码公钥、主状态、用户密钥和签名，三档参数的主状态长度缩小约5.05至5.46倍，签名缩小约2.55至2.65倍。第三，Lai接收会话预先完成固定双方的叶密钥委派；已有实验中，约510秒的准备完成后，后续解密中位数为28.6秒，额外状态约34.7 MiB。
-
-实验覆盖系统建立、双方发钥、首次与重复收发、错误身份、密文篡改、状态恢复、对象尺寸和峰值内存。A组重复加密与解密中位数分别为78.5毫秒和152毫秒。密文组成结果表明，小消息的空间开销主要来自一次性认证、IBS签名和HIBE胶囊。命令行与浏览器演示共用同一协议实现，能够从选择算法组合开始，完成发钥、消息发送、匹配解密和重启恢复。
-
-\noindent\textbf{关键词：}身份基匹配加密；格密码；分层身份基加密；身份基签名；抗量子密码；可复现评测
-
-\clearpage
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-\begingroup
-\linespread{1.15}\selectfont
-Identity-Based Matchmaking Encryption (IB-ME) checks both parties of a communication. A sender encrypts to a designated receiver, while the receiver specifies an accepted sender. The message is recovered only when both identities match. This property combines access control and source authentication for directed messaging and controlled-device communication.
-
-This work implements a post-quantum IB-ME system from a two-level anonymous HIBE and an IBS. The two primitives use independent interfaces and may have different lattice structures, parameters, and object formats. The HIBE encapsulates a fresh 32-byte seed; HKDF and AES-256-GCM then protect the application payload. An ephemeral verification-key commitment is signed by the IBS, and a one-time signature authenticates the complete ciphertext bytes. Canonical encodings support persistent key issuance and restart recovery.
-
-The regular combination matrix contains two HIBEs, LATTE and Lai, and five IBS implementations: certified ML-DSA, certified Falcon, Luo, SRGG, and Sageloli. All ten pairings complete end-to-end operations. Three representative systems are studied in detail: LATTE with ML-DSA, LATTE with SRGG, and Lai with Sageloli. A target-scale Wang--PW IBS is additionally integrated with LATTE as a matrix-SIS case.
-
-Three optimizations address the dominant measured costs. Polynomial storage and frequency-wise low-rank computation make both Sageloli paper parameter sets executable. Range-aware lossless encoding reduces SRGG authority-state sizes by factors of 5.05 to 5.46 and signature sizes by factors of 2.55 to 2.65. A Lai receiver session performs leaf-key delegation once for a fixed identity pair; after about 510 seconds of preparation, the measured median subsequent decryption time is 28.6 seconds with 34.7 MiB of additional state.
-
-The experiments cover setup, key issuance, initial and repeated messaging, identity mismatch, ciphertext modification, restart recovery, serialized sizes, and peak memory. The main A configuration reaches median repeated encryption and decryption times of 78.5 ms and 152 ms. Ciphertext accounting shows that one-time authentication, the IBS signature, and the HIBE capsule dominate short-message communication. The command-line and browser interfaces share the same protocol implementation and provide a complete operational workflow.
-
-\raggedright\noindent\textbf{Keywords:} identity-based matchmaking encryption; lattice cryptography; hierarchical identity-based encryption; identity-based signature; post-quantum cryptography
-\par\endgroup
-
-\clearpage
 \begingroup
 \linespread{1.15}\selectfont
 \tableofcontents
@@ -218,6 +185,17 @@ The experiments cover setup, key issuance, initial and repeated messaging, ident
 \addcontentsline{toc}{chapter}{参考文献}
 \begin{thebibliography}{99}
 \small
+
+\bibitem{shor1994}
+Peter W. Shor.
+Algorithms for Quantum Computation: Discrete Logarithms and Factoring.
+In \emph{Proceedings of the 35th Annual Symposium on Foundations of Computer Science},
+pp. 124--134, 1994.
+
+\bibitem{shamir1984}
+Adi Shamir.
+Identity-Based Cryptosystems and Signature Schemes.
+In \emph{Advances in Cryptology---CRYPTO 1984}, LNCS 196, pp. 47--53, 1985.
 
 \bibitem{wang2024ibme}
 Yuejun Wang, Baocang Wang, Qiqi Lai, and Yu Zhan.

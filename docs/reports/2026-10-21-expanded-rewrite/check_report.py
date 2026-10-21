@@ -50,13 +50,28 @@ def main():
     text = source + "\n" + "\n".join(p.read_text(encoding="utf-8") for p in included)
     chapters = re.findall(r"\\chapter\{([^}]+)\}", text)
     check("seven chapters", chapters == ["作品概述", "基础知识与方案依据", "通用IB-ME系统设计", "关键原语实现与工程优化", "软件系统与操作流程", "测试与结果分析", "总结与展望"])
-    check("expanded-draft cover", "扩写重写稿" in source)
+    check("official cover without internal label", "扩写重写稿" not in source)
+    check("software category uses check mark", source.count(r"\checkedbox 软件设计") == 2 and r"\boxtimes" not in source)
     check("official number", r"\newcommand{\worknumber}{CACR2026T4PMR7}" in source)
     check("two official fields", source.count(r"\worknumberfield{") == 2)
     for edge in ("top", "bottom", "left", "right"):
         check("margin: " + edge, edge + "=20mm" in source)
-    for part in (r"\chapter*{摘要}", r"\chapter*{Abstract}", r"\tableofcontents"):
+    for part in (r"\tableofcontents",):
         check("front matter: " + part, part in source)
+    for part in (r"\chapter*{摘要}", r"\chapter*{Abstract}"):
+        check("no separate abstract: " + part, part not in source)
+    for title in ("研究背景与意义", "国内外研究现状", "现有方案的工程实现问题", "作品研究内容与技术路线", "主要工作与创新点", "报告结构"):
+        check("formal introduction section: " + title, r"\section{" + title + "}" in text)
+    casual_titles = (
+        "需要同时核对两方身份的消息", "从理论构造到可运行系统", "身份基签名怎样认证发送者",
+        "用短种子承载不同尺寸的载荷", "大矩阵从哪里产生", "把大分解转为逐频率的小分解",
+        "数值计算与精确方程怎样衔接", "重复计算发生在哪里", "怎样计算连续消息的平均成本",
+        "新增HIBE或IBS需要做什么", "小消息为什么仍产生较大的密文",
+    )
+    for title in casual_titles:
+        check("no casual heading: " + title, "{" + title + "}" not in text)
+    check("background in basic-information summary", "量子计算的发展" in source and "身份基匹配加密正是面向这一需求" in source)
+    check("specific fifth keyword", "身份基签名；格陷门采样" in source and "身份基签名；系统优化" not in source)
     for token in ("Foo", "CHKP", "ABB10", "候选路线", "security_claim", "backend_admitted", "parameters_are_formal", "registry", "可比子集", "同根开关配对", "用户决定"):
         check("excluded internal text: " + token, token not in text)
     check("no PR history", re.search(r"\bPR\s*#?\d+\b", text) is None)
@@ -127,11 +142,11 @@ def main():
             check("all pages reviewed", visual.get("page_count") == len(doc) and visual.get("reviewed_pages") == list(range(1, len(doc)+1)))
         doc.close()
     if failures:
-        print(f"Expanded-draft validation failed: {len(failures)}/{count}")
+        print(f"Report validation failed: {len(failures)}/{count}")
         for label in failures:
             print("- " + label)
         return 1
-    print(f"Expanded-draft validation passed: {count} checks; PR88 baseline unchanged")
+    print(f"Report validation passed: {count} checks; PR88 baseline unchanged")
     return 0
 
 

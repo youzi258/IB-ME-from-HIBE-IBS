@@ -74,7 +74,7 @@ $\mathsf{from\_bytes}$。对象头包含类别、版本和参数摘要。后端�
 
 \section{组合配置与接入流程}
 
-\subsection{SuiteConfig描述一套完整组合}
+\subsection{完整组合配置SuiteConfig}
 
 一套运行配置由$\mathsf{SuiteConfig}$描述。它记录HIBE与IBS选择器、算法版本、两边参数档、
 密钥和签名格式、外部身份长度、混合载荷预算以及协议版本。配置使用排序字段和规范JSON编码，
@@ -95,7 +95,7 @@ $\mathsf{from\_bytes}$。对象头包含类别、版本和参数摘要。后端�
 只有配置通过以后，系统才进入$\mathsf{Setup}$。容量不足会在昂贵建立之前给出所需字节数和
 现有预算，用户可以选择更大载荷预算或另一后端。
 
-\subsection{新增HIBE或IBS需要做什么}
+\subsection{新增HIBE或IBS的接入步骤}
 
 接入新HIBE时，实现者完成五个HIBE方法和五类对象，声明两层身份宽度、种子容量和参数预设，
 再向注册表提供一个后端描述。接入新IBS时，实现四个密码方法、签名加载和四类对象，声明身份、

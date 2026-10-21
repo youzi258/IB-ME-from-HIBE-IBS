@@ -44,9 +44,9 @@ $(\mathsf{hpk},\mathsf{ipk},\mathsf{suite})$，其中$\mathsf{suite}$记录算�
 编码格式。主状态保存$(\mathsf{hmsk},\mathsf{imsk})$及发钥账本。发送密钥记录身份$s$和
 $\mathsf{sk}_s$；接收密钥记录身份$r$和$\mathsf{dk}_r$。每个对象都绑定同一套组合配置。
 
-\section{五个完整算法}
+\section{IB-ME五算法设计}
 
-\subsection{系统建立Setup}
+\subsection{系统建立算法Setup}
 
 \textbf{输入：}组合配置$\mathsf{suite}$、随机源。\quad
 \textbf{输出：}系统公开对象$\mathsf{MPK}$和主状态$\mathsf{MSK}$。
@@ -59,7 +59,7 @@ $\mathsf{sk}_s$；接收密钥记录身份$r$和$\mathsf{dk}_r$。每个对象�
 随后计算两套公开参数和$\mathsf{suite}$的规范摘要，写入所有上层对象。公开对象可分发给通信
 双方；主状态仅由发钥机构保存。
 
-\subsection{发送者发钥SenderKeyGen}
+\subsection{发送者密钥生成算法SenderKeyGen}
 
 \textbf{输入：}$\mathsf{MSK}$、发送身份$s$。\quad
 \textbf{输出：}发送密钥$\mathsf{EK}_s$。
@@ -72,7 +72,7 @@ $\mathsf{sk}_s$；接收密钥记录身份$r$和$\mathsf{dk}_r$。每个对象�
 得到的$\mathsf{EK}_s=(s,\mathsf{sk}_s,\mathsf{suite})$交给发送者。固定发钥服务会保存已发身份
 及对象摘要；同一身份再次申请时读取既有密钥，不改变该身份的签名状态。
 
-\subsection{接收者发钥ReceiverKeyGen}
+\subsection{接收者密钥生成算法ReceiverKeyGen}
 
 \textbf{输入：}$\mathsf{MSK}$、接收身份$r$。\quad
 \textbf{输出：}接收密钥$\mathsf{DK}_r$。
@@ -86,7 +86,7 @@ $\mathsf{sk}_s$；接收密钥记录身份$r$和$\mathsf{dk}_r$。每个对象�
 $\mathcal H.\mathsf{Derive}(\mathsf{dk}_r,s)$，因此Bob可以用一份机构发放的密钥接收来自多个
 指定发送者的消息。
 
-\subsection{消息加密Encrypt}
+\subsection{消息加密算法Encrypt}
 
 \textbf{输入：}$\mathsf{MPK}$、发送密钥$\mathsf{EK}_s$、接收身份$r$、消息$M$。\quad
 \textbf{输出：}密文$C$。
@@ -105,7 +105,7 @@ $\mathcal H.\mathsf{Derive}(\mathsf{dk}_r,s)$，因此Bob可以用一份机构�
 每条消息使用新的$z$、GCM nonce和一次性签名密钥。发送者的长期IBS密钥只负责身份认证，
 一次性密钥只负责当前密文字节。
 
-\subsection{匹配解密Decrypt}
+\subsection{匹配解密算法Decrypt}
 
 \textbf{输入：}$\mathsf{MPK}$、接收密钥$\mathsf{DK}_{r'}$、期望发送身份$s'$、密文$C$。\quad
 \textbf{输出：}消息$M$或拒绝符号$\bot$。
@@ -124,7 +124,7 @@ $\mathcal H.\mathsf{Derive}(\mathsf{dk}_r,s)$，因此Bob可以用一份机构�
 该顺序先处理成本较低的格式与外层认证，再进入HIBE委派和解密。身份错配最终会在HIBE路径、
 IBS签名或内部身份核对处被发现，统一返回$\bot$。
 
-\section{用短种子承载不同尺寸的载荷}
+\section{基于短种子封装的混合加密}
 
 IBS签名的尺寸差异很大。认证转换签名通常为数KiB，Sageloli和Wang--PW签名达到数百KiB或
 数MiB，而HIBE的直接明文容量通常只有几十字节。通用协议因此采用KEM--DEM式混合结构：HIBE
@@ -188,7 +188,7 @@ IBS签名的尺寸差异很大。认证转换签名通常为数KiB，Sageloli和
 \label{fig:protocol-generation}
 \end{figure}
 
-\section{正确性路径与拒绝路径}
+\section{协议正确性与异常处理}
 
 当$r=r'$且$s=s'$时，接收端派生的叶密钥与加密路径相同，因此HIBE解密恢复同一个$z$；HKDF
 得到同一个$K$，GCM恢复$P$；IBS验证使用同一发送身份$s$和接收身份$r$，内外一次性公钥承诺
@@ -202,7 +202,7 @@ IBS签名的尺寸差异很大。认证转换签名通常为数KiB，Sageloli和
 未知字段、重复字段、截断、追加、非规范整数、错误对象类型和配置摘要不匹配均直接拒绝。执行
 环境缺少依赖或超过资源上限时，程序返回明确运行错误，不把它解释为一次身份错配。
 
-\section{三组代表及应用容量}
+\section{代表组合与应用消息容量}
 
 表~\ref{tab:representatives}列出A、B、C三组代表。三组共享本章协议，区别只在HIBE、IBS和
 对应参数。A用于观察标准化认证转换的低延迟完整流程；B用于分析原生模格IBS与紧凑编码；C
