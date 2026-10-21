@@ -12,6 +12,7 @@
 | 看报告三代表和精确配置 | [三代表选择与冻结Suite](deliveries/2026-10-19-report-three-selection/README.md) |
 | 阅读／修改当前报告 | [重写说明](reports/2026-10-20-competition-rewrite/README.md)、[LaTeX](reports/2026-10-20-competition-rewrite/作品设计报告.tex)、[PDF](reports/2026-10-20-competition-rewrite/作品设计报告.pdf) |
 | 核对本届官方报告格式和签字页 | [2026复赛官方模板及指纹](competition/2026/README.md) |
+| 准备提交的附加材料、运行说明和数据附件 | [支撑材料审阅包、PDF导读、来源清单与校验](submission/2026-10-21/README.md) |
 | 理解模块与公共构造 | [架构](../ARCHITECTURE.md)、[复用指南](FRAMEWORK_REUSE_GUIDE.md) |
 | 接入原语、检查接口和验收边界 | [公共规范](../IMPLEMENTATION_SPEC.md)、[算法专属契约](specs/) |
 | 分工、文件认领和交接 | [协作流程](../AI_WORKFLOW.md)、[三人计划](workplans/三人方案分工与统一框架交付.md)、[仓库规则](../AGENTS.md) |
